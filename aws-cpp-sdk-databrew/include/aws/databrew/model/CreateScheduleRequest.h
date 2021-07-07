@@ -84,7 +84,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline const Aws::String& GetCronExpression() const{ return m_cronExpression; }
 
@@ -92,7 +92,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }
 
@@ -100,7 +100,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(const Aws::String& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = value; }
 
@@ -108,7 +108,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(Aws::String&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::move(value); }
 
@@ -116,7 +116,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCronExpression(const char* value) { m_cronExpressionHasBeenSet = true; m_cronExpression.assign(value); }
 
@@ -124,7 +124,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline CreateScheduleRequest& WithCronExpression(const Aws::String& value) { SetCronExpression(value); return *this;}
 
@@ -132,7 +132,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline CreateScheduleRequest& WithCronExpression(Aws::String&& value) { SetCronExpression(std::move(value)); return *this;}
 
@@ -140,7 +140,7 @@ namespace Model
      * <p>The date or dates and time or times when the jobs are to be run. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
+     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
     inline CreateScheduleRequest& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
 

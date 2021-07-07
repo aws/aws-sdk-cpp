@@ -8,6 +8,7 @@
 #include <aws/servicediscovery/ServiceDiscoveryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicediscovery/model/PublicDnsNamespaceProperties.h>
 #include <aws/servicediscovery/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -240,6 +241,37 @@ namespace Model
      */
     inline CreatePublicDnsNamespaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Properties for the public DNS namespace.</p>
+     */
+    inline const PublicDnsNamespaceProperties& GetProperties() const{ return m_properties; }
+
+    /**
+     * <p>Properties for the public DNS namespace.</p>
+     */
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+
+    /**
+     * <p>Properties for the public DNS namespace.</p>
+     */
+    inline void SetProperties(const PublicDnsNamespaceProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+
+    /**
+     * <p>Properties for the public DNS namespace.</p>
+     */
+    inline void SetProperties(PublicDnsNamespaceProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
+
+    /**
+     * <p>Properties for the public DNS namespace.</p>
+     */
+    inline CreatePublicDnsNamespaceRequest& WithProperties(const PublicDnsNamespaceProperties& value) { SetProperties(value); return *this;}
+
+    /**
+     * <p>Properties for the public DNS namespace.</p>
+     */
+    inline CreatePublicDnsNamespaceRequest& WithProperties(PublicDnsNamespaceProperties&& value) { SetProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -253,6 +285,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    PublicDnsNamespaceProperties m_properties;
+    bool m_propertiesHasBeenSet;
   };
 
 } // namespace Model

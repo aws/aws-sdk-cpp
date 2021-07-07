@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an S3 bucket that a finding applies
+   * <p>Provides information about the S3 bucket that a finding applies
    * to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Bucket">AWS API
    * Reference</a></p>
@@ -299,32 +299,38 @@ namespace Model
 
 
     /**
-     * <p>The display name and AWS account ID for the user who owns the bucket.</p>
+     * <p>The display name and Amazon Web Services account ID for the user who owns the
+     * bucket.</p>
      */
     inline const S3BucketOwner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The display name and AWS account ID for the user who owns the bucket.</p>
+     * <p>The display name and Amazon Web Services account ID for the user who owns the
+     * bucket.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The display name and AWS account ID for the user who owns the bucket.</p>
+     * <p>The display name and Amazon Web Services account ID for the user who owns the
+     * bucket.</p>
      */
     inline void SetOwner(const S3BucketOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The display name and AWS account ID for the user who owns the bucket.</p>
+     * <p>The display name and Amazon Web Services account ID for the user who owns the
+     * bucket.</p>
      */
     inline void SetOwner(S3BucketOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The display name and AWS account ID for the user who owns the bucket.</p>
+     * <p>The display name and Amazon Web Services account ID for the user who owns the
+     * bucket.</p>
      */
     inline S3Bucket& WithOwner(const S3BucketOwner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The display name and AWS account ID for the user who owns the bucket.</p>
+     * <p>The display name and Amazon Web Services account ID for the user who owns the
+     * bucket.</p>
      */
     inline S3Bucket& WithOwner(S3BucketOwner&& value) { SetOwner(std::move(value)); return *this;}
 

@@ -285,38 +285,38 @@ namespace Model
 
 
     /**
-     * <p> Launch permissions can be used to configure which AWS accounts can use the
-     * AMI to launch instances.</p>
+     * <p> Launch permissions can be used to configure which accounts can use the AMI
+     * to launch instances.</p>
      */
     inline const LaunchPermissionConfiguration& GetLaunchPermission() const{ return m_launchPermission; }
 
     /**
-     * <p> Launch permissions can be used to configure which AWS accounts can use the
-     * AMI to launch instances.</p>
+     * <p> Launch permissions can be used to configure which accounts can use the AMI
+     * to launch instances.</p>
      */
     inline bool LaunchPermissionHasBeenSet() const { return m_launchPermissionHasBeenSet; }
 
     /**
-     * <p> Launch permissions can be used to configure which AWS accounts can use the
-     * AMI to launch instances.</p>
+     * <p> Launch permissions can be used to configure which accounts can use the AMI
+     * to launch instances.</p>
      */
     inline void SetLaunchPermission(const LaunchPermissionConfiguration& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = value; }
 
     /**
-     * <p> Launch permissions can be used to configure which AWS accounts can use the
-     * AMI to launch instances.</p>
+     * <p> Launch permissions can be used to configure which accounts can use the AMI
+     * to launch instances.</p>
      */
     inline void SetLaunchPermission(LaunchPermissionConfiguration&& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = std::move(value); }
 
     /**
-     * <p> Launch permissions can be used to configure which AWS accounts can use the
-     * AMI to launch instances.</p>
+     * <p> Launch permissions can be used to configure which accounts can use the AMI
+     * to launch instances.</p>
      */
     inline AmiDistributionConfiguration& WithLaunchPermission(const LaunchPermissionConfiguration& value) { SetLaunchPermission(value); return *this;}
 
     /**
-     * <p> Launch permissions can be used to configure which AWS accounts can use the
-     * AMI to launch instances.</p>
+     * <p> Launch permissions can be used to configure which accounts can use the AMI
+     * to launch instances.</p>
      */
     inline AmiDistributionConfiguration& WithLaunchPermission(LaunchPermissionConfiguration&& value) { SetLaunchPermission(std::move(value)); return *this;}
 

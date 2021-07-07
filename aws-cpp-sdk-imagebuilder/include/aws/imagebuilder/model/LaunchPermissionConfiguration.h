@@ -27,13 +27,13 @@ namespace Model
   /**
    * <p>Describes the configuration for a launch permission. The launch permission
    * modification request is sent to the <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2
-   * ModifyImageAttribute</a> API on behalf of the user for each Region they have
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
+   * EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have
    * selected to distribute the AMI. To make an AMI public, set the launch permission
    * authorized accounts to <code>all</code>. See the examples for making an AMI
    * public at <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2
-   * ModifyImageAttribute</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
+   * EC2 ModifyImageAttribute</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchPermissionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -47,47 +47,47 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline LaunchPermissionConfiguration& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline LaunchPermissionConfiguration& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The account ID.</p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 

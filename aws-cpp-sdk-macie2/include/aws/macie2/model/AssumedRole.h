@@ -27,8 +27,8 @@ namespace Model
   /**
    * <p>Provides information about an identity that performed an action on an
    * affected resource by using temporary security credentials. The credentials were
-   * obtained using the AssumeRole operation of the AWS Security Token Service (AWS
-   * STS) API.</p><p><h3>See Also:</h3>   <a
+   * obtained using the AssumeRole operation of the Security Token Service (STS)
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AssumedRole">AWS
    * API Reference</a></p>
    */
@@ -42,91 +42,91 @@ namespace Model
 
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline AssumedRole& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline AssumedRole& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS access key ID that identifies the credentials.</p>
+     * <p>The Amazon Web Services access key ID that identifies the credentials.</p>
      */
     inline AssumedRole& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline AssumedRole& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline AssumedRole& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the entity that was used
-     * to get the credentials.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * entity that was used to get the credentials.</p>
      */
     inline AssumedRole& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

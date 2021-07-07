@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Specifies configuration settings that determine which findings are published
-   * to AWS Security Hub automatically. For information about how Macie publishes
+   * to Security Hub automatically. For information about how Macie publishes
    * findings to Security Hub, see <a
    * href="https://docs.aws.amazon.com/macie/latest/user/securityhub-integration.html">Amazon
    * Macie integration with Security Hub</a> in the <i>Amazon Macie User
@@ -41,67 +41,67 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to publish sensitive data findings to AWS Security Hub. If
-     * you set this value to true, Amazon Macie automatically publishes all sensitive
-     * data findings that weren't suppressed by a findings filter. The default value is
+     * <p>Specifies whether to publish sensitive data findings to Security Hub. If you
+     * set this value to true, Amazon Macie automatically publishes all sensitive data
+     * findings that weren't suppressed by a findings filter. The default value is
      * false.</p>
      */
     inline bool GetPublishClassificationFindings() const{ return m_publishClassificationFindings; }
 
     /**
-     * <p>Specifies whether to publish sensitive data findings to AWS Security Hub. If
-     * you set this value to true, Amazon Macie automatically publishes all sensitive
-     * data findings that weren't suppressed by a findings filter. The default value is
+     * <p>Specifies whether to publish sensitive data findings to Security Hub. If you
+     * set this value to true, Amazon Macie automatically publishes all sensitive data
+     * findings that weren't suppressed by a findings filter. The default value is
      * false.</p>
      */
     inline bool PublishClassificationFindingsHasBeenSet() const { return m_publishClassificationFindingsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to publish sensitive data findings to AWS Security Hub. If
-     * you set this value to true, Amazon Macie automatically publishes all sensitive
-     * data findings that weren't suppressed by a findings filter. The default value is
+     * <p>Specifies whether to publish sensitive data findings to Security Hub. If you
+     * set this value to true, Amazon Macie automatically publishes all sensitive data
+     * findings that weren't suppressed by a findings filter. The default value is
      * false.</p>
      */
     inline void SetPublishClassificationFindings(bool value) { m_publishClassificationFindingsHasBeenSet = true; m_publishClassificationFindings = value; }
 
     /**
-     * <p>Specifies whether to publish sensitive data findings to AWS Security Hub. If
-     * you set this value to true, Amazon Macie automatically publishes all sensitive
-     * data findings that weren't suppressed by a findings filter. The default value is
+     * <p>Specifies whether to publish sensitive data findings to Security Hub. If you
+     * set this value to true, Amazon Macie automatically publishes all sensitive data
+     * findings that weren't suppressed by a findings filter. The default value is
      * false.</p>
      */
     inline SecurityHubConfiguration& WithPublishClassificationFindings(bool value) { SetPublishClassificationFindings(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to publish policy findings to AWS Security Hub. If you set
-     * this value to true, Amazon Macie automatically publishes all new and updated
-     * policy findings that weren't suppressed by a findings filter. The default value
-     * is true.</p>
+     * <p>Specifies whether to publish policy findings to Security Hub. If you set this
+     * value to true, Amazon Macie automatically publishes all new and updated policy
+     * findings that weren't suppressed by a findings filter. The default value is
+     * true.</p>
      */
     inline bool GetPublishPolicyFindings() const{ return m_publishPolicyFindings; }
 
     /**
-     * <p>Specifies whether to publish policy findings to AWS Security Hub. If you set
-     * this value to true, Amazon Macie automatically publishes all new and updated
-     * policy findings that weren't suppressed by a findings filter. The default value
-     * is true.</p>
+     * <p>Specifies whether to publish policy findings to Security Hub. If you set this
+     * value to true, Amazon Macie automatically publishes all new and updated policy
+     * findings that weren't suppressed by a findings filter. The default value is
+     * true.</p>
      */
     inline bool PublishPolicyFindingsHasBeenSet() const { return m_publishPolicyFindingsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to publish policy findings to AWS Security Hub. If you set
-     * this value to true, Amazon Macie automatically publishes all new and updated
-     * policy findings that weren't suppressed by a findings filter. The default value
-     * is true.</p>
+     * <p>Specifies whether to publish policy findings to Security Hub. If you set this
+     * value to true, Amazon Macie automatically publishes all new and updated policy
+     * findings that weren't suppressed by a findings filter. The default value is
+     * true.</p>
      */
     inline void SetPublishPolicyFindings(bool value) { m_publishPolicyFindingsHasBeenSet = true; m_publishPolicyFindings = value; }
 
     /**
-     * <p>Specifies whether to publish policy findings to AWS Security Hub. If you set
-     * this value to true, Amazon Macie automatically publishes all new and updated
-     * policy findings that weren't suppressed by a findings filter. The default value
-     * is true.</p>
+     * <p>Specifies whether to publish policy findings to Security Hub. If you set this
+     * value to true, Amazon Macie automatically publishes all new and updated policy
+     * findings that weren't suppressed by a findings filter. The default value is
+     * true.</p>
      */
     inline SecurityHubConfiguration& WithPublishPolicyFindings(bool value) { SetPublishPolicyFindings(value); return *this;}
 

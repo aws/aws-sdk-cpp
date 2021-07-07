@@ -369,42 +369,42 @@ namespace Model
 
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 

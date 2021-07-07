@@ -27,8 +27,6 @@ namespace Model
   /**
    * <p>Represents a transformation and associated parameters that are used to apply
    * a change to a DataBrew dataset. For more information, see <a
-   * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
-   * structure</a> and <a
    * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe
    * actions reference</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeAction">AWS

@@ -561,44 +561,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline DescribeDomainResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline DescribeDomainResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS customer managed CMK used to encrypt the EFS volume attached to
-     * the domain.</p>
+     * <p>The Amazon Web Services KMS customer managed CMK used to encrypt the EFS
+     * volume attached to the domain.</p>
      */
     inline DescribeDomainResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

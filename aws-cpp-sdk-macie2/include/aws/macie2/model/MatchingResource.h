@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides statistical data and other information about an AWS resource that
-   * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides statistical data and other information about an Amazon Web Services
+   * resource that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingResource">AWS
    * API Reference</a></p>
    */

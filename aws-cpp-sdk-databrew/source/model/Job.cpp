@@ -38,6 +38,7 @@ Job::Job() :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_dataCatalogOutputsHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
@@ -69,6 +70,7 @@ Job::Job(JsonView jsonValue) :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_outputsHasBeenSet(false),
+    m_dataCatalogOutputsHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
@@ -182,6 +184,16 @@ Job& Job::operator =(JsonView jsonValue)
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
     }
     m_outputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataCatalogOutputs"))
+  {
+    Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
+    for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+    {
+      m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
+    }
+    m_dataCatalogOutputsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ProjectName"))
@@ -324,6 +336,17 @@ JsonValue Job::Jsonize() const
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
    }
    payload.WithArray("Outputs", std::move(outputsJsonList));
+
+  }
+
+  if(m_dataCatalogOutputsHasBeenSet)
+  {
+   Array<JsonValue> dataCatalogOutputsJsonList(m_dataCatalogOutputs.size());
+   for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+   {
+     dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject(m_dataCatalogOutputs[dataCatalogOutputsIndex].Jsonize());
+   }
+   payload.WithArray("DataCatalogOutputs", std::move(dataCatalogOutputsJsonList));
 
   }
 

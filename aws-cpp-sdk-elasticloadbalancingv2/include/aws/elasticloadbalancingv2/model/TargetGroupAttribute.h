@@ -67,9 +67,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -133,9 +133,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -199,9 +199,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -265,9 +265,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -331,9 +331,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -397,9 +397,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -463,9 +463,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is
@@ -529,9 +529,9 @@ namespace Model
      * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
      * seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-     * application-based cookie. Names that start with the following names are not
-     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>.
-     * They're reserved for use by the load balancer.</p> </li> <li> <p>
+     * application-based cookie. Names that start with the following prefixes are not
+     * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
+     * they're reserved for use by the load balancer.</p> </li> <li> <p>
      * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the application-based cookie is

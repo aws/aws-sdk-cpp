@@ -344,17 +344,20 @@ namespace Model
 
 
     /**
-     * <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+     * <p>Whether the algorithm is certified to be listed in Amazon Web Services
+     * Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+     * <p>Whether the algorithm is certified to be listed in Amazon Web Services
+     * Marketplace.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+     * <p>Whether the algorithm is certified to be listed in Amazon Web Services
+     * Marketplace.</p>
      */
     inline DescribeAlgorithmResult& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 

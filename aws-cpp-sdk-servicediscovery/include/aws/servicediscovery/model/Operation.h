@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <dl>
      * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
-     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>AWS Cloud Map is
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
      * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <dl>
      * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
-     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>AWS Cloud Map is
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
      * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <dl>
      * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
-     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>AWS Cloud Map is
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
      * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <dl>
      * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
-     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>AWS Cloud Map is
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
      * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
@@ -158,7 +158,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <dl>
      * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
-     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>AWS Cloud Map is
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
      * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>
@@ -168,7 +168,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <dl>
      * <dt>SUBMITTED</dt> <dd> <p>This is the initial state that occurs immediately
-     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>AWS Cloud Map is
+     * after you submit a request.</p> </dd> <dt>PENDING</dt> <dd> <p>Cloud Map is
      * performing the operation.</p> </dd> <dt>SUCCESS</dt> <dd> <p>The operation
      * succeeded.</p> </dd> <dt>FAIL</dt> <dd> <p>The operation failed. For the failure
      * reason, see <code>ErrorMessage</code>.</p> </dd> </dl>

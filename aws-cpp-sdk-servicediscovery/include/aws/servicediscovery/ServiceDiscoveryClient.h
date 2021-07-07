@@ -32,6 +32,9 @@
 #include <aws/servicediscovery/model/RegisterInstanceResult.h>
 #include <aws/servicediscovery/model/TagResourceResult.h>
 #include <aws/servicediscovery/model/UntagResourceResult.h>
+#include <aws/servicediscovery/model/UpdateHttpNamespaceResult.h>
+#include <aws/servicediscovery/model/UpdatePrivateDnsNamespaceResult.h>
+#include <aws/servicediscovery/model/UpdatePublicDnsNamespaceResult.h>
 #include <aws/servicediscovery/model/UpdateServiceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -94,7 +97,10 @@ namespace Model
         class RegisterInstanceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateHttpNamespaceRequest;
         class UpdateInstanceCustomHealthStatusRequest;
+        class UpdatePrivateDnsNamespaceRequest;
+        class UpdatePublicDnsNamespaceRequest;
         class UpdateServiceRequest;
 
         typedef Aws::Utils::Outcome<CreateHttpNamespaceResult, ServiceDiscoveryError> CreateHttpNamespaceOutcome;
@@ -118,7 +124,10 @@ namespace Model
         typedef Aws::Utils::Outcome<RegisterInstanceResult, ServiceDiscoveryError> RegisterInstanceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, ServiceDiscoveryError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, ServiceDiscoveryError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateHttpNamespaceResult, ServiceDiscoveryError> UpdateHttpNamespaceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ServiceDiscoveryError> UpdateInstanceCustomHealthStatusOutcome;
+        typedef Aws::Utils::Outcome<UpdatePrivateDnsNamespaceResult, ServiceDiscoveryError> UpdatePrivateDnsNamespaceOutcome;
+        typedef Aws::Utils::Outcome<UpdatePublicDnsNamespaceResult, ServiceDiscoveryError> UpdatePublicDnsNamespaceOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceResult, ServiceDiscoveryError> UpdateServiceOutcome;
 
         typedef std::future<CreateHttpNamespaceOutcome> CreateHttpNamespaceOutcomeCallable;
@@ -142,7 +151,10 @@ namespace Model
         typedef std::future<RegisterInstanceOutcome> RegisterInstanceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateHttpNamespaceOutcome> UpdateHttpNamespaceOutcomeCallable;
         typedef std::future<UpdateInstanceCustomHealthStatusOutcome> UpdateInstanceCustomHealthStatusOutcomeCallable;
+        typedef std::future<UpdatePrivateDnsNamespaceOutcome> UpdatePrivateDnsNamespaceOutcomeCallable;
+        typedef std::future<UpdatePublicDnsNamespaceOutcome> UpdatePublicDnsNamespaceOutcomeCallable;
         typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
 } // namespace Model
 
@@ -169,17 +181,20 @@ namespace Model
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::RegisterInstanceRequest&, const Model::RegisterInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterInstanceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateHttpNamespaceRequest&, const Model::UpdateHttpNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHttpNamespaceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateInstanceCustomHealthStatusRequest&, const Model::UpdateInstanceCustomHealthStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceCustomHealthStatusResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdatePrivateDnsNamespaceRequest&, const Model::UpdatePrivateDnsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrivateDnsNamespaceResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdatePublicDnsNamespaceRequest&, const Model::UpdatePublicDnsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicDnsNamespaceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
 
   /**
-   * <p>With AWS Cloud Map, you can configure public DNS, private DNS, or HTTP
-   * namespaces that your microservice applications run in. When an instance becomes
-   * available, you can call the AWS Cloud Map API to register the instance with AWS
-   * Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically
-   * creates DNS records and an optional health check. Clients that submit public or
-   * private DNS queries, or HTTP requests, for the service receive an answer that
-   * contains up to eight healthy records. </p>
+   * <fullname>Cloud Map</fullname> <p>With Cloud Map, you can configure public DNS,
+   * private DNS, or HTTP namespaces that your microservice applications run in. When
+   * an instance becomes available, you can call the Cloud Map API to register the
+   * instance with Cloud Map. For public or private DNS namespaces, Cloud Map
+   * automatically creates DNS records and an optional health check. Clients that
+   * submit public or private DNS queries, or HTTP requests, for the service receive
+   * an answer that contains up to eight healthy records. </p>
    */
   class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient
   {
@@ -212,10 +227,10 @@ namespace Model
          * <p>Creates an HTTP namespace. Service instances registered using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
          * can't be discovered using DNS.</p> <p>For the current quota on the number of
-         * namespaces that you can create using the same AWS account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * namespaces that you can create using the same account, see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">AWS
          * API Reference</a></p>
          */
@@ -225,10 +240,10 @@ namespace Model
          * <p>Creates an HTTP namespace. Service instances registered using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
          * can't be discovered using DNS.</p> <p>For the current quota on the number of
-         * namespaces that you can create using the same AWS account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * namespaces that you can create using the same account, see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">AWS
          * API Reference</a></p>
          *
@@ -240,10 +255,10 @@ namespace Model
          * <p>Creates an HTTP namespace. Service instances registered using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
          * can't be discovered using DNS.</p> <p>For the current quota on the number of
-         * namespaces that you can create using the same AWS account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * namespaces that you can create using the same account, see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">AWS
          * API Reference</a></p>
          *
@@ -259,10 +274,10 @@ namespace Model
          * <code>backend.example.com</code>. Service instances that are registered using a
          * private DNS namespace can be discovered using either a
          * <code>DiscoverInstances</code> request or using DNS. For the current quota on
-         * the number of namespaces that you can create using the same AWS account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * the number of namespaces that you can create using the same account, see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace">AWS
          * API Reference</a></p>
          */
@@ -276,10 +291,10 @@ namespace Model
          * <code>backend.example.com</code>. Service instances that are registered using a
          * private DNS namespace can be discovered using either a
          * <code>DiscoverInstances</code> request or using DNS. For the current quota on
-         * the number of namespaces that you can create using the same AWS account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * the number of namespaces that you can create using the same account, see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace">AWS
          * API Reference</a></p>
          *
@@ -295,10 +310,10 @@ namespace Model
          * <code>backend.example.com</code>. Service instances that are registered using a
          * private DNS namespace can be discovered using either a
          * <code>DiscoverInstances</code> request or using DNS. For the current quota on
-         * the number of namespaces that you can create using the same AWS account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * the number of namespaces that you can create using the same account, see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace">AWS
          * API Reference</a></p>
          *
@@ -313,11 +328,11 @@ namespace Model
          * the resulting DNS name for the service is <code>backend.example.com</code>. You
          * can discover instances that were registered with a public DNS namespace by using
          * either a <code>DiscoverInstances</code> request or using DNS. For the current
-         * quota on the number of namespaces that you can create using the same AWS
-         * account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Quotas</a>in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * quota on the number of namespaces that you can create using the same account,
+         * see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">AWS
          * API Reference</a></p>
          */
@@ -330,11 +345,11 @@ namespace Model
          * the resulting DNS name for the service is <code>backend.example.com</code>. You
          * can discover instances that were registered with a public DNS namespace by using
          * either a <code>DiscoverInstances</code> request or using DNS. For the current
-         * quota on the number of namespaces that you can create using the same AWS
-         * account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Quotas</a>in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * quota on the number of namespaces that you can create using the same account,
+         * see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">AWS
          * API Reference</a></p>
          *
@@ -349,11 +364,11 @@ namespace Model
          * the resulting DNS name for the service is <code>backend.example.com</code>. You
          * can discover instances that were registered with a public DNS namespace by using
          * either a <code>DiscoverInstances</code> request or using DNS. For the current
-         * quota on the number of namespaces that you can create using the same AWS
-         * account, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Quotas</a>in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * quota on the number of namespaces that you can create using the same account,
+         * see <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">AWS
          * API Reference</a></p>
          *
@@ -364,19 +379,19 @@ namespace Model
         /**
          * <p>Creates a service. This action defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
          * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
          * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
          * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
          * health check</p> </li> </ul> <p>After you create the service, you can submit a
          * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
-         * request, and AWS Cloud Map uses the values in the configuration to create the
+         * request, and Cloud Map uses the values in the configuration to create the
          * specified entities.</p> <p>For the current quota on the number of instances that
          * you can register using the same namespace and using the same service, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">AWS
          * API Reference</a></p>
          */
@@ -385,19 +400,19 @@ namespace Model
         /**
          * <p>Creates a service. This action defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
          * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
          * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
          * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
          * health check</p> </li> </ul> <p>After you create the service, you can submit a
          * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
-         * request, and AWS Cloud Map uses the values in the configuration to create the
+         * request, and Cloud Map uses the values in the configuration to create the
          * specified entities.</p> <p>For the current quota on the number of instances that
          * you can register using the same namespace and using the same service, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">AWS
          * API Reference</a></p>
          *
@@ -408,19 +423,19 @@ namespace Model
         /**
          * <p>Creates a service. This action defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
          * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
          * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
          * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
          * health check</p> </li> </ul> <p>After you create the service, you can submit a
          * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
-         * request, and AWS Cloud Map uses the values in the configuration to create the
+         * request, and Cloud Map uses the values in the configuration to create the
          * specified entities.</p> <p>For the current quota on the number of instances that
          * you can register using the same namespace and using the same service, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateService">AWS
          * API Reference</a></p>
          *
@@ -485,16 +500,16 @@ namespace Model
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
-         * Cloud Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
+         * Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterInstanceOutcome DeregisterInstance(const Model::DeregisterInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
-         * Cloud Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
+         * Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
          *
@@ -503,8 +518,8 @@ namespace Model
         virtual Model::DeregisterInstanceOutcomeCallable DeregisterInstanceCallable(const Model::DeregisterInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
-         * Cloud Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
+         * Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
          *
@@ -725,7 +740,7 @@ namespace Model
 
         /**
          * <p>Lists summary information about the namespaces that were created by the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          */
@@ -733,7 +748,7 @@ namespace Model
 
         /**
          * <p>Lists summary information about the namespaces that were created by the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          *
@@ -743,7 +758,7 @@ namespace Model
 
         /**
          * <p>Lists summary information about the namespaces that were created by the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          *
@@ -846,17 +861,17 @@ namespace Model
          * you can submit another request and specify the same service ID and instance
          * ID.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
-         * <p>When AWS Cloud Map receives a DNS query for the specified DNS name, it
-         * returns the applicable value:</p> <ul> <li> <p> <b>If the health check is
-         * healthy</b>: returns all the records</p> </li> <li> <p> <b>If the health check
-         * is unhealthy</b>: returns the applicable value for the last healthy instance</p>
+         * <p>When Cloud Map receives a DNS query for the specified DNS name, it returns
+         * the applicable value:</p> <ul> <li> <p> <b>If the health check is healthy</b>:
+         * returns all the records</p> </li> <li> <p> <b>If the health check is
+         * unhealthy</b>: returns the applicable value for the last healthy instance</p>
          * </li> <li> <p> <b>If you didn't specify a health check configuration</b>:
          * returns all the records</p> </li> </ul> <p>For the current quota on the number
          * of instances that you can register using the same namespace and using the same
          * service, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">AWS
          * API Reference</a></p>
          */
@@ -876,17 +891,17 @@ namespace Model
          * you can submit another request and specify the same service ID and instance
          * ID.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
-         * <p>When AWS Cloud Map receives a DNS query for the specified DNS name, it
-         * returns the applicable value:</p> <ul> <li> <p> <b>If the health check is
-         * healthy</b>: returns all the records</p> </li> <li> <p> <b>If the health check
-         * is unhealthy</b>: returns the applicable value for the last healthy instance</p>
+         * <p>When Cloud Map receives a DNS query for the specified DNS name, it returns
+         * the applicable value:</p> <ul> <li> <p> <b>If the health check is healthy</b>:
+         * returns all the records</p> </li> <li> <p> <b>If the health check is
+         * unhealthy</b>: returns the applicable value for the last healthy instance</p>
          * </li> <li> <p> <b>If you didn't specify a health check configuration</b>:
          * returns all the records</p> </li> </ul> <p>For the current quota on the number
          * of instances that you can register using the same namespace and using the same
          * service, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">AWS
          * API Reference</a></p>
          *
@@ -908,17 +923,17 @@ namespace Model
          * you can submit another request and specify the same service ID and instance
          * ID.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
-         * <p>When AWS Cloud Map receives a DNS query for the specified DNS name, it
-         * returns the applicable value:</p> <ul> <li> <p> <b>If the health check is
-         * healthy</b>: returns all the records</p> </li> <li> <p> <b>If the health check
-         * is unhealthy</b>: returns the applicable value for the last healthy instance</p>
+         * <p>When Cloud Map receives a DNS query for the specified DNS name, it returns
+         * the applicable value:</p> <ul> <li> <p> <b>If the health check is healthy</b>:
+         * returns all the records</p> </li> <li> <p> <b>If the health check is
+         * unhealthy</b>: returns the applicable value for the last healthy instance</p>
          * </li> <li> <p> <b>If you didn't specify a health check configuration</b>:
          * returns all the records</p> </li> </ul> <p>For the current quota on the number
          * of instances that you can register using the same namespace and using the same
          * service, see <a
-         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/RegisterInstance">AWS
          * API Reference</a></p>
          *
@@ -983,12 +998,37 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an HTTP namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateHttpNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHttpNamespaceOutcome UpdateHttpNamespace(const Model::UpdateHttpNamespaceRequest& request) const;
+
+        /**
+         * <p>Updates an HTTP namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateHttpNamespace">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateHttpNamespaceOutcomeCallable UpdateHttpNamespaceCallable(const Model::UpdateHttpNamespaceRequest& request) const;
+
+        /**
+         * <p>Updates an HTTP namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateHttpNamespace">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateHttpNamespaceAsync(const Model::UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Submits a request to change the health status of a custom health check to
          * healthy or unhealthy.</p> <p>You can use
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1003,7 +1043,7 @@ namespace Model
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1020,7 +1060,7 @@ namespace Model
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1030,6 +1070,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateInstanceCustomHealthStatusAsync(const Model::UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a private DNS namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePrivateDnsNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePrivateDnsNamespaceOutcome UpdatePrivateDnsNamespace(const Model::UpdatePrivateDnsNamespaceRequest& request) const;
+
+        /**
+         * <p>Updates a private DNS namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePrivateDnsNamespace">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePrivateDnsNamespaceOutcomeCallable UpdatePrivateDnsNamespaceCallable(const Model::UpdatePrivateDnsNamespaceRequest& request) const;
+
+        /**
+         * <p>Updates a private DNS namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePrivateDnsNamespace">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePrivateDnsNamespaceAsync(const Model::UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a public DNS namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePublicDnsNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePublicDnsNamespaceOutcome UpdatePublicDnsNamespace(const Model::UpdatePublicDnsNamespaceRequest& request) const;
+
+        /**
+         * <p>Updates a public DNS namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePublicDnsNamespace">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePublicDnsNamespaceOutcomeCallable UpdatePublicDnsNamespaceCallable(const Model::UpdatePublicDnsNamespaceRequest& request) const;
+
+        /**
+         * <p>Updates a public DNS namespace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdatePublicDnsNamespace">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePublicDnsNamespaceAsync(const Model::UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Submits a request to perform the following operations:</p> <ul> <li>
@@ -1043,8 +1133,8 @@ namespace Model
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
          * <code>UpdateService</code> request, the configuration isn't deleted from the
-         * service.</p> </li> </ul> <p>When you update settings for a service, AWS Cloud
-         * Map also updates the corresponding settings in all the records and health checks
+         * service.</p> </li> </ul> <p>When you update settings for a service, Cloud Map
+         * also updates the corresponding settings in all the records and health checks
          * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
@@ -1063,8 +1153,8 @@ namespace Model
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
          * <code>UpdateService</code> request, the configuration isn't deleted from the
-         * service.</p> </li> </ul> <p>When you update settings for a service, AWS Cloud
-         * Map also updates the corresponding settings in all the records and health checks
+         * service.</p> </li> </ul> <p>When you update settings for a service, Cloud Map
+         * also updates the corresponding settings in all the records and health checks
          * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
@@ -1085,8 +1175,8 @@ namespace Model
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
          * <code>UpdateService</code> request, the configuration isn't deleted from the
-         * service.</p> </li> </ul> <p>When you update settings for a service, AWS Cloud
-         * Map also updates the corresponding settings in all the records and health checks
+         * service.</p> </li> </ul> <p>When you update settings for a service, Cloud Map
+         * also updates the corresponding settings in all the records and health checks
          * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateService">AWS
          * API Reference</a></p>
@@ -1120,7 +1210,10 @@ namespace Model
         void RegisterInstanceAsyncHelper(const Model::RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateHttpNamespaceAsyncHelper(const Model::UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInstanceCustomHealthStatusAsyncHelper(const Model::UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePrivateDnsNamespaceAsyncHelper(const Model::UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePublicDnsNamespaceAsyncHelper(const Model::UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_baseUri;

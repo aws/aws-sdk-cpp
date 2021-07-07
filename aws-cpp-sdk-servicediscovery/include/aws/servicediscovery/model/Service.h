@@ -44,91 +44,91 @@ namespace Model
 
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline Service& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline Service& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     * <p>The ID that Cloud Map assigned to the service when you created it.</p>
      */
     inline Service& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline Service& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline Service& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you
+     * create it.</p>
      */
     inline Service& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -290,38 +290,38 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want AWS Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
@@ -390,60 +390,60 @@ namespace Model
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional health check. If you specify settings for a health
-     * check, AWS Cloud Map associates the health check with the records that you
-     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * check, Cloud Map associates the health check with the records that you specify
+     * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional health check. If you specify settings for a health
-     * check, AWS Cloud Map associates the health check with the records that you
-     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * check, Cloud Map associates the health check with the records that you specify
+     * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</p>
      */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional health check. If you specify settings for a health
-     * check, AWS Cloud Map associates the health check with the records that you
-     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * check, Cloud Map associates the health check with the records that you specify
+     * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional health check. If you specify settings for a health
-     * check, AWS Cloud Map associates the health check with the records that you
-     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * check, Cloud Map associates the health check with the records that you specify
+     * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional health check. If you specify settings for a health
-     * check, AWS Cloud Map associates the health check with the records that you
-     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * check, Cloud Map associates the health check with the records that you specify
+     * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional health check. If you specify settings for a health
-     * check, AWS Cloud Map associates the health check with the records that you
-     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.</p>
+     * check, Cloud Map associates the health check with the records that you specify
+     * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 

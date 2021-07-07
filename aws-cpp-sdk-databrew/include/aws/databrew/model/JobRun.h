@@ -13,6 +13,7 @@
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
+#include <aws/databrew/model/DataCatalogOutput.h>
 #include <utility>
 
 namespace Aws
@@ -446,6 +447,55 @@ namespace Model
 
 
     /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline bool DataCatalogOutputsHasBeenSet() const { return m_dataCatalogOutputsHasBeenSet; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = value; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::move(value); }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The set of steps processed by the job.</p>
      */
     inline const RecipeReference& GetRecipeReference() const{ return m_recipeReference; }
@@ -630,6 +680,9 @@ namespace Model
 
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+
+    Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
+    bool m_dataCatalogOutputsHasBeenSet;
 
     RecipeReference m_recipeReference;
     bool m_recipeReferenceHasBeenSet;

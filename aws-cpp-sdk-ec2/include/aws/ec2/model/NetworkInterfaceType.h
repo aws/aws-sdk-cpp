@@ -7,6 +7,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
+#if defined(_WIN32) && defined(interface)
+#undef interface
+#endif
+
 namespace Aws
 {
 namespace EC2

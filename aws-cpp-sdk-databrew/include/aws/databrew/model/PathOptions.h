@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>Represents a set of options that define how DataBrew selects files for a
-   * given S3 path in a dataset.</p><p><h3>See Also:</h3>   <a
+   * given Amazon S3 path in a dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PathOptions">AWS
    * API Reference</a></p>
    */
@@ -43,38 +43,38 @@ namespace Model
 
 
     /**
-     * <p>If provided, this structure defines a date range for matching S3 objects
-     * based on their LastModifiedDate attribute in S3.</p>
+     * <p>If provided, this structure defines a date range for matching Amazon S3
+     * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
     inline const FilterExpression& GetLastModifiedDateCondition() const{ return m_lastModifiedDateCondition; }
 
     /**
-     * <p>If provided, this structure defines a date range for matching S3 objects
-     * based on their LastModifiedDate attribute in S3.</p>
+     * <p>If provided, this structure defines a date range for matching Amazon S3
+     * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
     inline bool LastModifiedDateConditionHasBeenSet() const { return m_lastModifiedDateConditionHasBeenSet; }
 
     /**
-     * <p>If provided, this structure defines a date range for matching S3 objects
-     * based on their LastModifiedDate attribute in S3.</p>
+     * <p>If provided, this structure defines a date range for matching Amazon S3
+     * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
     inline void SetLastModifiedDateCondition(const FilterExpression& value) { m_lastModifiedDateConditionHasBeenSet = true; m_lastModifiedDateCondition = value; }
 
     /**
-     * <p>If provided, this structure defines a date range for matching S3 objects
-     * based on their LastModifiedDate attribute in S3.</p>
+     * <p>If provided, this structure defines a date range for matching Amazon S3
+     * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
     inline void SetLastModifiedDateCondition(FilterExpression&& value) { m_lastModifiedDateConditionHasBeenSet = true; m_lastModifiedDateCondition = std::move(value); }
 
     /**
-     * <p>If provided, this structure defines a date range for matching S3 objects
-     * based on their LastModifiedDate attribute in S3.</p>
+     * <p>If provided, this structure defines a date range for matching Amazon S3
+     * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
     inline PathOptions& WithLastModifiedDateCondition(const FilterExpression& value) { SetLastModifiedDateCondition(value); return *this;}
 
     /**
-     * <p>If provided, this structure defines a date range for matching S3 objects
-     * based on their LastModifiedDate attribute in S3.</p>
+     * <p>If provided, this structure defines a date range for matching Amazon S3
+     * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
     inline PathOptions& WithLastModifiedDateCondition(FilterExpression&& value) { SetLastModifiedDateCondition(std::move(value)); return *this;}
 
@@ -117,74 +117,74 @@ namespace Model
 
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline const Aws::Map<Aws::String, DatasetParameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, DatasetParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, DatasetParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& WithParameters(const Aws::Map<Aws::String, DatasetParameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& WithParameters(Aws::Map<Aws::String, DatasetParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& AddParameters(const Aws::String& key, const DatasetParameter& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& AddParameters(Aws::String&& key, const DatasetParameter& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& AddParameters(const Aws::String& key, DatasetParameter&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& AddParameters(Aws::String&& key, DatasetParameter&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& AddParameters(const char* key, DatasetParameter&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A structure that maps names of parameters used in the S3 path of a dataset to
-     * their definitions.</p>
+     * <p>A structure that maps names of parameters used in the Amazon S3 path of a
+     * dataset to their definitions.</p>
      */
     inline PathOptions& AddParameters(const char* key, const DatasetParameter& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -286,138 +286,142 @@ namespace Model
 
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline UpdateEventSourceMappingRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline UpdateEventSourceMappingRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1).</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is infinite (-1).</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1).</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is infinite (-1).</p>
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1).</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is infinite (-1).</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1).</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is infinite (-1).</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
+     * <p>(Streams only) If the function returns an error, split the batch in two and
      * retry.</p>
      */
     inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
+     * <p>(Streams only) If the function returns an error, split the batch in two and
      * retry.</p>
      */
     inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
+     * <p>(Streams only) If the function returns an error, split the batch in two and
      * retry.</p>
      */
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionErrorHasBeenSet = true; m_bisectBatchOnFunctionError = value; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and
+     * <p>(Streams only) If the function returns an error, split the batch in two and
      * retry.</p>
      */
     inline UpdateEventSourceMappingRequest& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
 
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records will be
-     * retried until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is infinite (-1). When set to infinite (-1), failed records will
+     * be retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records will be
-     * retried until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is infinite (-1). When set to infinite (-1), failed records will
+     * be retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records will be
-     * retried until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is infinite (-1). When set to infinite (-1), failed records will
+     * be retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records will be
-     * retried until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is infinite (-1). When set to infinite (-1), failed records will
+     * be retried until the record expires.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams only) The number of batches to process from each shard
+     * concurrently.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams only) The number of batches to process from each shard
+     * concurrently.</p>
      */
     inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams only) The number of batches to process from each shard
+     * concurrently.</p>
      */
     inline void SetParallelizationFactor(int value) { m_parallelizationFactorHasBeenSet = true; m_parallelizationFactor = value; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     * <p>(Streams only) The number of batches to process from each shard
+     * concurrently.</p>
      */
     inline UpdateEventSourceMappingRequest& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
@@ -472,75 +476,75 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 

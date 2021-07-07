@@ -185,7 +185,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline const ServiceCatalogProvisioningDetails& GetServiceCatalogProvisioningDetails() const{ return m_serviceCatalogProvisioningDetails; }
 
@@ -193,7 +193,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline void SetServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { m_serviceCatalogProvisioningDetails = value; }
 
@@ -201,7 +201,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline void SetServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { m_serviceCatalogProvisioningDetails = std::move(value); }
 
@@ -209,7 +209,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline DescribeProjectResult& WithServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { SetServiceCatalogProvisioningDetails(value); return *this;}
 
@@ -217,7 +217,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline DescribeProjectResult& WithServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { SetServiceCatalogProvisioningDetails(std::move(value)); return *this;}
 

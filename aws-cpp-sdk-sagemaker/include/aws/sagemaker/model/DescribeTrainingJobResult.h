@@ -643,44 +643,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline DescribeTrainingJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline DescribeTrainingJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management (IAM) role configured for the training
-     * job. </p>
+     * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
+     * for the training job. </p>
      */
     inline DescribeTrainingJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

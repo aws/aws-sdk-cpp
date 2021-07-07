@@ -13,6 +13,7 @@
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
+#include <aws/databrew/model/DataCatalogOutput.h>
 #include <utility>
 
 namespace Aws
@@ -382,6 +383,49 @@ namespace Model
     inline DescribeJobRunResult& AddOutputs(Output&& value) { m_outputs.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputs = value; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputs = std::move(value); }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline DescribeJobRunResult& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline DescribeJobRunResult& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline DescribeJobRunResult& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline DescribeJobRunResult& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+
+
     
     inline const RecipeReference& GetRecipeReference() const{ return m_recipeReference; }
 
@@ -523,6 +567,8 @@ namespace Model
     Aws::String m_logGroupName;
 
     Aws::Vector<Output> m_outputs;
+
+    Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
 
     RecipeReference m_recipeReference;
 

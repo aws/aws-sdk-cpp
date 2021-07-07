@@ -190,8 +190,8 @@ namespace Model
 
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>
@@ -199,8 +199,8 @@ namespace Model
     inline bool GetEnableIotRoleAlias() const{ return m_enableIotRoleAlias; }
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>
@@ -208,8 +208,8 @@ namespace Model
     inline bool EnableIotRoleAliasHasBeenSet() const { return m_enableIotRoleAliasHasBeenSet; }
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>
@@ -217,8 +217,8 @@ namespace Model
     inline void SetEnableIotRoleAlias(bool value) { m_enableIotRoleAliasHasBeenSet = true; m_enableIotRoleAlias = value; }
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>

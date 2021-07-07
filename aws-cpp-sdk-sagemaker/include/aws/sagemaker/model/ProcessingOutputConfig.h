@@ -90,66 +90,74 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline ProcessingOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline ProcessingOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS
-     * key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The
-     * <code>KmsKeyId</code> is applied to all outputs.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the processing job output.
+     * <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a
+     * KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
+     * outputs.</p>
      */
     inline ProcessingOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

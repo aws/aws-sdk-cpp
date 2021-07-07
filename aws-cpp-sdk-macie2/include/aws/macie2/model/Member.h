@@ -42,83 +42,83 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline Member& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline Member& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the account.</p>
+     * <p>The Amazon Web Services account ID for the account.</p>
      */
     inline Member& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline const Aws::String& GetAdministratorAccountId() const{ return m_administratorAccountId; }
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline bool AdministratorAccountIdHasBeenSet() const { return m_administratorAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline void SetAdministratorAccountId(const Aws::String& value) { m_administratorAccountIdHasBeenSet = true; m_administratorAccountId = value; }
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline void SetAdministratorAccountId(Aws::String&& value) { m_administratorAccountIdHasBeenSet = true; m_administratorAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline void SetAdministratorAccountId(const char* value) { m_administratorAccountIdHasBeenSet = true; m_administratorAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline Member& WithAdministratorAccountId(const Aws::String& value) { SetAdministratorAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline Member& WithAdministratorAccountId(Aws::String&& value) { SetAdministratorAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the administrator account.</p>
+     * <p>The Amazon Web Services account ID for the administrator account.</p>
      */
     inline Member& WithAdministratorAccountId(const char* value) { SetAdministratorAccountId(value); return *this;}
 
@@ -249,58 +249,58 @@ namespace Model
 
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline const Aws::String& GetMasterAccountId() const{ return m_masterAccountId; }
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline bool MasterAccountIdHasBeenSet() const { return m_masterAccountIdHasBeenSet; }
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline void SetMasterAccountId(const Aws::String& value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId = value; }
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline void SetMasterAccountId(Aws::String&& value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId = std::move(value); }
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline void SetMasterAccountId(const char* value) { m_masterAccountIdHasBeenSet = true; m_masterAccountId.assign(value); }
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline Member& WithMasterAccountId(const Aws::String& value) { SetMasterAccountId(value); return *this;}
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline Member& WithMasterAccountId(Aws::String&& value) { SetMasterAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>(Deprecated) The AWS account ID for the administrator account. This property
-     * has been replaced by the administratorAccountId property and is retained only
-     * for backward compatibility.</p>
+     * <p>(Deprecated) The Amazon Web Services account ID for the administrator
+     * account. This property has been replaced by the administratorAccountId property
+     * and is retained only for backward compatibility.</p>
      */
     inline Member& WithMasterAccountId(const char* value) { SetMasterAccountId(value); return *this;}
 

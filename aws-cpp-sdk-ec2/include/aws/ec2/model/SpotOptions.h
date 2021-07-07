@@ -254,7 +254,15 @@ namespace Model
      * <p>The number of Spot pools across which to allocate your target Spot capacity.
      * Valid only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>.
      * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
-     * capacity across the number of Spot pools that you specify.</p>
+     * capacity across the number of Spot pools that you specify.</p> <p>Note that EC2
+     * Fleet attempts to draw Spot Instances from the number of pools that you specify
+     * on a best effort basis. If a pool runs out of Spot capacity before fulfilling
+     * your target capacity, EC2 Fleet will continue to fulfill your request by drawing
+     * from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you
+     * specified. Similarly, if most of the pools have no Spot capacity, you might
+     * receive your full target capacity from fewer than the number of pools that you
+     * specified.</p>
      */
     inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
 
@@ -262,7 +270,15 @@ namespace Model
      * <p>The number of Spot pools across which to allocate your target Spot capacity.
      * Valid only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>.
      * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
-     * capacity across the number of Spot pools that you specify.</p>
+     * capacity across the number of Spot pools that you specify.</p> <p>Note that EC2
+     * Fleet attempts to draw Spot Instances from the number of pools that you specify
+     * on a best effort basis. If a pool runs out of Spot capacity before fulfilling
+     * your target capacity, EC2 Fleet will continue to fulfill your request by drawing
+     * from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you
+     * specified. Similarly, if most of the pools have no Spot capacity, you might
+     * receive your full target capacity from fewer than the number of pools that you
+     * specified.</p>
      */
     inline bool InstancePoolsToUseCountHasBeenSet() const { return m_instancePoolsToUseCountHasBeenSet; }
 
@@ -270,7 +286,15 @@ namespace Model
      * <p>The number of Spot pools across which to allocate your target Spot capacity.
      * Valid only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>.
      * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
-     * capacity across the number of Spot pools that you specify.</p>
+     * capacity across the number of Spot pools that you specify.</p> <p>Note that EC2
+     * Fleet attempts to draw Spot Instances from the number of pools that you specify
+     * on a best effort basis. If a pool runs out of Spot capacity before fulfilling
+     * your target capacity, EC2 Fleet will continue to fulfill your request by drawing
+     * from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you
+     * specified. Similarly, if most of the pools have no Spot capacity, you might
+     * receive your full target capacity from fewer than the number of pools that you
+     * specified.</p>
      */
     inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
 
@@ -278,7 +302,15 @@ namespace Model
      * <p>The number of Spot pools across which to allocate your target Spot capacity.
      * Valid only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>.
      * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
-     * capacity across the number of Spot pools that you specify.</p>
+     * capacity across the number of Spot pools that you specify.</p> <p>Note that EC2
+     * Fleet attempts to draw Spot Instances from the number of pools that you specify
+     * on a best effort basis. If a pool runs out of Spot capacity before fulfilling
+     * your target capacity, EC2 Fleet will continue to fulfill your request by drawing
+     * from the next cheapest pool. To ensure that your target capacity is met, you
+     * might receive Spot Instances from more than the number of pools that you
+     * specified. Similarly, if most of the pools have no Spot capacity, you might
+     * receive your full target capacity from fewer than the number of pools that you
+     * specified.</p>
      */
     inline SpotOptions& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
 

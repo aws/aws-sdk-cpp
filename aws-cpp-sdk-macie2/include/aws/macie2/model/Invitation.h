@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline Invitation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline Invitation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that sent the invitation.</p>
+     * <p>The Amazon Web Services account ID for the account that sent the
+     * invitation.</p>
      */
     inline Invitation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

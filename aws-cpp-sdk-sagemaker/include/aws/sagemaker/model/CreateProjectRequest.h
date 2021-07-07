@@ -123,7 +123,7 @@ namespace Model
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
      * For information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline const ServiceCatalogProvisioningDetails& GetServiceCatalogProvisioningDetails() const{ return m_serviceCatalogProvisioningDetails; }
 
@@ -131,7 +131,7 @@ namespace Model
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
      * For information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline bool ServiceCatalogProvisioningDetailsHasBeenSet() const { return m_serviceCatalogProvisioningDetailsHasBeenSet; }
 
@@ -139,7 +139,7 @@ namespace Model
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
      * For information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline void SetServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { m_serviceCatalogProvisioningDetailsHasBeenSet = true; m_serviceCatalogProvisioningDetails = value; }
 
@@ -147,7 +147,7 @@ namespace Model
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
      * For information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline void SetServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { m_serviceCatalogProvisioningDetailsHasBeenSet = true; m_serviceCatalogProvisioningDetails = std::move(value); }
 
@@ -155,7 +155,7 @@ namespace Model
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
      * For information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline CreateProjectRequest& WithServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { SetServiceCatalogProvisioningDetails(value); return *this;}
 
@@ -163,72 +163,80 @@ namespace Model
      * <p>The product ID and provisioning artifact ID to provision a service catalog.
      * For information, see <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline CreateProjectRequest& WithServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { SetServiceCatalogProvisioningDetails(std::move(value)); return *this;}
 
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateProjectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateProjectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>An array of key-value pairs that you want to use to organize and track your
-     * AWS resource costs. For more information, see <a
+     * Amazon Web Services resource costs. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

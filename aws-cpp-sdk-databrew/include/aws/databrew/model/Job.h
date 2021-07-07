@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
+#include <aws/databrew/model/DataCatalogOutput.h>
 #include <utility>
 
 namespace Aws
@@ -47,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline Job& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline Job& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline Job& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -267,7 +268,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -275,7 +276,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -283,7 +284,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -291,7 +292,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -299,7 +300,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -307,7 +308,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -592,6 +593,55 @@ namespace Model
      * <p>One or more artifacts that represent output from running the job.</p>
      */
     inline Job& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline bool DataCatalogOutputsHasBeenSet() const { return m_dataCatalogOutputsHasBeenSet; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = value; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::move(value); }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -930,6 +980,9 @@ namespace Model
 
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+
+    Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
+    bool m_dataCatalogOutputsHasBeenSet;
 
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;

@@ -39,11 +39,12 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -65,17 +66,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -97,17 +99,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -129,17 +132,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -161,17 +165,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -193,17 +198,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -225,17 +231,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -257,17 +264,18 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
-     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
-     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
-     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon
+     * S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
+     * formats: </p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
@@ -289,8 +297,8 @@ namespace Model
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p>
+     * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p>
      */
     inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

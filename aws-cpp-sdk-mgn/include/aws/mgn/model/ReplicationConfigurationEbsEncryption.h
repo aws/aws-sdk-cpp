@@ -16,7 +16,6 @@ namespace Model
   enum class ReplicationConfigurationEbsEncryption
   {
     NOT_SET,
-    NONE,
     DEFAULT,
     CUSTOM
   };

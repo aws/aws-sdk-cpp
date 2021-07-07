@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline Dataset& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline Dataset& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the dataset.</p>
+     * <p>The ID of the Amazon Web Services account that owns the dataset.</p>
      */
     inline Dataset& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -200,32 +200,38 @@ namespace Model
 
 
     /**
-     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
      */
     inline const InputFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
      */
     inline void SetFormat(const InputFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
      */
     inline void SetFormat(InputFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
      */
     inline Dataset& WithFormat(const InputFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p>The file format of a dataset that is created from an S3 file or folder.</p>
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
      */
     inline Dataset& WithFormat(InputFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -268,37 +274,37 @@ namespace Model
 
 
     /**
-     * <p>Information on how DataBrew can find the dataset, in either the AWS Glue Data
+     * <p>Information on how DataBrew can find the dataset, in either the Glue Data
      * Catalog or Amazon S3.</p>
      */
     inline const Input& GetInput() const{ return m_input; }
 
     /**
-     * <p>Information on how DataBrew can find the dataset, in either the AWS Glue Data
+     * <p>Information on how DataBrew can find the dataset, in either the Glue Data
      * Catalog or Amazon S3.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
-     * <p>Information on how DataBrew can find the dataset, in either the AWS Glue Data
+     * <p>Information on how DataBrew can find the dataset, in either the Glue Data
      * Catalog or Amazon S3.</p>
      */
     inline void SetInput(const Input& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>Information on how DataBrew can find the dataset, in either the AWS Glue Data
+     * <p>Information on how DataBrew can find the dataset, in either the Glue Data
      * Catalog or Amazon S3.</p>
      */
     inline void SetInput(Input&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>Information on how DataBrew can find the dataset, in either the AWS Glue Data
+     * <p>Information on how DataBrew can find the dataset, in either the Glue Data
      * Catalog or Amazon S3.</p>
      */
     inline Dataset& WithInput(const Input& value) { SetInput(value); return *this;}
 
     /**
-     * <p>Information on how DataBrew can find the dataset, in either the AWS Glue Data
+     * <p>Information on how DataBrew can find the dataset, in either the Glue Data
      * Catalog or Amazon S3.</p>
      */
     inline Dataset& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
@@ -377,75 +383,75 @@ namespace Model
 
 
     /**
-     * <p>The location of the data for the dataset, either Amazon S3 or the AWS Glue
-     * Data Catalog.</p>
+     * <p>The location of the data for the dataset, either Amazon S3 or the Glue Data
+     * Catalog.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
 
     /**
-     * <p>The location of the data for the dataset, either Amazon S3 or the AWS Glue
-     * Data Catalog.</p>
+     * <p>The location of the data for the dataset, either Amazon S3 or the Glue Data
+     * Catalog.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The location of the data for the dataset, either Amazon S3 or the AWS Glue
-     * Data Catalog.</p>
+     * <p>The location of the data for the dataset, either Amazon S3 or the Glue Data
+     * Catalog.</p>
      */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The location of the data for the dataset, either Amazon S3 or the AWS Glue
-     * Data Catalog.</p>
+     * <p>The location of the data for the dataset, either Amazon S3 or the Glue Data
+     * Catalog.</p>
      */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The location of the data for the dataset, either Amazon S3 or the AWS Glue
-     * Data Catalog.</p>
+     * <p>The location of the data for the dataset, either Amazon S3 or the Glue Data
+     * Catalog.</p>
      */
     inline Dataset& WithSource(const Source& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The location of the data for the dataset, either Amazon S3 or the AWS Glue
-     * Data Catalog.</p>
+     * <p>The location of the data for the dataset, either Amazon S3 or the Glue Data
+     * Catalog.</p>
      */
     inline Dataset& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
 
 
     /**
-     * <p>A set of options that defines how DataBrew interprets an S3 path of the
-     * dataset.</p>
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
      */
     inline const PathOptions& GetPathOptions() const{ return m_pathOptions; }
 
     /**
-     * <p>A set of options that defines how DataBrew interprets an S3 path of the
-     * dataset.</p>
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
      */
     inline bool PathOptionsHasBeenSet() const { return m_pathOptionsHasBeenSet; }
 
     /**
-     * <p>A set of options that defines how DataBrew interprets an S3 path of the
-     * dataset.</p>
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
      */
     inline void SetPathOptions(const PathOptions& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = value; }
 
     /**
-     * <p>A set of options that defines how DataBrew interprets an S3 path of the
-     * dataset.</p>
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
      */
     inline void SetPathOptions(PathOptions&& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = std::move(value); }
 
     /**
-     * <p>A set of options that defines how DataBrew interprets an S3 path of the
-     * dataset.</p>
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
      */
     inline Dataset& WithPathOptions(const PathOptions& value) { SetPathOptions(value); return *this;}
 
     /**
-     * <p>A set of options that defines how DataBrew interprets an S3 path of the
-     * dataset.</p>
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
      */
     inline Dataset& WithPathOptions(PathOptions&& value) { SetPathOptions(std::move(value)); return *this;}
 

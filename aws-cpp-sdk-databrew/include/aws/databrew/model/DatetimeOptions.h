@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Represents additional options for correct interpretation of datetime
-   * parameters used in the S3 path of a dataset.</p><p><h3>See Also:</h3>   <a
+   * parameters used in the Amazon S3 path of a dataset.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatetimeOptions">AWS
    * API Reference</a></p>
    */
@@ -40,121 +41,121 @@ namespace Model
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline DatetimeOptions& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline DatetimeOptions& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>Required option, that defines the datetime format used for a date parameter
-     * in the S3 path. Should use only supported datetime specifiers and separation
-     * characters, all litera a-z or A-Z character should be escaped with single
-     * quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+     * in the Amazon S3 path. Should use only supported datetime specifiers and
+     * separation characters, all literal a-z or A-Z characters should be escaped with
+     * single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
      */
     inline DatetimeOptions& WithFormat(const char* value) { SetFormat(value); return *this;}
 
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline const Aws::String& GetTimezoneOffset() const{ return m_timezoneOffset; }
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline bool TimezoneOffsetHasBeenSet() const { return m_timezoneOffsetHasBeenSet; }
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline void SetTimezoneOffset(const Aws::String& value) { m_timezoneOffsetHasBeenSet = true; m_timezoneOffset = value; }
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline void SetTimezoneOffset(Aws::String&& value) { m_timezoneOffsetHasBeenSet = true; m_timezoneOffset = std::move(value); }
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline void SetTimezoneOffset(const char* value) { m_timezoneOffsetHasBeenSet = true; m_timezoneOffset.assign(value); }
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline DatetimeOptions& WithTimezoneOffset(const Aws::String& value) { SetTimezoneOffset(value); return *this;}
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline DatetimeOptions& WithTimezoneOffset(Aws::String&& value) { SetTimezoneOffset(std::move(value)); return *this;}
 
     /**
      * <p>Optional value for a timezone offset of the datetime parameter value in the
-     * S3 path. Shouldn't be used if Format for this parameter includes timezone
+     * Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone
      * fields. If no offset specified, UTC is assumed.</p>
      */
     inline DatetimeOptions& WithTimezoneOffset(const char* value) { SetTimezoneOffset(value); return *this;}

@@ -271,25 +271,46 @@ namespace Model
     inline DescribeCompilationJobResult& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline const Aws::String& GetInferenceImage() const{ return m_inferenceImage; }
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline void SetInferenceImage(const Aws::String& value) { m_inferenceImage = value; }
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline void SetInferenceImage(Aws::String&& value) { m_inferenceImage = std::move(value); }
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline void SetInferenceImage(const char* value) { m_inferenceImage.assign(value); }
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline DescribeCompilationJobResult& WithInferenceImage(const Aws::String& value) { SetInferenceImage(value); return *this;}
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline DescribeCompilationJobResult& WithInferenceImage(Aws::String&& value) { SetInferenceImage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The inference image to use when compiling a model. Specify an image only if
+     * the target device is a cloud instance.</p>
+     */
     inline DescribeCompilationJobResult& WithInferenceImage(const char* value) { SetInferenceImage(value); return *this;}
 
 

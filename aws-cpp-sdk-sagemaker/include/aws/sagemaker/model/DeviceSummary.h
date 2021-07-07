@@ -205,50 +205,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline const Aws::String& GetIotThingName() const{ return m_iotThingName; }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline bool IotThingNameHasBeenSet() const { return m_iotThingNameHasBeenSet; }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline void SetIotThingName(const Aws::String& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = value; }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline void SetIotThingName(Aws::String&& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = std::move(value); }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline void SetIotThingName(const char* value) { m_iotThingNameHasBeenSet = true; m_iotThingName.assign(value); }
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline DeviceSummary& WithIotThingName(const Aws::String& value) { SetIotThingName(value); return *this;}
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline DeviceSummary& WithIotThingName(Aws::String&& value) { SetIotThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Internet of Things (IoT) object thing name associated with the
-     * device..</p>
+     * <p>The Amazon Web Services Internet of Things (IoT) object thing name associated
+     * with the device..</p>
      */
     inline DeviceSummary& WithIotThingName(const char* value) { SetIotThingName(value); return *this;}
 

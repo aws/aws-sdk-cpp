@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides details about the location of an occurrence of sensitive data in a
-   * Microsoft Word document or non-binary text file.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the location of an occurrence of sensitive data in a non-binary
+   * text file, such as an HTML, TXT, or XML file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range">AWS API
    * Reference</a></p>
    */
@@ -87,26 +87,30 @@ namespace Model
 
 
     /**
-     * <p>The column number for the column that contains the data, if the file contains
-     * structured data.</p>
+     * <p>The number of characters, with spaces and starting from 1, from the beginning
+     * of the first line that contains the sensitive data (start) to the beginning of
+     * the sensitive data.</p>
      */
     inline long long GetStartColumn() const{ return m_startColumn; }
 
     /**
-     * <p>The column number for the column that contains the data, if the file contains
-     * structured data.</p>
+     * <p>The number of characters, with spaces and starting from 1, from the beginning
+     * of the first line that contains the sensitive data (start) to the beginning of
+     * the sensitive data.</p>
      */
     inline bool StartColumnHasBeenSet() const { return m_startColumnHasBeenSet; }
 
     /**
-     * <p>The column number for the column that contains the data, if the file contains
-     * structured data.</p>
+     * <p>The number of characters, with spaces and starting from 1, from the beginning
+     * of the first line that contains the sensitive data (start) to the beginning of
+     * the sensitive data.</p>
      */
     inline void SetStartColumn(long long value) { m_startColumnHasBeenSet = true; m_startColumn = value; }
 
     /**
-     * <p>The column number for the column that contains the data, if the file contains
-     * structured data.</p>
+     * <p>The number of characters, with spaces and starting from 1, from the beginning
+     * of the first line that contains the sensitive data (start) to the beginning of
+     * the sensitive data.</p>
      */
     inline Range& WithStartColumn(long long value) { SetStartColumn(value); return *this;}
 

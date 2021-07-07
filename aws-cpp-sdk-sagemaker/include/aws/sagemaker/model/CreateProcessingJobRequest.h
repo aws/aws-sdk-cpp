@@ -125,50 +125,50 @@ namespace Model
 
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetProcessingJobName() const{ return m_processingJobName; }
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline bool ProcessingJobNameHasBeenSet() const { return m_processingJobNameHasBeenSet; }
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline void SetProcessingJobName(const Aws::String& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = value; }
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline void SetProcessingJobName(Aws::String&& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = std::move(value); }
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline void SetProcessingJobName(const char* value) { m_processingJobNameHasBeenSet = true; m_processingJobName.assign(value); }
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingJobName(const Aws::String& value) { SetProcessingJobName(value); return *this;}
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingJobName(Aws::String&& value) { SetProcessingJobName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p> The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline CreateProcessingJobRequest& WithProcessingJobName(const char* value) { SetProcessingJobName(value); return *this;}
 
@@ -452,64 +452,64 @@ namespace Model
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateProcessingJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateProcessingJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateProcessingJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateProcessingJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

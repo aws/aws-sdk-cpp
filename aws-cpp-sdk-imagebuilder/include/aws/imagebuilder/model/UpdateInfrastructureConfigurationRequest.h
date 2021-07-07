@@ -192,145 +192,153 @@ namespace Model
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline bool InstanceProfileNameHasBeenSet() const { return m_instanceProfileNameHasBeenSet; }
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::move(value); }
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
 
     /**
      * <p>The instance profile to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
 
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The security group IDs to associate with the instance used to customize your
-     * EC2 AMI.</p>
+     * Amazon EC2 AMI.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+     * <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI
+     * in.</p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

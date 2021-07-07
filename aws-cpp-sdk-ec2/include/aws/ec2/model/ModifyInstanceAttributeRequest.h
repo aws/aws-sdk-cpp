@@ -762,43 +762,49 @@ namespace Model
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline const BlobAttributeValue& GetUserData() const{ return m_userData; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(const BlobAttributeValue& value) { SetUserData(value); return *this;}
 
     /**
      * <p>Changes the instance's user data to the specified value. If you are using an
-     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
-     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     * Amazon Web Services SDK or command line tool, base64-encoding is performed for
+     * you, and you can load the text from a file. Otherwise, you must provide
+     * base64-encoded text.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(std::move(value)); return *this;}
 

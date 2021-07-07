@@ -80,103 +80,103 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline EdgeOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline EdgeOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline EdgeOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline const EdgePresetDeploymentType& GetPresetDeploymentType() const{ return m_presetDeploymentType; }
 
     /**
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline bool PresetDeploymentTypeHasBeenSet() const { return m_presetDeploymentTypeHasBeenSet; }
 
     /**
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline void SetPresetDeploymentType(const EdgePresetDeploymentType& value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = value; }
 
     /**
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline void SetPresetDeploymentType(EdgePresetDeploymentType&& value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = std::move(value); }
 
     /**
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline EdgeOutputConfig& WithPresetDeploymentType(const EdgePresetDeploymentType& value) { SetPresetDeploymentType(value); return *this;}
 
     /**
      * <p>The deployment type SageMaker Edge Manager will create. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline EdgeOutputConfig& WithPresetDeploymentType(EdgePresetDeploymentType&& value) { SetPresetDeploymentType(std::move(value)); return *this;}
 
@@ -189,8 +189,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -211,8 +211,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -233,8 +233,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -255,8 +255,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -277,8 +277,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -299,8 +299,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -321,8 +321,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>
@@ -343,8 +343,8 @@ namespace Model
      * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
      * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
      * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
-     * (optional) - The version of the component.</p>  <p>AWS IoT Greengrass uses
-     * semantic versions for components. Semantic versions follow a<i>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
      * major.minor.patch</i> number system. For example, version 1.0.0 represents the
      * first major release for a component. For more information, see the <a
      * href="https://semver.org/">semantic version specification</a>.</p>  </li>

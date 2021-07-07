@@ -60,7 +60,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_capacityRebalanceHasBeenSet(false),
     m_warmPoolConfigurationHasBeenSet(false),
     m_warmPoolSize(0),
-    m_warmPoolSizeHasBeenSet(false)
+    m_warmPoolSizeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -104,7 +105,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_capacityRebalanceHasBeenSet(false),
     m_warmPoolConfigurationHasBeenSet(false),
     m_warmPoolSize(0),
-    m_warmPoolSizeHasBeenSet(false)
+    m_warmPoolSizeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -343,6 +345,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_warmPoolSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(warmPoolSizeNode.GetText()).c_str()).c_str());
       m_warmPoolSizeHasBeenSet = true;
     }
+    XmlNode contextNode = resultNode.FirstChild("Context");
+    if(!contextNode.IsNull())
+    {
+      m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
+      m_contextHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -546,6 +554,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".WarmPoolSize=" << m_warmPoolSize << "&";
   }
 
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -715,6 +728,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_warmPoolSizeHasBeenSet)
   {
       oStream << location << ".WarmPoolSize=" << m_warmPoolSize << "&";
+  }
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 }
 

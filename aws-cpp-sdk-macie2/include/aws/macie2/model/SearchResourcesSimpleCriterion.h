@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a property-based filter condition that determines which AWS
-   * resources are included or excluded from the query results.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies a property-based filter condition that determines which Amazon Web
+   * Services resources are included or excluded from the query
+   * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesSimpleCriterion">AWS
    * API Reference</a></p>
    */
@@ -114,9 +114,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -132,9 +132,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -150,9 +150,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -168,9 +168,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -186,9 +186,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -204,9 +204,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -222,9 +222,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -240,9 +240,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A
@@ -258,9 +258,9 @@ namespace Model
      * <p>An array that lists one or more values to use in the condition. If you
      * specify multiple values, Amazon Macie uses OR logic to join the values. Valid
      * values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A
-     * string that represents the unique identifier for the AWS account that owns the
-     * resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that
-     * represents an enumerated value that Macie defines for the <a
+     * string that represents the unique identifier for the Amazon Web Services account
+     * that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A
+     * string that represents an enumerated value that Macie defines for the <a
      * href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a>
      * property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that
      * represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A

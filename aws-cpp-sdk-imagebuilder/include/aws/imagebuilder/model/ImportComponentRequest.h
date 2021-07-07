@@ -398,66 +398,66 @@ namespace Model
 
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline ImportComponentRequest& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline ImportComponentRequest& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
 
     /**
-     * <p>The uri of the component. Must be an S3 URL and the requester must have
-     * permission to access the S3 bucket. If you use S3, you can specify component
-     * content up to your service quota. Either <code>data</code> or <code>uri</code>
-     * can be used to specify the data within the component.</p>
+     * <p>The uri of the component. Must be an Amazon S3 URL and the requester must
+     * have permission to access the Amazon S3 bucket. If you use Amazon S3, you can
+     * specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.</p>
      */
     inline ImportComponentRequest& WithUri(const char* value) { SetUri(value); return *this;}
 

@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a tag-based filter condition that determines which AWS resources
-   * are included or excluded from the query results.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a tag-based filter condition that determines which Amazon Web
+   * Services resources are included or excluded from the query
+   * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesTagCriterion">AWS
    * API Reference</a></p>
    */

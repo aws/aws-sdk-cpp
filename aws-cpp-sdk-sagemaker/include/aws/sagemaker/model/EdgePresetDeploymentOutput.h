@@ -42,37 +42,37 @@ namespace Model
 
     /**
      * <p>The deployment type created by SageMaker Edge Manager. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline const EdgePresetDeploymentType& GetType() const{ return m_type; }
 
     /**
      * <p>The deployment type created by SageMaker Edge Manager. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The deployment type created by SageMaker Edge Manager. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline void SetType(const EdgePresetDeploymentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The deployment type created by SageMaker Edge Manager. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline void SetType(EdgePresetDeploymentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The deployment type created by SageMaker Edge Manager. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline EdgePresetDeploymentOutput& WithType(const EdgePresetDeploymentType& value) { SetType(value); return *this;}
 
     /**
      * <p>The deployment type created by SageMaker Edge Manager. Currently only
-     * supports AWS IoT Greengrass Version 2 components.</p>
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
      */
     inline EdgePresetDeploymentOutput& WithType(EdgePresetDeploymentType&& value) { SetType(std::move(value)); return *this;}
 

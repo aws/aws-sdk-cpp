@@ -30,7 +30,8 @@ namespace Model
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
     ConfigurationConflict,
-    AdmissionRequestDenied
+    AdmissionRequestDenied,
+    UnsupportedAddonModification
   };
 
 namespace ErrorCodeMapper

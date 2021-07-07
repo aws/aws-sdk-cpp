@@ -87,25 +87,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * <p>The maximum size of a deployment package when it's uploaded directly to
      * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline long long GetCodeSizeZipped() const{ return m_codeSizeZipped; }
 
     /**
-     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * <p>The maximum size of a deployment package when it's uploaded directly to
      * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline bool CodeSizeZippedHasBeenSet() const { return m_codeSizeZippedHasBeenSet; }
 
     /**
-     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * <p>The maximum size of a deployment package when it's uploaded directly to
      * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline void SetCodeSizeZipped(long long value) { m_codeSizeZippedHasBeenSet = true; m_codeSizeZipped = value; }
 
     /**
-     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * <p>The maximum size of a deployment package when it's uploaded directly to
      * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline AccountLimit& WithCodeSizeZipped(long long value) { SetCodeSizeZipped(value); return *this;}

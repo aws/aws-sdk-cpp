@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>Represents a dataset paramater that defines type and conditions for a
-   * parameter in the S3 path of the dataset.</p><p><h3>See Also:</h3>   <a
+   * parameter in the Amazon S3 path of the dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatasetParameter">AWS
    * API Reference</a></p>
    */
@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline DatasetParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline DatasetParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the parameter that is used in the dataset's S3 path.</p>
+     * <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
      */
     inline DatasetParameter& WithName(const char* value) { SetName(value); return *this;}
 
@@ -158,25 +158,25 @@ namespace Model
 
     /**
      * <p>Optional boolean value that defines whether the captured value of this
-     * parameter should be loaded as an additional column in the dataset.</p>
+     * parameter should be used to create a new column in a dataset.</p>
      */
     inline bool GetCreateColumn() const{ return m_createColumn; }
 
     /**
      * <p>Optional boolean value that defines whether the captured value of this
-     * parameter should be loaded as an additional column in the dataset.</p>
+     * parameter should be used to create a new column in a dataset.</p>
      */
     inline bool CreateColumnHasBeenSet() const { return m_createColumnHasBeenSet; }
 
     /**
      * <p>Optional boolean value that defines whether the captured value of this
-     * parameter should be loaded as an additional column in the dataset.</p>
+     * parameter should be used to create a new column in a dataset.</p>
      */
     inline void SetCreateColumn(bool value) { m_createColumnHasBeenSet = true; m_createColumn = value; }
 
     /**
      * <p>Optional boolean value that defines whether the captured value of this
-     * parameter should be loaded as an additional column in the dataset.</p>
+     * parameter should be used to create a new column in a dataset.</p>
      */
     inline DatasetParameter& WithCreateColumn(bool value) { SetCreateColumn(value); return *this;}
 

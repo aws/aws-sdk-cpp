@@ -768,8 +768,9 @@ namespace Model
         virtual void DeregisterTargetsAsync(const Model::DeregisterTargetsRequest& request, const DeregisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the current Elastic Load Balancing resource limits for your AWS
-         * account.</p> <p>For more information, see the following:</p> <ul> <li> <p> <a
+         * <p>Describes the current Elastic Load Balancing resource limits for your Amazon
+         * Web Services account.</p> <p>For more information, see the following:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
          * for your Application Load Balancers</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
@@ -782,8 +783,9 @@ namespace Model
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * <p>Describes the current Elastic Load Balancing resource limits for your AWS
-         * account.</p> <p>For more information, see the following:</p> <ul> <li> <p> <a
+         * <p>Describes the current Elastic Load Balancing resource limits for your Amazon
+         * Web Services account.</p> <p>For more information, see the following:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
          * for your Application Load Balancers</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
@@ -798,8 +800,9 @@ namespace Model
         virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * <p>Describes the current Elastic Load Balancing resource limits for your AWS
-         * account.</p> <p>For more information, see the following:</p> <ul> <li> <p> <a
+         * <p>Describes the current Elastic Load Balancing resource limits for your Amazon
+         * Web Services account.</p> <p>For more information, see the following:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
          * for your Application Load Balancers</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas

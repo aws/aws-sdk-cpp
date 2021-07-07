@@ -20,7 +20,6 @@ namespace Aws
       namespace ReplicationConfigurationEbsEncryptionMapper
       {
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
@@ -28,11 +27,7 @@ namespace Aws
         ReplicationConfigurationEbsEncryption GetReplicationConfigurationEbsEncryptionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NONE_HASH)
-          {
-            return ReplicationConfigurationEbsEncryption::NONE;
-          }
-          else if (hashCode == DEFAULT_HASH)
+          if (hashCode == DEFAULT_HASH)
           {
             return ReplicationConfigurationEbsEncryption::DEFAULT;
           }
@@ -54,8 +49,6 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ReplicationConfigurationEbsEncryption::NONE:
-            return "NONE";
           case ReplicationConfigurationEbsEncryption::DEFAULT:
             return "DEFAULT";
           case ReplicationConfigurationEbsEncryption::CUSTOM:

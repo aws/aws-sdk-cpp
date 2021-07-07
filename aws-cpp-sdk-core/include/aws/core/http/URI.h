@@ -108,6 +108,8 @@ namespace Aws
 
             /**
              * Add a path segment to the uri.
+             * Leading slashes and trailing slashes will be removed.
+             * Use AddPathSegments() to enable trailing slashes.
              */
             template<typename T>
             inline void AddPathSegment(T pathSegment)
@@ -118,6 +120,7 @@ namespace Aws
                 segment.erase(0, segment.find_first_not_of('/'));
                 segment.erase(segment.find_last_not_of('/') + 1);
                 m_pathSegments.push_back(segment);
+                m_pathHasTrailingSlash = false;
             }
 
             /**
@@ -128,10 +131,12 @@ namespace Aws
             {
                 Aws::StringStream ss;
                 ss << pathSegments;
-                for (const auto& segment : Aws::Utils::StringUtils::Split(ss.str(), '/'))
+                Aws::String segments = ss.str();
+                for (const auto& segment : Aws::Utils::StringUtils::Split(segments, '/'))
                 {
                     m_pathSegments.push_back(segment);
                 }
+                m_pathHasTrailingSlash = (!segments.empty() && segments.back() == '/');
             }
 
             /**
@@ -196,6 +201,7 @@ namespace Aws
             Aws::String m_authority;
             uint16_t m_port;
             Aws::Vector<Aws::String> m_pathSegments;
+            bool m_pathHasTrailingSlash;
             Aws::String m_queryString;
         };
 

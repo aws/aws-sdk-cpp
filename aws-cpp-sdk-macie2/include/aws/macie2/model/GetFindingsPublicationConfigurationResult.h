@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>The configuration settings that determine which findings are published to AWS
+     * <p>The configuration settings that determine which findings are published to
      * Security Hub.</p>
      */
     inline const SecurityHubConfiguration& GetSecurityHubConfiguration() const{ return m_securityHubConfiguration; }
 
     /**
-     * <p>The configuration settings that determine which findings are published to AWS
+     * <p>The configuration settings that determine which findings are published to
      * Security Hub.</p>
      */
     inline void SetSecurityHubConfiguration(const SecurityHubConfiguration& value) { m_securityHubConfiguration = value; }
 
     /**
-     * <p>The configuration settings that determine which findings are published to AWS
+     * <p>The configuration settings that determine which findings are published to
      * Security Hub.</p>
      */
     inline void SetSecurityHubConfiguration(SecurityHubConfiguration&& value) { m_securityHubConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration settings that determine which findings are published to AWS
+     * <p>The configuration settings that determine which findings are published to
      * Security Hub.</p>
      */
     inline GetFindingsPublicationConfigurationResult& WithSecurityHubConfiguration(const SecurityHubConfiguration& value) { SetSecurityHubConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration settings that determine which findings are published to AWS
+     * <p>The configuration settings that determine which findings are published to
      * Security Hub.</p>
      */
     inline GetFindingsPublicationConfigurationResult& WithSecurityHubConfiguration(SecurityHubConfiguration&& value) { SetSecurityHubConfiguration(std::move(value)); return *this;}

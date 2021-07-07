@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Specifies criteria for sorting the results of a query for information about
-   * AWS resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3> 
-   * <a
+   * Amazon Web Services resources that Amazon Macie monitors and
+   * analyzes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesSortCriteria">AWS
    * API Reference</a></p>
    */

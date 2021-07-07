@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an AWS Identity and Access Management (IAM) user
-   * who performed an action on an affected resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about an Identity and Access Management (IAM) user who
+   * performed an action on an affected resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IamUser">AWS API
    * Reference</a></p>
    */
@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline IamUser& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline IamUser& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that's associated with the IAM user
-     * who performed the action.</p>
+     * <p>The unique identifier for the Amazon Web Services account that's associated
+     * with the IAM user who performed the action.</p>
      */
     inline IamUser& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

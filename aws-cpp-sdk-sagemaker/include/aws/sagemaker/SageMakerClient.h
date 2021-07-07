@@ -1275,19 +1275,19 @@ namespace Model
          * configurations, and endpoints.</p> <p>Each tag consists of a key and an optional
          * value. Tag keys must be unique per resource. For more information about tags,
          * see For more information, see <a
-         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-         * Tagging Strategies</a>.</p>  <p>Tags that you add to a hyperparameter
-         * tuning job by calling this API are also added to any training jobs that the
-         * hyperparameter tuning job launches after you call this API, but not to training
-         * jobs that the hyperparameter tuning job launched before you called this API. To
-         * make sure that the tags associated with a hyperparameter tuning job are also
-         * added to all training jobs that the hyperparameter tuning job launches, add the
-         * tags when you first create the tuning job by specifying them in the
-         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p> 
-         *  <p>Tags that you add to a SageMaker Studio Domain or User Profile by
-         * calling this API are also added to any Apps that the Domain or User Profile
-         * launches after you call this API, but not to Apps that the Domain or User
-         * Profile launched before you called this API. To make sure that the tags
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Amazon
+         * Web Services Tagging Strategies</a>.</p>  <p>Tags that you add to a
+         * hyperparameter tuning job by calling this API are also added to any training
+         * jobs that the hyperparameter tuning job launches after you call this API, but
+         * not to training jobs that the hyperparameter tuning job launched before you
+         * called this API. To make sure that the tags associated with a hyperparameter
+         * tuning job are also added to all training jobs that the hyperparameter tuning
+         * job launches, add the tags when you first create the tuning job by specifying
+         * them in the <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a>
+         * </p>   <p>Tags that you add to a SageMaker Studio Domain or User
+         * Profile by calling this API are also added to any Apps that the Domain or User
+         * Profile launches after you call this API, but not to Apps that the Domain or
+         * User Profile launched before you called this API. To make sure that the tags
          * associated with a Domain or User Profile are also added to all Apps that the
          * Domain or User Profile launches, add the tags when you first create the Domain
          * or User Profile by specifying them in the <code>Tags</code> parameter of
@@ -1305,19 +1305,19 @@ namespace Model
          * configurations, and endpoints.</p> <p>Each tag consists of a key and an optional
          * value. Tag keys must be unique per resource. For more information about tags,
          * see For more information, see <a
-         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-         * Tagging Strategies</a>.</p>  <p>Tags that you add to a hyperparameter
-         * tuning job by calling this API are also added to any training jobs that the
-         * hyperparameter tuning job launches after you call this API, but not to training
-         * jobs that the hyperparameter tuning job launched before you called this API. To
-         * make sure that the tags associated with a hyperparameter tuning job are also
-         * added to all training jobs that the hyperparameter tuning job launches, add the
-         * tags when you first create the tuning job by specifying them in the
-         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p> 
-         *  <p>Tags that you add to a SageMaker Studio Domain or User Profile by
-         * calling this API are also added to any Apps that the Domain or User Profile
-         * launches after you call this API, but not to Apps that the Domain or User
-         * Profile launched before you called this API. To make sure that the tags
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Amazon
+         * Web Services Tagging Strategies</a>.</p>  <p>Tags that you add to a
+         * hyperparameter tuning job by calling this API are also added to any training
+         * jobs that the hyperparameter tuning job launches after you call this API, but
+         * not to training jobs that the hyperparameter tuning job launched before you
+         * called this API. To make sure that the tags associated with a hyperparameter
+         * tuning job are also added to all training jobs that the hyperparameter tuning
+         * job launches, add the tags when you first create the tuning job by specifying
+         * them in the <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a>
+         * </p>   <p>Tags that you add to a SageMaker Studio Domain or User
+         * Profile by calling this API are also added to any Apps that the Domain or User
+         * Profile launches after you call this API, but not to Apps that the Domain or
+         * User Profile launched before you called this API. To make sure that the tags
          * associated with a Domain or User Profile are also added to all Apps that the
          * Domain or User Profile launches, add the tags when you first create the Domain
          * or User Profile by specifying them in the <code>Tags</code> parameter of
@@ -1337,19 +1337,19 @@ namespace Model
          * configurations, and endpoints.</p> <p>Each tag consists of a key and an optional
          * value. Tag keys must be unique per resource. For more information about tags,
          * see For more information, see <a
-         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-         * Tagging Strategies</a>.</p>  <p>Tags that you add to a hyperparameter
-         * tuning job by calling this API are also added to any training jobs that the
-         * hyperparameter tuning job launches after you call this API, but not to training
-         * jobs that the hyperparameter tuning job launched before you called this API. To
-         * make sure that the tags associated with a hyperparameter tuning job are also
-         * added to all training jobs that the hyperparameter tuning job launches, add the
-         * tags when you first create the tuning job by specifying them in the
-         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p> 
-         *  <p>Tags that you add to a SageMaker Studio Domain or User Profile by
-         * calling this API are also added to any Apps that the Domain or User Profile
-         * launches after you call this API, but not to Apps that the Domain or User
-         * Profile launched before you called this API. To make sure that the tags
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Amazon
+         * Web Services Tagging Strategies</a>.</p>  <p>Tags that you add to a
+         * hyperparameter tuning job by calling this API are also added to any training
+         * jobs that the hyperparameter tuning job launches after you call this API, but
+         * not to training jobs that the hyperparameter tuning job launched before you
+         * called this API. To make sure that the tags associated with a hyperparameter
+         * tuning job are also added to all training jobs that the hyperparameter tuning
+         * job launches, add the tags when you first create the tuning job by specifying
+         * them in the <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a>
+         * </p>   <p>Tags that you add to a SageMaker Studio Domain or User
+         * Profile by calling this API are also added to any Apps that the Domain or User
+         * Profile launches after you call this API, but not to Apps that the Domain or
+         * User Profile launched before you called this API. To make sure that the tags
          * associated with a Domain or User Profile are also added to all Apps that the
          * Domain or User Profile launches, add the tags when you first create the Domain
          * or User Profile by specifying them in the <code>Tags</code> parameter of
@@ -1447,7 +1447,7 @@ namespace Model
 
         /**
          * <p>Create a machine learning algorithm that you can use in Amazon SageMaker and
-         * list in the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
+         * list in the Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAlgorithm">AWS
          * API Reference</a></p>
          */
@@ -1455,7 +1455,7 @@ namespace Model
 
         /**
          * <p>Create a machine learning algorithm that you can use in Amazon SageMaker and
-         * list in the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
+         * list in the Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAlgorithm">AWS
          * API Reference</a></p>
          *
@@ -1465,7 +1465,7 @@ namespace Model
 
         /**
          * <p>Create a machine learning algorithm that you can use in Amazon SageMaker and
-         * list in the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
+         * list in the Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAlgorithm">AWS
          * API Reference</a></p>
          *
@@ -1641,8 +1641,9 @@ namespace Model
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
-         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-         * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+         * Web Services CodeCommit</a> or in any other Git repository.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
          */
@@ -1656,8 +1657,9 @@ namespace Model
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
-         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-         * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+         * Web Services CodeCommit</a> or in any other Git repository.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
          *
@@ -1673,8 +1675,9 @@ namespace Model
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
-         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-         * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+         * Web Services CodeCommit</a> or in any other Git repository.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
          *
@@ -1687,18 +1690,18 @@ namespace Model
          * SageMaker saves the resulting model artifacts to an Amazon Simple Storage
          * Service (Amazon S3) bucket that you specify. </p> <p>If you choose to host your
          * model using Amazon SageMaker hosting services, you can use the resulting model
-         * artifacts as part of the model. You can also use the artifacts with AWS IoT
-         * Greengrass. In that case, deploy them as an ML resource.</p> <p>In the request
-         * body, you provide the following:</p> <ul> <li> <p>A name for the compilation
-         * job</p> </li> <li> <p> Information about the input model artifacts </p> </li>
-         * <li> <p>The output location for the compiled model and the device (target) that
-         * the model runs on </p> </li> <li> <p>The Amazon Resource Name (ARN) of the IAM
-         * role that Amazon SageMaker assumes to perform the model compilation job. </p>
-         * </li> </ul> <p>You can also provide a <code>Tag</code> to track the model
-         * compilation job's resource use and costs. The response body contains the
-         * <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
-         * compilation job, use <a>StopCompilationJob</a>. To get information about a
-         * particular model compilation job, use <a>DescribeCompilationJob</a>. To get
+         * artifacts as part of the model. You can also use the artifacts with Amazon Web
+         * Services IoT Greengrass. In that case, deploy them as an ML resource.</p> <p>In
+         * the request body, you provide the following:</p> <ul> <li> <p>A name for the
+         * compilation job</p> </li> <li> <p> Information about the input model artifacts
+         * </p> </li> <li> <p>The output location for the compiled model and the device
+         * (target) that the model runs on </p> </li> <li> <p>The Amazon Resource Name
+         * (ARN) of the IAM role that Amazon SageMaker assumes to perform the model
+         * compilation job. </p> </li> </ul> <p>You can also provide a <code>Tag</code> to
+         * track the model compilation job's resource use and costs. The response body
+         * contains the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop
+         * a model compilation job, use <a>StopCompilationJob</a>. To get information about
+         * a particular model compilation job, use <a>DescribeCompilationJob</a>. To get
          * information about multiple model compilation jobs, use
          * <a>ListCompilationJobs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">AWS
@@ -1711,18 +1714,18 @@ namespace Model
          * SageMaker saves the resulting model artifacts to an Amazon Simple Storage
          * Service (Amazon S3) bucket that you specify. </p> <p>If you choose to host your
          * model using Amazon SageMaker hosting services, you can use the resulting model
-         * artifacts as part of the model. You can also use the artifacts with AWS IoT
-         * Greengrass. In that case, deploy them as an ML resource.</p> <p>In the request
-         * body, you provide the following:</p> <ul> <li> <p>A name for the compilation
-         * job</p> </li> <li> <p> Information about the input model artifacts </p> </li>
-         * <li> <p>The output location for the compiled model and the device (target) that
-         * the model runs on </p> </li> <li> <p>The Amazon Resource Name (ARN) of the IAM
-         * role that Amazon SageMaker assumes to perform the model compilation job. </p>
-         * </li> </ul> <p>You can also provide a <code>Tag</code> to track the model
-         * compilation job's resource use and costs. The response body contains the
-         * <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
-         * compilation job, use <a>StopCompilationJob</a>. To get information about a
-         * particular model compilation job, use <a>DescribeCompilationJob</a>. To get
+         * artifacts as part of the model. You can also use the artifacts with Amazon Web
+         * Services IoT Greengrass. In that case, deploy them as an ML resource.</p> <p>In
+         * the request body, you provide the following:</p> <ul> <li> <p>A name for the
+         * compilation job</p> </li> <li> <p> Information about the input model artifacts
+         * </p> </li> <li> <p>The output location for the compiled model and the device
+         * (target) that the model runs on </p> </li> <li> <p>The Amazon Resource Name
+         * (ARN) of the IAM role that Amazon SageMaker assumes to perform the model
+         * compilation job. </p> </li> </ul> <p>You can also provide a <code>Tag</code> to
+         * track the model compilation job's resource use and costs. The response body
+         * contains the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop
+         * a model compilation job, use <a>StopCompilationJob</a>. To get information about
+         * a particular model compilation job, use <a>DescribeCompilationJob</a>. To get
          * information about multiple model compilation jobs, use
          * <a>ListCompilationJobs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">AWS
@@ -1737,18 +1740,18 @@ namespace Model
          * SageMaker saves the resulting model artifacts to an Amazon Simple Storage
          * Service (Amazon S3) bucket that you specify. </p> <p>If you choose to host your
          * model using Amazon SageMaker hosting services, you can use the resulting model
-         * artifacts as part of the model. You can also use the artifacts with AWS IoT
-         * Greengrass. In that case, deploy them as an ML resource.</p> <p>In the request
-         * body, you provide the following:</p> <ul> <li> <p>A name for the compilation
-         * job</p> </li> <li> <p> Information about the input model artifacts </p> </li>
-         * <li> <p>The output location for the compiled model and the device (target) that
-         * the model runs on </p> </li> <li> <p>The Amazon Resource Name (ARN) of the IAM
-         * role that Amazon SageMaker assumes to perform the model compilation job. </p>
-         * </li> </ul> <p>You can also provide a <code>Tag</code> to track the model
-         * compilation job's resource use and costs. The response body contains the
-         * <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
-         * compilation job, use <a>StopCompilationJob</a>. To get information about a
-         * particular model compilation job, use <a>DescribeCompilationJob</a>. To get
+         * artifacts as part of the model. You can also use the artifacts with Amazon Web
+         * Services IoT Greengrass. In that case, deploy them as an ML resource.</p> <p>In
+         * the request body, you provide the following:</p> <ul> <li> <p>A name for the
+         * compilation job</p> </li> <li> <p> Information about the input model artifacts
+         * </p> </li> <li> <p>The output location for the compiled model and the device
+         * (target) that the model runs on </p> </li> <li> <p>The Amazon Resource Name
+         * (ARN) of the IAM role that Amazon SageMaker assumes to perform the model
+         * compilation job. </p> </li> </ul> <p>You can also provide a <code>Tag</code> to
+         * track the model compilation job's resource use and costs. The response body
+         * contains the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop
+         * a model compilation job, use <a>StopCompilationJob</a>. To get information about
+         * a particular model compilation job, use <a>DescribeCompilationJob</a>. To get
          * information about multiple model compilation jobs, use
          * <a>ListCompilationJobs</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">AWS
@@ -1870,15 +1873,16 @@ namespace Model
          * <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain
          * consists of an associated Amazon Elastic File System (EFS) volume, a list of
          * authorized users, and a variety of security, application, policy, and Amazon
-         * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one
-         * domain per region. Users within a domain can share notebook files and other
-         * artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a domain is
-         * created, an EFS volume is created for use by all of the users within the domain.
-         * Each user receives a private home directory within the EFS volume for notebooks,
-         * Git repositories, and data files.</p> <p>SageMaker uses the AWS Key Management
-         * Service (AWS KMS) to encrypt the EFS volume attached to the domain with an AWS
-         * managed customer master key (CMK) by default. For more control, you can specify
-         * a customer managed CMK. For more information, see <a
+         * Virtual Private Cloud (VPC) configurations. An Amazon Web Services account is
+         * limited to one domain per region. Users within a domain can share notebook files
+         * and other artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a
+         * domain is created, an EFS volume is created for use by all of the users within
+         * the domain. Each user receives a private home directory within the EFS volume
+         * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
+         * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
+         * the EFS volume attached to the domain with an Amazon Web Services managed
+         * customer master key (CMK) by default. For more control, you can specify a
+         * customer managed CMK. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the
@@ -1894,7 +1898,9 @@ namespace Model
          * disabled, you won't be able to run a Studio notebook or to train or host models
          * unless your VPC has an interface endpoint to the SageMaker API and runtime or a
          * NAT gateway and your security groups allow outbound connections.</p> </li> </ul>
-         * <p>For more information, see <a
+         *  <p>NFS traffic over TCP on port 2049 needs to be allowed in both
+         * inbound and outbound rules in order to launch a SageMaker Studio app
+         * successfully.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
          * SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See Also:</h3>  
          * <a
@@ -1907,15 +1913,16 @@ namespace Model
          * <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain
          * consists of an associated Amazon Elastic File System (EFS) volume, a list of
          * authorized users, and a variety of security, application, policy, and Amazon
-         * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one
-         * domain per region. Users within a domain can share notebook files and other
-         * artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a domain is
-         * created, an EFS volume is created for use by all of the users within the domain.
-         * Each user receives a private home directory within the EFS volume for notebooks,
-         * Git repositories, and data files.</p> <p>SageMaker uses the AWS Key Management
-         * Service (AWS KMS) to encrypt the EFS volume attached to the domain with an AWS
-         * managed customer master key (CMK) by default. For more control, you can specify
-         * a customer managed CMK. For more information, see <a
+         * Virtual Private Cloud (VPC) configurations. An Amazon Web Services account is
+         * limited to one domain per region. Users within a domain can share notebook files
+         * and other artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a
+         * domain is created, an EFS volume is created for use by all of the users within
+         * the domain. Each user receives a private home directory within the EFS volume
+         * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
+         * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
+         * the EFS volume attached to the domain with an Amazon Web Services managed
+         * customer master key (CMK) by default. For more control, you can specify a
+         * customer managed CMK. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the
@@ -1931,7 +1938,9 @@ namespace Model
          * disabled, you won't be able to run a Studio notebook or to train or host models
          * unless your VPC has an interface endpoint to the SageMaker API and runtime or a
          * NAT gateway and your security groups allow outbound connections.</p> </li> </ul>
-         * <p>For more information, see <a
+         *  <p>NFS traffic over TCP on port 2049 needs to be allowed in both
+         * inbound and outbound rules in order to launch a SageMaker Studio app
+         * successfully.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
          * SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See Also:</h3>  
          * <a
@@ -1946,15 +1955,16 @@ namespace Model
          * <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain
          * consists of an associated Amazon Elastic File System (EFS) volume, a list of
          * authorized users, and a variety of security, application, policy, and Amazon
-         * Virtual Private Cloud (VPC) configurations. An AWS account is limited to one
-         * domain per region. Users within a domain can share notebook files and other
-         * artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a domain is
-         * created, an EFS volume is created for use by all of the users within the domain.
-         * Each user receives a private home directory within the EFS volume for notebooks,
-         * Git repositories, and data files.</p> <p>SageMaker uses the AWS Key Management
-         * Service (AWS KMS) to encrypt the EFS volume attached to the domain with an AWS
-         * managed customer master key (CMK) by default. For more control, you can specify
-         * a customer managed CMK. For more information, see <a
+         * Virtual Private Cloud (VPC) configurations. An Amazon Web Services account is
+         * limited to one domain per region. Users within a domain can share notebook files
+         * and other artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a
+         * domain is created, an EFS volume is created for use by all of the users within
+         * the domain. Each user receives a private home directory within the EFS volume
+         * for notebooks, Git repositories, and data files.</p> <p>SageMaker uses the
+         * Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt
+         * the EFS volume attached to the domain with an Amazon Web Services managed
+         * customer master key (CMK) by default. For more control, you can specify a
+         * customer managed CMK. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * SageMaker Studio traffic between the domain and the EFS volume is through the
@@ -1970,7 +1980,9 @@ namespace Model
          * disabled, you won't be able to run a Studio notebook or to train or host models
          * unless your VPC has an interface endpoint to the SageMaker API and runtime or a
          * NAT gateway and your security groups allow outbound connections.</p> </li> </ul>
-         * <p>For more information, see <a
+         *  <p>NFS traffic over TCP on port 2049 needs to be allowed in both
+         * inbound and outbound rules in order to launch a SageMaker Studio app
+         * successfully.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
          * SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See Also:</h3>  
          * <a
@@ -2023,17 +2035,18 @@ namespace Model
          * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
          * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p>  <p> You must not delete an <code>EndpointConfig</code> that
-         * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
-         * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
-         * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         *  <p>The endpoint name must be unique within an AWS Region in your AWS
-         * account. </p> <p>When it receives the request, Amazon SageMaker creates the
-         * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p>  <p>When you call <a>CreateEndpoint</a>, a load
-         * call is made to DynamoDB to verify that your endpoint configuration exists. When
-         * you read data from a DynamoDB table supporting <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p>  <p> You must not delete an
+         * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
+         * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
+         * being performed on the endpoint. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p>  <p>The endpoint name must be unique
+         * within an Amazon Web Services Region in your Amazon Web Services account. </p>
+         * <p>When it receives the request, Amazon SageMaker creates the endpoint, launches
+         * the resources (ML compute instances), and deploys the model(s) on them. </p>
+         *  <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB
+         * to verify that your endpoint configuration exists. When you read data from a
+         * DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2048,24 +2061,25 @@ namespace Model
          * <code>InService</code>. Amazon SageMaker can then process incoming requests for
          * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
          * API.</p> <p>If any of the models hosted at this endpoint get model data from an
-         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
-         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
-         * user account by default. If you previously deactivated AWS STS for a region, you
-         * need to reactivate AWS STS for that region. For more information, see <a
+         * Amazon S3 location, Amazon SageMaker uses Amazon Web Services Security Token
+         * Service to download model artifacts from the S3 path you provided. Amazon Web
+         * Services STS is activated in your IAM user account by default. If you previously
+         * deactivated Amazon Web Services STS for a region, you need to reactivate Amazon
+         * Web Services STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide</i>.</p>  <p> To add the IAM role policies for using
-         * this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM
-         * console</a>, and choose Roles in the left navigation pane. Search the IAM role
-         * that you want to grant access to use the <a>CreateEndpoint</a> and
-         * <a>CreateEndpointConfig</a> API operations, add the following policies to the
-         * role. </p> <ul> <li> <p>Option 1: For a full Amazon SageMaker access, search and
-         * attach the <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li>
-         * <p>Option 2: For granting a limited access to an IAM role, paste the following
-         * Action elements manually into the JSON file of the IAM role: </p> <p>
-         * <code>"Action": ["sagemaker:CreateEndpoint",
-         * "sagemaker:CreateEndpointConfig"]</code> </p> <p> <code>"Resource": [</code>
-         * </p> <p>
+         * and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+         *  <p> To add the IAM role policies for using this API operation, go to the
+         * <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles
+         * in the left navigation pane. Search the IAM role that you want to grant access
+         * to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API operations,
+         * add the following policies to the role. </p> <ul> <li> <p>Option 1: For a full
+         * Amazon SageMaker access, search and attach the
+         * <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li> <p>Option 2: For
+         * granting a limited access to an IAM role, paste the following Action elements
+         * manually into the JSON file of the IAM role: </p> <p> <code>"Action":
+         * ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code> </p> <p>
+         * <code>"Resource": [</code> </p> <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> </p>
          * <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
@@ -2086,17 +2100,18 @@ namespace Model
          * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
          * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p>  <p> You must not delete an <code>EndpointConfig</code> that
-         * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
-         * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
-         * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         *  <p>The endpoint name must be unique within an AWS Region in your AWS
-         * account. </p> <p>When it receives the request, Amazon SageMaker creates the
-         * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p>  <p>When you call <a>CreateEndpoint</a>, a load
-         * call is made to DynamoDB to verify that your endpoint configuration exists. When
-         * you read data from a DynamoDB table supporting <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p>  <p> You must not delete an
+         * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
+         * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
+         * being performed on the endpoint. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p>  <p>The endpoint name must be unique
+         * within an Amazon Web Services Region in your Amazon Web Services account. </p>
+         * <p>When it receives the request, Amazon SageMaker creates the endpoint, launches
+         * the resources (ML compute instances), and deploys the model(s) on them. </p>
+         *  <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB
+         * to verify that your endpoint configuration exists. When you read data from a
+         * DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2111,24 +2126,25 @@ namespace Model
          * <code>InService</code>. Amazon SageMaker can then process incoming requests for
          * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
          * API.</p> <p>If any of the models hosted at this endpoint get model data from an
-         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
-         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
-         * user account by default. If you previously deactivated AWS STS for a region, you
-         * need to reactivate AWS STS for that region. For more information, see <a
+         * Amazon S3 location, Amazon SageMaker uses Amazon Web Services Security Token
+         * Service to download model artifacts from the S3 path you provided. Amazon Web
+         * Services STS is activated in your IAM user account by default. If you previously
+         * deactivated Amazon Web Services STS for a region, you need to reactivate Amazon
+         * Web Services STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide</i>.</p>  <p> To add the IAM role policies for using
-         * this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM
-         * console</a>, and choose Roles in the left navigation pane. Search the IAM role
-         * that you want to grant access to use the <a>CreateEndpoint</a> and
-         * <a>CreateEndpointConfig</a> API operations, add the following policies to the
-         * role. </p> <ul> <li> <p>Option 1: For a full Amazon SageMaker access, search and
-         * attach the <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li>
-         * <p>Option 2: For granting a limited access to an IAM role, paste the following
-         * Action elements manually into the JSON file of the IAM role: </p> <p>
-         * <code>"Action": ["sagemaker:CreateEndpoint",
-         * "sagemaker:CreateEndpointConfig"]</code> </p> <p> <code>"Resource": [</code>
-         * </p> <p>
+         * and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+         *  <p> To add the IAM role policies for using this API operation, go to the
+         * <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles
+         * in the left navigation pane. Search the IAM role that you want to grant access
+         * to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API operations,
+         * add the following policies to the role. </p> <ul> <li> <p>Option 1: For a full
+         * Amazon SageMaker access, search and attach the
+         * <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li> <p>Option 2: For
+         * granting a limited access to an IAM role, paste the following Action elements
+         * manually into the JSON file of the IAM role: </p> <p> <code>"Action":
+         * ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code> </p> <p>
+         * <code>"Resource": [</code> </p> <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> </p>
          * <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
@@ -2151,17 +2167,18 @@ namespace Model
          * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
          * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p>  <p> You must not delete an <code>EndpointConfig</code> that
-         * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
-         * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
-         * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         *  <p>The endpoint name must be unique within an AWS Region in your AWS
-         * account. </p> <p>When it receives the request, Amazon SageMaker creates the
-         * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p>  <p>When you call <a>CreateEndpoint</a>, a load
-         * call is made to DynamoDB to verify that your endpoint configuration exists. When
-         * you read data from a DynamoDB table supporting <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p>  <p> You must not delete an
+         * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
+         * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
+         * being performed on the endpoint. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p>  <p>The endpoint name must be unique
+         * within an Amazon Web Services Region in your Amazon Web Services account. </p>
+         * <p>When it receives the request, Amazon SageMaker creates the endpoint, launches
+         * the resources (ML compute instances), and deploys the model(s) on them. </p>
+         *  <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB
+         * to verify that your endpoint configuration exists. When you read data from a
+         * DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2176,24 +2193,25 @@ namespace Model
          * <code>InService</code>. Amazon SageMaker can then process incoming requests for
          * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
          * API.</p> <p>If any of the models hosted at this endpoint get model data from an
-         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
-         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
-         * user account by default. If you previously deactivated AWS STS for a region, you
-         * need to reactivate AWS STS for that region. For more information, see <a
+         * Amazon S3 location, Amazon SageMaker uses Amazon Web Services Security Token
+         * Service to download model artifacts from the S3 path you provided. Amazon Web
+         * Services STS is activated in your IAM user account by default. If you previously
+         * deactivated Amazon Web Services STS for a region, you need to reactivate Amazon
+         * Web Services STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide</i>.</p>  <p> To add the IAM role policies for using
-         * this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM
-         * console</a>, and choose Roles in the left navigation pane. Search the IAM role
-         * that you want to grant access to use the <a>CreateEndpoint</a> and
-         * <a>CreateEndpointConfig</a> API operations, add the following policies to the
-         * role. </p> <ul> <li> <p>Option 1: For a full Amazon SageMaker access, search and
-         * attach the <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li>
-         * <p>Option 2: For granting a limited access to an IAM role, paste the following
-         * Action elements manually into the JSON file of the IAM role: </p> <p>
-         * <code>"Action": ["sagemaker:CreateEndpoint",
-         * "sagemaker:CreateEndpointConfig"]</code> </p> <p> <code>"Resource": [</code>
-         * </p> <p>
+         * and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in
+         * the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+         *  <p> To add the IAM role policies for using this API operation, go to the
+         * <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles
+         * in the left navigation pane. Search the IAM role that you want to grant access
+         * to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API operations,
+         * add the following policies to the role. </p> <ul> <li> <p>Option 1: For a full
+         * Amazon SageMaker access, search and attach the
+         * <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li> <p>Option 2: For
+         * granting a limited access to an IAM role, paste the following Action elements
+         * manually into the JSON file of the IAM role: </p> <p> <code>"Action":
+         * ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code> </p> <p>
+         * <code>"Resource": [</code> </p> <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> </p>
          * <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
@@ -2226,10 +2244,10 @@ namespace Model
          * model B. </p> <p>For an example that calls this method when deploying a model to
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
-         * to DynamoDB to verify that your endpoint configuration exists. When you read
-         * data from a DynamoDB table supporting <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load
+         * call is made to DynamoDB to verify that your endpoint configuration exists. When
+         * you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2263,10 +2281,10 @@ namespace Model
          * model B. </p> <p>For an example that calls this method when deploying a model to
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
-         * to DynamoDB to verify that your endpoint configuration exists. When you read
-         * data from a DynamoDB table supporting <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load
+         * call is made to DynamoDB to verify that your endpoint configuration exists. When
+         * you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2302,10 +2320,10 @@ namespace Model
          * model B. </p> <p>For an example that calls this method when deploying a model to
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
-         * to DynamoDB to verify that your endpoint configuration exists. When you read
-         * data from a DynamoDB table supporting <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load
+         * call is made to DynamoDB to verify that your endpoint configuration exists. When
+         * you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
@@ -2332,16 +2350,17 @@ namespace Model
          * measuring the impact of a change to one or more inputs, while keeping the
          * remaining inputs constant.</p> <p>When you use SageMaker Studio or the SageMaker
          * Python SDK, all experiments, trials, and trial components are automatically
-         * tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you
-         * must use the logging APIs provided by the SDK.</p> <p>You can add tags to
-         * experiments, trials, trial components and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To add a description to an experiment, specify the
-         * optional <code>Description</code> parameter. To add a description later, or to
-         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
-         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
-         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
-         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
-         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * tracked, logged, and indexed. When you use the Amazon Web Services SDK for
+         * Python (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can
+         * add tags to experiments, trials, trial components and then use the <a>Search</a>
+         * API to search for the tags.</p> <p>To add a description to an experiment,
+         * specify the optional <code>Description</code> parameter. To add a description
+         * later, or to change the description, call the <a>UpdateExperiment</a> API.</p>
+         * <p>To get a list of all your experiments, call the <a>ListExperiments</a> API.
+         * To view an experiment's properties, call the <a>DescribeExperiment</a> API. To
+         * get a list of all the trials associated with an experiment, call the
+         * <a>ListTrials</a> API. To create a trial call the <a>CreateTrial</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
          * API Reference</a></p>
          */
@@ -2356,16 +2375,17 @@ namespace Model
          * measuring the impact of a change to one or more inputs, while keeping the
          * remaining inputs constant.</p> <p>When you use SageMaker Studio or the SageMaker
          * Python SDK, all experiments, trials, and trial components are automatically
-         * tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you
-         * must use the logging APIs provided by the SDK.</p> <p>You can add tags to
-         * experiments, trials, trial components and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To add a description to an experiment, specify the
-         * optional <code>Description</code> parameter. To add a description later, or to
-         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
-         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
-         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
-         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
-         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * tracked, logged, and indexed. When you use the Amazon Web Services SDK for
+         * Python (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can
+         * add tags to experiments, trials, trial components and then use the <a>Search</a>
+         * API to search for the tags.</p> <p>To add a description to an experiment,
+         * specify the optional <code>Description</code> parameter. To add a description
+         * later, or to change the description, call the <a>UpdateExperiment</a> API.</p>
+         * <p>To get a list of all your experiments, call the <a>ListExperiments</a> API.
+         * To view an experiment's properties, call the <a>DescribeExperiment</a> API. To
+         * get a list of all the trials associated with an experiment, call the
+         * <a>ListTrials</a> API. To create a trial call the <a>CreateTrial</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
          * API Reference</a></p>
          *
@@ -2382,16 +2402,17 @@ namespace Model
          * measuring the impact of a change to one or more inputs, while keeping the
          * remaining inputs constant.</p> <p>When you use SageMaker Studio or the SageMaker
          * Python SDK, all experiments, trials, and trial components are automatically
-         * tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you
-         * must use the logging APIs provided by the SDK.</p> <p>You can add tags to
-         * experiments, trials, trial components and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To add a description to an experiment, specify the
-         * optional <code>Description</code> parameter. To add a description later, or to
-         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
-         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
-         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
-         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
-         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * tracked, logged, and indexed. When you use the Amazon Web Services SDK for
+         * Python (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can
+         * add tags to experiments, trials, trial components and then use the <a>Search</a>
+         * API to search for the tags.</p> <p>To add a description to an experiment,
+         * specify the optional <code>Description</code> parameter. To add a description
+         * later, or to change the description, call the <a>UpdateExperiment</a> API.</p>
+         * <p>To get a list of all your experiments, call the <a>ListExperiments</a> API.
+         * To view an experiment's properties, call the <a>DescribeExperiment</a> API. To
+         * get a list of all the trials associated with an experiment, call the
+         * <a>ListTrials</a> API. To create a trial call the <a>CreateTrial</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
          * API Reference</a></p>
          *
@@ -2408,11 +2429,11 @@ namespace Model
          * <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an
          * <code>EventTimeFeatureName</code> and configurations for its
          * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-         * service quotas</a> to see the <code>FeatureGroup</code>s quota for your AWS
-         * account.</p>  <p>You must include at least one of
-         * <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to create a
-         * <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+         * Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for
+         * your Amazon Web Services account.</p>  <p>You must include at least
+         * one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to
+         * create a <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">AWS
          * API Reference</a></p>
          */
@@ -2427,11 +2448,11 @@ namespace Model
          * <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an
          * <code>EventTimeFeatureName</code> and configurations for its
          * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-         * service quotas</a> to see the <code>FeatureGroup</code>s quota for your AWS
-         * account.</p>  <p>You must include at least one of
-         * <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to create a
-         * <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+         * Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for
+         * your Amazon Web Services account.</p>  <p>You must include at least
+         * one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to
+         * create a <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">AWS
          * API Reference</a></p>
          *
@@ -2448,11 +2469,11 @@ namespace Model
          * <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an
          * <code>EventTimeFeatureName</code> and configurations for its
          * <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-         * service quotas</a> to see the <code>FeatureGroup</code>s quota for your AWS
-         * account.</p>  <p>You must include at least one of
-         * <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to create a
-         * <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+         * Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for
+         * your Amazon Web Services account.</p>  <p>You must include at least
+         * one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to
+         * create a <code>FeatureGroup</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">AWS
          * API Reference</a></p>
          *
@@ -2631,15 +2652,15 @@ namespace Model
          * private workforce that you create. It can include employees, contractors, and
          * outside experts. Use a private workforce when want the data to stay within your
          * organization or when a specific set of skills is required.</p> </li> <li> <p>One
-         * or more vendors that you select from the AWS Marketplace. Vendors provide
-         * expertise in specific areas. </p> </li> <li> <p>The Amazon Mechanical Turk
-         * workforce. This is the largest workforce, but it should only be used for public
-         * data or data that has been stripped of any personally identifiable
-         * information.</p> </li> </ul> <p>You can also use <i>automated data labeling</i>
-         * to reduce the number of data objects that need to be labeled by a human.
-         * Automated data labeling uses <i>active learning</i> to determine if a data
-         * object can be labeled by machine or if it needs to be sent to a human worker.
-         * For more information, see <a
+         * or more vendors that you select from the Amazon Web Services Marketplace.
+         * Vendors provide expertise in specific areas. </p> </li> <li> <p>The Amazon
+         * Mechanical Turk workforce. This is the largest workforce, but it should only be
+         * used for public data or data that has been stripped of any personally
+         * identifiable information.</p> </li> </ul> <p>You can also use <i>automated data
+         * labeling</i> to reduce the number of data objects that need to be labeled by a
+         * human. Automated data labeling uses <i>active learning</i> to determine if a
+         * data object can be labeled by machine or if it needs to be sent to a human
+         * worker. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
          * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
          * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
@@ -2671,15 +2692,15 @@ namespace Model
          * private workforce that you create. It can include employees, contractors, and
          * outside experts. Use a private workforce when want the data to stay within your
          * organization or when a specific set of skills is required.</p> </li> <li> <p>One
-         * or more vendors that you select from the AWS Marketplace. Vendors provide
-         * expertise in specific areas. </p> </li> <li> <p>The Amazon Mechanical Turk
-         * workforce. This is the largest workforce, but it should only be used for public
-         * data or data that has been stripped of any personally identifiable
-         * information.</p> </li> </ul> <p>You can also use <i>automated data labeling</i>
-         * to reduce the number of data objects that need to be labeled by a human.
-         * Automated data labeling uses <i>active learning</i> to determine if a data
-         * object can be labeled by machine or if it needs to be sent to a human worker.
-         * For more information, see <a
+         * or more vendors that you select from the Amazon Web Services Marketplace.
+         * Vendors provide expertise in specific areas. </p> </li> <li> <p>The Amazon
+         * Mechanical Turk workforce. This is the largest workforce, but it should only be
+         * used for public data or data that has been stripped of any personally
+         * identifiable information.</p> </li> </ul> <p>You can also use <i>automated data
+         * labeling</i> to reduce the number of data objects that need to be labeled by a
+         * human. Automated data labeling uses <i>active learning</i> to determine if a
+         * data object can be labeled by machine or if it needs to be sent to a human
+         * worker. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
          * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
          * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
@@ -2713,15 +2734,15 @@ namespace Model
          * private workforce that you create. It can include employees, contractors, and
          * outside experts. Use a private workforce when want the data to stay within your
          * organization or when a specific set of skills is required.</p> </li> <li> <p>One
-         * or more vendors that you select from the AWS Marketplace. Vendors provide
-         * expertise in specific areas. </p> </li> <li> <p>The Amazon Mechanical Turk
-         * workforce. This is the largest workforce, but it should only be used for public
-         * data or data that has been stripped of any personally identifiable
-         * information.</p> </li> </ul> <p>You can also use <i>automated data labeling</i>
-         * to reduce the number of data objects that need to be labeled by a human.
-         * Automated data labeling uses <i>active learning</i> to determine if a data
-         * object can be labeled by machine or if it needs to be sent to a human worker.
-         * For more information, see <a
+         * or more vendors that you select from the Amazon Web Services Marketplace.
+         * Vendors provide expertise in specific areas. </p> </li> <li> <p>The Amazon
+         * Mechanical Turk workforce. This is the largest workforce, but it should only be
+         * used for public data or data that has been stripped of any personally
+         * identifiable information.</p> </li> </ul> <p>You can also use <i>automated data
+         * labeling</i> to reduce the number of data objects that need to be labeled by a
+         * human. Automated data labeling uses <i>active learning</i> to determine if a
+         * data object can be labeled by machine or if it needs to be sent to a human
+         * worker. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
          * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
          * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
@@ -2762,18 +2783,18 @@ namespace Model
          * <p>For an example that calls this method when deploying a model to Amazon
          * SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <p>To run a batch transform using your model, you start a job with
-         * the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and
-         * your dataset to get inferences which are then saved to a specified S3
-         * location.</p> <p>In the <code>CreateModel</code> request, you must define a
-         * container with the <code>PrimaryContainer</code> parameter.</p> <p>In the
-         * request, you also provide an IAM role that Amazon SageMaker can assume to access
-         * model artifacts and docker image for deployment on ML compute hosting instances
-         * or for batch transform jobs. In addition, you also use the IAM role to manage
-         * permissions the inference code needs. For example, if the inference code access
-         * any other AWS resources, you grant necessary permissions via this
-         * role.</p><p><h3>See Also:</h3>   <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p> <p>To run a batch transform using your model, you
+         * start a job with the <code>CreateTransformJob</code> API. Amazon SageMaker uses
+         * your model and your dataset to get inferences which are then saved to a
+         * specified S3 location.</p> <p>In the <code>CreateModel</code> request, you must
+         * define a container with the <code>PrimaryContainer</code> parameter.</p> <p>In
+         * the request, you also provide an IAM role that Amazon SageMaker can assume to
+         * access model artifacts and docker image for deployment on ML compute hosting
+         * instances or for batch transform jobs. In addition, you also use the IAM role to
+         * manage permissions the inference code needs. For example, if the inference code
+         * access any other Amazon Web Services resources, you grant necessary permissions
+         * via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          */
@@ -2793,18 +2814,18 @@ namespace Model
          * <p>For an example that calls this method when deploying a model to Amazon
          * SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <p>To run a batch transform using your model, you start a job with
-         * the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and
-         * your dataset to get inferences which are then saved to a specified S3
-         * location.</p> <p>In the <code>CreateModel</code> request, you must define a
-         * container with the <code>PrimaryContainer</code> parameter.</p> <p>In the
-         * request, you also provide an IAM role that Amazon SageMaker can assume to access
-         * model artifacts and docker image for deployment on ML compute hosting instances
-         * or for batch transform jobs. In addition, you also use the IAM role to manage
-         * permissions the inference code needs. For example, if the inference code access
-         * any other AWS resources, you grant necessary permissions via this
-         * role.</p><p><h3>See Also:</h3>   <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p> <p>To run a batch transform using your model, you
+         * start a job with the <code>CreateTransformJob</code> API. Amazon SageMaker uses
+         * your model and your dataset to get inferences which are then saved to a
+         * specified S3 location.</p> <p>In the <code>CreateModel</code> request, you must
+         * define a container with the <code>PrimaryContainer</code> parameter.</p> <p>In
+         * the request, you also provide an IAM role that Amazon SageMaker can assume to
+         * access model artifacts and docker image for deployment on ML compute hosting
+         * instances or for batch transform jobs. In addition, you also use the IAM role to
+         * manage permissions the inference code needs. For example, if the inference code
+         * access any other Amazon Web Services resources, you grant necessary permissions
+         * via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          *
@@ -2826,18 +2847,18 @@ namespace Model
          * <p>For an example that calls this method when deploying a model to Amazon
          * SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <p>To run a batch transform using your model, you start a job with
-         * the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and
-         * your dataset to get inferences which are then saved to a specified S3
-         * location.</p> <p>In the <code>CreateModel</code> request, you must define a
-         * container with the <code>PrimaryContainer</code> parameter.</p> <p>In the
-         * request, you also provide an IAM role that Amazon SageMaker can assume to access
-         * model artifacts and docker image for deployment on ML compute hosting instances
-         * or for batch transform jobs. In addition, you also use the IAM role to manage
-         * permissions the inference code needs. For example, if the inference code access
-         * any other AWS resources, you grant necessary permissions via this
-         * role.</p><p><h3>See Also:</h3>   <a
+         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
+         * Python (Boto 3)).</a> </p> <p>To run a batch transform using your model, you
+         * start a job with the <code>CreateTransformJob</code> API. Amazon SageMaker uses
+         * your model and your dataset to get inferences which are then saved to a
+         * specified S3 location.</p> <p>In the <code>CreateModel</code> request, you must
+         * define a container with the <code>PrimaryContainer</code> parameter.</p> <p>In
+         * the request, you also provide an IAM role that Amazon SageMaker can assume to
+         * access model artifacts and docker image for deployment on ML compute hosting
+         * instances or for batch transform jobs. In addition, you also use the IAM role to
+         * manage permissions the inference code needs. For example, if the inference code
+         * access any other Amazon Web Services resources, you grant necessary permissions
+         * via this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          *
@@ -2900,18 +2921,18 @@ namespace Model
 
         /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
-         * list on AWS Marketplace, or a versioned model that is part of a model group.
-         * Buyers can subscribe to model packages listed on AWS Marketplace to create
-         * models in Amazon SageMaker.</p> <p>To create a model package by specifying a
-         * Docker container that contains your inference code and the Amazon S3 location of
-         * your model artifacts, provide values for <code>InferenceSpecification</code>. To
-         * create a model from an algorithm resource that you created or subscribed to in
-         * AWS Marketplace, provide a value for
-         * <code>SourceAlgorithmSpecification</code>.</p>  <p>There are two types of
-         * model packages:</p> <ul> <li> <p>Versioned - a model that is part of a model
-         * group in the model registry.</p> </li> <li> <p>Unversioned - a model package
-         * that is not part of a model group.</p> </li> </ul> <p><h3>See Also:</h3> 
-         * <a
+         * list on Amazon Web Services Marketplace, or a versioned model that is part of a
+         * model group. Buyers can subscribe to model packages listed on Amazon Web
+         * Services Marketplace to create models in Amazon SageMaker.</p> <p>To create a
+         * model package by specifying a Docker container that contains your inference code
+         * and the Amazon S3 location of your model artifacts, provide values for
+         * <code>InferenceSpecification</code>. To create a model from an algorithm
+         * resource that you created or subscribed to in Amazon Web Services Marketplace,
+         * provide a value for <code>SourceAlgorithmSpecification</code>.</p> 
+         * <p>There are two types of model packages:</p> <ul> <li> <p>Versioned - a model
+         * that is part of a model group in the model registry.</p> </li> <li>
+         * <p>Unversioned - a model package that is not part of a model group.</p> </li>
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          */
@@ -2919,18 +2940,18 @@ namespace Model
 
         /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
-         * list on AWS Marketplace, or a versioned model that is part of a model group.
-         * Buyers can subscribe to model packages listed on AWS Marketplace to create
-         * models in Amazon SageMaker.</p> <p>To create a model package by specifying a
-         * Docker container that contains your inference code and the Amazon S3 location of
-         * your model artifacts, provide values for <code>InferenceSpecification</code>. To
-         * create a model from an algorithm resource that you created or subscribed to in
-         * AWS Marketplace, provide a value for
-         * <code>SourceAlgorithmSpecification</code>.</p>  <p>There are two types of
-         * model packages:</p> <ul> <li> <p>Versioned - a model that is part of a model
-         * group in the model registry.</p> </li> <li> <p>Unversioned - a model package
-         * that is not part of a model group.</p> </li> </ul> <p><h3>See Also:</h3> 
-         * <a
+         * list on Amazon Web Services Marketplace, or a versioned model that is part of a
+         * model group. Buyers can subscribe to model packages listed on Amazon Web
+         * Services Marketplace to create models in Amazon SageMaker.</p> <p>To create a
+         * model package by specifying a Docker container that contains your inference code
+         * and the Amazon S3 location of your model artifacts, provide values for
+         * <code>InferenceSpecification</code>. To create a model from an algorithm
+         * resource that you created or subscribed to in Amazon Web Services Marketplace,
+         * provide a value for <code>SourceAlgorithmSpecification</code>.</p> 
+         * <p>There are two types of model packages:</p> <ul> <li> <p>Versioned - a model
+         * that is part of a model group in the model registry.</p> </li> <li>
+         * <p>Unversioned - a model package that is not part of a model group.</p> </li>
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          *
@@ -2940,18 +2961,18 @@ namespace Model
 
         /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
-         * list on AWS Marketplace, or a versioned model that is part of a model group.
-         * Buyers can subscribe to model packages listed on AWS Marketplace to create
-         * models in Amazon SageMaker.</p> <p>To create a model package by specifying a
-         * Docker container that contains your inference code and the Amazon S3 location of
-         * your model artifacts, provide values for <code>InferenceSpecification</code>. To
-         * create a model from an algorithm resource that you created or subscribed to in
-         * AWS Marketplace, provide a value for
-         * <code>SourceAlgorithmSpecification</code>.</p>  <p>There are two types of
-         * model packages:</p> <ul> <li> <p>Versioned - a model that is part of a model
-         * group in the model registry.</p> </li> <li> <p>Unversioned - a model package
-         * that is not part of a model group.</p> </li> </ul> <p><h3>See Also:</h3> 
-         * <a
+         * list on Amazon Web Services Marketplace, or a versioned model that is part of a
+         * model group. Buyers can subscribe to model packages listed on Amazon Web
+         * Services Marketplace to create models in Amazon SageMaker.</p> <p>To create a
+         * model package by specifying a Docker container that contains your inference code
+         * and the Amazon S3 location of your model artifacts, provide values for
+         * <code>InferenceSpecification</code>. To create a model from an algorithm
+         * resource that you created or subscribed to in Amazon Web Services Marketplace,
+         * provide a value for <code>SourceAlgorithmSpecification</code>.</p> 
+         * <p>There are two types of model packages:</p> <ul> <li> <p>Versioned - a model
+         * that is part of a model group in the model registry.</p> </li> <li>
+         * <p>Unversioned - a model package that is not part of a model group.</p> </li>
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          *
@@ -3258,11 +3279,21 @@ namespace Model
          * browser, the user will be automatically signed in to Amazon SageMaker Studio,
          * and granted access to all of the Apps and files associated with the Domain's
          * Amazon Elastic File System (EFS) volume. This operation can only be called when
-         * the authentication mode equals IAM. </p>  <p>The URL that you get from a
-         * call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5
-         * minutes. You can configure this value using <code>ExpiresInSeconds</code>. If
-         * you try to use the URL after the timeout limit expires, you are directed to the
-         * AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
+         * the authentication mode equals IAM. </p> <p>The IAM role or user used to call
+         * this API defines the permissions to access the app. Once the presigned URL is
+         * created, no additional permission is required to access this URL. IAM
+         * authorization policies for this API are also enforced for every HTTP request and
+         * WebSocket frame that attempts to connect to the app.</p> <p>You can restrict
+         * access to this API and to the URL that it returns to a list of IP addresses,
+         * Amazon VPCs or Amazon VPC Endpoints that you specify. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
+         * to SageMaker Studio Through an Interface VPC Endpoint</a> .</p>  <p>The
+         * URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a
+         * default timeout of 5 minutes. You can configure this value using
+         * <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit
+         * expires, you are directed to the Amazon Web Services console sign-in page.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          */
@@ -3273,11 +3304,21 @@ namespace Model
          * browser, the user will be automatically signed in to Amazon SageMaker Studio,
          * and granted access to all of the Apps and files associated with the Domain's
          * Amazon Elastic File System (EFS) volume. This operation can only be called when
-         * the authentication mode equals IAM. </p>  <p>The URL that you get from a
-         * call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5
-         * minutes. You can configure this value using <code>ExpiresInSeconds</code>. If
-         * you try to use the URL after the timeout limit expires, you are directed to the
-         * AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
+         * the authentication mode equals IAM. </p> <p>The IAM role or user used to call
+         * this API defines the permissions to access the app. Once the presigned URL is
+         * created, no additional permission is required to access this URL. IAM
+         * authorization policies for this API are also enforced for every HTTP request and
+         * WebSocket frame that attempts to connect to the app.</p> <p>You can restrict
+         * access to this API and to the URL that it returns to a list of IP addresses,
+         * Amazon VPCs or Amazon VPC Endpoints that you specify. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
+         * to SageMaker Studio Through an Interface VPC Endpoint</a> .</p>  <p>The
+         * URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a
+         * default timeout of 5 minutes. You can configure this value using
+         * <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit
+         * expires, you are directed to the Amazon Web Services console sign-in page.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          *
@@ -3290,11 +3331,21 @@ namespace Model
          * browser, the user will be automatically signed in to Amazon SageMaker Studio,
          * and granted access to all of the Apps and files associated with the Domain's
          * Amazon Elastic File System (EFS) volume. This operation can only be called when
-         * the authentication mode equals IAM. </p>  <p>The URL that you get from a
-         * call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5
-         * minutes. You can configure this value using <code>ExpiresInSeconds</code>. If
-         * you try to use the URL after the timeout limit expires, you are directed to the
-         * AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
+         * the authentication mode equals IAM. </p> <p>The IAM role or user used to call
+         * this API defines the permissions to access the app. Once the presigned URL is
+         * created, no additional permission is required to access this URL. IAM
+         * authorization policies for this API are also enforced for every HTTP request and
+         * WebSocket frame that attempts to connect to the app.</p> <p>You can restrict
+         * access to this API and to the URL that it returns to a list of IP addresses,
+         * Amazon VPCs or Amazon VPC Endpoints that you specify. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
+         * to SageMaker Studio Through an Interface VPC Endpoint</a> .</p>  <p>The
+         * URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a
+         * default timeout of 5 minutes. You can configure this value using
+         * <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit
+         * expires, you are directed to the Amazon Web Services console sign-in page.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          *
@@ -3321,7 +3372,8 @@ namespace Model
          * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
          * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
+         * directed to the Amazon Web Services console sign-in page.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          */
@@ -3346,7 +3398,8 @@ namespace Model
          * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
          * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
+         * directed to the Amazon Web Services console sign-in page.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -3373,7 +3426,8 @@ namespace Model
          * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
          * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
+         * directed to the Amazon Web Services console sign-in page.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -3579,10 +3633,11 @@ namespace Model
          * you specify.</p> <p>To perform batch transformations, you create a transform job
          * and use the data that you have readily available.</p> <p>In the request body,
          * you provide the following:</p> <ul> <li> <p> <code>TransformJobName</code> -
-         * Identifies the transform job. The name must be unique within an AWS Region in an
-         * AWS account.</p> </li> <li> <p> <code>ModelName</code> - Identifies the model to
-         * use. <code>ModelName</code> must be the name of an existing Amazon SageMaker
-         * model in the same AWS Region and AWS account. For information on creating a
+         * Identifies the transform job. The name must be unique within an Amazon Web
+         * Services Region in an Amazon Web Services account.</p> </li> <li> <p>
+         * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code>
+         * must be the name of an existing Amazon SageMaker model in the same Amazon Web
+         * Services Region and Amazon Web Services account. For information on creating a
          * model, see <a>CreateModel</a>.</p> </li> <li> <p> <code>TransformInput</code> -
          * Describes the dataset to be transformed and the Amazon S3 location where it is
          * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
@@ -3603,10 +3658,11 @@ namespace Model
          * you specify.</p> <p>To perform batch transformations, you create a transform job
          * and use the data that you have readily available.</p> <p>In the request body,
          * you provide the following:</p> <ul> <li> <p> <code>TransformJobName</code> -
-         * Identifies the transform job. The name must be unique within an AWS Region in an
-         * AWS account.</p> </li> <li> <p> <code>ModelName</code> - Identifies the model to
-         * use. <code>ModelName</code> must be the name of an existing Amazon SageMaker
-         * model in the same AWS Region and AWS account. For information on creating a
+         * Identifies the transform job. The name must be unique within an Amazon Web
+         * Services Region in an Amazon Web Services account.</p> </li> <li> <p>
+         * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code>
+         * must be the name of an existing Amazon SageMaker model in the same Amazon Web
+         * Services Region and Amazon Web Services account. For information on creating a
          * model, see <a>CreateModel</a>.</p> </li> <li> <p> <code>TransformInput</code> -
          * Describes the dataset to be transformed and the Amazon S3 location where it is
          * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
@@ -3629,10 +3685,11 @@ namespace Model
          * you specify.</p> <p>To perform batch transformations, you create a transform job
          * and use the data that you have readily available.</p> <p>In the request body,
          * you provide the following:</p> <ul> <li> <p> <code>TransformJobName</code> -
-         * Identifies the transform job. The name must be unique within an AWS Region in an
-         * AWS account.</p> </li> <li> <p> <code>ModelName</code> - Identifies the model to
-         * use. <code>ModelName</code> must be the name of an existing Amazon SageMaker
-         * model in the same AWS Region and AWS account. For information on creating a
+         * Identifies the transform job. The name must be unique within an Amazon Web
+         * Services Region in an Amazon Web Services account.</p> </li> <li> <p>
+         * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code>
+         * must be the name of an existing Amazon SageMaker model in the same Amazon Web
+         * Services Region and Amazon Web Services account. For information on creating a
          * model, see <a>CreateModel</a>.</p> </li> <li> <p> <code>TransformInput</code> -
          * Describes the dataset to be transformed and the Amazon S3 location where it is
          * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
@@ -3654,13 +3711,13 @@ namespace Model
          * components</i> that produce a machine learning model. A trial is part of a
          * single SageMaker <i>experiment</i>.</p> <p>When you use SageMaker Studio or the
          * SageMaker Python SDK, all experiments, trials, and trial components are
-         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
-         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
-         * tags to a trial and then use the <a>Search</a> API to search for the tags.</p>
-         * <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
-         * trial's properties, call the <a>DescribeTrial</a> API. To create a trial
-         * component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>  
-         * <a
+         * automatically tracked, logged, and indexed. When you use the Amazon Web Services
+         * SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
+         * <p>You can add tags to a trial and then use the <a>Search</a> API to search for
+         * the tags.</p> <p>To get a list of all your trials, call the <a>ListTrials</a>
+         * API. To view a trial's properties, call the <a>DescribeTrial</a> API. To create
+         * a trial component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          */
@@ -3671,13 +3728,13 @@ namespace Model
          * components</i> that produce a machine learning model. A trial is part of a
          * single SageMaker <i>experiment</i>.</p> <p>When you use SageMaker Studio or the
          * SageMaker Python SDK, all experiments, trials, and trial components are
-         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
-         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
-         * tags to a trial and then use the <a>Search</a> API to search for the tags.</p>
-         * <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
-         * trial's properties, call the <a>DescribeTrial</a> API. To create a trial
-         * component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>  
-         * <a
+         * automatically tracked, logged, and indexed. When you use the Amazon Web Services
+         * SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
+         * <p>You can add tags to a trial and then use the <a>Search</a> API to search for
+         * the tags.</p> <p>To get a list of all your trials, call the <a>ListTrials</a>
+         * API. To view a trial's properties, call the <a>DescribeTrial</a> API. To create
+         * a trial component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          *
@@ -3690,13 +3747,13 @@ namespace Model
          * components</i> that produce a machine learning model. A trial is part of a
          * single SageMaker <i>experiment</i>.</p> <p>When you use SageMaker Studio or the
          * SageMaker Python SDK, all experiments, trials, and trial components are
-         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
-         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
-         * tags to a trial and then use the <a>Search</a> API to search for the tags.</p>
-         * <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
-         * trial's properties, call the <a>DescribeTrial</a> API. To create a trial
-         * component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>  
-         * <a
+         * automatically tracked, logged, and indexed. When you use the Amazon Web Services
+         * SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
+         * <p>You can add tags to a trial and then use the <a>Search</a> API to search for
+         * the tags.</p> <p>To get a list of all your trials, call the <a>ListTrials</a>
+         * API. To view a trial's properties, call the <a>DescribeTrial</a> API. To create
+         * a trial component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          *
@@ -3711,13 +3768,9 @@ namespace Model
          * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
          * use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and
          * trial components are automatically tracked, logged, and indexed. When you use
-         * the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-         * SDK.</p> <p>You can add tags to a trial component and then use the <a>Search</a>
-         * API to search for the tags.</p>  <p> <code>CreateTrialComponent</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateTrialComponent</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * the Amazon Web Services SDK for Python (Boto), you must use the logging APIs
+         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
+         * the <a>Search</a> API to search for the tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -3730,13 +3783,9 @@ namespace Model
          * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
          * use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and
          * trial components are automatically tracked, logged, and indexed. When you use
-         * the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-         * SDK.</p> <p>You can add tags to a trial component and then use the <a>Search</a>
-         * API to search for the tags.</p>  <p> <code>CreateTrialComponent</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateTrialComponent</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * the Amazon Web Services SDK for Python (Boto), you must use the logging APIs
+         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
+         * the <a>Search</a> API to search for the tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -3751,13 +3800,9 @@ namespace Model
          * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
          * use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and
          * trial components are automatically tracked, logged, and indexed. When you use
-         * the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-         * SDK.</p> <p>You can add tags to a trial component and then use the <a>Search</a>
-         * API to search for the tags.</p>  <p> <code>CreateTrialComponent</code> can
-         * only be invoked from within an SageMaker managed environment. This includes
-         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
-         * notebooks. A call to <code>CreateTrialComponent</code> from outside one of these
-         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
+         * the Amazon Web Services SDK for Python (Boto), you must use the logging APIs
+         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
+         * the <a>Search</a> API to search for the tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -3813,10 +3858,11 @@ namespace Model
 
         /**
          * <p>Use this operation to create a workforce. This operation will return an error
-         * if a workforce already exists in the AWS Region that you specify. You can only
-         * create one workforce in each AWS Region per AWS account.</p> <p>If you want to
-         * create a new workforce in an AWS Region where a workforce already exists, use
-         * the API operation to delete the existing workforce and then use
+         * if a workforce already exists in the Amazon Web Services Region that you
+         * specify. You can only create one workforce in each Amazon Web Services Region
+         * per Amazon Web Services account.</p> <p>If you want to create a new workforce in
+         * an Amazon Web Services Region where a workforce already exists, use the API
+         * operation to delete the existing workforce and then use
          * <code>CreateWorkforce</code> to create a new workforce.</p> <p>To create a
          * private workforce using Amazon Cognito, you must specify a Cognito user pool in
          * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
@@ -3836,10 +3882,11 @@ namespace Model
 
         /**
          * <p>Use this operation to create a workforce. This operation will return an error
-         * if a workforce already exists in the AWS Region that you specify. You can only
-         * create one workforce in each AWS Region per AWS account.</p> <p>If you want to
-         * create a new workforce in an AWS Region where a workforce already exists, use
-         * the API operation to delete the existing workforce and then use
+         * if a workforce already exists in the Amazon Web Services Region that you
+         * specify. You can only create one workforce in each Amazon Web Services Region
+         * per Amazon Web Services account.</p> <p>If you want to create a new workforce in
+         * an Amazon Web Services Region where a workforce already exists, use the API
+         * operation to delete the existing workforce and then use
          * <code>CreateWorkforce</code> to create a new workforce.</p> <p>To create a
          * private workforce using Amazon Cognito, you must specify a Cognito user pool in
          * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
@@ -3861,10 +3908,11 @@ namespace Model
 
         /**
          * <p>Use this operation to create a workforce. This operation will return an error
-         * if a workforce already exists in the AWS Region that you specify. You can only
-         * create one workforce in each AWS Region per AWS account.</p> <p>If you want to
-         * create a new workforce in an AWS Region where a workforce already exists, use
-         * the API operation to delete the existing workforce and then use
+         * if a workforce already exists in the Amazon Web Services Region that you
+         * specify. You can only create one workforce in each Amazon Web Services Region
+         * per Amazon Web Services account.</p> <p>If you want to create a new workforce in
+         * an Amazon Web Services Region where a workforce already exists, use the API
+         * operation to delete the existing workforce and then use
          * <code>CreateWorkforce</code> to create a new workforce.</p> <p>To create a
          * private workforce using Amazon Cognito, you must specify a Cognito user pool in
          * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
@@ -4339,9 +4387,9 @@ namespace Model
          * <code>OnlineStore</code> of the <code>FeatureGroup</code>. Data cannot be
          * accessed from the <code>OnlineStore</code> immediately after
          * <code>DeleteFeatureGroup</code> is called. </p> <p>Data written into the
-         * <code>OfflineStore</code> will not be deleted. The AWS Glue database and tables
-         * that are automatically created for your <code>OfflineStore</code> are not
-         * deleted. </p><p><h3>See Also:</h3>   <a
+         * <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue
+         * database and tables that are automatically created for your
+         * <code>OfflineStore</code> are not deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">AWS
          * API Reference</a></p>
          */
@@ -4352,9 +4400,9 @@ namespace Model
          * <code>OnlineStore</code> of the <code>FeatureGroup</code>. Data cannot be
          * accessed from the <code>OnlineStore</code> immediately after
          * <code>DeleteFeatureGroup</code> is called. </p> <p>Data written into the
-         * <code>OfflineStore</code> will not be deleted. The AWS Glue database and tables
-         * that are automatically created for your <code>OfflineStore</code> are not
-         * deleted. </p><p><h3>See Also:</h3>   <a
+         * <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue
+         * database and tables that are automatically created for your
+         * <code>OfflineStore</code> are not deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">AWS
          * API Reference</a></p>
          *
@@ -4367,9 +4415,9 @@ namespace Model
          * <code>OnlineStore</code> of the <code>FeatureGroup</code>. Data cannot be
          * accessed from the <code>OnlineStore</code> immediately after
          * <code>DeleteFeatureGroup</code> is called. </p> <p>Data written into the
-         * <code>OfflineStore</code> will not be deleted. The AWS Glue database and tables
-         * that are automatically created for your <code>OfflineStore</code> are not
-         * deleted. </p><p><h3>See Also:</h3>   <a
+         * <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue
+         * database and tables that are automatically created for your
+         * <code>OfflineStore</code> are not deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">AWS
          * API Reference</a></p>
          *
@@ -4498,8 +4546,8 @@ namespace Model
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in Amazon SageMaker when you called the
-         * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
-         * the IAM role that you specified when creating the model. </p><p><h3>See
+         * <code>CreateModel</code> API. It does not delete model artifacts, inference
+         * code, or the IAM role that you specified when creating the model. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">AWS
          * API Reference</a></p>
@@ -4509,8 +4557,8 @@ namespace Model
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in Amazon SageMaker when you called the
-         * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
-         * the IAM role that you specified when creating the model. </p><p><h3>See
+         * <code>CreateModel</code> API. It does not delete model artifacts, inference
+         * code, or the IAM role that you specified when creating the model. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">AWS
          * API Reference</a></p>
@@ -4522,8 +4570,8 @@ namespace Model
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in Amazon SageMaker when you called the
-         * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
-         * the IAM role that you specified when creating the model. </p><p><h3>See
+         * <code>CreateModel</code> API. It does not delete model artifacts, inference
+         * code, or the IAM role that you specified when creating the model. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">AWS
          * API Reference</a></p>
@@ -4590,9 +4638,9 @@ namespace Model
 
         /**
          * <p>Deletes a model package.</p> <p>A model package is used to create Amazon
-         * SageMaker models or list on AWS Marketplace. Buyers can subscribe to model
-         * packages listed on AWS Marketplace to create models in Amazon
-         * SageMaker.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list on Amazon Web Services Marketplace. Buyers can
+         * subscribe to model packages listed on Amazon Web Services Marketplace to create
+         * models in Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">AWS
          * API Reference</a></p>
          */
@@ -4600,9 +4648,9 @@ namespace Model
 
         /**
          * <p>Deletes a model package.</p> <p>A model package is used to create Amazon
-         * SageMaker models or list on AWS Marketplace. Buyers can subscribe to model
-         * packages listed on AWS Marketplace to create models in Amazon
-         * SageMaker.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list on Amazon Web Services Marketplace. Buyers can
+         * subscribe to model packages listed on Amazon Web Services Marketplace to create
+         * models in Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">AWS
          * API Reference</a></p>
          *
@@ -4612,9 +4660,9 @@ namespace Model
 
         /**
          * <p>Deletes a model package.</p> <p>A model package is used to create Amazon
-         * SageMaker models or list on AWS Marketplace. Buyers can subscribe to model
-         * packages listed on AWS Marketplace to create models in Amazon
-         * SageMaker.</p><p><h3>See Also:</h3>   <a
+         * SageMaker models or list on Amazon Web Services Marketplace. Buyers can
+         * subscribe to model packages listed on Amazon Web Services Marketplace to create
+         * models in Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">AWS
          * API Reference</a></p>
          *
@@ -5002,13 +5050,13 @@ namespace Model
 
         /**
          * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
-         * workforce in an AWS Region where a workforce already exists, use this operation
-         * to delete the existing workforce and then use to create a new workforce.</p>
-         *  <p>If a private workforce contains one or more work teams, you must
-         * use the operation to delete all work teams before you delete the workforce. If
-         * you try to delete a workforce that contains one or more work teams, you will
-         * recieve a <code>ResourceInUse</code> error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * workforce in an Amazon Web Services Region where a workforce already exists, use
+         * this operation to delete the existing workforce and then use to create a new
+         * workforce.</p>  <p>If a private workforce contains one or more work
+         * teams, you must use the operation to delete all work teams before you delete the
+         * workforce. If you try to delete a workforce that contains one or more work
+         * teams, you will recieve a <code>ResourceInUse</code> error.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
          * API Reference</a></p>
          */
@@ -5016,13 +5064,13 @@ namespace Model
 
         /**
          * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
-         * workforce in an AWS Region where a workforce already exists, use this operation
-         * to delete the existing workforce and then use to create a new workforce.</p>
-         *  <p>If a private workforce contains one or more work teams, you must
-         * use the operation to delete all work teams before you delete the workforce. If
-         * you try to delete a workforce that contains one or more work teams, you will
-         * recieve a <code>ResourceInUse</code> error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * workforce in an Amazon Web Services Region where a workforce already exists, use
+         * this operation to delete the existing workforce and then use to create a new
+         * workforce.</p>  <p>If a private workforce contains one or more work
+         * teams, you must use the operation to delete all work teams before you delete the
+         * workforce. If you try to delete a workforce that contains one or more work
+         * teams, you will recieve a <code>ResourceInUse</code> error.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
          * API Reference</a></p>
          *
@@ -5032,13 +5080,13 @@ namespace Model
 
         /**
          * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
-         * workforce in an AWS Region where a workforce already exists, use this operation
-         * to delete the existing workforce and then use to create a new workforce.</p>
-         *  <p>If a private workforce contains one or more work teams, you must
-         * use the operation to delete all work teams before you delete the workforce. If
-         * you try to delete a workforce that contains one or more work teams, you will
-         * recieve a <code>ResourceInUse</code> error.</p> <p><h3>See
-         * Also:</h3>   <a
+         * workforce in an Amazon Web Services Region where a workforce already exists, use
+         * this operation to delete the existing workforce and then use to create a new
+         * workforce.</p>  <p>If a private workforce contains one or more work
+         * teams, you must use the operation to delete all work teams before you delete the
+         * workforce. If you try to delete a workforce that contains one or more work
+         * teams, you will recieve a <code>ResourceInUse</code> error.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
          * API Reference</a></p>
          *
@@ -5833,9 +5881,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
-         * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * Amazon SageMaker models or list them on Amazon Web Services Marketplace.</p>
+         * <p>To create models in Amazon SageMaker, buyers can subscribe to model packages
+         * listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          */
@@ -5843,9 +5891,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
-         * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * Amazon SageMaker models or list them on Amazon Web Services Marketplace.</p>
+         * <p>To create models in Amazon SageMaker, buyers can subscribe to model packages
+         * listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          *
@@ -5855,9 +5903,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
-         * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * Amazon SageMaker models or list them on Amazon Web Services Marketplace.</p>
+         * <p>To create models in Amazon SageMaker, buyers can subscribe to model packages
+         * listed on Amazon Web Services Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          *
@@ -6135,8 +6183,8 @@ namespace Model
 
         /**
          * <p>Gets information about a work team provided by a vendor. It returns details
-         * about the subscription with a vendor in the AWS Marketplace.</p><p><h3>See
-         * Also:</h3>   <a
+         * about the subscription with a vendor in the Amazon Web Services
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSubscribedWorkteam">AWS
          * API Reference</a></p>
          */
@@ -6144,8 +6192,8 @@ namespace Model
 
         /**
          * <p>Gets information about a work team provided by a vendor. It returns details
-         * about the subscription with a vendor in the AWS Marketplace.</p><p><h3>See
-         * Also:</h3>   <a
+         * about the subscription with a vendor in the Amazon Web Services
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSubscribedWorkteam">AWS
          * API Reference</a></p>
          *
@@ -6155,8 +6203,8 @@ namespace Model
 
         /**
          * <p>Gets information about a work team provided by a vendor. It returns details
-         * about the subscription with a vendor in the AWS Marketplace.</p><p><h3>See
-         * Also:</h3>   <a
+         * about the subscription with a vendor in the Amazon Web Services
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSubscribedWorkteam">AWS
          * API Reference</a></p>
          *
@@ -6518,8 +6566,8 @@ namespace Model
          * <p>Gets a resource policy that manages access for a model group. For information
          * about resource policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
+         * policies and resource-based policies</a> in the <i>Amazon Web Services Identity
+         * and Access Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetModelPackageGroupPolicy">AWS
          * API Reference</a></p>
          */
@@ -6529,8 +6577,8 @@ namespace Model
          * <p>Gets a resource policy that manages access for a model group. For information
          * about resource policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
+         * policies and resource-based policies</a> in the <i>Amazon Web Services Identity
+         * and Access Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetModelPackageGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -6542,8 +6590,8 @@ namespace Model
          * <p>Gets a resource policy that manages access for a model group. For information
          * about resource policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
+         * policies and resource-based policies</a> in the <i>Amazon Web Services Identity
+         * and Access Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetModelPackageGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -7417,16 +7465,16 @@ namespace Model
         virtual void ListModelExplainabilityJobDefinitionsAsync(const Model::ListModelExplainabilityJobDefinitionsRequest& request, const ListModelExplainabilityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of the model groups in your AWS account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets a list of the model groups in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListModelPackageGroupsOutcome ListModelPackageGroups(const Model::ListModelPackageGroupsRequest& request) const;
 
         /**
-         * <p>Gets a list of the model groups in your AWS account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets a list of the model groups in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">AWS
          * API Reference</a></p>
          *
@@ -7435,8 +7483,8 @@ namespace Model
         virtual Model::ListModelPackageGroupsOutcomeCallable ListModelPackageGroupsCallable(const Model::ListModelPackageGroupsRequest& request) const;
 
         /**
-         * <p>Gets a list of the model groups in your AWS account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets a list of the model groups in your Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">AWS
          * API Reference</a></p>
          *
@@ -7501,7 +7549,7 @@ namespace Model
         virtual void ListModelQualityJobDefinitionsAsync(const Model::ListModelQualityJobDefinitionsRequest& request, const ListModelQualityJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
+         * <p>Lists models created with the <code>CreateModel</code> API.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
@@ -7509,7 +7557,7 @@ namespace Model
         virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
 
         /**
-         * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
+         * <p>Lists models created with the <code>CreateModel</code> API.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
@@ -7519,7 +7567,7 @@ namespace Model
         virtual Model::ListModelsOutcomeCallable ListModelsCallable(const Model::ListModelsRequest& request) const;
 
         /**
-         * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
+         * <p>Lists models created with the <code>CreateModel</code> API.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
@@ -7608,7 +7656,7 @@ namespace Model
 
         /**
          * <p>Returns a list of the Amazon SageMaker notebook instances in the requester's
-         * account in an AWS Region. </p><p><h3>See Also:</h3>   <a
+         * account in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">AWS
          * API Reference</a></p>
          */
@@ -7616,7 +7664,7 @@ namespace Model
 
         /**
          * <p>Returns a list of the Amazon SageMaker notebook instances in the requester's
-         * account in an AWS Region. </p><p><h3>See Also:</h3>   <a
+         * account in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">AWS
          * API Reference</a></p>
          *
@@ -7626,7 +7674,7 @@ namespace Model
 
         /**
          * <p>Returns a list of the Amazon SageMaker notebook instances in the requester's
-         * account in an AWS Region. </p><p><h3>See Also:</h3>   <a
+         * account in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">AWS
          * API Reference</a></p>
          *
@@ -7769,14 +7817,16 @@ namespace Model
         virtual void ListProcessingJobsAsync(const Model::ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of the projects in an AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of the projects in an Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Gets a list of the projects in an AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of the projects in an Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">AWS
          * API Reference</a></p>
          *
@@ -7785,7 +7835,8 @@ namespace Model
         virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Gets a list of the projects in an AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of the projects in an Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">AWS
          * API Reference</a></p>
          *
@@ -7794,8 +7845,8 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of the work teams that you are subscribed to in the AWS
-         * Marketplace. The list may be empty if no work team satisfies the filter
+         * <p>Gets a list of the work teams that you are subscribed to in the Amazon Web
+         * Services Marketplace. The list may be empty if no work team satisfies the filter
          * specified in the <code>NameContains</code> parameter.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSubscribedWorkteams">AWS
@@ -7804,8 +7855,8 @@ namespace Model
         virtual Model::ListSubscribedWorkteamsOutcome ListSubscribedWorkteams(const Model::ListSubscribedWorkteamsRequest& request) const;
 
         /**
-         * <p>Gets a list of the work teams that you are subscribed to in the AWS
-         * Marketplace. The list may be empty if no work team satisfies the filter
+         * <p>Gets a list of the work teams that you are subscribed to in the Amazon Web
+         * Services Marketplace. The list may be empty if no work team satisfies the filter
          * specified in the <code>NameContains</code> parameter.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSubscribedWorkteams">AWS
@@ -7816,8 +7867,8 @@ namespace Model
         virtual Model::ListSubscribedWorkteamsOutcomeCallable ListSubscribedWorkteamsCallable(const Model::ListSubscribedWorkteamsRequest& request) const;
 
         /**
-         * <p>Gets a list of the work teams that you are subscribed to in the AWS
-         * Marketplace. The list may be empty if no work team satisfies the filter
+         * <p>Gets a list of the work teams that you are subscribed to in the Amazon Web
+         * Services Marketplace. The list may be empty if no work team satisfies the filter
          * specified in the <code>NameContains</code> parameter.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSubscribedWorkteams">AWS
@@ -7867,9 +7918,9 @@ namespace Model
          * other than <code>InProgress</code>, are selected (sorted according to the
          * creation time, from the most current to the oldest). Next, those with a status
          * of <code>InProgress</code> are returned.</p> <p>You can quickly test the API
-         * using the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
-         * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
-         * Also:</h3>   <a
+         * using the following Amazon Web Services CLI code.</p> <p> <code>aws sagemaker
+         * list-training-jobs --max-results 100 --status-equals InProgress</code> </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          */
@@ -7887,9 +7938,9 @@ namespace Model
          * other than <code>InProgress</code>, are selected (sorted according to the
          * creation time, from the most current to the oldest). Next, those with a status
          * of <code>InProgress</code> are returned.</p> <p>You can quickly test the API
-         * using the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
-         * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
-         * Also:</h3>   <a
+         * using the following Amazon Web Services CLI code.</p> <p> <code>aws sagemaker
+         * list-training-jobs --max-results 100 --status-equals InProgress</code> </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          *
@@ -7909,9 +7960,9 @@ namespace Model
          * other than <code>InProgress</code>, are selected (sorted according to the
          * creation time, from the most current to the oldest). Next, those with a status
          * of <code>InProgress</code> are returned.</p> <p>You can quickly test the API
-         * using the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
-         * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
-         * Also:</h3>   <a
+         * using the following Amazon Web Services CLI code.</p> <p> <code>aws sagemaker
+         * list-training-jobs --max-results 100 --status-equals InProgress</code> </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
          * API Reference</a></p>
          *
@@ -8078,18 +8129,18 @@ namespace Model
         virtual void ListUserProfilesAsync(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this operation to list all private and vendor workforces in an AWS
-         * Region. Note that you can only have one private workforce per AWS
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to list all private and vendor workforces in an Amazon Web
+         * Services Region. Note that you can only have one private workforce per Amazon
+         * Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
          * API Reference</a></p>
          */
         virtual Model::ListWorkforcesOutcome ListWorkforces(const Model::ListWorkforcesRequest& request) const;
 
         /**
-         * <p>Use this operation to list all private and vendor workforces in an AWS
-         * Region. Note that you can only have one private workforce per AWS
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to list all private and vendor workforces in an Amazon Web
+         * Services Region. Note that you can only have one private workforce per Amazon
+         * Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
          * API Reference</a></p>
          *
@@ -8098,9 +8149,9 @@ namespace Model
         virtual Model::ListWorkforcesOutcomeCallable ListWorkforcesCallable(const Model::ListWorkforcesRequest& request) const;
 
         /**
-         * <p>Use this operation to list all private and vendor workforces in an AWS
-         * Region. Note that you can only have one private workforce per AWS
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to list all private and vendor workforces in an Amazon Web
+         * Services Region. Note that you can only have one private workforce per Amazon
+         * Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
          * API Reference</a></p>
          *
@@ -8143,8 +8194,8 @@ namespace Model
          * <p>Adds a resouce policy to control access to a model group. For information
          * about resoure policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
+         * policies and resource-based policies</a> in the <i>Amazon Web Services Identity
+         * and Access Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">AWS
          * API Reference</a></p>
          */
@@ -8154,8 +8205,8 @@ namespace Model
          * <p>Adds a resouce policy to control access to a model group. For information
          * about resoure policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
+         * policies and resource-based policies</a> in the <i>Amazon Web Services Identity
+         * and Access Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -8167,8 +8218,8 @@ namespace Model
          * <p>Adds a resouce policy to control access to a model group. For information
          * about resoure policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
+         * policies and resource-based policies</a> in the <i>Amazon Web Services Identity
+         * and Access Management User Guide.</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -8669,14 +8720,34 @@ namespace Model
         virtual void StopNotebookInstanceAsync(const Model::StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a pipeline execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a pipeline execution.</p> <p>A pipeline execution won't stop while a
+         * callback step is running. When you call <code>StopPipelineExecution</code> on a
+         * pipeline execution with a running callback step, SageMaker Pipelines sends an
+         * additional Amazon SQS message to the specified SQS queue. The body of the SQS
+         * message contains a "Status" field which is set to "Stopping".</p> <p>You should
+         * add logic to your Amazon SQS message consumer to take any needed action (for
+         * example, resource cleanup) upon receipt of the message followed by a call to
+         * <code>SendPipelineExecutionStepSuccess</code> or
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
+         * Pipelines receives one of these calls will it stop the pipeline
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StopPipelineExecutionOutcome StopPipelineExecution(const Model::StopPipelineExecutionRequest& request) const;
 
         /**
-         * <p>Stops a pipeline execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a pipeline execution.</p> <p>A pipeline execution won't stop while a
+         * callback step is running. When you call <code>StopPipelineExecution</code> on a
+         * pipeline execution with a running callback step, SageMaker Pipelines sends an
+         * additional Amazon SQS message to the specified SQS queue. The body of the SQS
+         * message contains a "Status" field which is set to "Stopping".</p> <p>You should
+         * add logic to your Amazon SQS message consumer to take any needed action (for
+         * example, resource cleanup) upon receipt of the message followed by a call to
+         * <code>SendPipelineExecutionStepSuccess</code> or
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
+         * Pipelines receives one of these calls will it stop the pipeline
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">AWS
          * API Reference</a></p>
          *
@@ -8685,7 +8756,17 @@ namespace Model
         virtual Model::StopPipelineExecutionOutcomeCallable StopPipelineExecutionCallable(const Model::StopPipelineExecutionRequest& request) const;
 
         /**
-         * <p>Stops a pipeline execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a pipeline execution.</p> <p>A pipeline execution won't stop while a
+         * callback step is running. When you call <code>StopPipelineExecution</code> on a
+         * pipeline execution with a running callback step, SageMaker Pipelines sends an
+         * additional Amazon SQS message to the specified SQS queue. The body of the SQS
+         * message contains a "Status" field which is set to "Stopping".</p> <p>You should
+         * add logic to your Amazon SQS message consumer to take any needed action (for
+         * example, resource cleanup) upon receipt of the message followed by a call to
+         * <code>SendPipelineExecutionStepSuccess</code> or
+         * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
+         * Pipelines receives one of these calls will it stop the pipeline
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">AWS
          * API Reference</a></p>
          *

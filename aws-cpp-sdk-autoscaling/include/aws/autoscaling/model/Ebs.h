@@ -323,15 +323,15 @@ namespace Model
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
-     * you can specify a custom CMK when you create the snapshot. The ability to
-     * encrypt a snapshot during copying also allows you to apply a new CMK to an
-     * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK.</p> <p>Enabling <a
+     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
+     * encryption, but you can specify a custom CMK when you create the snapshot. The
+     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
+     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
+     * only accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the AWS managed
-     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     *  <p>For more information, see <a
+     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
+     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
+     * encrypted.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
@@ -351,15 +351,15 @@ namespace Model
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
-     * you can specify a custom CMK when you create the snapshot. The ability to
-     * encrypt a snapshot during copying also allows you to apply a new CMK to an
-     * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK.</p> <p>Enabling <a
+     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
+     * encryption, but you can specify a custom CMK when you create the snapshot. The
+     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
+     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
+     * only accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the AWS managed
-     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     *  <p>For more information, see <a
+     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
+     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
+     * encrypted.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
@@ -379,15 +379,15 @@ namespace Model
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
-     * you can specify a custom CMK when you create the snapshot. The ability to
-     * encrypt a snapshot during copying also allows you to apply a new CMK to an
-     * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK.</p> <p>Enabling <a
+     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
+     * encryption, but you can specify a custom CMK when you create the snapshot. The
+     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
+     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
+     * only accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the AWS managed
-     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     *  <p>For more information, see <a
+     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
+     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
+     * encrypted.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
@@ -407,15 +407,15 @@ namespace Model
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
-     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
-     * you can specify a custom CMK when you create the snapshot. The ability to
-     * encrypt a snapshot during copying also allows you to apply a new CMK to an
-     * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK.</p> <p>Enabling <a
+     * encrypted snapshots use the Amazon Web Services managed CMK that is used for EBS
+     * encryption, but you can specify a custom CMK when you create the snapshot. The
+     * ability to encrypt a snapshot during copying also allows you to apply a new CMK
+     * to an already-encrypted snapshot. Volumes restored from the resulting copy are
+     * only accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
-     * by default</a> results in all EBS volumes being encrypted with the AWS managed
-     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     *  <p>For more information, see <a
+     * by default</a> results in all EBS volumes being encrypted with the Amazon Web
+     * Services managed CMK or a customer managed CMK, whether or not the snapshot was
+     * encrypted.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a

@@ -5118,7 +5118,7 @@ namespace Model
      * point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
      * frame</a> labeling jobs, the maximum is 7 days (604,800 seconds). If you want to
-     * change these limits, contact AWS Support.</p> </li> </ul>
+     * change these limits, contact Amazon Web Services Support.</p> </li> </ul>
      */
     inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
 
@@ -5137,7 +5137,7 @@ namespace Model
      * point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
      * frame</a> labeling jobs, the maximum is 7 days (604,800 seconds). If you want to
-     * change these limits, contact AWS Support.</p> </li> </ul>
+     * change these limits, contact Amazon Web Services Support.</p> </li> </ul>
      */
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
 
@@ -5156,7 +5156,7 @@ namespace Model
      * point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
      * frame</a> labeling jobs, the maximum is 7 days (604,800 seconds). If you want to
-     * change these limits, contact AWS Support.</p> </li> </ul>
+     * change these limits, contact Amazon Web Services Support.</p> </li> </ul>
      */
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
 
@@ -5175,7 +5175,7 @@ namespace Model
      * point cloud</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
      * frame</a> labeling jobs, the maximum is 7 days (604,800 seconds). If you want to
-     * change these limits, contact AWS Support.</p> </li> </ul>
+     * change these limits, contact Amazon Web Services Support.</p> </li> </ul>
      */
     inline HumanTaskConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
 
@@ -5187,8 +5187,8 @@ namespace Model
      * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
      * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
      * the default value is 10 days (864,000 seconds). For most users, the maximum is
-     * also 10 days. If you want to change this limit, contact AWS Support.</p> </li>
-     * </ul>
+     * also 10 days. If you want to change this limit, contact Amazon Web Services
+     * Support.</p> </li> </ul>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
 
@@ -5199,8 +5199,8 @@ namespace Model
      * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
      * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
      * the default value is 10 days (864,000 seconds). For most users, the maximum is
-     * also 10 days. If you want to change this limit, contact AWS Support.</p> </li>
-     * </ul>
+     * also 10 days. If you want to change this limit, contact Amazon Web Services
+     * Support.</p> </li> </ul>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
@@ -5211,8 +5211,8 @@ namespace Model
      * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
      * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
      * the default value is 10 days (864,000 seconds). For most users, the maximum is
-     * also 10 days. If you want to change this limit, contact AWS Support.</p> </li>
-     * </ul>
+     * also 10 days. If you want to change this limit, contact Amazon Web Services
+     * Support.</p> </li> </ul>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
 
@@ -5223,8 +5223,8 @@ namespace Model
      * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
      * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
      * the default value is 10 days (864,000 seconds). For most users, the maximum is
-     * also 10 days. If you want to change this limit, contact AWS Support.</p> </li>
-     * </ul>
+     * also 10 days. If you want to change this limit, contact Amazon Web Services
+     * Support.</p> </li> </ul>
      */
     inline HumanTaskConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
 

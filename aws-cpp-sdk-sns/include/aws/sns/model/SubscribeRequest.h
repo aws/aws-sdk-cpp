@@ -91,9 +91,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
@@ -107,9 +107,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
@@ -123,9 +123,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
@@ -139,9 +139,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
@@ -155,9 +155,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
@@ -171,9 +171,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
@@ -187,9 +187,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
@@ -203,9 +203,9 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
-     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
-     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
+     * <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p>
+     * </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an
+     * Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
@@ -223,7 +223,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -242,7 +242,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -261,7 +261,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -280,7 +280,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -299,7 +299,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -318,7 +318,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -337,7 +337,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -356,7 +356,7 @@ namespace Model
      * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * endpoint is the ARN of an Lambda function.</p> </li> <li> <p>For the
      * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
      * Data Firehose delivery stream.</p> </li> </ul>
      */
@@ -366,7 +366,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -396,7 +396,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -426,7 +426,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -456,7 +456,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -486,7 +486,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -516,7 +516,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -546,7 +546,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -576,7 +576,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -606,7 +606,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -636,7 +636,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -666,7 +666,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -696,7 +696,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
@@ -726,7 +726,7 @@ namespace Model
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
      * lists the names, descriptions, and values of the special request parameters that
-     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * the <code>Subscribe</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber

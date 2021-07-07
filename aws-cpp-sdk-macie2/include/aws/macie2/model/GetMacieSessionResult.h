@@ -68,79 +68,86 @@ namespace Model
 
     /**
      * <p>The frequency with which Macie publishes updates to policy findings for the
-     * account. This includes publishing updates to AWS Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * account. This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
      * <p>The frequency with which Macie publishes updates to policy findings for the
-     * account. This includes publishing updates to AWS Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * account. This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
 
     /**
      * <p>The frequency with which Macie publishes updates to policy findings for the
-     * account. This includes publishing updates to AWS Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * account. This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
 
     /**
      * <p>The frequency with which Macie publishes updates to policy findings for the
-     * account. This includes publishing updates to AWS Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * account. This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline GetMacieSessionResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
      * <p>The frequency with which Macie publishes updates to policy findings for the
-     * account. This includes publishing updates to AWS Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * account. This includes publishing updates to Security Hub and Amazon EventBridge
+     * (formerly called Amazon CloudWatch Events).</p>
      */
     inline GetMacieSessionResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline GetMacieSessionResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline GetMacieSessionResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Macie
-     * to monitor and analyze data in AWS resources for the account.</p>
+     * to monitor and analyze data in Amazon Web Services resources for the
+     * account.</p>
      */
     inline GetMacieSessionResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 

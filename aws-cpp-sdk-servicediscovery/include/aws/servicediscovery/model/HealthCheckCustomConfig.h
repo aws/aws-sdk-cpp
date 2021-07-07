@@ -34,21 +34,21 @@ namespace Model
    *  <p>If you specify a health check configuration, you can specify
    * either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code>
    * but not both.</p>  <p>To change the status of a custom health check,
-   * submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map
+   * submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map
    * doesn't monitor the status of the resource, it just keeps a record of the status
    * specified in the most recent <code>UpdateInstanceCustomHealthStatus</code>
    * request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You
    * create a service.</p> </li> <li> <p>You register an instance.</p> </li> <li>
    * <p>You configure a third-party health checker to monitor the resource that's
-   * associated with the new instance. </p>  <p>AWS Cloud Map doesn't check the
+   * associated with the new instance. </p>  <p>Cloud Map doesn't check the
    * health of the resource directly. </p>  </li> <li> <p>The third-party
    * health-checker determines that the resource is unhealthy and notifies your
    * application.</p> </li> <li> <p>Your application submits an
-   * <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS
-   * Cloud Map waits for 30 seconds.</p> </li> <li> <p>If another
+   * <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>Cloud
+   * Map waits for 30 seconds.</p> </li> <li> <p>If another
    * <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that
-   * time to change the status back to healthy, AWS Cloud Map stops routing traffic
-   * to the resource.</p> </li> </ol><p><h3>See Also:</h3>   <a
+   * time to change the status back to healthy, Cloud Map stops routing traffic to
+   * the resource.</p> </li> </ol><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HealthCheckCustomConfig">AWS
    * API Reference</a></p>
    */

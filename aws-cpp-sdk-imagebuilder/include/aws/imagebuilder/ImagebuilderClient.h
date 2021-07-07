@@ -303,10 +303,10 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::UpdateInfrastructureConfigurationRequest&, const Model::UpdateInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInfrastructureConfigurationResponseReceivedHandler;
 
   /**
-   * <p>EC2 Image Builder is a fully managed AWS service that makes it easier to
-   * automate the creation, management, and deployment of customized, secure, and
-   * up-to-date "golden" server images that are pre-installed and pre-configured with
-   * software and settings to meet specific IT standards.</p>
+   * <p>EC2 Image Builder is a fully managed Amazon Web Services service that makes
+   * it easier to automate the creation, management, and deployment of customized,
+   * secure, and up-to-date "golden" server images that are pre-installed and
+   * pre-configured with software and settings to meet specific IT standards.</p>
    */
   class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient
   {
@@ -1179,7 +1179,7 @@ namespace Model
 
         /**
          * <p>List the Packages that are associated with an Image Build Version, as
-         * determined by AWS Systems Manager Inventory at build time.</p><p><h3>See
+         * determined by Amazon EC2 Systems Manager Inventory at build time.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
          * API Reference</a></p>
@@ -1188,7 +1188,7 @@ namespace Model
 
         /**
          * <p>List the Packages that are associated with an Image Build Version, as
-         * determined by AWS Systems Manager Inventory at build time.</p><p><h3>See
+         * determined by Amazon EC2 Systems Manager Inventory at build time.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
          * API Reference</a></p>
@@ -1199,7 +1199,7 @@ namespace Model
 
         /**
          * <p>List the Packages that are associated with an Image Build Version, as
-         * determined by AWS Systems Manager Inventory at build time.</p><p><h3>See
+         * determined by Amazon EC2 Systems Manager Inventory at build time.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">AWS
          * API Reference</a></p>
