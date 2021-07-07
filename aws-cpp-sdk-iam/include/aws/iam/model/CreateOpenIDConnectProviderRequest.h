@@ -45,9 +45,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
@@ -58,9 +58,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
@@ -71,9 +71,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
@@ -84,9 +84,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
@@ -97,9 +97,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
@@ -110,9 +110,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
@@ -123,9 +123,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
@@ -136,9 +136,9 @@ namespace Model
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * multiple times in a single account. If you try to submit a URL that has already
+     * been used for an OpenID Connect provider in the account, you will get an
+     * error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
 

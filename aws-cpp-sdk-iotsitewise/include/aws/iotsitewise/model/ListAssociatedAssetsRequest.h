@@ -89,7 +89,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetHierarchyId() const{ return m_hierarchyId; }
 
@@ -102,7 +102,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool HierarchyIdHasBeenSet() const { return m_hierarchyIdHasBeenSet; }
 
@@ -115,7 +115,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(const Aws::String& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = value; }
 
@@ -128,7 +128,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(Aws::String&& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = std::move(value); }
 
@@ -141,7 +141,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(const char* value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId.assign(value); }
 
@@ -154,7 +154,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssociatedAssetsRequest& WithHierarchyId(const Aws::String& value) { SetHierarchyId(value); return *this;}
 
@@ -167,7 +167,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssociatedAssetsRequest& WithHierarchyId(Aws::String&& value) { SetHierarchyId(std::move(value)); return *this;}
 
@@ -180,7 +180,7 @@ namespace Model
      * operations. This parameter is required if you choose <code>CHILD</code> for
      * <code>traversalDirection</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssociatedAssetsRequest& WithHierarchyId(const char* value) { SetHierarchyId(value); return *this;}
 
@@ -288,25 +288,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request.</p>
+     * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
     inline ListAssociatedAssetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

@@ -266,6 +266,7 @@
 #include <aws/ec2/model/DescribeScheduledInstanceAvailabilityRequest.h>
 #include <aws/ec2/model/DescribeScheduledInstancesRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupReferencesRequest.h>
+#include <aws/ec2/model/DescribeSecurityGroupRulesRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotsRequest.h>
@@ -395,6 +396,7 @@
 #include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyReservedInstancesRequest.h>
+#include <aws/ec2/model/ModifySecurityGroupRulesRequest.h>
 #include <aws/ec2/model/ModifySnapshotAttributeRequest.h>
 #include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
 #include <aws/ec2/model/ModifySubnetAttributeRequest.h>
@@ -6453,6 +6455,30 @@ void EC2Client::DescribeSecurityGroupReferencesAsyncHelper(const DescribeSecurit
   handler(this, request, DescribeSecurityGroupReferences(request), context);
 }
 
+DescribeSecurityGroupRulesOutcome EC2Client::DescribeSecurityGroupRules(const DescribeSecurityGroupRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeSecurityGroupRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeSecurityGroupRulesOutcomeCallable EC2Client::DescribeSecurityGroupRulesCallable(const DescribeSecurityGroupRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSecurityGroupRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSecurityGroupRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeSecurityGroupRulesAsync(const DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityGroupRulesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeSecurityGroupRulesAsyncHelper(const DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSecurityGroupRules(request), context);
+}
+
 DescribeSecurityGroupsOutcome EC2Client::DescribeSecurityGroups(const DescribeSecurityGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -9547,6 +9573,30 @@ void EC2Client::ModifyReservedInstancesAsync(const ModifyReservedInstancesReques
 void EC2Client::ModifyReservedInstancesAsyncHelper(const ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyReservedInstances(request), context);
+}
+
+ModifySecurityGroupRulesOutcome EC2Client::ModifySecurityGroupRules(const ModifySecurityGroupRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifySecurityGroupRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifySecurityGroupRulesOutcomeCallable EC2Client::ModifySecurityGroupRulesCallable(const ModifySecurityGroupRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifySecurityGroupRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifySecurityGroupRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifySecurityGroupRulesAsync(const ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifySecurityGroupRulesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifySecurityGroupRulesAsyncHelper(const ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifySecurityGroupRules(request), context);
 }
 
 ModifySnapshotAttributeOutcome EC2Client::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest& request) const

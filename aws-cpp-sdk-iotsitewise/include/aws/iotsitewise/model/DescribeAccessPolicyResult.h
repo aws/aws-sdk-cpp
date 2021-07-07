@@ -137,63 +137,63 @@ namespace Model
 
 
     /**
-     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
-     * policy applies.</p>
+     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
+     * IAM user) to which this access policy applies.</p>
      */
     inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
 
     /**
-     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
-     * policy applies.</p>
+     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
+     * IAM user) to which this access policy applies.</p>
      */
     inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentity = value; }
 
     /**
-     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
-     * policy applies.</p>
+     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
+     * IAM user) to which this access policy applies.</p>
      */
     inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentity = std::move(value); }
 
     /**
-     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
-     * policy applies.</p>
+     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
+     * IAM user) to which this access policy applies.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
 
     /**
-     * <p>The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access
-     * policy applies.</p>
+     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
+     * IAM user) to which this access policy applies.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this
-     * access policy provides access.</p>
+     * <p>The IoT SiteWise Monitor resource (portal or project) to which this access
+     * policy provides access.</p>
      */
     inline const Resource& GetAccessPolicyResource() const{ return m_accessPolicyResource; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this
-     * access policy provides access.</p>
+     * <p>The IoT SiteWise Monitor resource (portal or project) to which this access
+     * policy provides access.</p>
      */
     inline void SetAccessPolicyResource(const Resource& value) { m_accessPolicyResource = value; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this
-     * access policy provides access.</p>
+     * <p>The IoT SiteWise Monitor resource (portal or project) to which this access
+     * policy provides access.</p>
      */
     inline void SetAccessPolicyResource(Resource&& value) { m_accessPolicyResource = std::move(value); }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this
-     * access policy provides access.</p>
+     * <p>The IoT SiteWise Monitor resource (portal or project) to which this access
+     * policy provides access.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyResource(const Resource& value) { SetAccessPolicyResource(value); return *this;}
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource (portal or project) to which this
-     * access policy provides access.</p>
+     * <p>The IoT SiteWise Monitor resource (portal or project) to which this access
+     * policy provides access.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyResource(Resource&& value) { SetAccessPolicyResource(std::move(value)); return *this;}
 

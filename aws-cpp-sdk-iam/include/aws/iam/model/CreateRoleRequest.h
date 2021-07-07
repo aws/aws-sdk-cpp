@@ -219,14 +219,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -237,14 +237,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -255,14 +255,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -273,14 +273,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -291,14 +291,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -309,14 +309,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -327,14 +327,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -345,14 +345,14 @@ namespace Model
     /**
      * <p>The trust relationship policy document that grants an entity permission to
      * assume the role.</p> <p>In IAM, you must provide a JSON policy that has been
-     * converted to a string. However, for AWS CloudFormation templates formatted in
-     * YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation
-     * always converts a YAML policy to JSON format before submitting it to IAM.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
-     * validate this parameter is a string of characters consisting of the
-     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
-     * character (<code>\u0020</code>) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * converted to a string. However, for CloudFormation templates formatted in YAML,
+     * you can provide the policy in JSON or YAML format. CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
      * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul> <p> Upon success, the
@@ -406,7 +406,7 @@ namespace Model
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
      * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * hours.</p> <p>Anyone who assumes the role from the or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -425,7 +425,7 @@ namespace Model
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
      * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * hours.</p> <p>Anyone who assumes the role from the or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -444,7 +444,7 @@ namespace Model
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
      * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * hours.</p> <p>Anyone who assumes the role from the or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the
@@ -463,7 +463,7 @@ namespace Model
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
      * maximum of one hour is applied. This setting can have a value from 1 hour to 12
-     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * hours.</p> <p>Anyone who assumes the role from the or API can use the
      * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
      * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the

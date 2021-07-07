@@ -40,73 +40,73 @@ namespace Model
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = std::move(value); }
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn.assign(value); }
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the OIDC identity provider in IAM to which you want to add
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline TagOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 

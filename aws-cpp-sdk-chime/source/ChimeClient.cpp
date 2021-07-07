@@ -42,6 +42,7 @@
 #include <aws/chime/model/CreateChannelBanRequest.h>
 #include <aws/chime/model/CreateChannelMembershipRequest.h>
 #include <aws/chime/model/CreateChannelModeratorRequest.h>
+#include <aws/chime/model/CreateMediaCapturePipelineRequest.h>
 #include <aws/chime/model/CreateMeetingRequest.h>
 #include <aws/chime/model/CreateMeetingDialOutRequest.h>
 #include <aws/chime/model/CreateMeetingWithAttendeesRequest.h>
@@ -67,6 +68,7 @@
 #include <aws/chime/model/DeleteChannelMessageRequest.h>
 #include <aws/chime/model/DeleteChannelModeratorRequest.h>
 #include <aws/chime/model/DeleteEventsConfigurationRequest.h>
+#include <aws/chime/model/DeleteMediaCapturePipelineRequest.h>
 #include <aws/chime/model/DeleteMeetingRequest.h>
 #include <aws/chime/model/DeletePhoneNumberRequest.h>
 #include <aws/chime/model/DeleteProxySessionRequest.h>
@@ -103,6 +105,7 @@
 #include <aws/chime/model/GetBotRequest.h>
 #include <aws/chime/model/GetChannelMessageRequest.h>
 #include <aws/chime/model/GetEventsConfigurationRequest.h>
+#include <aws/chime/model/GetMediaCapturePipelineRequest.h>
 #include <aws/chime/model/GetMeetingRequest.h>
 #include <aws/chime/model/GetMessagingSessionEndpointRequest.h>
 #include <aws/chime/model/GetPhoneNumberRequest.h>
@@ -139,6 +142,7 @@
 #include <aws/chime/model/ListChannelModeratorsRequest.h>
 #include <aws/chime/model/ListChannelsRequest.h>
 #include <aws/chime/model/ListChannelsModeratedByAppInstanceUserRequest.h>
+#include <aws/chime/model/ListMediaCapturePipelinesRequest.h>
 #include <aws/chime/model/ListMeetingTagsRequest.h>
 #include <aws/chime/model/ListMeetingsRequest.h>
 #include <aws/chime/model/ListPhoneNumberOrdersRequest.h>
@@ -1062,6 +1066,31 @@ void ChimeClient::CreateChannelModeratorAsyncHelper(const CreateChannelModerator
   handler(this, request, CreateChannelModerator(request), context);
 }
 
+CreateMediaCapturePipelineOutcome ChimeClient::CreateMediaCapturePipeline(const CreateMediaCapturePipelineRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/media-capture-pipelines");
+  return CreateMediaCapturePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMediaCapturePipelineOutcomeCallable ChimeClient::CreateMediaCapturePipelineCallable(const CreateMediaCapturePipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMediaCapturePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMediaCapturePipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateMediaCapturePipelineAsync(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMediaCapturePipelineAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateMediaCapturePipelineAsyncHelper(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMediaCapturePipeline(request), context);
+}
+
 CreateMeetingOutcome ChimeClient::CreateMeeting(const CreateMeetingRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -1935,6 +1964,37 @@ void ChimeClient::DeleteEventsConfigurationAsync(const DeleteEventsConfiguration
 void ChimeClient::DeleteEventsConfigurationAsyncHelper(const DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventsConfiguration(request), context);
+}
+
+DeleteMediaCapturePipelineOutcome ChimeClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
+{
+  if (!request.MediaPipelineIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMediaCapturePipeline", "Required field: MediaPipelineId, is not set");
+    return DeleteMediaCapturePipelineOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaPipelineId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/media-capture-pipelines/");
+  uri.AddPathSegment(request.GetMediaPipelineId());
+  return DeleteMediaCapturePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMediaCapturePipelineOutcomeCallable ChimeClient::DeleteMediaCapturePipelineCallable(const DeleteMediaCapturePipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMediaCapturePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMediaCapturePipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteMediaCapturePipelineAsync(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMediaCapturePipelineAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteMediaCapturePipelineAsyncHelper(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMediaCapturePipeline(request), context);
 }
 
 DeleteMeetingOutcome ChimeClient::DeleteMeeting(const DeleteMeetingRequest& request) const
@@ -3309,6 +3369,37 @@ void ChimeClient::GetGlobalSettingsAsyncHelper(const GetGlobalSettingsResponseRe
   handler(this, GetGlobalSettings(), context);
 }
 
+GetMediaCapturePipelineOutcome ChimeClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
+{
+  if (!request.MediaPipelineIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMediaCapturePipeline", "Required field: MediaPipelineId, is not set");
+    return GetMediaCapturePipelineOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaPipelineId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/media-capture-pipelines/");
+  uri.AddPathSegment(request.GetMediaPipelineId());
+  return GetMediaCapturePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMediaCapturePipelineOutcomeCallable ChimeClient::GetMediaCapturePipelineCallable(const GetMediaCapturePipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMediaCapturePipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMediaCapturePipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetMediaCapturePipelineAsync(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMediaCapturePipelineAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetMediaCapturePipelineAsyncHelper(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMediaCapturePipeline(request), context);
+}
+
 GetMeetingOutcome ChimeClient::GetMeeting(const GetMeetingRequest& request) const
 {
   if (!request.MeetingIdHasBeenSet())
@@ -4578,6 +4669,31 @@ void ChimeClient::ListChannelsModeratedByAppInstanceUserAsync(const ListChannels
 void ChimeClient::ListChannelsModeratedByAppInstanceUserAsyncHelper(const ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannelsModeratedByAppInstanceUser(request), context);
+}
+
+ListMediaCapturePipelinesOutcome ChimeClient::ListMediaCapturePipelines(const ListMediaCapturePipelinesRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/media-capture-pipelines");
+  return ListMediaCapturePipelinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMediaCapturePipelinesOutcomeCallable ChimeClient::ListMediaCapturePipelinesCallable(const ListMediaCapturePipelinesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMediaCapturePipelinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMediaCapturePipelines(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMediaCapturePipelinesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListMediaCapturePipelinesAsyncHelper(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMediaCapturePipelines(request), context);
 }
 
 ListMeetingTagsOutcome ChimeClient::ListMeetingTags(const ListMeetingTagsRequest& request) const

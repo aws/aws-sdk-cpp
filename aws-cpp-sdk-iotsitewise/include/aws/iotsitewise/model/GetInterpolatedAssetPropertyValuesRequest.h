@@ -122,89 +122,81 @@ namespace Model
 
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithPropertyAlias(const char* value) { SetPropertyAlias(value); return *this;}
@@ -412,25 +404,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to be returned per paginated request. If not
+     * <p>The maximum number of results to return for each paginated request. If not
      * specified, the default value is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request. If not
+     * <p>The maximum number of results to return for each paginated request. If not
      * specified, the default value is 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request. If not
+     * <p>The maximum number of results to return for each paginated request. If not
      * specified, the default value is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to be returned per paginated request. If not
+     * <p>The maximum number of results to return for each paginated request. If not
      * specified, the default value is 10.</p>
      */
     inline GetInterpolatedAssetPropertyValuesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

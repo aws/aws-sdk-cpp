@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpPermission.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -474,9 +475,9 @@ namespace Model
 
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -485,9 +486,9 @@ namespace Model
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -496,9 +497,9 @@ namespace Model
     inline bool SourceSecurityGroupOwnerIdHasBeenSet() const { return m_sourceSecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -507,9 +508,9 @@ namespace Model
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -518,9 +519,9 @@ namespace Model
     inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -529,9 +530,9 @@ namespace Model
     inline void SetSourceSecurityGroupOwnerId(const char* value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -540,9 +541,9 @@ namespace Model
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const Aws::String& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -551,9 +552,9 @@ namespace Model
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>[nondefault VPC] The AWS account ID for the source security group, if the
-     * source security group is in a different account. You can't specify this
-     * parameter in combination with the following parameters: the CIDR IP address
+     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * group, if the source security group is in a different account. You can't specify
+     * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
      * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
      * with a specific IP protocol and port range, use a set of IP permissions
@@ -631,6 +632,47 @@ namespace Model
      */
     inline AuthorizeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline AuthorizeSecurityGroupIngressRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline AuthorizeSecurityGroupIngressRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline AuthorizeSecurityGroupIngressRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>[VPC Only] The tags applied to the security group rule.</p>
+     */
+    inline AuthorizeSecurityGroupIngressRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cidrIp;
@@ -662,6 +704,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

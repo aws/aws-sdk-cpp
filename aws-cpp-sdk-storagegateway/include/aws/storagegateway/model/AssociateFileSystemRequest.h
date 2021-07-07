@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/CacheAttributes.h>
+#include <aws/storagegateway/model/EndpointNetworkConfiguration.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
@@ -136,49 +137,49 @@ namespace Model
 
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline AssociateFileSystemRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline AssociateFileSystemRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique string value that you supply that is used by the file gateway to
+     * <p>A unique string value that you supply that is used by the FSx File Gateway to
      * ensure idempotent file system association creation.</p>
      */
     inline AssociateFileSystemRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -211,49 +212,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline AssociateFileSystemRequest& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline AssociateFileSystemRequest& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate
-     * with the Amazon FSx file gateway.</p>
+     * with the FSx File Gateway.</p>
      */
     inline AssociateFileSystemRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
 
@@ -366,6 +367,55 @@ namespace Model
     
     inline AssociateFileSystemRequest& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the network configuration information for the gateway associated
+     * with the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline const EndpointNetworkConfiguration& GetEndpointNetworkConfiguration() const{ return m_endpointNetworkConfiguration; }
+
+    /**
+     * <p>Specifies the network configuration information for the gateway associated
+     * with the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline bool EndpointNetworkConfigurationHasBeenSet() const { return m_endpointNetworkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the network configuration information for the gateway associated
+     * with the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline void SetEndpointNetworkConfiguration(const EndpointNetworkConfiguration& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = value; }
+
+    /**
+     * <p>Specifies the network configuration information for the gateway associated
+     * with the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline void SetEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the network configuration information for the gateway associated
+     * with the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline AssociateFileSystemRequest& WithEndpointNetworkConfiguration(const EndpointNetworkConfiguration& value) { SetEndpointNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the network configuration information for the gateway associated
+     * with the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline AssociateFileSystemRequest& WithEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { SetEndpointNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userName;
@@ -391,6 +441,9 @@ namespace Model
 
     CacheAttributes m_cacheAttributes;
     bool m_cacheAttributesHasBeenSet;
+
+    EndpointNetworkConfiguration m_endpointNetworkConfiguration;
+    bool m_endpointNetworkConfigurationHasBeenSet;
   };
 
 } // namespace Model

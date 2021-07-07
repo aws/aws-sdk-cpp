@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS Identity and Access Management (IAM) role.
-   * For more information, see <a
+   * <p>Contains information about an Identity and Access Management role. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
    * roles</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/IAMRoleIdentity">AWS

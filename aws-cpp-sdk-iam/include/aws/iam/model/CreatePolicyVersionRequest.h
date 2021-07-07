@@ -40,7 +40,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
@@ -48,7 +49,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
@@ -56,7 +58,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
@@ -64,7 +67,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
@@ -72,7 +76,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
@@ -80,7 +85,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
@@ -88,7 +94,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
@@ -96,7 +103,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
@@ -104,9 +112,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -121,9 +134,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -138,9 +156,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -155,9 +178,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -172,9 +200,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -189,9 +222,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -206,9 +244,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -223,9 +266,14 @@ namespace Model
     /**
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>You must provide policies in JSON format in IAM.
-     * However, for AWS CloudFormation templates formatted in YAML, you can provide the
-     * policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     * to JSON format before submitting it to IAM.</p> <p>The <a
+     * However, for CloudFormation templates formatted in YAML, you can provide the
+     * policy in JSON or YAML format. CloudFormation always converts a YAML policy to
+     * JSON format before submitting it to IAM.</p> <p>The maximum length of the policy
+     * document that you can pass in this operation, including whitespace, is listed
+     * below. To view the maximum character counts of a managed policy with no
+     * whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a security group</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a security group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroup">AWS
    * API Reference</a></p>
    */
@@ -166,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline SecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline SecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the security group.</p>
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline SecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

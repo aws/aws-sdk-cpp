@@ -39,80 +39,80 @@ namespace Model
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListMFADeviceTagsRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListMFADeviceTagsRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device whose tags you want to
      * see. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListMFADeviceTagsRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
@@ -183,11 +183,11 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -195,11 +195,11 @@ namespace Model
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -207,11 +207,11 @@ namespace Model
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -219,11 +219,11 @@ namespace Model
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>

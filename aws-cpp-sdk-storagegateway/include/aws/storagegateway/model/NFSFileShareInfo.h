@@ -30,8 +30,8 @@ namespace Model
 
   /**
    * <p>The Unix file permissions and ownership information assigned, by default, to
-   * native S3 objects when file gateway discovers them in S3 buckets. This operation
-   * is only supported in file gateways.</p><p><h3>See Also:</h3>   <a
+   * native S3 objects when an S3 File Gateway discovers them in S3 buckets. This
+   * operation is only supported in S3 File Gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo">AWS
    * API Reference</a></p>
    */
@@ -165,28 +165,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline NFSFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -293,8 +293,8 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -302,8 +302,8 @@ namespace Model
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -311,8 +311,8 @@ namespace Model
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -320,8 +320,8 @@ namespace Model
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -329,8 +329,8 @@ namespace Model
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -338,8 +338,8 @@ namespace Model
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -347,8 +347,8 @@ namespace Model
     inline NFSFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -356,8 +356,8 @@ namespace Model
     inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -837,6 +837,136 @@ namespace Model
      */
     inline NFSFileShareInfo& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
 
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetVPCEndpointDNSName() const{ return m_vPCEndpointDNSName; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline bool VPCEndpointDNSNameHasBeenSet() const { return m_vPCEndpointDNSNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const Aws::String& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = value; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(Aws::String&& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = std::move(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const char* value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName.assign(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithVPCEndpointDNSName(const Aws::String& value) { SetVPCEndpointDNSName(value); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithVPCEndpointDNSName(Aws::String&& value) { SetVPCEndpointDNSName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithVPCEndpointDNSName(const char* value) { SetVPCEndpointDNSName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline NFSFileShareInfo& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+
   private:
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
@@ -901,6 +1031,12 @@ namespace Model
 
     Aws::String m_notificationPolicy;
     bool m_notificationPolicyHasBeenSet;
+
+    Aws::String m_vPCEndpointDNSName;
+    bool m_vPCEndpointDNSNameHasBeenSet;
+
+    Aws::String m_bucketRegion;
+    bool m_bucketRegionHasBeenSet;
   };
 
 } // namespace Model

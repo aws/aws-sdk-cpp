@@ -24,13 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>Contains details for a gateway that runs on AWS IoT Greengrass. To create a
-   * gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector
-   * to a Greengrass group and deploy it. Your Greengrass group must also have
-   * permissions to upload data to AWS IoT SiteWise. For more information, see <a
+   * <p>Contains details for a gateway that runs on IoT Greengrass. To create a
+   * gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to
+   * a Greengrass group and deploy it. Your Greengrass group must also have
+   * permissions to upload data to IoT SiteWise. For more information, see <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
-   * data using a gateway</a> in the <i>AWS IoT SiteWise User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Greengrass">AWS
    * API Reference</a></p>
    */
@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
 
@@ -63,7 +63,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
 
@@ -75,7 +75,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
 
@@ -87,7 +87,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
 
@@ -99,7 +99,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
 
@@ -111,7 +111,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline Greengrass& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
 
@@ -123,7 +123,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline Greengrass& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
 
@@ -135,7 +135,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a>
      * and <a
      * href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a>
-     * in the <i>AWS IoT Greengrass API Reference</i>.</p>
+     * in the <i>IoT Greengrass API Reference</i>.</p>
      */
     inline Greengrass& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
 

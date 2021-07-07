@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/HostEnvironment.h>
+#include <aws/storagegateway/model/GatewayCapacity.h>
 #include <aws/storagegateway/model/NetworkInterface.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
@@ -437,37 +438,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline const Aws::String& GetEc2InstanceRegion() const{ return m_ec2InstanceRegion; }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const Aws::String& value) { m_ec2InstanceRegion = value; }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(Aws::String&& value) { m_ec2InstanceRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const char* value) { m_ec2InstanceRegion.assign(value); }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const Aws::String& value) { SetEc2InstanceRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(Aws::String&& value) { SetEc2InstanceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
 
@@ -769,6 +770,75 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& WithDeprecationDate(const char* value) { SetDeprecationDate(value); return *this;}
 
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline const GatewayCapacity& GetGatewayCapacity() const{ return m_gatewayCapacity; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline void SetGatewayCapacity(const GatewayCapacity& value) { m_gatewayCapacity = value; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline void SetGatewayCapacity(GatewayCapacity&& value) { m_gatewayCapacity = std::move(value); }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline DescribeGatewayInformationResult& WithGatewayCapacity(const GatewayCapacity& value) { SetGatewayCapacity(value); return *this;}
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline DescribeGatewayInformationResult& WithGatewayCapacity(GatewayCapacity&& value) { SetGatewayCapacity(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline const Aws::Vector<GatewayCapacity>& GetSupportedGatewayCapacities() const{ return m_supportedGatewayCapacities; }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline void SetSupportedGatewayCapacities(const Aws::Vector<GatewayCapacity>& value) { m_supportedGatewayCapacities = value; }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline void SetSupportedGatewayCapacities(Aws::Vector<GatewayCapacity>&& value) { m_supportedGatewayCapacities = std::move(value); }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSupportedGatewayCapacities(const Aws::Vector<GatewayCapacity>& value) { SetSupportedGatewayCapacities(value); return *this;}
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSupportedGatewayCapacities(Aws::Vector<GatewayCapacity>&& value) { SetSupportedGatewayCapacities(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& AddSupportedGatewayCapacities(const GatewayCapacity& value) { m_supportedGatewayCapacities.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& AddSupportedGatewayCapacities(GatewayCapacity&& value) { m_supportedGatewayCapacities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_gatewayARN;
@@ -806,6 +876,10 @@ namespace Model
     Aws::String m_softwareUpdatesEndDate;
 
     Aws::String m_deprecationDate;
+
+    GatewayCapacity m_gatewayCapacity;
+
+    Aws::Vector<GatewayCapacity> m_supportedGatewayCapacities;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
    * data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a>
-   * in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Transform">AWS
    * API Reference</a></p>
    */
@@ -52,7 +52,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
@@ -61,7 +61,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
@@ -79,7 +79,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
@@ -97,7 +97,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline Transform& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline Transform& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
@@ -115,7 +115,7 @@ namespace Model
      * specify up to 10 variables per expression. You can specify up to 10 functions
      * per expression. </p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline Transform& WithExpression(const char* value) { SetExpression(value); return *this;}
 

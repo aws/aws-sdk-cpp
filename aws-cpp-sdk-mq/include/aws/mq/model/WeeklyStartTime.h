@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * The scheduled time period relative to UTC during which Amazon MQ begins to apply
-   * pending updates or patches to the broker.<p><h3>See Also:</h3>   <a
+   * <p>The scheduled time period relative to UTC during which Amazon MQ begins to
+   * apply pending updates or patches to the broker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/WeeklyStartTime">AWS
    * API Reference</a></p>
    */
@@ -40,122 +40,122 @@ namespace Model
 
 
     /**
-     * Required. The day of the week.
+     * <p>Required. The day of the week.</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
-     * Required. The day of the week.
+     * <p>Required. The day of the week.</p>
      */
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
 
     /**
-     * Required. The day of the week.
+     * <p>Required. The day of the week.</p>
      */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
-     * Required. The day of the week.
+     * <p>Required. The day of the week.</p>
      */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
 
     /**
-     * Required. The day of the week.
+     * <p>Required. The day of the week.</p>
      */
     inline WeeklyStartTime& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
 
     /**
-     * Required. The day of the week.
+     * <p>Required. The day of the week.</p>
      */
     inline WeeklyStartTime& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
 
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline const Aws::String& GetTimeOfDay() const{ return m_timeOfDay; }
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline bool TimeOfDayHasBeenSet() const { return m_timeOfDayHasBeenSet; }
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline void SetTimeOfDay(const Aws::String& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = value; }
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline void SetTimeOfDay(Aws::String&& value) { m_timeOfDayHasBeenSet = true; m_timeOfDay = std::move(value); }
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline void SetTimeOfDay(const char* value) { m_timeOfDayHasBeenSet = true; m_timeOfDay.assign(value); }
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline WeeklyStartTime& WithTimeOfDay(const Aws::String& value) { SetTimeOfDay(value); return *this;}
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline WeeklyStartTime& WithTimeOfDay(Aws::String&& value) { SetTimeOfDay(std::move(value)); return *this;}
 
     /**
-     * Required. The time, in 24-hour format.
+     * <p>Required. The time, in 24-hour format.</p>
      */
     inline WeeklyStartTime& WithTimeOfDay(const char* value) { SetTimeOfDay(value); return *this;}
 
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline WeeklyStartTime& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline WeeklyStartTime& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
 
     /**
-     * The time zone, UTC by default, in either the Country/City format, or the UTC
-     * offset format.
+     * <p>The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.</p>
      */
     inline WeeklyStartTime& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
 

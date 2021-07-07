@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an AWS IoT SiteWise configuration
-   * error.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an IoT SiteWise configuration error.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationErrorDetails">AWS
    * API Reference</a></p>
    */

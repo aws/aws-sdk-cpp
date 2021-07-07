@@ -41,80 +41,80 @@ namespace Model
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline TagMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline TagMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the IAM virtual MFA device to which you want to add
      * tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
-     * <p>This parameter accepts (through its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline TagMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

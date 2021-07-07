@@ -29,8 +29,8 @@ namespace Model
 {
   /**
    * <p>Contains the response to a successful <a>AssumeRoleWithSAML</a> request,
-   * including temporary AWS credentials that can be used to make AWS requests.
-   * </p><p><h3>See Also:</h3>   <a
+   * including temporary Amazon Web Services credentials that can be used to make
+   * Amazon Web Services requests. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAMLResponse">AWS
    * API Reference</a></p>
    */
@@ -348,9 +348,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
@@ -360,9 +360,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
@@ -372,9 +372,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
@@ -384,9 +384,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
@@ -396,9 +396,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
@@ -408,9 +408,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +
@@ -420,9 +420,9 @@ namespace Model
 
     /**
      * <p>A hash value based on the concatenation of the following:</p> <ul> <li>
-     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The AWS account
-     * ID.</p> </li> <li> <p>The friendly name (the last part of the ARN) of the SAML
-     * provider in IAM.</p> </li> </ul> <p>The combination of
+     * <p>The <code>Issuer</code> response value.</p> </li> <li> <p>The Amazon Web
+     * Services account ID.</p> </li> <li> <p>The friendly name (the last part of the
+     * ARN) of the SAML provider in IAM.</p> </li> </ul> <p>The combination of
      * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely
      * identify a federated user.</p> <p>The following pseudocode shows how the hash
      * value is calculated:</p> <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" +

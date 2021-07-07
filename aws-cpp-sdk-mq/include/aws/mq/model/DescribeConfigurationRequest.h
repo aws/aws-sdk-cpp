@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 

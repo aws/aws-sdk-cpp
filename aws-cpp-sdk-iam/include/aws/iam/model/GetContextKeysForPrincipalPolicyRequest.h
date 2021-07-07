@@ -47,7 +47,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetPolicySourceArn() const{ return m_policySourceArn; }
 
@@ -61,7 +62,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool PolicySourceArnHasBeenSet() const { return m_policySourceArnHasBeenSet; }
 
@@ -75,7 +77,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const Aws::String& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = value; }
 
@@ -89,7 +92,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(Aws::String&& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = std::move(value); }
 
@@ -103,7 +107,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const char* value) { m_policySourceArnHasBeenSet = true; m_policySourceArn.assign(value); }
 
@@ -117,7 +122,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(const Aws::String& value) { SetPolicySourceArn(value); return *this;}
 
@@ -131,7 +137,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(Aws::String&& value) { SetPolicySourceArn(std::move(value)); return *this;}
 
@@ -145,7 +152,8 @@ namespace Model
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(const char* value) { SetPolicySourceArn(value); return *this;}
 

@@ -97,13 +97,13 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
+     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
      * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
      * <p>When a cache behavior contains trusted signers, CloudFront requires signed
      * URLs or signed cookies for all requests that match the cache behavior. The URLs
      * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
+     * trusted signer’s account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -112,13 +112,13 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
+     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
      * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
      * <p>When a cache behavior contains trusted signers, CloudFront requires signed
      * URLs or signed cookies for all requests that match the cache behavior. The URLs
      * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
+     * trusted signer’s account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -127,13 +127,13 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
+     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
      * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
      * <p>When a cache behavior contains trusted signers, CloudFront requires signed
      * URLs or signed cookies for all requests that match the cache behavior. The URLs
      * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
+     * trusted signer’s account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -142,13 +142,13 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
+     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
      * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
      * <p>When a cache behavior contains trusted signers, CloudFront requires signed
      * URLs or signed cookies for all requests that match the cache behavior. The URLs
      * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
+     * trusted signer’s account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -157,13 +157,13 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
+     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
      * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
      * <p>When a cache behavior contains trusted signers, CloudFront requires signed
      * URLs or signed cookies for all requests that match the cache behavior. The URLs
      * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
+     * trusted signer’s account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -172,13 +172,13 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
+     * <code>TrustedSigners</code>.</p>  <p>A list of account IDs whose
      * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
      * <p>When a cache behavior contains trusted signers, CloudFront requires signed
      * URLs or signed cookies for all requests that match the cache behavior. The URLs
      * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
+     * trusted signer’s account. The signed URL or cookie contains information about
+     * which public key CloudFront should use to verify the signature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -520,38 +520,38 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline const LambdaFunctionAssociations& GetLambdaFunctionAssociations() const{ return m_lambdaFunctionAssociations; }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline bool LambdaFunctionAssociationsHasBeenSet() const { return m_lambdaFunctionAssociationsHasBeenSet; }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline void SetLambdaFunctionAssociations(const LambdaFunctionAssociations& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = value; }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline void SetLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = std::move(value); }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithLambdaFunctionAssociations(const LambdaFunctionAssociations& value) { SetLambdaFunctionAssociations(value); return *this;}
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { SetLambdaFunctionAssociations(std::move(value)); return *this;}
 

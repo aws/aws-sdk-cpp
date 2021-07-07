@@ -20,7 +20,8 @@ AssociateFileSystemRequest::AssociateFileSystemRequest() :
     m_locationARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_auditDestinationARNHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_endpointNetworkConfigurationHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String AssociateFileSystemRequest::SerializePayload() const
   if(m_cacheAttributesHasBeenSet)
   {
    payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
+
+  }
+
+  if(m_endpointNetworkConfigurationHasBeenSet)
+  {
+   payload.WithObject("EndpointNetworkConfiguration", m_endpointNetworkConfiguration.Jsonize());
 
   }
 

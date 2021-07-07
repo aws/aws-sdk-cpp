@@ -78,7 +78,7 @@ namespace Model
 
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -86,14 +86,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline const Aws::String& GetNewPassword() const{ return m_newPassword; }
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -101,14 +101,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline bool NewPasswordHasBeenSet() const { return m_newPasswordHasBeenSet; }
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -116,14 +116,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline void SetNewPassword(const Aws::String& value) { m_newPasswordHasBeenSet = true; m_newPassword = value; }
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -131,14 +131,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline void SetNewPassword(Aws::String&& value) { m_newPasswordHasBeenSet = true; m_newPassword = std::move(value); }
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -146,14 +146,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline void SetNewPassword(const char* value) { m_newPasswordHasBeenSet = true; m_newPassword.assign(value); }
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -161,14 +161,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline ChangePasswordRequest& WithNewPassword(const Aws::String& value) { SetNewPassword(value); return *this;}
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -176,14 +176,14 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline ChangePasswordRequest& WithNewPassword(Aws::String&& value) { SetNewPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password. The new password must conform to the AWS account's password
+     * <p>The new password. The new password must conform to the account's password
      * policy, if one exists.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter is a string of characters. That string can include
@@ -191,8 +191,8 @@ namespace Model
      * through the end of the ASCII character range (<code>\u00FF</code>). You can also
      * include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>) characters. Any of these characters are
-     * valid in a password. However, many tools, such as the AWS Management Console,
-     * might restrict the ability to type certain characters because they have special
+     * valid in a password. However, many tools, such as the Management Console, might
+     * restrict the ability to type certain characters because they have special
      * meaning within that tool.</p>
      */
     inline ChangePasswordRequest& WithNewPassword(const char* value) { SetNewPassword(value); return *this;}

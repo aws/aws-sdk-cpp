@@ -39,116 +39,116 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline ListConfigurationRevisionsRequest& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline ListConfigurationRevisionsRequest& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the configuration.
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline ListConfigurationRevisionsRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.
+     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
+     * default). This value must be an integer from 5 to 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.
+     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
+     * default). This value must be an integer from 5 to 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.
+     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
+     * default). This value must be an integer from 5 to 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * The maximum number of configurations that Amazon MQ can return per page (20 by
-     * default). This value must be an integer from 5 to 100.
+     * <p>The maximum number of brokers that Amazon MQ can return per page (20 by
+     * default). This value must be an integer from 5 to 100.</p>
      */
     inline ListConfigurationRevisionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline ListConfigurationRevisionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline ListConfigurationRevisionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * The token that specifies the next page of results Amazon MQ should return. To
-     * request the first page, leave nextToken empty.
+     * <p>The token that specifies the next page of results Amazon MQ should return. To
+     * request the first page, leave nextToken empty.</p>
      */
     inline ListConfigurationRevisionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

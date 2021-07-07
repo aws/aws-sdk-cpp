@@ -43,50 +43,50 @@ namespace Model
 
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline CreateNFSFileShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline CreateNFSFileShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique string value that you supply that is used by file gateway to ensure
-     * idempotent file share creation.</p>
+     * <p>A unique string value that you supply that is used by S3 File Gateway to
+     * ensure idempotent file share creation.</p>
      */
     inline CreateNFSFileShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -123,49 +123,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline CreateNFSFileShareRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline CreateNFSFileShareRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
     inline CreateNFSFileShareRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -173,28 +173,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline CreateNFSFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -266,106 +266,178 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline CreateNFSFileShareRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline CreateNFSFileShareRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
-     * gateway assumes when it accesses the underlying storage.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
+     * Gateway assumes when it accesses the underlying storage.</p>
      */
     inline CreateNFSFileShareRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline CreateNFSFileShareRequest& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the backend storage used for storing file data. A prefix name can
-     * be added to the S3 bucket name. It must end with a "/".</p>
+     * be added to the S3 bucket name. It must end with a "/".</p>  <p>You can
+     * specify a bucket attached to an access point using a complete ARN that includes
+     * the bucket region as shown:</p> <p>
+     * <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
+     * </code> </p> <p>If you specify a bucket attached to an access point, the bucket
+     * policy must be configured to delegate access control to the access point. For
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+     * access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * 
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -373,8 +445,8 @@ namespace Model
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -382,8 +454,8 @@ namespace Model
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -391,8 +463,8 @@ namespace Model
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -400,8 +472,8 @@ namespace Model
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -409,8 +481,8 @@ namespace Model
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -418,8 +490,8 @@ namespace Model
     inline CreateNFSFileShareRequest& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -427,8 +499,8 @@ namespace Model
     inline CreateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -438,97 +510,97 @@ namespace Model
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline const ObjectACL& GetObjectACL() const{ return m_objectACL; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline void SetObjectACL(ObjectACL&& value) { m_objectACLHasBeenSet = true; m_objectACL = std::move(value); }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline CreateNFSFileShareRequest& WithObjectACL(const ObjectACL& value) { SetObjectACL(value); return *this;}
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline CreateNFSFileShareRequest& WithObjectACL(ObjectACL&& value) { SetObjectACL(std::move(value)); return *this;}
 
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline bool ClientListHasBeenSet() const { return m_clientListHasBeenSet; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = std::move(value); }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline CreateNFSFileShareRequest& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline CreateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline CreateNFSFileShareRequest& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline CreateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline CreateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
@@ -1015,6 +1087,136 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
 
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetVPCEndpointDNSName() const{ return m_vPCEndpointDNSName; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline bool VPCEndpointDNSNameHasBeenSet() const { return m_vPCEndpointDNSNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const Aws::String& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = value; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(Aws::String&& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = std::move(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const char* value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName.assign(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline CreateNFSFileShareRequest& WithVPCEndpointDNSName(const Aws::String& value) { SetVPCEndpointDNSName(value); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline CreateNFSFileShareRequest& WithVPCEndpointDNSName(Aws::String&& value) { SetVPCEndpointDNSName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for NFS file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline CreateNFSFileShareRequest& WithVPCEndpointDNSName(const char* value) { SetVPCEndpointDNSName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline CreateNFSFileShareRequest& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline CreateNFSFileShareRequest& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the NFS file share stores
+     * files.</p>  <p>This parameter is required for NFS file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline CreateNFSFileShareRequest& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -1070,6 +1272,12 @@ namespace Model
 
     Aws::String m_notificationPolicy;
     bool m_notificationPolicyHasBeenSet;
+
+    Aws::String m_vPCEndpointDNSName;
+    bool m_vPCEndpointDNSNameHasBeenSet;
+
+    Aws::String m_bucketRegion;
+    bool m_bucketRegionHasBeenSet;
   };
 
 } // namespace Model

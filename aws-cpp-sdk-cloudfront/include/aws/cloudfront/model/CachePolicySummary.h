@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-     * <code>custom</code> (created in this AWS account).</p>
+     * <p>The type of cache policy, either <code>managed</code> (created by Amazon Web
+     * Services) or <code>custom</code> (created in this account).</p>
      */
     inline const CachePolicyType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-     * <code>custom</code> (created in this AWS account).</p>
+     * <p>The type of cache policy, either <code>managed</code> (created by Amazon Web
+     * Services) or <code>custom</code> (created in this account).</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-     * <code>custom</code> (created in this AWS account).</p>
+     * <p>The type of cache policy, either <code>managed</code> (created by Amazon Web
+     * Services) or <code>custom</code> (created in this account).</p>
      */
     inline void SetType(const CachePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-     * <code>custom</code> (created in this AWS account).</p>
+     * <p>The type of cache policy, either <code>managed</code> (created by Amazon Web
+     * Services) or <code>custom</code> (created in this account).</p>
      */
     inline void SetType(CachePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-     * <code>custom</code> (created in this AWS account).</p>
+     * <p>The type of cache policy, either <code>managed</code> (created by Amazon Web
+     * Services) or <code>custom</code> (created in this account).</p>
      */
     inline CachePolicySummary& WithType(const CachePolicyType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-     * <code>custom</code> (created in this AWS account).</p>
+     * <p>The type of cache policy, either <code>managed</code> (created by Amazon Web
+     * Services) or <code>custom</code> (created in this account).</p>
      */
     inline CachePolicySummary& WithType(CachePolicyType&& value) { SetType(std::move(value)); return *this;}
 

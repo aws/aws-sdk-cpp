@@ -39,73 +39,73 @@ namespace Model
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline bool ServerCertificateNameHasBeenSet() const { return m_serverCertificateNameHasBeenSet; }
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline UntagServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline UntagServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline UntagServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 

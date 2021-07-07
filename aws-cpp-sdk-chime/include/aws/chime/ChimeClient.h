@@ -33,6 +33,7 @@
 #include <aws/chime/model/CreateChannelBanResult.h>
 #include <aws/chime/model/CreateChannelMembershipResult.h>
 #include <aws/chime/model/CreateChannelModeratorResult.h>
+#include <aws/chime/model/CreateMediaCapturePipelineResult.h>
 #include <aws/chime/model/CreateMeetingResult.h>
 #include <aws/chime/model/CreateMeetingDialOutResult.h>
 #include <aws/chime/model/CreateMeetingWithAttendeesResult.h>
@@ -69,6 +70,7 @@
 #include <aws/chime/model/GetChannelMessageResult.h>
 #include <aws/chime/model/GetEventsConfigurationResult.h>
 #include <aws/chime/model/GetGlobalSettingsResult.h>
+#include <aws/chime/model/GetMediaCapturePipelineResult.h>
 #include <aws/chime/model/GetMeetingResult.h>
 #include <aws/chime/model/GetMessagingSessionEndpointResult.h>
 #include <aws/chime/model/GetPhoneNumberResult.h>
@@ -106,6 +108,7 @@
 #include <aws/chime/model/ListChannelModeratorsResult.h>
 #include <aws/chime/model/ListChannelsResult.h>
 #include <aws/chime/model/ListChannelsModeratedByAppInstanceUserResult.h>
+#include <aws/chime/model/ListMediaCapturePipelinesResult.h>
 #include <aws/chime/model/ListMeetingTagsResult.h>
 #include <aws/chime/model/ListMeetingsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
@@ -221,6 +224,7 @@ namespace Model
         class CreateChannelBanRequest;
         class CreateChannelMembershipRequest;
         class CreateChannelModeratorRequest;
+        class CreateMediaCapturePipelineRequest;
         class CreateMeetingRequest;
         class CreateMeetingDialOutRequest;
         class CreateMeetingWithAttendeesRequest;
@@ -246,6 +250,7 @@ namespace Model
         class DeleteChannelMessageRequest;
         class DeleteChannelModeratorRequest;
         class DeleteEventsConfigurationRequest;
+        class DeleteMediaCapturePipelineRequest;
         class DeleteMeetingRequest;
         class DeletePhoneNumberRequest;
         class DeleteProxySessionRequest;
@@ -282,6 +287,7 @@ namespace Model
         class GetBotRequest;
         class GetChannelMessageRequest;
         class GetEventsConfigurationRequest;
+        class GetMediaCapturePipelineRequest;
         class GetMeetingRequest;
         class GetMessagingSessionEndpointRequest;
         class GetPhoneNumberRequest;
@@ -318,6 +324,7 @@ namespace Model
         class ListChannelModeratorsRequest;
         class ListChannelsRequest;
         class ListChannelsModeratedByAppInstanceUserRequest;
+        class ListMediaCapturePipelinesRequest;
         class ListMeetingTagsRequest;
         class ListMeetingsRequest;
         class ListPhoneNumberOrdersRequest;
@@ -404,6 +411,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateChannelBanResult, ChimeError> CreateChannelBanOutcome;
         typedef Aws::Utils::Outcome<CreateChannelMembershipResult, ChimeError> CreateChannelMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateChannelModeratorResult, ChimeError> CreateChannelModeratorOutcome;
+        typedef Aws::Utils::Outcome<CreateMediaCapturePipelineResult, ChimeError> CreateMediaCapturePipelineOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingResult, ChimeError> CreateMeetingOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingDialOutResult, ChimeError> CreateMeetingDialOutOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingWithAttendeesResult, ChimeError> CreateMeetingWithAttendeesOutcome;
@@ -429,6 +437,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelMessageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteChannelModeratorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteEventsConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteMediaCapturePipelineOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteMeetingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeletePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteProxySessionOutcome;
@@ -466,6 +475,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetChannelMessageResult, ChimeError> GetChannelMessageOutcome;
         typedef Aws::Utils::Outcome<GetEventsConfigurationResult, ChimeError> GetEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetGlobalSettingsResult, ChimeError> GetGlobalSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetMediaCapturePipelineResult, ChimeError> GetMediaCapturePipelineOutcome;
         typedef Aws::Utils::Outcome<GetMeetingResult, ChimeError> GetMeetingOutcome;
         typedef Aws::Utils::Outcome<GetMessagingSessionEndpointResult, ChimeError> GetMessagingSessionEndpointOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberResult, ChimeError> GetPhoneNumberOutcome;
@@ -503,6 +513,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListChannelModeratorsResult, ChimeError> ListChannelModeratorsOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, ChimeError> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListChannelsModeratedByAppInstanceUserResult, ChimeError> ListChannelsModeratedByAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<ListMediaCapturePipelinesResult, ChimeError> ListMediaCapturePipelinesOutcome;
         typedef Aws::Utils::Outcome<ListMeetingTagsResult, ChimeError> ListMeetingTagsOutcome;
         typedef Aws::Utils::Outcome<ListMeetingsResult, ChimeError> ListMeetingsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, ChimeError> ListPhoneNumberOrdersOutcome;
@@ -589,6 +600,7 @@ namespace Model
         typedef std::future<CreateChannelBanOutcome> CreateChannelBanOutcomeCallable;
         typedef std::future<CreateChannelMembershipOutcome> CreateChannelMembershipOutcomeCallable;
         typedef std::future<CreateChannelModeratorOutcome> CreateChannelModeratorOutcomeCallable;
+        typedef std::future<CreateMediaCapturePipelineOutcome> CreateMediaCapturePipelineOutcomeCallable;
         typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
         typedef std::future<CreateMeetingDialOutOutcome> CreateMeetingDialOutOutcomeCallable;
         typedef std::future<CreateMeetingWithAttendeesOutcome> CreateMeetingWithAttendeesOutcomeCallable;
@@ -614,6 +626,7 @@ namespace Model
         typedef std::future<DeleteChannelMessageOutcome> DeleteChannelMessageOutcomeCallable;
         typedef std::future<DeleteChannelModeratorOutcome> DeleteChannelModeratorOutcomeCallable;
         typedef std::future<DeleteEventsConfigurationOutcome> DeleteEventsConfigurationOutcomeCallable;
+        typedef std::future<DeleteMediaCapturePipelineOutcome> DeleteMediaCapturePipelineOutcomeCallable;
         typedef std::future<DeleteMeetingOutcome> DeleteMeetingOutcomeCallable;
         typedef std::future<DeletePhoneNumberOutcome> DeletePhoneNumberOutcomeCallable;
         typedef std::future<DeleteProxySessionOutcome> DeleteProxySessionOutcomeCallable;
@@ -651,6 +664,7 @@ namespace Model
         typedef std::future<GetChannelMessageOutcome> GetChannelMessageOutcomeCallable;
         typedef std::future<GetEventsConfigurationOutcome> GetEventsConfigurationOutcomeCallable;
         typedef std::future<GetGlobalSettingsOutcome> GetGlobalSettingsOutcomeCallable;
+        typedef std::future<GetMediaCapturePipelineOutcome> GetMediaCapturePipelineOutcomeCallable;
         typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
         typedef std::future<GetMessagingSessionEndpointOutcome> GetMessagingSessionEndpointOutcomeCallable;
         typedef std::future<GetPhoneNumberOutcome> GetPhoneNumberOutcomeCallable;
@@ -688,6 +702,7 @@ namespace Model
         typedef std::future<ListChannelModeratorsOutcome> ListChannelModeratorsOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListChannelsModeratedByAppInstanceUserOutcome> ListChannelsModeratedByAppInstanceUserOutcomeCallable;
+        typedef std::future<ListMediaCapturePipelinesOutcome> ListMediaCapturePipelinesOutcomeCallable;
         typedef std::future<ListMeetingTagsOutcome> ListMeetingTagsOutcomeCallable;
         typedef std::future<ListMeetingsOutcome> ListMeetingsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
@@ -777,6 +792,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::CreateChannelBanRequest&, const Model::CreateChannelBanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelBanResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateChannelMembershipRequest&, const Model::CreateChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateChannelModeratorRequest&, const Model::CreateChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelModeratorResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateMediaCapturePipelineRequest&, const Model::CreateMediaCapturePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMediaCapturePipelineResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingDialOutRequest&, const Model::CreateMeetingDialOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingDialOutResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingWithAttendeesRequest&, const Model::CreateMeetingWithAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingWithAttendeesResponseReceivedHandler;
@@ -802,6 +818,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::DeleteChannelMessageRequest&, const Model::DeleteChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteChannelModeratorRequest&, const Model::DeleteChannelModeratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelModeratorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteEventsConfigurationRequest&, const Model::DeleteEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteMediaCapturePipelineRequest&, const Model::DeleteMediaCapturePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMediaCapturePipelineResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteMeetingRequest&, const Model::DeleteMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeletePhoneNumberRequest&, const Model::DeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteProxySessionRequest&, const Model::DeleteProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProxySessionResponseReceivedHandler;
@@ -839,6 +856,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetChannelMessageRequest&, const Model::GetChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetEventsConfigurationRequest&, const Model::GetEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlobalSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetMediaCapturePipelineRequest&, const Model::GetMediaCapturePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaCapturePipelineResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetMeetingRequest&, const Model::GetMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetMessagingSessionEndpointRequest&, const Model::GetMessagingSessionEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessagingSessionEndpointResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
@@ -876,6 +894,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ListChannelModeratorsRequest&, const Model::ListChannelModeratorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelModeratorsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListChannelsModeratedByAppInstanceUserRequest&, const Model::ListChannelsModeratedByAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsModeratedByAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListMediaCapturePipelinesRequest&, const Model::ListMediaCapturePipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMediaCapturePipelinesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListMeetingTagsRequest&, const Model::ListMeetingTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingTagsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListMeetingsRequest&, const Model::ListMeetingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
@@ -1841,6 +1860,31 @@ namespace Model
         virtual void CreateChannelModeratorAsync(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMediaCapturePipelineOutcome CreateMediaCapturePipeline(const Model::CreateMediaCapturePipelineRequest& request) const;
+
+        /**
+         * <p>Creates a media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMediaCapturePipelineOutcomeCallable CreateMediaCapturePipelineCallable(const Model::CreateMediaCapturePipelineRequest& request) const;
+
+        /**
+         * <p>Creates a media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMediaCapturePipelineAsync(const Model::CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Creates a new Amazon Chime SDK meeting in the specified media Region with no
          * initial attendees. For more information about specifying media Regions, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
@@ -2704,6 +2748,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventsConfigurationAsync(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMediaCapturePipelineOutcome DeleteMediaCapturePipeline(const Model::DeleteMediaCapturePipelineRequest& request) const;
+
+        /**
+         * <p>Deletes the media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMediaCapturePipelineOutcomeCallable DeleteMediaCapturePipelineCallable(const Model::DeleteMediaCapturePipelineRequest& request) const;
+
+        /**
+         * <p>Deletes the media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMediaCapturePipelineAsync(const Model::DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
@@ -3851,6 +3920,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
+         * <p>Gets an existing media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaCapturePipelineOutcome GetMediaCapturePipeline(const Model::GetMediaCapturePipelineRequest& request) const;
+
+        /**
+         * <p>Gets an existing media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMediaCapturePipelineOutcomeCallable GetMediaCapturePipelineCallable(const Model::GetMediaCapturePipelineRequest& request) const;
+
+        /**
+         * <p>Gets an existing media capture pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMediaCapturePipeline">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMediaCapturePipelineAsync(const Model::GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
         /**
          * <p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
          * more information about the Amazon Chime SDK, see <a
@@ -5023,6 +5117,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListChannelsModeratedByAppInstanceUserAsync(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of media capture pipelines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMediaCapturePipelinesOutcome ListMediaCapturePipelines(const Model::ListMediaCapturePipelinesRequest& request) const;
+
+        /**
+         * <p>Returns a list of media capture pipelines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMediaCapturePipelinesOutcomeCallable ListMediaCapturePipelinesCallable(const Model::ListMediaCapturePipelinesRequest& request) const;
+
+        /**
+         * <p>Returns a list of media capture pipelines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMediaCapturePipelines">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMediaCapturePipelinesAsync(const Model::ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
@@ -7003,6 +7122,7 @@ namespace Model
         void CreateChannelBanAsyncHelper(const Model::CreateChannelBanRequest& request, const CreateChannelBanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelMembershipAsyncHelper(const Model::CreateChannelMembershipRequest& request, const CreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChannelModeratorAsyncHelper(const Model::CreateChannelModeratorRequest& request, const CreateChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMediaCapturePipelineAsyncHelper(const Model::CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingDialOutAsyncHelper(const Model::CreateMeetingDialOutRequest& request, const CreateMeetingDialOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingWithAttendeesAsyncHelper(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7028,6 +7148,7 @@ namespace Model
         void DeleteChannelMessageAsyncHelper(const Model::DeleteChannelMessageRequest& request, const DeleteChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelModeratorAsyncHelper(const Model::DeleteChannelModeratorRequest& request, const DeleteChannelModeratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventsConfigurationAsyncHelper(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMediaCapturePipelineAsyncHelper(const Model::DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMeetingAsyncHelper(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePhoneNumberAsyncHelper(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProxySessionAsyncHelper(const Model::DeleteProxySessionRequest& request, const DeleteProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7065,6 +7186,7 @@ namespace Model
         void GetChannelMessageAsyncHelper(const Model::GetChannelMessageRequest& request, const GetChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventsConfigurationAsyncHelper(const Model::GetEventsConfigurationRequest& request, const GetEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGlobalSettingsAsyncHelper(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMediaCapturePipelineAsyncHelper(const Model::GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMeetingAsyncHelper(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMessagingSessionEndpointAsyncHelper(const Model::GetMessagingSessionEndpointRequest& request, const GetMessagingSessionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberAsyncHelper(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -7102,6 +7224,7 @@ namespace Model
         void ListChannelModeratorsAsyncHelper(const Model::ListChannelModeratorsRequest& request, const ListChannelModeratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsModeratedByAppInstanceUserAsyncHelper(const Model::ListChannelsModeratedByAppInstanceUserRequest& request, const ListChannelsModeratedByAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMediaCapturePipelinesAsyncHelper(const Model::ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMeetingTagsAsyncHelper(const Model::ListMeetingTagsRequest& request, const ListMeetingTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMeetingsAsyncHelper(const Model::ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

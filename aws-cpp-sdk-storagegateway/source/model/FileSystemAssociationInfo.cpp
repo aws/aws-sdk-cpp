@@ -25,7 +25,8 @@ FileSystemAssociationInfo::FileSystemAssociationInfo() :
     m_auditDestinationARNHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_endpointNetworkConfigurationHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ FileSystemAssociationInfo::FileSystemAssociationInfo(JsonView jsonValue) :
     m_auditDestinationARNHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false)
+    m_cacheAttributesHasBeenSet(false),
+    m_endpointNetworkConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ FileSystemAssociationInfo& FileSystemAssociationInfo::operator =(JsonView jsonVa
     m_cacheAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndpointNetworkConfiguration"))
+  {
+    m_endpointNetworkConfiguration = jsonValue.GetObject("EndpointNetworkConfiguration");
+
+    m_endpointNetworkConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue FileSystemAssociationInfo::Jsonize() const
   if(m_cacheAttributesHasBeenSet)
   {
    payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
+
+  }
+
+  if(m_endpointNetworkConfigurationHasBeenSet)
+  {
+   payload.WithObject("EndpointNetworkConfiguration", m_endpointNetworkConfiguration.Jsonize());
 
   }
 

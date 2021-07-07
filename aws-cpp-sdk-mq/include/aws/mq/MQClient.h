@@ -167,10 +167,11 @@ namespace Model
     typedef std::function<void(const MQClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ
-   * that makes it easy to set up and operate message brokers in the cloud. A message
-   * broker allows software applications and components to communicate using various
-   * programming languages, operating systems, and formal messaging protocols.
+   * <p>Amazon MQ is a managed message broker service for Apache ActiveMQ and
+   * RabbitMQ that makes it easy to set up and operate message brokers in the cloud.
+   * A message broker allows software applications and components to communicate
+   * using various programming languages, operating systems, and formal messaging
+   * protocols.</p>
    */
   class AWS_MQ_API MQClient : public Aws::Client::AWSJsonClient
   {
@@ -200,14 +201,54 @@ namespace Model
 
 
         /**
-         * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
+         * <p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker,
+         * you must either use the AmazonMQFullAccess IAM policy or include the following
+         * EC2 permissions in your IAM policy.</p>
+         * <ul><li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to
+         * allow Amazon MQ to create an elastic network interface (ENI) on behalf of your
+         * account.</p></li> <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This
+         * permission is required to attach the ENI to the broker instance.</p></li>
+         * <li><p>ec2:DeleteNetworkInterface</p></li>
+         * <li><p>ec2:DeleteNetworkInterfacePermission</p></li>
+         * <li><p>ec2:DetachNetworkInterface</p></li>
+         * <li><p>ec2:DescribeInternetGateways</p></li>
+         * <li><p>ec2:DescribeNetworkInterfaces</p></li>
+         * <li><p>ec2:DescribeNetworkInterfacePermissions</p></li>
+         * <li><p>ec2:DescribeRouteTables</p></li>
+         * <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li>
+         * <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
+         * an IAM User and Get Your AWS Credentials</a> and <a
+         * href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+         * Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateBrokerOutcome CreateBroker(const Model::CreateBrokerRequest& request) const;
 
         /**
-         * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
+         * <p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker,
+         * you must either use the AmazonMQFullAccess IAM policy or include the following
+         * EC2 permissions in your IAM policy.</p>
+         * <ul><li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to
+         * allow Amazon MQ to create an elastic network interface (ENI) on behalf of your
+         * account.</p></li> <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This
+         * permission is required to attach the ENI to the broker instance.</p></li>
+         * <li><p>ec2:DeleteNetworkInterface</p></li>
+         * <li><p>ec2:DeleteNetworkInterfacePermission</p></li>
+         * <li><p>ec2:DetachNetworkInterface</p></li>
+         * <li><p>ec2:DescribeInternetGateways</p></li>
+         * <li><p>ec2:DescribeNetworkInterfaces</p></li>
+         * <li><p>ec2:DescribeNetworkInterfacePermissions</p></li>
+         * <li><p>ec2:DescribeRouteTables</p></li>
+         * <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li>
+         * <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
+         * an IAM User and Get Your AWS Credentials</a> and <a
+         * href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+         * Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
          * Reference</a></p>
          *
@@ -216,7 +257,27 @@ namespace Model
         virtual Model::CreateBrokerOutcomeCallable CreateBrokerCallable(const Model::CreateBrokerRequest& request) const;
 
         /**
-         * Creates a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
+         * <p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker,
+         * you must either use the AmazonMQFullAccess IAM policy or include the following
+         * EC2 permissions in your IAM policy.</p>
+         * <ul><li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to
+         * allow Amazon MQ to create an elastic network interface (ENI) on behalf of your
+         * account.</p></li> <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This
+         * permission is required to attach the ENI to the broker instance.</p></li>
+         * <li><p>ec2:DeleteNetworkInterface</p></li>
+         * <li><p>ec2:DeleteNetworkInterfacePermission</p></li>
+         * <li><p>ec2:DetachNetworkInterface</p></li>
+         * <li><p>ec2:DescribeInternetGateways</p></li>
+         * <li><p>ec2:DescribeNetworkInterfaces</p></li>
+         * <li><p>ec2:DescribeNetworkInterfacePermissions</p></li>
+         * <li><p>ec2:DescribeRouteTables</p></li>
+         * <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li>
+         * <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
+         * an IAM User and Get Your AWS Credentials</a> and <a
+         * href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+         * Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">AWS API
          * Reference</a></p>
          *
@@ -225,18 +286,18 @@ namespace Model
         virtual void CreateBrokerAsync(const Model::CreateBrokerRequest& request, const CreateBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a new configuration for the specified configuration name. Amazon MQ
+         * uses the default configuration (the engine type and version).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConfigurationOutcome CreateConfiguration(const Model::CreateConfigurationRequest& request) const;
 
         /**
-         * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a new configuration for the specified configuration name. Amazon MQ
+         * uses the default configuration (the engine type and version).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -245,9 +306,9 @@ namespace Model
         virtual Model::CreateConfigurationOutcomeCallable CreateConfigurationCallable(const Model::CreateConfigurationRequest& request) const;
 
         /**
-         * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a new configuration for the specified configuration name. Amazon MQ
+         * uses the default configuration (the engine type and version).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -256,14 +317,14 @@ namespace Model
         virtual void CreateConfigurationAsync(const Model::CreateConfigurationRequest& request, const CreateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Add a tag to a resource.<p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
         /**
-         * Add a tag to a resource.<p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">AWS API
          * Reference</a></p>
          *
@@ -272,7 +333,7 @@ namespace Model
         virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
 
         /**
-         * Add a tag to a resource.<p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">AWS API
          * Reference</a></p>
          *
@@ -281,14 +342,14 @@ namespace Model
         virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Creates an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * Creates an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Creates an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
          * Reference</a></p>
          *
@@ -297,7 +358,7 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * Creates an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Creates an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">AWS API
          * Reference</a></p>
          *
@@ -306,39 +367,39 @@ namespace Model
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS API
-         * Reference</a></p>
+         * <p>Deletes a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBrokerOutcome DeleteBroker(const Model::DeleteBrokerRequest& request) const;
 
         /**
-         * Deletes a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS API
-         * Reference</a></p>
+         * <p>Deletes a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBrokerOutcomeCallable DeleteBrokerCallable(const Model::DeleteBrokerRequest& request) const;
 
         /**
-         * Deletes a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS API
-         * Reference</a></p>
+         * <p>Deletes a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBrokerAsync(const Model::DeleteBrokerRequest& request, const DeleteBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Removes a tag from a resource.<p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * Removes a tag from a resource.<p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
          * Reference</a></p>
          *
@@ -347,7 +408,7 @@ namespace Model
         virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * Removes a tag from a resource.<p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">AWS API
          * Reference</a></p>
          *
@@ -356,14 +417,14 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * Deletes an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">AWS API
          * Reference</a></p>
          *
@@ -372,7 +433,7 @@ namespace Model
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * Deletes an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Deletes an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">AWS API
          * Reference</a></p>
          *
@@ -381,14 +442,14 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about the specified broker.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified broker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBrokerOutcome DescribeBroker(const Model::DescribeBrokerRequest& request) const;
 
         /**
-         * Returns information about the specified broker.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified broker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">AWS
          * API Reference</a></p>
          *
@@ -397,7 +458,7 @@ namespace Model
         virtual Model::DescribeBrokerOutcomeCallable DescribeBrokerCallable(const Model::DescribeBrokerRequest& request) const;
 
         /**
-         * Returns information about the specified broker.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified broker.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">AWS
          * API Reference</a></p>
          *
@@ -406,14 +467,14 @@ namespace Model
         virtual void DescribeBrokerAsync(const Model::DescribeBrokerRequest& request, const DescribeBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Describe available engine types and versions.<p><h3>See Also:</h3>   <a
+         * <p>Describe available engine types and versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBrokerEngineTypesOutcome DescribeBrokerEngineTypes(const Model::DescribeBrokerEngineTypesRequest& request) const;
 
         /**
-         * Describe available engine types and versions.<p><h3>See Also:</h3>   <a
+         * <p>Describe available engine types and versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">AWS
          * API Reference</a></p>
          *
@@ -422,7 +483,7 @@ namespace Model
         virtual Model::DescribeBrokerEngineTypesOutcomeCallable DescribeBrokerEngineTypesCallable(const Model::DescribeBrokerEngineTypesRequest& request) const;
 
         /**
-         * Describe available engine types and versions.<p><h3>See Also:</h3>   <a
+         * <p>Describe available engine types and versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">AWS
          * API Reference</a></p>
          *
@@ -431,14 +492,14 @@ namespace Model
         virtual void DescribeBrokerEngineTypesAsync(const Model::DescribeBrokerEngineTypesRequest& request, const DescribeBrokerEngineTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Describe available broker instance options.<p><h3>See Also:</h3>   <a
+         * <p>Describe available broker instance options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBrokerInstanceOptionsOutcome DescribeBrokerInstanceOptions(const Model::DescribeBrokerInstanceOptionsRequest& request) const;
 
         /**
-         * Describe available broker instance options.<p><h3>See Also:</h3>   <a
+         * <p>Describe available broker instance options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">AWS
          * API Reference</a></p>
          *
@@ -447,7 +508,7 @@ namespace Model
         virtual Model::DescribeBrokerInstanceOptionsOutcomeCallable DescribeBrokerInstanceOptionsCallable(const Model::DescribeBrokerInstanceOptionsRequest& request) const;
 
         /**
-         * Describe available broker instance options.<p><h3>See Also:</h3>   <a
+         * <p>Describe available broker instance options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">AWS
          * API Reference</a></p>
          *
@@ -456,14 +517,16 @@ namespace Model
         virtual void DescribeBrokerInstanceOptionsAsync(const Model::DescribeBrokerInstanceOptionsRequest& request, const DescribeBrokerInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationOutcome DescribeConfiguration(const Model::DescribeConfigurationRequest& request) const;
 
         /**
-         * Returns information about the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -472,7 +535,8 @@ namespace Model
         virtual Model::DescribeConfigurationOutcomeCallable DescribeConfigurationCallable(const Model::DescribeConfigurationRequest& request) const;
 
         /**
-         * Returns information about the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about the specified configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -481,16 +545,16 @@ namespace Model
         virtual void DescribeConfigurationAsync(const Model::DescribeConfigurationRequest& request, const DescribeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns the specified configuration revision for the specified
-         * configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns the specified configuration revision for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationRevisionOutcome DescribeConfigurationRevision(const Model::DescribeConfigurationRevisionRequest& request) const;
 
         /**
-         * Returns the specified configuration revision for the specified
-         * configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns the specified configuration revision for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">AWS
          * API Reference</a></p>
          *
@@ -499,8 +563,8 @@ namespace Model
         virtual Model::DescribeConfigurationRevisionOutcomeCallable DescribeConfigurationRevisionCallable(const Model::DescribeConfigurationRevisionRequest& request) const;
 
         /**
-         * Returns the specified configuration revision for the specified
-         * configuration.<p><h3>See Also:</h3>   <a
+         * <p>Returns the specified configuration revision for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">AWS
          * API Reference</a></p>
          *
@@ -509,14 +573,14 @@ namespace Model
         virtual void DescribeConfigurationRevisionAsync(const Model::DescribeConfigurationRevisionRequest& request, const DescribeConfigurationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns information about an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
          * Reference</a></p>
          */
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
         /**
-         * Returns information about an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
          * Reference</a></p>
          *
@@ -525,7 +589,7 @@ namespace Model
         virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
 
         /**
-         * Returns information about an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Returns information about an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">AWS API
          * Reference</a></p>
          *
@@ -534,14 +598,14 @@ namespace Model
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all brokers.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all brokers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">AWS API
          * Reference</a></p>
          */
         virtual Model::ListBrokersOutcome ListBrokers(const Model::ListBrokersRequest& request) const;
 
         /**
-         * Returns a list of all brokers.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all brokers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">AWS API
          * Reference</a></p>
          *
@@ -550,7 +614,7 @@ namespace Model
         virtual Model::ListBrokersOutcomeCallable ListBrokersCallable(const Model::ListBrokersRequest& request) const;
 
         /**
-         * Returns a list of all brokers.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all brokers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">AWS API
          * Reference</a></p>
          *
@@ -559,16 +623,16 @@ namespace Model
         virtual void ListBrokersAsync(const Model::ListBrokersRequest& request, const ListBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all revisions for the specified configuration.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of all revisions for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConfigurationRevisionsOutcome ListConfigurationRevisions(const Model::ListConfigurationRevisionsRequest& request) const;
 
         /**
-         * Returns a list of all revisions for the specified configuration.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of all revisions for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">AWS
          * API Reference</a></p>
          *
@@ -577,8 +641,8 @@ namespace Model
         virtual Model::ListConfigurationRevisionsOutcomeCallable ListConfigurationRevisionsCallable(const Model::ListConfigurationRevisionsRequest& request) const;
 
         /**
-         * Returns a list of all revisions for the specified configuration.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of all revisions for the specified
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">AWS
          * API Reference</a></p>
          *
@@ -587,14 +651,14 @@ namespace Model
         virtual void ListConfigurationRevisionsAsync(const Model::ListConfigurationRevisionsRequest& request, const ListConfigurationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all configurations.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request) const;
 
         /**
-         * Returns a list of all configurations.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">AWS
          * API Reference</a></p>
          *
@@ -603,7 +667,7 @@ namespace Model
         virtual Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const Model::ListConfigurationsRequest& request) const;
 
         /**
-         * Returns a list of all configurations.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">AWS
          * API Reference</a></p>
          *
@@ -612,14 +676,14 @@ namespace Model
         virtual void ListConfigurationsAsync(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists tags for a resource.<p><h3>See Also:</h3>   <a
+         * <p>Lists tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">AWS API
          * Reference</a></p>
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * Lists tags for a resource.<p><h3>See Also:</h3>   <a
+         * <p>Lists tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">AWS API
          * Reference</a></p>
          *
@@ -628,7 +692,7 @@ namespace Model
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * Lists tags for a resource.<p><h3>See Also:</h3>   <a
+         * <p>Lists tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">AWS API
          * Reference</a></p>
          *
@@ -637,14 +701,14 @@ namespace Model
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Returns a list of all ActiveMQ users.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all ActiveMQ users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">AWS API
          * Reference</a></p>
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * Returns a list of all ActiveMQ users.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all ActiveMQ users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">AWS API
          * Reference</a></p>
          *
@@ -653,7 +717,7 @@ namespace Model
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * Returns a list of all ActiveMQ users.<p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all ActiveMQ users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">AWS API
          * Reference</a></p>
          *
@@ -662,64 +726,64 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Reboots a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS API
-         * Reference</a></p>
+         * <p>Reboots a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootBrokerOutcome RebootBroker(const Model::RebootBrokerRequest& request) const;
 
         /**
-         * Reboots a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS API
-         * Reference</a></p>
+         * <p>Reboots a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RebootBrokerOutcomeCallable RebootBrokerCallable(const Model::RebootBrokerRequest& request) const;
 
         /**
-         * Reboots a broker. Note: This API is asynchronous.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS API
-         * Reference</a></p>
+         * <p>Reboots a broker. Note: This API is asynchronous.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebootBrokerAsync(const Model::RebootBrokerRequest& request, const RebootBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Adds a pending configuration change to a broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS API
-         * Reference</a></p>
+         * <p>Adds a pending configuration change to a broker.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateBrokerOutcome UpdateBroker(const Model::UpdateBrokerRequest& request) const;
 
         /**
-         * Adds a pending configuration change to a broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS API
-         * Reference</a></p>
+         * <p>Adds a pending configuration change to a broker.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateBrokerOutcomeCallable UpdateBrokerCallable(const Model::UpdateBrokerRequest& request) const;
 
         /**
-         * Adds a pending configuration change to a broker.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS API
-         * Reference</a></p>
+         * <p>Adds a pending configuration change to a broker.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateBrokerAsync(const Model::UpdateBrokerRequest& request, const UpdateBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Updates the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateConfigurationOutcome UpdateConfiguration(const Model::UpdateConfigurationRequest& request) const;
 
         /**
-         * Updates the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -728,7 +792,7 @@ namespace Model
         virtual Model::UpdateConfigurationOutcomeCallable UpdateConfigurationCallable(const Model::UpdateConfigurationRequest& request) const;
 
         /**
-         * Updates the specified configuration.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -737,14 +801,14 @@ namespace Model
         virtual void UpdateConfigurationAsync(const Model::UpdateConfigurationRequest& request, const UpdateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Updates the information for an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Updates the information for an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">AWS API
          * Reference</a></p>
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * Updates the information for an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Updates the information for an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">AWS API
          * Reference</a></p>
          *
@@ -753,7 +817,7 @@ namespace Model
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * Updates the information for an ActiveMQ user.<p><h3>See Also:</h3>   <a
+         * <p>Updates the information for an ActiveMQ user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">AWS API
          * Reference</a></p>
          *

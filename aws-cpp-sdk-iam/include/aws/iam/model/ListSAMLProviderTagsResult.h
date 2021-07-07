@@ -94,31 +94,34 @@ namespace Model
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
-     * were truncated, you can use the <code>Marker</code> request parameter to make a
-     * subsequent pagination request that retrieves more items. Note that IAM might
-     * return fewer than the <code>MaxItems</code> number of results even when more
-     * results are available. Check <code>IsTruncated</code> after every call to ensure
-     * that you receive all of your results.</p>
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
+     * results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
-     * were truncated, you can use the <code>Marker</code> request parameter to make a
-     * subsequent pagination request that retrieves more items. Note that IAM might
-     * return fewer than the <code>MaxItems</code> number of results even when more
-     * results are available. Check <code>IsTruncated</code> after every call to ensure
-     * that you receive all of your results.</p>
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
+     * results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
-     * were truncated, you can use the <code>Marker</code> request parameter to make a
-     * subsequent pagination request that retrieves more items. Note that IAM might
-     * return fewer than the <code>MaxItems</code> number of results even when more
-     * results are available. Check <code>IsTruncated</code> after every call to ensure
-     * that you receive all of your results.</p>
+     * were truncated, you can make a subsequent pagination request using the
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
+     * results.</p>
      */
     inline ListSAMLProviderTagsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 

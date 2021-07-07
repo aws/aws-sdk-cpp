@@ -39,73 +39,73 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline UntagPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline UntagPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM customer managed policy from which you want to remove
-     * tags.</p> <p>This parameter accepts (through its <a
+     * tags.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline UntagPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

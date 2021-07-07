@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const Aws::String& value) { m_brokerId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(Aws::String&& value) { m_brokerId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const char* value) { m_brokerId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DeleteBrokerResult& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DeleteBrokerResult& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DeleteBrokerResult& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
 

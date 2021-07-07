@@ -28,8 +28,8 @@ namespace Model
    * folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix
    * file permissions assigned to them. Upon discovery in an S3 bucket by Storage
    * Gateway, the S3 objects that represent files and folders are assigned these
-   * default Unix permissions. This operation is only supported for file
-   * gateways.</p><p><h3>See Also:</h3>   <a
+   * default Unix permissions. This operation is only supported for S3 File
+   * Gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareDefaults">AWS
    * API Reference</a></p>
    */

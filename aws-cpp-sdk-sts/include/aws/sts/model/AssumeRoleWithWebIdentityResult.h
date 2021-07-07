@@ -29,8 +29,8 @@ namespace Model
 {
   /**
    * <p>Contains the response to a successful <a>AssumeRoleWithWebIdentity</a>
-   * request, including temporary AWS credentials that can be used to make AWS
-   * requests. </p><p><h3>See Also:</h3>   <a
+   * request, including temporary Amazon Web Services credentials that can be used to
+   * make Amazon Web Services requests. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentityResponse">AWS
    * API Reference</a></p>
    */

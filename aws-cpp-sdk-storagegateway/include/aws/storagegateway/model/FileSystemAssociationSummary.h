@@ -123,64 +123,56 @@ namespace Model
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline const Aws::String& GetFileSystemAssociationStatus() const{ return m_fileSystemAssociationStatus; }
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline bool FileSystemAssociationStatusHasBeenSet() const { return m_fileSystemAssociationStatusHasBeenSet; }
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline void SetFileSystemAssociationStatus(const Aws::String& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = value; }
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline void SetFileSystemAssociationStatus(Aws::String&& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = std::move(value); }
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline void SetFileSystemAssociationStatus(const char* value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus.assign(value); }
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline FileSystemAssociationSummary& WithFileSystemAssociationStatus(const Aws::String& value) { SetFileSystemAssociationStatus(value); return *this;}
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline FileSystemAssociationSummary& WithFileSystemAssociationStatus(Aws::String&& value) { SetFileSystemAssociationStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the file share. Valid Values: <code>AVAILABLE</code> |
      * <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> |
-     * <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
-     * </p>
+     * <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline FileSystemAssociationSummary& WithFileSystemAssociationStatus(const char* value) { SetFileSystemAssociationStatus(value); return *this;}
 

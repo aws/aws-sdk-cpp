@@ -340,42 +340,42 @@ namespace Model
 
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline const Aws::Vector<UserIdGroupPair>& GetUserIdGroupPairs() const{ return m_userIdGroupPairs; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline bool UserIdGroupPairsHasBeenSet() const { return m_userIdGroupPairsHasBeenSet; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline void SetUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline IpPermission& WithUserIdGroupPairs(const Aws::Vector<UserIdGroupPair>& value) { SetUserIdGroupPairs(value); return *this;}
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline IpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline IpPermission& AddUserIdGroupPairs(const UserIdGroupPair& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
 
     /**
-     * <p>The security group and AWS account ID pairs.</p>
+     * <p>The security group and Amazon Web Services account ID pairs.</p>
      */
     inline IpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 

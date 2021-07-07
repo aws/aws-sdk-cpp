@@ -322,8 +322,8 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
@@ -341,8 +341,8 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
@@ -360,8 +360,8 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
@@ -379,8 +379,8 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
@@ -398,8 +398,8 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
@@ -417,8 +417,8 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user's password was last used to sign in to an
-     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
-     * see the <a
+     * Amazon Web Services website. For a list of Amazon Web Services websites that
+     * capture a user's last sign-in time, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
      * reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the

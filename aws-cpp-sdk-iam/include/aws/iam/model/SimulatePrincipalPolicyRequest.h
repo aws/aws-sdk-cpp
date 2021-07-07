@@ -43,9 +43,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetPolicySourceArn() const{ return m_policySourceArn; }
 
@@ -54,9 +60,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool PolicySourceArnHasBeenSet() const { return m_policySourceArnHasBeenSet; }
 
@@ -65,9 +77,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const Aws::String& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = value; }
 
@@ -76,9 +94,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(Aws::String&& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = std::move(value); }
 
@@ -87,9 +111,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const char* value) { m_policySourceArnHasBeenSet = true; m_policySourceArn.assign(value); }
 
@@ -98,9 +128,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicySourceArn(const Aws::String& value) { SetPolicySourceArn(value); return *this;}
 
@@ -109,9 +145,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicySourceArn(Aws::String&& value) { SetPolicySourceArn(std::move(value)); return *this;}
 
@@ -120,9 +162,15 @@ namespace Model
      * want to include in the simulation. If you specify a user, group, or role, the
      * simulation includes all policies that are associated with that entity. If you
      * specify a user, the simulation also includes all policies that are attached to
-     * any groups the user belongs to.</p> <p>For more information about ARNs, see <a
+     * any groups the user belongs to.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicySourceArn(const char* value) { SetPolicySourceArn(value); return *this;}
 
@@ -266,7 +314,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -290,7 +343,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -314,7 +372,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -338,7 +401,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -362,7 +430,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -386,7 +459,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -410,7 +488,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -434,7 +517,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -458,7 +546,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input
      * is specified as a string containing the complete, valid JSON text of a
-     * permissions boundary policy.</p> <p>The <a
+     * permissions boundary policy.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -536,146 +629,155 @@ namespace Model
 
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided, then the value defaults to <code>*</code> (all
-     * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
-     * each resource in this list. The simulation determines the access result (allowed
-     * or denied) of each combination and reports it in the response. You can simulate
-     * resources that don't exist in your account.</p> <p>The simulation does not
-     * automatically retrieve policies for the specified resources. If you want to
+     * <p>A list of ARNs of Amazon Web Services resources to include in the simulation.
+     * If this parameter is not provided, then the value defaults to <code>*</code>
+     * (all resources). Each API in the <code>ActionNames</code> parameter is evaluated
+     * for each resource in this list. The simulation determines the access result
+     * (allowed or denied) of each combination and reports it in the response. You can
+     * simulate resources that don't exist in your account.</p> <p>The simulation does
+     * not automatically retrieve policies for the specified resources. If you want to
      * include a resource policy in the simulation, then you must include the policy as
      * a string in the <code>ResourcePolicy</code> parameter.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -683,7 +785,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -698,7 +805,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -713,7 +825,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -728,7 +845,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -743,7 +865,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -758,7 +885,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -773,7 +905,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -788,7 +925,12 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * You can include only one resource-based policy in a simulation.</p> <p>The
+     * maximum length of the policy document that you can pass in this operation,
+     * including whitespace, is listed below. To view the maximum character counts of a
+     * managed policy with no whitespaces, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -802,113 +944,113 @@ namespace Model
 
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS account ID that specifies the owner of any simulated resource that
-     * does not identify its owner in the resource ARN. Examples of resource ARNs
-     * include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it
-     * is also used as the account owner of any <code>ResourcePolicy</code> included in
-     * the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-     * then the owner of the resources and the resource policy defaults to the account
-     * of the identity provided in <code>CallerArn</code>. This parameter is required
-     * only if you specify a resource-based policy and account that owns the resource
-     * is different from the account that owns the simulated calling user
+     * <p>An account ID that specifies the owner of any simulated resource that does
+     * not identify its owner in the resource ARN. Examples of resource ARNs include an
+     * S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used
+     * as the account owner of any <code>ResourcePolicy</code> included in the
+     * simulation. If the <code>ResourceOwner</code> parameter is not specified, then
+     * the owner of the resources and the resource policy defaults to the account of
+     * the identity provided in <code>CallerArn</code>. This parameter is required only
+     * if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user
      * <code>CallerArn</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
@@ -931,7 +1073,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetCallerArn() const{ return m_callerArn; }
 
@@ -952,7 +1095,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool CallerArnHasBeenSet() const { return m_callerArnHasBeenSet; }
 
@@ -973,7 +1117,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetCallerArn(const Aws::String& value) { m_callerArnHasBeenSet = true; m_callerArn = value; }
 
@@ -994,7 +1139,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetCallerArn(Aws::String&& value) { m_callerArnHasBeenSet = true; m_callerArn = std::move(value); }
 
@@ -1015,7 +1161,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetCallerArn(const char* value) { m_callerArnHasBeenSet = true; m_callerArn.assign(value); }
 
@@ -1036,7 +1183,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithCallerArn(const Aws::String& value) { SetCallerArn(value); return *this;}
 
@@ -1057,7 +1205,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithCallerArn(Aws::String&& value) { SetCallerArn(std::move(value)); return *this;}
 
@@ -1078,7 +1227,8 @@ namespace Model
      * a value to use in evaluating the policy.</p> <p>For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithCallerArn(const char* value) { SetCallerArn(value); return *this;}
 

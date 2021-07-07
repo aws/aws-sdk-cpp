@@ -38,73 +38,73 @@ namespace Model
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline bool SAMLProviderArnHasBeenSet() const { return m_sAMLProviderArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::move(value); }
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn.assign(value); }
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListSAMLProviderTagsRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListSAMLProviderTagsRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Security Assertion Markup Language (SAML) identity provider
-     * whose tags you want to see.</p> <p>This parameter accepts (through its <a
+     * whose tags you want to see.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * that consist of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListSAMLProviderTagsRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 
@@ -175,11 +175,11 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -187,11 +187,11 @@ namespace Model
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -199,11 +199,11 @@ namespace Model
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -211,11 +211,11 @@ namespace Model
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items that you want in the response. If additional items exist beyond
-     * the maximum that you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when more results are
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
