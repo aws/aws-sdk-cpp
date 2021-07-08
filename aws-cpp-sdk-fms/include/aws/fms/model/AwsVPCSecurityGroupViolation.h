@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Details of the rule violation in a security group when compared to the master
-   * security group of the AWS Firewall Manager policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Violation detail for the rule violation in a security group when compared to
+   * the primary security group of the Firewall Manager policy.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsVPCSecurityGroupViolation">AWS
    * API Reference</a></p>
    */
@@ -124,50 +125,50 @@ namespace Model
 
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline const Aws::Vector<PartialMatch>& GetPartialMatches() const{ return m_partialMatches; }
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline bool PartialMatchesHasBeenSet() const { return m_partialMatchesHasBeenSet; }
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline void SetPartialMatches(const Aws::Vector<PartialMatch>& value) { m_partialMatchesHasBeenSet = true; m_partialMatches = value; }
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline void SetPartialMatches(Aws::Vector<PartialMatch>&& value) { m_partialMatchesHasBeenSet = true; m_partialMatches = std::move(value); }
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline AwsVPCSecurityGroupViolation& WithPartialMatches(const Aws::Vector<PartialMatch>& value) { SetPartialMatches(value); return *this;}
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline AwsVPCSecurityGroupViolation& WithPartialMatches(Aws::Vector<PartialMatch>&& value) { SetPartialMatches(std::move(value)); return *this;}
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline AwsVPCSecurityGroupViolation& AddPartialMatches(const PartialMatch& value) { m_partialMatchesHasBeenSet = true; m_partialMatches.push_back(value); return *this; }
 
     /**
-     * <p>List of rules specified in the security group of the AWS Firewall Manager
-     * policy that partially match the <code>ViolationTarget</code> rule.</p>
+     * <p>List of rules specified in the security group of the Firewall Manager policy
+     * that partially match the <code>ViolationTarget</code> rule.</p>
      */
     inline AwsVPCSecurityGroupViolation& AddPartialMatches(PartialMatch&& value) { m_partialMatchesHasBeenSet = true; m_partialMatches.push_back(std::move(value)); return *this; }
 

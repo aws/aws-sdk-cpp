@@ -31,7 +31,7 @@ namespace Model
   /**
    * <p>Indicates whether the account is compliant with the specified policy. An
    * account is considered noncompliant if it includes resources that are not
-   * protected by the policy, for AWS WAF and Shield Advanced policies, or that are
+   * protected by the policy, for WAF and Shield Advanced policies, or that are
    * noncompliant with the policy, for security group policies.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceStatus">AWS
@@ -47,124 +47,124 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyOwner() const{ return m_policyOwner; }
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline bool PolicyOwnerHasBeenSet() const { return m_policyOwnerHasBeenSet; }
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline void SetPolicyOwner(const Aws::String& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = value; }
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline void SetPolicyOwner(Aws::String&& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = std::move(value); }
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline void SetPolicyOwner(const char* value) { m_policyOwnerHasBeenSet = true; m_policyOwner.assign(value); }
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyOwner(const Aws::String& value) { SetPolicyOwner(value); return *this;}
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyOwner(Aws::String&& value) { SetPolicyOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     * <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyOwner(const char* value) { SetPolicyOwner(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy.</p>
+     * <p>The ID of the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
@@ -289,98 +289,74 @@ namespace Model
 
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const{ return m_issueInfoMap; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline bool IssueInfoMapHasBeenSet() const { return m_issueInfoMapHasBeenSet; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline void SetIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = value; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline void SetIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = std::move(value); }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& WithIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { SetIssueInfoMap(value); return *this;}
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& WithIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { SetIssueInfoMap(std::move(value)); return *this;}
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& AddIssueInfoMap(const DependentServiceName& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName&& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& AddIssueInfoMap(const DependentServiceName& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName&& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& AddIssueInfoMap(DependentServiceName&& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be noncompliant. The details include the
-     * name of the dependent service and the error message received that indicates the
-     * problem with the service.</p>
+     * <p>Details about problems with dependent services, such as WAF or Config, and
+     * the error message received that indicates the problem with the service.</p>
      */
     inline PolicyComplianceStatus& AddIssueInfoMap(const DependentServiceName& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
 

@@ -26,9 +26,16 @@ ResourceViolation::ResourceViolation() :
     m_networkFirewallMissingSubnetViolationHasBeenSet(false),
     m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
     m_networkFirewallPolicyModifiedViolationHasBeenSet(false),
+    m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet(false),
+    m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet(false),
+    m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet(false),
+    m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet(false),
+    m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet(false),
+    m_networkFirewallMissingExpectedRoutesViolationHasBeenSet(false),
     m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
     m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
-    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false)
+    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
+    m_possibleRemediationActionsHasBeenSet(false)
 {
 }
 
@@ -40,9 +47,16 @@ ResourceViolation::ResourceViolation(JsonView jsonValue) :
     m_networkFirewallMissingSubnetViolationHasBeenSet(false),
     m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
     m_networkFirewallPolicyModifiedViolationHasBeenSet(false),
+    m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet(false),
+    m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet(false),
+    m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet(false),
+    m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet(false),
+    m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet(false),
+    m_networkFirewallMissingExpectedRoutesViolationHasBeenSet(false),
     m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
     m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
-    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false)
+    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false),
+    m_possibleRemediationActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +112,48 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_networkFirewallPolicyModifiedViolationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkFirewallInternetTrafficNotInspectedViolation"))
+  {
+    m_networkFirewallInternetTrafficNotInspectedViolation = jsonValue.GetObject("NetworkFirewallInternetTrafficNotInspectedViolation");
+
+    m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallInvalidRouteConfigurationViolation"))
+  {
+    m_networkFirewallInvalidRouteConfigurationViolation = jsonValue.GetObject("NetworkFirewallInvalidRouteConfigurationViolation");
+
+    m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallBlackHoleRouteDetectedViolation"))
+  {
+    m_networkFirewallBlackHoleRouteDetectedViolation = jsonValue.GetObject("NetworkFirewallBlackHoleRouteDetectedViolation");
+
+    m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallUnexpectedFirewallRoutesViolation"))
+  {
+    m_networkFirewallUnexpectedFirewallRoutesViolation = jsonValue.GetObject("NetworkFirewallUnexpectedFirewallRoutesViolation");
+
+    m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallUnexpectedGatewayRoutesViolation"))
+  {
+    m_networkFirewallUnexpectedGatewayRoutesViolation = jsonValue.GetObject("NetworkFirewallUnexpectedGatewayRoutesViolation");
+
+    m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFirewallMissingExpectedRoutesViolation"))
+  {
+    m_networkFirewallMissingExpectedRoutesViolation = jsonValue.GetObject("NetworkFirewallMissingExpectedRoutesViolation");
+
+    m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DnsRuleGroupPriorityConflictViolation"))
   {
     m_dnsRuleGroupPriorityConflictViolation = jsonValue.GetObject("DnsRuleGroupPriorityConflictViolation");
@@ -117,6 +173,13 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_dnsRuleGroupLimitExceededViolation = jsonValue.GetObject("DnsRuleGroupLimitExceededViolation");
 
     m_dnsRuleGroupLimitExceededViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PossibleRemediationActions"))
+  {
+    m_possibleRemediationActions = jsonValue.GetObject("PossibleRemediationActions");
+
+    m_possibleRemediationActionsHasBeenSet = true;
   }
 
   return *this;
@@ -168,6 +231,42 @@ JsonValue ResourceViolation::Jsonize() const
 
   }
 
+  if(m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallInternetTrafficNotInspectedViolation", m_networkFirewallInternetTrafficNotInspectedViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallInvalidRouteConfigurationViolation", m_networkFirewallInvalidRouteConfigurationViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallBlackHoleRouteDetectedViolation", m_networkFirewallBlackHoleRouteDetectedViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallUnexpectedFirewallRoutesViolation", m_networkFirewallUnexpectedFirewallRoutesViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallUnexpectedGatewayRoutesViolation", m_networkFirewallUnexpectedGatewayRoutesViolation.Jsonize());
+
+  }
+
+  if(m_networkFirewallMissingExpectedRoutesViolationHasBeenSet)
+  {
+   payload.WithObject("NetworkFirewallMissingExpectedRoutesViolation", m_networkFirewallMissingExpectedRoutesViolation.Jsonize());
+
+  }
+
   if(m_dnsRuleGroupPriorityConflictViolationHasBeenSet)
   {
    payload.WithObject("DnsRuleGroupPriorityConflictViolation", m_dnsRuleGroupPriorityConflictViolation.Jsonize());
@@ -183,6 +282,12 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_dnsRuleGroupLimitExceededViolationHasBeenSet)
   {
    payload.WithObject("DnsRuleGroupLimitExceededViolation", m_dnsRuleGroupLimitExceededViolation.Jsonize());
+
+  }
+
+  if(m_possibleRemediationActionsHasBeenSet)
+  {
+   payload.WithObject("PossibleRemediationActions", m_possibleRemediationActions.Jsonize());
 
   }
 

@@ -41,61 +41,61 @@ namespace Model
 
     /**
      * <p>The service that the policy is using to protect the resources. This specifies
-     * the type of policy that is created, either an AWS WAF policy, a Shield Advanced
+     * the type of policy that is created, either an WAF policy, a Shield Advanced
      * policy, or a security group policy. For security group policies, Firewall
      * Manager supports one security group for each common policy and for each content
      * audit policy. This is an adjustable limit that you can increase by contacting
-     * AWS Support.</p>
+     * Amazon Web Services Support.</p>
      */
     inline const SecurityServiceType& GetType() const{ return m_type; }
 
     /**
      * <p>The service that the policy is using to protect the resources. This specifies
-     * the type of policy that is created, either an AWS WAF policy, a Shield Advanced
+     * the type of policy that is created, either an WAF policy, a Shield Advanced
      * policy, or a security group policy. For security group policies, Firewall
      * Manager supports one security group for each common policy and for each content
      * audit policy. This is an adjustable limit that you can increase by contacting
-     * AWS Support.</p>
+     * Amazon Web Services Support.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The service that the policy is using to protect the resources. This specifies
-     * the type of policy that is created, either an AWS WAF policy, a Shield Advanced
+     * the type of policy that is created, either an WAF policy, a Shield Advanced
      * policy, or a security group policy. For security group policies, Firewall
      * Manager supports one security group for each common policy and for each content
      * audit policy. This is an adjustable limit that you can increase by contacting
-     * AWS Support.</p>
+     * Amazon Web Services Support.</p>
      */
     inline void SetType(const SecurityServiceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The service that the policy is using to protect the resources. This specifies
-     * the type of policy that is created, either an AWS WAF policy, a Shield Advanced
+     * the type of policy that is created, either an WAF policy, a Shield Advanced
      * policy, or a security group policy. For security group policies, Firewall
      * Manager supports one security group for each common policy and for each content
      * audit policy. This is an adjustable limit that you can increase by contacting
-     * AWS Support.</p>
+     * Amazon Web Services Support.</p>
      */
     inline void SetType(SecurityServiceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The service that the policy is using to protect the resources. This specifies
-     * the type of policy that is created, either an AWS WAF policy, a Shield Advanced
+     * the type of policy that is created, either an WAF policy, a Shield Advanced
      * policy, or a security group policy. For security group policies, Firewall
      * Manager supports one security group for each common policy and for each content
      * audit policy. This is an adjustable limit that you can increase by contacting
-     * AWS Support.</p>
+     * Amazon Web Services Support.</p>
      */
     inline SecurityServicePolicyData& WithType(const SecurityServiceType& value) { SetType(value); return *this;}
 
     /**
      * <p>The service that the policy is using to protect the resources. This specifies
-     * the type of policy that is created, either an AWS WAF policy, a Shield Advanced
+     * the type of policy that is created, either an WAF policy, a Shield Advanced
      * policy, or a security group policy. For security group policies, Firewall
      * Manager supports one security group for each common policy and for each content
      * audit policy. This is an adjustable limit that you can increase by contacting
-     * AWS Support.</p>
+     * Amazon Web Services Support.</p>
      */
     inline SecurityServicePolicyData& WithType(SecurityServiceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -103,7 +103,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -118,6 +120,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -135,7 +142,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -150,6 +159,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -167,7 +181,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -182,6 +198,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -199,7 +220,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -214,6 +237,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -231,7 +259,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -246,6 +276,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -263,7 +298,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -278,6 +315,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -295,7 +337,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -310,6 +354,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
@@ -327,7 +376,9 @@ namespace Model
     /**
      * <p>Details about the service that are specific to the service type, in JSON
      * format. For service type <code>SHIELD_ADVANCED</code>, this is an empty
-     * string.</p> <ul> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
+     * string.</p> <ul> <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p>
+     * <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+     * </p> </li> <li> <p>Example: <code>NETWORK_FIREWALL</code> </p> <p>
      * <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]}
      * }"</code> </p> </li> <li> <p>Example: <code>WAFV2</code> </p> <p>
      * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
@@ -342,6 +393,11 @@ namespace Model
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
      * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
+     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example: Shared VPCs. Apply
+     * the preceding policy to resources in shared VPCs as well as to those in VPCs
+     * that the account owns </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
+     * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
      * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>

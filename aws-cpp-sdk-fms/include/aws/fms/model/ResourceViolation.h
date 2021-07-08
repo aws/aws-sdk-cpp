@@ -12,9 +12,16 @@
 #include <aws/fms/model/NetworkFirewallMissingSubnetViolation.h>
 #include <aws/fms/model/NetworkFirewallMissingExpectedRTViolation.h>
 #include <aws/fms/model/NetworkFirewallPolicyModifiedViolation.h>
+#include <aws/fms/model/NetworkFirewallInternetTrafficNotInspectedViolation.h>
+#include <aws/fms/model/NetworkFirewallInvalidRouteConfigurationViolation.h>
+#include <aws/fms/model/NetworkFirewallBlackHoleRouteDetectedViolation.h>
+#include <aws/fms/model/NetworkFirewallUnexpectedFirewallRoutesViolation.h>
+#include <aws/fms/model/NetworkFirewallUnexpectedGatewayRoutesViolation.h>
+#include <aws/fms/model/NetworkFirewallMissingExpectedRoutesViolation.h>
 #include <aws/fms/model/DnsRuleGroupPriorityConflictViolation.h>
 #include <aws/fms/model/DnsDuplicateRuleGroupViolation.h>
 #include <aws/fms/model/DnsRuleGroupLimitExceededViolation.h>
+#include <aws/fms/model/PossibleRemediationActions.h>
 #include <utility>
 
 namespace Aws
@@ -47,94 +54,94 @@ namespace Model
 
 
     /**
-     * <p>Violation details for security groups.</p>
+     * <p>Violation detail for security groups.</p>
      */
     inline const AwsVPCSecurityGroupViolation& GetAwsVPCSecurityGroupViolation() const{ return m_awsVPCSecurityGroupViolation; }
 
     /**
-     * <p>Violation details for security groups.</p>
+     * <p>Violation detail for security groups.</p>
      */
     inline bool AwsVPCSecurityGroupViolationHasBeenSet() const { return m_awsVPCSecurityGroupViolationHasBeenSet; }
 
     /**
-     * <p>Violation details for security groups.</p>
+     * <p>Violation detail for security groups.</p>
      */
     inline void SetAwsVPCSecurityGroupViolation(const AwsVPCSecurityGroupViolation& value) { m_awsVPCSecurityGroupViolationHasBeenSet = true; m_awsVPCSecurityGroupViolation = value; }
 
     /**
-     * <p>Violation details for security groups.</p>
+     * <p>Violation detail for security groups.</p>
      */
     inline void SetAwsVPCSecurityGroupViolation(AwsVPCSecurityGroupViolation&& value) { m_awsVPCSecurityGroupViolationHasBeenSet = true; m_awsVPCSecurityGroupViolation = std::move(value); }
 
     /**
-     * <p>Violation details for security groups.</p>
+     * <p>Violation detail for security groups.</p>
      */
     inline ResourceViolation& WithAwsVPCSecurityGroupViolation(const AwsVPCSecurityGroupViolation& value) { SetAwsVPCSecurityGroupViolation(value); return *this;}
 
     /**
-     * <p>Violation details for security groups.</p>
+     * <p>Violation detail for security groups.</p>
      */
     inline ResourceViolation& WithAwsVPCSecurityGroupViolation(AwsVPCSecurityGroupViolation&& value) { SetAwsVPCSecurityGroupViolation(std::move(value)); return *this;}
 
 
     /**
-     * <p>Violation details for network interface.</p>
+     * <p>Violation detail for a network interface.</p>
      */
     inline const AwsEc2NetworkInterfaceViolation& GetAwsEc2NetworkInterfaceViolation() const{ return m_awsEc2NetworkInterfaceViolation; }
 
     /**
-     * <p>Violation details for network interface.</p>
+     * <p>Violation detail for a network interface.</p>
      */
     inline bool AwsEc2NetworkInterfaceViolationHasBeenSet() const { return m_awsEc2NetworkInterfaceViolationHasBeenSet; }
 
     /**
-     * <p>Violation details for network interface.</p>
+     * <p>Violation detail for a network interface.</p>
      */
     inline void SetAwsEc2NetworkInterfaceViolation(const AwsEc2NetworkInterfaceViolation& value) { m_awsEc2NetworkInterfaceViolationHasBeenSet = true; m_awsEc2NetworkInterfaceViolation = value; }
 
     /**
-     * <p>Violation details for network interface.</p>
+     * <p>Violation detail for a network interface.</p>
      */
     inline void SetAwsEc2NetworkInterfaceViolation(AwsEc2NetworkInterfaceViolation&& value) { m_awsEc2NetworkInterfaceViolationHasBeenSet = true; m_awsEc2NetworkInterfaceViolation = std::move(value); }
 
     /**
-     * <p>Violation details for network interface.</p>
+     * <p>Violation detail for a network interface.</p>
      */
     inline ResourceViolation& WithAwsEc2NetworkInterfaceViolation(const AwsEc2NetworkInterfaceViolation& value) { SetAwsEc2NetworkInterfaceViolation(value); return *this;}
 
     /**
-     * <p>Violation details for network interface.</p>
+     * <p>Violation detail for a network interface.</p>
      */
     inline ResourceViolation& WithAwsEc2NetworkInterfaceViolation(AwsEc2NetworkInterfaceViolation&& value) { SetAwsEc2NetworkInterfaceViolation(std::move(value)); return *this;}
 
 
     /**
-     * <p>Violation details for an EC2 instance.</p>
+     * <p>Violation detail for an EC2 instance.</p>
      */
     inline const AwsEc2InstanceViolation& GetAwsEc2InstanceViolation() const{ return m_awsEc2InstanceViolation; }
 
     /**
-     * <p>Violation details for an EC2 instance.</p>
+     * <p>Violation detail for an EC2 instance.</p>
      */
     inline bool AwsEc2InstanceViolationHasBeenSet() const { return m_awsEc2InstanceViolationHasBeenSet; }
 
     /**
-     * <p>Violation details for an EC2 instance.</p>
+     * <p>Violation detail for an EC2 instance.</p>
      */
     inline void SetAwsEc2InstanceViolation(const AwsEc2InstanceViolation& value) { m_awsEc2InstanceViolationHasBeenSet = true; m_awsEc2InstanceViolation = value; }
 
     /**
-     * <p>Violation details for an EC2 instance.</p>
+     * <p>Violation detail for an EC2 instance.</p>
      */
     inline void SetAwsEc2InstanceViolation(AwsEc2InstanceViolation&& value) { m_awsEc2InstanceViolationHasBeenSet = true; m_awsEc2InstanceViolation = std::move(value); }
 
     /**
-     * <p>Violation details for an EC2 instance.</p>
+     * <p>Violation detail for an EC2 instance.</p>
      */
     inline ResourceViolation& WithAwsEc2InstanceViolation(const AwsEc2InstanceViolation& value) { SetAwsEc2InstanceViolation(value); return *this;}
 
     /**
-     * <p>Violation details for an EC2 instance.</p>
+     * <p>Violation detail for an EC2 instance.</p>
      */
     inline ResourceViolation& WithAwsEc2InstanceViolation(AwsEc2InstanceViolation&& value) { SetAwsEc2InstanceViolation(std::move(value)); return *this;}
 
@@ -306,6 +313,186 @@ namespace Model
 
 
     /**
+     * <p>Violation detail for the subnet for which internet traffic hasn't been
+     * inspected.</p>
+     */
+    inline const NetworkFirewallInternetTrafficNotInspectedViolation& GetNetworkFirewallInternetTrafficNotInspectedViolation() const{ return m_networkFirewallInternetTrafficNotInspectedViolation; }
+
+    /**
+     * <p>Violation detail for the subnet for which internet traffic hasn't been
+     * inspected.</p>
+     */
+    inline bool NetworkFirewallInternetTrafficNotInspectedViolationHasBeenSet() const { return m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for the subnet for which internet traffic hasn't been
+     * inspected.</p>
+     */
+    inline void SetNetworkFirewallInternetTrafficNotInspectedViolation(const NetworkFirewallInternetTrafficNotInspectedViolation& value) { m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = true; m_networkFirewallInternetTrafficNotInspectedViolation = value; }
+
+    /**
+     * <p>Violation detail for the subnet for which internet traffic hasn't been
+     * inspected.</p>
+     */
+    inline void SetNetworkFirewallInternetTrafficNotInspectedViolation(NetworkFirewallInternetTrafficNotInspectedViolation&& value) { m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = true; m_networkFirewallInternetTrafficNotInspectedViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for the subnet for which internet traffic hasn't been
+     * inspected.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallInternetTrafficNotInspectedViolation(const NetworkFirewallInternetTrafficNotInspectedViolation& value) { SetNetworkFirewallInternetTrafficNotInspectedViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for the subnet for which internet traffic hasn't been
+     * inspected.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallInternetTrafficNotInspectedViolation(NetworkFirewallInternetTrafficNotInspectedViolation&& value) { SetNetworkFirewallInternetTrafficNotInspectedViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The route configuration is invalid.</p>
+     */
+    inline const NetworkFirewallInvalidRouteConfigurationViolation& GetNetworkFirewallInvalidRouteConfigurationViolation() const{ return m_networkFirewallInvalidRouteConfigurationViolation; }
+
+    /**
+     * <p>The route configuration is invalid.</p>
+     */
+    inline bool NetworkFirewallInvalidRouteConfigurationViolationHasBeenSet() const { return m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet; }
+
+    /**
+     * <p>The route configuration is invalid.</p>
+     */
+    inline void SetNetworkFirewallInvalidRouteConfigurationViolation(const NetworkFirewallInvalidRouteConfigurationViolation& value) { m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = true; m_networkFirewallInvalidRouteConfigurationViolation = value; }
+
+    /**
+     * <p>The route configuration is invalid.</p>
+     */
+    inline void SetNetworkFirewallInvalidRouteConfigurationViolation(NetworkFirewallInvalidRouteConfigurationViolation&& value) { m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = true; m_networkFirewallInvalidRouteConfigurationViolation = std::move(value); }
+
+    /**
+     * <p>The route configuration is invalid.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallInvalidRouteConfigurationViolation(const NetworkFirewallInvalidRouteConfigurationViolation& value) { SetNetworkFirewallInvalidRouteConfigurationViolation(value); return *this;}
+
+    /**
+     * <p>The route configuration is invalid.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallInvalidRouteConfigurationViolation(NetworkFirewallInvalidRouteConfigurationViolation&& value) { SetNetworkFirewallInvalidRouteConfigurationViolation(std::move(value)); return *this;}
+
+
+    
+    inline const NetworkFirewallBlackHoleRouteDetectedViolation& GetNetworkFirewallBlackHoleRouteDetectedViolation() const{ return m_networkFirewallBlackHoleRouteDetectedViolation; }
+
+    
+    inline bool NetworkFirewallBlackHoleRouteDetectedViolationHasBeenSet() const { return m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet; }
+
+    
+    inline void SetNetworkFirewallBlackHoleRouteDetectedViolation(const NetworkFirewallBlackHoleRouteDetectedViolation& value) { m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = true; m_networkFirewallBlackHoleRouteDetectedViolation = value; }
+
+    
+    inline void SetNetworkFirewallBlackHoleRouteDetectedViolation(NetworkFirewallBlackHoleRouteDetectedViolation&& value) { m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = true; m_networkFirewallBlackHoleRouteDetectedViolation = std::move(value); }
+
+    
+    inline ResourceViolation& WithNetworkFirewallBlackHoleRouteDetectedViolation(const NetworkFirewallBlackHoleRouteDetectedViolation& value) { SetNetworkFirewallBlackHoleRouteDetectedViolation(value); return *this;}
+
+    
+    inline ResourceViolation& WithNetworkFirewallBlackHoleRouteDetectedViolation(NetworkFirewallBlackHoleRouteDetectedViolation&& value) { SetNetworkFirewallBlackHoleRouteDetectedViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>There's an unexpected firewall route.</p>
+     */
+    inline const NetworkFirewallUnexpectedFirewallRoutesViolation& GetNetworkFirewallUnexpectedFirewallRoutesViolation() const{ return m_networkFirewallUnexpectedFirewallRoutesViolation; }
+
+    /**
+     * <p>There's an unexpected firewall route.</p>
+     */
+    inline bool NetworkFirewallUnexpectedFirewallRoutesViolationHasBeenSet() const { return m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet; }
+
+    /**
+     * <p>There's an unexpected firewall route.</p>
+     */
+    inline void SetNetworkFirewallUnexpectedFirewallRoutesViolation(const NetworkFirewallUnexpectedFirewallRoutesViolation& value) { m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = true; m_networkFirewallUnexpectedFirewallRoutesViolation = value; }
+
+    /**
+     * <p>There's an unexpected firewall route.</p>
+     */
+    inline void SetNetworkFirewallUnexpectedFirewallRoutesViolation(NetworkFirewallUnexpectedFirewallRoutesViolation&& value) { m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = true; m_networkFirewallUnexpectedFirewallRoutesViolation = std::move(value); }
+
+    /**
+     * <p>There's an unexpected firewall route.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallUnexpectedFirewallRoutesViolation(const NetworkFirewallUnexpectedFirewallRoutesViolation& value) { SetNetworkFirewallUnexpectedFirewallRoutesViolation(value); return *this;}
+
+    /**
+     * <p>There's an unexpected firewall route.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallUnexpectedFirewallRoutesViolation(NetworkFirewallUnexpectedFirewallRoutesViolation&& value) { SetNetworkFirewallUnexpectedFirewallRoutesViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>There's an unexpected gateway route.</p>
+     */
+    inline const NetworkFirewallUnexpectedGatewayRoutesViolation& GetNetworkFirewallUnexpectedGatewayRoutesViolation() const{ return m_networkFirewallUnexpectedGatewayRoutesViolation; }
+
+    /**
+     * <p>There's an unexpected gateway route.</p>
+     */
+    inline bool NetworkFirewallUnexpectedGatewayRoutesViolationHasBeenSet() const { return m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet; }
+
+    /**
+     * <p>There's an unexpected gateway route.</p>
+     */
+    inline void SetNetworkFirewallUnexpectedGatewayRoutesViolation(const NetworkFirewallUnexpectedGatewayRoutesViolation& value) { m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = true; m_networkFirewallUnexpectedGatewayRoutesViolation = value; }
+
+    /**
+     * <p>There's an unexpected gateway route.</p>
+     */
+    inline void SetNetworkFirewallUnexpectedGatewayRoutesViolation(NetworkFirewallUnexpectedGatewayRoutesViolation&& value) { m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = true; m_networkFirewallUnexpectedGatewayRoutesViolation = std::move(value); }
+
+    /**
+     * <p>There's an unexpected gateway route.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallUnexpectedGatewayRoutesViolation(const NetworkFirewallUnexpectedGatewayRoutesViolation& value) { SetNetworkFirewallUnexpectedGatewayRoutesViolation(value); return *this;}
+
+    /**
+     * <p>There's an unexpected gateway route.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallUnexpectedGatewayRoutesViolation(NetworkFirewallUnexpectedGatewayRoutesViolation&& value) { SetNetworkFirewallUnexpectedGatewayRoutesViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Expected routes are missing from Network Firewall.</p>
+     */
+    inline const NetworkFirewallMissingExpectedRoutesViolation& GetNetworkFirewallMissingExpectedRoutesViolation() const{ return m_networkFirewallMissingExpectedRoutesViolation; }
+
+    /**
+     * <p>Expected routes are missing from Network Firewall.</p>
+     */
+    inline bool NetworkFirewallMissingExpectedRoutesViolationHasBeenSet() const { return m_networkFirewallMissingExpectedRoutesViolationHasBeenSet; }
+
+    /**
+     * <p>Expected routes are missing from Network Firewall.</p>
+     */
+    inline void SetNetworkFirewallMissingExpectedRoutesViolation(const NetworkFirewallMissingExpectedRoutesViolation& value) { m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = true; m_networkFirewallMissingExpectedRoutesViolation = value; }
+
+    /**
+     * <p>Expected routes are missing from Network Firewall.</p>
+     */
+    inline void SetNetworkFirewallMissingExpectedRoutesViolation(NetworkFirewallMissingExpectedRoutesViolation&& value) { m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = true; m_networkFirewallMissingExpectedRoutesViolation = std::move(value); }
+
+    /**
+     * <p>Expected routes are missing from Network Firewall.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingExpectedRoutesViolation(const NetworkFirewallMissingExpectedRoutesViolation& value) { SetNetworkFirewallMissingExpectedRoutesViolation(value); return *this;}
+
+    /**
+     * <p>Expected routes are missing from Network Firewall.</p>
+     */
+    inline ResourceViolation& WithNetworkFirewallMissingExpectedRoutesViolation(NetworkFirewallMissingExpectedRoutesViolation&& value) { SetNetworkFirewallMissingExpectedRoutesViolation(std::move(value)); return *this;}
+
+
+    /**
      * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
      * that Firewall Manager tried to associate with a VPC has the same priority as a
      * rule group that's already associated. </p>
@@ -392,46 +579,83 @@ namespace Model
 
 
     /**
-     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * <p>Violation detail for a DNS Firewall policy that indicates that the VPC
      * reached the limit for associated DNS Firewall rule groups. Firewall Manager
      * tried to associate another rule group with the VPC and failed. </p>
      */
     inline const DnsRuleGroupLimitExceededViolation& GetDnsRuleGroupLimitExceededViolation() const{ return m_dnsRuleGroupLimitExceededViolation; }
 
     /**
-     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * <p>Violation detail for a DNS Firewall policy that indicates that the VPC
      * reached the limit for associated DNS Firewall rule groups. Firewall Manager
      * tried to associate another rule group with the VPC and failed. </p>
      */
     inline bool DnsRuleGroupLimitExceededViolationHasBeenSet() const { return m_dnsRuleGroupLimitExceededViolationHasBeenSet; }
 
     /**
-     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * <p>Violation detail for a DNS Firewall policy that indicates that the VPC
      * reached the limit for associated DNS Firewall rule groups. Firewall Manager
      * tried to associate another rule group with the VPC and failed. </p>
      */
     inline void SetDnsRuleGroupLimitExceededViolation(const DnsRuleGroupLimitExceededViolation& value) { m_dnsRuleGroupLimitExceededViolationHasBeenSet = true; m_dnsRuleGroupLimitExceededViolation = value; }
 
     /**
-     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * <p>Violation detail for a DNS Firewall policy that indicates that the VPC
      * reached the limit for associated DNS Firewall rule groups. Firewall Manager
      * tried to associate another rule group with the VPC and failed. </p>
      */
     inline void SetDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation&& value) { m_dnsRuleGroupLimitExceededViolationHasBeenSet = true; m_dnsRuleGroupLimitExceededViolation = std::move(value); }
 
     /**
-     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * <p>Violation detail for a DNS Firewall policy that indicates that the VPC
      * reached the limit for associated DNS Firewall rule groups. Firewall Manager
      * tried to associate another rule group with the VPC and failed. </p>
      */
     inline ResourceViolation& WithDnsRuleGroupLimitExceededViolation(const DnsRuleGroupLimitExceededViolation& value) { SetDnsRuleGroupLimitExceededViolation(value); return *this;}
 
     /**
-     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * <p>Violation detail for a DNS Firewall policy that indicates that the VPC
      * reached the limit for associated DNS Firewall rule groups. Firewall Manager
      * tried to associate another rule group with the VPC and failed. </p>
      */
     inline ResourceViolation& WithDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation&& value) { SetDnsRuleGroupLimitExceededViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline const PossibleRemediationActions& GetPossibleRemediationActions() const{ return m_possibleRemediationActions; }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline bool PossibleRemediationActionsHasBeenSet() const { return m_possibleRemediationActionsHasBeenSet; }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline void SetPossibleRemediationActions(const PossibleRemediationActions& value) { m_possibleRemediationActionsHasBeenSet = true; m_possibleRemediationActions = value; }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline void SetPossibleRemediationActions(PossibleRemediationActions&& value) { m_possibleRemediationActionsHasBeenSet = true; m_possibleRemediationActions = std::move(value); }
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline ResourceViolation& WithPossibleRemediationActions(const PossibleRemediationActions& value) { SetPossibleRemediationActions(value); return *this;}
+
+    /**
+     * <p>A list of possible remediation action lists. Each individual possible
+     * remediation action is a list of individual remediation actions.</p>
+     */
+    inline ResourceViolation& WithPossibleRemediationActions(PossibleRemediationActions&& value) { SetPossibleRemediationActions(std::move(value)); return *this;}
 
   private:
 
@@ -456,6 +680,24 @@ namespace Model
     NetworkFirewallPolicyModifiedViolation m_networkFirewallPolicyModifiedViolation;
     bool m_networkFirewallPolicyModifiedViolationHasBeenSet;
 
+    NetworkFirewallInternetTrafficNotInspectedViolation m_networkFirewallInternetTrafficNotInspectedViolation;
+    bool m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet;
+
+    NetworkFirewallInvalidRouteConfigurationViolation m_networkFirewallInvalidRouteConfigurationViolation;
+    bool m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet;
+
+    NetworkFirewallBlackHoleRouteDetectedViolation m_networkFirewallBlackHoleRouteDetectedViolation;
+    bool m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet;
+
+    NetworkFirewallUnexpectedFirewallRoutesViolation m_networkFirewallUnexpectedFirewallRoutesViolation;
+    bool m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet;
+
+    NetworkFirewallUnexpectedGatewayRoutesViolation m_networkFirewallUnexpectedGatewayRoutesViolation;
+    bool m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet;
+
+    NetworkFirewallMissingExpectedRoutesViolation m_networkFirewallMissingExpectedRoutesViolation;
+    bool m_networkFirewallMissingExpectedRoutesViolationHasBeenSet;
+
     DnsRuleGroupPriorityConflictViolation m_dnsRuleGroupPriorityConflictViolation;
     bool m_dnsRuleGroupPriorityConflictViolationHasBeenSet;
 
@@ -464,6 +706,9 @@ namespace Model
 
     DnsRuleGroupLimitExceededViolation m_dnsRuleGroupLimitExceededViolation;
     bool m_dnsRuleGroupLimitExceededViolationHasBeenSet;
+
+    PossibleRemediationActions m_possibleRemediationActions;
+    bool m_possibleRemediationActionsHasBeenSet;
   };
 
 } // namespace Model

@@ -34,6 +34,16 @@ namespace Aws
         static const int MISSING_FIREWALL_SUBNET_IN_AZ_HASH = HashingUtils::HashString("MISSING_FIREWALL_SUBNET_IN_AZ");
         static const int MISSING_EXPECTED_ROUTE_TABLE_HASH = HashingUtils::HashString("MISSING_EXPECTED_ROUTE_TABLE");
         static const int NETWORK_FIREWALL_POLICY_MODIFIED_HASH = HashingUtils::HashString("NETWORK_FIREWALL_POLICY_MODIFIED");
+        static const int INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE_HASH = HashingUtils::HashString("INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE");
+        static const int FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE");
+        static const int UNEXPECTED_FIREWALL_ROUTES_HASH = HashingUtils::HashString("UNEXPECTED_FIREWALL_ROUTES");
+        static const int UNEXPECTED_TARGET_GATEWAY_ROUTES_HASH = HashingUtils::HashString("UNEXPECTED_TARGET_GATEWAY_ROUTES");
+        static const int TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY_HASH = HashingUtils::HashString("TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY");
+        static const int INVALID_ROUTE_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_ROUTE_CONFIGURATION");
+        static const int MISSING_TARGET_GATEWAY_HASH = HashingUtils::HashString("MISSING_TARGET_GATEWAY");
+        static const int INTERNET_TRAFFIC_NOT_INSPECTED_HASH = HashingUtils::HashString("INTERNET_TRAFFIC_NOT_INSPECTED");
+        static const int BLACK_HOLE_ROUTE_DETECTED_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED");
+        static const int BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET_HASH = HashingUtils::HashString("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET");
         static const int RESOURCE_MISSING_DNS_FIREWALL_HASH = HashingUtils::HashString("RESOURCE_MISSING_DNS_FIREWALL");
 
 
@@ -96,6 +106,46 @@ namespace Aws
           {
             return ViolationReason::NETWORK_FIREWALL_POLICY_MODIFIED;
           }
+          else if (hashCode == INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE_HASH)
+          {
+            return ViolationReason::INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE;
+          }
+          else if (hashCode == FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE_HASH)
+          {
+            return ViolationReason::FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE;
+          }
+          else if (hashCode == UNEXPECTED_FIREWALL_ROUTES_HASH)
+          {
+            return ViolationReason::UNEXPECTED_FIREWALL_ROUTES;
+          }
+          else if (hashCode == UNEXPECTED_TARGET_GATEWAY_ROUTES_HASH)
+          {
+            return ViolationReason::UNEXPECTED_TARGET_GATEWAY_ROUTES;
+          }
+          else if (hashCode == TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY_HASH)
+          {
+            return ViolationReason::TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY;
+          }
+          else if (hashCode == INVALID_ROUTE_CONFIGURATION_HASH)
+          {
+            return ViolationReason::INVALID_ROUTE_CONFIGURATION;
+          }
+          else if (hashCode == MISSING_TARGET_GATEWAY_HASH)
+          {
+            return ViolationReason::MISSING_TARGET_GATEWAY;
+          }
+          else if (hashCode == INTERNET_TRAFFIC_NOT_INSPECTED_HASH)
+          {
+            return ViolationReason::INTERNET_TRAFFIC_NOT_INSPECTED;
+          }
+          else if (hashCode == BLACK_HOLE_ROUTE_DETECTED_HASH)
+          {
+            return ViolationReason::BLACK_HOLE_ROUTE_DETECTED;
+          }
+          else if (hashCode == BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET_HASH)
+          {
+            return ViolationReason::BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET;
+          }
           else if (hashCode == RESOURCE_MISSING_DNS_FIREWALL_HASH)
           {
             return ViolationReason::RESOURCE_MISSING_DNS_FIREWALL;
@@ -142,6 +192,26 @@ namespace Aws
             return "MISSING_EXPECTED_ROUTE_TABLE";
           case ViolationReason::NETWORK_FIREWALL_POLICY_MODIFIED:
             return "NETWORK_FIREWALL_POLICY_MODIFIED";
+          case ViolationReason::INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE:
+            return "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE";
+          case ViolationReason::FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE:
+            return "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE";
+          case ViolationReason::UNEXPECTED_FIREWALL_ROUTES:
+            return "UNEXPECTED_FIREWALL_ROUTES";
+          case ViolationReason::UNEXPECTED_TARGET_GATEWAY_ROUTES:
+            return "UNEXPECTED_TARGET_GATEWAY_ROUTES";
+          case ViolationReason::TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY:
+            return "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY";
+          case ViolationReason::INVALID_ROUTE_CONFIGURATION:
+            return "INVALID_ROUTE_CONFIGURATION";
+          case ViolationReason::MISSING_TARGET_GATEWAY:
+            return "MISSING_TARGET_GATEWAY";
+          case ViolationReason::INTERNET_TRAFFIC_NOT_INSPECTED:
+            return "INTERNET_TRAFFIC_NOT_INSPECTED";
+          case ViolationReason::BLACK_HOLE_ROUTE_DETECTED:
+            return "BLACK_HOLE_ROUTE_DETECTED";
+          case ViolationReason::BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET:
+            return "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET";
           case ViolationReason::RESOURCE_MISSING_DNS_FIREWALL:
             return "RESOURCE_MISSING_DNS_FIREWALL";
           default:

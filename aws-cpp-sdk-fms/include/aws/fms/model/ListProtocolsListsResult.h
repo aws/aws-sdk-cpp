@@ -72,57 +72,57 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline ListProtocolsListsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline ListProtocolsListsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, AWS Firewall Manager returns this token
-     * in the response. You can use this token in subsequent requests to retrieve the
-     * next batch of objects.</p>
+     * you have more objects than the maximum, Firewall Manager returns this token in
+     * the response. You can use this token in subsequent requests to retrieve the next
+     * batch of objects.</p>
      */
     inline ListProtocolsListsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

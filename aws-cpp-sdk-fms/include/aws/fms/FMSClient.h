@@ -182,13 +182,13 @@ namespace Model
     typedef std::function<void(const FMSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Firewall Manager</fullname> <p>This is the <i>AWS Firewall Manager
-   * API Reference</i>. This guide is for developers who need detailed information
-   * about the AWS Firewall Manager API actions, data types, and errors. For detailed
-   * information about AWS Firewall Manager features, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
-   * Firewall Manager Developer Guide</a>.</p> <p>Some API actions require explicit
-   * resource permissions. For information, see the developer guide topic <a
+   * <p>This is the <i>Firewall Manager API Reference</i>. This guide is for
+   * developers who need detailed information about the Firewall Manager API actions,
+   * data types, and errors. For detailed information about Firewall Manager
+   * features, see the <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">Firewall
+   * Manager Developer Guide</a>.</p> <p>Some API actions require explicit resource
+   * permissions. For information, see the developer guide topic <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
    * Manager required permissions for API actions</a>. </p>
    */
@@ -220,28 +220,24 @@ namespace Model
 
 
         /**
-         * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager
-         * must be associated with the master account of your AWS organization or
-         * associated with a member account that has the appropriate permissions. If the
-         * account ID that you submit is not an AWS Organizations master account, AWS
-         * Firewall Manager will set the appropriate permissions for the given member
-         * account.</p> <p>The account that you associate with AWS Firewall Manager is
-         * called the AWS Firewall Manager administrator account. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Sets the Firewall Manager administrator account. The account must be a member
+         * of the organization in Organizations whose resources you want to protect.
+         * Firewall Manager sets the permissions that allow the account to administer your
+         * Firewall Manager policies.</p> <p>The account that you associate with Firewall
+         * Manager is called the Firewall Manager administrator account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateAdminAccountOutcome AssociateAdminAccount(const Model::AssociateAdminAccountRequest& request) const;
 
         /**
-         * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager
-         * must be associated with the master account of your AWS organization or
-         * associated with a member account that has the appropriate permissions. If the
-         * account ID that you submit is not an AWS Organizations master account, AWS
-         * Firewall Manager will set the appropriate permissions for the given member
-         * account.</p> <p>The account that you associate with AWS Firewall Manager is
-         * called the AWS Firewall Manager administrator account. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Sets the Firewall Manager administrator account. The account must be a member
+         * of the organization in Organizations whose resources you want to protect.
+         * Firewall Manager sets the permissions that allow the account to administer your
+         * Firewall Manager policies.</p> <p>The account that you associate with Firewall
+         * Manager is called the Firewall Manager administrator account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -250,14 +246,12 @@ namespace Model
         virtual Model::AssociateAdminAccountOutcomeCallable AssociateAdminAccountCallable(const Model::AssociateAdminAccountRequest& request) const;
 
         /**
-         * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager
-         * must be associated with the master account of your AWS organization or
-         * associated with a member account that has the appropriate permissions. If the
-         * account ID that you submit is not an AWS Organizations master account, AWS
-         * Firewall Manager will set the appropriate permissions for the given member
-         * account.</p> <p>The account that you associate with AWS Firewall Manager is
-         * called the AWS Firewall Manager administrator account. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Sets the Firewall Manager administrator account. The account must be a member
+         * of the organization in Organizations whose resources you want to protect.
+         * Firewall Manager sets the permissions that allow the account to administer your
+         * Firewall Manager policies.</p> <p>The account that you associate with Firewall
+         * Manager is called the Firewall Manager administrator account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -266,7 +260,7 @@ namespace Model
         virtual void AssociateAdminAccountAsync(const Model::AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager applications list.</p><p><h3>See
+         * <p>Permanently deletes an Firewall Manager applications list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">AWS
          * API Reference</a></p>
@@ -274,7 +268,7 @@ namespace Model
         virtual Model::DeleteAppsListOutcome DeleteAppsList(const Model::DeleteAppsListRequest& request) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager applications list.</p><p><h3>See
+         * <p>Permanently deletes an Firewall Manager applications list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">AWS
          * API Reference</a></p>
@@ -284,7 +278,7 @@ namespace Model
         virtual Model::DeleteAppsListOutcomeCallable DeleteAppsListCallable(const Model::DeleteAppsListRequest& request) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager applications list.</p><p><h3>See
+         * <p>Permanently deletes an Firewall Manager applications list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">AWS
          * API Reference</a></p>
@@ -294,18 +288,18 @@ namespace Model
         virtual void DeleteAppsListAsync(const Model::DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon
-         * Simple Notification Service (SNS) topic that is used to record AWS Firewall
-         * Manager SNS logs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Firewall Manager association with the IAM role and the Amazon
+         * Simple Notification Service (SNS) topic that is used to record Firewall Manager
+         * SNS logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteNotificationChannelOutcome DeleteNotificationChannel(const Model::DeleteNotificationChannelRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon
-         * Simple Notification Service (SNS) topic that is used to record AWS Firewall
-         * Manager SNS logs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Firewall Manager association with the IAM role and the Amazon
+         * Simple Notification Service (SNS) topic that is used to record Firewall Manager
+         * SNS logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">AWS
          * API Reference</a></p>
          *
@@ -314,9 +308,9 @@ namespace Model
         virtual Model::DeleteNotificationChannelOutcomeCallable DeleteNotificationChannelCallable(const Model::DeleteNotificationChannelRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon
-         * Simple Notification Service (SNS) topic that is used to record AWS Firewall
-         * Manager SNS logs.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Firewall Manager association with the IAM role and the Amazon
+         * Simple Notification Service (SNS) topic that is used to record Firewall Manager
+         * SNS logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">AWS
          * API Reference</a></p>
          *
@@ -325,14 +319,14 @@ namespace Model
         virtual void DeleteNotificationChannelAsync(const Model::DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager policy. </p><p><h3>See Also:</h3>
+         * <p>Permanently deletes an Firewall Manager policy. </p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager policy. </p><p><h3>See Also:</h3>
+         * <p>Permanently deletes an Firewall Manager policy. </p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -341,7 +335,7 @@ namespace Model
         virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager policy. </p><p><h3>See Also:</h3>
+         * <p>Permanently deletes an Firewall Manager policy. </p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -350,7 +344,7 @@ namespace Model
         virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager protocols list.</p><p><h3>See
+         * <p>Permanently deletes an Firewall Manager protocols list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">AWS
          * API Reference</a></p>
@@ -358,7 +352,7 @@ namespace Model
         virtual Model::DeleteProtocolsListOutcome DeleteProtocolsList(const Model::DeleteProtocolsListRequest& request) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager protocols list.</p><p><h3>See
+         * <p>Permanently deletes an Firewall Manager protocols list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">AWS
          * API Reference</a></p>
@@ -368,7 +362,7 @@ namespace Model
         virtual Model::DeleteProtocolsListOutcomeCallable DeleteProtocolsListCallable(const Model::DeleteProtocolsListRequest& request) const;
 
         /**
-         * <p>Permanently deletes an AWS Firewall Manager protocols list.</p><p><h3>See
+         * <p>Permanently deletes an Firewall Manager protocols list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">AWS
          * API Reference</a></p>
@@ -378,7 +372,7 @@ namespace Model
         virtual void DeleteProtocolsListAsync(const Model::DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the account that has been set as the AWS Firewall Manager
+         * <p>Disassociates the account that has been set as the Firewall Manager
          * administrator account. To set a different account as the administrator account,
          * you must submit an <code>AssociateAdminAccount</code> request.</p><p><h3>See
          * Also:</h3>   <a
@@ -388,7 +382,7 @@ namespace Model
         virtual Model::DisassociateAdminAccountOutcome DisassociateAdminAccount(const Model::DisassociateAdminAccountRequest& request) const;
 
         /**
-         * <p>Disassociates the account that has been set as the AWS Firewall Manager
+         * <p>Disassociates the account that has been set as the Firewall Manager
          * administrator account. To set a different account as the administrator account,
          * you must submit an <code>AssociateAdminAccount</code> request.</p><p><h3>See
          * Also:</h3>   <a
@@ -400,7 +394,7 @@ namespace Model
         virtual Model::DisassociateAdminAccountOutcomeCallable DisassociateAdminAccountCallable(const Model::DisassociateAdminAccountRequest& request) const;
 
         /**
-         * <p>Disassociates the account that has been set as the AWS Firewall Manager
+         * <p>Disassociates the account that has been set as the Firewall Manager
          * administrator account. To set a different account as the administrator account,
          * you must submit an <code>AssociateAdminAccount</code> request.</p><p><h3>See
          * Also:</h3>   <a
@@ -412,18 +406,16 @@ namespace Model
         virtual void DisassociateAdminAccountAsync(const Model::DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the AWS Organizations master account that is associated with AWS
-         * Firewall Manager as the AWS Firewall Manager administrator.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the Organizations account that is associated with Firewall Manager as
+         * the Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAdminAccountOutcome GetAdminAccount(const Model::GetAdminAccountRequest& request) const;
 
         /**
-         * <p>Returns the AWS Organizations master account that is associated with AWS
-         * Firewall Manager as the AWS Firewall Manager administrator.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the Organizations account that is associated with Firewall Manager as
+         * the Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -432,9 +424,8 @@ namespace Model
         virtual Model::GetAdminAccountOutcomeCallable GetAdminAccountCallable(const Model::GetAdminAccountRequest& request) const;
 
         /**
-         * <p>Returns the AWS Organizations master account that is associated with AWS
-         * Firewall Manager as the AWS Firewall Manager administrator.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the Organizations account that is associated with Firewall Manager as
+         * the Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -443,7 +434,7 @@ namespace Model
         virtual void GetAdminAccountAsync(const Model::GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager applications
+         * <p>Returns information about the specified Firewall Manager applications
          * list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">AWS API
          * Reference</a></p>
@@ -451,7 +442,7 @@ namespace Model
         virtual Model::GetAppsListOutcome GetAppsList(const Model::GetAppsListRequest& request) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager applications
+         * <p>Returns information about the specified Firewall Manager applications
          * list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">AWS API
          * Reference</a></p>
@@ -461,7 +452,7 @@ namespace Model
         virtual Model::GetAppsListOutcomeCallable GetAppsListCallable(const Model::GetAppsListRequest& request) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager applications
+         * <p>Returns information about the specified Firewall Manager applications
          * list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">AWS API
          * Reference</a></p>
@@ -473,16 +464,19 @@ namespace Model
         /**
          * <p>Returns detailed compliance information about the specified member account.
          * Details include resources that are in and out of compliance with the specified
-         * policy. Resources are considered noncompliant for AWS WAF and Shield Advanced
-         * policies if the specified policy has not been applied to them. Resources are
-         * considered noncompliant for security group policies if they are in scope of the
-         * policy, they violate one or more of the policy rules, and remediation is
-         * disabled or not possible. Resources are considered noncompliant for Network
-         * Firewall policies if a firewall is missing in the VPC, if the firewall endpoint
-         * isn't set up in an expected Availability Zone and subnet, if a subnet created by
-         * the Firewall Manager doesn't have the expected route table, and for
-         * modifications to a firewall policy that violate the Firewall Manager policy's
-         * rules. </p><p><h3>See Also:</h3>   <a
+         * policy. </p> <ul> <li> <p>Resources are considered noncompliant for WAF and
+         * Shield Advanced policies if the specified policy has not been applied to
+         * them.</p> </li> <li> <p>Resources are considered noncompliant for security group
+         * policies if they are in scope of the policy, they violate one or more of the
+         * policy rules, and remediation is disabled or not possible.</p> </li> <li>
+         * <p>Resources are considered noncompliant for Network Firewall policies if a
+         * firewall is missing in the VPC, if the firewall endpoint isn't set up in an
+         * expected Availability Zone and subnet, if a subnet created by the Firewall
+         * Manager doesn't have the expected route table, and for modifications to a
+         * firewall policy that violate the Firewall Manager policy's rules.</p> </li> <li>
+         * <p>Resources are considered noncompliant for DNS Firewall policies if a DNS
+         * Firewall rule group is missing from the rule group associations for the VPC.
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          */
@@ -491,16 +485,19 @@ namespace Model
         /**
          * <p>Returns detailed compliance information about the specified member account.
          * Details include resources that are in and out of compliance with the specified
-         * policy. Resources are considered noncompliant for AWS WAF and Shield Advanced
-         * policies if the specified policy has not been applied to them. Resources are
-         * considered noncompliant for security group policies if they are in scope of the
-         * policy, they violate one or more of the policy rules, and remediation is
-         * disabled or not possible. Resources are considered noncompliant for Network
-         * Firewall policies if a firewall is missing in the VPC, if the firewall endpoint
-         * isn't set up in an expected Availability Zone and subnet, if a subnet created by
-         * the Firewall Manager doesn't have the expected route table, and for
-         * modifications to a firewall policy that violate the Firewall Manager policy's
-         * rules. </p><p><h3>See Also:</h3>   <a
+         * policy. </p> <ul> <li> <p>Resources are considered noncompliant for WAF and
+         * Shield Advanced policies if the specified policy has not been applied to
+         * them.</p> </li> <li> <p>Resources are considered noncompliant for security group
+         * policies if they are in scope of the policy, they violate one or more of the
+         * policy rules, and remediation is disabled or not possible.</p> </li> <li>
+         * <p>Resources are considered noncompliant for Network Firewall policies if a
+         * firewall is missing in the VPC, if the firewall endpoint isn't set up in an
+         * expected Availability Zone and subnet, if a subnet created by the Firewall
+         * Manager doesn't have the expected route table, and for modifications to a
+         * firewall policy that violate the Firewall Manager policy's rules.</p> </li> <li>
+         * <p>Resources are considered noncompliant for DNS Firewall policies if a DNS
+         * Firewall rule group is missing from the rule group associations for the VPC.
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          *
@@ -511,16 +508,19 @@ namespace Model
         /**
          * <p>Returns detailed compliance information about the specified member account.
          * Details include resources that are in and out of compliance with the specified
-         * policy. Resources are considered noncompliant for AWS WAF and Shield Advanced
-         * policies if the specified policy has not been applied to them. Resources are
-         * considered noncompliant for security group policies if they are in scope of the
-         * policy, they violate one or more of the policy rules, and remediation is
-         * disabled or not possible. Resources are considered noncompliant for Network
-         * Firewall policies if a firewall is missing in the VPC, if the firewall endpoint
-         * isn't set up in an expected Availability Zone and subnet, if a subnet created by
-         * the Firewall Manager doesn't have the expected route table, and for
-         * modifications to a firewall policy that violate the Firewall Manager policy's
-         * rules. </p><p><h3>See Also:</h3>   <a
+         * policy. </p> <ul> <li> <p>Resources are considered noncompliant for WAF and
+         * Shield Advanced policies if the specified policy has not been applied to
+         * them.</p> </li> <li> <p>Resources are considered noncompliant for security group
+         * policies if they are in scope of the policy, they violate one or more of the
+         * policy rules, and remediation is disabled or not possible.</p> </li> <li>
+         * <p>Resources are considered noncompliant for Network Firewall policies if a
+         * firewall is missing in the VPC, if the firewall endpoint isn't set up in an
+         * expected Availability Zone and subnet, if a subnet created by the Firewall
+         * Manager doesn't have the expected route table, and for modifications to a
+         * firewall policy that violate the Firewall Manager policy's rules.</p> </li> <li>
+         * <p>Resources are considered noncompliant for DNS Firewall policies if a DNS
+         * Firewall rule group is missing from the rule group associations for the VPC.
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">AWS
          * API Reference</a></p>
          *
@@ -530,7 +530,7 @@ namespace Model
 
         /**
          * <p>Information about the Amazon Simple Notification Service (SNS) topic that is
-         * used to record AWS Firewall Manager SNS logs.</p><p><h3>See Also:</h3>   <a
+         * used to record Firewall Manager SNS logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">AWS
          * API Reference</a></p>
          */
@@ -538,7 +538,7 @@ namespace Model
 
         /**
          * <p>Information about the Amazon Simple Notification Service (SNS) topic that is
-         * used to record AWS Firewall Manager SNS logs.</p><p><h3>See Also:</h3>   <a
+         * used to record Firewall Manager SNS logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">AWS
          * API Reference</a></p>
          *
@@ -548,7 +548,7 @@ namespace Model
 
         /**
          * <p>Information about the Amazon Simple Notification Service (SNS) topic that is
-         * used to record AWS Firewall Manager SNS logs.</p><p><h3>See Also:</h3>   <a
+         * used to record Firewall Manager SNS logs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">AWS
          * API Reference</a></p>
          *
@@ -557,7 +557,7 @@ namespace Model
         virtual void GetNotificationChannelAsync(const Model::GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager
+         * <p>Returns information about the specified Firewall Manager
          * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">AWS API
          * Reference</a></p>
@@ -565,7 +565,7 @@ namespace Model
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager
+         * <p>Returns information about the specified Firewall Manager
          * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">AWS API
          * Reference</a></p>
@@ -575,7 +575,7 @@ namespace Model
         virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager
+         * <p>Returns information about the specified Firewall Manager
          * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">AWS API
          * Reference</a></p>
@@ -616,7 +616,7 @@ namespace Model
         virtual void GetProtectionStatusAsync(const Model::GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager protocols
+         * <p>Returns information about the specified Firewall Manager protocols
          * list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">AWS
          * API Reference</a></p>
@@ -624,7 +624,7 @@ namespace Model
         virtual Model::GetProtocolsListOutcome GetProtocolsList(const Model::GetProtocolsListRequest& request) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager protocols
+         * <p>Returns information about the specified Firewall Manager protocols
          * list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">AWS
          * API Reference</a></p>
@@ -634,7 +634,7 @@ namespace Model
         virtual Model::GetProtocolsListOutcomeCallable GetProtocolsListCallable(const Model::GetProtocolsListRequest& request) const;
 
         /**
-         * <p>Returns information about the specified AWS Firewall Manager protocols
+         * <p>Returns information about the specified Firewall Manager protocols
          * list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">AWS
          * API Reference</a></p>
@@ -644,16 +644,16 @@ namespace Model
         virtual void GetProtocolsListAsync(const Model::GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves violations for a resource based on the specified AWS Firewall
-         * Manager policy and AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves violations for a resource based on the specified Firewall Manager
+         * policy and Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">AWS
          * API Reference</a></p>
          */
         virtual Model::GetViolationDetailsOutcome GetViolationDetails(const Model::GetViolationDetailsRequest& request) const;
 
         /**
-         * <p>Retrieves violations for a resource based on the specified AWS Firewall
-         * Manager policy and AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves violations for a resource based on the specified Firewall Manager
+         * policy and Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">AWS
          * API Reference</a></p>
          *
@@ -662,8 +662,8 @@ namespace Model
         virtual Model::GetViolationDetailsOutcomeCallable GetViolationDetailsCallable(const Model::GetViolationDetailsRequest& request) const;
 
         /**
-         * <p>Retrieves violations for a resource based on the specified AWS Firewall
-         * Manager policy and AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves violations for a resource based on the specified Firewall Manager
+         * policy and Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">AWS
          * API Reference</a></p>
          *
@@ -732,9 +732,9 @@ namespace Model
 
         /**
          * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
-         * in the administrator's AWS organization.</p> <p>The
+         * in the administrator's Amazon Web Services organization.</p> <p>The
          * <code>ListMemberAccounts</code> must be submitted by the account that is set as
-         * the AWS Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
+         * the Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
          * API Reference</a></p>
          */
@@ -742,9 +742,9 @@ namespace Model
 
         /**
          * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
-         * in the administrator's AWS organization.</p> <p>The
+         * in the administrator's Amazon Web Services organization.</p> <p>The
          * <code>ListMemberAccounts</code> must be submitted by the account that is set as
-         * the AWS Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
+         * the Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
          * API Reference</a></p>
          *
@@ -754,9 +754,9 @@ namespace Model
 
         /**
          * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
-         * in the administrator's AWS organization.</p> <p>The
+         * in the administrator's Amazon Web Services organization.</p> <p>The
          * <code>ListMemberAccounts</code> must be submitted by the account that is set as
-         * the AWS Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
+         * the Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
          * API Reference</a></p>
          *
@@ -821,16 +821,16 @@ namespace Model
         virtual void ListProtocolsListsAsync(const Model::ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the list of tags for the specified AWS resource. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the list of tags for the specified Amazon Web Services resource.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of tags for the specified AWS resource. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the list of tags for the specified Amazon Web Services resource.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -839,8 +839,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of tags for the specified AWS resource. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the list of tags for the specified Amazon Web Services resource.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -849,25 +849,25 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager applications list.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">AWS
-         * API Reference</a></p>
+         * <p>Creates an Firewall Manager applications list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">AWS API
+         * Reference</a></p>
          */
         virtual Model::PutAppsListOutcome PutAppsList(const Model::PutAppsListRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager applications list.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">AWS
-         * API Reference</a></p>
+         * <p>Creates an Firewall Manager applications list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutAppsListOutcomeCallable PutAppsListCallable(const Model::PutAppsListRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager applications list.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">AWS
-         * API Reference</a></p>
+         * <p>Creates an Firewall Manager applications list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -875,12 +875,12 @@ namespace Model
 
         /**
          * <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic
-         * that AWS Firewall Manager uses to record SNS logs.</p> <p>To perform this action
+         * that Firewall Manager uses to record SNS logs.</p> <p>To perform this action
          * outside of the console, you must configure the SNS topic to allow the Firewall
          * Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-         * Manager required permissions for API actions</a> in the <i>AWS Firewall Manager
+         * Manager required permissions for API actions</a> in the <i>Firewall Manager
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">AWS
          * API Reference</a></p>
@@ -889,12 +889,12 @@ namespace Model
 
         /**
          * <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic
-         * that AWS Firewall Manager uses to record SNS logs.</p> <p>To perform this action
+         * that Firewall Manager uses to record SNS logs.</p> <p>To perform this action
          * outside of the console, you must configure the SNS topic to allow the Firewall
          * Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-         * Manager required permissions for API actions</a> in the <i>AWS Firewall Manager
+         * Manager required permissions for API actions</a> in the <i>Firewall Manager
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">AWS
          * API Reference</a></p>
@@ -905,12 +905,12 @@ namespace Model
 
         /**
          * <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic
-         * that AWS Firewall Manager uses to record SNS logs.</p> <p>To perform this action
+         * that Firewall Manager uses to record SNS logs.</p> <p>To perform this action
          * outside of the console, you must configure the SNS topic to allow the Firewall
          * Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-         * Manager required permissions for API actions</a> in the <i>AWS Firewall Manager
+         * Manager required permissions for API actions</a> in the <i>Firewall Manager
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">AWS
          * API Reference</a></p>
@@ -920,17 +920,19 @@ namespace Model
         virtual void PutNotificationChannelAsync(const Model::PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
-         * following types of policies: </p> <ul> <li> <p>An AWS WAF policy (type WAFV2),
-         * which defines rule groups to run first in the corresponding AWS WAF web ACL and
-         * rule groups to run last in the web ACL.</p> </li> <li> <p>An AWS WAF Classic
-         * policy (type WAF), which defines a rule group. </p> </li> <li> <p>A Shield
-         * Advanced policy, which applies Shield Advanced protection to specified accounts
-         * and resources.</p> </li> <li> <p>A security group policy, which manages VPC
-         * security groups across your AWS organization. </p> </li> <li> <p>An AWS Network
-         * Firewall policy, which provides firewall rules to filter network traffic in
-         * specified Amazon VPCs.</p> </li> </ul> <p>Each policy is specific to one of the
-         * types. If you want to enforce more than one policy type across accounts, create
+         * <p>Creates an Firewall Manager policy.</p> <p>Firewall Manager provides the
+         * following types of policies: </p> <ul> <li> <p>An WAF policy (type WAFV2), which
+         * defines rule groups to run first in the corresponding WAF web ACL and rule
+         * groups to run last in the web ACL.</p> </li> <li> <p>An WAF Classic policy (type
+         * WAF), which defines a rule group. </p> </li> <li> <p>A Shield Advanced policy,
+         * which applies Shield Advanced protection to specified accounts and
+         * resources.</p> </li> <li> <p>A security group policy, which manages VPC security
+         * groups across your Amazon Web Services organization. </p> </li> <li> <p>An
+         * Network Firewall policy, which provides firewall rules to filter network traffic
+         * in specified Amazon VPCs.</p> </li> <li> <p>A DNS Firewall policy, which
+         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
+         * specified VPCs.</p> </li> </ul> <p>Each policy is specific to one of the types.
+         * If you want to enforce more than one policy type across accounts, create
          * multiple policies. You can create multiple policies for each type.</p> <p>You
          * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
          * more information about subscribing to Shield Advanced, see <a
@@ -942,17 +944,19 @@ namespace Model
         virtual Model::PutPolicyOutcome PutPolicy(const Model::PutPolicyRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
-         * following types of policies: </p> <ul> <li> <p>An AWS WAF policy (type WAFV2),
-         * which defines rule groups to run first in the corresponding AWS WAF web ACL and
-         * rule groups to run last in the web ACL.</p> </li> <li> <p>An AWS WAF Classic
-         * policy (type WAF), which defines a rule group. </p> </li> <li> <p>A Shield
-         * Advanced policy, which applies Shield Advanced protection to specified accounts
-         * and resources.</p> </li> <li> <p>A security group policy, which manages VPC
-         * security groups across your AWS organization. </p> </li> <li> <p>An AWS Network
-         * Firewall policy, which provides firewall rules to filter network traffic in
-         * specified Amazon VPCs.</p> </li> </ul> <p>Each policy is specific to one of the
-         * types. If you want to enforce more than one policy type across accounts, create
+         * <p>Creates an Firewall Manager policy.</p> <p>Firewall Manager provides the
+         * following types of policies: </p> <ul> <li> <p>An WAF policy (type WAFV2), which
+         * defines rule groups to run first in the corresponding WAF web ACL and rule
+         * groups to run last in the web ACL.</p> </li> <li> <p>An WAF Classic policy (type
+         * WAF), which defines a rule group. </p> </li> <li> <p>A Shield Advanced policy,
+         * which applies Shield Advanced protection to specified accounts and
+         * resources.</p> </li> <li> <p>A security group policy, which manages VPC security
+         * groups across your Amazon Web Services organization. </p> </li> <li> <p>An
+         * Network Firewall policy, which provides firewall rules to filter network traffic
+         * in specified Amazon VPCs.</p> </li> <li> <p>A DNS Firewall policy, which
+         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
+         * specified VPCs.</p> </li> </ul> <p>Each policy is specific to one of the types.
+         * If you want to enforce more than one policy type across accounts, create
          * multiple policies. You can create multiple policies for each type.</p> <p>You
          * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
          * more information about subscribing to Shield Advanced, see <a
@@ -966,17 +970,19 @@ namespace Model
         virtual Model::PutPolicyOutcomeCallable PutPolicyCallable(const Model::PutPolicyRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
-         * following types of policies: </p> <ul> <li> <p>An AWS WAF policy (type WAFV2),
-         * which defines rule groups to run first in the corresponding AWS WAF web ACL and
-         * rule groups to run last in the web ACL.</p> </li> <li> <p>An AWS WAF Classic
-         * policy (type WAF), which defines a rule group. </p> </li> <li> <p>A Shield
-         * Advanced policy, which applies Shield Advanced protection to specified accounts
-         * and resources.</p> </li> <li> <p>A security group policy, which manages VPC
-         * security groups across your AWS organization. </p> </li> <li> <p>An AWS Network
-         * Firewall policy, which provides firewall rules to filter network traffic in
-         * specified Amazon VPCs.</p> </li> </ul> <p>Each policy is specific to one of the
-         * types. If you want to enforce more than one policy type across accounts, create
+         * <p>Creates an Firewall Manager policy.</p> <p>Firewall Manager provides the
+         * following types of policies: </p> <ul> <li> <p>An WAF policy (type WAFV2), which
+         * defines rule groups to run first in the corresponding WAF web ACL and rule
+         * groups to run last in the web ACL.</p> </li> <li> <p>An WAF Classic policy (type
+         * WAF), which defines a rule group. </p> </li> <li> <p>A Shield Advanced policy,
+         * which applies Shield Advanced protection to specified accounts and
+         * resources.</p> </li> <li> <p>A security group policy, which manages VPC security
+         * groups across your Amazon Web Services organization. </p> </li> <li> <p>An
+         * Network Firewall policy, which provides firewall rules to filter network traffic
+         * in specified Amazon VPCs.</p> </li> <li> <p>A DNS Firewall policy, which
+         * provides Route 53 Resolver DNS Firewall rules to filter DNS queries for
+         * specified VPCs.</p> </li> </ul> <p>Each policy is specific to one of the types.
+         * If you want to enforce more than one policy type across accounts, create
          * multiple policies. You can create multiple policies for each type.</p> <p>You
          * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
          * more information about subscribing to Shield Advanced, see <a
@@ -990,14 +996,14 @@ namespace Model
         virtual void PutPolicyAsync(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">AWS
          * API Reference</a></p>
          */
         virtual Model::PutProtocolsListOutcome PutProtocolsList(const Model::PutProtocolsListRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">AWS
          * API Reference</a></p>
          *
@@ -1006,7 +1012,7 @@ namespace Model
         virtual Model::PutProtocolsListOutcomeCallable PutProtocolsListCallable(const Model::PutProtocolsListRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">AWS
          * API Reference</a></p>
          *
@@ -1015,14 +1021,16 @@ namespace Model
         virtual void PutProtocolsListAsync(const Model::PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds one or more tags to an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/TagResource">AWS API
          * Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/TagResource">AWS API
          * Reference</a></p>
          *
@@ -1031,7 +1039,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds one or more tags to an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/TagResource">AWS API
          * Reference</a></p>
          *
@@ -1040,14 +1049,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1056,7 +1067,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/UntagResource">AWS
          * API Reference</a></p>
          *

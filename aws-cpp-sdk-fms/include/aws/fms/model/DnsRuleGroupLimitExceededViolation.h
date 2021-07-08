@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline const Aws::String& GetViolationTarget() const{ return m_violationTarget; }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline bool ViolationTargetHasBeenSet() const { return m_violationTargetHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline void SetViolationTarget(const Aws::String& value) { m_violationTargetHasBeenSet = true; m_violationTarget = value; }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline void SetViolationTarget(Aws::String&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::move(value); }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline void SetViolationTarget(const char* value) { m_violationTargetHasBeenSet = true; m_violationTarget.assign(value); }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline DnsRuleGroupLimitExceededViolation& WithViolationTarget(const Aws::String& value) { SetViolationTarget(value); return *this;}
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline DnsRuleGroupLimitExceededViolation& WithViolationTarget(Aws::String&& value) { SetViolationTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>Information about the VPC ID. </p>
      */
     inline DnsRuleGroupLimitExceededViolation& WithViolationTarget(const char* value) { SetViolationTarget(value); return *this;}
 

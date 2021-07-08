@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Violation details for AWS Network Firewall for a subnet that doesn't have a
+   * <p>Violation detail for Network Firewall for a subnet that doesn't have a
    * Firewall Manager managed firewall in its VPC. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallMissingFirewallViolation">AWS
    * API Reference</a></p>
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline const Aws::String& GetViolationTarget() const{ return m_violationTarget; }
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline bool ViolationTargetHasBeenSet() const { return m_violationTargetHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline void SetViolationTarget(const Aws::String& value) { m_violationTargetHasBeenSet = true; m_violationTarget = value; }
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline void SetViolationTarget(Aws::String&& value) { m_violationTargetHasBeenSet = true; m_violationTarget = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline void SetViolationTarget(const char* value) { m_violationTargetHasBeenSet = true; m_violationTarget.assign(value); }
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline NetworkFirewallMissingFirewallViolation& WithViolationTarget(const Aws::String& value) { SetViolationTarget(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline NetworkFirewallMissingFirewallViolation& WithViolationTarget(Aws::String&& value) { SetViolationTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Network Firewall or VPC resource that's in violation.</p>
+     * <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
      */
     inline NetworkFirewallMissingFirewallViolation& WithViolationTarget(const char* value) { SetViolationTarget(value); return *this;}
 

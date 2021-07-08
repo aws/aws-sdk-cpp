@@ -37,32 +37,32 @@ namespace Model
 
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list to be created.</p>
+     * <p>The details of the Firewall Manager applications list to be created.</p>
      */
     inline const AppsListData& GetAppsList() const{ return m_appsList; }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list to be created.</p>
+     * <p>The details of the Firewall Manager applications list to be created.</p>
      */
     inline bool AppsListHasBeenSet() const { return m_appsListHasBeenSet; }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list to be created.</p>
+     * <p>The details of the Firewall Manager applications list to be created.</p>
      */
     inline void SetAppsList(const AppsListData& value) { m_appsListHasBeenSet = true; m_appsList = value; }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list to be created.</p>
+     * <p>The details of the Firewall Manager applications list to be created.</p>
      */
     inline void SetAppsList(AppsListData&& value) { m_appsListHasBeenSet = true; m_appsList = std::move(value); }
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list to be created.</p>
+     * <p>The details of the Firewall Manager applications list to be created.</p>
      */
     inline PutAppsListRequest& WithAppsList(const AppsListData& value) { SetAppsList(value); return *this;}
 
     /**
-     * <p>The details of the AWS Firewall Manager applications list to be created.</p>
+     * <p>The details of the Firewall Manager applications list to be created.</p>
      */
     inline PutAppsListRequest& WithAppsList(AppsListData&& value) { SetAppsList(std::move(value)); return *this;}
 

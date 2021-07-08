@@ -38,42 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline CreateContactChannelRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline CreateContactChannelRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the contact you are adding the contact
+     * channel to.</p>
      */
     inline CreateContactChannelRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
 
