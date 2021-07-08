@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS access key, without its secret key.</p>
-   * <p>This data type is used as a response element in the <a>ListAccessKeys</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an Amazon Web Services access key, without its
+   * secret key.</p> <p>This data type is used as a response element in the
+   * <a>ListAccessKeys</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyMetadata">AWS
    * API Reference</a></p>
    */

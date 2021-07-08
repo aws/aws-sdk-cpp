@@ -38,74 +38,74 @@ namespace Model
 
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline bool AccessPolicyIdentityHasBeenSet() const { return m_accessPolicyIdentityHasBeenSet; }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = value; }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentityHasBeenSet = true; m_accessPolicyIdentity = std::move(value); }
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline CreateAccessPolicyRequest& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
 
     /**
-     * <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO
-     * group, or an IAM user.</p>
+     * <p>The identity for this access policy. Choose an Amazon Web Services SSO user,
+     * an Amazon Web Services SSO group, or an IAM user.</p>
      */
     inline CreateAccessPolicyRequest& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline const Resource& GetAccessPolicyResource() const{ return m_accessPolicyResource; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline bool AccessPolicyResourceHasBeenSet() const { return m_accessPolicyResourceHasBeenSet; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline void SetAccessPolicyResource(const Resource& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = value; }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline void SetAccessPolicyResource(Resource&& value) { m_accessPolicyResourceHasBeenSet = true; m_accessPolicyResource = std::move(value); }
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline CreateAccessPolicyRequest& WithAccessPolicyResource(const Resource& value) { SetAccessPolicyResource(value); return *this;}
 
     /**
-     * <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a
+     * <p>The IoT SiteWise Monitor resource for this access policy. Choose either a
      * portal or a project.</p>
      */
     inline CreateAccessPolicyRequest& WithAccessPolicyResource(Resource&& value) { SetAccessPolicyResource(std::move(value)); return *this;}
@@ -209,8 +209,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -218,8 +217,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -227,8 +225,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -236,8 +233,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -245,8 +241,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -254,8 +249,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -263,8 +257,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -272,8 +265,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -281,8 +273,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -290,8 +281,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -299,8 +289,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -308,8 +297,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -317,8 +305,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the access policy. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateAccessPolicyRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

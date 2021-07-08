@@ -120,44 +120,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline const Aws::String& GetEncryptionKmsKeyId() const{ return m_encryptionKmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline void SetEncryptionKmsKeyId(const Aws::String& value) { m_encryptionKmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline void SetEncryptionKmsKeyId(Aws::String&& value) { m_encryptionKmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline void SetEncryptionKmsKeyId(const char* value) { m_encryptionKmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline AssociateEnclaveCertificateIamRoleResponse& WithEncryptionKmsKeyId(const Aws::String& value) { SetEncryptionKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline AssociateEnclaveCertificateIamRoleResponse& WithEncryptionKmsKeyId(Aws::String&& value) { SetEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS CMK used to encrypt the private key of the
-     * certificate.</p>
+     * <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
      */
     inline AssociateEnclaveCertificateIamRoleResponse& WithEncryptionKmsKeyId(const char* value) { SetEncryptionKmsKeyId(value); return *this;}
 

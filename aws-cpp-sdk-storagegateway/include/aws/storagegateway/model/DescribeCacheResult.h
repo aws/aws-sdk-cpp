@@ -152,22 +152,22 @@ namespace Model
 
     /**
      * <p>The file share's contribution to the overall percentage of the gateway's
-     * cache that has not been persisted to AWS. The sample is taken at the end of the
-     * reporting period.</p>
+     * cache that has not been persisted to Amazon Web Services. The sample is taken at
+     * the end of the reporting period.</p>
      */
     inline double GetCacheDirtyPercentage() const{ return m_cacheDirtyPercentage; }
 
     /**
      * <p>The file share's contribution to the overall percentage of the gateway's
-     * cache that has not been persisted to AWS. The sample is taken at the end of the
-     * reporting period.</p>
+     * cache that has not been persisted to Amazon Web Services. The sample is taken at
+     * the end of the reporting period.</p>
      */
     inline void SetCacheDirtyPercentage(double value) { m_cacheDirtyPercentage = value; }
 
     /**
      * <p>The file share's contribution to the overall percentage of the gateway's
-     * cache that has not been persisted to AWS. The sample is taken at the end of the
-     * reporting period.</p>
+     * cache that has not been persisted to Amazon Web Services. The sample is taken at
+     * the end of the reporting period.</p>
      */
     inline DescribeCacheResult& WithCacheDirtyPercentage(double value) { SetCacheDirtyPercentage(value); return *this;}
 

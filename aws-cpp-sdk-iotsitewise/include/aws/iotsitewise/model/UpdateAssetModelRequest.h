@@ -164,10 +164,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Vector<AssetModelProperty>& GetAssetModelProperties() const{ return m_assetModelProperties; }
 
@@ -175,10 +175,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetModelPropertiesHasBeenSet() const { return m_assetModelPropertiesHasBeenSet; }
 
@@ -186,10 +186,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelProperties(const Aws::Vector<AssetModelProperty>& value) { m_assetModelPropertiesHasBeenSet = true; m_assetModelProperties = value; }
 
@@ -197,10 +197,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelProperties(Aws::Vector<AssetModelProperty>&& value) { m_assetModelPropertiesHasBeenSet = true; m_assetModelProperties = std::move(value); }
 
@@ -208,10 +208,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelProperties(const Aws::Vector<AssetModelProperty>& value) { SetAssetModelProperties(value); return *this;}
 
@@ -219,10 +219,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelProperties(Aws::Vector<AssetModelProperty>&& value) { SetAssetModelProperties(std::move(value)); return *this;}
 
@@ -230,10 +230,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& AddAssetModelProperties(const AssetModelProperty& value) { m_assetModelPropertiesHasBeenSet = true; m_assetModelProperties.push_back(value); return *this; }
 
@@ -241,10 +241,10 @@ namespace Model
      * <p>The updated property definitions of the asset model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     * properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify
-     * up to 200 properties per asset model. For more information, see <a
+     * properties</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 200 properties per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& AddAssetModelProperties(AssetModelProperty&& value) { m_assetModelPropertiesHasBeenSet = true; m_assetModelProperties.push_back(std::move(value)); return *this; }
 
@@ -254,10 +254,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Vector<AssetModelHierarchy>& GetAssetModelHierarchies() const{ return m_assetModelHierarchies; }
 
@@ -266,10 +266,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetModelHierarchiesHasBeenSet() const { return m_assetModelHierarchiesHasBeenSet; }
 
@@ -278,10 +278,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelHierarchies(const Aws::Vector<AssetModelHierarchy>& value) { m_assetModelHierarchiesHasBeenSet = true; m_assetModelHierarchies = value; }
 
@@ -290,10 +290,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelHierarchies(Aws::Vector<AssetModelHierarchy>&& value) { m_assetModelHierarchiesHasBeenSet = true; m_assetModelHierarchies = std::move(value); }
 
@@ -302,10 +302,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelHierarchies(const Aws::Vector<AssetModelHierarchy>& value) { SetAssetModelHierarchies(value); return *this;}
 
@@ -314,10 +314,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelHierarchies(Aws::Vector<AssetModelHierarchy>&& value) { SetAssetModelHierarchies(std::move(value)); return *this;}
 
@@ -326,10 +326,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& AddAssetModelHierarchies(const AssetModelHierarchy& value) { m_assetModelHierarchiesHasBeenSet = true; m_assetModelHierarchies.push_back(value); return *this; }
 
@@ -338,10 +338,10 @@ namespace Model
      * specifies an asset model whose assets can be children of any other assets
      * created from this asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can
-     * specify up to 10 hierarchies per asset model. For more information, see <a
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>You can specify up
+     * to 10 hierarchies per asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& AddAssetModelHierarchies(AssetModelHierarchy&& value) { m_assetModelHierarchiesHasBeenSet = true; m_assetModelHierarchies.push_back(std::move(value)); return *this; }
 

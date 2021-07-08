@@ -80,7 +80,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetHierarchyId() const{ return m_hierarchyId; }
 
@@ -90,7 +90,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool HierarchyIdHasBeenSet() const { return m_hierarchyIdHasBeenSet; }
 
@@ -100,7 +100,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(const Aws::String& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = value; }
 
@@ -110,7 +110,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(Aws::String&& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = std::move(value); }
 
@@ -120,7 +120,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(const char* value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId.assign(value); }
 
@@ -130,7 +130,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DisassociateAssetsRequest& WithHierarchyId(const Aws::String& value) { SetHierarchyId(value); return *this;}
 
@@ -140,7 +140,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DisassociateAssetsRequest& WithHierarchyId(Aws::String&& value) { SetHierarchyId(std::move(value)); return *this;}
 
@@ -150,7 +150,7 @@ namespace Model
      * model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     * hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DisassociateAssetsRequest& WithHierarchyId(const char* value) { SetHierarchyId(value); return *this;}
 

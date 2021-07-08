@@ -330,16 +330,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -356,16 +357,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -382,16 +384,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -408,16 +411,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -434,16 +438,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -460,16 +465,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -486,16 +492,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -512,16 +519,17 @@ namespace Model
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p>  <p>Passing policies to this operation returns new
-     * temporary credentials. The resulting session's permissions are the intersection
-     * of the role's identity-based policy and the session policies. You can use the
-     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>Passing policies to this operation returns new temporary credentials. The
+     * resulting session's permissions are the intersection of the role's
+     * identity-based policy and the session policies. You can use the role's temporary
+     * credentials in subsequent Amazon Web Services API calls to access resources in
      * the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is
      * being assumed. For more information, see <a
@@ -536,19 +544,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -559,19 +568,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -582,19 +592,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -605,19 +616,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -628,19 +640,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -651,19 +664,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -674,19 +688,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -697,19 +712,20 @@ namespace Model
      * policy.</p> <p>This parameter is optional. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the
      * intersection of the role's identity-based policy and the session policies. You
-     * can use the role's temporary credentials in subsequent AWS API calls to access
-     * resources in the account that owns the role. You cannot use session policies to
-     * grant more permissions than those allowed by the identity-based policy of the
-     * role that is being assumed. For more information, see <a
+     * can use the role's temporary credentials in subsequent Amazon Web Services API
+     * calls to access resources in the account that owns the role. You cannot use
+     * session policies to grant more permissions than those allowed by the
+     * identity-based policy of the role that is being assumed. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
      * both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plaintext meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -733,8 +749,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Management Console</a> in the
+     * <i>IAM User Guide</i>.</p> 
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -755,8 +771,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Management Console</a> in the
+     * <i>IAM User Guide</i>.</p> 
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
@@ -777,8 +793,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Management Console</a> in the
+     * <i>IAM User Guide</i>.</p> 
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -799,8 +815,8 @@ namespace Model
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> 
+     * a URL that Enables Federated Users to Access the Management Console</a> in the
+     * <i>IAM User Guide</i>.</p> 
      */
     inline AssumeRoleWithWebIdentityRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 

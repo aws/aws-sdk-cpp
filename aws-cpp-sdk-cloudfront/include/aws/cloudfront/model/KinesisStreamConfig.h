@@ -39,7 +39,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -49,7 +49,7 @@ namespace Model
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -59,7 +59,7 @@ namespace Model
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -69,7 +69,7 @@ namespace Model
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -79,7 +79,7 @@ namespace Model
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -89,7 +89,7 @@ namespace Model
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -99,7 +99,7 @@ namespace Model
     inline KinesisStreamConfig& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time
@@ -109,7 +109,7 @@ namespace Model
     inline KinesisStreamConfig& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that CloudFront can use to send real-time log data to your Kinesis data
      * stream.</p> <p>For more information the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time

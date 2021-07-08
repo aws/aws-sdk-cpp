@@ -126,58 +126,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline CreateServiceSpecificCredentialRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline CreateServiceSpecificCredentialRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS service that is to be associated with the credentials.
-     * The service you specify here is the only service that can be accessed using
-     * these credentials.</p>
+     * <p>The name of the Amazon Web Services service that is to be associated with the
+     * credentials. The service you specify here is the only service that can be
+     * accessed using these credentials.</p>
      */
     inline CreateServiceSpecificCredentialRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

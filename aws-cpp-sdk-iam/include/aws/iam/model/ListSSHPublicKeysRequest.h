@@ -38,81 +38,89 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ListSSHPublicKeysRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ListSSHPublicKeysRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
-     * the <code>UserName</code> field is determined implicitly based on the AWS access
-     * key used to sign the request.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
+     * the <code>UserName</code> field is determined implicitly based on the Amazon Web
+     * Services access key used to sign the request.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ListSSHPublicKeysRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -38,6 +38,7 @@
 #include <aws/iotsitewise/model/DescribeLoggingOptionsResult.h>
 #include <aws/iotsitewise/model/DescribePortalResult.h>
 #include <aws/iotsitewise/model/DescribeProjectResult.h>
+#include <aws/iotsitewise/model/DescribeStorageConfigurationResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryResult.h>
@@ -55,6 +56,7 @@
 #include <aws/iotsitewise/model/ListTagsForResourceResult.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationResult.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsResult.h>
+#include <aws/iotsitewise/model/PutStorageConfigurationResult.h>
 #include <aws/iotsitewise/model/TagResourceResult.h>
 #include <aws/iotsitewise/model/UntagResourceResult.h>
 #include <aws/iotsitewise/model/UpdateAccessPolicyResult.h>
@@ -133,6 +135,7 @@ namespace Model
         class DescribeLoggingOptionsRequest;
         class DescribePortalRequest;
         class DescribeProjectRequest;
+        class DescribeStorageConfigurationRequest;
         class DisassociateAssetsRequest;
         class GetAssetPropertyAggregatesRequest;
         class GetAssetPropertyValueRequest;
@@ -151,6 +154,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class PutDefaultEncryptionConfigurationRequest;
         class PutLoggingOptionsRequest;
+        class PutStorageConfigurationRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAccessPolicyRequest;
@@ -192,6 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, IoTSiteWiseError> DescribeLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribePortalResult, IoTSiteWiseError> DescribePortalOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectResult, IoTSiteWiseError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeStorageConfigurationResult, IoTSiteWiseError> DescribeStorageConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, IoTSiteWiseError> DisassociateAssetsOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyAggregatesResult, IoTSiteWiseError> GetAssetPropertyAggregatesOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyValueResult, IoTSiteWiseError> GetAssetPropertyValueOutcome;
@@ -210,6 +215,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSiteWiseError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutDefaultEncryptionConfigurationResult, IoTSiteWiseError> PutDefaultEncryptionConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutLoggingOptionsResult, IoTSiteWiseError> PutLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<PutStorageConfigurationResult, IoTSiteWiseError> PutStorageConfigurationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, IoTSiteWiseError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, IoTSiteWiseError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAccessPolicyResult, IoTSiteWiseError> UpdateAccessPolicyOutcome;
@@ -251,6 +257,7 @@ namespace Model
         typedef std::future<DescribeLoggingOptionsOutcome> DescribeLoggingOptionsOutcomeCallable;
         typedef std::future<DescribePortalOutcome> DescribePortalOutcomeCallable;
         typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
+        typedef std::future<DescribeStorageConfigurationOutcome> DescribeStorageConfigurationOutcomeCallable;
         typedef std::future<DisassociateAssetsOutcome> DisassociateAssetsOutcomeCallable;
         typedef std::future<GetAssetPropertyAggregatesOutcome> GetAssetPropertyAggregatesOutcomeCallable;
         typedef std::future<GetAssetPropertyValueOutcome> GetAssetPropertyValueOutcomeCallable;
@@ -269,6 +276,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutDefaultEncryptionConfigurationOutcome> PutDefaultEncryptionConfigurationOutcomeCallable;
         typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
+        typedef std::future<PutStorageConfigurationOutcome> PutStorageConfigurationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAccessPolicyOutcome> UpdateAccessPolicyOutcomeCallable;
@@ -313,6 +321,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeLoggingOptionsRequest&, const Model::DescribeLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribePortalRequest&, const Model::DescribePortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortalResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::DescribeStorageConfigurationRequest&, const Model::DescribeStorageConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStorageConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::DisassociateAssetsRequest&, const Model::DisassociateAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyAggregatesRequest&, const Model::GetAssetPropertyAggregatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyAggregatesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueRequest&, const Model::GetAssetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueResponseReceivedHandler;
@@ -331,6 +340,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutDefaultEncryptionConfigurationRequest&, const Model::PutDefaultEncryptionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDefaultEncryptionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::PutStorageConfigurationRequest&, const Model::PutStorageConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStorageConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::UpdateAccessPolicyRequest&, const Model::UpdateAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessPolicyResponseReceivedHandler;
@@ -344,15 +354,15 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
 
   /**
-   * <p>Welcome to the AWS IoT SiteWise API Reference. AWS IoT SiteWise is an AWS
-   * service that connects <a
+   * <p>Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web
+   * Services service that connects <a
    * href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial
-   * Internet of Things (IIoT)</a> devices to the power of the AWS Cloud. For more
-   * information, see the <a
-   * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">AWS IoT
-   * SiteWise User Guide</a>. For information about AWS IoT SiteWise quotas, see <a
+   * Internet of Things (IIoT)</a> devices to the power of the Amazon Web Services
+   * Cloud. For more information, see the <a
+   * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">IoT SiteWise
+   * User Guide</a>. For information about IoT SiteWise quotas, see <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-   * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+   * in the <i>IoT SiteWise User Guide</i>.</p>
    */
   class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient
   {
@@ -385,8 +395,7 @@ namespace Model
          * <p>Associates a child asset with the given parent asset through a hierarchy
          * defined in the parent asset's model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * assets</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">AWS
          * API Reference</a></p>
          */
@@ -396,8 +405,7 @@ namespace Model
          * <p>Associates a child asset with the given parent asset through a hierarchy
          * defined in the parent asset's model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * assets</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">AWS
          * API Reference</a></p>
          *
@@ -409,8 +417,7 @@ namespace Model
          * <p>Associates a child asset with the given parent asset through a hierarchy
          * defined in the parent asset's model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * assets</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">AWS
          * API Reference</a></p>
          *
@@ -419,7 +426,7 @@ namespace Model
         virtual void AssociateAssetsAsync(const Model::AssociateAssetsRequest& request, const AssociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a group (batch) of assets with an AWS IoT SiteWise Monitor
+         * <p>Associates a group (batch) of assets with an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">AWS
          * API Reference</a></p>
@@ -427,7 +434,7 @@ namespace Model
         virtual Model::BatchAssociateProjectAssetsOutcome BatchAssociateProjectAssets(const Model::BatchAssociateProjectAssetsRequest& request) const;
 
         /**
-         * <p>Associates a group (batch) of assets with an AWS IoT SiteWise Monitor
+         * <p>Associates a group (batch) of assets with an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">AWS
          * API Reference</a></p>
@@ -437,7 +444,7 @@ namespace Model
         virtual Model::BatchAssociateProjectAssetsOutcomeCallable BatchAssociateProjectAssetsCallable(const Model::BatchAssociateProjectAssetsRequest& request) const;
 
         /**
-         * <p>Associates a group (batch) of assets with an AWS IoT SiteWise Monitor
+         * <p>Associates a group (batch) of assets with an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">AWS
          * API Reference</a></p>
@@ -447,7 +454,7 @@ namespace Model
         virtual void BatchAssociateProjectAssetsAsync(const Model::BatchAssociateProjectAssetsRequest& request, const BatchAssociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor
+         * <p>Disassociates a group (batch) of assets from an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">AWS
          * API Reference</a></p>
@@ -455,7 +462,7 @@ namespace Model
         virtual Model::BatchDisassociateProjectAssetsOutcome BatchDisassociateProjectAssets(const Model::BatchDisassociateProjectAssetsRequest& request) const;
 
         /**
-         * <p>Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor
+         * <p>Disassociates a group (batch) of assets from an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">AWS
          * API Reference</a></p>
@@ -465,7 +472,7 @@ namespace Model
         virtual Model::BatchDisassociateProjectAssetsOutcomeCallable BatchDisassociateProjectAssetsCallable(const Model::BatchDisassociateProjectAssetsRequest& request) const;
 
         /**
-         * <p>Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor
+         * <p>Disassociates a group (batch) of assets from an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">AWS
          * API Reference</a></p>
@@ -475,29 +482,29 @@ namespace Model
         virtual void BatchDisassociateProjectAssetsAsync(const Model::BatchDisassociateProjectAssetsRequest& request, const BatchDisassociateProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends a list of asset property values to AWS IoT SiteWise. Each value is a
+         * <p>Sends a list of asset property values to IoT SiteWise. Each value is a
          * timestamp-quality-value (TQV) data point. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-         * data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-         * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
-         * accepts only TQVs that have a timestamp of no more than 7 days in the past and
-         * no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps
-         * outside of the inclusive range of [-7 days, +10 minutes] and returns a
+         * </li> </ul>  <p>With respect to Unix epoch time, IoT SiteWise accepts
+         * only TQVs that have a timestamp of no more than 7 days in the past and no more
+         * than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the
+         * inclusive range of [-7 days, +10 minutes] and returns a
          * <code>TimestampOutOfRangeException</code> error.</p> <p>For each asset property,
-         * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
-         * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
+         * IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has
+         * a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p>  <p>AWS IoT SiteWise authorizes access to each
+         * TQV.</p>  <p>IoT SiteWise authorizes access to each
          * <code>BatchPutAssetPropertyValue</code> entry individually. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
-         * authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * authorization</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
@@ -505,29 +512,29 @@ namespace Model
         virtual Model::BatchPutAssetPropertyValueOutcome BatchPutAssetPropertyValue(const Model::BatchPutAssetPropertyValueRequest& request) const;
 
         /**
-         * <p>Sends a list of asset property values to AWS IoT SiteWise. Each value is a
+         * <p>Sends a list of asset property values to IoT SiteWise. Each value is a
          * timestamp-quality-value (TQV) data point. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-         * data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-         * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
-         * accepts only TQVs that have a timestamp of no more than 7 days in the past and
-         * no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps
-         * outside of the inclusive range of [-7 days, +10 minutes] and returns a
+         * </li> </ul>  <p>With respect to Unix epoch time, IoT SiteWise accepts
+         * only TQVs that have a timestamp of no more than 7 days in the past and no more
+         * than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the
+         * inclusive range of [-7 days, +10 minutes] and returns a
          * <code>TimestampOutOfRangeException</code> error.</p> <p>For each asset property,
-         * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
-         * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
+         * IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has
+         * a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p>  <p>AWS IoT SiteWise authorizes access to each
+         * TQV.</p>  <p>IoT SiteWise authorizes access to each
          * <code>BatchPutAssetPropertyValue</code> entry individually. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
-         * authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * authorization</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
@@ -537,29 +544,29 @@ namespace Model
         virtual Model::BatchPutAssetPropertyValueOutcomeCallable BatchPutAssetPropertyValueCallable(const Model::BatchPutAssetPropertyValueRequest& request) const;
 
         /**
-         * <p>Sends a list of asset property values to AWS IoT SiteWise. Each value is a
+         * <p>Sends a list of asset property values to IoT SiteWise. Each value is a
          * timestamp-quality-value (TQV) data point. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting
-         * data using the API</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-         * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
-         * accepts only TQVs that have a timestamp of no more than 7 days in the past and
-         * no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps
-         * outside of the inclusive range of [-7 days, +10 minutes] and returns a
+         * </li> </ul>  <p>With respect to Unix epoch time, IoT SiteWise accepts
+         * only TQVs that have a timestamp of no more than 7 days in the past and no more
+         * than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the
+         * inclusive range of [-7 days, +10 minutes] and returns a
          * <code>TimestampOutOfRangeException</code> error.</p> <p>For each asset property,
-         * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
-         * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
+         * IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has
+         * a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p>  <p>AWS IoT SiteWise authorizes access to each
+         * TQV.</p>  <p>IoT SiteWise authorizes access to each
          * <code>BatchPutAssetPropertyValue</code> entry individually. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
-         * authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * authorization</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
@@ -569,18 +576,20 @@ namespace Model
         virtual void BatchPutAssetPropertyValueAsync(const Model::BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an access policy that grants the specified identity (AWS SSO user,
-         * AWS SSO group, or IAM user) access to the specified AWS IoT SiteWise Monitor
-         * portal or project resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (Amazon Web
+         * Services SSO user, Amazon Web Services SSO group, or IAM user) access to the
+         * specified IoT SiteWise Monitor portal or project resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAccessPolicyOutcome CreateAccessPolicy(const Model::CreateAccessPolicyRequest& request) const;
 
         /**
-         * <p>Creates an access policy that grants the specified identity (AWS SSO user,
-         * AWS SSO group, or IAM user) access to the specified AWS IoT SiteWise Monitor
-         * portal or project resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (Amazon Web
+         * Services SSO user, Amazon Web Services SSO group, or IAM user) access to the
+         * specified IoT SiteWise Monitor portal or project resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -589,9 +598,10 @@ namespace Model
         virtual Model::CreateAccessPolicyOutcomeCallable CreateAccessPolicyCallable(const Model::CreateAccessPolicyRequest& request) const;
 
         /**
-         * <p>Creates an access policy that grants the specified identity (AWS SSO user,
-         * AWS SSO group, or IAM user) access to the specified AWS IoT SiteWise Monitor
-         * portal or project resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (Amazon Web
+         * Services SSO user, Amazon Web Services SSO group, or IAM user) access to the
+         * specified IoT SiteWise Monitor portal or project resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -602,8 +612,7 @@ namespace Model
         /**
          * <p>Creates an asset from an existing asset model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * assets</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">AWS
          * API Reference</a></p>
          */
@@ -612,8 +621,7 @@ namespace Model
         /**
          * <p>Creates an asset from an existing asset model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * assets</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">AWS
          * API Reference</a></p>
          *
@@ -624,8 +632,7 @@ namespace Model
         /**
          * <p>Creates an asset from an existing asset model. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating
-         * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * assets</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">AWS
          * API Reference</a></p>
          *
@@ -640,8 +647,8 @@ namespace Model
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * asset models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
          */
@@ -654,8 +661,8 @@ namespace Model
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * asset models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
          *
@@ -670,8 +677,8 @@ namespace Model
          * model inherits the asset model's property and hierarchy definitions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining
-         * asset models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * asset models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">AWS
          * API Reference</a></p>
          *
@@ -680,7 +687,7 @@ namespace Model
         virtual void CreateAssetModelAsync(const Model::CreateAssetModelRequest& request, const CreateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a dashboard in an AWS IoT SiteWise Monitor project.</p><p><h3>See
+         * <p>Creates a dashboard in an IoT SiteWise Monitor project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">AWS
          * API Reference</a></p>
@@ -688,7 +695,7 @@ namespace Model
         virtual Model::CreateDashboardOutcome CreateDashboard(const Model::CreateDashboardRequest& request) const;
 
         /**
-         * <p>Creates a dashboard in an AWS IoT SiteWise Monitor project.</p><p><h3>See
+         * <p>Creates a dashboard in an IoT SiteWise Monitor project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">AWS
          * API Reference</a></p>
@@ -698,7 +705,7 @@ namespace Model
         virtual Model::CreateDashboardOutcomeCallable CreateDashboardCallable(const Model::CreateDashboardRequest& request) const;
 
         /**
-         * <p>Creates a dashboard in an AWS IoT SiteWise Monitor project.</p><p><h3>See
+         * <p>Creates a dashboard in an IoT SiteWise Monitor project.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">AWS
          * API Reference</a></p>
@@ -709,11 +716,10 @@ namespace Model
 
         /**
          * <p>Creates a gateway, which is a virtual or edge device that delivers industrial
-         * data streams from local servers to AWS IoT SiteWise. For more information, see
-         * <a
+         * data streams from local servers to IoT SiteWise. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
-         * data using a gateway</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">AWS
          * API Reference</a></p>
          */
@@ -721,11 +727,10 @@ namespace Model
 
         /**
          * <p>Creates a gateway, which is a virtual or edge device that delivers industrial
-         * data streams from local servers to AWS IoT SiteWise. For more information, see
-         * <a
+         * data streams from local servers to IoT SiteWise. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
-         * data using a gateway</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">AWS
          * API Reference</a></p>
          *
@@ -735,11 +740,10 @@ namespace Model
 
         /**
          * <p>Creates a gateway, which is a virtual or edge device that delivers industrial
-         * data streams from local servers to AWS IoT SiteWise. For more information, see
-         * <a
+         * data streams from local servers to IoT SiteWise. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
-         * data using a gateway</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">AWS
          * API Reference</a></p>
          *
@@ -748,26 +752,26 @@ namespace Model
         virtual void CreateGatewayAsync(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise
-         * Monitor uses AWS SSO or IAM to authenticate portal users and manage user
-         * permissions.</p>  <p>Before you can sign in to a new portal, you must add
-         * at least one identity to that portal. For more information, see <a
+         * <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise
+         * Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and
+         * manage user permissions.</p>  <p>Before you can sign in to a new portal,
+         * you must add at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-         * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePortalOutcome CreatePortal(const Model::CreatePortalRequest& request) const;
 
         /**
-         * <p>Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise
-         * Monitor uses AWS SSO or IAM to authenticate portal users and manage user
-         * permissions.</p>  <p>Before you can sign in to a new portal, you must add
-         * at least one identity to that portal. For more information, see <a
+         * <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise
+         * Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and
+         * manage user permissions.</p>  <p>Before you can sign in to a new portal,
+         * you must add at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-         * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
          *
@@ -776,13 +780,13 @@ namespace Model
         virtual Model::CreatePortalOutcomeCallable CreatePortalCallable(const Model::CreatePortalRequest& request) const;
 
         /**
-         * <p>Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise
-         * Monitor uses AWS SSO or IAM to authenticate portal users and manage user
-         * permissions.</p>  <p>Before you can sign in to a new portal, you must add
-         * at least one identity to that portal. For more information, see <a
+         * <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise
+         * Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and
+         * manage user permissions.</p>  <p>Before you can sign in to a new portal,
+         * you must add at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
-         * or removing portal administrators</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
          *
@@ -817,9 +821,8 @@ namespace Model
 
         /**
          * <p>Deletes an access policy that grants the specified identity access to the
-         * specified AWS IoT SiteWise Monitor resource. You can use this operation to
-         * revoke access to an AWS IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3> 
-         * <a
+         * specified IoT SiteWise Monitor resource. You can use this operation to revoke
+         * access to an IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">AWS
          * API Reference</a></p>
          */
@@ -827,9 +830,8 @@ namespace Model
 
         /**
          * <p>Deletes an access policy that grants the specified identity access to the
-         * specified AWS IoT SiteWise Monitor resource. You can use this operation to
-         * revoke access to an AWS IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3> 
-         * <a
+         * specified IoT SiteWise Monitor resource. You can use this operation to revoke
+         * access to an IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -839,9 +841,8 @@ namespace Model
 
         /**
          * <p>Deletes an access policy that grants the specified identity access to the
-         * specified AWS IoT SiteWise Monitor resource. You can use this operation to
-         * revoke access to an AWS IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3> 
-         * <a
+         * specified IoT SiteWise Monitor resource. You can use this operation to revoke
+         * access to an IoT SiteWise Monitor resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -852,9 +853,9 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
-         * <p>You can't delete an asset that's associated to another asset. For more
-         * information, see <a
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p>  <p>You
+         * can't delete an asset that's associated to another asset. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">AWS
@@ -865,9 +866,9 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
-         * <p>You can't delete an asset that's associated to another asset. For more
-         * information, see <a
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p>  <p>You
+         * can't delete an asset that's associated to another asset. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">AWS
@@ -880,9 +881,9 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
-         * <p>You can't delete an asset that's associated to another asset. For more
-         * information, see <a
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p>  <p>You
+         * can't delete an asset that's associated to another asset. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">AWS
@@ -899,7 +900,7 @@ namespace Model
          * property formula expression that depends on the asset model that you want to
          * delete. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">AWS
          * API Reference</a></p>
@@ -913,7 +914,7 @@ namespace Model
          * property formula expression that depends on the asset model that you want to
          * delete. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">AWS
          * API Reference</a></p>
@@ -929,7 +930,7 @@ namespace Model
          * property formula expression that depends on the asset model that you want to
          * delete. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">AWS
          * API Reference</a></p>
@@ -939,16 +940,14 @@ namespace Model
         virtual void DeleteAssetModelAsync(const Model::DeleteAssetModelRequest& request, const DeleteAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a dashboard from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a dashboard from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDashboardOutcome DeleteDashboard(const Model::DeleteDashboardRequest& request) const;
 
         /**
-         * <p>Deletes a dashboard from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a dashboard from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">AWS
          * API Reference</a></p>
          *
@@ -957,8 +956,7 @@ namespace Model
         virtual Model::DeleteDashboardOutcomeCallable DeleteDashboardCallable(const Model::DeleteDashboardRequest& request) const;
 
         /**
-         * <p>Deletes a dashboard from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a dashboard from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">AWS
          * API Reference</a></p>
          *
@@ -967,18 +965,18 @@ namespace Model
         virtual void DeleteDashboardAsync(const Model::DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of
-         * the gateway's files remain in your gateway's file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the
+         * gateway's files remain in your gateway's file system.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest& request) const;
 
         /**
-         * <p>Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of
-         * the gateway's files remain in your gateway's file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the
+         * gateway's files remain in your gateway's file system.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">AWS
          * API Reference</a></p>
          *
@@ -987,9 +985,9 @@ namespace Model
         virtual Model::DeleteGatewayOutcomeCallable DeleteGatewayCallable(const Model::DeleteGatewayRequest& request) const;
 
         /**
-         * <p>Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of
-         * the gateway's files remain in your gateway's file system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the
+         * gateway's files remain in your gateway's file system.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">AWS
          * API Reference</a></p>
          *
@@ -998,14 +996,14 @@ namespace Model
         virtual void DeleteGatewayAsync(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a portal from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a portal from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePortalOutcome DeletePortal(const Model::DeletePortalRequest& request) const;
 
         /**
-         * <p>Deletes a portal from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a portal from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">AWS
          * API Reference</a></p>
          *
@@ -1014,7 +1012,7 @@ namespace Model
         virtual Model::DeletePortalOutcomeCallable DeletePortalCallable(const Model::DeletePortalRequest& request) const;
 
         /**
-         * <p>Deletes a portal from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a portal from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">AWS
          * API Reference</a></p>
          *
@@ -1023,16 +1021,14 @@ namespace Model
         virtual void DeletePortalAsync(const Model::DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a project from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a project from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes a project from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a project from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -1041,8 +1037,7 @@ namespace Model
         virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes a project from AWS IoT SiteWise Monitor.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a project from IoT SiteWise Monitor.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -1051,16 +1046,16 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an access policy, which specifies an identity's access to an AWS
-         * IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an access policy, which specifies an identity's access to an IoT
+         * SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAccessPolicyOutcome DescribeAccessPolicy(const Model::DescribeAccessPolicyRequest& request) const;
 
         /**
-         * <p>Describes an access policy, which specifies an identity's access to an AWS
-         * IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an access policy, which specifies an identity's access to an IoT
+         * SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -1069,8 +1064,8 @@ namespace Model
         virtual Model::DescribeAccessPolicyOutcomeCallable DescribeAccessPolicyCallable(const Model::DescribeAccessPolicyRequest& request) const;
 
         /**
-         * <p>Describes an access policy, which specifies an identity's access to an AWS
-         * IoT SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an access policy, which specifies an identity's access to an IoT
+         * SiteWise Monitor portal or project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -1200,22 +1195,24 @@ namespace Model
         virtual void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the default encryption configuration for the AWS
-         * account in the default or specified region. For more information, see <a
+         * <p>Retrieves information about the default encryption configuration for the
+         * Amazon Web Services account in the default or specified Region. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * management</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDefaultEncryptionConfigurationOutcome DescribeDefaultEncryptionConfiguration(const Model::DescribeDefaultEncryptionConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves information about the default encryption configuration for the AWS
-         * account in the default or specified region. For more information, see <a
+         * <p>Retrieves information about the default encryption configuration for the
+         * Amazon Web Services account in the default or specified Region. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * management</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1224,11 +1221,12 @@ namespace Model
         virtual Model::DescribeDefaultEncryptionConfigurationOutcomeCallable DescribeDefaultEncryptionConfigurationCallable(const Model::DescribeDefaultEncryptionConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves information about the default encryption configuration for the AWS
-         * account in the default or specified region. For more information, see <a
+         * <p>Retrieves information about the default encryption configuration for the
+         * Amazon Web Services account in the default or specified Region. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * management</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1265,8 +1263,8 @@ namespace Model
          * <p>Retrieves information about a gateway capability configuration. Each gateway
          * capability defines data sources for a gateway. A capability configuration can
          * contain multiple data source configurations. If you define OPC-UA sources for a
-         * gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored
-         * in one capability configuration. To list all capability configurations for a
+         * gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in
+         * one capability configuration. To list all capability configurations for a
          * gateway, use <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1279,8 +1277,8 @@ namespace Model
          * <p>Retrieves information about a gateway capability configuration. Each gateway
          * capability defines data sources for a gateway. A capability configuration can
          * contain multiple data source configurations. If you define OPC-UA sources for a
-         * gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored
-         * in one capability configuration. To list all capability configurations for a
+         * gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in
+         * one capability configuration. To list all capability configurations for a
          * gateway, use <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1295,8 +1293,8 @@ namespace Model
          * <p>Retrieves information about a gateway capability configuration. Each gateway
          * capability defines data sources for a gateway. A capability configuration can
          * contain multiple data source configurations. If you define OPC-UA sources for a
-         * gateway in the AWS IoT SiteWise console, all of your OPC-UA sources are stored
-         * in one capability configuration. To list all capability configurations for a
+         * gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in
+         * one capability configuration. To list all capability configurations for a
          * gateway, use <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1308,16 +1306,16 @@ namespace Model
         virtual void DescribeGatewayCapabilityConfigurationAsync(const Model::DescribeGatewayCapabilityConfigurationRequest& request, const DescribeGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current AWS IoT SiteWise logging options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the current IoT SiteWise logging options.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeLoggingOptionsOutcome DescribeLoggingOptions(const Model::DescribeLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Retrieves the current AWS IoT SiteWise logging options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the current IoT SiteWise logging options.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -1326,8 +1324,8 @@ namespace Model
         virtual Model::DescribeLoggingOptionsOutcomeCallable DescribeLoggingOptionsCallable(const Model::DescribeLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Retrieves the current AWS IoT SiteWise logging options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the current IoT SiteWise logging options.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -1386,6 +1384,34 @@ namespace Model
         virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves information about the storage configuration for IoT
+         * SiteWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStorageConfigurationOutcome DescribeStorageConfiguration(const Model::DescribeStorageConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the storage configuration for IoT
+         * SiteWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStorageConfigurationOutcomeCallable DescribeStorageConfigurationCallable(const Model::DescribeStorageConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the storage configuration for IoT
+         * SiteWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStorageConfigurationAsync(const Model::DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a child asset from the given parent asset through a hierarchy
          * defined in the parent asset's model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateAssets">AWS
@@ -1416,7 +1442,7 @@ namespace Model
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-         * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
          * asset property, you must specify one of the following:</p> <ul> <li> <p>The
          * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
          * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
@@ -1432,7 +1458,7 @@ namespace Model
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-         * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
          * asset property, you must specify one of the following:</p> <ul> <li> <p>The
          * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
          * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
@@ -1450,7 +1476,7 @@ namespace Model
         /**
          * <p>Gets aggregated values for an asset property. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-         * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
          * asset property, you must specify one of the following:</p> <ul> <li> <p>The
          * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
          * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
@@ -1468,8 +1494,8 @@ namespace Model
         /**
          * <p>Gets an asset property's current value. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-         * current values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify
-         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * current values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * asset property, you must specify one of the following:</p> <ul> <li> <p>The
          * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
          * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
          * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
@@ -1484,8 +1510,8 @@ namespace Model
         /**
          * <p>Gets an asset property's current value. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-         * current values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify
-         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * current values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * asset property, you must specify one of the following:</p> <ul> <li> <p>The
          * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
          * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
          * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
@@ -1502,8 +1528,8 @@ namespace Model
         /**
          * <p>Gets an asset property's current value. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-         * current values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To identify
-         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * current values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify an
+         * asset property, you must specify one of the following:</p> <ul> <li> <p>The
          * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
          * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
          * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
@@ -1520,12 +1546,12 @@ namespace Model
         /**
          * <p>Gets the history of an asset property's values. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-         * historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * historical values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">AWS
@@ -1536,12 +1562,12 @@ namespace Model
         /**
          * <p>Gets the history of an asset property's values. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-         * historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * historical values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">AWS
@@ -1554,12 +1580,12 @@ namespace Model
         /**
          * <p>Gets the history of an asset property's values. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-         * historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>To
-         * identify an asset property, you must specify one of the following:</p> <ul> <li>
-         * <p>The <code>assetId</code> and <code>propertyId</code> of an asset
-         * property.</p> </li> <li> <p>A <code>propertyAlias</code>, which is a data stream
-         * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
-         * define an asset property's alias, see <a
+         * historical values</a> in the <i>IoT SiteWise User Guide</i>.</p> <p>To identify
+         * an asset property, you must specify one of the following:</p> <ul> <li> <p>The
+         * <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+         * <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
          * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">AWS
@@ -1573,9 +1599,8 @@ namespace Model
          * <p>Get interpolated values for an asset property for a specified time interval,
          * during a period of time. For example, you can use the this operation to return
          * the interpolated temperature values for a wind turbine every 24 hours over a
-         * duration of 7 days.</p>  <p>This API isn't available in China
-         * (Beijing).</p>  <p>To identify an asset property, you must specify one of
-         * the following:</p> <ul> <li> <p>The <code>assetId</code> and
+         * duration of 7 days.</p> <p>To identify an asset property, you must specify one
+         * of the following:</p> <ul> <li> <p>The <code>assetId</code> and
          * <code>propertyId</code> of an asset property.</p> </li> <li> <p>A
          * <code>propertyAlias</code>, which is a data stream alias (for example,
          * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
@@ -1591,9 +1616,8 @@ namespace Model
          * <p>Get interpolated values for an asset property for a specified time interval,
          * during a period of time. For example, you can use the this operation to return
          * the interpolated temperature values for a wind turbine every 24 hours over a
-         * duration of 7 days.</p>  <p>This API isn't available in China
-         * (Beijing).</p>  <p>To identify an asset property, you must specify one of
-         * the following:</p> <ul> <li> <p>The <code>assetId</code> and
+         * duration of 7 days.</p> <p>To identify an asset property, you must specify one
+         * of the following:</p> <ul> <li> <p>The <code>assetId</code> and
          * <code>propertyId</code> of an asset property.</p> </li> <li> <p>A
          * <code>propertyAlias</code>, which is a data stream alias (for example,
          * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
@@ -1611,9 +1635,8 @@ namespace Model
          * <p>Get interpolated values for an asset property for a specified time interval,
          * during a period of time. For example, you can use the this operation to return
          * the interpolated temperature values for a wind turbine every 24 hours over a
-         * duration of 7 days.</p>  <p>This API isn't available in China
-         * (Beijing).</p>  <p>To identify an asset property, you must specify one of
-         * the following:</p> <ul> <li> <p>The <code>assetId</code> and
+         * duration of 7 days.</p> <p>To identify an asset property, you must specify one
+         * of the following:</p> <ul> <li> <p>The <code>assetId</code> and
          * <code>propertyId</code> of an asset property.</p> </li> <li> <p>A
          * <code>propertyAlias</code>, which is a data stream alias (for example,
          * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
@@ -1628,18 +1651,18 @@ namespace Model
         virtual void GetInterpolatedAssetPropertyValuesAsync(const Model::GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
-         * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
-         * (a portal or project).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of access policies for an identity (an Amazon Web
+         * Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT
+         * SiteWise Monitor resource (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAccessPoliciesOutcome ListAccessPolicies(const Model::ListAccessPoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
-         * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
-         * (a portal or project).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of access policies for an identity (an Amazon Web
+         * Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT
+         * SiteWise Monitor resource (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
          *
@@ -1648,9 +1671,9 @@ namespace Model
         virtual Model::ListAccessPoliciesOutcomeCallable ListAccessPoliciesCallable(const Model::ListAccessPoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
-         * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
-         * (a portal or project).</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of access policies for an identity (an Amazon Web
+         * Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT
+         * SiteWise Monitor resource (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
          *
@@ -1798,7 +1821,7 @@ namespace Model
         virtual void ListAssociatedAssetsAsync(const Model::ListAssociatedAssetsRequest& request, const ListAssociatedAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor
+         * <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">AWS
          * API Reference</a></p>
@@ -1806,7 +1829,7 @@ namespace Model
         virtual Model::ListDashboardsOutcome ListDashboards(const Model::ListDashboardsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor
+         * <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">AWS
          * API Reference</a></p>
@@ -1816,7 +1839,7 @@ namespace Model
         virtual Model::ListDashboardsOutcomeCallable ListDashboardsCallable(const Model::ListDashboardsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor
+         * <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">AWS
          * API Reference</a></p>
@@ -1851,7 +1874,7 @@ namespace Model
         virtual void ListGatewaysAsync(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of AWS IoT SiteWise Monitor portals.</p><p><h3>See
+         * <p>Retrieves a paginated list of IoT SiteWise Monitor portals.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">AWS
          * API Reference</a></p>
@@ -1859,7 +1882,7 @@ namespace Model
         virtual Model::ListPortalsOutcome ListPortals(const Model::ListPortalsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of AWS IoT SiteWise Monitor portals.</p><p><h3>See
+         * <p>Retrieves a paginated list of IoT SiteWise Monitor portals.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">AWS
          * API Reference</a></p>
@@ -1869,7 +1892,7 @@ namespace Model
         virtual Model::ListPortalsOutcomeCallable ListPortalsCallable(const Model::ListPortalsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of AWS IoT SiteWise Monitor portals.</p><p><h3>See
+         * <p>Retrieves a paginated list of IoT SiteWise Monitor portals.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">AWS
          * API Reference</a></p>
@@ -1879,16 +1902,16 @@ namespace Model
         virtual void ListPortalsAsync(const Model::ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of assets associated with an AWS IoT SiteWise
-         * Monitor project.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of assets associated with an IoT SiteWise Monitor
+         * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProjectAssetsOutcome ListProjectAssets(const Model::ListProjectAssetsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of assets associated with an AWS IoT SiteWise
-         * Monitor project.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of assets associated with an IoT SiteWise Monitor
+         * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">AWS
          * API Reference</a></p>
          *
@@ -1897,8 +1920,8 @@ namespace Model
         virtual Model::ListProjectAssetsOutcomeCallable ListProjectAssetsCallable(const Model::ListProjectAssetsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of assets associated with an AWS IoT SiteWise
-         * Monitor project.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of assets associated with an IoT SiteWise Monitor
+         * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">AWS
          * API Reference</a></p>
          *
@@ -1907,7 +1930,7 @@ namespace Model
         virtual void ListProjectAssetsAsync(const Model::ListProjectAssetsRequest& request, const ListProjectAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor
+         * <p>Retrieves a paginated list of projects for an IoT SiteWise Monitor
          * portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">AWS
          * API Reference</a></p>
@@ -1915,7 +1938,7 @@ namespace Model
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor
+         * <p>Retrieves a paginated list of projects for an IoT SiteWise Monitor
          * portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">AWS
          * API Reference</a></p>
@@ -1925,7 +1948,7 @@ namespace Model
         virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor
+         * <p>Retrieves a paginated list of projects for an IoT SiteWise Monitor
          * portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">AWS
          * API Reference</a></p>
@@ -1935,7 +1958,7 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the list of tags for an AWS IoT SiteWise resource.</p><p><h3>See
+         * <p>Retrieves the list of tags for an IoT SiteWise resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1943,7 +1966,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of tags for an AWS IoT SiteWise resource.</p><p><h3>See
+         * <p>Retrieves the list of tags for an IoT SiteWise resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1953,7 +1976,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of tags for an AWS IoT SiteWise resource.</p><p><h3>See
+         * <p>Retrieves the list of tags for an IoT SiteWise resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1963,22 +1986,22 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the default encryption configuration for the AWS account. For more
-         * information, see <a
+         * <p>Sets the default encryption configuration for the Amazon Web Services
+         * account. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * management</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutDefaultEncryptionConfigurationOutcome PutDefaultEncryptionConfiguration(const Model::PutDefaultEncryptionConfigurationRequest& request) const;
 
         /**
-         * <p>Sets the default encryption configuration for the AWS account. For more
-         * information, see <a
+         * <p>Sets the default encryption configuration for the Amazon Web Services
+         * account. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * management</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1987,11 +2010,11 @@ namespace Model
         virtual Model::PutDefaultEncryptionConfigurationOutcomeCallable PutDefaultEncryptionConfigurationCallable(const Model::PutDefaultEncryptionConfigurationRequest& request) const;
 
         /**
-         * <p>Sets the default encryption configuration for the AWS account. For more
-         * information, see <a
+         * <p>Sets the default encryption configuration for the Amazon Web Services
+         * account. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
-         * management</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * management</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2000,14 +2023,14 @@ namespace Model
         virtual void PutDefaultEncryptionConfigurationAsync(const Model::PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets logging options for AWS IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets logging options for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">AWS
          * API Reference</a></p>
          */
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets logging options for AWS IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets logging options for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -2016,7 +2039,7 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets logging options for AWS IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets logging options for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">AWS
          * API Reference</a></p>
          *
@@ -2025,7 +2048,32 @@ namespace Model
         virtual void PutLoggingOptionsAsync(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to an AWS IoT SiteWise resource. If a tag already exists for the
+         * <p>Configures storage settings for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutStorageConfigurationOutcome PutStorageConfiguration(const Model::PutStorageConfigurationRequest& request) const;
+
+        /**
+         * <p>Configures storage settings for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutStorageConfigurationOutcomeCallable PutStorageConfigurationCallable(const Model::PutStorageConfigurationRequest& request) const;
+
+        /**
+         * <p>Configures storage settings for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutStorageConfigurationAsync(const Model::PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the
          * resource, this operation updates the tag's value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">AWS
          * API Reference</a></p>
@@ -2033,7 +2081,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS IoT SiteWise resource. If a tag already exists for the
+         * <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the
          * resource, this operation updates the tag's value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">AWS
          * API Reference</a></p>
@@ -2043,7 +2091,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS IoT SiteWise resource. If a tag already exists for the
+         * <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the
          * resource, this operation updates the tag's value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">AWS
          * API Reference</a></p>
@@ -2053,16 +2101,14 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a tag from an AWS IoT SiteWise resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a tag from an IoT SiteWise resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from an AWS IoT SiteWise resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a tag from an IoT SiteWise resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -2071,8 +2117,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from an AWS IoT SiteWise resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a tag from an IoT SiteWise resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -2082,8 +2127,7 @@ namespace Model
 
         /**
          * <p>Updates an existing access policy that specifies an identity's access to an
-         * AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">AWS
          * API Reference</a></p>
          */
@@ -2091,8 +2135,7 @@ namespace Model
 
         /**
          * <p>Updates an existing access policy that specifies an identity's access to an
-         * AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -2102,8 +2145,7 @@ namespace Model
 
         /**
          * <p>Updates an existing access policy that specifies an identity's access to an
-         * AWS IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * IoT SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">AWS
          * API Reference</a></p>
          *
@@ -2114,7 +2156,7 @@ namespace Model
         /**
          * <p>Updates an asset's name. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">AWS
          * API Reference</a></p>
@@ -2124,7 +2166,7 @@ namespace Model
         /**
          * <p>Updates an asset's name. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">AWS
          * API Reference</a></p>
@@ -2136,7 +2178,7 @@ namespace Model
         /**
          * <p>Updates an asset's name. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">AWS
          * API Reference</a></p>
@@ -2150,15 +2192,15 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-         * <p>If you remove a property from an asset model, AWS IoT SiteWise deletes all
+         * <p>If you remove a property from an asset model, IoT SiteWise deletes all
          * previous data for that property. If you remove a hierarchy definition from an
-         * asset model, AWS IoT SiteWise disassociates every asset associated with that
+         * asset model, IoT SiteWise disassociates every asset associated with that
          * hierarchy. You can't change the type or data type of an existing property.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
@@ -2171,15 +2213,15 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-         * <p>If you remove a property from an asset model, AWS IoT SiteWise deletes all
+         * <p>If you remove a property from an asset model, IoT SiteWise deletes all
          * previous data for that property. If you remove a hierarchy definition from an
-         * asset model, AWS IoT SiteWise disassociates every asset associated with that
+         * asset model, IoT SiteWise disassociates every asset associated with that
          * hierarchy. You can't change the type or data type of an existing property.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
@@ -2194,15 +2236,15 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * assets and models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
+         * assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-         * <p>If you remove a property from an asset model, AWS IoT SiteWise deletes all
+         * <p>If you remove a property from an asset model, IoT SiteWise deletes all
          * previous data for that property. If you remove a hierarchy definition from an
-         * asset model, AWS IoT SiteWise disassociates every asset associated with that
+         * asset model, IoT SiteWise disassociates every asset associated with that
          * hierarchy. You can't change the type or data type of an existing property.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
@@ -2256,14 +2298,14 @@ namespace Model
         virtual void UpdateAssetPropertyAsync(const Model::UpdateAssetPropertyRequest& request, const UpdateAssetPropertyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor dashboard.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDashboardOutcome UpdateDashboard(const Model::UpdateDashboardRequest& request) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor dashboard.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">AWS
          * API Reference</a></p>
          *
@@ -2272,7 +2314,7 @@ namespace Model
         virtual Model::UpdateDashboardOutcomeCallable UpdateDashboardCallable(const Model::UpdateDashboardRequest& request) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor dashboard.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">AWS
          * API Reference</a></p>
          *
@@ -2309,7 +2351,7 @@ namespace Model
          * <p>Updates a gateway capability configuration or defines a new capability
          * configuration. Each gateway capability defines data sources for a gateway. A
          * capability configuration can contain multiple data source configurations. If you
-         * define OPC-UA sources for a gateway in the AWS IoT SiteWise console, all of your
+         * define OPC-UA sources for a gateway in the IoT SiteWise console, all of your
          * OPC-UA sources are stored in one capability configuration. To list all
          * capability configurations for a gateway, use <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p><p><h3>See
@@ -2323,7 +2365,7 @@ namespace Model
          * <p>Updates a gateway capability configuration or defines a new capability
          * configuration. Each gateway capability defines data sources for a gateway. A
          * capability configuration can contain multiple data source configurations. If you
-         * define OPC-UA sources for a gateway in the AWS IoT SiteWise console, all of your
+         * define OPC-UA sources for a gateway in the IoT SiteWise console, all of your
          * OPC-UA sources are stored in one capability configuration. To list all
          * capability configurations for a gateway, use <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p><p><h3>See
@@ -2339,7 +2381,7 @@ namespace Model
          * <p>Updates a gateway capability configuration or defines a new capability
          * configuration. Each gateway capability defines data sources for a gateway. A
          * capability configuration can contain multiple data source configurations. If you
-         * define OPC-UA sources for a gateway in the AWS IoT SiteWise console, all of your
+         * define OPC-UA sources for a gateway in the IoT SiteWise console, all of your
          * OPC-UA sources are stored in one capability configuration. To list all
          * capability configurations for a gateway, use <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p><p><h3>See
@@ -2352,14 +2394,14 @@ namespace Model
         virtual void UpdateGatewayCapabilityConfigurationAsync(const Model::UpdateGatewayCapabilityConfigurationRequest& request, const UpdateGatewayCapabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor portal.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdatePortalOutcome UpdatePortal(const Model::UpdatePortalRequest& request) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor portal.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">AWS
          * API Reference</a></p>
          *
@@ -2368,7 +2410,7 @@ namespace Model
         virtual Model::UpdatePortalOutcomeCallable UpdatePortalCallable(const Model::UpdatePortalRequest& request) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor portal.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor portal.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">AWS
          * API Reference</a></p>
          *
@@ -2377,14 +2419,14 @@ namespace Model
         virtual void UpdatePortalAsync(const Model::UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor project.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor project.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">AWS
          * API Reference</a></p>
          *
@@ -2393,7 +2435,7 @@ namespace Model
         virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p>Updates an AWS IoT SiteWise Monitor project.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an IoT SiteWise Monitor project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">AWS
          * API Reference</a></p>
          *
@@ -2434,6 +2476,7 @@ namespace Model
         void DescribeLoggingOptionsAsyncHelper(const Model::DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePortalAsyncHelper(const Model::DescribePortalRequest& request, const DescribePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectAsyncHelper(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStorageConfigurationAsyncHelper(const Model::DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateAssetsAsyncHelper(const Model::DisassociateAssetsRequest& request, const DisassociateAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyAggregatesAsyncHelper(const Model::GetAssetPropertyAggregatesRequest& request, const GetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyValueAsyncHelper(const Model::GetAssetPropertyValueRequest& request, const GetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2452,6 +2495,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDefaultEncryptionConfigurationAsyncHelper(const Model::PutDefaultEncryptionConfigurationRequest& request, const PutDefaultEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingOptionsAsyncHelper(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutStorageConfigurationAsyncHelper(const Model::PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccessPolicyAsyncHelper(const Model::UpdateAccessPolicyRequest& request, const UpdateAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

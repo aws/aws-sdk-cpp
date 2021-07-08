@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/CacheAttributes.h>
+#include <aws/storagegateway/model/EndpointNetworkConfiguration.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
@@ -150,64 +151,56 @@ namespace Model
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline const Aws::String& GetFileSystemAssociationStatus() const{ return m_fileSystemAssociationStatus; }
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline bool FileSystemAssociationStatusHasBeenSet() const { return m_fileSystemAssociationStatusHasBeenSet; }
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline void SetFileSystemAssociationStatus(const Aws::String& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = value; }
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline void SetFileSystemAssociationStatus(Aws::String&& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = std::move(value); }
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline void SetFileSystemAssociationStatus(const char* value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus.assign(value); }
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline FileSystemAssociationInfo& WithFileSystemAssociationStatus(const Aws::String& value) { SetFileSystemAssociationStatus(value); return *this;}
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline FileSystemAssociationInfo& WithFileSystemAssociationStatus(Aws::String&& value) { SetFileSystemAssociationStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the file system association. Valid Values:
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-     * <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code>
-     * | <code>UNAVAILABLE</code> </p>
+     * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
     inline FileSystemAssociationInfo& WithFileSystemAssociationStatus(const char* value) { SetFileSystemAssociationStatus(value); return *this;}
 
@@ -345,6 +338,55 @@ namespace Model
     
     inline FileSystemAssociationInfo& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies network configuration information for the gateway associated with
+     * the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline const EndpointNetworkConfiguration& GetEndpointNetworkConfiguration() const{ return m_endpointNetworkConfiguration; }
+
+    /**
+     * <p>Specifies network configuration information for the gateway associated with
+     * the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline bool EndpointNetworkConfigurationHasBeenSet() const { return m_endpointNetworkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies network configuration information for the gateway associated with
+     * the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline void SetEndpointNetworkConfiguration(const EndpointNetworkConfiguration& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = value; }
+
+    /**
+     * <p>Specifies network configuration information for the gateway associated with
+     * the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline void SetEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies network configuration information for the gateway associated with
+     * the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline FileSystemAssociationInfo& WithEndpointNetworkConfiguration(const EndpointNetworkConfiguration& value) { SetEndpointNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies network configuration information for the gateway associated with
+     * the Amazon FSx file system.</p>  <p>If multiple file systems are
+     * associated with this gateway, this parameter's <code>IpAddresses</code> field is
+     * required.</p> 
+     */
+    inline FileSystemAssociationInfo& WithEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { SetEndpointNetworkConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fileSystemAssociationARN;
@@ -367,6 +409,9 @@ namespace Model
 
     CacheAttributes m_cacheAttributes;
     bool m_cacheAttributesHasBeenSet;
+
+    EndpointNetworkConfiguration m_endpointNetworkConfiguration;
+    bool m_endpointNetworkConfigurationHasBeenSet;
   };
 
 } // namespace Model

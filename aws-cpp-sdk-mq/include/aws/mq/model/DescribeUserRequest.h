@@ -33,99 +33,99 @@ namespace Model
 
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(Aws::String&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const char* value) { m_brokerIdHasBeenSet = true; m_brokerId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DescribeUserRequest& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DescribeUserRequest& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline DescribeUserRequest& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
 
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline DescribeUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline DescribeUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * <p>The username of the ActiveMQ user. This value can contain only alphanumeric
      * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
-     * be 2-100 characters long.
+     * be 2-100 characters long.</p>
      */
     inline DescribeUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

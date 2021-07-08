@@ -84,28 +84,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -208,8 +208,8 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -217,8 +217,8 @@ namespace Model
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -226,8 +226,8 @@ namespace Model
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -235,8 +235,8 @@ namespace Model
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -244,8 +244,8 @@ namespace Model
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -253,8 +253,8 @@ namespace Model
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -262,8 +262,8 @@ namespace Model
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -271,8 +271,8 @@ namespace Model
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -282,97 +282,97 @@ namespace Model
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline const ObjectACL& GetObjectACL() const{ return m_objectACL; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline void SetObjectACL(ObjectACL&& value) { m_objectACLHasBeenSet = true; m_objectACL = std::move(value); }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline UpdateNFSFileShareRequest& WithObjectACL(const ObjectACL& value) { SetObjectACL(value); return *this;}
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline UpdateNFSFileShareRequest& WithObjectACL(ObjectACL&& value) { SetObjectACL(std::move(value)); return *this;}
 
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline bool ClientListHasBeenSet() const { return m_clientListHasBeenSet; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = std::move(value); }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }

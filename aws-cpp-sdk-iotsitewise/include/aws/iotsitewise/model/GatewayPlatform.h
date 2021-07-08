@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>A gateway that runs on AWS IoT Greengrass.</p>
+     * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline const Greengrass& GetGreengrass() const{ return m_greengrass; }
 
     /**
-     * <p>A gateway that runs on AWS IoT Greengrass.</p>
+     * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline bool GreengrassHasBeenSet() const { return m_greengrassHasBeenSet; }
 
     /**
-     * <p>A gateway that runs on AWS IoT Greengrass.</p>
+     * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline void SetGreengrass(const Greengrass& value) { m_greengrassHasBeenSet = true; m_greengrass = value; }
 
     /**
-     * <p>A gateway that runs on AWS IoT Greengrass.</p>
+     * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline void SetGreengrass(Greengrass&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::move(value); }
 
     /**
-     * <p>A gateway that runs on AWS IoT Greengrass.</p>
+     * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline GatewayPlatform& WithGreengrass(const Greengrass& value) { SetGreengrass(value); return *this;}
 
     /**
-     * <p>A gateway that runs on AWS IoT Greengrass.</p>
+     * <p>A gateway that runs on IoT Greengrass.</p>
      */
     inline GatewayPlatform& WithGreengrass(Greengrass&& value) { SetGreengrass(std::move(value)); return *this;}
 

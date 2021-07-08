@@ -42,104 +42,104 @@ namespace Model
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline const Aws::String& GetInterval() const{ return m_interval; }
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline void SetInterval(const Aws::String& value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline void SetInterval(Aws::String&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline void SetInterval(const char* value) { m_intervalHasBeenSet = true; m_interval.assign(value); }
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline TumblingWindow& WithInterval(const Aws::String& value) { SetInterval(value); return *this;}
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline TumblingWindow& WithInterval(Aws::String&& value) { SetInterval(std::move(value)); return *this;}
 
     /**
      * <p>The time interval for the tumbling window. Note that <code>w</code>
      * represents weeks, <code>d</code> represents days, <code>h</code> represents
-     * hours, and <code>m</code> represents minutes. AWS IoT SiteWise computes the
+     * hours, and <code>m</code> represents minutes. IoT SiteWise computes the
      * <code>1w</code> interval the end of Sunday at midnight each week (UTC), the
      * <code>1d</code> interval at the end of each day at midnight (UTC), the
-     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When AWS
-     * IoT SiteWise aggregates data points for metric computations, the start of each
-     * interval is exclusive and the end of each interval is inclusive. AWS IoT
-     * SiteWise places the computed data point at the end of the interval.</p>
+     * <code>1h</code> interval at the end of each hour, and so on. </p> <p>When IoT
+     * SiteWise aggregates data points for metric computations, the start of each
+     * interval is exclusive and the end of each interval is inclusive. IoT SiteWise
+     * places the computed data point at the end of the interval.</p>
      */
     inline TumblingWindow& WithInterval(const char* value) { SetInterval(value); return *this;}
 

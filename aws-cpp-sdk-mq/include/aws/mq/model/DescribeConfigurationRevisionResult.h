@@ -34,135 +34,135 @@ namespace Model
 
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationId = value; }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationId = std::move(value); }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetConfigurationId(const char* value) { m_configurationId.assign(value); }
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
 
     /**
-     * Required. The unique ID that Amazon MQ generates for the configuration.
+     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
 
     /**
-     * Required. The date and time of the configuration.
+     * <p>Required. The date and time of the configuration.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
-     * Required. The date and time of the configuration.
+     * <p>Required. The date and time of the configuration.</p>
      */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_created = value; }
 
     /**
-     * Required. The date and time of the configuration.
+     * <p>Required. The date and time of the configuration.</p>
      */
     inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = std::move(value); }
 
     /**
-     * Required. The date and time of the configuration.
+     * <p>Required. The date and time of the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
 
     /**
-     * Required. The date and time of the configuration.
+     * <p>Required. The date and time of the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline void SetData(const Aws::String& value) { m_data = value; }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline void SetData(Aws::String&& value) { m_data = std::move(value); }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline void SetData(const char* value) { m_data.assign(value); }
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * Required. The base64-encoded XML configuration.
+     * <p>Required. The base64-encoded XML configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithData(const char* value) { SetData(value); return *this;}
 
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * The description of the configuration.
+     * <p>The description of the configuration.</p>
      */
     inline DescribeConfigurationRevisionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 

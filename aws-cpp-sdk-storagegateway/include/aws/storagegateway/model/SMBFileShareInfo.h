@@ -30,8 +30,8 @@ namespace Model
 
   /**
    * <p>The Windows file permissions and ownership information assigned, by default,
-   * to native S3 objects when file gateway discovers them in S3 buckets. This
-   * operation is only supported for file gateways.</p><p><h3>See Also:</h3>   <a
+   * to native S3 objects when S3 File Gateway discovers them in S3 buckets. This
+   * operation is only supported for S3 File Gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SMBFileShareInfo">AWS
    * API Reference</a></p>
    */
@@ -146,28 +146,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline SMBFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -290,8 +290,8 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -299,8 +299,8 @@ namespace Model
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -308,8 +308,8 @@ namespace Model
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -317,8 +317,8 @@ namespace Model
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -326,8 +326,8 @@ namespace Model
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -335,8 +335,8 @@ namespace Model
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -344,8 +344,8 @@ namespace Model
     inline SMBFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -353,8 +353,8 @@ namespace Model
     inline SMBFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
      * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
      * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
      * <code>S3_ONEZONE_IA</code> </p>
@@ -506,8 +506,8 @@ namespace Model
      * it indicates that file and directory permissions are mapped to the POSIX
      * permission.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
-     * Storage Gateway User Guide</i>.</p>
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the
+     * <i>Storage Gateway User Guide</i>.</p>
      */
     inline bool GetSMBACLEnabled() const{ return m_sMBACLEnabled; }
 
@@ -517,8 +517,8 @@ namespace Model
      * it indicates that file and directory permissions are mapped to the POSIX
      * permission.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
-     * Storage Gateway User Guide</i>.</p>
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the
+     * <i>Storage Gateway User Guide</i>.</p>
      */
     inline bool SMBACLEnabledHasBeenSet() const { return m_sMBACLEnabledHasBeenSet; }
 
@@ -528,8 +528,8 @@ namespace Model
      * it indicates that file and directory permissions are mapped to the POSIX
      * permission.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
-     * Storage Gateway User Guide</i>.</p>
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the
+     * <i>Storage Gateway User Guide</i>.</p>
      */
     inline void SetSMBACLEnabled(bool value) { m_sMBACLEnabledHasBeenSet = true; m_sMBACLEnabled = value; }
 
@@ -539,8 +539,8 @@ namespace Model
      * it indicates that file and directory permissions are mapped to the POSIX
      * permission.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
-     * Storage Gateway User Guide</i>.</p>
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the
+     * <i>Storage Gateway User Guide</i>.</p>
      */
     inline SMBFileShareInfo& WithSMBACLEnabled(bool value) { SetSMBACLEnabled(value); return *this;}
 
@@ -1208,6 +1208,173 @@ namespace Model
      */
     inline SMBFileShareInfo& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
 
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetVPCEndpointDNSName() const{ return m_vPCEndpointDNSName; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline bool VPCEndpointDNSNameHasBeenSet() const { return m_vPCEndpointDNSNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const Aws::String& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = value; }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(Aws::String&& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = std::move(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline void SetVPCEndpointDNSName(const char* value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName.assign(value); }
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline SMBFileShareInfo& WithVPCEndpointDNSName(const Aws::String& value) { SetVPCEndpointDNSName(value); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline SMBFileShareInfo& WithVPCEndpointDNSName(Aws::String&& value) { SetVPCEndpointDNSName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to
+     * connect to Amazon S3.</p>  <p>This parameter is required for SMB file
+     * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
+     * an access point alias that points to a VPC access point.</p> 
+     */
+    inline SMBFileShareInfo& WithVPCEndpointDNSName(const char* value) { SetVPCEndpointDNSName(value); return *this;}
+
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline SMBFileShareInfo& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline SMBFileShareInfo& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the Region of the S3 bucket where the SMB file share stores
+     * files.</p>  <p>This parameter is required for SMB file shares that connect
+     * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
+     * alias that points to a VPC access point.</p> 
+     */
+    inline SMBFileShareInfo& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether opportunistic locking is enabled for the SMB file
+     * share.</p>  <p>Enabling opportunistic locking on case-sensitive shares is
+     * not recommended for workloads that involve access to files with the same name in
+     * different case.</p>  <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
+    inline bool GetOplocksEnabled() const{ return m_oplocksEnabled; }
+
+    /**
+     * <p>Specifies whether opportunistic locking is enabled for the SMB file
+     * share.</p>  <p>Enabling opportunistic locking on case-sensitive shares is
+     * not recommended for workloads that involve access to files with the same name in
+     * different case.</p>  <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
+    inline bool OplocksEnabledHasBeenSet() const { return m_oplocksEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether opportunistic locking is enabled for the SMB file
+     * share.</p>  <p>Enabling opportunistic locking on case-sensitive shares is
+     * not recommended for workloads that involve access to files with the same name in
+     * different case.</p>  <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
+    inline void SetOplocksEnabled(bool value) { m_oplocksEnabledHasBeenSet = true; m_oplocksEnabled = value; }
+
+    /**
+     * <p>Specifies whether opportunistic locking is enabled for the SMB file
+     * share.</p>  <p>Enabling opportunistic locking on case-sensitive shares is
+     * not recommended for workloads that involve access to files with the same name in
+     * different case.</p>  <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
+     */
+    inline SMBFileShareInfo& WithOplocksEnabled(bool value) { SetOplocksEnabled(value); return *this;}
+
   private:
 
     Aws::String m_fileShareARN;
@@ -1287,6 +1454,15 @@ namespace Model
 
     Aws::String m_notificationPolicy;
     bool m_notificationPolicyHasBeenSet;
+
+    Aws::String m_vPCEndpointDNSName;
+    bool m_vPCEndpointDNSNameHasBeenSet;
+
+    Aws::String m_bucketRegion;
+    bool m_bucketRegionHasBeenSet;
+
+    bool m_oplocksEnabled;
+    bool m_oplocksEnabledHasBeenSet;
   };
 
 } // namespace Model

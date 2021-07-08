@@ -85,64 +85,64 @@ namespace Model
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline bool KeyFingerprintHasBeenSet() const { return m_keyFingerprintHasBeenSet; }
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = value; }
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = std::move(value); }
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline void SetKeyFingerprint(const char* value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint.assign(value); }
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline KeyPairInfo& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline KeyPairInfo& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
-     * provide AWS the public key, this is the MD5 public key fingerprint as specified
-     * in section 4 of RFC4716.</p>
+     * provide Amazon Web Services the public key, this is the MD5 public key
+     * fingerprint as specified in section 4 of RFC4716.</p>
      */
     inline KeyPairInfo& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 

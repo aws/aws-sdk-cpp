@@ -26,10 +26,10 @@ namespace Model
 
   /**
    * <p>Contains asset property value notification information. When the notification
-   * state is enabled, AWS IoT SiteWise publishes property value updates to a unique
-   * MQTT topic. For more information, see <a
+   * state is enabled, IoT SiteWise publishes property value updates to a unique MQTT
+   * topic. For more information, see <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-   * with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p><p><h3>See
+   * with other services</a> in the <i>IoT SiteWise User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PropertyNotification">AWS
    * API Reference</a></p>
@@ -44,49 +44,49 @@ namespace Model
 
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline PropertyNotification& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline PropertyNotification& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
 
     /**
-     * <p>The MQTT topic to which AWS IoT SiteWise publishes property value update
+     * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
     inline PropertyNotification& WithTopic(const char* value) { SetTopic(value); return *this;}

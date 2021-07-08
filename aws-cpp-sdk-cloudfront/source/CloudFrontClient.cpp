@@ -20,6 +20,7 @@
 #include <aws/cloudfront/CloudFrontClient.h>
 #include <aws/cloudfront/CloudFrontEndpoint.h>
 #include <aws/cloudfront/CloudFrontErrorMarshaller.h>
+#include <aws/cloudfront/model/AssociateAlias2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateDistribution2020_05_31Request.h>
@@ -72,6 +73,7 @@
 #include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/ListCachePolicies2020_05_31Request.h>
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Request.h>
+#include <aws/cloudfront/model/ListConflictingAliases2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Request.h>
@@ -176,6 +178,43 @@ void CloudFrontClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const AssociateAlias2020_05_31Request& request) const
+{
+  if (!request.TargetDistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateAlias2020_05_31", "Required field: TargetDistributionId, is not set");
+    return AssociateAlias2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TargetDistributionId]", false));
+  }
+  if (!request.AliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateAlias2020_05_31", "Required field: Alias, is not set");
+    return AssociateAlias2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Alias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/distribution/");
+  uri.AddPathSegment(request.GetTargetDistributionId());
+  uri.AddPathSegments("/associate-alias");
+  return AssociateAlias2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+AssociateAlias2020_05_31OutcomeCallable CloudFrontClient::AssociateAlias2020_05_31Callable(const AssociateAlias2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateAlias2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateAlias2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::AssociateAlias2020_05_31Async(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateAlias2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::AssociateAlias2020_05_31AsyncHelper(const AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateAlias2020_05_31(request), context);
 }
 
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const
@@ -1718,6 +1757,41 @@ void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31Async(const
 void CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCloudFrontOriginAccessIdentities2020_05_31(request), context);
+}
+
+ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases2020_05_31(const ListConflictingAliases2020_05_31Request& request) const
+{
+  if (!request.DistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConflictingAliases2020_05_31", "Required field: DistributionId, is not set");
+    return ListConflictingAliases2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
+  }
+  if (!request.AliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConflictingAliases2020_05_31", "Required field: Alias, is not set");
+    return ListConflictingAliases2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Alias]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2020-05-31/conflicting-alias");
+  return ListConflictingAliases2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListConflictingAliases2020_05_31OutcomeCallable CloudFrontClient::ListConflictingAliases2020_05_31Callable(const ListConflictingAliases2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConflictingAliases2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConflictingAliases2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListConflictingAliases2020_05_31Async(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConflictingAliases2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListConflictingAliases2020_05_31AsyncHelper(const ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConflictingAliases2020_05_31(request), context);
 }
 
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const

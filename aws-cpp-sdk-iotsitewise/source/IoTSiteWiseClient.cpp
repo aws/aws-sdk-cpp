@@ -49,6 +49,7 @@
 #include <aws/iotsitewise/model/DescribeLoggingOptionsRequest.h>
 #include <aws/iotsitewise/model/DescribePortalRequest.h>
 #include <aws/iotsitewise/model/DescribeProjectRequest.h>
+#include <aws/iotsitewise/model/DescribeStorageConfigurationRequest.h>
 #include <aws/iotsitewise/model/DisassociateAssetsRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueRequest.h>
@@ -67,6 +68,7 @@
 #include <aws/iotsitewise/model/ListTagsForResourceRequest.h>
 #include <aws/iotsitewise/model/PutDefaultEncryptionConfigurationRequest.h>
 #include <aws/iotsitewise/model/PutLoggingOptionsRequest.h>
+#include <aws/iotsitewise/model/PutStorageConfigurationRequest.h>
 #include <aws/iotsitewise/model/TagResourceRequest.h>
 #include <aws/iotsitewise/model/UntagResourceRequest.h>
 #include <aws/iotsitewise/model/UpdateAccessPolicyRequest.h>
@@ -1269,6 +1271,31 @@ void IoTSiteWiseClient::DescribeProjectAsyncHelper(const DescribeProjectRequest&
   handler(this, request, DescribeProject(request), context);
 }
 
+DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(const DescribeStorageConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/configuration/account/storage");
+  return DescribeStorageConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStorageConfigurationOutcomeCallable IoTSiteWiseClient::DescribeStorageConfigurationCallable(const DescribeStorageConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStorageConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStorageConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::DescribeStorageConfigurationAsync(const DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStorageConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::DescribeStorageConfigurationAsyncHelper(const DescribeStorageConfigurationRequest& request, const DescribeStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStorageConfiguration(request), context);
+}
+
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const
 {
   if (!request.AssetIdHasBeenSet())
@@ -1954,6 +1981,31 @@ void IoTSiteWiseClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& r
 void IoTSiteWiseClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLoggingOptions(request), context);
+}
+
+PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const PutStorageConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/configuration/account/storage");
+  return PutStorageConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutStorageConfigurationOutcomeCallable IoTSiteWiseClient::PutStorageConfigurationCallable(const PutStorageConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutStorageConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutStorageConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::PutStorageConfigurationAsync(const PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutStorageConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::PutStorageConfigurationAsyncHelper(const PutStorageConfigurationRequest& request, const PutStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutStorageConfiguration(request), context);
 }
 
 TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& request) const

@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeGatewayInformationResult::DescribeGatewayInformationResult() : 
-    m_hostEnvironment(HostEnvironment::NOT_SET)
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_gatewayCapacity(GatewayCapacity::NOT_SET)
 {
 }
 
 DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_hostEnvironment(HostEnvironment::NOT_SET)
+    m_hostEnvironment(HostEnvironment::NOT_SET),
+    m_gatewayCapacity(GatewayCapacity::NOT_SET)
 {
   *this = result;
 }
@@ -142,6 +144,21 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
   {
     m_deprecationDate = jsonValue.GetString("DeprecationDate");
 
+  }
+
+  if(jsonValue.ValueExists("GatewayCapacity"))
+  {
+    m_gatewayCapacity = GatewayCapacityMapper::GetGatewayCapacityForName(jsonValue.GetString("GatewayCapacity"));
+
+  }
+
+  if(jsonValue.ValueExists("SupportedGatewayCapacities"))
+  {
+    Array<JsonView> supportedGatewayCapacitiesJsonList = jsonValue.GetArray("SupportedGatewayCapacities");
+    for(unsigned supportedGatewayCapacitiesIndex = 0; supportedGatewayCapacitiesIndex < supportedGatewayCapacitiesJsonList.GetLength(); ++supportedGatewayCapacitiesIndex)
+    {
+      m_supportedGatewayCapacities.push_back(GatewayCapacityMapper::GetGatewayCapacityForName(supportedGatewayCapacitiesJsonList[supportedGatewayCapacitiesIndex].AsString()));
+    }
   }
 
 

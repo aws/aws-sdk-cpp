@@ -60,10 +60,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -80,10 +80,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -118,10 +118,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -138,10 +138,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -176,10 +176,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -196,10 +196,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -234,10 +234,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -254,10 +254,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -292,10 +292,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -312,10 +312,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -350,10 +350,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -370,10 +370,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -408,10 +408,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -428,10 +428,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -466,10 +466,10 @@ namespace Model
      * protocol number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>egress.ip-permission.to-port</code> - For an outbound rule, the end of
      * port range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>egress.ip-permission.user-id</code> - The ID of an AWS account that has
-     * been referenced in an outbound security group rule.</p> </li> <li> <p>
-     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
-     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.user-id</code> - The ID of an Amazon Web Services
+     * account that has been referenced in an outbound security group rule.</p> </li>
+     * <li> <p> <code>group-id</code> - The ID of the security group. </p> </li> <li>
+     * <p> <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
      * <code>ip-permission.cidr</code> - An IPv4 CIDR block for an inbound security
      * group rule.</p> </li> <li> <p> <code>ip-permission.from-port</code> - For an
      * inbound rule, the start of port range for the TCP and UDP protocols, or an ICMP
@@ -486,10 +486,10 @@ namespace Model
      * number, or -1 for all protocols).</p> </li> <li> <p>
      * <code>ip-permission.to-port</code> - For an inbound rule, the end of port range
      * for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
-     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * referenced in an inbound security group rule.</p> </li> <li> <p>
-     * <code>owner-id</code> - The AWS account ID of the owner of the security
-     * group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * <code>ip-permission.user-id</code> - The ID of an Amazon Web Services account
+     * that has been referenced in an inbound security group rule.</p> </li> <li> <p>
+     * <code>owner-id</code> - The Amazon Web Services account ID of the owner of the
+     * security group.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -505,55 +505,55 @@ namespace Model
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
@@ -562,7 +562,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
 
@@ -570,7 +571,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
@@ -578,7 +580,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
@@ -586,7 +589,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
@@ -594,7 +598,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
 
@@ -602,7 +607,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
@@ -610,7 +616,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
@@ -618,7 +625,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
@@ -626,7 +634,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 

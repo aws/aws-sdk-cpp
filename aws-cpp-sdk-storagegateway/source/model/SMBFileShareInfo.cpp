@@ -52,7 +52,11 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_vPCEndpointDNSNameHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_oplocksEnabled(false),
+    m_oplocksEnabledHasBeenSet(false)
 {
 }
 
@@ -90,7 +94,11 @@ SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_vPCEndpointDNSNameHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_oplocksEnabled(false),
+    m_oplocksEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -291,6 +299,27 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_notificationPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VPCEndpointDNSName"))
+  {
+    m_vPCEndpointDNSName = jsonValue.GetString("VPCEndpointDNSName");
+
+    m_vPCEndpointDNSNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BucketRegion"))
+  {
+    m_bucketRegion = jsonValue.GetString("BucketRegion");
+
+    m_bucketRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OplocksEnabled"))
+  {
+    m_oplocksEnabled = jsonValue.GetBool("OplocksEnabled");
+
+    m_oplocksEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -469,6 +498,24 @@ JsonValue SMBFileShareInfo::Jsonize() const
   if(m_notificationPolicyHasBeenSet)
   {
    payload.WithString("NotificationPolicy", m_notificationPolicy);
+
+  }
+
+  if(m_vPCEndpointDNSNameHasBeenSet)
+  {
+   payload.WithString("VPCEndpointDNSName", m_vPCEndpointDNSName);
+
+  }
+
+  if(m_bucketRegionHasBeenSet)
+  {
+   payload.WithString("BucketRegion", m_bucketRegion);
+
+  }
+
+  if(m_oplocksEnabledHasBeenSet)
+  {
+   payload.WithBool("OplocksEnabled", m_oplocksEnabled);
 
   }
 

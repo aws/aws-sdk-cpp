@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * The list of information about logs to be enabled for the specified
-   * broker.<p><h3>See Also:</h3>   <a
+   * <p>The list of information about logs to be enabled for the specified
+   * broker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Logs">AWS API
    * Reference</a></p>
    */
@@ -37,47 +37,47 @@ namespace Model
 
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
      */
     inline bool GetAudit() const{ return m_audit; }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
      */
     inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
      */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
+     * <p>Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
      */
     inline Logs& WithAudit(bool value) { SetAudit(value); return *this;}
 
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline bool GetGeneral() const{ return m_general; }
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline bool GeneralHasBeenSet() const { return m_generalHasBeenSet; }
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline void SetGeneral(bool value) { m_generalHasBeenSet = true; m_general = value; }
 
     /**
-     * Enables general logging.
+     * <p>Enables general logging.</p>
      */
     inline Logs& WithGeneral(bool value) { SetGeneral(value); return *this;}
 

@@ -53,6 +53,7 @@
 #include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/ListCachePolicies2020_05_31Result.h>
 #include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Result.h>
+#include <aws/cloudfront/model/ListConflictingAliases2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributions2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Result.h>
 #include <aws/cloudfront/model/ListDistributionsByKeyGroup2020_05_31Result.h>
@@ -128,6 +129,7 @@ namespace CloudFront
 
 namespace Model
 {
+        class AssociateAlias2020_05_31Request;
         class CreateCachePolicy2020_05_31Request;
         class CreateCloudFrontOriginAccessIdentity2020_05_31Request;
         class CreateDistribution2020_05_31Request;
@@ -180,6 +182,7 @@ namespace Model
         class GetStreamingDistributionConfig2020_05_31Request;
         class ListCachePolicies2020_05_31Request;
         class ListCloudFrontOriginAccessIdentities2020_05_31Request;
+        class ListConflictingAliases2020_05_31Request;
         class ListDistributions2020_05_31Request;
         class ListDistributionsByCachePolicyId2020_05_31Request;
         class ListDistributionsByKeyGroup2020_05_31Request;
@@ -212,6 +215,7 @@ namespace Model
         class UpdateRealtimeLogConfig2020_05_31Request;
         class UpdateStreamingDistribution2020_05_31Request;
 
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> AssociateAlias2020_05_31Outcome;
         typedef Aws::Utils::Outcome<CreateCachePolicy2020_05_31Result, CloudFrontError> CreateCachePolicy2020_05_31Outcome;
         typedef Aws::Utils::Outcome<CreateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> CreateCloudFrontOriginAccessIdentity2020_05_31Outcome;
         typedef Aws::Utils::Outcome<CreateDistribution2020_05_31Result, CloudFrontError> CreateDistribution2020_05_31Outcome;
@@ -264,6 +268,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetStreamingDistributionConfig2020_05_31Result, CloudFrontError> GetStreamingDistributionConfig2020_05_31Outcome;
         typedef Aws::Utils::Outcome<ListCachePolicies2020_05_31Result, CloudFrontError> ListCachePolicies2020_05_31Outcome;
         typedef Aws::Utils::Outcome<ListCloudFrontOriginAccessIdentities2020_05_31Result, CloudFrontError> ListCloudFrontOriginAccessIdentities2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListConflictingAliases2020_05_31Result, CloudFrontError> ListConflictingAliases2020_05_31Outcome;
         typedef Aws::Utils::Outcome<ListDistributions2020_05_31Result, CloudFrontError> ListDistributions2020_05_31Outcome;
         typedef Aws::Utils::Outcome<ListDistributionsByCachePolicyId2020_05_31Result, CloudFrontError> ListDistributionsByCachePolicyId2020_05_31Outcome;
         typedef Aws::Utils::Outcome<ListDistributionsByKeyGroup2020_05_31Result, CloudFrontError> ListDistributionsByKeyGroup2020_05_31Outcome;
@@ -296,6 +301,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateRealtimeLogConfig2020_05_31Result, CloudFrontError> UpdateRealtimeLogConfig2020_05_31Outcome;
         typedef Aws::Utils::Outcome<UpdateStreamingDistribution2020_05_31Result, CloudFrontError> UpdateStreamingDistribution2020_05_31Outcome;
 
+        typedef std::future<AssociateAlias2020_05_31Outcome> AssociateAlias2020_05_31OutcomeCallable;
         typedef std::future<CreateCachePolicy2020_05_31Outcome> CreateCachePolicy2020_05_31OutcomeCallable;
         typedef std::future<CreateCloudFrontOriginAccessIdentity2020_05_31Outcome> CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
         typedef std::future<CreateDistribution2020_05_31Outcome> CreateDistribution2020_05_31OutcomeCallable;
@@ -348,6 +354,7 @@ namespace Model
         typedef std::future<GetStreamingDistributionConfig2020_05_31Outcome> GetStreamingDistributionConfig2020_05_31OutcomeCallable;
         typedef std::future<ListCachePolicies2020_05_31Outcome> ListCachePolicies2020_05_31OutcomeCallable;
         typedef std::future<ListCloudFrontOriginAccessIdentities2020_05_31Outcome> ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable;
+        typedef std::future<ListConflictingAliases2020_05_31Outcome> ListConflictingAliases2020_05_31OutcomeCallable;
         typedef std::future<ListDistributions2020_05_31Outcome> ListDistributions2020_05_31OutcomeCallable;
         typedef std::future<ListDistributionsByCachePolicyId2020_05_31Outcome> ListDistributionsByCachePolicyId2020_05_31OutcomeCallable;
         typedef std::future<ListDistributionsByKeyGroup2020_05_31Outcome> ListDistributionsByKeyGroup2020_05_31OutcomeCallable;
@@ -383,6 +390,7 @@ namespace Model
 
   class CloudFrontClient;
 
+    typedef std::function<void(const CloudFrontClient*, const Model::AssociateAlias2020_05_31Request&, const Model::AssociateAlias2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAlias2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateCachePolicy2020_05_31Request&, const Model::CreateCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCachePolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::CreateDistribution2020_05_31Request&, const Model::CreateDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistribution2020_05_31ResponseReceivedHandler;
@@ -435,6 +443,7 @@ namespace Model
     typedef std::function<void(const CloudFrontClient*, const Model::GetStreamingDistributionConfig2020_05_31Request&, const Model::GetStreamingDistributionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListCachePolicies2020_05_31Request&, const Model::ListCachePolicies2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCachePolicies2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request&, const Model::ListCloudFrontOriginAccessIdentities2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListConflictingAliases2020_05_31Request&, const Model::ListConflictingAliases2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConflictingAliases2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListDistributions2020_05_31Request&, const Model::ListDistributions2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributions2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByCachePolicyId2020_05_31Request&, const Model::ListDistributionsByCachePolicyId2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByKeyGroup2020_05_31Request&, const Model::ListDistributionsByKeyGroup2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler;
@@ -499,6 +508,67 @@ namespace Model
 
         virtual ~CloudFrontClient();
 
+
+        /**
+         * <p>Associates an alias (also known as a CNAME or an alternate domain name) with
+         * a CloudFront distribution.</p> <p>With this operation you can move an alias
+         * that’s already in use on a CloudFront distribution to a different distribution
+         * in one step. This prevents the downtime that could occur if you first remove the
+         * alias from one distribution and then separately add the alias to another
+         * distribution.</p> <p>To use this operation to associate an alias with a
+         * distribution, you provide the alias and the ID of the target distribution for
+         * the alias. For more information, including how to set up the target
+         * distribution, prerequisites that you must complete, and other restrictions, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different distribution</a> in the <i>Amazon
+         * CloudFront Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateAlias2020_05_31Outcome AssociateAlias2020_05_31(const Model::AssociateAlias2020_05_31Request& request) const;
+
+        /**
+         * <p>Associates an alias (also known as a CNAME or an alternate domain name) with
+         * a CloudFront distribution.</p> <p>With this operation you can move an alias
+         * that’s already in use on a CloudFront distribution to a different distribution
+         * in one step. This prevents the downtime that could occur if you first remove the
+         * alias from one distribution and then separately add the alias to another
+         * distribution.</p> <p>To use this operation to associate an alias with a
+         * distribution, you provide the alias and the ID of the target distribution for
+         * the alias. For more information, including how to set up the target
+         * distribution, prerequisites that you must complete, and other restrictions, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different distribution</a> in the <i>Amazon
+         * CloudFront Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateAlias2020_05_31OutcomeCallable AssociateAlias2020_05_31Callable(const Model::AssociateAlias2020_05_31Request& request) const;
+
+        /**
+         * <p>Associates an alias (also known as a CNAME or an alternate domain name) with
+         * a CloudFront distribution.</p> <p>With this operation you can move an alias
+         * that’s already in use on a CloudFront distribution to a different distribution
+         * in one step. This prevents the downtime that could occur if you first remove the
+         * alias from one distribution and then separately add the alias to another
+         * distribution.</p> <p>To use this operation to associate an alias with a
+         * distribution, you provide the alias and the ID of the target distribution for
+         * the alias. For more information, including how to set up the target
+         * distribution, prerequisites that you must complete, and other restrictions, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different distribution</a> in the <i>Amazon
+         * CloudFront Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateAlias2020_05_31Async(const Model::AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can
@@ -1173,7 +1243,7 @@ namespace Model
         virtual void CreateStreamingDistributionWithTags2020_05_31Async(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it���s
+         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
          * attached to a cache behavior. First update your distributions to remove the
          * cache policy from all cache behaviors, then delete the cache policy.</p> <p>To
          * delete a cache policy, you must provide the policy’s identifier and version. To
@@ -1185,7 +1255,7 @@ namespace Model
         virtual Model::DeleteCachePolicy2020_05_31Outcome DeleteCachePolicy2020_05_31(const Model::DeleteCachePolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it���s
+         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
          * attached to a cache behavior. First update your distributions to remove the
          * cache policy from all cache behaviors, then delete the cache policy.</p> <p>To
          * delete a cache policy, you must provide the policy’s identifier and version. To
@@ -1199,7 +1269,7 @@ namespace Model
         virtual Model::DeleteCachePolicy2020_05_31OutcomeCallable DeleteCachePolicy2020_05_31Callable(const Model::DeleteCachePolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it���s
+         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
          * attached to a cache behavior. First update your distributions to remove the
          * cache policy from all cache behaviors, then delete the cache policy.</p> <p>To
          * delete a cache policy, you must provide the policy’s identifier and version. To
@@ -2400,14 +2470,14 @@ namespace Model
 
         /**
          * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
-         * return only the managed policies created by AWS, or only the custom policies
-         * created in your AWS account.</p> <p>You can optionally specify the maximum
-         * number of items to receive in the response. If the total number of items in the
-         * list exceeds the maximum that you specify, or the default maximum, the response
-         * is paginated. To get the next page of items, send a subsequent request that
-         * specifies the <code>NextMarker</code> value from the current response as the
-         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
-         * <a
+         * return only the managed policies created by Amazon Web Services, or only the
+         * custom policies created in your account.</p> <p>You can optionally specify the
+         * maximum number of items to receive in the response. If the total number of items
+         * in the list exceeds the maximum that you specify, or the default maximum, the
+         * response is paginated. To get the next page of items, send a subsequent request
+         * that specifies the <code>NextMarker</code> value from the current response as
+         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -2415,14 +2485,14 @@ namespace Model
 
         /**
          * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
-         * return only the managed policies created by AWS, or only the custom policies
-         * created in your AWS account.</p> <p>You can optionally specify the maximum
-         * number of items to receive in the response. If the total number of items in the
-         * list exceeds the maximum that you specify, or the default maximum, the response
-         * is paginated. To get the next page of items, send a subsequent request that
-         * specifies the <code>NextMarker</code> value from the current response as the
-         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
-         * <a
+         * return only the managed policies created by Amazon Web Services, or only the
+         * custom policies created in your account.</p> <p>You can optionally specify the
+         * maximum number of items to receive in the response. If the total number of items
+         * in the list exceeds the maximum that you specify, or the default maximum, the
+         * response is paginated. To get the next page of items, send a subsequent request
+         * that specifies the <code>NextMarker</code> value from the current response as
+         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -2432,14 +2502,14 @@ namespace Model
 
         /**
          * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
-         * return only the managed policies created by AWS, or only the custom policies
-         * created in your AWS account.</p> <p>You can optionally specify the maximum
-         * number of items to receive in the response. If the total number of items in the
-         * list exceeds the maximum that you specify, or the default maximum, the response
-         * is paginated. To get the next page of items, send a subsequent request that
-         * specifies the <code>NextMarker</code> value from the current response as the
-         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
-         * <a
+         * return only the managed policies created by Amazon Web Services, or only the
+         * custom policies created in your account.</p> <p>You can optionally specify the
+         * maximum number of items to receive in the response. If the total number of items
+         * in the list exceeds the maximum that you specify, or the default maximum, the
+         * response is paginated. To get the next page of items, send a subsequent request
+         * that specifies the <code>NextMarker</code> value from the current response as
+         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -2471,6 +2541,109 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListCloudFrontOriginAccessIdentities2020_05_31Async(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that
+         * conflict or overlap with the provided alias, and the associated CloudFront
+         * distributions and Amazon Web Services accounts for each conflicting alias. In
+         * the returned list, the distribution and account IDs are partially hidden, which
+         * allows you to identify the distributions and accounts that you own, but helps to
+         * protect the information of ones that you don’t own.</p> <p>Use this operation to
+         * find aliases that are in use in CloudFront that conflict or overlap with the
+         * provided alias. For example, if you provide <code>www.example.com</code> as
+         * input, the returned list can include <code>www.example.com</code> and the
+         * overlapping wildcard alternate domain name (<code>*.example.com</code>), if they
+         * exist. If you provide <code>*.example.com</code> as input, the returned list can
+         * include <code>*.example.com</code> and any alternate domain names covered by
+         * that wildcard (for example, <code>www.example.com</code>,
+         * <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+         * exist.</p> <p>To list conflicting aliases, you provide the alias to search and
+         * the ID of a distribution in your account that has an attached SSL/TLS
+         * certificate that includes the provided alias. For more information, including
+         * how to set up the distribution and certificate, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different distribution</a> in the <i>Amazon
+         * CloudFront Developer Guide</i>.</p> <p>You can optionally specify the maximum
+         * number of items to receive in the response. If the total number of items in the
+         * list exceeds the maximum that you specify, or the default maximum, the response
+         * is paginated. To get the next page of items, send a subsequent request that
+         * specifies the <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConflictingAliases2020_05_31Outcome ListConflictingAliases2020_05_31(const Model::ListConflictingAliases2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that
+         * conflict or overlap with the provided alias, and the associated CloudFront
+         * distributions and Amazon Web Services accounts for each conflicting alias. In
+         * the returned list, the distribution and account IDs are partially hidden, which
+         * allows you to identify the distributions and accounts that you own, but helps to
+         * protect the information of ones that you don’t own.</p> <p>Use this operation to
+         * find aliases that are in use in CloudFront that conflict or overlap with the
+         * provided alias. For example, if you provide <code>www.example.com</code> as
+         * input, the returned list can include <code>www.example.com</code> and the
+         * overlapping wildcard alternate domain name (<code>*.example.com</code>), if they
+         * exist. If you provide <code>*.example.com</code> as input, the returned list can
+         * include <code>*.example.com</code> and any alternate domain names covered by
+         * that wildcard (for example, <code>www.example.com</code>,
+         * <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+         * exist.</p> <p>To list conflicting aliases, you provide the alias to search and
+         * the ID of a distribution in your account that has an attached SSL/TLS
+         * certificate that includes the provided alias. For more information, including
+         * how to set up the distribution and certificate, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different distribution</a> in the <i>Amazon
+         * CloudFront Developer Guide</i>.</p> <p>You can optionally specify the maximum
+         * number of items to receive in the response. If the total number of items in the
+         * list exceeds the maximum that you specify, or the default maximum, the response
+         * is paginated. To get the next page of items, send a subsequent request that
+         * specifies the <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConflictingAliases2020_05_31OutcomeCallable ListConflictingAliases2020_05_31Callable(const Model::ListConflictingAliases2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that
+         * conflict or overlap with the provided alias, and the associated CloudFront
+         * distributions and Amazon Web Services accounts for each conflicting alias. In
+         * the returned list, the distribution and account IDs are partially hidden, which
+         * allows you to identify the distributions and accounts that you own, but helps to
+         * protect the information of ones that you don’t own.</p> <p>Use this operation to
+         * find aliases that are in use in CloudFront that conflict or overlap with the
+         * provided alias. For example, if you provide <code>www.example.com</code> as
+         * input, the returned list can include <code>www.example.com</code> and the
+         * overlapping wildcard alternate domain name (<code>*.example.com</code>), if they
+         * exist. If you provide <code>*.example.com</code> as input, the returned list can
+         * include <code>*.example.com</code> and any alternate domain names covered by
+         * that wildcard (for example, <code>www.example.com</code>,
+         * <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they
+         * exist.</p> <p>To list conflicting aliases, you provide the alias to search and
+         * the ID of a distribution in your account that has an attached SSL/TLS
+         * certificate that includes the provided alias. For more information, including
+         * how to set up the distribution and certificate, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+         * an alternate domain name to a different distribution</a> in the <i>Amazon
+         * CloudFront Developer Guide</i>.</p> <p>You can optionally specify the maximum
+         * number of items to receive in the response. If the total number of items in the
+         * list exceeds the maximum that you specify, or the default maximum, the response
+         * is paginated. To get the next page of items, send a subsequent request that
+         * specifies the <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConflictingAliases2020_05_31Async(const Model::ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
@@ -2691,16 +2864,16 @@ namespace Model
         virtual void ListDistributionsByRealtimeLogConfig2020_05_31Async(const Model::ListDistributionsByRealtimeLogConfig2020_05_31Request& request, const ListDistributionsByRealtimeLogConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the distributions that are associated with a specified AWS WAF web ACL.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>List the distributions that are associated with a specified WAF web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId2020_05_31">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDistributionsByWebACLId2020_05_31Outcome ListDistributionsByWebACLId2020_05_31(const Model::ListDistributionsByWebACLId2020_05_31Request& request) const;
 
         /**
-         * <p>List the distributions that are associated with a specified AWS WAF web ACL.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>List the distributions that are associated with a specified WAF web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -2709,8 +2882,8 @@ namespace Model
         virtual Model::ListDistributionsByWebACLId2020_05_31OutcomeCallable ListDistributionsByWebACLId2020_05_31Callable(const Model::ListDistributionsByWebACLId2020_05_31Request& request) const;
 
         /**
-         * <p>List the distributions that are associated with a specified AWS WAF web ACL.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>List the distributions that are associated with a specified WAF web
+         * ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -2775,7 +2948,7 @@ namespace Model
         virtual void ListFieldLevelEncryptionProfiles2020_05_31Async(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of all CloudFront functions in your AWS account.</p> <p>You can
+         * <p>Gets a list of all CloudFront functions in your account.</p> <p>You can
          * optionally apply a filter to return only the functions that are in the specified
          * stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> <p>You can
          * optionally specify the maximum number of items to receive in the response. If
@@ -2790,7 +2963,7 @@ namespace Model
         virtual Model::ListFunctions2020_05_31Outcome ListFunctions2020_05_31(const Model::ListFunctions2020_05_31Request& request) const;
 
         /**
-         * <p>Gets a list of all CloudFront functions in your AWS account.</p> <p>You can
+         * <p>Gets a list of all CloudFront functions in your account.</p> <p>You can
          * optionally apply a filter to return only the functions that are in the specified
          * stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> <p>You can
          * optionally specify the maximum number of items to receive in the response. If
@@ -2807,7 +2980,7 @@ namespace Model
         virtual Model::ListFunctions2020_05_31OutcomeCallable ListFunctions2020_05_31Callable(const Model::ListFunctions2020_05_31Request& request) const;
 
         /**
-         * <p>Gets a list of all CloudFront functions in your AWS account.</p> <p>You can
+         * <p>Gets a list of all CloudFront functions in your account.</p> <p>You can
          * optionally apply a filter to return only the functions that are in the specified
          * stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> <p>You can
          * optionally specify the maximum number of items to receive in the response. If
@@ -2893,14 +3066,14 @@ namespace Model
 
         /**
          * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
-         * filter to return only the managed policies created by AWS, or only the custom
-         * policies created in your AWS account.</p> <p>You can optionally specify the
-         * maximum number of items to receive in the response. If the total number of items
-         * in the list exceeds the maximum that you specify, or the default maximum, the
-         * response is paginated. To get the next page of items, send a subsequent request
-         * that specifies the <code>NextMarker</code> value from the current response as
-         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
-         * Also:</h3>   <a
+         * filter to return only the managed policies created by Amazon Web Services, or
+         * only the custom policies created in your account.</p> <p>You can optionally
+         * specify the maximum number of items to receive in the response. If the total
+         * number of items in the list exceeds the maximum that you specify, or the default
+         * maximum, the response is paginated. To get the next page of items, send a
+         * subsequent request that specifies the <code>NextMarker</code> value from the
+         * current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -2908,14 +3081,14 @@ namespace Model
 
         /**
          * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
-         * filter to return only the managed policies created by AWS, or only the custom
-         * policies created in your AWS account.</p> <p>You can optionally specify the
-         * maximum number of items to receive in the response. If the total number of items
-         * in the list exceeds the maximum that you specify, or the default maximum, the
-         * response is paginated. To get the next page of items, send a subsequent request
-         * that specifies the <code>NextMarker</code> value from the current response as
-         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
-         * Also:</h3>   <a
+         * filter to return only the managed policies created by Amazon Web Services, or
+         * only the custom policies created in your account.</p> <p>You can optionally
+         * specify the maximum number of items to receive in the response. If the total
+         * number of items in the list exceeds the maximum that you specify, or the default
+         * maximum, the response is paginated. To get the next page of items, send a
+         * subsequent request that specifies the <code>NextMarker</code> value from the
+         * current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -2925,14 +3098,14 @@ namespace Model
 
         /**
          * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
-         * filter to return only the managed policies created by AWS, or only the custom
-         * policies created in your AWS account.</p> <p>You can optionally specify the
-         * maximum number of items to receive in the response. If the total number of items
-         * in the list exceeds the maximum that you specify, or the default maximum, the
-         * response is paginated. To get the next page of items, send a subsequent request
-         * that specifies the <code>NextMarker</code> value from the current response as
-         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
-         * Also:</h3>   <a
+         * filter to return only the managed policies created by Amazon Web Services, or
+         * only the custom policies created in your account.</p> <p>You can optionally
+         * specify the maximum number of items to receive in the response. If the total
+         * number of items in the list exceeds the maximum that you specify, or the default
+         * maximum, the response is paginated. To get the next page of items, send a
+         * subsequent request that specifies the <code>NextMarker</code> value from the
+         * current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies2020_05_31">AWS
          * API Reference</a></p>
          *
@@ -3773,6 +3946,7 @@ namespace Model
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateAlias2020_05_31AsyncHelper(const Model::AssociateAlias2020_05_31Request& request, const AssociateAlias2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCachePolicy2020_05_31AsyncHelper(const Model::CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDistribution2020_05_31AsyncHelper(const Model::CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3825,6 +3999,7 @@ namespace Model
         void GetStreamingDistributionConfig2020_05_31AsyncHelper(const Model::GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCachePolicies2020_05_31AsyncHelper(const Model::ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListConflictingAliases2020_05_31AsyncHelper(const Model::ListConflictingAliases2020_05_31Request& request, const ListConflictingAliases2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDistributions2020_05_31AsyncHelper(const Model::ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDistributionsByCachePolicyId2020_05_31AsyncHelper(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDistributionsByKeyGroup2020_05_31AsyncHelper(const Model::ListDistributionsByKeyGroup2020_05_31Request& request, const ListDistributionsByKeyGroup2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

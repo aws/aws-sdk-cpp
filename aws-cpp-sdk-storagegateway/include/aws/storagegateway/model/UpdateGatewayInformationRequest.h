@@ -7,6 +7,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/model/GatewayCapacity.h>
 #include <utility>
 
 namespace Aws
@@ -197,6 +198,37 @@ namespace Model
      */
     inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}
 
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline const GatewayCapacity& GetGatewayCapacity() const{ return m_gatewayCapacity; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline bool GatewayCapacityHasBeenSet() const { return m_gatewayCapacityHasBeenSet; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline void SetGatewayCapacity(const GatewayCapacity& value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = value; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline void SetGatewayCapacity(GatewayCapacity&& value) { m_gatewayCapacityHasBeenSet = true; m_gatewayCapacity = std::move(value); }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline UpdateGatewayInformationRequest& WithGatewayCapacity(const GatewayCapacity& value) { SetGatewayCapacity(value); return *this;}
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline UpdateGatewayInformationRequest& WithGatewayCapacity(GatewayCapacity&& value) { SetGatewayCapacity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -210,6 +242,9 @@ namespace Model
 
     Aws::String m_cloudWatchLogGroupARN;
     bool m_cloudWatchLogGroupARNHasBeenSet;
+
+    GatewayCapacity m_gatewayCapacity;
+    bool m_gatewayCapacityHasBeenSet;
   };
 
 } // namespace Model

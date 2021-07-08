@@ -88,8 +88,9 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when an authenticated entity most recently attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -98,8 +99,9 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when an authenticated entity most recently attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -108,8 +110,9 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when an authenticated entity most recently attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -118,8 +121,9 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when an authenticated entity most recently attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -128,8 +132,9 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when an authenticated entity most recently attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -138,8 +143,9 @@ namespace Model
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when an authenticated entity most recently attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -150,13 +156,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
 
@@ -164,13 +171,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
@@ -178,13 +186,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetServiceNamespace(const Aws::String& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
@@ -192,13 +201,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetServiceNamespace(Aws::String&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
@@ -206,13 +216,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetServiceNamespace(const char* value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace.assign(value); }
 
@@ -220,13 +231,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ServiceLastAccessed& WithServiceNamespace(const Aws::String& value) { SetServiceNamespace(value); return *this;}
 
@@ -234,13 +246,14 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ServiceLastAccessed& WithServiceNamespace(Aws::String&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
@@ -248,21 +261,23 @@ namespace Model
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
      * the service namespace of a service, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
-     * resources, and condition keys for AWS services</a> in the <i>Service
-     * Authorization Reference</i>. Choose the name of the service to view details for
-     * that service. In the first paragraph, find the service prefix. For example,
-     * <code>(service prefix: a4b)</code>. For more information about service
+     * resources, and condition keys for Amazon Web Services services</a> in the
+     * <i>Service Authorization Reference</i>. Choose the name of the service to view
+     * details for that service. In the first paragraph, find the service prefix. For
+     * example, <code>(service prefix: a4b)</code>. For more information about service
      * namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ServiceLastAccessed& WithServiceNamespace(const char* value) { SetServiceNamespace(value); return *this;}
 
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -270,8 +285,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -279,8 +295,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -288,8 +305,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -297,8 +315,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -306,8 +325,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -315,8 +335,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -324,8 +345,9 @@ namespace Model
 
     /**
      * <p>The ARN of the authenticated entity (user or role) that last attempted to
-     * access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -334,8 +356,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -343,8 +366,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -352,8 +376,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -361,8 +386,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -370,8 +396,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -379,8 +406,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -388,8 +416,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
@@ -397,8 +426,9 @@ namespace Model
 
     /**
      * <p>The Region from which the authenticated entity (user or role) last attempted
-     * to access the service. AWS does not report unauthenticated requests.</p> <p>This
-     * field is null if no IAM entities attempted to access the service within the <a
+     * to access the service. Amazon Web Services does not report unauthenticated
+     * requests.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
