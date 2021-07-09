@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/TrainingJobStepMetadata.h>
 #include <aws/sagemaker/model/ProcessingJobStepMetadata.h>
 #include <aws/sagemaker/model/TransformJobStepMetadata.h>
+#include <aws/sagemaker/model/TuningJobStepMetaData.h>
 #include <aws/sagemaker/model/ModelStepMetadata.h>
 #include <aws/sagemaker/model/RegisterModelStepMetadata.h>
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
@@ -155,6 +156,43 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step
+     * execution.</p>
+     */
+    inline const TuningJobStepMetaData& GetTuningJob() const{ return m_tuningJob; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step
+     * execution.</p>
+     */
+    inline bool TuningJobHasBeenSet() const { return m_tuningJobHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step
+     * execution.</p>
+     */
+    inline void SetTuningJob(const TuningJobStepMetaData& value) { m_tuningJobHasBeenSet = true; m_tuningJob = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step
+     * execution.</p>
+     */
+    inline void SetTuningJob(TuningJobStepMetaData&& value) { m_tuningJobHasBeenSet = true; m_tuningJob = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step
+     * execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithTuningJob(const TuningJobStepMetaData& value) { SetTuningJob(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step
+     * execution.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithTuningJob(TuningJobStepMetaData&& value) { SetTuningJob(std::move(value)); return *this;}
+
+
+    /**
      * <p>Metadata for the Model step.</p>
      */
     inline const ModelStepMetadata& GetModel() const{ return m_model; }
@@ -275,6 +313,9 @@ namespace Model
 
     TransformJobStepMetadata m_transformJob;
     bool m_transformJobHasBeenSet;
+
+    TuningJobStepMetaData m_tuningJob;
+    bool m_tuningJobHasBeenSet;
 
     ModelStepMetadata m_model;
     bool m_modelHasBeenSet;

@@ -50,6 +50,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_segmentLengthHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
@@ -91,6 +93,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_segmentLengthHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
@@ -232,6 +236,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_streamInfResolutionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("targetDurationCompatibilityMode"))
+  {
+    m_targetDurationCompatibilityMode = CmafTargetDurationCompatibilityModeMapper::GetCmafTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
+
+    m_targetDurationCompatibilityModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("writeDashManifest"))
   {
     m_writeDashManifest = CmafWriteDASHManifestMapper::GetCmafWriteDASHManifestForName(jsonValue.GetString("writeDashManifest"));
@@ -362,6 +373,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_streamInfResolutionHasBeenSet)
   {
    payload.WithString("streamInfResolution", CmafStreamInfResolutionMapper::GetNameForCmafStreamInfResolution(m_streamInfResolution));
+  }
+
+  if(m_targetDurationCompatibilityModeHasBeenSet)
+  {
+   payload.WithString("targetDurationCompatibilityMode", CmafTargetDurationCompatibilityModeMapper::GetNameForCmafTargetDurationCompatibilityMode(m_targetDurationCompatibilityMode));
   }
 
   if(m_writeDashManifestHasBeenSet)

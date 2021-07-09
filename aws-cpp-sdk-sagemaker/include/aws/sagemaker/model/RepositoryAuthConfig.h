@@ -28,8 +28,8 @@ namespace Model
    * where your model image is hosted. Specify a value for this property only if you
    * specified <code>Vpc</code> as the value for the
    * <code>RepositoryAccessMode</code> field of the <code>ImageConfig</code> object
-   * that you passed to a call to <a>CreateModel</a> and the private Docker registry
-   * where the model image is hosted requires authentication.</p><p><h3>See
+   * that you passed to a call to <code>CreateModel</code> and the private Docker
+   * registry where the model image is hosted requires authentication.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RepositoryAuthConfig">AWS
    * API Reference</a></p>

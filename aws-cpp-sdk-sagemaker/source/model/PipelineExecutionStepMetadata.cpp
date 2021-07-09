@@ -22,6 +22,7 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_trainingJobHasBeenSet(false),
     m_processingJobHasBeenSet(false),
     m_transformJobHasBeenSet(false),
+    m_tuningJobHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_registerModelHasBeenSet(false),
     m_conditionHasBeenSet(false),
@@ -33,6 +34,7 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_trainingJobHasBeenSet(false),
     m_processingJobHasBeenSet(false),
     m_transformJobHasBeenSet(false),
+    m_tuningJobHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_registerModelHasBeenSet(false),
     m_conditionHasBeenSet(false),
@@ -62,6 +64,13 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_transformJob = jsonValue.GetObject("TransformJob");
 
     m_transformJobHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TuningJob"))
+  {
+    m_tuningJob = jsonValue.GetObject("TuningJob");
+
+    m_tuningJobHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Model"))
@@ -114,6 +123,12 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_transformJobHasBeenSet)
   {
    payload.WithObject("TransformJob", m_transformJob.Jsonize());
+
+  }
+
+  if(m_tuningJobHasBeenSet)
+  {
+   payload.WithObject("TuningJob", m_tuningJob.Jsonize());
 
   }
 

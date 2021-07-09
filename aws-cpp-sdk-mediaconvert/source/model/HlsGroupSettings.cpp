@@ -60,6 +60,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_timedMetadataId3Frame(HlsTimedMetadataId3Frame::NOT_SET),
     m_timedMetadataId3FrameHasBeenSet(false),
     m_timedMetadataId3Period(0),
@@ -111,6 +113,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
+    m_targetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode::NOT_SET),
+    m_targetDurationCompatibilityModeHasBeenSet(false),
     m_timedMetadataId3Frame(HlsTimedMetadataId3Frame::NOT_SET),
     m_timedMetadataId3FrameHasBeenSet(false),
     m_timedMetadataId3Period(0),
@@ -300,6 +304,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_streamInfResolutionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("targetDurationCompatibilityMode"))
+  {
+    m_targetDurationCompatibilityMode = HlsTargetDurationCompatibilityModeMapper::GetHlsTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
+
+    m_targetDurationCompatibilityModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("timedMetadataId3Frame"))
   {
     m_timedMetadataId3Frame = HlsTimedMetadataId3FrameMapper::GetHlsTimedMetadataId3FrameForName(jsonValue.GetString("timedMetadataId3Frame"));
@@ -473,6 +484,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_streamInfResolutionHasBeenSet)
   {
    payload.WithString("streamInfResolution", HlsStreamInfResolutionMapper::GetNameForHlsStreamInfResolution(m_streamInfResolution));
+  }
+
+  if(m_targetDurationCompatibilityModeHasBeenSet)
+  {
+   payload.WithString("targetDurationCompatibilityMode", HlsTargetDurationCompatibilityModeMapper::GetNameForHlsTargetDurationCompatibilityMode(m_targetDurationCompatibilityMode));
   }
 
   if(m_timedMetadataId3FrameHasBeenSet)

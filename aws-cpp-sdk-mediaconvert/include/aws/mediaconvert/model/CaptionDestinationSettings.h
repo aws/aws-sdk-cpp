@@ -11,6 +11,7 @@
 #include <aws/mediaconvert/model/EmbeddedDestinationSettings.h>
 #include <aws/mediaconvert/model/ImscDestinationSettings.h>
 #include <aws/mediaconvert/model/SccDestinationSettings.h>
+#include <aws/mediaconvert/model/SrtDestinationSettings.h>
 #include <aws/mediaconvert/model/TeletextDestinationSettings.h>
 #include <aws/mediaconvert/model/TtmlDestinationSettings.h>
 #include <aws/mediaconvert/model/WebvttDestinationSettings.h>
@@ -436,6 +437,37 @@ namespace Model
 
 
     /**
+     * SRT Destination Settings
+     */
+    inline const SrtDestinationSettings& GetSrtDestinationSettings() const{ return m_srtDestinationSettings; }
+
+    /**
+     * SRT Destination Settings
+     */
+    inline bool SrtDestinationSettingsHasBeenSet() const { return m_srtDestinationSettingsHasBeenSet; }
+
+    /**
+     * SRT Destination Settings
+     */
+    inline void SetSrtDestinationSettings(const SrtDestinationSettings& value) { m_srtDestinationSettingsHasBeenSet = true; m_srtDestinationSettings = value; }
+
+    /**
+     * SRT Destination Settings
+     */
+    inline void SetSrtDestinationSettings(SrtDestinationSettings&& value) { m_srtDestinationSettingsHasBeenSet = true; m_srtDestinationSettings = std::move(value); }
+
+    /**
+     * SRT Destination Settings
+     */
+    inline CaptionDestinationSettings& WithSrtDestinationSettings(const SrtDestinationSettings& value) { SetSrtDestinationSettings(value); return *this;}
+
+    /**
+     * SRT Destination Settings
+     */
+    inline CaptionDestinationSettings& WithSrtDestinationSettings(SrtDestinationSettings&& value) { SetSrtDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
@@ -606,6 +638,9 @@ namespace Model
 
     SccDestinationSettings m_sccDestinationSettings;
     bool m_sccDestinationSettingsHasBeenSet;
+
+    SrtDestinationSettings m_srtDestinationSettings;
+    bool m_srtDestinationSettingsHasBeenSet;
 
     TeletextDestinationSettings m_teletextDestinationSettings;
     bool m_teletextDestinationSettingsHasBeenSet;

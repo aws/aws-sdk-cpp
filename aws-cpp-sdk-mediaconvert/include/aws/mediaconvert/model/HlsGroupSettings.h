@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/HlsProgramDateTime.h>
 #include <aws/mediaconvert/model/HlsSegmentControl.h>
 #include <aws/mediaconvert/model/HlsStreamInfResolution.h>
+#include <aws/mediaconvert/model/HlsTargetDurationCompatibilityMode.h>
 #include <aws/mediaconvert/model/HlsTimedMetadataId3Frame.h>
 #include <aws/mediaconvert/model/HlsAdMarkers.h>
 #include <aws/mediaconvert/model/HlsAdditionalManifest.h>
@@ -1135,6 +1136,85 @@ namespace Model
 
 
     /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline const HlsTargetDurationCompatibilityMode& GetTargetDurationCompatibilityMode() const{ return m_targetDurationCompatibilityMode; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline bool TargetDurationCompatibilityModeHasBeenSet() const { return m_targetDurationCompatibilityModeHasBeenSet; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(const HlsTargetDurationCompatibilityMode& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = value; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode&& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = std::move(value); }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline HlsGroupSettings& WithTargetDurationCompatibilityMode(const HlsTargetDurationCompatibilityMode& value) { SetTargetDurationCompatibilityMode(value); return *this;}
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline HlsGroupSettings& WithTargetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode&& value) { SetTargetDurationCompatibilityMode(std::move(value)); return *this;}
+
+
+    /**
      * Indicates ID3 frame that has the timecode.
      */
     inline const HlsTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
@@ -1279,6 +1359,9 @@ namespace Model
 
     HlsStreamInfResolution m_streamInfResolution;
     bool m_streamInfResolutionHasBeenSet;
+
+    HlsTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
+    bool m_targetDurationCompatibilityModeHasBeenSet;
 
     HlsTimedMetadataId3Frame m_timedMetadataId3Frame;
     bool m_timedMetadataId3FrameHasBeenSet;
