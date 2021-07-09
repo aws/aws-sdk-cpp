@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Details of the AWS Firewall Manager applications list.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details of the Firewall Manager applications list.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AppsListDataSummary">AWS
    * API Reference</a></p>
    */
@@ -164,49 +164,49 @@ namespace Model
 
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline const Aws::Vector<App>& GetAppsList() const{ return m_appsList; }
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline bool AppsListHasBeenSet() const { return m_appsListHasBeenSet; }
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline void SetAppsList(const Aws::Vector<App>& value) { m_appsListHasBeenSet = true; m_appsList = value; }
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline void SetAppsList(Aws::Vector<App>&& value) { m_appsListHasBeenSet = true; m_appsList = std::move(value); }
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline AppsListDataSummary& WithAppsList(const Aws::Vector<App>& value) { SetAppsList(value); return *this;}
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline AppsListDataSummary& WithAppsList(Aws::Vector<App>&& value) { SetAppsList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline AppsListDataSummary& AddAppsList(const App& value) { m_appsListHasBeenSet = true; m_appsList.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>App</code> objects in the AWS Firewall Manager applications
+     * <p>An array of <code>App</code> objects in the Firewall Manager applications
      * list.</p>
      */
     inline AppsListDataSummary& AddAppsList(App&& value) { m_appsListHasBeenSet = true; m_appsList.push_back(std::move(value)); return *this; }

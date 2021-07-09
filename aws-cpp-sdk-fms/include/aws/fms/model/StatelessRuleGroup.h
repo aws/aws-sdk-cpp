@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Network Firewall stateless rule group, used in a
+   * <p>Network Firewall stateless rule group, used in a
    * <a>NetworkFirewallPolicyDescription</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatelessRuleGroup">AWS
    * API Reference</a></p>
@@ -121,26 +121,26 @@ namespace Model
 
 
     /**
-     * <p>The priority of the rule group. AWS Network Firewall evaluates the stateless
-     * rule groups in a firewall policy starting from the lowest priority setting. </p>
+     * <p>The priority of the rule group. Network Firewall evaluates the stateless rule
+     * groups in a firewall policy starting from the lowest priority setting. </p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority of the rule group. AWS Network Firewall evaluates the stateless
-     * rule groups in a firewall policy starting from the lowest priority setting. </p>
+     * <p>The priority of the rule group. Network Firewall evaluates the stateless rule
+     * groups in a firewall policy starting from the lowest priority setting. </p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority of the rule group. AWS Network Firewall evaluates the stateless
-     * rule groups in a firewall policy starting from the lowest priority setting. </p>
+     * <p>The priority of the rule group. Network Firewall evaluates the stateless rule
+     * groups in a firewall policy starting from the lowest priority setting. </p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority of the rule group. AWS Network Firewall evaluates the stateless
-     * rule groups in a firewall policy starting from the lowest priority setting. </p>
+     * <p>The priority of the rule group. Network Firewall evaluates the stateless rule
+     * groups in a firewall policy starting from the lowest priority setting. </p>
      */
     inline StatelessRuleGroup& WithPriority(int value) { SetPriority(value); return *this;}
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Violations for an EC2 instance resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Violation detail for an EC2 instance resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsEc2InstanceViolation">AWS
    * API Reference</a></p>
    */
@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline const Aws::Vector<AwsEc2NetworkInterfaceViolation>& GetAwsEc2NetworkInterfaceViolations() const{ return m_awsEc2NetworkInterfaceViolations; }
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline bool AwsEc2NetworkInterfaceViolationsHasBeenSet() const { return m_awsEc2NetworkInterfaceViolationsHasBeenSet; }
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline void SetAwsEc2NetworkInterfaceViolations(const Aws::Vector<AwsEc2NetworkInterfaceViolation>& value) { m_awsEc2NetworkInterfaceViolationsHasBeenSet = true; m_awsEc2NetworkInterfaceViolations = value; }
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline void SetAwsEc2NetworkInterfaceViolations(Aws::Vector<AwsEc2NetworkInterfaceViolation>&& value) { m_awsEc2NetworkInterfaceViolationsHasBeenSet = true; m_awsEc2NetworkInterfaceViolations = std::move(value); }
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline AwsEc2InstanceViolation& WithAwsEc2NetworkInterfaceViolations(const Aws::Vector<AwsEc2NetworkInterfaceViolation>& value) { SetAwsEc2NetworkInterfaceViolations(value); return *this;}
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline AwsEc2InstanceViolation& WithAwsEc2NetworkInterfaceViolations(Aws::Vector<AwsEc2NetworkInterfaceViolation>&& value) { SetAwsEc2NetworkInterfaceViolations(std::move(value)); return *this;}
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline AwsEc2InstanceViolation& AddAwsEc2NetworkInterfaceViolations(const AwsEc2NetworkInterfaceViolation& value) { m_awsEc2NetworkInterfaceViolationsHasBeenSet = true; m_awsEc2NetworkInterfaceViolations.push_back(value); return *this; }
 
     /**
-     * <p>Violations for network interfaces associated with the EC2 instance.</p>
+     * <p>Violation detail for network interfaces associated with the EC2 instance.</p>
      */
     inline AwsEc2InstanceViolation& AddAwsEc2NetworkInterfaceViolations(AwsEc2NetworkInterfaceViolation&& value) { m_awsEc2NetworkInterfaceViolationsHasBeenSet = true; m_awsEc2NetworkInterfaceViolations.push_back(std::move(value)); return *this; }
 

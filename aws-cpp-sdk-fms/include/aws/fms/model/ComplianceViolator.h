@@ -113,8 +113,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -123,8 +123,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -133,8 +133,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -143,8 +143,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -153,8 +153,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -163,8 +163,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -173,8 +173,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
@@ -183,8 +183,8 @@ namespace Model
 
     /**
      * <p>The resource type. This is in the format shown in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      * <code>AWS::CloudFront::Distribution</code>, or
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>

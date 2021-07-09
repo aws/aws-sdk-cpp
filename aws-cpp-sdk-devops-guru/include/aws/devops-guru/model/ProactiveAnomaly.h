@@ -10,6 +10,7 @@
 #include <aws/devops-guru/model/AnomalyStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/devops-guru/model/AnomalyTimeRange.h>
+#include <aws/devops-guru/model/AnomalyReportedTimeRange.h>
 #include <aws/devops-guru/model/PredictionTimeRange.h>
 #include <aws/devops-guru/model/AnomalySourceDetails.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
@@ -198,6 +199,43 @@ namespace Model
     inline ProactiveAnomaly& WithAnomalyTimeRange(AnomalyTimeRange&& value) { SetAnomalyTimeRange(std::move(value)); return *this;}
 
 
+    /**
+     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
+     * between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline const AnomalyReportedTimeRange& GetAnomalyReportedTimeRange() const{ return m_anomalyReportedTimeRange; }
+
+    /**
+     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
+     * between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline bool AnomalyReportedTimeRangeHasBeenSet() const { return m_anomalyReportedTimeRangeHasBeenSet; }
+
+    /**
+     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
+     * between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline void SetAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = value; }
+
+    /**
+     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
+     * between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline void SetAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = std::move(value); }
+
+    /**
+     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
+     * between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline ProactiveAnomaly& WithAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { SetAnomalyReportedTimeRange(value); return *this;}
+
+    /**
+     * <p> A <code>AnomalyReportedTimeRange</code> object that specifies the time range
+     * between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline ProactiveAnomaly& WithAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { SetAnomalyReportedTimeRange(std::move(value)); return *this;}
+
+
     
     inline const PredictionTimeRange& GetPredictionTimeRange() const{ return m_predictionTimeRange; }
 
@@ -366,6 +404,9 @@ namespace Model
 
     AnomalyTimeRange m_anomalyTimeRange;
     bool m_anomalyTimeRangeHasBeenSet;
+
+    AnomalyReportedTimeRange m_anomalyReportedTimeRange;
+    bool m_anomalyReportedTimeRangeHasBeenSet;
 
     PredictionTimeRange m_predictionTimeRange;
     bool m_predictionTimeRangeHasBeenSet;

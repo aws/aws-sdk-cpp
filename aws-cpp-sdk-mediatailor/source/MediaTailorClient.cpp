@@ -37,6 +37,7 @@
 #include <aws/mediatailor/model/GetChannelPolicyRequest.h>
 #include <aws/mediatailor/model/GetChannelScheduleRequest.h>
 #include <aws/mediatailor/model/GetPlaybackConfigurationRequest.h>
+#include <aws/mediatailor/model/ListAlertsRequest.h>
 #include <aws/mediatailor/model/ListChannelsRequest.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsRequest.h>
 #include <aws/mediatailor/model/ListSourceLocationsRequest.h>
@@ -695,6 +696,36 @@ void MediaTailorClient::GetPlaybackConfigurationAsync(const GetPlaybackConfigura
 void MediaTailorClient::GetPlaybackConfigurationAsyncHelper(const GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPlaybackConfiguration(request), context);
+}
+
+ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAlerts", "Required field: ResourceArn, is not set");
+    return ListAlertsOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alerts");
+  return ListAlertsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAlertsOutcomeCallable MediaTailorClient::ListAlertsCallable(const ListAlertsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAlertsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlerts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaTailorClient::ListAlertsAsync(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAlertsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaTailorClient::ListAlertsAsyncHelper(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAlerts(request), context);
 }
 
 ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& request) const

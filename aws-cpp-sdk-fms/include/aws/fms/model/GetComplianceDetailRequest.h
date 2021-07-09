@@ -92,50 +92,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline const Aws::String& GetMemberAccount() const{ return m_memberAccount; }
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline void SetMemberAccount(const Aws::String& value) { m_memberAccountHasBeenSet = true; m_memberAccount = value; }
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline void SetMemberAccount(Aws::String&& value) { m_memberAccountHasBeenSet = true; m_memberAccount = std::move(value); }
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline void SetMemberAccount(const char* value) { m_memberAccountHasBeenSet = true; m_memberAccount.assign(value); }
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline GetComplianceDetailRequest& WithMemberAccount(const Aws::String& value) { SetMemberAccount(value); return *this;}
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline GetComplianceDetailRequest& WithMemberAccount(Aws::String&& value) { SetMemberAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that owns the resources that you want to get the details
-     * for.</p>
+     * <p>The Amazon Web Services account that owns the resources that you want to get
+     * the details for.</p>
      */
     inline GetComplianceDetailRequest& WithMemberAccount(const char* value) { SetMemberAccount(value); return *this;}
 

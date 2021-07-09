@@ -25,6 +25,7 @@ ReactiveAnomalySummary::ReactiveAnomalySummary() :
     m_status(AnomalyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_anomalyTimeRangeHasBeenSet(false),
+    m_anomalyReportedTimeRangeHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false),
     m_associatedInsightIdHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false)
@@ -38,6 +39,7 @@ ReactiveAnomalySummary::ReactiveAnomalySummary(JsonView jsonValue) :
     m_status(AnomalyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_anomalyTimeRangeHasBeenSet(false),
+    m_anomalyReportedTimeRangeHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false),
     m_associatedInsightIdHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false)
@@ -73,6 +75,13 @@ ReactiveAnomalySummary& ReactiveAnomalySummary::operator =(JsonView jsonValue)
     m_anomalyTimeRange = jsonValue.GetObject("AnomalyTimeRange");
 
     m_anomalyTimeRangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnomalyReportedTimeRange"))
+  {
+    m_anomalyReportedTimeRange = jsonValue.GetObject("AnomalyReportedTimeRange");
+
+    m_anomalyReportedTimeRangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceDetails"))
@@ -122,6 +131,12 @@ JsonValue ReactiveAnomalySummary::Jsonize() const
   if(m_anomalyTimeRangeHasBeenSet)
   {
    payload.WithObject("AnomalyTimeRange", m_anomalyTimeRange.Jsonize());
+
+  }
+
+  if(m_anomalyReportedTimeRangeHasBeenSet)
+  {
+   payload.WithObject("AnomalyReportedTimeRange", m_anomalyReportedTimeRange.Jsonize());
 
   }
 

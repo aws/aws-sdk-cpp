@@ -143,14 +143,16 @@ namespace Model
 
 
         /**
-         * <p>Creates an Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Outpost.</p> <p>You can specify <code>AvailabilityZone</code> or
+         * <code>AvailabilityZoneId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateOutpostOutcome CreateOutpost(const Model::CreateOutpostRequest& request) const;
 
         /**
-         * <p>Creates an Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Outpost.</p> <p>You can specify <code>AvailabilityZone</code> or
+         * <code>AvailabilityZoneId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">AWS
          * API Reference</a></p>
          *
@@ -159,7 +161,8 @@ namespace Model
         virtual Model::CreateOutpostOutcomeCallable CreateOutpostCallable(const Model::CreateOutpostRequest& request) const;
 
         /**
-         * <p>Creates an Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Outpost.</p> <p>You can specify <code>AvailabilityZone</code> or
+         * <code>AvailabilityZoneId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">AWS
          * API Reference</a></p>
          *
@@ -271,14 +274,24 @@ namespace Model
         virtual void GetOutpostInstanceTypesAsync(const Model::GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the Outposts for your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a list of the Outposts for your AWS account. Add filters to your
+         * request to return a more specific list of results. Use filters to match an
+         * Outpost lifecycle status, Availibility Zone (<code>us-east-1a</code>), and AZ ID
+         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
+         * are joined with an <code>AND</code>, and the request returns only results that
+         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOutpostsOutcome ListOutposts(const Model::ListOutpostsRequest& request) const;
 
         /**
-         * <p>List the Outposts for your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a list of the Outposts for your AWS account. Add filters to your
+         * request to return a more specific list of results. Use filters to match an
+         * Outpost lifecycle status, Availibility Zone (<code>us-east-1a</code>), and AZ ID
+         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
+         * are joined with an <code>AND</code>, and the request returns only results that
+         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          *
@@ -287,7 +300,12 @@ namespace Model
         virtual Model::ListOutpostsOutcomeCallable ListOutpostsCallable(const Model::ListOutpostsRequest& request) const;
 
         /**
-         * <p>List the Outposts for your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a list of the Outposts for your AWS account. Add filters to your
+         * request to return a more specific list of results. Use filters to match an
+         * Outpost lifecycle status, Availibility Zone (<code>us-east-1a</code>), and AZ ID
+         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
+         * are joined with an <code>AND</code>, and the request returns only results that
+         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          *
