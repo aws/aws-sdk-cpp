@@ -26,46 +26,6 @@ using namespace Aws::Client;
 static const char randomUri[] = "http://some.unknown1234xxx.test.aws";
 static const char randomDomain[] = "some.unknown1234xxx.test.aws";
 
-#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
-
-static bool curlErrorMatches(int curlErrorCode, const Aws::String &errorMessage)
-{
-    Aws::StringStream ss;
-    ss << "curlCode: ";
-    ss << curlErrorCode;
-    Aws::String errorMessageCurlCode = ss.str();
-    if (errorMessage.length() < errorMessageCurlCode.length())
-    {
-        return false;
-    }
-    else
-    {
-        for (size_t i = 0; i < errorMessageCurlCode.length(); i++)
-        {
-            if (errorMessageCurlCode[i] != errorMessage[i])
-            {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
-static void
-assertErrorMessageIsPrefixedWithCurlErrorCode(int curlErrorCode, const Aws::String &errorMessage, bool sslErrorIsAPass)
-{
-
-    if (sslErrorIsAPass && curlErrorMatches(CURLE_SSL_CONNECT_ERROR, errorMessage)) {
-        return; // Depending on CURL version SSL connection may be the reported error in place of other expected errors
-    }
-    if (!curlErrorMatches(curlErrorCode, errorMessage))
-    {
-        AWS_LOGSTREAM_DEBUG("HTTP_TEST_CODE_ERROR", "The curl error code has to be " << curlErrorCode << " in [" << errorMessage <<"]")
-        FAIL() << "The curl error code has to be " << curlErrorCode << " in [" << errorMessage <<"]";
-    }
-}
-#endif //ENABLE_CURL_CLIENT AND NOT ANDROID
-
 static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient, bool expectProxyError)
 {
     auto request = CreateHttpRequest(Aws::String(randomUri),HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -78,18 +38,12 @@ static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient, bool e
         ASSERT_TRUE(response->HasClientError());
         ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
         ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
-#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
-        assertErrorMessageIsPrefixedWithCurlErrorCode(CURLE_OPERATION_TIMEDOUT, response->GetClientErrorMessage(), true);
-#endif
     }
     else
     {
         if (response->HasClientError()) {
             ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
             ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
-#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
-            assertErrorMessageIsPrefixedWithCurlErrorCode(CURLE_COULDNT_RESOLVE_HOST, response->GetClientErrorMessage(), false);
-#endif
         }
         else
         {

@@ -136,6 +136,16 @@ namespace Aws
              */
             virtual Aws::String GetCurrentRegion() const;
 
+            /**
+             * Sets endpoint used to connect to the EC2 Instance metadata Service
+             */
+            virtual void SetEndpoint(const Aws::String& endpoint);
+
+            /**
+             * Gets endpoint used to connect to the EC2 Instance metadata Service
+             */
+            virtual Aws::String GetEndpoint() const;
+
         private:
             Aws::String m_endpoint;
             mutable std::recursive_mutex m_tokenMutex;

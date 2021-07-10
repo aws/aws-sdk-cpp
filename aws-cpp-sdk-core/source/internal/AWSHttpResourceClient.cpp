@@ -351,6 +351,16 @@ namespace Aws
             return region;
         }
 
+        void EC2MetadataClient::SetEndpoint(const Aws::String& endpoint)
+        {
+            m_endpoint = endpoint;
+        }
+
+        Aws::String EC2MetadataClient::GetEndpoint() const
+        {
+            return Aws::String(m_endpoint);
+        }
+
         #ifdef _MSC_VER
             // VS2015 compiler's bug, warning s_ec2metadataClient: symbol will be dynamically initialized (implementation limitation)
             AWS_SUPPRESS_WARNING(4592,
@@ -366,7 +376,12 @@ namespace Aws
             {
                 return;
             }
-            s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG);
+            Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+            if (ec2MetadataServiceEndpoint.empty())
+            {
+                ec2MetadataServiceEndpoint = "http://169.254.169.254"; //default to IPv4 default endpoint
+            }
+            s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG, ec2MetadataServiceEndpoint.c_str());
         }
 
         void CleanupEC2MetadataClient()
@@ -382,7 +397,6 @@ namespace Aws
         {
             return s_ec2metadataClient;
         }
-
 
         ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char* endpoint, const char* token)
             : AWSHttpResourceClient(ECS_CREDENTIALS_CLIENT_LOG_TAG),

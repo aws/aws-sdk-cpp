@@ -303,91 +303,273 @@ namespace Model
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEventVariables() const{ return m_eventVariables; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline bool EventVariablesHasBeenSet() const { return m_eventVariablesHasBeenSet; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline void SetEventVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_eventVariablesHasBeenSet = true; m_eventVariables = value; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline void SetEventVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables = std::move(value); }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& WithEventVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEventVariables(value); return *this;}
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& WithEventVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEventVariables(std::move(value)); return *this;}
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(const Aws::String& key, const Aws::String& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, value); return *this; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(Aws::String&& key, const Aws::String& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(const Aws::String& key, Aws::String&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(Aws::String&& key, Aws::String&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(const char* key, Aws::String&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(Aws::String&& key, const char* value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Names of the event type's variables you defined in Amazon Fraud Detector to
      * represent data elements and their corresponding values for the event you are
-     * sending for evaluation.</p>
+     * sending for evaluation.</p>  <ul> <li> <p>You must provide at least
+     * one eventVariable</p> </li> <li> <p>If detectorVersion is associated with a
+     * modelVersion, you must provide at least one associated eventVariable</p> </li>
+     * </ul>  <p>To ensure highest possible fraud prediction and to
+     * simplify your data preparation, Amazon Fraud Detector will replace all missing
+     * variables or values as follows:</p> <p> <b>For Amazon Fraud Detector trained
+     * models:</b> </p> <p>If a null value is provided explicitly for a variable or if
+     * a variable is missing, model will replace the null value or the missing variable
+     * (no variable name in the eventVariables map) with calculated default
+     * mean/medians for numeric variables and with special values for categorical
+     * variables.</p> <p> <b>For External models ( for example, imported
+     * SageMaker):</b> </p> <p>If a null value is provided explicitly for a variable,
+     * the model and rules will use “null” as the value. If a variable is not provided
+     * (no variable name in the eventVariables map), model and rules will use the
+     * default value that is provided for the variable. </p>
      */
     inline GetEventPredictionRequest& AddEventVariables(const char* key, const char* value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, value); return *this; }
 

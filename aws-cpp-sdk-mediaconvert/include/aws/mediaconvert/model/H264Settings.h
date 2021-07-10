@@ -1316,50 +1316,38 @@ namespace Model
 
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline const H264QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline bool QvbrSettingsHasBeenSet() const { return m_qvbrSettingsHasBeenSet; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(const H264QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline void SetQvbrSettings(H264QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline H264Settings& WithQvbrSettings(const H264QvbrSettings& value) { SetQvbrSettings(value); return *this;}
 
     /**
-     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
-     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
-     * control mode to a value other than QVBR, or when you don't define Rate control
-     * mode.
+     * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+     * these settings only when you set QVBR for Rate control mode (RateControlMode).
      */
     inline H264Settings& WithQvbrSettings(H264QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 

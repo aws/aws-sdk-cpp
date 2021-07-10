@@ -18,6 +18,7 @@
 #include <aws/mediaconvert/model/CmafPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/CmafSegmentControl.h>
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
+#include <aws/mediaconvert/model/CmafTargetDurationCompatibilityMode.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
 #include <aws/mediaconvert/model/CmafWriteHLSManifest.h>
 #include <aws/mediaconvert/model/CmafWriteSegmentTimelineInRepresentation.h>
@@ -990,6 +991,85 @@ namespace Model
 
 
     /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline const CmafTargetDurationCompatibilityMode& GetTargetDurationCompatibilityMode() const{ return m_targetDurationCompatibilityMode; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline bool TargetDurationCompatibilityModeHasBeenSet() const { return m_targetDurationCompatibilityModeHasBeenSet; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(const CmafTargetDurationCompatibilityMode& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = value; }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline void SetTargetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode&& value) { m_targetDurationCompatibilityModeHasBeenSet = true; m_targetDurationCompatibilityMode = std::move(value); }
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline CmafGroupSettings& WithTargetDurationCompatibilityMode(const CmafTargetDurationCompatibilityMode& value) { SetTargetDurationCompatibilityMode(value); return *this;}
+
+    /**
+     * When set to LEGACY, the segment target duration is always rounded up to the
+     * nearest integer value above its current value in seconds. When set to
+     * SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest
+     * integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and
+     * rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client
+     * needs to ensure that the target duration is always longer than the actual
+     * duration of the segment. Some older players may experience interrupted playback
+     * when the actual duration of a track in a segment is longer than the target
+     * duration.
+     */
+    inline CmafGroupSettings& WithTargetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode&& value) { SetTargetDurationCompatibilityMode(std::move(value)); return *this;}
+
+
+    /**
      * When set to ENABLED, a DASH MPD manifest will be generated for this output.
      */
     inline const CmafWriteDASHManifest& GetWriteDashManifest() const{ return m_writeDashManifest; }
@@ -1172,6 +1252,9 @@ namespace Model
 
     CmafStreamInfResolution m_streamInfResolution;
     bool m_streamInfResolutionHasBeenSet;
+
+    CmafTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
+    bool m_targetDurationCompatibilityModeHasBeenSet;
 
     CmafWriteDASHManifest m_writeDashManifest;
     bool m_writeDashManifestHasBeenSet;

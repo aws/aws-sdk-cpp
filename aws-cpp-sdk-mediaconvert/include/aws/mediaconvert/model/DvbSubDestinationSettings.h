@@ -405,50 +405,50 @@ All burn-in and
 
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for
-     * source captions that are STL, 608/embedded or teletext. These source settings
-     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
-     * settings must match.
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source
+     * captions that are STL, 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
      */
     inline const DvbSubtitleFontColor& GetFontColor() const{ return m_fontColor; }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for
-     * source captions that are STL, 608/embedded or teletext. These source settings
-     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
-     * settings must match.
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source
+     * captions that are STL, 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
      */
     inline bool FontColorHasBeenSet() const { return m_fontColorHasBeenSet; }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for
-     * source captions that are STL, 608/embedded or teletext. These source settings
-     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
-     * settings must match.
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source
+     * captions that are STL, 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
      */
     inline void SetFontColor(const DvbSubtitleFontColor& value) { m_fontColorHasBeenSet = true; m_fontColor = value; }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for
-     * source captions that are STL, 608/embedded or teletext. These source settings
-     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
-     * settings must match.
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source
+     * captions that are STL, 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
      */
     inline void SetFontColor(DvbSubtitleFontColor&& value) { m_fontColorHasBeenSet = true; m_fontColor = std::move(value); }
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for
-     * source captions that are STL, 608/embedded or teletext. These source settings
-     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
-     * settings must match.
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source
+     * captions that are STL, 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
      */
     inline DvbSubDestinationSettings& WithFontColor(const DvbSubtitleFontColor& value) { SetFontColor(value); return *this;}
 
     /**
-     * Specifies the color of the burned-in captions. This option is not valid for
-     * source captions that are STL, 608/embedded or teletext. These source settings
-     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
-     * settings must match.
+     * Specifies the color of the DVB-SUB captions. This option is not valid for source
+     * captions that are STL, 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
      */
     inline DvbSubDestinationSettings& WithFontColor(DvbSubtitleFontColor&& value) { SetFontColor(std::move(value)); return *this;}
 

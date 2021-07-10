@@ -350,8 +350,16 @@ namespace Aws
         static const char* const EC2_INSTANCE_PROFILE_LOG_TAG = "Aws::Config::EC2InstanceProfileConfigLoader";
 
         EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client)
-            : m_ec2metadataClient(client == nullptr ? Aws::MakeShared<Aws::Internal::EC2MetadataClient>(EC2_INSTANCE_PROFILE_LOG_TAG) : client)
         {
+            if(client == nullptr)
+            {
+                Aws::Internal::InitEC2MetadataClient();
+                m_ec2metadataClient = Aws::Internal::GetEC2MetadataClient();
+            }
+            else
+            {
+                m_ec2metadataClient = client;
+            }
         }
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
