@@ -39,26 +39,22 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of nodes that the managed node group can scale in to. This
-     * number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum number of nodes that the managed node group can scale in to. This
-     * number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum number of nodes that the managed node group can scale in to. This
-     * number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum number of nodes that the managed node group can scale in to. This
-     * number must be greater than zero.</p>
+     * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
     inline NodegroupScalingConfig& WithMinSize(int value) { SetMinSize(value); return *this;}
 

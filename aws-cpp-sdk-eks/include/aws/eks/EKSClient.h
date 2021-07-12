@@ -219,16 +219,16 @@ namespace Model
 
   /**
    * <p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that
-   * makes it easy for you to run Kubernetes on AWS without needing to stand up or
-   * maintain your own Kubernetes control plane. Kubernetes is an open-source system
-   * for automating the deployment, scaling, and management of containerized
-   * applications. </p> <p>Amazon EKS runs up-to-date versions of the open-source
-   * Kubernetes software, so you can use all the existing plugins and tooling from
-   * the Kubernetes community. Applications running on Amazon EKS are fully
-   * compatible with applications running on any standard Kubernetes environment,
-   * whether running in on-premises data centers or public clouds. This means that
-   * you can easily migrate any standard Kubernetes application to Amazon EKS without
-   * any code modification required.</p>
+   * makes it easy for you to run Kubernetes on Amazon Web Services without needing
+   * to stand up or maintain your own Kubernetes control plane. Kubernetes is an
+   * open-source system for automating the deployment, scaling, and management of
+   * containerized applications. </p> <p>Amazon EKS runs up-to-date versions of the
+   * open-source Kubernetes software, so you can use all the existing plugins and
+   * tooling from the Kubernetes community. Applications running on Amazon EKS are
+   * fully compatible with applications running on any standard Kubernetes
+   * environment, whether running in on-premises data centers or public clouds. This
+   * means that you can easily migrate any standard Kubernetes application to Amazon
+   * EKS without any code modification required.</p>
    */
   class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient
   {
@@ -261,8 +261,8 @@ namespace Model
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
          * this API to enable encryption on existing clusters which do not have encryption
          * already enabled. This allows you to implement a defense-in-depth security
-         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * strategy without migrating applications to new Amazon EKS
+         * clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
          * API Reference</a></p>
          */
@@ -272,8 +272,8 @@ namespace Model
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
          * this API to enable encryption on existing clusters which do not have encryption
          * already enabled. This allows you to implement a defense-in-depth security
-         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * strategy without migrating applications to new Amazon EKS
+         * clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
          * API Reference</a></p>
          *
@@ -285,8 +285,8 @@ namespace Model
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
          * this API to enable encryption on existing clusters which do not have encryption
          * already enabled. This allows you to implement a defense-in-depth security
-         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * strategy without migrating applications to new Amazon EKS
+         * clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
          * API Reference</a></p>
          *
@@ -390,20 +390,20 @@ namespace Model
          * <p>Creates an Amazon EKS control plane. </p> <p>The Amazon EKS control plane
          * consists of control plane instances that run the Kubernetes software, such as
          * <code>etcd</code> and the API server. The control plane runs in an account
-         * managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server
-         * endpoint. Each Amazon EKS cluster control plane is single-tenant and unique and
-         * runs on its own set of Amazon EC2 instances.</p> <p>The cluster control plane is
-         * provisioned across multiple Availability Zones and fronted by an Elastic Load
-         * Balancing Network Load Balancer. Amazon EKS also provisions elastic network
-         * interfaces in your VPC subnets to provide connectivity from the control plane
-         * instances to the nodes (for example, to support <code>kubectl exec</code>,
-         * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
-         * run in your AWS account and connect to your cluster's control plane via the
-         * Kubernetes API server endpoint and a certificate file that is created for your
-         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
-         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
-         * communicate with the API server and launch nodes into your cluster. For more
-         * information, see <a
+         * managed by Amazon Web Services, and the Kubernetes API is exposed via the Amazon
+         * EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant
+         * and unique and runs on its own set of Amazon EC2 instances.</p> <p>The cluster
+         * control plane is provisioned across multiple Availability Zones and fronted by
+         * an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions
+         * elastic network interfaces in your VPC subnets to provide connectivity from the
+         * control plane instances to the nodes (for example, to support <code>kubectl
+         * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
+         * <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your
+         * cluster's control plane via the Kubernetes API server endpoint and a certificate
+         * file that is created for your cluster.</p> <p>Cluster creation typically takes
+         * several minutes. After you create an Amazon EKS cluster, you must configure your
+         * Kubernetes tooling to communicate with the API server and launch nodes into your
+         * cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -418,20 +418,20 @@ namespace Model
          * <p>Creates an Amazon EKS control plane. </p> <p>The Amazon EKS control plane
          * consists of control plane instances that run the Kubernetes software, such as
          * <code>etcd</code> and the API server. The control plane runs in an account
-         * managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server
-         * endpoint. Each Amazon EKS cluster control plane is single-tenant and unique and
-         * runs on its own set of Amazon EC2 instances.</p> <p>The cluster control plane is
-         * provisioned across multiple Availability Zones and fronted by an Elastic Load
-         * Balancing Network Load Balancer. Amazon EKS also provisions elastic network
-         * interfaces in your VPC subnets to provide connectivity from the control plane
-         * instances to the nodes (for example, to support <code>kubectl exec</code>,
-         * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
-         * run in your AWS account and connect to your cluster's control plane via the
-         * Kubernetes API server endpoint and a certificate file that is created for your
-         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
-         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
-         * communicate with the API server and launch nodes into your cluster. For more
-         * information, see <a
+         * managed by Amazon Web Services, and the Kubernetes API is exposed via the Amazon
+         * EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant
+         * and unique and runs on its own set of Amazon EC2 instances.</p> <p>The cluster
+         * control plane is provisioned across multiple Availability Zones and fronted by
+         * an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions
+         * elastic network interfaces in your VPC subnets to provide connectivity from the
+         * control plane instances to the nodes (for example, to support <code>kubectl
+         * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
+         * <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your
+         * cluster's control plane via the Kubernetes API server endpoint and a certificate
+         * file that is created for your cluster.</p> <p>Cluster creation typically takes
+         * several minutes. After you create an Amazon EKS cluster, you must configure your
+         * Kubernetes tooling to communicate with the API server and launch nodes into your
+         * cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -448,20 +448,20 @@ namespace Model
          * <p>Creates an Amazon EKS control plane. </p> <p>The Amazon EKS control plane
          * consists of control plane instances that run the Kubernetes software, such as
          * <code>etcd</code> and the API server. The control plane runs in an account
-         * managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server
-         * endpoint. Each Amazon EKS cluster control plane is single-tenant and unique and
-         * runs on its own set of Amazon EC2 instances.</p> <p>The cluster control plane is
-         * provisioned across multiple Availability Zones and fronted by an Elastic Load
-         * Balancing Network Load Balancer. Amazon EKS also provisions elastic network
-         * interfaces in your VPC subnets to provide connectivity from the control plane
-         * instances to the nodes (for example, to support <code>kubectl exec</code>,
-         * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
-         * run in your AWS account and connect to your cluster's control plane via the
-         * Kubernetes API server endpoint and a certificate file that is created for your
-         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
-         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
-         * communicate with the API server and launch nodes into your cluster. For more
-         * information, see <a
+         * managed by Amazon Web Services, and the Kubernetes API is exposed via the Amazon
+         * EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant
+         * and unique and runs on its own set of Amazon EC2 instances.</p> <p>The cluster
+         * control plane is provisioned across multiple Availability Zones and fronted by
+         * an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions
+         * elastic network interfaces in your VPC subnets to provide connectivity from the
+         * control plane instances to the nodes (for example, to support <code>kubectl
+         * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
+         * <p>Amazon EKS nodes run in your Amazon Web Services account and connect to your
+         * cluster's control plane via the Kubernetes API server endpoint and a certificate
+         * file that is created for your cluster.</p> <p>Cluster creation typically takes
+         * several minutes. After you create an Amazon EKS cluster, you must configure your
+         * Kubernetes tooling to communicate with the API server and launch nodes into your
+         * cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
@@ -475,7 +475,7 @@ namespace Model
         virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at
+         * <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
          * Fargate and specify which pods run on which Fargate profile. This declaration is
@@ -501,16 +501,15 @@ namespace Model
          * <code>DELETING</code> status, you must wait for that Fargate profile to finish
          * deleting before you can create any other profiles in that cluster.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
-         * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
+         * Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFargateProfileOutcome CreateFargateProfile(const Model::CreateFargateProfileRequest& request) const;
 
         /**
-         * <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at
+         * <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
          * Fargate and specify which pods run on which Fargate profile. This declaration is
@@ -536,9 +535,8 @@ namespace Model
          * <code>DELETING</code> status, you must wait for that Fargate profile to finish
          * deleting before you can create any other profiles in that cluster.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
-         * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
+         * Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">AWS
          * API Reference</a></p>
          *
@@ -547,7 +545,7 @@ namespace Model
         virtual Model::CreateFargateProfileOutcomeCallable CreateFargateProfileCallable(const Model::CreateFargateProfileRequest& request) const;
 
         /**
-         * <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at
+         * <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at
          * least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
          * <p>The Fargate profile allows an administrator to declare which pods run on
          * Fargate and specify which pods run on which Fargate profile. This declaration is
@@ -573,9 +571,8 @@ namespace Model
          * <code>DELETING</code> status, you must wait for that Fargate profile to finish
          * deleting before you can create any other profiles in that cluster.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
-         * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">Fargate
+         * Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">AWS
          * API Reference</a></p>
          *
@@ -592,9 +589,9 @@ namespace Model
          * templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
-         * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
-         * for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
-         * optimized Amazon Linux 2 AMI. For more information, see <a
+         * Auto Scaling group and associated Amazon EC2 instances that are managed by
+         * Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of
+         * the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
          * <a
@@ -612,9 +609,9 @@ namespace Model
          * templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
-         * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
-         * for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
-         * optimized Amazon Linux 2 AMI. For more information, see <a
+         * Auto Scaling group and associated Amazon EC2 instances that are managed by
+         * Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of
+         * the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
          * <a
@@ -634,9 +631,9 @@ namespace Model
          * templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
-         * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
-         * for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
-         * optimized Amazon Linux 2 AMI. For more information, see <a
+         * Auto Scaling group and associated Amazon EC2 instances that are managed by
+         * Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of
+         * the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
          * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
          * <a
@@ -731,7 +728,7 @@ namespace Model
         virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Fargate profile.</p> <p>When you delete a Fargate profile, any
+         * <p>Deletes an Fargate profile.</p> <p>When you delete a Fargate profile, any
          * pods running on Fargate that were created with the profile are deleted. If those
          * pods match another Fargate profile, then they are scheduled on Fargate with that
          * profile. If they no longer match any Fargate profiles, then they are not
@@ -745,7 +742,7 @@ namespace Model
         virtual Model::DeleteFargateProfileOutcome DeleteFargateProfile(const Model::DeleteFargateProfileRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Fargate profile.</p> <p>When you delete a Fargate profile, any
+         * <p>Deletes an Fargate profile.</p> <p>When you delete a Fargate profile, any
          * pods running on Fargate that were created with the profile are deleted. If those
          * pods match another Fargate profile, then they are scheduled on Fargate with that
          * profile. If they no longer match any Fargate profiles, then they are not
@@ -761,7 +758,7 @@ namespace Model
         virtual Model::DeleteFargateProfileOutcomeCallable DeleteFargateProfileCallable(const Model::DeleteFargateProfileRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Fargate profile.</p> <p>When you delete a Fargate profile, any
+         * <p>Deletes an Fargate profile.</p> <p>When you delete a Fargate profile, any
          * pods running on Fargate that were created with the profile are deleted. If those
          * pods match another Fargate profile, then they are scheduled on Fargate with that
          * profile. If they no longer match any Fargate profiles, then they are not
@@ -901,7 +898,7 @@ namespace Model
         virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns descriptive information about an AWS Fargate profile.</p><p><h3>See
+         * <p>Returns descriptive information about an Fargate profile.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
          * API Reference</a></p>
@@ -909,7 +906,7 @@ namespace Model
         virtual Model::DescribeFargateProfileOutcome DescribeFargateProfile(const Model::DescribeFargateProfileRequest& request) const;
 
         /**
-         * <p>Returns descriptive information about an AWS Fargate profile.</p><p><h3>See
+         * <p>Returns descriptive information about an Fargate profile.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
          * API Reference</a></p>
@@ -919,7 +916,7 @@ namespace Model
         virtual Model::DescribeFargateProfileOutcomeCallable DescribeFargateProfileCallable(const Model::DescribeFargateProfileRequest& request) const;
 
         /**
-         * <p>Returns descriptive information about an AWS Fargate profile.</p><p><h3>See
+         * <p>Returns descriptive information about an Fargate profile.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
          * API Reference</a></p>
@@ -1025,7 +1022,7 @@ namespace Model
          * <p>Disassociates an identity provider configuration from a cluster. If you
          * disassociate an identity provider from your cluster, users included in the
          * provider can no longer access the cluster. However, you can still access the
-         * cluster with AWS IAM users.</p><p><h3>See Also:</h3>   <a
+         * cluster with Amazon Web Services IAM users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
          * API Reference</a></p>
          */
@@ -1035,7 +1032,7 @@ namespace Model
          * <p>Disassociates an identity provider configuration from a cluster. If you
          * disassociate an identity provider from your cluster, users included in the
          * provider can no longer access the cluster. However, you can still access the
-         * cluster with AWS IAM users.</p><p><h3>See Also:</h3>   <a
+         * cluster with Amazon Web Services IAM users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
          * API Reference</a></p>
          *
@@ -1047,7 +1044,7 @@ namespace Model
          * <p>Disassociates an identity provider configuration from a cluster. If you
          * disassociate an identity provider from your cluster, users included in the
          * provider can no longer access the cluster. However, you can still access the
-         * cluster with AWS IAM users.</p><p><h3>See Also:</h3>   <a
+         * cluster with Amazon Web Services IAM users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
          * API Reference</a></p>
          *
@@ -1081,16 +1078,16 @@ namespace Model
         virtual void ListAddonsAsync(const Model::ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon EKS clusters in your AWS account in the specified
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the
+         * specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">AWS
          * API Reference</a></p>
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
         /**
-         * <p>Lists the Amazon EKS clusters in your AWS account in the specified
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the
+         * specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">AWS
          * API Reference</a></p>
          *
@@ -1099,8 +1096,8 @@ namespace Model
         virtual Model::ListClustersOutcomeCallable ListClustersCallable(const Model::ListClustersRequest& request) const;
 
         /**
-         * <p>Lists the Amazon EKS clusters in your AWS account in the specified
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon EKS clusters in your Amazon Web Services account in the
+         * specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">AWS
          * API Reference</a></p>
          *
@@ -1109,16 +1106,18 @@ namespace Model
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the AWS Fargate profiles associated with the specified cluster in your
-         * AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Fargate profiles associated with the specified cluster in your
+         * Amazon Web Services account in the specified Region.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFargateProfilesOutcome ListFargateProfiles(const Model::ListFargateProfilesRequest& request) const;
 
         /**
-         * <p>Lists the AWS Fargate profiles associated with the specified cluster in your
-         * AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Fargate profiles associated with the specified cluster in your
+         * Amazon Web Services account in the specified Region.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">AWS
          * API Reference</a></p>
          *
@@ -1127,8 +1126,9 @@ namespace Model
         virtual Model::ListFargateProfilesOutcomeCallable ListFargateProfilesCallable(const Model::ListFargateProfilesRequest& request) const;
 
         /**
-         * <p>Lists the AWS Fargate profiles associated with the specified cluster in your
-         * AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Fargate profiles associated with the specified cluster in your
+         * Amazon Web Services account in the specified Region.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">AWS
          * API Reference</a></p>
          *
@@ -1163,8 +1163,8 @@ namespace Model
 
         /**
          * <p>Lists the Amazon EKS managed node groups associated with the specified
-         * cluster in your AWS account in the specified Region. Self-managed node groups
-         * are not listed.</p><p><h3>See Also:</h3>   <a
+         * cluster in your Amazon Web Services account in the specified Region.
+         * Self-managed node groups are not listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
          * API Reference</a></p>
          */
@@ -1172,8 +1172,8 @@ namespace Model
 
         /**
          * <p>Lists the Amazon EKS managed node groups associated with the specified
-         * cluster in your AWS account in the specified Region. Self-managed node groups
-         * are not listed.</p><p><h3>See Also:</h3>   <a
+         * cluster in your Amazon Web Services account in the specified Region.
+         * Self-managed node groups are not listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
          * API Reference</a></p>
          *
@@ -1183,8 +1183,8 @@ namespace Model
 
         /**
          * <p>Lists the Amazon EKS managed node groups associated with the specified
-         * cluster in your AWS account in the specified Region. Self-managed node groups
-         * are not listed.</p><p><h3>See Also:</h3>   <a
+         * cluster in your Amazon Web Services account in the specified Region.
+         * Self-managed node groups are not listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
          * API Reference</a></p>
          *
@@ -1219,7 +1219,8 @@ namespace Model
 
         /**
          * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
-         * in your AWS account, in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * in your Amazon Web Services account, in the specified Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
          * Reference</a></p>
          */
@@ -1227,7 +1228,8 @@ namespace Model
 
         /**
          * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
-         * in your AWS account, in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * in your Amazon Web Services account, in the specified Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
          * Reference</a></p>
          *
@@ -1237,7 +1239,8 @@ namespace Model
 
         /**
          * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
-         * in your AWS account, in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * in your Amazon Web Services account, in the specified Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
          * Reference</a></p>
          *
@@ -1353,13 +1356,13 @@ namespace Model
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
          * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>You can also use this API operation to enable or
-         * disable public and private access to your cluster's Kubernetes API server
-         * endpoint. By default, public access is enabled, and private access is disabled.
-         * For more information, see <a
+         * <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+         *  <p>You can also use this API operation to enable or disable public and
+         * private access to your cluster's Kubernetes API server endpoint. By default,
+         * public access is enabled, and private access is disabled. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
          * </i>. </p>  <p>You can't update the subnets or security group IDs for
          * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
          * they should finish within a few minutes. During an update, the cluster status
@@ -1384,13 +1387,13 @@ namespace Model
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
          * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>You can also use this API operation to enable or
-         * disable public and private access to your cluster's Kubernetes API server
-         * endpoint. By default, public access is enabled, and private access is disabled.
-         * For more information, see <a
+         * <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+         *  <p>You can also use this API operation to enable or disable public and
+         * private access to your cluster's Kubernetes API server endpoint. By default,
+         * public access is enabled, and private access is disabled. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
          * </i>. </p>  <p>You can't update the subnets or security group IDs for
          * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
          * they should finish within a few minutes. During an update, the cluster status
@@ -1417,13 +1420,13 @@ namespace Model
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
          * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>You can also use this API operation to enable or
-         * disable public and private access to your cluster's Kubernetes API server
-         * endpoint. By default, public access is enabled, and private access is disabled.
-         * For more information, see <a
+         * <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+         *  <p>You can also use this API operation to enable or disable public and
+         * private access to your cluster's Kubernetes API server endpoint. By default,
+         * public access is enabled, and private access is disabled. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
          * </i>. </p>  <p>You can't update the subnets or security group IDs for
          * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
          * they should finish within a few minutes. During an update, the cluster status

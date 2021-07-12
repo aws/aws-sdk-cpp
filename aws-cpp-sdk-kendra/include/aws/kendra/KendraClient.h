@@ -22,6 +22,7 @@
 #include <aws/kendra/model/DescribeDataSourceResult.h>
 #include <aws/kendra/model/DescribeFaqResult.h>
 #include <aws/kendra/model/DescribeIndexResult.h>
+#include <aws/kendra/model/DescribePrincipalMappingResult.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsBlockListResult.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsConfigResult.h>
 #include <aws/kendra/model/DescribeThesaurusResult.h>
@@ -29,6 +30,7 @@
 #include <aws/kendra/model/ListDataSourceSyncJobsResult.h>
 #include <aws/kendra/model/ListDataSourcesResult.h>
 #include <aws/kendra/model/ListFaqsResult.h>
+#include <aws/kendra/model/ListGroupsOlderThanOrderingIdResult.h>
 #include <aws/kendra/model/ListIndicesResult.h>
 #include <aws/kendra/model/ListQuerySuggestionsBlockListsResult.h>
 #include <aws/kendra/model/ListTagsForResourceResult.h>
@@ -89,11 +91,13 @@ namespace Model
         class DeleteDataSourceRequest;
         class DeleteFaqRequest;
         class DeleteIndexRequest;
+        class DeletePrincipalMappingRequest;
         class DeleteQuerySuggestionsBlockListRequest;
         class DeleteThesaurusRequest;
         class DescribeDataSourceRequest;
         class DescribeFaqRequest;
         class DescribeIndexRequest;
+        class DescribePrincipalMappingRequest;
         class DescribeQuerySuggestionsBlockListRequest;
         class DescribeQuerySuggestionsConfigRequest;
         class DescribeThesaurusRequest;
@@ -101,10 +105,12 @@ namespace Model
         class ListDataSourceSyncJobsRequest;
         class ListDataSourcesRequest;
         class ListFaqsRequest;
+        class ListGroupsOlderThanOrderingIdRequest;
         class ListIndicesRequest;
         class ListQuerySuggestionsBlockListsRequest;
         class ListTagsForResourceRequest;
         class ListThesauriRequest;
+        class PutPrincipalMappingRequest;
         class QueryRequest;
         class StartDataSourceSyncJobRequest;
         class StopDataSourceSyncJobRequest;
@@ -129,11 +135,13 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteDataSourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteFaqOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteIndexOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeletePrincipalMappingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> DeleteThesaurusOutcome;
         typedef Aws::Utils::Outcome<DescribeDataSourceResult, KendraError> DescribeDataSourceOutcome;
         typedef Aws::Utils::Outcome<DescribeFaqResult, KendraError> DescribeFaqOutcome;
         typedef Aws::Utils::Outcome<DescribeIndexResult, KendraError> DescribeIndexOutcome;
+        typedef Aws::Utils::Outcome<DescribePrincipalMappingResult, KendraError> DescribePrincipalMappingOutcome;
         typedef Aws::Utils::Outcome<DescribeQuerySuggestionsBlockListResult, KendraError> DescribeQuerySuggestionsBlockListOutcome;
         typedef Aws::Utils::Outcome<DescribeQuerySuggestionsConfigResult, KendraError> DescribeQuerySuggestionsConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeThesaurusResult, KendraError> DescribeThesaurusOutcome;
@@ -141,10 +149,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDataSourceSyncJobsResult, KendraError> ListDataSourceSyncJobsOutcome;
         typedef Aws::Utils::Outcome<ListDataSourcesResult, KendraError> ListDataSourcesOutcome;
         typedef Aws::Utils::Outcome<ListFaqsResult, KendraError> ListFaqsOutcome;
+        typedef Aws::Utils::Outcome<ListGroupsOlderThanOrderingIdResult, KendraError> ListGroupsOlderThanOrderingIdOutcome;
         typedef Aws::Utils::Outcome<ListIndicesResult, KendraError> ListIndicesOutcome;
         typedef Aws::Utils::Outcome<ListQuerySuggestionsBlockListsResult, KendraError> ListQuerySuggestionsBlockListsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, KendraError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListThesauriResult, KendraError> ListThesauriOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> PutPrincipalMappingOutcome;
         typedef Aws::Utils::Outcome<QueryResult, KendraError> QueryOutcome;
         typedef Aws::Utils::Outcome<StartDataSourceSyncJobResult, KendraError> StartDataSourceSyncJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> StopDataSourceSyncJobOutcome;
@@ -169,11 +179,13 @@ namespace Model
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
         typedef std::future<DeleteFaqOutcome> DeleteFaqOutcomeCallable;
         typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
+        typedef std::future<DeletePrincipalMappingOutcome> DeletePrincipalMappingOutcomeCallable;
         typedef std::future<DeleteQuerySuggestionsBlockListOutcome> DeleteQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<DeleteThesaurusOutcome> DeleteThesaurusOutcomeCallable;
         typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
         typedef std::future<DescribeFaqOutcome> DescribeFaqOutcomeCallable;
         typedef std::future<DescribeIndexOutcome> DescribeIndexOutcomeCallable;
+        typedef std::future<DescribePrincipalMappingOutcome> DescribePrincipalMappingOutcomeCallable;
         typedef std::future<DescribeQuerySuggestionsBlockListOutcome> DescribeQuerySuggestionsBlockListOutcomeCallable;
         typedef std::future<DescribeQuerySuggestionsConfigOutcome> DescribeQuerySuggestionsConfigOutcomeCallable;
         typedef std::future<DescribeThesaurusOutcome> DescribeThesaurusOutcomeCallable;
@@ -181,10 +193,12 @@ namespace Model
         typedef std::future<ListDataSourceSyncJobsOutcome> ListDataSourceSyncJobsOutcomeCallable;
         typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
         typedef std::future<ListFaqsOutcome> ListFaqsOutcomeCallable;
+        typedef std::future<ListGroupsOlderThanOrderingIdOutcome> ListGroupsOlderThanOrderingIdOutcomeCallable;
         typedef std::future<ListIndicesOutcome> ListIndicesOutcomeCallable;
         typedef std::future<ListQuerySuggestionsBlockListsOutcome> ListQuerySuggestionsBlockListsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListThesauriOutcome> ListThesauriOutcomeCallable;
+        typedef std::future<PutPrincipalMappingOutcome> PutPrincipalMappingOutcomeCallable;
         typedef std::future<QueryOutcome> QueryOutcomeCallable;
         typedef std::future<StartDataSourceSyncJobOutcome> StartDataSourceSyncJobOutcomeCallable;
         typedef std::future<StopDataSourceSyncJobOutcome> StopDataSourceSyncJobOutcomeCallable;
@@ -212,11 +226,13 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteFaqRequest&, const Model::DeleteFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFaqResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteIndexRequest&, const Model::DeleteIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIndexResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DeletePrincipalMappingRequest&, const Model::DeletePrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteQuerySuggestionsBlockListRequest&, const Model::DeleteQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DeleteThesaurusRequest&, const Model::DeleteThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThesaurusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeDataSourceRequest&, const Model::DescribeDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeFaqRequest&, const Model::DescribeFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFaqResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeIndexRequest&, const Model::DescribeIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIndexResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DescribePrincipalMappingRequest&, const Model::DescribePrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeQuerySuggestionsBlockListRequest&, const Model::DescribeQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeQuerySuggestionsConfigRequest&, const Model::DescribeQuerySuggestionsConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuerySuggestionsConfigResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeThesaurusRequest&, const Model::DescribeThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThesaurusResponseReceivedHandler;
@@ -224,10 +240,12 @@ namespace Model
     typedef std::function<void(const KendraClient*, const Model::ListDataSourceSyncJobsRequest&, const Model::ListDataSourceSyncJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceSyncJobsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListFaqsRequest&, const Model::ListFaqsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFaqsResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::ListGroupsOlderThanOrderingIdRequest&, const Model::ListGroupsOlderThanOrderingIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsOlderThanOrderingIdResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListIndicesRequest&, const Model::ListIndicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndicesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListQuerySuggestionsBlockListsRequest&, const Model::ListQuerySuggestionsBlockListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuerySuggestionsBlockListsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListThesauriRequest&, const Model::ListThesauriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThesauriResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::PutPrincipalMappingRequest&, const Model::PutPrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::QueryRequest&, const Model::QueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::StartDataSourceSyncJobRequest&, const Model::StartDataSourceSyncJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataSourceSyncJobResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::StopDataSourceSyncJobRequest&, const Model::StopDataSourceSyncJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDataSourceSyncJobResponseReceivedHandler;
@@ -273,9 +291,9 @@ namespace Model
         /**
          * <p>Removes one or more documents from an index. The documents must have been
          * added with the <code>BatchPutDocument</code> operation.</p> <p>The documents are
-         * deleted asynchronously. You can see the progress of the deletion by using AWS
-         * CloudWatch. Any error messages related to the processing of the batch are sent
-         * to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
+         * deleted asynchronously. You can see the progress of the deletion by using Amazon
+         * Web Services CloudWatch. Any error messages related to the processing of the
+         * batch are sent to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">AWS
          * API Reference</a></p>
          */
@@ -284,9 +302,9 @@ namespace Model
         /**
          * <p>Removes one or more documents from an index. The documents must have been
          * added with the <code>BatchPutDocument</code> operation.</p> <p>The documents are
-         * deleted asynchronously. You can see the progress of the deletion by using AWS
-         * CloudWatch. Any error messages related to the processing of the batch are sent
-         * to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
+         * deleted asynchronously. You can see the progress of the deletion by using Amazon
+         * Web Services CloudWatch. Any error messages related to the processing of the
+         * batch are sent to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -297,9 +315,9 @@ namespace Model
         /**
          * <p>Removes one or more documents from an index. The documents must have been
          * added with the <code>BatchPutDocument</code> operation.</p> <p>The documents are
-         * deleted asynchronously. You can see the progress of the deletion by using AWS
-         * CloudWatch. Any error messages related to the processing of the batch are sent
-         * to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
+         * deleted asynchronously. You can see the progress of the deletion by using Amazon
+         * Web Services CloudWatch. Any error messages related to the processing of the
+         * batch are sent to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -372,9 +390,9 @@ namespace Model
          * ingest your text and unstructured text into an index, add custom attributes to
          * the documents, and to attach an access control list to the documents added to
          * the index.</p> <p>The documents are indexed asynchronously. You can see the
-         * progress of the batch using AWS CloudWatch. Any error messages related to
-         * processing the batch are sent to your AWS CloudWatch log.</p><p><h3>See
-         * Also:</h3>   <a
+         * progress of the batch using Amazon Web Services CloudWatch. Any error messages
+         * related to processing the batch are sent to your Amazon Web Services CloudWatch
+         * log.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">AWS
          * API Reference</a></p>
          */
@@ -387,9 +405,9 @@ namespace Model
          * ingest your text and unstructured text into an index, add custom attributes to
          * the documents, and to attach an access control list to the documents added to
          * the index.</p> <p>The documents are indexed asynchronously. You can see the
-         * progress of the batch using AWS CloudWatch. Any error messages related to
-         * processing the batch are sent to your AWS CloudWatch log.</p><p><h3>See
-         * Also:</h3>   <a
+         * progress of the batch using Amazon Web Services CloudWatch. Any error messages
+         * related to processing the batch are sent to your Amazon Web Services CloudWatch
+         * log.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">AWS
          * API Reference</a></p>
          *
@@ -404,9 +422,9 @@ namespace Model
          * ingest your text and unstructured text into an index, add custom attributes to
          * the documents, and to attach an access control list to the documents added to
          * the index.</p> <p>The documents are indexed asynchronously. You can see the
-         * progress of the batch using AWS CloudWatch. Any error messages related to
-         * processing the batch are sent to your AWS CloudWatch log.</p><p><h3>See
-         * Also:</h3>   <a
+         * progress of the batch using Amazon Web Services CloudWatch. Any error messages
+         * related to processing the batch are sent to your Amazon Web Services CloudWatch
+         * log.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">AWS
          * API Reference</a></p>
          *
@@ -745,6 +763,61 @@ namespace Model
         virtual void DeleteIndexAsync(const Model::DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a group so that all users and sub groups that belong to the group can
+         * no longer access documents only available to that group.</p> <p>For example,
+         * after deleting the group "Summer Interns", all interns who belonged to that
+         * group no longer see intern-only documents in their search results.</p> <p>If you
+         * want to delete or replace users or sub groups of a group, you need to use the
+         * <code>PutPrincipalMapping</code> operation. For example, if a user in the group
+         * "Engineering" leaves the engineering team and another user takes their place,
+         * you provide an updated list of users or sub groups that belong to the
+         * "Engineering" group when calling <code>PutPrincipalMapping</code>. You can
+         * update your internal list of users or sub groups and input this list when
+         * calling <code>PutPrincipalMapping</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePrincipalMappingOutcome DeletePrincipalMapping(const Model::DeletePrincipalMappingRequest& request) const;
+
+        /**
+         * <p>Deletes a group so that all users and sub groups that belong to the group can
+         * no longer access documents only available to that group.</p> <p>For example,
+         * after deleting the group "Summer Interns", all interns who belonged to that
+         * group no longer see intern-only documents in their search results.</p> <p>If you
+         * want to delete or replace users or sub groups of a group, you need to use the
+         * <code>PutPrincipalMapping</code> operation. For example, if a user in the group
+         * "Engineering" leaves the engineering team and another user takes their place,
+         * you provide an updated list of users or sub groups that belong to the
+         * "Engineering" group when calling <code>PutPrincipalMapping</code>. You can
+         * update your internal list of users or sub groups and input this list when
+         * calling <code>PutPrincipalMapping</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePrincipalMappingOutcomeCallable DeletePrincipalMappingCallable(const Model::DeletePrincipalMappingRequest& request) const;
+
+        /**
+         * <p>Deletes a group so that all users and sub groups that belong to the group can
+         * no longer access documents only available to that group.</p> <p>For example,
+         * after deleting the group "Summer Interns", all interns who belonged to that
+         * group no longer see intern-only documents in their search results.</p> <p>If you
+         * want to delete or replace users or sub groups of a group, you need to use the
+         * <code>PutPrincipalMapping</code> operation. For example, if a user in the group
+         * "Engineering" leaves the engineering team and another user takes their place,
+         * you provide an updated list of users or sub groups that belong to the
+         * "Engineering" group when calling <code>PutPrincipalMapping</code>. You can
+         * update your internal list of users or sub groups and input this list when
+         * calling <code>PutPrincipalMapping</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePrincipalMappingAsync(const Model::DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a block list used for query suggestions for an index.</p> <p>A
          * deleted block list might not take effect right away. Amazon Kendra needs to
          * refresh the entire suggestions list to add back the queries that were previously
@@ -880,6 +953,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeIndexAsync(const Model::DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions
+         * for mapping users to their groups. This includes information on the status of
+         * actions currently processing or yet to be processed, when actions were last
+         * updated, when actions were received by Amazon Kendra, the latest action that
+         * should process and apply after other actions, and useful error messages if an
+         * action could not be processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePrincipalMappingOutcome DescribePrincipalMapping(const Model::DescribePrincipalMappingRequest& request) const;
+
+        /**
+         * <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions
+         * for mapping users to their groups. This includes information on the status of
+         * actions currently processing or yet to be processed, when actions were last
+         * updated, when actions were received by Amazon Kendra, the latest action that
+         * should process and apply after other actions, and useful error messages if an
+         * action could not be processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePrincipalMappingOutcomeCallable DescribePrincipalMappingCallable(const Model::DescribePrincipalMappingRequest& request) const;
+
+        /**
+         * <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions
+         * for mapping users to their groups. This includes information on the status of
+         * actions currently processing or yet to be processed, when actions were last
+         * updated, when actions were received by Amazon Kendra, the latest action that
+         * should process and apply after other actions, and useful error messages if an
+         * action could not be processed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePrincipalMappingAsync(const Model::DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a block list used for query suggestions for an index.</p> <p>This
@@ -1075,6 +1188,34 @@ namespace Model
         virtual void ListFaqsAsync(const Model::ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a list of groups that are mapped to users before a given ordering or
+         * timestamp identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGroupsOlderThanOrderingIdOutcome ListGroupsOlderThanOrderingId(const Model::ListGroupsOlderThanOrderingIdRequest& request) const;
+
+        /**
+         * <p>Provides a list of groups that are mapped to users before a given ordering or
+         * timestamp identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGroupsOlderThanOrderingIdOutcomeCallable ListGroupsOlderThanOrderingIdCallable(const Model::ListGroupsOlderThanOrderingIdRequest& request) const;
+
+        /**
+         * <p>Provides a list of groups that are mapped to users before a given ordering or
+         * timestamp identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGroupsOlderThanOrderingIdAsync(const Model::ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the Amazon Kendra indexes that you have created.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">AWS
@@ -1191,6 +1332,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListThesauriAsync(const Model::ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Maps users to their groups. You can also map sub groups to groups. For
+         * example, the group "Company Intellectual Property Teams" includes sub groups
+         * "Research" and "Engineering". These sub groups include their own list of users
+         * or people who work in these teams. Only users who work in research and
+         * engineering, and therefore belong in the intellectual property group, can see
+         * top-secret company documents in their search results. </p> <p>You map users to
+         * their groups when you want to filter search results for different users based on
+         * their group’s access to documents. For more information on filtering search
+         * results for different users, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+         * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
+         * group are currently processing, a validation exception is thrown.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPrincipalMappingOutcome PutPrincipalMapping(const Model::PutPrincipalMappingRequest& request) const;
+
+        /**
+         * <p>Maps users to their groups. You can also map sub groups to groups. For
+         * example, the group "Company Intellectual Property Teams" includes sub groups
+         * "Research" and "Engineering". These sub groups include their own list of users
+         * or people who work in these teams. Only users who work in research and
+         * engineering, and therefore belong in the intellectual property group, can see
+         * top-secret company documents in their search results. </p> <p>You map users to
+         * their groups when you want to filter search results for different users based on
+         * their group’s access to documents. For more information on filtering search
+         * results for different users, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+         * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
+         * group are currently processing, a validation exception is thrown.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPrincipalMappingOutcomeCallable PutPrincipalMappingCallable(const Model::PutPrincipalMappingRequest& request) const;
+
+        /**
+         * <p>Maps users to their groups. You can also map sub groups to groups. For
+         * example, the group "Company Intellectual Property Teams" includes sub groups
+         * "Research" and "Engineering". These sub groups include their own list of users
+         * or people who work in these teams. Only users who work in research and
+         * engineering, and therefore belong in the intellectual property group, can see
+         * top-secret company documents in their search results. </p> <p>You map users to
+         * their groups when you want to filter search results for different users based on
+         * their group’s access to documents. For more information on filtering search
+         * results for different users, see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+         * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
+         * group are currently processing, a validation exception is thrown.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPrincipalMappingAsync(const Model::PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Searches an active index. Use this API to search your documents using query.
@@ -1579,11 +1781,13 @@ namespace Model
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFaqAsyncHelper(const Model::DeleteFaqRequest& request, const DeleteFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIndexAsyncHelper(const Model::DeleteIndexRequest& request, const DeleteIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePrincipalMappingAsyncHelper(const Model::DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQuerySuggestionsBlockListAsyncHelper(const Model::DeleteQuerySuggestionsBlockListRequest& request, const DeleteQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteThesaurusAsyncHelper(const Model::DeleteThesaurusRequest& request, const DeleteThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataSourceAsyncHelper(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFaqAsyncHelper(const Model::DescribeFaqRequest& request, const DescribeFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIndexAsyncHelper(const Model::DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePrincipalMappingAsyncHelper(const Model::DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeQuerySuggestionsBlockListAsyncHelper(const Model::DescribeQuerySuggestionsBlockListRequest& request, const DescribeQuerySuggestionsBlockListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeQuerySuggestionsConfigAsyncHelper(const Model::DescribeQuerySuggestionsConfigRequest& request, const DescribeQuerySuggestionsConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeThesaurusAsyncHelper(const Model::DescribeThesaurusRequest& request, const DescribeThesaurusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1591,10 +1795,12 @@ namespace Model
         void ListDataSourceSyncJobsAsyncHelper(const Model::ListDataSourceSyncJobsRequest& request, const ListDataSourceSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourcesAsyncHelper(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFaqsAsyncHelper(const Model::ListFaqsRequest& request, const ListFaqsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListGroupsOlderThanOrderingIdAsyncHelper(const Model::ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIndicesAsyncHelper(const Model::ListIndicesRequest& request, const ListIndicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQuerySuggestionsBlockListsAsyncHelper(const Model::ListQuerySuggestionsBlockListsRequest& request, const ListQuerySuggestionsBlockListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListThesauriAsyncHelper(const Model::ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPrincipalMappingAsyncHelper(const Model::PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void QueryAsyncHelper(const Model::QueryRequest& request, const QueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDataSourceSyncJobAsyncHelper(const Model::StartDataSourceSyncJobRequest& request, const StartDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDataSourceSyncJobAsyncHelper(const Model::StopDataSourceSyncJobRequest& request, const StopDataSourceSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

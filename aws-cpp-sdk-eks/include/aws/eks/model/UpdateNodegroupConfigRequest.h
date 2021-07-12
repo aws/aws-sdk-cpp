@@ -238,22 +238,34 @@ namespace Model
     inline UpdateNodegroupConfigRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The node group update configuration.</p>
+     */
     inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
 
-    
+    /**
+     * <p>The node group update configuration.</p>
+     */
     inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
 
-    
+    /**
+     * <p>The node group update configuration.</p>
+     */
     inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
 
-    
+    /**
+     * <p>The node group update configuration.</p>
+     */
     inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
 
-    
+    /**
+     * <p>The node group update configuration.</p>
+     */
     inline UpdateNodegroupConfigRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
 
-    
+    /**
+     * <p>The node group update configuration.</p>
+     */
     inline UpdateNodegroupConfigRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
 
 

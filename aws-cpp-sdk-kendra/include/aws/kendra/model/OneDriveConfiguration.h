@@ -83,64 +83,64 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline OneDriveConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */
     inline OneDriveConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that contains
-     * the user name and password to connect to OneDrive. The user namd should be the
+     * <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the
+     * user name and password to connect to OneDrive. The user namd should be the
      * application ID for the OneDrive application, and the password is the application
      * key for the OneDrive application.</p>
      */

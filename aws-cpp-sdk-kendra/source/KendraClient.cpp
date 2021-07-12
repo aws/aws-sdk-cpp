@@ -32,11 +32,13 @@
 #include <aws/kendra/model/DeleteDataSourceRequest.h>
 #include <aws/kendra/model/DeleteFaqRequest.h>
 #include <aws/kendra/model/DeleteIndexRequest.h>
+#include <aws/kendra/model/DeletePrincipalMappingRequest.h>
 #include <aws/kendra/model/DeleteQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/DeleteThesaurusRequest.h>
 #include <aws/kendra/model/DescribeDataSourceRequest.h>
 #include <aws/kendra/model/DescribeFaqRequest.h>
 #include <aws/kendra/model/DescribeIndexRequest.h>
+#include <aws/kendra/model/DescribePrincipalMappingRequest.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsConfigRequest.h>
 #include <aws/kendra/model/DescribeThesaurusRequest.h>
@@ -44,10 +46,12 @@
 #include <aws/kendra/model/ListDataSourceSyncJobsRequest.h>
 #include <aws/kendra/model/ListDataSourcesRequest.h>
 #include <aws/kendra/model/ListFaqsRequest.h>
+#include <aws/kendra/model/ListGroupsOlderThanOrderingIdRequest.h>
 #include <aws/kendra/model/ListIndicesRequest.h>
 #include <aws/kendra/model/ListQuerySuggestionsBlockListsRequest.h>
 #include <aws/kendra/model/ListTagsForResourceRequest.h>
 #include <aws/kendra/model/ListThesauriRequest.h>
+#include <aws/kendra/model/PutPrincipalMappingRequest.h>
 #include <aws/kendra/model/QueryRequest.h>
 #include <aws/kendra/model/StartDataSourceSyncJobRequest.h>
 #include <aws/kendra/model/StopDataSourceSyncJobRequest.h>
@@ -421,6 +425,30 @@ void KendraClient::DeleteIndexAsyncHelper(const DeleteIndexRequest& request, con
   handler(this, request, DeleteIndex(request), context);
 }
 
+DeletePrincipalMappingOutcome KendraClient::DeletePrincipalMapping(const DeletePrincipalMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeletePrincipalMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePrincipalMappingOutcomeCallable KendraClient::DeletePrincipalMappingCallable(const DeletePrincipalMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePrincipalMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePrincipalMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DeletePrincipalMappingAsync(const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePrincipalMappingAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DeletePrincipalMappingAsyncHelper(const DeletePrincipalMappingRequest& request, const DeletePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePrincipalMapping(request), context);
+}
+
 DeleteQuerySuggestionsBlockListOutcome KendraClient::DeleteQuerySuggestionsBlockList(const DeleteQuerySuggestionsBlockListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -539,6 +567,30 @@ void KendraClient::DescribeIndexAsync(const DescribeIndexRequest& request, const
 void KendraClient::DescribeIndexAsyncHelper(const DescribeIndexRequest& request, const DescribeIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeIndex(request), context);
+}
+
+DescribePrincipalMappingOutcome KendraClient::DescribePrincipalMapping(const DescribePrincipalMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribePrincipalMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePrincipalMappingOutcomeCallable KendraClient::DescribePrincipalMappingCallable(const DescribePrincipalMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePrincipalMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePrincipalMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::DescribePrincipalMappingAsync(const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePrincipalMappingAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::DescribePrincipalMappingAsyncHelper(const DescribePrincipalMappingRequest& request, const DescribePrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePrincipalMapping(request), context);
 }
 
 DescribeQuerySuggestionsBlockListOutcome KendraClient::DescribeQuerySuggestionsBlockList(const DescribeQuerySuggestionsBlockListRequest& request) const
@@ -709,6 +761,30 @@ void KendraClient::ListFaqsAsyncHelper(const ListFaqsRequest& request, const Lis
   handler(this, request, ListFaqs(request), context);
 }
 
+ListGroupsOlderThanOrderingIdOutcome KendraClient::ListGroupsOlderThanOrderingId(const ListGroupsOlderThanOrderingIdRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListGroupsOlderThanOrderingIdOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListGroupsOlderThanOrderingIdOutcomeCallable KendraClient::ListGroupsOlderThanOrderingIdCallable(const ListGroupsOlderThanOrderingIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOlderThanOrderingIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroupsOlderThanOrderingId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::ListGroupsOlderThanOrderingIdAsync(const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsOlderThanOrderingIdAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::ListGroupsOlderThanOrderingIdAsyncHelper(const ListGroupsOlderThanOrderingIdRequest& request, const ListGroupsOlderThanOrderingIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGroupsOlderThanOrderingId(request), context);
+}
+
 ListIndicesOutcome KendraClient::ListIndices(const ListIndicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -803,6 +879,30 @@ void KendraClient::ListThesauriAsync(const ListThesauriRequest& request, const L
 void KendraClient::ListThesauriAsyncHelper(const ListThesauriRequest& request, const ListThesauriResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListThesauri(request), context);
+}
+
+PutPrincipalMappingOutcome KendraClient::PutPrincipalMapping(const PutPrincipalMappingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutPrincipalMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutPrincipalMappingOutcomeCallable KendraClient::PutPrincipalMappingCallable(const PutPrincipalMappingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPrincipalMappingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPrincipalMapping(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::PutPrincipalMappingAsync(const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPrincipalMappingAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::PutPrincipalMappingAsyncHelper(const PutPrincipalMappingRequest& request, const PutPrincipalMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPrincipalMapping(request), context);
 }
 
 QueryOutcome KendraClient::Query(const QueryRequest& request) const

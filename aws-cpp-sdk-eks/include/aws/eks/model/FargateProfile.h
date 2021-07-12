@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an AWS Fargate profile.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing an Fargate profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/FargateProfile">AWS
    * API Reference</a></p>
    */

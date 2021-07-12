@@ -88,9 +88,7 @@ namespace Model
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
      * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline const IndexEdition& GetEdition() const{ return m_edition; }
 
@@ -100,9 +98,7 @@ namespace Model
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
      * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
 
@@ -112,9 +108,7 @@ namespace Model
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
      * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
 
@@ -124,9 +118,7 @@ namespace Model
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
      * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
 
@@ -136,9 +128,7 @@ namespace Model
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
      * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline CreateIndexRequest& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
 
@@ -148,15 +138,13 @@ namespace Model
      * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
      * databases. Once you set the edition for an index, it can't be changed. </p>
      * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
+     * the default is <code>ENTERPRISE_EDITION</code>.</p>
      */
     inline CreateIndexRequest& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
 
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -164,7 +152,7 @@ namespace Model
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -172,7 +160,7 @@ namespace Model
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -180,7 +168,7 @@ namespace Model
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -188,7 +176,7 @@ namespace Model
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -196,7 +184,7 @@ namespace Model
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -204,7 +192,7 @@ namespace Model
     inline CreateIndexRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -212,7 +200,7 @@ namespace Model
     inline CreateIndexRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
+     * <p>An Identity and Access Management(IAM) role that gives Amazon Kendra
      * permissions to access your Amazon CloudWatch logs and metrics. This is also the
      * role used when you use the <code>BatchPutDocument</code> operation to index
      * documents from an Amazon S3 bucket.</p>
@@ -221,44 +209,38 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
-     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-     * CMKs.</p>
+     * <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data
+     * indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
-     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-     * CMKs.</p>
+     * <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data
+     * indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
-     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-     * CMKs.</p>
+     * <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data
+     * indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
-     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-     * CMKs.</p>
+     * <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data
+     * indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
-     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-     * CMKs.</p>
+     * <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data
+     * indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline CreateIndexRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
-     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
-     * CMKs.</p>
+     * <p>The identifier of the KMScustomer managed key (CMK) to use to encrypt data
+     * indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline CreateIndexRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 

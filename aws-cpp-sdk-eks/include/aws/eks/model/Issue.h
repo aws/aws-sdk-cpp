@@ -75,15 +75,16 @@ namespace Model
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
      * <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed
      * node group. You may be able to recreate an IAM role with the same settings to
-     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is
-     * unable to launch any more instances of the specified instance type. You may be
-     * able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li>
-     * <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
-     * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
-     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
-     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
+     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web
+     * Services account is unable to launch any more instances of the specified
+     * instance type. You may be able to request an Amazon EC2 instance limit increase
+     * to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of
+     * the subnets associated with your managed node group does not have enough
+     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
+     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -125,15 +126,16 @@ namespace Model
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
      * <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed
      * node group. You may be able to recreate an IAM role with the same settings to
-     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is
-     * unable to launch any more instances of the specified instance type. You may be
-     * able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li>
-     * <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
-     * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
-     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
-     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
+     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web
+     * Services account is unable to launch any more instances of the specified
+     * instance type. You may be able to request an Amazon EC2 instance limit increase
+     * to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of
+     * the subnets associated with your managed node group does not have enough
+     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
+     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -175,15 +177,16 @@ namespace Model
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
      * <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed
      * node group. You may be able to recreate an IAM role with the same settings to
-     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is
-     * unable to launch any more instances of the specified instance type. You may be
-     * able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li>
-     * <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
-     * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
-     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
-     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
+     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web
+     * Services account is unable to launch any more instances of the specified
+     * instance type. You may be able to request an Amazon EC2 instance limit increase
+     * to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of
+     * the subnets associated with your managed node group does not have enough
+     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
+     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -225,15 +228,16 @@ namespace Model
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
      * <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed
      * node group. You may be able to recreate an IAM role with the same settings to
-     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is
-     * unable to launch any more instances of the specified instance type. You may be
-     * able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li>
-     * <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
-     * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
-     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
-     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
+     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web
+     * Services account is unable to launch any more instances of the specified
+     * instance type. You may be able to request an Amazon EC2 instance limit increase
+     * to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of
+     * the subnets associated with your managed node group does not have enough
+     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
+     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -275,15 +279,16 @@ namespace Model
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
      * <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed
      * node group. You may be able to recreate an IAM role with the same settings to
-     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is
-     * unable to launch any more instances of the specified instance type. You may be
-     * able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li>
-     * <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
-     * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
-     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
-     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
+     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web
+     * Services account is unable to launch any more instances of the specified
+     * instance type. You may be able to request an Amazon EC2 instance limit increase
+     * to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of
+     * the subnets associated with your managed node group does not have enough
+     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
+     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -325,15 +330,16 @@ namespace Model
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
      * <p> <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed
      * node group. You may be able to recreate an IAM role with the same settings to
-     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is
-     * unable to launch any more instances of the specified instance type. You may be
-     * able to request an Amazon EC2 instance limit increase to recover.</p> </li> <li>
-     * <p> <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
-     * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>InternalFailure</b>: These errors are usually
-     * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
-     * your Amazon EKS cluster. Common causes of this failure are insufficient <a
+     * recover.</p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your Amazon Web
+     * Services account is unable to launch any more instances of the specified
+     * instance type. You may be able to request an Amazon EC2 instance limit increase
+     * to recover.</p> </li> <li> <p> <b>InsufficientFreeAddresses</b>: One or more of
+     * the subnets associated with your managed node group does not have enough
+     * available IP addresses for new nodes.</p> </li> <li> <p> <b>InternalFailure</b>:
+     * These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
      * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
      * </li> </ul>
@@ -383,47 +389,47 @@ namespace Model
 
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline Issue& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline Issue& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline Issue& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline Issue& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS resources that are afflicted by this issue.</p>
+     * <p>The Amazon Web Services resources that are afflicted by this issue.</p>
      */
     inline Issue& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 

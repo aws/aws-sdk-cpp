@@ -26,6 +26,7 @@ Document::Document() :
     m_s3PathHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_accessControlListHasBeenSet(false),
+    m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
     m_contentTypeHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ Document::Document(JsonView jsonValue) :
     m_s3PathHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_accessControlListHasBeenSet(false),
+    m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
     m_contentTypeHasBeenSet(false)
 {
@@ -91,6 +93,16 @@ Document& Document::operator =(JsonView jsonValue)
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
     }
     m_accessControlListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HierarchicalAccessControlList"))
+  {
+    Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
+    for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
+    {
+      m_hierarchicalAccessControlList.push_back(hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject());
+    }
+    m_hierarchicalAccessControlListHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ContentType"))
@@ -149,6 +161,17 @@ JsonValue Document::Jsonize() const
      accessControlListJsonList[accessControlListIndex].AsObject(m_accessControlList[accessControlListIndex].Jsonize());
    }
    payload.WithArray("AccessControlList", std::move(accessControlListJsonList));
+
+  }
+
+  if(m_hierarchicalAccessControlListHasBeenSet)
+  {
+   Array<JsonValue> hierarchicalAccessControlListJsonList(m_hierarchicalAccessControlList.size());
+   for(unsigned hierarchicalAccessControlListIndex = 0; hierarchicalAccessControlListIndex < hierarchicalAccessControlListJsonList.GetLength(); ++hierarchicalAccessControlListIndex)
+   {
+     hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject(m_hierarchicalAccessControlList[hierarchicalAccessControlListIndex].Jsonize());
+   }
+   payload.WithArray("HierarchicalAccessControlList", std::move(hierarchicalAccessControlListJsonList));
 
   }
 

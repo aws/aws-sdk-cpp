@@ -189,32 +189,32 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data.
+     * Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data.
+     * Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data.
+     * Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data.
+     * Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline DescribeIndexResult& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) used to encrypt your data.
+     * Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline DescribeIndexResult& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 

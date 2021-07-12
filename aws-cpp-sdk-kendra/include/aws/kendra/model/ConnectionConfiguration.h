@@ -197,8 +197,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -209,8 +208,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -221,8 +219,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -233,8 +230,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -245,8 +241,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -257,8 +252,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline ConnectionConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -269,8 +263,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline ConnectionConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -281,8 +274,7 @@ namespace Model
      * a Database Data Source</a>. For more information about AWS Secrets Manager, see
      * <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is AWS Secrets Manager </a> in the <i>AWS Secrets Manager</i> user
-     * guide.</p>
+     * What Is AWS Secrets Manager </a> in the <i> Secrets Manager </i> user guide.</p>
      */
     inline ConnectionConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
