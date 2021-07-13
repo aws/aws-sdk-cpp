@@ -307,50 +307,50 @@ namespace Model
 
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline const Aws::Vector<RouteFilterPrefix>& GetRouteFilterPrefixes() const{ return m_routeFilterPrefixes; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline bool RouteFilterPrefixesHasBeenSet() const { return m_routeFilterPrefixesHasBeenSet; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline void SetRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes = value; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline void SetRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes = std::move(value); }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline NewPublicVirtualInterface& WithRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { SetRouteFilterPrefixes(value); return *this;}
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline NewPublicVirtualInterface& WithRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { SetRouteFilterPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline NewPublicVirtualInterface& AddRouteFilterPrefixes(const RouteFilterPrefix& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(value); return *this; }
 
     /**
-     * <p>The routes to be advertised to the AWS network in this Region. Applies to
-     * public virtual interfaces.</p>
+     * <p>The routes to be advertised to the Amazon Web Services network in this
+     * Region. Applies to public virtual interfaces.</p>
      */
     inline NewPublicVirtualInterface& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(std::move(value)); return *this; }
 

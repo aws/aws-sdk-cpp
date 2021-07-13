@@ -175,49 +175,57 @@ namespace Model
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
-     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     * invocation. If the task type is <code>RUN_COMMAND</code>, this value is the
+     * command ID.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 
@@ -326,50 +334,50 @@ namespace Model
 
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details explaining the status of the task invocation. Only available for
-     * certain Status values. </p>
+     * <p>The details explaining the status of the task invocation. Not available for
+     * all status values. </p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
@@ -438,57 +446,57 @@ namespace Model
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value that was specified when the target was registered with
-     * the maintenance window. This was also included in any CloudWatch events raised
-     * during the task invocation.</p>
+     * the maintenance window. This was also included in any Amazon CloudWatch Events
+     * events raised during the task invocation.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 

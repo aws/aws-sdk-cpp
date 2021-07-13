@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an AWS Direct Connect location.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about an Direct Connect location.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Location">AWS
    * API Reference</a></p>
    */
@@ -130,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region for the location.</p>
+     * <p>The Region for the location.</p>
      */
     inline Location& WithRegion(const char* value) { SetRegion(value); return *this;}
 

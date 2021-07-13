@@ -119,8 +119,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -132,8 +132,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -145,8 +145,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -158,8 +158,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -171,8 +171,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -184,8 +184,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -197,8 +197,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>
@@ -210,8 +210,8 @@ namespace Model
      * synchronizes data to an S3 bucket for Inventory. If you specify
      * <code>SyncToDestination</code>, you must provide a value for
      * <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize
-     * data from a single account and multiple Regions, or multiple AWS accounts and
-     * Regions, as listed in AWS Organizations for Explorer. If you specify
+     * data from a single account and multiple Regions, or multiple accounts and
+     * Regions, as listed in Organizations for Explorer. If you specify
      * <code>SyncFromSource</code>, you must provide a value for
      * <code>SyncSource</code>. The default value is
      * <code>SyncToDestination</code>.</p>

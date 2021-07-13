@@ -216,47 +216,47 @@ namespace Model
 
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRedirectSignOutURIs() const{ return m_redirectSignOutURIs; }
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline bool RedirectSignOutURIsHasBeenSet() const { return m_redirectSignOutURIsHasBeenSet; }
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline void SetRedirectSignOutURIs(const Aws::Vector<Aws::String>& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs = value; }
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline void SetRedirectSignOutURIs(Aws::Vector<Aws::String>&& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs = std::move(value); }
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithRedirectSignOutURIs(const Aws::Vector<Aws::String>& value) { SetRedirectSignOutURIs(value); return *this;}
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithRedirectSignOutURIs(Aws::Vector<Aws::String>&& value) { SetRedirectSignOutURIs(std::move(value)); return *this;}
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddRedirectSignOutURIs(const Aws::String& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(value); return *this; }
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddRedirectSignOutURIs(Aws::String&& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddRedirectSignOutURIs(const char* value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(value); return *this; }
 

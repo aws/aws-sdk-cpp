@@ -21,6 +21,7 @@
 #include <aws/redshift/model/BatchModifyClusterSnapshotsResult.h>
 #include <aws/redshift/model/CancelResizeResult.h>
 #include <aws/redshift/model/CopyClusterSnapshotResult.h>
+#include <aws/redshift/model/CreateAuthenticationProfileResult.h>
 #include <aws/redshift/model/CreateClusterResult.h>
 #include <aws/redshift/model/CreateClusterParameterGroupResult.h>
 #include <aws/redshift/model/CreateClusterSecurityGroupResult.h>
@@ -34,11 +35,13 @@
 #include <aws/redshift/model/CreateSnapshotCopyGrantResult.h>
 #include <aws/redshift/model/CreateSnapshotScheduleResult.h>
 #include <aws/redshift/model/CreateUsageLimitResult.h>
+#include <aws/redshift/model/DeleteAuthenticationProfileResult.h>
 #include <aws/redshift/model/DeleteClusterResult.h>
 #include <aws/redshift/model/DeleteClusterSnapshotResult.h>
 #include <aws/redshift/model/DeleteEndpointAccessResult.h>
 #include <aws/redshift/model/DeletePartnerResult.h>
 #include <aws/redshift/model/DescribeAccountAttributesResult.h>
+#include <aws/redshift/model/DescribeAuthenticationProfilesResult.h>
 #include <aws/redshift/model/DescribeClusterDbRevisionsResult.h>
 #include <aws/redshift/model/DescribeClusterParameterGroupsResult.h>
 #include <aws/redshift/model/DescribeClusterParametersResult.h>
@@ -77,6 +80,7 @@
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsResult.h>
 #include <aws/redshift/model/ModifyAquaConfigurationResult.h>
+#include <aws/redshift/model/ModifyAuthenticationProfileResult.h>
 #include <aws/redshift/model/ModifyClusterResult.h>
 #include <aws/redshift/model/ModifyClusterDbRevisionResult.h>
 #include <aws/redshift/model/ModifyClusterIamRolesResult.h>
@@ -158,6 +162,7 @@ namespace Model
         class BatchModifyClusterSnapshotsRequest;
         class CancelResizeRequest;
         class CopyClusterSnapshotRequest;
+        class CreateAuthenticationProfileRequest;
         class CreateClusterRequest;
         class CreateClusterParameterGroupRequest;
         class CreateClusterSecurityGroupRequest;
@@ -172,6 +177,7 @@ namespace Model
         class CreateSnapshotScheduleRequest;
         class CreateTagsRequest;
         class CreateUsageLimitRequest;
+        class DeleteAuthenticationProfileRequest;
         class DeleteClusterRequest;
         class DeleteClusterParameterGroupRequest;
         class DeleteClusterSecurityGroupRequest;
@@ -188,6 +194,7 @@ namespace Model
         class DeleteTagsRequest;
         class DeleteUsageLimitRequest;
         class DescribeAccountAttributesRequest;
+        class DescribeAuthenticationProfilesRequest;
         class DescribeClusterDbRevisionsRequest;
         class DescribeClusterParameterGroupsRequest;
         class DescribeClusterParametersRequest;
@@ -226,6 +233,7 @@ namespace Model
         class GetClusterCredentialsRequest;
         class GetReservedNodeExchangeOfferingsRequest;
         class ModifyAquaConfigurationRequest;
+        class ModifyAuthenticationProfileRequest;
         class ModifyClusterRequest;
         class ModifyClusterDbRevisionRequest;
         class ModifyClusterIamRolesRequest;
@@ -263,6 +271,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchModifyClusterSnapshotsResult, RedshiftError> BatchModifyClusterSnapshotsOutcome;
         typedef Aws::Utils::Outcome<CancelResizeResult, RedshiftError> CancelResizeOutcome;
         typedef Aws::Utils::Outcome<CopyClusterSnapshotResult, RedshiftError> CopyClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateAuthenticationProfileResult, RedshiftError> CreateAuthenticationProfileOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, RedshiftError> CreateClusterOutcome;
         typedef Aws::Utils::Outcome<CreateClusterParameterGroupResult, RedshiftError> CreateClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<CreateClusterSecurityGroupResult, RedshiftError> CreateClusterSecurityGroupOutcome;
@@ -277,6 +286,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSnapshotScheduleResult, RedshiftError> CreateSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<CreateUsageLimitResult, RedshiftError> CreateUsageLimitOutcome;
+        typedef Aws::Utils::Outcome<DeleteAuthenticationProfileResult, RedshiftError> DeleteAuthenticationProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, RedshiftError> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteClusterSecurityGroupOutcome;
@@ -293,6 +303,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteUsageLimitOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, RedshiftError> DescribeAccountAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAuthenticationProfilesResult, RedshiftError> DescribeAuthenticationProfilesOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterDbRevisionsResult, RedshiftError> DescribeClusterDbRevisionsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterParameterGroupsResult, RedshiftError> DescribeClusterParameterGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterParametersResult, RedshiftError> DescribeClusterParametersOutcome;
@@ -331,6 +342,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
         typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, RedshiftError> GetReservedNodeExchangeOfferingsOutcome;
         typedef Aws::Utils::Outcome<ModifyAquaConfigurationResult, RedshiftError> ModifyAquaConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ModifyAuthenticationProfileResult, RedshiftError> ModifyAuthenticationProfileOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterResult, RedshiftError> ModifyClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterDbRevisionResult, RedshiftError> ModifyClusterDbRevisionOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, RedshiftError> ModifyClusterIamRolesOutcome;
@@ -368,6 +380,7 @@ namespace Model
         typedef std::future<BatchModifyClusterSnapshotsOutcome> BatchModifyClusterSnapshotsOutcomeCallable;
         typedef std::future<CancelResizeOutcome> CancelResizeOutcomeCallable;
         typedef std::future<CopyClusterSnapshotOutcome> CopyClusterSnapshotOutcomeCallable;
+        typedef std::future<CreateAuthenticationProfileOutcome> CreateAuthenticationProfileOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
         typedef std::future<CreateClusterParameterGroupOutcome> CreateClusterParameterGroupOutcomeCallable;
         typedef std::future<CreateClusterSecurityGroupOutcome> CreateClusterSecurityGroupOutcomeCallable;
@@ -382,6 +395,7 @@ namespace Model
         typedef std::future<CreateSnapshotScheduleOutcome> CreateSnapshotScheduleOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<CreateUsageLimitOutcome> CreateUsageLimitOutcomeCallable;
+        typedef std::future<DeleteAuthenticationProfileOutcome> DeleteAuthenticationProfileOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteClusterParameterGroupOutcome> DeleteClusterParameterGroupOutcomeCallable;
         typedef std::future<DeleteClusterSecurityGroupOutcome> DeleteClusterSecurityGroupOutcomeCallable;
@@ -398,6 +412,7 @@ namespace Model
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DeleteUsageLimitOutcome> DeleteUsageLimitOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
+        typedef std::future<DescribeAuthenticationProfilesOutcome> DescribeAuthenticationProfilesOutcomeCallable;
         typedef std::future<DescribeClusterDbRevisionsOutcome> DescribeClusterDbRevisionsOutcomeCallable;
         typedef std::future<DescribeClusterParameterGroupsOutcome> DescribeClusterParameterGroupsOutcomeCallable;
         typedef std::future<DescribeClusterParametersOutcome> DescribeClusterParametersOutcomeCallable;
@@ -436,6 +451,7 @@ namespace Model
         typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
         typedef std::future<GetReservedNodeExchangeOfferingsOutcome> GetReservedNodeExchangeOfferingsOutcomeCallable;
         typedef std::future<ModifyAquaConfigurationOutcome> ModifyAquaConfigurationOutcomeCallable;
+        typedef std::future<ModifyAuthenticationProfileOutcome> ModifyAuthenticationProfileOutcomeCallable;
         typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
         typedef std::future<ModifyClusterDbRevisionOutcome> ModifyClusterDbRevisionOutcomeCallable;
         typedef std::future<ModifyClusterIamRolesOutcome> ModifyClusterIamRolesOutcomeCallable;
@@ -476,6 +492,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::BatchModifyClusterSnapshotsRequest&, const Model::BatchModifyClusterSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchModifyClusterSnapshotsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CancelResizeRequest&, const Model::CancelResizeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelResizeResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CopyClusterSnapshotRequest&, const Model::CopyClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyClusterSnapshotResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::CreateAuthenticationProfileRequest&, const Model::CreateAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateClusterParameterGroupRequest&, const Model::CreateClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateClusterSecurityGroupRequest&, const Model::CreateClusterSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterSecurityGroupResponseReceivedHandler;
@@ -490,6 +507,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::CreateSnapshotScheduleRequest&, const Model::CreateSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateUsageLimitRequest&, const Model::CreateUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsageLimitResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DeleteAuthenticationProfileRequest&, const Model::DeleteAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteClusterParameterGroupRequest&, const Model::DeleteClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteClusterSecurityGroupRequest&, const Model::DeleteClusterSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterSecurityGroupResponseReceivedHandler;
@@ -506,6 +524,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteUsageLimitRequest&, const Model::DeleteUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsageLimitResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribeAuthenticationProfilesRequest&, const Model::DescribeAuthenticationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuthenticationProfilesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterDbRevisionsRequest&, const Model::DescribeClusterDbRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterDbRevisionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterParameterGroupsRequest&, const Model::DescribeClusterParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterParametersRequest&, const Model::DescribeClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterParametersResponseReceivedHandler;
@@ -544,6 +563,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeOfferingsRequest&, const Model::GetReservedNodeExchangeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeOfferingsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyAquaConfigurationRequest&, const Model::ModifyAquaConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAquaConfigurationResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::ModifyAuthenticationProfileRequest&, const Model::ModifyAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterDbRevisionRequest&, const Model::ModifyClusterDbRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterDbRevisionResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterIamRolesRequest&, const Model::ModifyClusterIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterIamRolesResponseReceivedHandler;
@@ -703,9 +723,9 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access
-         * to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR
-         * blocks, see the Wikipedia article on <a
+         * Redshift cluster must be in the same Region. </p> <p>If you authorize access to
+         * a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks,
+         * see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p>You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -728,9 +748,9 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access
-         * to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR
-         * blocks, see the Wikipedia article on <a
+         * Redshift cluster must be in the same Region. </p> <p>If you authorize access to
+         * a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks,
+         * see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p>You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -755,9 +775,9 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access
-         * to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR
-         * blocks, see the Wikipedia article on <a
+         * Redshift cluster must be in the same Region. </p> <p>If you authorize access to
+         * a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks,
+         * see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p>You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -799,8 +819,8 @@ namespace Model
         virtual void AuthorizeEndpointAccessAsync(const Model::AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Authorizes the specified AWS customer account to restore the specified
-         * snapshot.</p> <p> For more information about working with snapshots, go to <a
+         * <p>Authorizes the specified account to restore the specified snapshot.</p> <p>
+         * For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -810,8 +830,8 @@ namespace Model
         virtual Model::AuthorizeSnapshotAccessOutcome AuthorizeSnapshotAccess(const Model::AuthorizeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Authorizes the specified AWS customer account to restore the specified
-         * snapshot.</p> <p> For more information about working with snapshots, go to <a
+         * <p>Authorizes the specified account to restore the specified snapshot.</p> <p>
+         * For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -823,8 +843,8 @@ namespace Model
         virtual Model::AuthorizeSnapshotAccessOutcomeCallable AuthorizeSnapshotAccessCallable(const Model::AuthorizeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Authorizes the specified AWS customer account to restore the specified
-         * snapshot.</p> <p> For more information about working with snapshots, go to <a
+         * <p>Authorizes the specified account to restore the specified snapshot.</p> <p>
+         * For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -967,6 +987,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CopyClusterSnapshotAsync(const Model::CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an authentication profile with the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateAuthenticationProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAuthenticationProfileOutcome CreateAuthenticationProfile(const Model::CreateAuthenticationProfileRequest& request) const;
+
+        /**
+         * <p>Creates an authentication profile with the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateAuthenticationProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAuthenticationProfileOutcomeCallable CreateAuthenticationProfileCallable(const Model::CreateAuthenticationProfileRequest& request) const;
+
+        /**
+         * <p>Creates an authentication profile with the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateAuthenticationProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAuthenticationProfileAsync(const Model::CreateAuthenticationProfileRequest& request, const CreateAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new cluster with the specified parameters.</p> <p>To create a
@@ -1230,11 +1278,11 @@ namespace Model
          * source IDs, such as source type = cluster and source identifier = my-cluster-1,
          * notifications will be sent for all the cluster events for my-cluster-1. If you
          * specify a source type but do not specify a source identifier, you will receive
-         * notice of the events for the objects of that type in your AWS account. If you do
-         * not specify either the SourceType nor the SourceIdentifier, you will be notified
-         * of events generated from all Amazon Redshift sources belonging to your AWS
-         * account. You must specify a source type if you specify a source
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * notice of the events for the objects of that type in your account. If you do not
+         * specify either the SourceType nor the SourceIdentifier, you will be notified of
+         * events generated from all Amazon Redshift sources belonging to your account. You
+         * must specify a source type if you specify a source ID.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          */
@@ -1256,11 +1304,11 @@ namespace Model
          * source IDs, such as source type = cluster and source identifier = my-cluster-1,
          * notifications will be sent for all the cluster events for my-cluster-1. If you
          * specify a source type but do not specify a source identifier, you will receive
-         * notice of the events for the objects of that type in your AWS account. If you do
-         * not specify either the SourceType nor the SourceIdentifier, you will be notified
-         * of events generated from all Amazon Redshift sources belonging to your AWS
-         * account. You must specify a source type if you specify a source
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * notice of the events for the objects of that type in your account. If you do not
+         * specify either the SourceType nor the SourceIdentifier, you will be notified of
+         * events generated from all Amazon Redshift sources belonging to your account. You
+         * must specify a source type if you specify a source ID.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -1284,11 +1332,11 @@ namespace Model
          * source IDs, such as source type = cluster and source identifier = my-cluster-1,
          * notifications will be sent for all the cluster events for my-cluster-1. If you
          * specify a source type but do not specify a source identifier, you will receive
-         * notice of the events for the objects of that type in your AWS account. If you do
-         * not specify either the SourceType nor the SourceIdentifier, you will be notified
-         * of events generated from all Amazon Redshift sources belonging to your AWS
-         * account. You must specify a source type if you specify a source
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * notice of the events for the objects of that type in your account. If you do not
+         * specify either the SourceType nor the SourceIdentifier, you will be notified of
+         * events generated from all Amazon Redshift sources belonging to your account. You
+         * must specify a source type if you specify a source ID.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -1430,9 +1478,9 @@ namespace Model
 
         /**
          * <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer
-         * master key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied
-         * snapshots in a destination region.</p> <p> For more information about managing
-         * snapshot copy grants, go to <a
+         * master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
+         * in a destination region.</p> <p> For more information about managing snapshot
+         * copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1443,9 +1491,9 @@ namespace Model
 
         /**
          * <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer
-         * master key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied
-         * snapshots in a destination region.</p> <p> For more information about managing
-         * snapshot copy grants, go to <a
+         * master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
+         * in a destination region.</p> <p> For more information about managing snapshot
+         * copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1458,9 +1506,9 @@ namespace Model
 
         /**
          * <p>Creates a snapshot copy grant that permits Amazon Redshift to use a customer
-         * master key (CMK) from AWS Key Management Service (AWS KMS) to encrypt copied
-         * snapshots in a destination region.</p> <p> For more information about managing
-         * snapshot copy grants, go to <a
+         * master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
+         * in a destination region.</p> <p> For more information about managing snapshot
+         * copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1566,6 +1614,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUsageLimitAsync(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteAuthenticationProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAuthenticationProfileOutcome DeleteAuthenticationProfile(const Model::DeleteAuthenticationProfileRequest& request) const;
+
+        /**
+         * <p>Deletes an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteAuthenticationProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAuthenticationProfileOutcomeCallable DeleteAuthenticationProfileCallable(const Model::DeleteAuthenticationProfileRequest& request) const;
+
+        /**
+         * <p>Deletes an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteAuthenticationProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAuthenticationProfileAsync(const Model::DeleteAuthenticationProfileRequest& request, const DeleteAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a previously provisioned cluster without its final snapshot being
@@ -2079,6 +2152,31 @@ namespace Model
         virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAuthenticationProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAuthenticationProfilesOutcome DescribeAuthenticationProfiles(const Model::DescribeAuthenticationProfilesRequest& request) const;
+
+        /**
+         * <p>Describes an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAuthenticationProfiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAuthenticationProfilesOutcomeCallable DescribeAuthenticationProfilesCallable(const Model::DescribeAuthenticationProfilesRequest& request) const;
+
+        /**
+         * <p>Describes an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAuthenticationProfiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAuthenticationProfilesAsync(const Model::DescribeAuthenticationProfilesRequest& request, const DescribeAuthenticationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <code>ClusterDbRevision</code> objects.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">AWS
@@ -2304,18 +2402,17 @@ namespace Model
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
          * cluster snapshots. By default, this operation returns information about all
-         * snapshots of all clusters that are owned by you AWS customer account. No
-         * information is returned for snapshots owned by inactive AWS customer
-         * accounts.</p> <p>If you specify both tag keys and tag values in the same
-         * request, Amazon Redshift returns all snapshots that match any combination of the
-         * specified keys and values. For example, if you have <code>owner</code> and
-         * <code>environment</code> for tag keys, and <code>admin</code> and
-         * <code>test</code> for tag values, all snapshots that have any combination of
-         * those values are returned. Only snapshots that you own are returned in the
-         * response; shared snapshots are not returned with the tag key and tag value
-         * request parameters.</p> <p>If both tag keys and values are omitted from the
-         * request, snapshots are returned regardless of whether they have tag keys or
-         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * snapshots of all clusters that are owned by your account. No information is
+         * returned for snapshots owned by inactive accounts.</p> <p>If you specify both
+         * tag keys and tag values in the same request, Amazon Redshift returns all
+         * snapshots that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots
+         * that have any combination of those values are returned. Only snapshots that you
+         * own are returned in the response; shared snapshots are not returned with the tag
+         * key and tag value request parameters.</p> <p>If both tag keys and values are
+         * omitted from the request, snapshots are returned regardless of whether they have
+         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
          * API Reference</a></p>
          */
@@ -2324,18 +2421,17 @@ namespace Model
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
          * cluster snapshots. By default, this operation returns information about all
-         * snapshots of all clusters that are owned by you AWS customer account. No
-         * information is returned for snapshots owned by inactive AWS customer
-         * accounts.</p> <p>If you specify both tag keys and tag values in the same
-         * request, Amazon Redshift returns all snapshots that match any combination of the
-         * specified keys and values. For example, if you have <code>owner</code> and
-         * <code>environment</code> for tag keys, and <code>admin</code> and
-         * <code>test</code> for tag values, all snapshots that have any combination of
-         * those values are returned. Only snapshots that you own are returned in the
-         * response; shared snapshots are not returned with the tag key and tag value
-         * request parameters.</p> <p>If both tag keys and values are omitted from the
-         * request, snapshots are returned regardless of whether they have tag keys or
-         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * snapshots of all clusters that are owned by your account. No information is
+         * returned for snapshots owned by inactive accounts.</p> <p>If you specify both
+         * tag keys and tag values in the same request, Amazon Redshift returns all
+         * snapshots that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots
+         * that have any combination of those values are returned. Only snapshots that you
+         * own are returned in the response; shared snapshots are not returned with the tag
+         * key and tag value request parameters.</p> <p>If both tag keys and values are
+         * omitted from the request, snapshots are returned regardless of whether they have
+         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2346,18 +2442,17 @@ namespace Model
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
          * cluster snapshots. By default, this operation returns information about all
-         * snapshots of all clusters that are owned by you AWS customer account. No
-         * information is returned for snapshots owned by inactive AWS customer
-         * accounts.</p> <p>If you specify both tag keys and tag values in the same
-         * request, Amazon Redshift returns all snapshots that match any combination of the
-         * specified keys and values. For example, if you have <code>owner</code> and
-         * <code>environment</code> for tag keys, and <code>admin</code> and
-         * <code>test</code> for tag values, all snapshots that have any combination of
-         * those values are returned. Only snapshots that you own are returned in the
-         * response; shared snapshots are not returned with the tag key and tag value
-         * request parameters.</p> <p>If both tag keys and values are omitted from the
-         * request, snapshots are returned regardless of whether they have tag keys or
-         * values associated with them.</p><p><h3>See Also:</h3>   <a
+         * snapshots of all clusters that are owned by your account. No information is
+         * returned for snapshots owned by inactive accounts.</p> <p>If you specify both
+         * tag keys and tag values in the same request, Amazon Redshift returns all
+         * snapshots that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots
+         * that have any combination of those values are returned. Only snapshots that you
+         * own are returned in the response; shared snapshots are not returned with the tag
+         * key and tag value request parameters.</p> <p>If both tag keys and values are
+         * omitted from the request, snapshots are returned regardless of whether they have
+         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2368,8 +2463,8 @@ namespace Model
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
          * about your cluster subnet groups. By default, this operation returns information
-         * about all cluster subnet groups that are defined in you AWS account.</p> <p>If
-         * you specify both tag keys and tag values in the same request, Amazon Redshift
+         * about all cluster subnet groups that are defined in your account.</p> <p>If you
+         * specify both tag keys and tag values in the same request, Amazon Redshift
          * returns all subnet groups that match any combination of the specified keys and
          * values. For example, if you have <code>owner</code> and <code>environment</code>
          * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
@@ -2385,8 +2480,8 @@ namespace Model
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
          * about your cluster subnet groups. By default, this operation returns information
-         * about all cluster subnet groups that are defined in you AWS account.</p> <p>If
-         * you specify both tag keys and tag values in the same request, Amazon Redshift
+         * about all cluster subnet groups that are defined in your account.</p> <p>If you
+         * specify both tag keys and tag values in the same request, Amazon Redshift
          * returns all subnet groups that match any combination of the specified keys and
          * values. For example, if you have <code>owner</code> and <code>environment</code>
          * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
@@ -2404,8 +2499,8 @@ namespace Model
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
          * about your cluster subnet groups. By default, this operation returns information
-         * about all cluster subnet groups that are defined in you AWS account.</p> <p>If
-         * you specify both tag keys and tag values in the same request, Amazon Redshift
+         * about all cluster subnet groups that are defined in your account.</p> <p>If you
+         * specify both tag keys and tag values in the same request, Amazon Redshift
          * returns all subnet groups that match any combination of the specified keys and
          * values. For example, if you have <code>owner</code> and <code>environment</code>
          * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
@@ -2777,10 +2872,10 @@ namespace Model
         /**
          * <p>Returns information about the specified HSM client certificate. If no
          * certificate ID is specified, returns information about all the HSM certificates
-         * owned by your AWS customer account.</p> <p>If you specify both tag keys and tag
-         * values in the same request, Amazon Redshift returns all HSM client certificates
-         * that match any combination of the specified keys and values. For example, if you
-         * have <code>owner</code> and <code>environment</code> for tag keys, and
+         * owned by your account.</p> <p>If you specify both tag keys and tag values in the
+         * same request, Amazon Redshift returns all HSM client certificates that match any
+         * combination of the specified keys and values. For example, if you have
+         * <code>owner</code> and <code>environment</code> for tag keys, and
          * <code>admin</code> and <code>test</code> for tag values, all HSM client
          * certificates that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM client certificates
@@ -2794,10 +2889,10 @@ namespace Model
         /**
          * <p>Returns information about the specified HSM client certificate. If no
          * certificate ID is specified, returns information about all the HSM certificates
-         * owned by your AWS customer account.</p> <p>If you specify both tag keys and tag
-         * values in the same request, Amazon Redshift returns all HSM client certificates
-         * that match any combination of the specified keys and values. For example, if you
-         * have <code>owner</code> and <code>environment</code> for tag keys, and
+         * owned by your account.</p> <p>If you specify both tag keys and tag values in the
+         * same request, Amazon Redshift returns all HSM client certificates that match any
+         * combination of the specified keys and values. For example, if you have
+         * <code>owner</code> and <code>environment</code> for tag keys, and
          * <code>admin</code> and <code>test</code> for tag values, all HSM client
          * certificates that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM client certificates
@@ -2813,10 +2908,10 @@ namespace Model
         /**
          * <p>Returns information about the specified HSM client certificate. If no
          * certificate ID is specified, returns information about all the HSM certificates
-         * owned by your AWS customer account.</p> <p>If you specify both tag keys and tag
-         * values in the same request, Amazon Redshift returns all HSM client certificates
-         * that match any combination of the specified keys and values. For example, if you
-         * have <code>owner</code> and <code>environment</code> for tag keys, and
+         * owned by your account.</p> <p>If you specify both tag keys and tag values in the
+         * same request, Amazon Redshift returns all HSM client certificates that match any
+         * combination of the specified keys and values. For example, if you have
+         * <code>owner</code> and <code>environment</code> for tag keys, and
          * <code>admin</code> and <code>test</code> for tag values, all HSM client
          * certificates that have any combination of those values are returned.</p> <p>If
          * both tag keys and values are omitted from the request, HSM client certificates
@@ -2832,15 +2927,15 @@ namespace Model
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
          * no configuration ID is specified, returns information about all the HSM
-         * configurations owned by your AWS customer account.</p> <p>If you specify both
-         * tag keys and tag values in the same request, Amazon Redshift returns all HSM
-         * connections that match any combination of the specified keys and values. For
-         * example, if you have <code>owner</code> and <code>environment</code> for tag
-         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
-         * connections that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, HSM connections are
-         * returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * configurations owned by your account.</p> <p>If you specify both tag keys and
+         * tag values in the same request, Amazon Redshift returns all HSM connections that
+         * match any combination of the specified keys and values. For example, if you have
+         * <code>owner</code> and <code>environment</code> for tag keys, and
+         * <code>admin</code> and <code>test</code> for tag values, all HSM connections
+         * that have any combination of those values are returned.</p> <p>If both tag keys
+         * and values are omitted from the request, HSM connections are returned regardless
+         * of whether they have tag keys or values associated with them.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
          * API Reference</a></p>
          */
@@ -2849,15 +2944,15 @@ namespace Model
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
          * no configuration ID is specified, returns information about all the HSM
-         * configurations owned by your AWS customer account.</p> <p>If you specify both
-         * tag keys and tag values in the same request, Amazon Redshift returns all HSM
-         * connections that match any combination of the specified keys and values. For
-         * example, if you have <code>owner</code> and <code>environment</code> for tag
-         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
-         * connections that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, HSM connections are
-         * returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * configurations owned by your account.</p> <p>If you specify both tag keys and
+         * tag values in the same request, Amazon Redshift returns all HSM connections that
+         * match any combination of the specified keys and values. For example, if you have
+         * <code>owner</code> and <code>environment</code> for tag keys, and
+         * <code>admin</code> and <code>test</code> for tag values, all HSM connections
+         * that have any combination of those values are returned.</p> <p>If both tag keys
+         * and values are omitted from the request, HSM connections are returned regardless
+         * of whether they have tag keys or values associated with them.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2868,15 +2963,15 @@ namespace Model
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
          * no configuration ID is specified, returns information about all the HSM
-         * configurations owned by your AWS customer account.</p> <p>If you specify both
-         * tag keys and tag values in the same request, Amazon Redshift returns all HSM
-         * connections that match any combination of the specified keys and values. For
-         * example, if you have <code>owner</code> and <code>environment</code> for tag
-         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
-         * connections that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, HSM connections are
-         * returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * configurations owned by your account.</p> <p>If you specify both tag keys and
+         * tag values in the same request, Amazon Redshift returns all HSM connections that
+         * match any combination of the specified keys and values. For example, if you have
+         * <code>owner</code> and <code>environment</code> for tag keys, and
+         * <code>admin</code> and <code>test</code> for tag values, all HSM connections
+         * that have any combination of those values are returned.</p> <p>If both tag keys
+         * and values are omitted from the request, HSM connections are returned regardless
+         * of whether they have tag keys or values associated with them.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2949,7 +3044,7 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific AWS Region that you can specify, and the
+         * Availability Zones (AZ) in the specific Region that you can specify, and the
          * node types you can request. The node types differ by available storage, memory,
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
@@ -2965,7 +3060,7 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific AWS Region that you can specify, and the
+         * Availability Zones (AZ) in the specific Region that you can specify, and the
          * node types you can request. The node types differ by available storage, memory,
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
@@ -2983,7 +3078,7 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific AWS Region that you can specify, and the
+         * Availability Zones (AZ) in the specific Region that you can specify, and the
          * node types you can request. The node types differ by available storage, memory,
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
@@ -3175,7 +3270,7 @@ namespace Model
         virtual void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of snapshot copy grants owned by the AWS account in the
+         * <p>Returns a list of snapshot copy grants owned by the account in the
          * destination region.</p> <p> For more information about managing snapshot copy
          * grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
@@ -3187,7 +3282,7 @@ namespace Model
         virtual Model::DescribeSnapshotCopyGrantsOutcome DescribeSnapshotCopyGrants(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
 
         /**
-         * <p>Returns a list of snapshot copy grants owned by the AWS account in the
+         * <p>Returns a list of snapshot copy grants owned by the account in the
          * destination region.</p> <p> For more information about managing snapshot copy
          * grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
@@ -3201,7 +3296,7 @@ namespace Model
         virtual Model::DescribeSnapshotCopyGrantsOutcomeCallable DescribeSnapshotCopyGrantsCallable(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
 
         /**
-         * <p>Returns a list of snapshot copy grants owned by the AWS account in the
+         * <p>Returns a list of snapshot copy grants owned by the account in the
          * destination region.</p> <p> For more information about managing snapshot copy
          * grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
@@ -3469,7 +3564,7 @@ namespace Model
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
-         * using a customer master key (CMK) from AWS KMS, use
+         * using a customer master key (CMK) from Key Management Service, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
          * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
@@ -3480,7 +3575,7 @@ namespace Model
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
-         * using a customer master key (CMK) from AWS KMS, use
+         * using a customer master key (CMK) from Key Management Service, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
          * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
@@ -3493,7 +3588,7 @@ namespace Model
         /**
          * <p>Disables the automatic copying of snapshots from one region to another region
          * for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted
-         * using a customer master key (CMK) from AWS KMS, use
+         * using a customer master key (CMK) from Key Management Service, use
          * <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift
          * permission to the CMK in the destination region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">AWS
@@ -3570,8 +3665,8 @@ namespace Model
          * minutes) and 3600 seconds (60 minutes). For more information, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
          * IAM Authentication to Generate Database User Credentials</a> in the Amazon
-         * Redshift Cluster Management Guide.</p> <p>The AWS Identity and Access Management
-         * (IAM)user or role that executes GetClusterCredentials must have an IAM policy
+         * Redshift Cluster Management Guide.</p> <p>The Identity and Access Management
+         * (IAM) user or role that runs GetClusterCredentials must have an IAM policy
          * attached that allows access to all necessary actions and resources. For more
          * information about permissions, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
@@ -3600,8 +3695,8 @@ namespace Model
          * minutes) and 3600 seconds (60 minutes). For more information, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
          * IAM Authentication to Generate Database User Credentials</a> in the Amazon
-         * Redshift Cluster Management Guide.</p> <p>The AWS Identity and Access Management
-         * (IAM)user or role that executes GetClusterCredentials must have an IAM policy
+         * Redshift Cluster Management Guide.</p> <p>The Identity and Access Management
+         * (IAM) user or role that runs GetClusterCredentials must have an IAM policy
          * attached that allows access to all necessary actions and resources. For more
          * information about permissions, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
@@ -3632,8 +3727,8 @@ namespace Model
          * minutes) and 3600 seconds (60 minutes). For more information, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using
          * IAM Authentication to Generate Database User Credentials</a> in the Amazon
-         * Redshift Cluster Management Guide.</p> <p>The AWS Identity and Access Management
-         * (IAM)user or role that executes GetClusterCredentials must have an IAM policy
+         * Redshift Cluster Management Guide.</p> <p>The Identity and Access Management
+         * (IAM) user or role that runs GetClusterCredentials must have an IAM policy
          * attached that allows access to all necessary actions and resources. For more
          * information about permissions, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources">Resource
@@ -3713,11 +3808,36 @@ namespace Model
         virtual void ModifyAquaConfigurationAsync(const Model::ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAuthenticationProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyAuthenticationProfileOutcome ModifyAuthenticationProfile(const Model::ModifyAuthenticationProfileRequest& request) const;
+
+        /**
+         * <p>Modifies an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAuthenticationProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyAuthenticationProfileOutcomeCallable ModifyAuthenticationProfileCallable(const Model::ModifyAuthenticationProfileRequest& request) const;
+
+        /**
+         * <p>Modifies an authentication profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAuthenticationProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyAuthenticationProfileAsync(const Model::ModifyAuthenticationProfileRequest& request, const ModifyAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the settings for a cluster.</p> <p>You can also change node type and
          * the number of nodes to scale up or down the cluster. When resizing a cluster,
          * you must specify both the number of nodes and the node type even if one of the
          * parameters does not change.</p> <p>You can add another security or parameter
-         * group, or change the master user password. Resetting a cluster password or
+         * group, or change the admin user password. Resetting a cluster password or
          * modifying the security groups associated with a cluster do not need a reboot.
          * However, modifying a parameter group requires a reboot for parameters to take
          * effect. For more information about managing clusters, go to <a
@@ -3734,7 +3854,7 @@ namespace Model
          * the number of nodes to scale up or down the cluster. When resizing a cluster,
          * you must specify both the number of nodes and the node type even if one of the
          * parameters does not change.</p> <p>You can add another security or parameter
-         * group, or change the master user password. Resetting a cluster password or
+         * group, or change the admin user password. Resetting a cluster password or
          * modifying the security groups associated with a cluster do not need a reboot.
          * However, modifying a parameter group requires a reboot for parameters to take
          * effect. For more information about managing clusters, go to <a
@@ -3753,7 +3873,7 @@ namespace Model
          * the number of nodes to scale up or down the cluster. When resizing a cluster,
          * you must specify both the number of nodes and the node type even if one of the
          * parameters does not change.</p> <p>You can add another security or parameter
-         * group, or change the master user password. Resetting a cluster password or
+         * group, or change the admin user password. Resetting a cluster password or
          * modifying the security groups associated with a cluster do not need a reboot.
          * However, modifying a parameter group requires a reboot for parameters to take
          * effect. For more information about managing clusters, go to <a
@@ -3799,18 +3919,20 @@ namespace Model
         virtual void ModifyClusterDbRevisionAsync(const Model::ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
-         * be used by the cluster to access other AWS services.</p> <p>A cluster can have
-         * up to 10 IAM roles associated at any time.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
+         * used by the cluster to access other Amazon Web Services services.</p> <p>A
+         * cluster can have up to 10 IAM roles associated at any time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyClusterIamRolesOutcome ModifyClusterIamRoles(const Model::ModifyClusterIamRolesRequest& request) const;
 
         /**
-         * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
-         * be used by the cluster to access other AWS services.</p> <p>A cluster can have
-         * up to 10 IAM roles associated at any time.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
+         * used by the cluster to access other Amazon Web Services services.</p> <p>A
+         * cluster can have up to 10 IAM roles associated at any time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
          * API Reference</a></p>
          *
@@ -3819,9 +3941,10 @@ namespace Model
         virtual Model::ModifyClusterIamRolesOutcomeCallable ModifyClusterIamRolesCallable(const Model::ModifyClusterIamRolesRequest& request) const;
 
         /**
-         * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
-         * be used by the cluster to access other AWS services.</p> <p>A cluster can have
-         * up to 10 IAM roles associated at any time.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the list of Identity and Access Management (IAM) roles that can be
+         * used by the cluster to access other Amazon Web Services services.</p> <p>A
+         * cluster can have up to 10 IAM roles associated at any time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">AWS
          * API Reference</a></p>
          *
@@ -4057,9 +4180,9 @@ namespace Model
         virtual void ModifyScheduledActionAsync(const Model::ModifyScheduledActionRequest& request, const ModifyScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination AWS Region
-         * after they are copied from the source AWS Region. By default, this operation
-         * only changes the retention period of copied automated snapshots. The retention
+         * <p>Modifies the number of days to retain snapshots in the destination Region
+         * after they are copied from the source Region. By default, this operation only
+         * changes the retention period of copied automated snapshots. The retention
          * periods for both new and existing copied automated snapshots are updated with
          * the new retention period. You can set the manual option to change only the
          * retention periods of copied manual snapshots. If you set this option, only newly
@@ -4071,9 +4194,9 @@ namespace Model
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcome ModifySnapshotCopyRetentionPeriod(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination AWS Region
-         * after they are copied from the source AWS Region. By default, this operation
-         * only changes the retention period of copied automated snapshots. The retention
+         * <p>Modifies the number of days to retain snapshots in the destination Region
+         * after they are copied from the source Region. By default, this operation only
+         * changes the retention period of copied automated snapshots. The retention
          * periods for both new and existing copied automated snapshots are updated with
          * the new retention period. You can set the manual option to change only the
          * retention periods of copied manual snapshots. If you set this option, only newly
@@ -4087,9 +4210,9 @@ namespace Model
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcomeCallable ModifySnapshotCopyRetentionPeriodCallable(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination AWS Region
-         * after they are copied from the source AWS Region. By default, this operation
-         * only changes the retention period of copied automated snapshots. The retention
+         * <p>Modifies the number of days to retain snapshots in the destination Region
+         * after they are copied from the source Region. By default, this operation only
+         * changes the retention period of copied automated snapshots. The retention
          * periods for both new and existing copied automated snapshots are updated with
          * the new retention period. You can set the manual option to change only the
          * retention periods of copied manual snapshots. If you set this option, only newly
@@ -4589,10 +4712,10 @@ namespace Model
         virtual void RevokeEndpointAccessAsync(const Model::RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the ability of the specified AWS customer account to restore the
-         * specified snapshot. If the account is currently restoring the snapshot, the
-         * restore will run to completion.</p> <p> For more information about working with
-         * snapshots, go to <a
+         * <p>Removes the ability of the specified account to restore the specified
+         * snapshot. If the account is currently restoring the snapshot, the restore will
+         * run to completion.</p> <p> For more information about working with snapshots, go
+         * to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4602,10 +4725,10 @@ namespace Model
         virtual Model::RevokeSnapshotAccessOutcome RevokeSnapshotAccess(const Model::RevokeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Removes the ability of the specified AWS customer account to restore the
-         * specified snapshot. If the account is currently restoring the snapshot, the
-         * restore will run to completion.</p> <p> For more information about working with
-         * snapshots, go to <a
+         * <p>Removes the ability of the specified account to restore the specified
+         * snapshot. If the account is currently restoring the snapshot, the restore will
+         * run to completion.</p> <p> For more information about working with snapshots, go
+         * to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4617,10 +4740,10 @@ namespace Model
         virtual Model::RevokeSnapshotAccessOutcomeCallable RevokeSnapshotAccessCallable(const Model::RevokeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Removes the ability of the specified AWS customer account to restore the
-         * specified snapshot. If the account is currently restoring the snapshot, the
-         * restore will run to completion.</p> <p> For more information about working with
-         * snapshots, go to <a
+         * <p>Removes the ability of the specified account to restore the specified
+         * snapshot. If the account is currently restoring the snapshot, the restore will
+         * run to completion.</p> <p> For more information about working with snapshots, go
+         * to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4694,6 +4817,7 @@ namespace Model
         void BatchModifyClusterSnapshotsAsyncHelper(const Model::BatchModifyClusterSnapshotsRequest& request, const BatchModifyClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelResizeAsyncHelper(const Model::CancelResizeRequest& request, const CancelResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyClusterSnapshotAsyncHelper(const Model::CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAuthenticationProfileAsyncHelper(const Model::CreateAuthenticationProfileRequest& request, const CreateAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterParameterGroupAsyncHelper(const Model::CreateClusterParameterGroupRequest& request, const CreateClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterSecurityGroupAsyncHelper(const Model::CreateClusterSecurityGroupRequest& request, const CreateClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4708,6 +4832,7 @@ namespace Model
         void CreateSnapshotScheduleAsyncHelper(const Model::CreateSnapshotScheduleRequest& request, const CreateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUsageLimitAsyncHelper(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAuthenticationProfileAsyncHelper(const Model::DeleteAuthenticationProfileRequest& request, const DeleteAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterParameterGroupAsyncHelper(const Model::DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterSecurityGroupAsyncHelper(const Model::DeleteClusterSecurityGroupRequest& request, const DeleteClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4724,6 +4849,7 @@ namespace Model
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUsageLimitAsyncHelper(const Model::DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAuthenticationProfilesAsyncHelper(const Model::DescribeAuthenticationProfilesRequest& request, const DescribeAuthenticationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterDbRevisionsAsyncHelper(const Model::DescribeClusterDbRevisionsRequest& request, const DescribeClusterDbRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterParameterGroupsAsyncHelper(const Model::DescribeClusterParameterGroupsRequest& request, const DescribeClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterParametersAsyncHelper(const Model::DescribeClusterParametersRequest& request, const DescribeClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4762,6 +4888,7 @@ namespace Model
         void GetClusterCredentialsAsyncHelper(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedNodeExchangeOfferingsAsyncHelper(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAquaConfigurationAsyncHelper(const Model::ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyAuthenticationProfileAsyncHelper(const Model::ModifyAuthenticationProfileRequest& request, const ModifyAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterAsyncHelper(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterDbRevisionAsyncHelper(const Model::ModifyClusterDbRevisionRequest& request, const ModifyClusterDbRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterIamRolesAsyncHelper(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

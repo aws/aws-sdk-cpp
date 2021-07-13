@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>The request body of the ResetServiceSetting API action.</p><p><h3>See
+   * <p>The request body of the ResetServiceSetting API operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSettingRequest">AWS
    * API Reference</a></p>

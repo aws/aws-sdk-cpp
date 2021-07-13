@@ -41,72 +41,64 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline GoogleDriveConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */
     inline GoogleDriveConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret that contains
-     * the credentials required to connect to Google Drive. For more information, see
-     * <a
+     * <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the
+     * credentials required to connect to Google Drive. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using
      * a Google Workspace Drive data source</a>.</p>
      */

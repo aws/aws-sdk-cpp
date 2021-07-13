@@ -264,22 +264,22 @@ namespace Model
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is 'false'. Applies
-     * to Linux instances only.</p>
+     * that should be applied to the instances. The default value is
+     * <code>false</code>. Applies to Linux instances only.</p>
      */
     inline bool GetApprovedPatchesEnableNonSecurity() const{ return m_approvedPatchesEnableNonSecurity; }
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is 'false'. Applies
-     * to Linux instances only.</p>
+     * that should be applied to the instances. The default value is
+     * <code>false</code>. Applies to Linux instances only.</p>
      */
     inline void SetApprovedPatchesEnableNonSecurity(bool value) { m_approvedPatchesEnableNonSecurity = value; }
 
     /**
      * <p>Indicates whether the list of approved patches includes non-security updates
-     * that should be applied to the instances. The default value is 'false'. Applies
-     * to Linux instances only.</p>
+     * that should be applied to the instances. The default value is
+     * <code>false</code>. Applies to Linux instances only.</p>
      */
     inline GetPatchBaselineResult& WithApprovedPatchesEnableNonSecurity(bool value) { SetApprovedPatchesEnableNonSecurity(value); return *this;}
 
@@ -326,37 +326,42 @@ namespace Model
 
 
     /**
-     * <p>The action specified to take on patches included in the RejectedPatches list.
-     * A patch can be allowed only if it is a dependency of another package, or blocked
-     * entirely along with packages that include it as a dependency.</p>
+     * <p>The action specified to take on patches included in the
+     * <code>RejectedPatches</code> list. A patch can be allowed only if it is a
+     * dependency of another package, or blocked entirely along with packages that
+     * include it as a dependency.</p>
      */
     inline const PatchAction& GetRejectedPatchesAction() const{ return m_rejectedPatchesAction; }
 
     /**
-     * <p>The action specified to take on patches included in the RejectedPatches list.
-     * A patch can be allowed only if it is a dependency of another package, or blocked
-     * entirely along with packages that include it as a dependency.</p>
+     * <p>The action specified to take on patches included in the
+     * <code>RejectedPatches</code> list. A patch can be allowed only if it is a
+     * dependency of another package, or blocked entirely along with packages that
+     * include it as a dependency.</p>
      */
     inline void SetRejectedPatchesAction(const PatchAction& value) { m_rejectedPatchesAction = value; }
 
     /**
-     * <p>The action specified to take on patches included in the RejectedPatches list.
-     * A patch can be allowed only if it is a dependency of another package, or blocked
-     * entirely along with packages that include it as a dependency.</p>
+     * <p>The action specified to take on patches included in the
+     * <code>RejectedPatches</code> list. A patch can be allowed only if it is a
+     * dependency of another package, or blocked entirely along with packages that
+     * include it as a dependency.</p>
      */
     inline void SetRejectedPatchesAction(PatchAction&& value) { m_rejectedPatchesAction = std::move(value); }
 
     /**
-     * <p>The action specified to take on patches included in the RejectedPatches list.
-     * A patch can be allowed only if it is a dependency of another package, or blocked
-     * entirely along with packages that include it as a dependency.</p>
+     * <p>The action specified to take on patches included in the
+     * <code>RejectedPatches</code> list. A patch can be allowed only if it is a
+     * dependency of another package, or blocked entirely along with packages that
+     * include it as a dependency.</p>
      */
     inline GetPatchBaselineResult& WithRejectedPatchesAction(const PatchAction& value) { SetRejectedPatchesAction(value); return *this;}
 
     /**
-     * <p>The action specified to take on patches included in the RejectedPatches list.
-     * A patch can be allowed only if it is a dependency of another package, or blocked
-     * entirely along with packages that include it as a dependency.</p>
+     * <p>The action specified to take on patches included in the
+     * <code>RejectedPatches</code> list. A patch can be allowed only if it is a
+     * dependency of another package, or blocked entirely along with packages that
+     * include it as a dependency.</p>
      */
     inline GetPatchBaselineResult& WithRejectedPatchesAction(PatchAction&& value) { SetRejectedPatchesAction(std::move(value)); return *this;}
 

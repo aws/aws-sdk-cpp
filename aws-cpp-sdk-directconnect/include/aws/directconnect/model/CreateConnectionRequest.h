@@ -295,7 +295,7 @@ namespace Model
      * (MACsec).</p> <p>MAC Security (MACsec) is only available on dedicated
      * connections. For information about MAC Security (MACsec) prerequisties, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
-     * prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline bool GetRequestMACSec() const{ return m_requestMACSec; }
 
@@ -304,7 +304,7 @@ namespace Model
      * (MACsec).</p> <p>MAC Security (MACsec) is only available on dedicated
      * connections. For information about MAC Security (MACsec) prerequisties, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
-     * prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline bool RequestMACSecHasBeenSet() const { return m_requestMACSecHasBeenSet; }
 
@@ -313,7 +313,7 @@ namespace Model
      * (MACsec).</p> <p>MAC Security (MACsec) is only available on dedicated
      * connections. For information about MAC Security (MACsec) prerequisties, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
-     * prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline void SetRequestMACSec(bool value) { m_requestMACSecHasBeenSet = true; m_requestMACSec = value; }
 
@@ -322,7 +322,7 @@ namespace Model
      * (MACsec).</p> <p>MAC Security (MACsec) is only available on dedicated
      * connections. For information about MAC Security (MACsec) prerequisties, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec
-     * prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateConnectionRequest& WithRequestMACSec(bool value) { SetRequestMACSec(value); return *this;}
 

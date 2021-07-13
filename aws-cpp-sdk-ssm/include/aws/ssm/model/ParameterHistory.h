@@ -187,50 +187,50 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline void SetLastModifiedUser(const Aws::String& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline void SetLastModifiedUser(const char* value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline ParameterHistory& WithLastModifiedUser(const Aws::String& value) { SetLastModifiedUser(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline ParameterHistory& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
-     * parameter.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed
+     * the parameter.</p>
      */
     inline ParameterHistory& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
 
@@ -467,56 +467,64 @@ namespace Model
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<ParameterInlinePolicy>& GetPolicies() const{ return m_policies; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline ParameterHistory& WithPolicies(const Aws::Vector<ParameterInlinePolicy>& value) { SetPolicies(value); return *this;}
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline ParameterHistory& WithPolicies(Aws::Vector<ParameterInlinePolicy>&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline ParameterHistory& AddPolicies(const ParameterInlinePolicy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
 
     /**
      * <p>Information about the policies assigned to a parameter.</p> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
-     * parameter policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * parameter policies</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline ParameterHistory& AddPolicies(ParameterInlinePolicy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
 

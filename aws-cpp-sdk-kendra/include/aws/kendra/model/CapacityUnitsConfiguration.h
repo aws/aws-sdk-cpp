@@ -38,30 +38,30 @@ namespace Model
 
 
     /**
-     * <p>The amount of extra storage capacity for an index. A single capacity unit
-     * provides 30 GB of storage space or 100,000 documents, whichever is reached
-     * first.</p>
+     * <p>The amount of extra storage capacity for an index. A single capacity unit for
+     * an index provides 150 GB of storage space or 500,000 documents, whichever is
+     * reached first.</p>
      */
     inline int GetStorageCapacityUnits() const{ return m_storageCapacityUnits; }
 
     /**
-     * <p>The amount of extra storage capacity for an index. A single capacity unit
-     * provides 30 GB of storage space or 100,000 documents, whichever is reached
-     * first.</p>
+     * <p>The amount of extra storage capacity for an index. A single capacity unit for
+     * an index provides 150 GB of storage space or 500,000 documents, whichever is
+     * reached first.</p>
      */
     inline bool StorageCapacityUnitsHasBeenSet() const { return m_storageCapacityUnitsHasBeenSet; }
 
     /**
-     * <p>The amount of extra storage capacity for an index. A single capacity unit
-     * provides 30 GB of storage space or 100,000 documents, whichever is reached
-     * first.</p>
+     * <p>The amount of extra storage capacity for an index. A single capacity unit for
+     * an index provides 150 GB of storage space or 500,000 documents, whichever is
+     * reached first.</p>
      */
     inline void SetStorageCapacityUnits(int value) { m_storageCapacityUnitsHasBeenSet = true; m_storageCapacityUnits = value; }
 
     /**
-     * <p>The amount of extra storage capacity for an index. A single capacity unit
-     * provides 30 GB of storage space or 100,000 documents, whichever is reached
-     * first.</p>
+     * <p>The amount of extra storage capacity for an index. A single capacity unit for
+     * an index provides 150 GB of storage space or 500,000 documents, whichever is
+     * reached first.</p>
      */
     inline CapacityUnitsConfiguration& WithStorageCapacityUnits(int value) { SetStorageCapacityUnits(value); return *this;}
 
@@ -69,60 +69,52 @@ namespace Model
     /**
      * <p>The amount of extra query capacity for an index and <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
-     * capacity.</p> <p>A single extra capacity unit for an index provides 0.1 queries
-     * per second or approximately 8,000 queries per day.</p> <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query
-     * capacity for an index, or the base capacity of 2.5 calls per second, whichever
-     * is higher. For example, the base capacity for an index is 0.1 queries per
-     * second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls
-     * per second. If you add another 0.1 queries per second to total 0.2 queries per
-     * second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls
-     * per second (higher than five times 0.2 queries per second).</p>
+     * capacity.</p> <p>A single extra capacity unit for an index provides 0.5 queries
+     * per second or approximately 40,000 queries per day.</p> <p>
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query
+     * capacity for an index. For example, the base capacity for an index is 0.5
+     * queries per second, so GetQuerySuggestions capacity is 2.5 calls per second. If
+     * adding another 0.5 queries per second to total 1 queries per second for an
+     * index, the <code>GetQuerySuggestions</code> capacity is 5 calls per second.</p>
      */
     inline int GetQueryCapacityUnits() const{ return m_queryCapacityUnits; }
 
     /**
      * <p>The amount of extra query capacity for an index and <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
-     * capacity.</p> <p>A single extra capacity unit for an index provides 0.1 queries
-     * per second or approximately 8,000 queries per day.</p> <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query
-     * capacity for an index, or the base capacity of 2.5 calls per second, whichever
-     * is higher. For example, the base capacity for an index is 0.1 queries per
-     * second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls
-     * per second. If you add another 0.1 queries per second to total 0.2 queries per
-     * second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls
-     * per second (higher than five times 0.2 queries per second).</p>
+     * capacity.</p> <p>A single extra capacity unit for an index provides 0.5 queries
+     * per second or approximately 40,000 queries per day.</p> <p>
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query
+     * capacity for an index. For example, the base capacity for an index is 0.5
+     * queries per second, so GetQuerySuggestions capacity is 2.5 calls per second. If
+     * adding another 0.5 queries per second to total 1 queries per second for an
+     * index, the <code>GetQuerySuggestions</code> capacity is 5 calls per second.</p>
      */
     inline bool QueryCapacityUnitsHasBeenSet() const { return m_queryCapacityUnitsHasBeenSet; }
 
     /**
      * <p>The amount of extra query capacity for an index and <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
-     * capacity.</p> <p>A single extra capacity unit for an index provides 0.1 queries
-     * per second or approximately 8,000 queries per day.</p> <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query
-     * capacity for an index, or the base capacity of 2.5 calls per second, whichever
-     * is higher. For example, the base capacity for an index is 0.1 queries per
-     * second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls
-     * per second. If you add another 0.1 queries per second to total 0.2 queries per
-     * second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls
-     * per second (higher than five times 0.2 queries per second).</p>
+     * capacity.</p> <p>A single extra capacity unit for an index provides 0.5 queries
+     * per second or approximately 40,000 queries per day.</p> <p>
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query
+     * capacity for an index. For example, the base capacity for an index is 0.5
+     * queries per second, so GetQuerySuggestions capacity is 2.5 calls per second. If
+     * adding another 0.5 queries per second to total 1 queries per second for an
+     * index, the <code>GetQuerySuggestions</code> capacity is 5 calls per second.</p>
      */
     inline void SetQueryCapacityUnits(int value) { m_queryCapacityUnitsHasBeenSet = true; m_queryCapacityUnits = value; }
 
     /**
      * <p>The amount of extra query capacity for an index and <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
-     * capacity.</p> <p>A single extra capacity unit for an index provides 0.1 queries
-     * per second or approximately 8,000 queries per day.</p> <p>
-     * <code>GetQuerySuggestions</code> capacity is five times the provisioned query
-     * capacity for an index, or the base capacity of 2.5 calls per second, whichever
-     * is higher. For example, the base capacity for an index is 0.1 queries per
-     * second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls
-     * per second. If you add another 0.1 queries per second to total 0.2 queries per
-     * second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls
-     * per second (higher than five times 0.2 queries per second).</p>
+     * capacity.</p> <p>A single extra capacity unit for an index provides 0.5 queries
+     * per second or approximately 40,000 queries per day.</p> <p>
+     * <code>GetQuerySuggestions</code> capacity is 5 times the provisioned query
+     * capacity for an index. For example, the base capacity for an index is 0.5
+     * queries per second, so GetQuerySuggestions capacity is 2.5 calls per second. If
+     * adding another 0.5 queries per second to total 1 queries per second for an
+     * index, the <code>GetQuerySuggestions</code> capacity is 5 calls per second.</p>
      */
     inline CapacityUnitsConfiguration& WithQueryCapacityUnits(int value) { SetQueryCapacityUnits(value); return *this;}
 

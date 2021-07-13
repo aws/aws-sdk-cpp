@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration options for sending command output to CloudWatch
+   * <p>Configuration options for sending command output to Amazon CloudWatch
    * Logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CloudWatchOutputConfig">AWS
    * API Reference</a></p>
@@ -39,66 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline const Aws::String& GetCloudWatchLogGroupName() const{ return m_cloudWatchLogGroupName; }
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline bool CloudWatchLogGroupNameHasBeenSet() const { return m_cloudWatchLogGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline void SetCloudWatchLogGroupName(const Aws::String& value) { m_cloudWatchLogGroupNameHasBeenSet = true; m_cloudWatchLogGroupName = value; }
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline void SetCloudWatchLogGroupName(Aws::String&& value) { m_cloudWatchLogGroupNameHasBeenSet = true; m_cloudWatchLogGroupName = std::move(value); }
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline void SetCloudWatchLogGroupName(const char* value) { m_cloudWatchLogGroupNameHasBeenSet = true; m_cloudWatchLogGroupName.assign(value); }
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline CloudWatchOutputConfig& WithCloudWatchLogGroupName(const Aws::String& value) { SetCloudWatchLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline CloudWatchOutputConfig& WithCloudWatchLogGroupName(Aws::String&& value) { SetCloudWatchLogGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the CloudWatch log group where you want to send command output.
-     * If you don't specify a group name, Systems Manager automatically creates a log
-     * group for you. The log group uses the following naming format:
-     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     * <p>The name of the CloudWatch Logs log group where you want to send command
+     * output. If you don't specify a group name, Amazon Web Services Systems Manager
+     * automatically creates a log group for you. The log group uses the following
+     * naming format:</p> <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code>
+     * </p>
      */
     inline CloudWatchOutputConfig& WithCloudWatchLogGroupName(const char* value) { SetCloudWatchLogGroupName(value); return *this;}
 

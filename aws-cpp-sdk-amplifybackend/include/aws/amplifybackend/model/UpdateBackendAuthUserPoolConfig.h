@@ -80,38 +80,38 @@ namespace Model
 
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication policies for your
+     * Amazon Cognito user pool configured as a part of your Amplify project.</p>
      */
     inline const UpdateBackendAuthMFAConfig& GetMfa() const{ return m_mfa; }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication policies for your
+     * Amazon Cognito user pool configured as a part of your Amplify project.</p>
      */
     inline bool MfaHasBeenSet() const { return m_mfaHasBeenSet; }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication policies for your
+     * Amazon Cognito user pool configured as a part of your Amplify project.</p>
      */
     inline void SetMfa(const UpdateBackendAuthMFAConfig& value) { m_mfaHasBeenSet = true; m_mfa = value; }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication policies for your
+     * Amazon Cognito user pool configured as a part of your Amplify project.</p>
      */
     inline void SetMfa(UpdateBackendAuthMFAConfig&& value) { m_mfaHasBeenSet = true; m_mfa = std::move(value); }
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication policies for your
+     * Amazon Cognito user pool configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthUserPoolConfig& WithMfa(const UpdateBackendAuthMFAConfig& value) { SetMfa(value); return *this;}
 
     /**
-     * <p>Describes whether multi-factor authentication policies should be applied for
-     * your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+     * <p>Describes whether to apply multi-factor authentication policies for your
+     * Amazon Cognito user pool configured as a part of your Amplify project.</p>
      */
     inline UpdateBackendAuthUserPoolConfig& WithMfa(UpdateBackendAuthMFAConfig&& value) { SetMfa(std::move(value)); return *this;}
 

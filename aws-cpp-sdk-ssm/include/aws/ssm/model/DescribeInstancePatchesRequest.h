@@ -78,58 +78,122 @@ namespace Model
 
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline DescribeInstancePatchesRequest& WithFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline DescribeInstancePatchesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline DescribeInstancePatchesRequest& AddFilters(const PatchOrchestratorFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures. Each entry in the array is a structure containing a
-     * Key, Value combination. Valid values for Key are <code>Classification</code> |
-     * <code>KBId</code> | <code>Severity</code> | <code>State</code>.</p>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribeInstancePatches</code>include the
+     * following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample
+     * values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p>
+     * <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> |
+     * <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b>
+     * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
+     * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
+     * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+     * </ul>
      */
     inline DescribeInstancePatchesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

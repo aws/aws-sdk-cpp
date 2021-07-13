@@ -82,54 +82,60 @@ namespace Model
 
 
     /**
-     * <p>The number of instances with patches installed by Patch Manager that have not
+     * <p>The number of instances with patches installed by Patch Manager that haven't
      * been rebooted after the patch installation. The status of these instances is
-     * NON_COMPLIANT.</p>
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetInstancesWithInstalledPendingRebootPatches() const{ return m_instancesWithInstalledPendingRebootPatches; }
 
     /**
-     * <p>The number of instances with patches installed by Patch Manager that have not
+     * <p>The number of instances with patches installed by Patch Manager that haven't
      * been rebooted after the patch installation. The status of these instances is
-     * NON_COMPLIANT.</p>
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetInstancesWithInstalledPendingRebootPatches(int value) { m_instancesWithInstalledPendingRebootPatches = value; }
 
     /**
-     * <p>The number of instances with patches installed by Patch Manager that have not
+     * <p>The number of instances with patches installed by Patch Manager that haven't
      * been rebooted after the patch installation. The status of these instances is
-     * NON_COMPLIANT.</p>
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledPendingRebootPatches(int value) { SetInstancesWithInstalledPendingRebootPatches(value); return *this;}
 
 
     /**
      * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * 
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <code>INSTALLED_REJECTED</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code>
+     * (zero).</p> 
      */
     inline int GetInstancesWithInstalledRejectedPatches() const{ return m_instancesWithInstalledRejectedPatches; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * 
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <code>INSTALLED_REJECTED</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code>
+     * (zero).</p> 
      */
     inline void SetInstancesWithInstalledRejectedPatches(int value) { m_instancesWithInstalledRejectedPatches = value; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> 
-     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * 
+     * <code>RejectedPatches</code> list. Patches with a status of
+     * <code>INSTALLED_REJECTED</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
+     * <code>RejectedPatchesAction</code>, the value of
+     * <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code>
+     * (zero).</p> 
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledRejectedPatches(int value) { SetInstancesWithInstalledRejectedPatches(value); return *this;}
 
@@ -187,97 +193,103 @@ namespace Model
 
     /**
      * <p>The number of instances with <code>NotApplicable</code> patches beyond the
-     * supported limit, which are not reported by name to Systems Manager
-     * Inventory.</p>
+     * supported limit, which aren't reported by name to Inventory. Inventory is a
+     * capability of Amazon Web Services Systems Manager.</p>
      */
     inline int GetInstancesWithUnreportedNotApplicablePatches() const{ return m_instancesWithUnreportedNotApplicablePatches; }
 
     /**
      * <p>The number of instances with <code>NotApplicable</code> patches beyond the
-     * supported limit, which are not reported by name to Systems Manager
-     * Inventory.</p>
+     * supported limit, which aren't reported by name to Inventory. Inventory is a
+     * capability of Amazon Web Services Systems Manager.</p>
      */
     inline void SetInstancesWithUnreportedNotApplicablePatches(int value) { m_instancesWithUnreportedNotApplicablePatches = value; }
 
     /**
      * <p>The number of instances with <code>NotApplicable</code> patches beyond the
-     * supported limit, which are not reported by name to Systems Manager
-     * Inventory.</p>
+     * supported limit, which aren't reported by name to Inventory. Inventory is a
+     * capability of Amazon Web Services Systems Manager.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithUnreportedNotApplicablePatches(int value) { SetInstancesWithUnreportedNotApplicablePatches(value); return *this;}
 
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetInstancesWithCriticalNonCompliantPatches() const{ return m_instancesWithCriticalNonCompliantPatches; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetInstancesWithCriticalNonCompliantPatches(int value) { m_instancesWithCriticalNonCompliantPatches = value; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithCriticalNonCompliantPatches(int value) { SetInstancesWithCriticalNonCompliantPatches(value); return *this;}
 
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetInstancesWithSecurityNonCompliantPatches() const{ return m_instancesWithSecurityNonCompliantPatches; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetInstancesWithSecurityNonCompliantPatches(int value) { m_instancesWithSecurityNonCompliantPatches = value; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithSecurityNonCompliantPatches(int value) { SetInstancesWithSecurityNonCompliantPatches(value); return *this;}
 
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetInstancesWithOtherNonCompliantPatches() const{ return m_instancesWithOtherNonCompliantPatches; }
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetInstancesWithOtherNonCompliantPatches(int value) { m_instancesWithOtherNonCompliantPatches = value; }
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithOtherNonCompliantPatches(int value) { SetInstancesWithOtherNonCompliantPatches(value); return *this;}
 

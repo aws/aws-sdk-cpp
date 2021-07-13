@@ -28,11 +28,11 @@ namespace Model
 
   /**
    * <p>An activation registers one or more on-premises servers or virtual machines
-   * (VMs) with AWS so that you can configure those servers or VMs using Run Command.
-   * A server or VM that has been registered with AWS is called a managed
-   * instance.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation">AWS API
-   * Reference</a></p>
+   * (VMs) with Amazon Web Services so that you can configure those servers or VMs
+   * using Run Command. A server or VM that has been registered with Amazon Web
+   * Services Systems Manager is called a managed instance.</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API Activation
   {
@@ -167,49 +167,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline Activation& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline Activation& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * <p>The Identity and Access Management (IAM) role to assign to the managed
      * instance.</p>
      */
     inline Activation& WithIamRole(const char* value) { SetIamRole(value); return *this;}

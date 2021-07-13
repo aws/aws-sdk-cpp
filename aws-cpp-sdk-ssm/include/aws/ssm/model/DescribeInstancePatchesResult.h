@@ -35,58 +35,65 @@ namespace Model
 
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline const Aws::Vector<PatchComplianceData>& GetPatches() const{ return m_patches; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline void SetPatches(const Aws::Vector<PatchComplianceData>& value) { m_patches = value; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline void SetPatches(Aws::Vector<PatchComplianceData>&& value) { m_patches = std::move(value); }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline DescribeInstancePatchesResult& WithPatches(const Aws::Vector<PatchComplianceData>& value) { SetPatches(value); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline DescribeInstancePatchesResult& WithPatches(Aws::Vector<PatchComplianceData>&& value) { SetPatches(std::move(value)); return *this;}
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline DescribeInstancePatchesResult& AddPatches(const PatchComplianceData& value) { m_patches.push_back(value); return *this; }
 
     /**
-     * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
-     * <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p>
-     * <p>State (string, such as "INSTALLED" or "FAILED")</p> <p>InstalledTime
-     * (DateTime)</p> <p>InstalledBy (string)</p>
+     * <p>Each entry in the array is a structure containing:</p> <ul> <li> <p>Title
+     * (string)</p> </li> <li> <p>KBId (string)</p> </li> <li> <p>Classification
+     * (string)</p> </li> <li> <p>Severity (string)</p> </li> <li> <p>State (string,
+     * such as "INSTALLED" or "FAILED")</p> </li> <li> <p>InstalledTime (DateTime)</p>
+     * </li> <li> <p>InstalledBy (string)</p> </li> </ul>
      */
     inline DescribeInstancePatchesResult& AddPatches(PatchComplianceData&& value) { m_patches.push_back(std::move(value)); return *this; }
 

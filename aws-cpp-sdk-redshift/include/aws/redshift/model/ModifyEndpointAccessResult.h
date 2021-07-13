@@ -79,37 +79,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwner = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwner = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline void SetResourceOwner(const char* value) { m_resourceOwner.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline ModifyEndpointAccessResult& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline ModifyEndpointAccessResult& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the cluster.</p>
+     * <p>The account ID of the owner of the cluster.</p>
      */
     inline ModifyEndpointAccessResult& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
 

@@ -36,6 +36,7 @@ Connection::Connection() :
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -66,6 +67,7 @@ Connection::Connection(JsonView jsonValue) :
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -177,6 +179,13 @@ Connection& Connection::operator =(JsonView jsonValue)
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
 
     m_awsDeviceV2HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
@@ -320,6 +329,12 @@ JsonValue Connection::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
 
   }
 

@@ -42,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The pending or in-progress change of the master user password for the
+     * <p>The pending or in-progress change of the admin user password for the
      * cluster.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}

@@ -179,7 +179,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
@@ -192,7 +192,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
@@ -205,7 +205,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
@@ -218,7 +218,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
@@ -231,7 +231,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
@@ -244,7 +244,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline CreateClusterRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
@@ -257,7 +257,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline CreateClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
@@ -270,7 +270,7 @@ namespace Model
      * </li> <li> <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for all
-     * clusters within an AWS account.</p> </li> </ul> <p>Example:
+     * clusters within an account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
     inline CreateClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
@@ -447,7 +447,7 @@ namespace Model
 
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -458,7 +458,7 @@ namespace Model
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -469,7 +469,7 @@ namespace Model
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -480,7 +480,7 @@ namespace Model
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -491,7 +491,7 @@ namespace Model
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -502,7 +502,7 @@ namespace Model
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -513,7 +513,7 @@ namespace Model
     inline CreateClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -524,7 +524,7 @@ namespace Model
     inline CreateClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name associated with the master user account for the cluster that is
+     * <p>The user name associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
@@ -536,7 +536,7 @@ namespace Model
 
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -547,7 +547,7 @@ namespace Model
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -558,7 +558,7 @@ namespace Model
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -569,7 +569,7 @@ namespace Model
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -580,7 +580,7 @@ namespace Model
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -591,7 +591,7 @@ namespace Model
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -602,7 +602,7 @@ namespace Model
     inline CreateClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -613,7 +613,7 @@ namespace Model
     inline CreateClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password associated with the master user account for the cluster that is
+     * <p>The password associated with the admin user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
@@ -1640,50 +1640,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline CreateClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline CreateClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline CreateClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1775,83 +1775,83 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline CreateClusterRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline CreateClusterRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline CreateClusterRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline CreateClusterRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services. You must supply the IAM roles in their
-     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
-     * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
-     * time.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services. You must supply the IAM
+     * roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM
+     * roles in a single request.</p> <p>A cluster can have up to 10 IAM roles
+     * associated with it at any time.</p>
      */
     inline CreateClusterRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
@@ -1983,9 +1983,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) when it is created. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
-     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
-     * use AQUA.</p> </li> </ul>
+     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
+     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
+     * AQUA.</p> </li> </ul>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
 
@@ -1993,9 +1993,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) when it is created. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
-     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
-     * use AQUA.</p> </li> </ul>
+     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
+     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
+     * AQUA.</p> </li> </ul>
      */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
 
@@ -2003,9 +2003,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) when it is created. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
-     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
-     * use AQUA.</p> </li> </ul>
+     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
+     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
+     * AQUA.</p> </li> </ul>
      */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
 
@@ -2013,9 +2013,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) when it is created. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
-     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
-     * use AQUA.</p> </li> </ul>
+     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
+     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
+     * AQUA.</p> </li> </ul>
      */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
 
@@ -2023,9 +2023,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) when it is created. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
-     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
-     * use AQUA.</p> </li> </ul>
+     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
+     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
+     * AQUA.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
 
@@ -2033,9 +2033,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) when it is created. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
-     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
-     * use AQUA.</p> </li> </ul>
+     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
+     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
+     * AQUA.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 

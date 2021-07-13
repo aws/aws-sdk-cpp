@@ -91,10 +91,10 @@ namespace Model
      * inventory data associated with the custom inventory type. Choose one of the
      * following options:</p> <p>DisableSchema: If you choose this option, the system
      * ignores all inventory data for the specified version, and any earlier versions.
-     * To enable this schema again, you must call the <code>PutInventory</code> action
-     * for a version greater than the disabled version.</p> <p>DeleteSchema: This
-     * option deletes the specified custom type from the Inventory service. You can
-     * recreate the schema later, if you want.</p>
+     * To enable this schema again, you must call the <code>PutInventory</code>
+     * operation for a version greater than the disabled version.</p> <p>DeleteSchema:
+     * This option deletes the specified custom type from the Inventory service. You
+     * can recreate the schema later, if you want.</p>
      */
     inline const InventorySchemaDeleteOption& GetSchemaDeleteOption() const{ return m_schemaDeleteOption; }
 
@@ -104,10 +104,10 @@ namespace Model
      * inventory data associated with the custom inventory type. Choose one of the
      * following options:</p> <p>DisableSchema: If you choose this option, the system
      * ignores all inventory data for the specified version, and any earlier versions.
-     * To enable this schema again, you must call the <code>PutInventory</code> action
-     * for a version greater than the disabled version.</p> <p>DeleteSchema: This
-     * option deletes the specified custom type from the Inventory service. You can
-     * recreate the schema later, if you want.</p>
+     * To enable this schema again, you must call the <code>PutInventory</code>
+     * operation for a version greater than the disabled version.</p> <p>DeleteSchema:
+     * This option deletes the specified custom type from the Inventory service. You
+     * can recreate the schema later, if you want.</p>
      */
     inline bool SchemaDeleteOptionHasBeenSet() const { return m_schemaDeleteOptionHasBeenSet; }
 
@@ -117,10 +117,10 @@ namespace Model
      * inventory data associated with the custom inventory type. Choose one of the
      * following options:</p> <p>DisableSchema: If you choose this option, the system
      * ignores all inventory data for the specified version, and any earlier versions.
-     * To enable this schema again, you must call the <code>PutInventory</code> action
-     * for a version greater than the disabled version.</p> <p>DeleteSchema: This
-     * option deletes the specified custom type from the Inventory service. You can
-     * recreate the schema later, if you want.</p>
+     * To enable this schema again, you must call the <code>PutInventory</code>
+     * operation for a version greater than the disabled version.</p> <p>DeleteSchema:
+     * This option deletes the specified custom type from the Inventory service. You
+     * can recreate the schema later, if you want.</p>
      */
     inline void SetSchemaDeleteOption(const InventorySchemaDeleteOption& value) { m_schemaDeleteOptionHasBeenSet = true; m_schemaDeleteOption = value; }
 
@@ -130,10 +130,10 @@ namespace Model
      * inventory data associated with the custom inventory type. Choose one of the
      * following options:</p> <p>DisableSchema: If you choose this option, the system
      * ignores all inventory data for the specified version, and any earlier versions.
-     * To enable this schema again, you must call the <code>PutInventory</code> action
-     * for a version greater than the disabled version.</p> <p>DeleteSchema: This
-     * option deletes the specified custom type from the Inventory service. You can
-     * recreate the schema later, if you want.</p>
+     * To enable this schema again, you must call the <code>PutInventory</code>
+     * operation for a version greater than the disabled version.</p> <p>DeleteSchema:
+     * This option deletes the specified custom type from the Inventory service. You
+     * can recreate the schema later, if you want.</p>
      */
     inline void SetSchemaDeleteOption(InventorySchemaDeleteOption&& value) { m_schemaDeleteOptionHasBeenSet = true; m_schemaDeleteOption = std::move(value); }
 
@@ -143,10 +143,10 @@ namespace Model
      * inventory data associated with the custom inventory type. Choose one of the
      * following options:</p> <p>DisableSchema: If you choose this option, the system
      * ignores all inventory data for the specified version, and any earlier versions.
-     * To enable this schema again, you must call the <code>PutInventory</code> action
-     * for a version greater than the disabled version.</p> <p>DeleteSchema: This
-     * option deletes the specified custom type from the Inventory service. You can
-     * recreate the schema later, if you want.</p>
+     * To enable this schema again, you must call the <code>PutInventory</code>
+     * operation for a version greater than the disabled version.</p> <p>DeleteSchema:
+     * This option deletes the specified custom type from the Inventory service. You
+     * can recreate the schema later, if you want.</p>
      */
     inline DeleteInventoryRequest& WithSchemaDeleteOption(const InventorySchemaDeleteOption& value) { SetSchemaDeleteOption(value); return *this;}
 
@@ -156,10 +156,10 @@ namespace Model
      * inventory data associated with the custom inventory type. Choose one of the
      * following options:</p> <p>DisableSchema: If you choose this option, the system
      * ignores all inventory data for the specified version, and any earlier versions.
-     * To enable this schema again, you must call the <code>PutInventory</code> action
-     * for a version greater than the disabled version.</p> <p>DeleteSchema: This
-     * option deletes the specified custom type from the Inventory service. You can
-     * recreate the schema later, if you want.</p>
+     * To enable this schema again, you must call the <code>PutInventory</code>
+     * operation for a version greater than the disabled version.</p> <p>DeleteSchema:
+     * This option deletes the specified custom type from the Inventory service. You
+     * can recreate the schema later, if you want.</p>
      */
     inline DeleteInventoryRequest& WithSchemaDeleteOption(InventorySchemaDeleteOption&& value) { SetSchemaDeleteOption(std::move(value)); return *this;}
 

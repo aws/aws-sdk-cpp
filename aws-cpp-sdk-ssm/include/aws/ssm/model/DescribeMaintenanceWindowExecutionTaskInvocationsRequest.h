@@ -128,57 +128,73 @@ namespace Model
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(const MaintenanceWindowFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
-     * supported filter key is STATUS with the corresponding values PENDING,
-     * IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and CANCELLED.</p>
+     * supported filter key is <code>STATUS</code> with the corresponding values
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>,
+     * <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and
+     * <code>CANCELLED</code>.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

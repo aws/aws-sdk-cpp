@@ -127,160 +127,170 @@ namespace Model
 
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline const MaintenanceWindowTaskType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline void SetType(const MaintenanceWindowTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline void SetType(MaintenanceWindowTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline MaintenanceWindowTask& WithType(const MaintenanceWindowTaskType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline MaintenanceWindowTask& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -437,116 +447,130 @@ namespace Model
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline MaintenanceWindowTask& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline MaintenanceWindowTask& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 

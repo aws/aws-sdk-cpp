@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A filter for viewing OpsItem summaries.</p><p><h3>See Also:</h3>   <a
+   * <p>A filter for viewing OpsData summaries.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsFilter">AWS API
    * Reference</a></p>
    */

@@ -201,33 +201,37 @@ namespace Model
 
     /**
      * <p>Indicates whether the latest version of SSM Agent is running on your Linux
-     * Managed Instance. This field does not indicate whether or not the latest version
+     * Managed Instance. This field doesn't indicate whether or not the latest version
      * is installed on Windows managed instances, because some older versions of
-     * Windows Server use the EC2Config service to process SSM requests.</p>
+     * Windows Server use the EC2Config service to process Systems Manager
+     * requests.</p>
      */
     inline bool GetIsLatestVersion() const{ return m_isLatestVersion; }
 
     /**
      * <p>Indicates whether the latest version of SSM Agent is running on your Linux
-     * Managed Instance. This field does not indicate whether or not the latest version
+     * Managed Instance. This field doesn't indicate whether or not the latest version
      * is installed on Windows managed instances, because some older versions of
-     * Windows Server use the EC2Config service to process SSM requests.</p>
+     * Windows Server use the EC2Config service to process Systems Manager
+     * requests.</p>
      */
     inline bool IsLatestVersionHasBeenSet() const { return m_isLatestVersionHasBeenSet; }
 
     /**
      * <p>Indicates whether the latest version of SSM Agent is running on your Linux
-     * Managed Instance. This field does not indicate whether or not the latest version
+     * Managed Instance. This field doesn't indicate whether or not the latest version
      * is installed on Windows managed instances, because some older versions of
-     * Windows Server use the EC2Config service to process SSM requests.</p>
+     * Windows Server use the EC2Config service to process Systems Manager
+     * requests.</p>
      */
     inline void SetIsLatestVersion(bool value) { m_isLatestVersionHasBeenSet = true; m_isLatestVersion = value; }
 
     /**
      * <p>Indicates whether the latest version of SSM Agent is running on your Linux
-     * Managed Instance. This field does not indicate whether or not the latest version
+     * Managed Instance. This field doesn't indicate whether or not the latest version
      * is installed on Windows managed instances, because some older versions of
-     * Windows Server use the EC2Config service to process SSM requests.</p>
+     * Windows Server use the EC2Config service to process Systems Manager
+     * requests.</p>
      */
     inline InstanceInformation& WithIsLatestVersion(bool value) { SetIsLatestVersion(value); return *this;}
 
@@ -346,178 +350,192 @@ namespace Model
 
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline const Aws::String& GetActivationId() const{ return m_activationId; }
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline bool ActivationIdHasBeenSet() const { return m_activationIdHasBeenSet; }
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = std::move(value); }
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline InstanceInformation& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline InstanceInformation& WithActivationId(Aws::String&& value) { SetActivationId(std::move(value)); return *this;}
 
     /**
-     * <p>The activation ID created by Systems Manager when the server or VM was
-     * registered.</p>
+     * <p>The activation ID created by Amazon Web Services Systems Manager when the
+     * server or virtual machine (VM) was registered.</p>
      */
     inline InstanceInformation& WithActivationId(const char* value) { SetActivationId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
-     * on-premises Systems Manager managed instance. This call does not return the IAM
-     * role for EC2 instances. To retrieve the IAM role for an EC2 instance, use the
-     * Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     * <p>The Identity and Access Management (IAM) role assigned to the on-premises
+     * Systems Manager managed instance. This call doesn't return the IAM role for
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances. To retrieve the IAM role
+     * for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code>
+     * operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
 
     /**
-     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     * <p>The date the server or VM was registered with Amazon Web Services as a
+     * managed instance.</p>
      */
     inline const Aws::Utils::DateTime& GetRegistrationDate() const{ return m_registrationDate; }
 
     /**
-     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     * <p>The date the server or VM was registered with Amazon Web Services as a
+     * managed instance.</p>
      */
     inline bool RegistrationDateHasBeenSet() const { return m_registrationDateHasBeenSet; }
 
     /**
-     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     * <p>The date the server or VM was registered with Amazon Web Services as a
+     * managed instance.</p>
      */
     inline void SetRegistrationDate(const Aws::Utils::DateTime& value) { m_registrationDateHasBeenSet = true; m_registrationDate = value; }
 
     /**
-     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     * <p>The date the server or VM was registered with Amazon Web Services as a
+     * managed instance.</p>
      */
     inline void SetRegistrationDate(Aws::Utils::DateTime&& value) { m_registrationDateHasBeenSet = true; m_registrationDate = std::move(value); }
 
     /**
-     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     * <p>The date the server or VM was registered with Amazon Web Services as a
+     * managed instance.</p>
      */
     inline InstanceInformation& WithRegistrationDate(const Aws::Utils::DateTime& value) { SetRegistrationDate(value); return *this;}
 
     /**
-     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     * <p>The date the server or VM was registered with Amazon Web Services as a
+     * managed instance.</p>
      */
     inline InstanceInformation& WithRegistrationDate(Aws::Utils::DateTime&& value) { SetRegistrationDate(std::move(value)); return *this;}
 
@@ -569,12 +587,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -588,12 +606,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -607,12 +625,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -626,12 +644,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -645,12 +663,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -664,12 +682,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -683,12 +701,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -702,12 +720,12 @@ namespace Model
      * SSM Agent for a hybrid environment (Linux)</a> and <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
      * SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an
-     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For
+     * EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
      * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
-     * in the <i>AWS CLI Command Reference</i>.</p>
+     * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithName(const char* value) { SetName(value); return *this;}
 

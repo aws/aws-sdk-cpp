@@ -43,8 +43,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetEc2SshKey() const{ return m_ec2SshKey; }
 
@@ -52,8 +52,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline bool Ec2SshKeyHasBeenSet() const { return m_ec2SshKeyHasBeenSet; }
 
@@ -61,8 +61,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline void SetEc2SshKey(const Aws::String& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = value; }
 
@@ -70,8 +70,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline void SetEc2SshKey(Aws::String&& value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey = std::move(value); }
 
@@ -79,8 +79,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline void SetEc2SshKey(const char* value) { m_ec2SshKeyHasBeenSet = true; m_ec2SshKey.assign(value); }
 
@@ -88,8 +88,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline RemoteAccessConfig& WithEc2SshKey(const Aws::String& value) { SetEc2SshKey(value); return *this;}
 
@@ -97,8 +97,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline RemoteAccessConfig& WithEc2SshKey(Aws::String&& value) { SetEc2SshKey(std::move(value)); return *this;}
 
@@ -106,8 +106,8 @@ namespace Model
      * <p>The Amazon EC2 SSH key that provides access for SSH communication with the
      * nodes in the managed node group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-     * EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
-     * Instances</i>.</p>
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide for Linux Instances</i>.</p>
      */
     inline RemoteAccessConfig& WithEc2SshKey(const char* value) { SetEc2SshKey(value); return *this;}
 

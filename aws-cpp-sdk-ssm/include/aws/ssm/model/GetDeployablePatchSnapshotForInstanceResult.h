@@ -105,44 +105,44 @@ namespace Model
 
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline const Aws::String& GetSnapshotDownloadUrl() const{ return m_snapshotDownloadUrl; }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline void SetSnapshotDownloadUrl(const Aws::String& value) { m_snapshotDownloadUrl = value; }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline void SetSnapshotDownloadUrl(Aws::String&& value) { m_snapshotDownloadUrl = std::move(value); }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline void SetSnapshotDownloadUrl(const char* value) { m_snapshotDownloadUrl.assign(value); }
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotDownloadUrl(const Aws::String& value) { SetSnapshotDownloadUrl(value); return *this;}
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotDownloadUrl(Aws::String&& value) { SetSnapshotDownloadUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A pre-signed Amazon S3 URL that can be used to download the patch
-     * snapshot.</p>
+     * <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used
+     * to download the patch snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotDownloadUrl(const char* value) { SetSnapshotDownloadUrl(value); return *this;}
 

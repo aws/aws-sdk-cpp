@@ -118,37 +118,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
@@ -222,9 +222,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& GetTaskParameters() const{ return m_taskParameters; }
 
@@ -235,9 +235,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline void SetTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { m_taskParameters = value; }
 
@@ -248,9 +248,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = std::move(value); }
 
@@ -261,9 +261,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { SetTaskParameters(value); return *this;}
 
@@ -274,9 +274,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
@@ -287,9 +287,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters.push_back(value); return *this; }
 
@@ -300,9 +300,9 @@ namespace Model
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>  <p>The
-     * map has the following format:</p> <p>Key: string, between 1 and 255
-     * characters</p> <p>Value: an array of strings, each string is between 1 and 255
-     * characters</p>
+     * map has the following format:</p> <ul> <li> <p> <code>Key</code>: string,
+     * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
+     * strings, each between 1 and 255 characters</p> </li> </ul>
      */
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters.push_back(std::move(value)); return *this; }
 
@@ -436,44 +436,37 @@ namespace Model
 
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetails = value; }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetails.assign(value); }
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details explaining the Status. Only available for certain status
-     * values.</p>
+     * <p>The details explaining the status. Not available for all status values.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 

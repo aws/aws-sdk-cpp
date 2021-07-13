@@ -85,42 +85,50 @@ namespace Model
 
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The user-defined snapshot ID.</p>
+     * <p>The snapshot ID provided by the user when running
+     * <code>AWS-RunPatchBaseline</code>.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 

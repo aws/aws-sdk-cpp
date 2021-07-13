@@ -480,12 +480,12 @@ namespace Model
 
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -496,12 +496,12 @@ namespace Model
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -512,12 +512,12 @@ namespace Model
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -528,12 +528,12 @@ namespace Model
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -544,12 +544,12 @@ namespace Model
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -560,12 +560,12 @@ namespace Model
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -576,12 +576,12 @@ namespace Model
     inline ModifyClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -592,12 +592,12 @@ namespace Model
     inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The new password for the cluster master user. This change is asynchronously
+     * <p>The new password for the cluster admin user. This change is asynchronously
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the master user account for a cluster if the password is
+     * to regain access to the admin user account for a cluster if the password is
      * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
@@ -1114,7 +1114,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline const Aws::String& GetNewClusterIdentifier() const{ return m_newClusterIdentifier; }
 
@@ -1124,7 +1124,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline bool NewClusterIdentifierHasBeenSet() const { return m_newClusterIdentifierHasBeenSet; }
 
@@ -1134,7 +1134,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(const Aws::String& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = value; }
 
@@ -1144,7 +1144,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(Aws::String&& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = std::move(value); }
 
@@ -1154,7 +1154,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(const char* value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier.assign(value); }
 
@@ -1164,7 +1164,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const Aws::String& value) { SetNewClusterIdentifier(value); return *this;}
 
@@ -1174,7 +1174,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(Aws::String&& value) { SetNewClusterIdentifier(std::move(value)); return *this;}
 
@@ -1184,7 +1184,7 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * AWS account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const char* value) { SetNewClusterIdentifier(value); return *this;}
 
@@ -1459,50 +1459,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline ModifyClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline ModifyClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
-     * want to use to encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key that you want
+     * to use to encrypt data in the cluster.</p>
      */
     inline ModifyClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

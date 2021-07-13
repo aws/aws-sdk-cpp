@@ -159,49 +159,49 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline UpdateBackendJobRequest& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline UpdateBackendJobRequest& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of response objects to only include those with the specified
+     * <p>Filters the list of response objects to include only those with the specified
      * operation name.</p>
      */
     inline UpdateBackendJobRequest& WithOperation(const char* value) { SetOperation(value); return *this;}

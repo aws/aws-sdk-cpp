@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/amplifybackend/model/BackendAuthSocialProviderConfig.h>
+#include <aws/amplifybackend/model/BackendAuthAppleProviderConfig.h>
 #include <utility>
 
 namespace Aws
@@ -94,6 +95,25 @@ namespace Model
     
     inline SocialProviderSettings& WithLoginWithAmazon(BackendAuthSocialProviderConfig&& value) { SetLoginWithAmazon(std::move(value)); return *this;}
 
+
+    
+    inline const BackendAuthAppleProviderConfig& GetSignInWithApple() const{ return m_signInWithApple; }
+
+    
+    inline bool SignInWithAppleHasBeenSet() const { return m_signInWithAppleHasBeenSet; }
+
+    
+    inline void SetSignInWithApple(const BackendAuthAppleProviderConfig& value) { m_signInWithAppleHasBeenSet = true; m_signInWithApple = value; }
+
+    
+    inline void SetSignInWithApple(BackendAuthAppleProviderConfig&& value) { m_signInWithAppleHasBeenSet = true; m_signInWithApple = std::move(value); }
+
+    
+    inline SocialProviderSettings& WithSignInWithApple(const BackendAuthAppleProviderConfig& value) { SetSignInWithApple(value); return *this;}
+
+    
+    inline SocialProviderSettings& WithSignInWithApple(BackendAuthAppleProviderConfig&& value) { SetSignInWithApple(std::move(value)); return *this;}
+
   private:
 
     BackendAuthSocialProviderConfig m_facebook;
@@ -104,6 +124,9 @@ namespace Model
 
     BackendAuthSocialProviderConfig m_loginWithAmazon;
     bool m_loginWithAmazonHasBeenSet;
+
+    BackendAuthAppleProviderConfig m_signInWithApple;
+    bool m_signInWithAppleHasBeenSet;
   };
 
 } // namespace Model

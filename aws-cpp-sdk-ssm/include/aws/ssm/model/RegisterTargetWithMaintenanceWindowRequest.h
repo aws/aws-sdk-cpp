@@ -135,8 +135,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
@@ -165,8 +165,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
@@ -195,8 +195,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
@@ -225,8 +225,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
@@ -255,8 +255,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
@@ -285,8 +285,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
@@ -315,8 +315,8 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
@@ -345,57 +345,65 @@ namespace Model
      * </code> </p>  <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * Register targets with a maintenance window</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>User-provided value that will be included in any CloudWatch events raised
-     * while running tasks for these targets in this maintenance window.</p>
+     * <p>User-provided value that will be included in any Amazon CloudWatch Events
+     * events raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 

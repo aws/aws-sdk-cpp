@@ -38,6 +38,7 @@ namespace Aws
         static const int PendingApproval_HASH = HashingUtils::HashString("PendingApproval");
         static const int Approved_HASH = HashingUtils::HashString("Approved");
         static const int Rejected_HASH = HashingUtils::HashString("Rejected");
+        static const int Closed_HASH = HashingUtils::HashString("Closed");
 
 
         OpsItemStatus GetOpsItemStatusForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return OpsItemStatus::Rejected;
           }
+          else if (hashCode == Closed_HASH)
+          {
+            return OpsItemStatus::Closed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +170,8 @@ namespace Aws
             return "Approved";
           case OpsItemStatus::Rejected:
             return "Rejected";
+          case OpsItemStatus::Closed:
+            return "Closed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

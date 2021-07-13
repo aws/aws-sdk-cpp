@@ -36,47 +36,56 @@ namespace Model
 
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline DescribeInstancePatchStatesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline DescribeInstancePatchStatesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline DescribeInstancePatchStatesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline DescribeInstancePatchStatesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     * <p>The ID of the instance for which patch state information should be
+     * retrieved.</p>
      */
     inline DescribeInstancePatchStatesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

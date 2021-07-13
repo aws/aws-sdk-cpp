@@ -36,67 +36,75 @@ namespace Model
 
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline UnlabelParameterVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline UnlabelParameterVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter name of which you want to delete one or more labels.</p>
+     * <p>The name of the parameter from which you want to delete one or more
+     * labels.</p>
      */
     inline UnlabelParameterVersionRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>The specific version of the parameter which you want to delete one or more
-     * labels from. If it is not present, the call will fail.</p>
+     * labels from. If it isn't present, the call will fail.</p>
      */
     inline long long GetParameterVersion() const{ return m_parameterVersion; }
 
     /**
      * <p>The specific version of the parameter which you want to delete one or more
-     * labels from. If it is not present, the call will fail.</p>
+     * labels from. If it isn't present, the call will fail.</p>
      */
     inline bool ParameterVersionHasBeenSet() const { return m_parameterVersionHasBeenSet; }
 
     /**
      * <p>The specific version of the parameter which you want to delete one or more
-     * labels from. If it is not present, the call will fail.</p>
+     * labels from. If it isn't present, the call will fail.</p>
      */
     inline void SetParameterVersion(long long value) { m_parameterVersionHasBeenSet = true; m_parameterVersion = value; }
 
     /**
      * <p>The specific version of the parameter which you want to delete one or more
-     * labels from. If it is not present, the call will fail.</p>
+     * labels from. If it isn't present, the call will fail.</p>
      */
     inline UnlabelParameterVersionRequest& WithParameterVersion(long long value) { SetParameterVersion(value); return *this;}
 

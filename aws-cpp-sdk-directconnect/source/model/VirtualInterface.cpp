@@ -49,6 +49,7 @@ VirtualInterface::VirtualInterface() :
     m_bgpPeersHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -84,6 +85,7 @@ VirtualInterface::VirtualInterface(JsonView jsonValue) :
     m_bgpPeersHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -258,6 +260,13 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -418,6 +427,12 @@ JsonValue VirtualInterface::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
 
   }
 

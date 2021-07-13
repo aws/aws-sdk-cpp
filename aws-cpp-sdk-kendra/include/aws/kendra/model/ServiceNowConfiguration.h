@@ -92,49 +92,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret that contains
+     * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
      * the user name and password required to connect to the ServiceNow instance.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}

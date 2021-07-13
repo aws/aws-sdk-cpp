@@ -38,50 +38,58 @@ namespace Model
 
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline OpsResultAttribute& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline OpsResultAttribute& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-     * AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+     * <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+     * <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+     * <code>AWS:ComplianceSummary</code>.</p>
      */
     inline OpsResultAttribute& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
