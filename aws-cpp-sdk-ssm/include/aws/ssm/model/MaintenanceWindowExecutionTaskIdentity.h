@@ -163,50 +163,50 @@ namespace Model
 
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details explaining the status of the task execution. Only available for
-     * certain status values.</p>
+     * <p>The details explaining the status of the task execution. Not available for
+     * all status values.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
@@ -274,42 +274,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the task that ran.</p>
+     * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

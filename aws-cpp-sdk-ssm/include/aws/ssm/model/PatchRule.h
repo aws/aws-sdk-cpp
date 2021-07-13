@@ -138,7 +138,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline const Aws::String& GetApproveUntilDate() const{ return m_approveUntilDate; }
 
@@ -146,7 +146,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline bool ApproveUntilDateHasBeenSet() const { return m_approveUntilDateHasBeenSet; }
 
@@ -154,7 +154,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline void SetApproveUntilDate(const Aws::String& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = value; }
 
@@ -162,7 +162,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline void SetApproveUntilDate(Aws::String&& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = std::move(value); }
 
@@ -170,7 +170,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline void SetApproveUntilDate(const char* value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate.assign(value); }
 
@@ -178,7 +178,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline PatchRule& WithApproveUntilDate(const Aws::String& value) { SetApproveUntilDate(value); return *this;}
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline PatchRule& WithApproveUntilDate(Aws::String&& value) { SetApproveUntilDate(std::move(value)); return *this;}
 
@@ -194,7 +194,7 @@ namespace Model
      * <p>The cutoff date for auto approval of released patches. Any patches released
      * on or before this date are installed automatically. Not supported on Debian
      * Server or Ubuntu Server.</p> <p>Enter dates in the format
-     * <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.</p>
+     * <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
      */
     inline PatchRule& WithApproveUntilDate(const char* value) { SetApproveUntilDate(value); return *this;}
 
@@ -202,28 +202,28 @@ namespace Model
     /**
      * <p>For instances identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is 'false'. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux instances only.</p>
      */
     inline bool GetEnableNonSecurity() const{ return m_enableNonSecurity; }
 
     /**
      * <p>For instances identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is 'false'. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux instances only.</p>
      */
     inline bool EnableNonSecurityHasBeenSet() const { return m_enableNonSecurityHasBeenSet; }
 
     /**
      * <p>For instances identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is 'false'. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux instances only.</p>
      */
     inline void SetEnableNonSecurity(bool value) { m_enableNonSecurityHasBeenSet = true; m_enableNonSecurity = value; }
 
     /**
      * <p>For instances identified by the approval rule filters, enables a patch
      * baseline to apply non-security updates available in the specified repository.
-     * The default value is 'false'. Applies to Linux instances only.</p>
+     * The default value is <code>false</code>. Applies to Linux instances only.</p>
      */
     inline PatchRule& WithEnableNonSecurity(bool value) { SetEnableNonSecurity(value); return *this;}
 

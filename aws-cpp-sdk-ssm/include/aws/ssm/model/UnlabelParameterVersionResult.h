@@ -75,42 +75,42 @@ namespace Model
 
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidLabels() const{ return m_invalidLabels; }
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline void SetInvalidLabels(const Aws::Vector<Aws::String>& value) { m_invalidLabels = value; }
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline void SetInvalidLabels(Aws::Vector<Aws::String>&& value) { m_invalidLabels = std::move(value); }
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline UnlabelParameterVersionResult& WithInvalidLabels(const Aws::Vector<Aws::String>& value) { SetInvalidLabels(value); return *this;}
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline UnlabelParameterVersionResult& WithInvalidLabels(Aws::Vector<Aws::String>&& value) { SetInvalidLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline UnlabelParameterVersionResult& AddInvalidLabels(const Aws::String& value) { m_invalidLabels.push_back(value); return *this; }
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline UnlabelParameterVersionResult& AddInvalidLabels(Aws::String&& value) { m_invalidLabels.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The labels that are not attached to the given parameter version.</p>
+     * <p>The labels that aren't attached to the given parameter version.</p>
      */
     inline UnlabelParameterVersionResult& AddInvalidLabels(const char* value) { m_invalidLabels.push_back(value); return *this; }
 

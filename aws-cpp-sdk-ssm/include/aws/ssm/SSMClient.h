@@ -733,38 +733,37 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdateServiceSettingRequest&, const Model::UpdateServiceSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSettingResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Systems Manager</fullname> <p>AWS Systems Manager is a collection
-   * of capabilities that helps you automate management tasks such as collecting
-   * system inventory, applying operating system (OS) patches, automating the
-   * creation of Amazon Machine Images (AMIs), and configuring operating systems
-   * (OSs) and applications at scale. Systems Manager lets you remotely and securely
-   * manage the configuration of your managed instances. A <i>managed instance</i> is
-   * any Amazon Elastic Compute Cloud instance (EC2 instance), or any on-premises
-   * server or virtual machine (VM) in your hybrid environment that has been
-   * configured for Systems Manager.</p> <p>This reference is intended to be used
-   * with the <a
-   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems
-   * Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
-   * configure managed instances. For more information, see <a
+   * <p>Amazon Web Services Systems Manager is a collection of capabilities that
+   * helps you automate management tasks such as collecting system inventory,
+   * applying operating system (OS) patches, automating the creation of Amazon
+   * Machine Images (AMIs), and configuring operating systems (OSs) and applications
+   * at scale. Systems Manager lets you remotely and securely manage the
+   * configuration of your managed instances. A <i>managed instance</i> is any Amazon
+   * Elastic Compute Cloud instance (EC2 instance), or any on-premises server or
+   * virtual machine (VM) in your hybrid environment that has been configured for
+   * Systems Manager.</p> <p>This reference is intended to be used with the <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web
+   * Services Systems Manager User Guide</a>.</p> <p>To get started, verify
+   * prerequisites and configure managed instances. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
-   * up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p
-   * class="title"> <b>Related resources</b> </p> <ul> <li> <p>For information about
-   * how to use a Query API, see <a
+   * up Amazon Web Services Systems Manager</a> in the <i>Amazon Web Services Systems
+   * Manager User Guide</i>.</p> <p class="title"> <b>Related resources</b> </p> <ul>
+   * <li> <p>For information about how to use a Query API, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
-   * API requests</a>. </p> </li> <li> <p>For information about other API actions you
-   * can perform on EC2 instances, see the <a
+   * API requests</a>. </p> </li> <li> <p>For information about other API operations
+   * you can perform on EC2 instances, see the <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
-   * Reference</a>.</p> </li> <li> <p>For information about AWS AppConfig, a
+   * Reference</a>.</p> </li> <li> <p>For information about AppConfig, a capability
+   * of Systems Manager, see the <a
+   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User
+   * Guide</a> and the <a
+   * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
+   * API Reference</a>.</p> </li> <li> <p>For information about Incident Manager, a
    * capability of Systems Manager, see the <a
-   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig
-   * User Guide</a> and the <a
-   * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS
-   * AppConfig API Reference</a>.</p> </li> <li> <p>For information about AWS
-   * Incident Manager, a capability of Systems Manager, see the <a
-   * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS
-   * Incident Manager User Guide</a> and the <a
-   * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS
-   * Incident Manager API Reference</a>.</p> </li> </ul>
+   * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident
+   * Manager User Guide</a> and the <a
+   * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident
+   * Manager API Reference</a>.</p> </li> </ul>
    */
   class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient
   {
@@ -801,14 +800,19 @@ namespace Model
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
          * instances that helps you track each instance's owner and stack level. For
-         * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
-         * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
-         * maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li>
+         * <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Each resource can have a
+         * maximum of 50 tags.</p> <p>We recommend that you devise a set of tag keys that
          * meets your needs for each resource type. Using a consistent set of tag keys
          * makes it easier for you to manage your resources. You can search and filter the
          * resources based on the tags you add. Tags don't have any semantic meaning to and
          * are interpreted strictly as a string of characters. </p> <p>For more information
-         * about using tags with EC2 instances, see <a
+         * about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -825,14 +829,19 @@ namespace Model
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
          * instances that helps you track each instance's owner and stack level. For
-         * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
-         * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
-         * maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li>
+         * <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Each resource can have a
+         * maximum of 50 tags.</p> <p>We recommend that you devise a set of tag keys that
          * meets your needs for each resource type. Using a consistent set of tag keys
          * makes it easier for you to manage your resources. You can search and filter the
          * resources based on the tags you add. Tags don't have any semantic meaning to and
          * are interpreted strictly as a string of characters. </p> <p>For more information
-         * about using tags with EC2 instances, see <a
+         * about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -851,14 +860,19 @@ namespace Model
          * environment. Each tag consists of a key and an optional value, both of which you
          * define. For example, you could define a set of tags for your account's managed
          * instances that helps you track each instance's owner and stack level. For
-         * example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and
-         * Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a
-         * maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that
+         * example:</p> <ul> <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li> <li>
+         * <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li> <li> <p>
+         * <code>Key=Owner,Value=Dev</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Production</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Pre-Production</code> </p> </li> <li> <p>
+         * <code>Key=Stack,Value=Test</code> </p> </li> </ul> <p>Each resource can have a
+         * maximum of 50 tags.</p> <p>We recommend that you devise a set of tag keys that
          * meets your needs for each resource type. Using a consistent set of tag keys
          * makes it easier for you to manage your resources. You can search and filter the
          * resources based on the tags you add. Tags don't have any semantic meaning to and
          * are interpreted strictly as a string of characters. </p> <p>For more information
-         * about using tags with EC2 instances, see <a
+         * about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -872,8 +886,8 @@ namespace Model
         /**
          * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
-         * Also:</h3>   <a
+         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          */
@@ -882,8 +896,8 @@ namespace Model
         /**
          * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
-         * Also:</h3>   <a
+         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          *
@@ -894,8 +908,8 @@ namespace Model
         /**
          * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
          * example, you can associate an Incident Manager incident or analysis with an
-         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
-         * Also:</h3>   <a
+         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          *
@@ -936,8 +950,8 @@ namespace Model
 
         /**
          * <p>Stops a maintenance window execution that is already in progress and cancels
-         * any tasks in the window that have not already starting running. (Tasks already
-         * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
+         * any tasks in the window that haven't already starting running. Tasks already in
+         * progress will continue to completion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          */
@@ -945,8 +959,8 @@ namespace Model
 
         /**
          * <p>Stops a maintenance window execution that is already in progress and cancels
-         * any tasks in the window that have not already starting running. (Tasks already
-         * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
+         * any tasks in the window that haven't already starting running. Tasks already in
+         * progress will continue to completion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          *
@@ -956,8 +970,8 @@ namespace Model
 
         /**
          * <p>Stops a maintenance window execution that is already in progress and cancels
-         * any tasks in the window that have not already starting running. (Tasks already
-         * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
+         * any tasks in the window that haven't already starting running. Tasks already in
+         * progress will continue to completion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          *
@@ -967,17 +981,19 @@ namespace Model
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
-         * on-premises server or virtual machine (VM) with Systems Manager. Registering
-         * these machines with Systems Manager makes it possible to manage them using
-         * Systems Manager capabilities. You use the activation code and ID when installing
-         * SSM Agent on machines in your hybrid environment. For more information about
-         * requirements for managing on-premises instances and VMs using Systems Manager,
-         * see <a
+         * on-premises server or virtual machine (VM) with Amazon Web Services Systems
+         * Manager. Registering these machines with Systems Manager makes it possible to
+         * manage them using Systems Manager capabilities. You use the activation code and
+         * ID when installing SSM Agent on machines in your hybrid environment. For more
+         * information about requirements for managing on-premises instances and VMs using
+         * Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager
-         * User Guide</i>. </p>  <p>On-premises servers or VMs that are registered
-         * with Systems Manager and EC2 instances that you manage with Systems Manager are
-         * all called <i>managed instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * up Amazon Web Services Systems Manager for hybrid environments</a> in the
+         * <i>Amazon Web Services Systems Manager User Guide</i>. </p> 
+         * <p>On-premises servers or VMs that are registered with Systems Manager and
+         * Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage with Systems
+         * Manager are all called <i>managed instances</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -985,17 +1001,19 @@ namespace Model
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
-         * on-premises server or virtual machine (VM) with Systems Manager. Registering
-         * these machines with Systems Manager makes it possible to manage them using
-         * Systems Manager capabilities. You use the activation code and ID when installing
-         * SSM Agent on machines in your hybrid environment. For more information about
-         * requirements for managing on-premises instances and VMs using Systems Manager,
-         * see <a
+         * on-premises server or virtual machine (VM) with Amazon Web Services Systems
+         * Manager. Registering these machines with Systems Manager makes it possible to
+         * manage them using Systems Manager capabilities. You use the activation code and
+         * ID when installing SSM Agent on machines in your hybrid environment. For more
+         * information about requirements for managing on-premises instances and VMs using
+         * Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager
-         * User Guide</i>. </p>  <p>On-premises servers or VMs that are registered
-         * with Systems Manager and EC2 instances that you manage with Systems Manager are
-         * all called <i>managed instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * up Amazon Web Services Systems Manager for hybrid environments</a> in the
+         * <i>Amazon Web Services Systems Manager User Guide</i>. </p> 
+         * <p>On-premises servers or VMs that are registered with Systems Manager and
+         * Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage with Systems
+         * Manager are all called <i>managed instances</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -1005,17 +1023,19 @@ namespace Model
 
         /**
          * <p>Generates an activation code and activation ID you can use to register your
-         * on-premises server or virtual machine (VM) with Systems Manager. Registering
-         * these machines with Systems Manager makes it possible to manage them using
-         * Systems Manager capabilities. You use the activation code and ID when installing
-         * SSM Agent on machines in your hybrid environment. For more information about
-         * requirements for managing on-premises instances and VMs using Systems Manager,
-         * see <a
+         * on-premises server or virtual machine (VM) with Amazon Web Services Systems
+         * Manager. Registering these machines with Systems Manager makes it possible to
+         * manage them using Systems Manager capabilities. You use the activation code and
+         * ID when installing SSM Agent on machines in your hybrid environment. For more
+         * information about requirements for managing on-premises instances and VMs using
+         * Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager
-         * User Guide</i>. </p>  <p>On-premises servers or VMs that are registered
-         * with Systems Manager and EC2 instances that you manage with Systems Manager are
-         * all called <i>managed instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * up Amazon Web Services Systems Manager for hybrid environments</a> in the
+         * <i>Amazon Web Services Systems Manager User Guide</i>. </p> 
+         * <p>On-premises servers or VMs that are registered with Systems Manager and
+         * Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage with Systems
+         * Manager are all called <i>managed instances</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -1028,12 +1048,13 @@ namespace Model
          * your instances. For example, an association can specify that anti-virus software
          * must be installed and running on your instances, or that certain ports must be
          * closed. For static targets, the association specifies a schedule for when the
-         * configuration is reapplied. For dynamic targets, such as an AWS Resource Group
-         * or an AWS Autoscaling Group, State Manager applies the configuration when new
-         * instances are added to the group. The association also specifies actions to take
-         * when applying the configuration. For example, an association for anti-virus
-         * software might run once a day. If the software is not installed, then State
-         * Manager installs it. If the software is installed, but the service is not
+         * configuration is reapplied. For dynamic targets, such as an Amazon Web Services
+         * resource group or an Amazon Web Services autoscaling group, State Manager, a
+         * capability of Amazon Web Services Systems Manager applies the configuration when
+         * new instances are added to the group. The association also specifies actions to
+         * take when applying the configuration. For example, an association for anti-virus
+         * software might run once a day. If the software isn't installed, then State
+         * Manager installs it. If the software is installed, but the service isn't
          * running, then the association might instruct State Manager to start the service.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
@@ -1046,12 +1067,13 @@ namespace Model
          * your instances. For example, an association can specify that anti-virus software
          * must be installed and running on your instances, or that certain ports must be
          * closed. For static targets, the association specifies a schedule for when the
-         * configuration is reapplied. For dynamic targets, such as an AWS Resource Group
-         * or an AWS Autoscaling Group, State Manager applies the configuration when new
-         * instances are added to the group. The association also specifies actions to take
-         * when applying the configuration. For example, an association for anti-virus
-         * software might run once a day. If the software is not installed, then State
-         * Manager installs it. If the software is installed, but the service is not
+         * configuration is reapplied. For dynamic targets, such as an Amazon Web Services
+         * resource group or an Amazon Web Services autoscaling group, State Manager, a
+         * capability of Amazon Web Services Systems Manager applies the configuration when
+         * new instances are added to the group. The association also specifies actions to
+         * take when applying the configuration. For example, an association for anti-virus
+         * software might run once a day. If the software isn't installed, then State
+         * Manager installs it. If the software is installed, but the service isn't
          * running, then the association might instruct State Manager to start the service.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
@@ -1066,12 +1088,13 @@ namespace Model
          * your instances. For example, an association can specify that anti-virus software
          * must be installed and running on your instances, or that certain ports must be
          * closed. For static targets, the association specifies a schedule for when the
-         * configuration is reapplied. For dynamic targets, such as an AWS Resource Group
-         * or an AWS Autoscaling Group, State Manager applies the configuration when new
-         * instances are added to the group. The association also specifies actions to take
-         * when applying the configuration. For example, an association for anti-virus
-         * software might run once a day. If the software is not installed, then State
-         * Manager installs it. If the software is installed, but the service is not
+         * configuration is reapplied. For dynamic targets, such as an Amazon Web Services
+         * resource group or an Amazon Web Services autoscaling group, State Manager, a
+         * capability of Amazon Web Services Systems Manager applies the configuration when
+         * new instances are added to the group. The association also specifies actions to
+         * take when applying the configuration. For example, an association for anti-virus
+         * software might run once a day. If the software isn't installed, then State
+         * Manager installs it. If the software is installed, but the service isn't
          * running, then the association might instruct State Manager to start the service.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
@@ -1082,26 +1105,26 @@ namespace Model
         virtual void CreateAssociationAsync(const Model::CreateAssociationRequest& request, const CreateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified Systems Manager document with the specified
-         * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, SSM Agent running on the instance
-         * processes the document and configures the instance as specified.</p> <p>If you
-         * associate a document with an instance that already has an associated document,
-         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
+         * document) with the specified instances or targets.</p> <p>When you associate a
+         * document with one or more instances using instance IDs or tags, Amazon Web
+         * Services Systems Manager Agent (SSM Agent) running on the instance processes the
+         * document and configures the instance as specified.</p> <p>If you associate a
+         * document with an instance that already has an associated document, the system
+         * returns the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAssociationBatchOutcome CreateAssociationBatch(const Model::CreateAssociationBatchRequest& request) const;
 
         /**
-         * <p>Associates the specified Systems Manager document with the specified
-         * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, SSM Agent running on the instance
-         * processes the document and configures the instance as specified.</p> <p>If you
-         * associate a document with an instance that already has an associated document,
-         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
+         * document) with the specified instances or targets.</p> <p>When you associate a
+         * document with one or more instances using instance IDs or tags, Amazon Web
+         * Services Systems Manager Agent (SSM Agent) running on the instance processes the
+         * document and configures the instance as specified.</p> <p>If you associate a
+         * document with an instance that already has an associated document, the system
+         * returns the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
          *
@@ -1110,13 +1133,13 @@ namespace Model
         virtual Model::CreateAssociationBatchOutcomeCallable CreateAssociationBatchCallable(const Model::CreateAssociationBatchRequest& request) const;
 
         /**
-         * <p>Associates the specified Systems Manager document with the specified
-         * instances or targets.</p> <p>When you associate a document with one or more
-         * instances using instance IDs or tags, SSM Agent running on the instance
-         * processes the document and configures the instance as specified.</p> <p>If you
-         * associate a document with an instance that already has an associated document,
-         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified Amazon Web Services Systems Manager document (SSM
+         * document) with the specified instances or targets.</p> <p>When you associate a
+         * document with one or more instances using instance IDs or tags, Amazon Web
+         * Services Systems Manager Agent (SSM Agent) running on the instance processes the
+         * document and configures the instance as specified.</p> <p>If you associate a
+         * document with an instance that already has an associated document, the system
+         * returns the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
          *
@@ -1125,26 +1148,26 @@ namespace Model
         virtual void CreateAssociationBatchAsync(const Model::CreateAssociationBatchRequest& request, const CreateAssociationBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Systems Manager (SSM) document. An SSM document defines the actions
-         * that Systems Manager performs on your managed instances. For more information
-         * about SSM documents, including information about supported schemas, features,
-         * and syntax, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-         * Systems Manager Documents</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
+         * defines the actions that Systems Manager performs on your managed instances. For
+         * more information about SSM documents, including information about supported
+         * schemas, features, and syntax, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+         * Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest& request) const;
 
         /**
-         * <p>Creates a Systems Manager (SSM) document. An SSM document defines the actions
-         * that Systems Manager performs on your managed instances. For more information
-         * about SSM documents, including information about supported schemas, features,
-         * and syntax, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-         * Systems Manager Documents</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
+         * defines the actions that Systems Manager performs on your managed instances. For
+         * more information about SSM documents, including information about supported
+         * schemas, features, and syntax, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+         * Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
          * API Reference</a></p>
          *
@@ -1153,13 +1176,13 @@ namespace Model
         virtual Model::CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request) const;
 
         /**
-         * <p>Creates a Systems Manager (SSM) document. An SSM document defines the actions
-         * that Systems Manager performs on your managed instances. For more information
-         * about SSM documents, including information about supported schemas, features,
-         * and syntax, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS
-         * Systems Manager Documents</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document
+         * defines the actions that Systems Manager performs on your managed instances. For
+         * more information about SSM documents, including information about supported
+         * schemas, features, and syntax, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon
+         * Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
          * API Reference</a></p>
          *
@@ -1214,32 +1237,34 @@ namespace Model
         virtual void CreateMaintenanceWindowAsync(const Model::CreateMaintenanceWindowRequest& request, const CreateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
+         * <p>Creates a new OpsItem. You must have permission in Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+         * Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateOpsItemOutcome CreateOpsItem(const Model::CreateOpsItemRequest& request) const;
 
         /**
-         * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
+         * <p>Creates a new OpsItem. You must have permission in Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+         * Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
          * API Reference</a></p>
          *
@@ -1248,16 +1273,17 @@ namespace Model
         virtual Model::CreateOpsItemOutcomeCallable CreateOpsItemCallable(const Model::CreateOpsItemRequest& request) const;
 
         /**
-         * <p>Creates a new OpsItem. You must have permission in AWS Identity and Access
+         * <p>Creates a new OpsItem. You must have permission in Identity and Access
          * Management (IAM) to create a new OpsItem. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+         * Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem">AWS
          * API Reference</a></p>
          *
@@ -1266,18 +1292,18 @@ namespace Model
         virtual void CreateOpsItemAsync(const Model::CreateOpsItemRequest& request, const CreateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If you create a new application in Application Manager, Systems Manager calls
-         * this API action to specify information about the new application, including the
-         * application type.</p><p><h3>See Also:</h3>   <a
+         * <p>If you create a new application in Application Manager, Amazon Web Services
+         * Systems Manager calls this API operation to specify information about the new
+         * application, including the application type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateOpsMetadataOutcome CreateOpsMetadata(const Model::CreateOpsMetadataRequest& request) const;
 
         /**
-         * <p>If you create a new application in Application Manager, Systems Manager calls
-         * this API action to specify information about the new application, including the
-         * application type.</p><p><h3>See Also:</h3>   <a
+         * <p>If you create a new application in Application Manager, Amazon Web Services
+         * Systems Manager calls this API operation to specify information about the new
+         * application, including the application type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -1286,9 +1312,9 @@ namespace Model
         virtual Model::CreateOpsMetadataOutcomeCallable CreateOpsMetadataCallable(const Model::CreateOpsMetadataRequest& request) const;
 
         /**
-         * <p>If you create a new application in Application Manager, Systems Manager calls
-         * this API action to specify information about the new application, including the
-         * application type.</p><p><h3>See Also:</h3>   <a
+         * <p>If you create a new application in Application Manager, Amazon Web Services
+         * Systems Manager calls this API operation to specify information about the new
+         * application, including the application type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -1297,22 +1323,18 @@ namespace Model
         virtual void CreateOpsMetadataAsync(const Model::CreateOpsMetadataRequest& request, const CreateOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a patch baseline.</p>  <p>For information about valid key and
-         * value pairs in <code>PatchFilters</code> for each supported operating system
-         * type, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a patch baseline.</p>  <p>For information about valid key-value
+         * pairs in <code>PatchFilters</code> for each supported operating system type, see
+         * <a>PatchFilter</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePatchBaselineOutcome CreatePatchBaseline(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p>  <p>For information about valid key and
-         * value pairs in <code>PatchFilters</code> for each supported operating system
-         * type, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a patch baseline.</p>  <p>For information about valid key-value
+         * pairs in <code>PatchFilters</code> for each supported operating system type, see
+         * <a>PatchFilter</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1321,11 +1343,9 @@ namespace Model
         virtual Model::CreatePatchBaselineOutcomeCallable CreatePatchBaselineCallable(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p>  <p>For information about valid key and
-         * value pairs in <code>PatchFilters</code> for each supported operating system
-         * type, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a patch baseline.</p>  <p>For information about valid key-value
+         * pairs in <code>PatchFilters</code> for each supported operating system type, see
+         * <a>PatchFilter</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1335,29 +1355,30 @@ namespace Model
 
         /**
          * <p>A resource data sync helps you view data from multiple sources in a single
-         * location. Systems Manager offers two types of resource data sync:
-         * <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can
-         * configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-         * type to synchronize Inventory data from multiple AWS Regions to a single S3
-         * bucket. For more information, see <a
+         * location. Amazon Web Services Systems Manager offers two types of resource data
+         * sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You
+         * can configure Systems Manager Inventory to use the
+         * <code>SyncToDestination</code> type to synchronize Inventory data from multiple
+         * Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the
-         * <code>SyncFromSource</code> type to synchronize operational work items
-         * (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single
-         * S3 bucket. This type can synchronize OpsItems and OpsData from multiple AWS
-         * accounts and Regions or <code>EntireOrganization</code> by using AWS
-         * Organizations. For more information, see <a
+         * resource data sync for Inventory</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use
+         * the <code>SyncFromSource</code> type to synchronize operational work items
+         * (OpsItems) and operational data (OpsData) from multiple Regions to a single
+         * Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple
+         * accounts and Regions or <code>EntireOrganization</code> by using Organizations.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
          * up Systems Manager Explorer to display data from multiple accounts and
-         * Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data
-         * sync is an asynchronous operation that returns immediately. After a successful
-         * initial sync is completed, the system continuously syncs data. To check the
-         * status of a sync, use the <a>ListResourceDataSync</a>.</p>  <p>By default,
-         * data is not encrypted in Amazon S3. We strongly recommend that you enable
-         * encryption in Amazon S3 to ensure secure data storage. We also recommend that
-         * you secure access to the Amazon S3 bucket by creating a restrictive bucket
-         * policy. </p> <p><h3>See Also:</h3>   <a
+         * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+         * <p>A resource data sync is an asynchronous operation that returns immediately.
+         * After a successful initial sync is completed, the system continuously syncs
+         * data. To check the status of a sync, use the <a>ListResourceDataSync</a>.</p>
+         *  <p>By default, data isn't encrypted in Amazon S3. We strongly recommend
+         * that you enable encryption in Amazon S3 to ensure secure data storage. We also
+         * recommend that you secure access to the Amazon S3 bucket by creating a
+         * restrictive bucket policy. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -1365,29 +1386,30 @@ namespace Model
 
         /**
          * <p>A resource data sync helps you view data from multiple sources in a single
-         * location. Systems Manager offers two types of resource data sync:
-         * <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can
-         * configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-         * type to synchronize Inventory data from multiple AWS Regions to a single S3
-         * bucket. For more information, see <a
+         * location. Amazon Web Services Systems Manager offers two types of resource data
+         * sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You
+         * can configure Systems Manager Inventory to use the
+         * <code>SyncToDestination</code> type to synchronize Inventory data from multiple
+         * Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the
-         * <code>SyncFromSource</code> type to synchronize operational work items
-         * (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single
-         * S3 bucket. This type can synchronize OpsItems and OpsData from multiple AWS
-         * accounts and Regions or <code>EntireOrganization</code> by using AWS
-         * Organizations. For more information, see <a
+         * resource data sync for Inventory</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use
+         * the <code>SyncFromSource</code> type to synchronize operational work items
+         * (OpsItems) and operational data (OpsData) from multiple Regions to a single
+         * Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple
+         * accounts and Regions or <code>EntireOrganization</code> by using Organizations.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
          * up Systems Manager Explorer to display data from multiple accounts and
-         * Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data
-         * sync is an asynchronous operation that returns immediately. After a successful
-         * initial sync is completed, the system continuously syncs data. To check the
-         * status of a sync, use the <a>ListResourceDataSync</a>.</p>  <p>By default,
-         * data is not encrypted in Amazon S3. We strongly recommend that you enable
-         * encryption in Amazon S3 to ensure secure data storage. We also recommend that
-         * you secure access to the Amazon S3 bucket by creating a restrictive bucket
-         * policy. </p> <p><h3>See Also:</h3>   <a
+         * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+         * <p>A resource data sync is an asynchronous operation that returns immediately.
+         * After a successful initial sync is completed, the system continuously syncs
+         * data. To check the status of a sync, use the <a>ListResourceDataSync</a>.</p>
+         *  <p>By default, data isn't encrypted in Amazon S3. We strongly recommend
+         * that you enable encryption in Amazon S3 to ensure secure data storage. We also
+         * recommend that you secure access to the Amazon S3 bucket by creating a
+         * restrictive bucket policy. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1397,29 +1419,30 @@ namespace Model
 
         /**
          * <p>A resource data sync helps you view data from multiple sources in a single
-         * location. Systems Manager offers two types of resource data sync:
-         * <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can
-         * configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-         * type to synchronize Inventory data from multiple AWS Regions to a single S3
-         * bucket. For more information, see <a
+         * location. Amazon Web Services Systems Manager offers two types of resource data
+         * sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You
+         * can configure Systems Manager Inventory to use the
+         * <code>SyncToDestination</code> type to synchronize Inventory data from multiple
+         * Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
-         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the
-         * <code>SyncFromSource</code> type to synchronize operational work items
-         * (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single
-         * S3 bucket. This type can synchronize OpsItems and OpsData from multiple AWS
-         * accounts and Regions or <code>EntireOrganization</code> by using AWS
-         * Organizations. For more information, see <a
+         * resource data sync for Inventory</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use
+         * the <code>SyncFromSource</code> type to synchronize operational work items
+         * (OpsItems) and operational data (OpsData) from multiple Regions to a single
+         * Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple
+         * accounts and Regions or <code>EntireOrganization</code> by using Organizations.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
          * up Systems Manager Explorer to display data from multiple accounts and
-         * Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data
-         * sync is an asynchronous operation that returns immediately. After a successful
-         * initial sync is completed, the system continuously syncs data. To check the
-         * status of a sync, use the <a>ListResourceDataSync</a>.</p>  <p>By default,
-         * data is not encrypted in Amazon S3. We strongly recommend that you enable
-         * encryption in Amazon S3 to ensure secure data storage. We also recommend that
-         * you secure access to the Amazon S3 bucket by creating a restrictive bucket
-         * policy. </p> <p><h3>See Also:</h3>   <a
+         * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+         * <p>A resource data sync is an asynchronous operation that returns immediately.
+         * After a successful initial sync is completed, the system continuously syncs
+         * data. To check the status of a sync, use the <a>ListResourceDataSync</a>.</p>
+         *  <p>By default, data isn't encrypted in Amazon S3. We strongly recommend
+         * that you enable encryption in Amazon S3 to ensure secure data storage. We also
+         * recommend that you secure access to the Amazon S3 bucket by creating a
+         * restrictive bucket policy. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1428,9 +1451,9 @@ namespace Model
         virtual void CreateResourceDataSyncAsync(const Model::CreateResourceDataSyncRequest& request, const CreateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an activation. You are not required to delete an activation. If you
+         * <p>Deletes an activation. You aren't required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
-         * instances. Deleting an activation does not de-register managed instances. You
+         * instances. Deleting an activation doesn't de-register managed instances. You
          * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
          * API Reference</a></p>
@@ -1438,9 +1461,9 @@ namespace Model
         virtual Model::DeleteActivationOutcome DeleteActivation(const Model::DeleteActivationRequest& request) const;
 
         /**
-         * <p>Deletes an activation. You are not required to delete an activation. If you
+         * <p>Deletes an activation. You aren't required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
-         * instances. Deleting an activation does not de-register managed instances. You
+         * instances. Deleting an activation doesn't de-register managed instances. You
          * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
          * API Reference</a></p>
@@ -1450,9 +1473,9 @@ namespace Model
         virtual Model::DeleteActivationOutcomeCallable DeleteActivationCallable(const Model::DeleteActivationRequest& request) const;
 
         /**
-         * <p>Deletes an activation. You are not required to delete an activation. If you
+         * <p>Deletes an activation. You aren't required to delete an activation. If you
          * delete an activation, you can no longer use it to register additional managed
-         * instances. Deleting an activation does not de-register managed instances. You
+         * instances. Deleting an activation doesn't de-register managed instances. You
          * must manually de-register managed instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">AWS
          * API Reference</a></p>
@@ -1462,24 +1485,24 @@ namespace Model
         virtual void DeleteActivationAsync(const Model::DeleteActivationRequest& request, const DeleteActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified Systems Manager document from the specified
-         * instance.</p> <p>When you disassociate a document from an instance, it does not
-         * change the configuration of the instance. To change the configuration state of
-         * an instance after you disassociate a document, you must create a new document
-         * with the desired configuration and associate it with the instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
+         * document) from the specified instance.</p> <p>When you disassociate a document
+         * from an instance, it doesn't change the configuration of the instance. To change
+         * the configuration state of an instance after you disassociate a document, you
+         * must create a new document with the desired configuration and associate it with
+         * the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAssociationOutcome DeleteAssociation(const Model::DeleteAssociationRequest& request) const;
 
         /**
-         * <p>Disassociates the specified Systems Manager document from the specified
-         * instance.</p> <p>When you disassociate a document from an instance, it does not
-         * change the configuration of the instance. To change the configuration state of
-         * an instance after you disassociate a document, you must create a new document
-         * with the desired configuration and associate it with the instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
+         * document) from the specified instance.</p> <p>When you disassociate a document
+         * from an instance, it doesn't change the configuration of the instance. To change
+         * the configuration state of an instance after you disassociate a document, you
+         * must create a new document with the desired configuration and associate it with
+         * the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
          *
@@ -1488,12 +1511,12 @@ namespace Model
         virtual Model::DeleteAssociationOutcomeCallable DeleteAssociationCallable(const Model::DeleteAssociationRequest& request) const;
 
         /**
-         * <p>Disassociates the specified Systems Manager document from the specified
-         * instance.</p> <p>When you disassociate a document from an instance, it does not
-         * change the configuration of the instance. To change the configuration state of
-         * an instance after you disassociate a document, you must create a new document
-         * with the desired configuration and associate it with the instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM
+         * document) from the specified instance.</p> <p>When you disassociate a document
+         * from an instance, it doesn't change the configuration of the instance. To change
+         * the configuration state of an instance after you disassociate a document, you
+         * must create a new document with the desired configuration and associate it with
+         * the instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
          *
@@ -1502,20 +1525,20 @@ namespace Model
         virtual void DeleteAssociationAsync(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Systems Manager document and all instance associations to the
-         * document.</p> <p>Before you delete the document, we recommend that you use
-         * <a>DeleteAssociation</a> to disassociate all instances that are associated with
-         * the document.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
+         * all instance associations to the document.</p> <p>Before you delete the
+         * document, we recommend that you use <a>DeleteAssociation</a> to disassociate all
+         * instances that are associated with the document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDocumentOutcome DeleteDocument(const Model::DeleteDocumentRequest& request) const;
 
         /**
-         * <p>Deletes the Systems Manager document and all instance associations to the
-         * document.</p> <p>Before you delete the document, we recommend that you use
-         * <a>DeleteAssociation</a> to disassociate all instances that are associated with
-         * the document.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
+         * all instance associations to the document.</p> <p>Before you delete the
+         * document, we recommend that you use <a>DeleteAssociation</a> to disassociate all
+         * instances that are associated with the document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -1524,10 +1547,10 @@ namespace Model
         virtual Model::DeleteDocumentOutcomeCallable DeleteDocumentCallable(const Model::DeleteDocumentRequest& request) const;
 
         /**
-         * <p>Deletes the Systems Manager document and all instance associations to the
-         * document.</p> <p>Before you delete the document, we recommend that you use
-         * <a>DeleteAssociation</a> to disassociate all instances that are associated with
-         * the document.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and
+         * all instance associations to the document.</p> <p>Before you delete the
+         * document, we recommend that you use <a>DeleteAssociation</a> to disassociate all
+         * instances that are associated with the document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -1692,9 +1715,9 @@ namespace Model
         virtual void DeletePatchBaselineAsync(const Model::DeletePatchBaselineRequest& request, const DeletePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a Resource Data Sync configuration. After the configuration is
+         * <p>Deletes a resource data sync configuration. After the configuration is
          * deleted, changes to data on managed instances are no longer synced to or from
-         * the target. Deleting a sync configuration does not delete data.</p><p><h3>See
+         * the target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
@@ -1702,9 +1725,9 @@ namespace Model
         virtual Model::DeleteResourceDataSyncOutcome DeleteResourceDataSync(const Model::DeleteResourceDataSyncRequest& request) const;
 
         /**
-         * <p>Deletes a Resource Data Sync configuration. After the configuration is
+         * <p>Deletes a resource data sync configuration. After the configuration is
          * deleted, changes to data on managed instances are no longer synced to or from
-         * the target. Deleting a sync configuration does not delete data.</p><p><h3>See
+         * the target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
@@ -1714,9 +1737,9 @@ namespace Model
         virtual Model::DeleteResourceDataSyncOutcomeCallable DeleteResourceDataSyncCallable(const Model::DeleteResourceDataSyncRequest& request) const;
 
         /**
-         * <p>Deletes a Resource Data Sync configuration. After the configuration is
+         * <p>Deletes a resource data sync configuration. After the configuration is
          * deleted, changes to data on managed instances are no longer synced to or from
-         * the target. Deleting a sync configuration does not delete data.</p><p><h3>See
+         * the target. Deleting a sync configuration doesn't delete data.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
@@ -1836,9 +1859,9 @@ namespace Model
 
         /**
          * <p>Describes details about the activation, such as the date and time the
-         * activation was created, its expiration date, the IAM role assigned to the
-         * instances in the activation, and the number of instances registered by using
-         * this activation.</p><p><h3>See Also:</h3>   <a
+         * activation was created, its expiration date, the Identity and Access Management
+         * (IAM) role assigned to the instances in the activation, and the number of
+         * instances registered by using this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          */
@@ -1846,9 +1869,9 @@ namespace Model
 
         /**
          * <p>Describes details about the activation, such as the date and time the
-         * activation was created, its expiration date, the IAM role assigned to the
-         * instances in the activation, and the number of instances registered by using
-         * this activation.</p><p><h3>See Also:</h3>   <a
+         * activation was created, its expiration date, the Identity and Access Management
+         * (IAM) role assigned to the instances in the activation, and the number of
+         * instances registered by using this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          *
@@ -1858,9 +1881,9 @@ namespace Model
 
         /**
          * <p>Describes details about the activation, such as the date and time the
-         * activation was created, its expiration date, the IAM role assigned to the
-         * instances in the activation, and the number of instances registered by using
-         * this activation.</p><p><h3>See Also:</h3>   <a
+         * activation was created, its expiration date, the Identity and Access Management
+         * (IAM) role assigned to the instances in the activation, and the number of
+         * instances registered by using this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          *
@@ -1872,9 +1895,9 @@ namespace Model
          * <p>Describes the association for the specified target or instance. If you
          * created the association by using the <code>Targets</code> parameter, then you
          * must retrieve the association by using the association ID. If you created the
-         * association by specifying an instance ID and a Systems Manager document, then
-         * you retrieve the association by specifying the document name and the instance
-         * ID. </p><p><h3>See Also:</h3>   <a
+         * association by specifying an instance ID and an Amazon Web Services Systems
+         * Manager document (SSM document), then you retrieve the association by specifying
+         * the document name and the instance ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
          */
@@ -1884,9 +1907,9 @@ namespace Model
          * <p>Describes the association for the specified target or instance. If you
          * created the association by using the <code>Targets</code> parameter, then you
          * must retrieve the association by using the association ID. If you created the
-         * association by specifying an instance ID and a Systems Manager document, then
-         * you retrieve the association by specifying the document name and the instance
-         * ID. </p><p><h3>See Also:</h3>   <a
+         * association by specifying an instance ID and an Amazon Web Services Systems
+         * Manager document (SSM document), then you retrieve the association by specifying
+         * the document name and the instance ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
          *
@@ -1898,9 +1921,9 @@ namespace Model
          * <p>Describes the association for the specified target or instance. If you
          * created the association by using the <code>Targets</code> parameter, then you
          * must retrieve the association by using the association ID. If you created the
-         * association by specifying an instance ID and a Systems Manager document, then
-         * you retrieve the association by specifying the document name and the instance
-         * ID. </p><p><h3>See Also:</h3>   <a
+         * association by specifying an instance ID and an Amazon Web Services Systems
+         * Manager document (SSM document), then you retrieve the association by specifying
+         * the document name and the instance ID. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
          *
@@ -1909,16 +1932,16 @@ namespace Model
         virtual void DescribeAssociationAsync(const Model::DescribeAssociationRequest& request, const DescribeAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this API action to view information about a specific execution of a
-         * specific association.</p><p><h3>See Also:</h3>   <a
+         * <p>Views information about a specific execution of a specific
+         * association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAssociationExecutionTargetsOutcome DescribeAssociationExecutionTargets(const Model::DescribeAssociationExecutionTargetsRequest& request) const;
 
         /**
-         * <p>Use this API action to view information about a specific execution of a
-         * specific association.</p><p><h3>See Also:</h3>   <a
+         * <p>Views information about a specific execution of a specific
+         * association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">AWS
          * API Reference</a></p>
          *
@@ -1927,8 +1950,8 @@ namespace Model
         virtual Model::DescribeAssociationExecutionTargetsOutcomeCallable DescribeAssociationExecutionTargetsCallable(const Model::DescribeAssociationExecutionTargetsRequest& request) const;
 
         /**
-         * <p>Use this API action to view information about a specific execution of a
-         * specific association.</p><p><h3>See Also:</h3>   <a
+         * <p>Views information about a specific execution of a specific
+         * association.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">AWS
          * API Reference</a></p>
          *
@@ -1937,16 +1960,16 @@ namespace Model
         virtual void DescribeAssociationExecutionTargetsAsync(const Model::DescribeAssociationExecutionTargetsRequest& request, const DescribeAssociationExecutionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this API action to view all executions for a specific association ID.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Views all executions for a specific association ID. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAssociationExecutionsOutcome DescribeAssociationExecutions(const Model::DescribeAssociationExecutionsRequest& request) const;
 
         /**
-         * <p>Use this API action to view all executions for a specific association ID.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Views all executions for a specific association ID. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">AWS
          * API Reference</a></p>
          *
@@ -1955,8 +1978,8 @@ namespace Model
         virtual Model::DescribeAssociationExecutionsOutcomeCallable DescribeAssociationExecutionsCallable(const Model::DescribeAssociationExecutionsRequest& request) const;
 
         /**
-         * <p>Use this API action to view all executions for a specific association ID.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Views all executions for a specific association ID. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">AWS
          * API Reference</a></p>
          *
@@ -2049,16 +2072,16 @@ namespace Model
         virtual void DescribeAvailablePatchesAsync(const Model::DescribeAvailablePatchesRequest& request, const DescribeAvailablePatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified Systems Manager document.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the specified Amazon Web Services Systems Manager document (SSM
+         * document).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDocumentOutcome DescribeDocument(const Model::DescribeDocumentRequest& request) const;
 
         /**
-         * <p>Describes the specified Systems Manager document.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the specified Amazon Web Services Systems Manager document (SSM
+         * document).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
          * API Reference</a></p>
          *
@@ -2067,8 +2090,8 @@ namespace Model
         virtual Model::DescribeDocumentOutcomeCallable DescribeDocumentCallable(const Model::DescribeDocumentRequest& request) const;
 
         /**
-         * <p>Describes the specified Systems Manager document.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the specified Amazon Web Services Systems Manager document (SSM
+         * document).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">AWS
          * API Reference</a></p>
          *
@@ -2077,20 +2100,20 @@ namespace Model
         virtual void DescribeDocumentAsync(const Model::DescribeDocumentRequest& request, const DescribeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the permissions for a Systems Manager document. If you created the
-         * document, you are the owner. If a document is shared, it can either be shared
-         * privately (by specifying a user's AWS account ID) or publicly (<i>All</i>).
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Describes the permissions for a Amazon Web Services Systems Manager document
+         * (SSM document). If you created the document, you are the owner. If a document is
+         * shared, it can either be shared privately (by specifying a user's account ID) or
+         * publicly (<i>All</i>). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDocumentPermissionOutcome DescribeDocumentPermission(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Describes the permissions for a Systems Manager document. If you created the
-         * document, you are the owner. If a document is shared, it can either be shared
-         * privately (by specifying a user's AWS account ID) or publicly (<i>All</i>).
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Describes the permissions for a Amazon Web Services Systems Manager document
+         * (SSM document). If you created the document, you are the owner. If a document is
+         * shared, it can either be shared privately (by specifying a user's account ID) or
+         * publicly (<i>All</i>). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -2099,10 +2122,10 @@ namespace Model
         virtual Model::DescribeDocumentPermissionOutcomeCallable DescribeDocumentPermissionCallable(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Describes the permissions for a Systems Manager document. If you created the
-         * document, you are the owner. If a document is shared, it can either be shared
-         * privately (by specifying a user's AWS account ID) or publicly (<i>All</i>).
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Describes the permissions for a Amazon Web Services Systems Manager document
+         * (SSM document). If you created the document, you are the owner. If a document is
+         * shared, it can either be shared privately (by specifying a user's account ID) or
+         * publicly (<i>All</i>). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -2137,8 +2160,8 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline. Note that this API applies only to Windows
-         * patch baselines.</p><p><h3>See Also:</h3>   <a
+         * for the specified patch baseline. Applies to patch baselines for Windows
+         * only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
          * API Reference</a></p>
          */
@@ -2146,8 +2169,8 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline. Note that this API applies only to Windows
-         * patch baselines.</p><p><h3>See Also:</h3>   <a
+         * for the specified patch baseline. Applies to patch baselines for Windows
+         * only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -2157,8 +2180,8 @@ namespace Model
 
         /**
          * <p>Retrieves the current effective patches (the patch and the approval state)
-         * for the specified patch baseline. Note that this API applies only to Windows
-         * patch baselines.</p><p><h3>See Also:</h3>   <a
+         * for the specified patch baseline. Applies to patch baselines for Windows
+         * only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -2198,12 +2221,13 @@ namespace Model
          * <p>Describes one or more of your instances, including information about the
          * operating system platform, the version of SSM Agent installed on the instance,
          * instance status, and so on.</p> <p>If you specify one or more instance IDs, it
-         * returns information for those instances. If you do not specify instance IDs, it
+         * returns information for those instances. If you don't specify instance IDs, it
          * returns information for all your instances. If you specify an instance ID that
-         * is not valid or an instance that you do not own, you receive an error.</p>
-         *  <p>The IamRole field for this API action is the Amazon Identity and
-         * Access Management (IAM) role assigned to on-premises instances. This call does
-         * not return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3>   <a
+         * isn't valid or an instance that you don't own, you receive an error.</p> 
+         * <p>The <code>IamRole</code> field for this API operation is the Identity and
+         * Access Management (IAM) role assigned to on-premises instances. This call
+         * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          */
@@ -2213,12 +2237,13 @@ namespace Model
          * <p>Describes one or more of your instances, including information about the
          * operating system platform, the version of SSM Agent installed on the instance,
          * instance status, and so on.</p> <p>If you specify one or more instance IDs, it
-         * returns information for those instances. If you do not specify instance IDs, it
+         * returns information for those instances. If you don't specify instance IDs, it
          * returns information for all your instances. If you specify an instance ID that
-         * is not valid or an instance that you do not own, you receive an error.</p>
-         *  <p>The IamRole field for this API action is the Amazon Identity and
-         * Access Management (IAM) role assigned to on-premises instances. This call does
-         * not return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3>   <a
+         * isn't valid or an instance that you don't own, you receive an error.</p> 
+         * <p>The <code>IamRole</code> field for this API operation is the Identity and
+         * Access Management (IAM) role assigned to on-premises instances. This call
+         * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          *
@@ -2230,12 +2255,13 @@ namespace Model
          * <p>Describes one or more of your instances, including information about the
          * operating system platform, the version of SSM Agent installed on the instance,
          * instance status, and so on.</p> <p>If you specify one or more instance IDs, it
-         * returns information for those instances. If you do not specify instance IDs, it
+         * returns information for those instances. If you don't specify instance IDs, it
          * returns information for all your instances. If you specify an instance ID that
-         * is not valid or an instance that you do not own, you receive an error.</p>
-         *  <p>The IamRole field for this API action is the Amazon Identity and
-         * Access Management (IAM) role assigned to on-premises instances. This call does
-         * not return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3>   <a
+         * isn't valid or an instance that you don't own, you receive an error.</p> 
+         * <p>The <code>IamRole</code> field for this API operation is the Identity and
+         * Access Management (IAM) role assigned to on-premises instances. This call
+         * doesn't return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          *
@@ -2509,11 +2535,11 @@ namespace Model
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you cannot supply values for
+         * tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
-         * the response to this command. These values do not affect the running of your
-         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * the response to this command. These values don't affect the running of your task
+         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          */
@@ -2521,11 +2547,11 @@ namespace Model
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you cannot supply values for
+         * tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
-         * the response to this command. These values do not affect the running of your
-         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * the response to this command. These values don't affect the running of your task
+         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          *
@@ -2535,11 +2561,11 @@ namespace Model
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you cannot supply values for
+         * tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
-         * the response to this command. These values do not affect the running of your
-         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * the response to this command. These values don't affect the running of your task
+         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">AWS
          * API Reference</a></p>
          *
@@ -2548,7 +2574,7 @@ namespace Model
         virtual void DescribeMaintenanceWindowTasksAsync(const Model::DescribeMaintenanceWindowTasksRequest& request, const DescribeMaintenanceWindowTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the maintenance windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Retrieves the maintenance windows in an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
          * API Reference</a></p>
@@ -2556,7 +2582,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsOutcome DescribeMaintenanceWindows(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
         /**
-         * <p>Retrieves the maintenance windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Retrieves the maintenance windows in an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
          * API Reference</a></p>
@@ -2566,7 +2592,7 @@ namespace Model
         virtual Model::DescribeMaintenanceWindowsOutcomeCallable DescribeMaintenanceWindowsCallable(const Model::DescribeMaintenanceWindowsRequest& request) const;
 
         /**
-         * <p>Retrieves the maintenance windows in an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Retrieves the maintenance windows in an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">AWS
          * API Reference</a></p>
@@ -2604,32 +2630,34 @@ namespace Model
         virtual void DescribeMaintenanceWindowsForTargetAsync(const Model::DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
+         * <p>Query a set of OpsItems. You must have permission in Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOpsItemsOutcome DescribeOpsItems(const Model::DescribeOpsItemsRequest& request) const;
 
         /**
-         * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
+         * <p>Query a set of OpsItems. You must have permission in Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
          *
@@ -2638,16 +2666,17 @@ namespace Model
         virtual Model::DescribeOpsItemsOutcomeCallable DescribeOpsItemsCallable(const Model::DescribeOpsItemsRequest& request) const;
 
         /**
-         * <p>Query a set of OpsItems. You must have permission in AWS Identity and Access
+         * <p>Query a set of OpsItems. You must have permission in Identity and Access
          * Management (IAM) to query a list of OpsItems. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
          *
@@ -2656,30 +2685,28 @@ namespace Model
         virtual void DescribeOpsItemsAsync(const Model::DescribeOpsItemsRequest& request, const DescribeOpsItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about a parameter.</p>  <p>Request results are returned
-         * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
-         * the response includes information up to the limit specified. The number of items
+         * <p>Get information about a parameter.</p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> <p><h3>See Also:</h3>
-         * <a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeParametersOutcome DescribeParameters(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p>  <p>Request results are returned
-         * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
-         * the response includes information up to the limit specified. The number of items
+         * <p>Get information about a parameter.</p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> <p><h3>See Also:</h3>
-         * <a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -2688,15 +2715,14 @@ namespace Model
         virtual Model::DescribeParametersOutcomeCallable DescribeParametersCallable(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p>  <p>Request results are returned
-         * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
-         * the response includes information up to the limit specified. The number of items
+         * <p>Get information about a parameter.</p> <p>Request results are returned on a
+         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
+         * response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> <p><h3>See Also:</h3>
-         * <a
+         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -2705,14 +2731,14 @@ namespace Model
         virtual void DescribeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the patch baselines in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the patch baselines in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePatchBaselinesOutcome DescribePatchBaselines(const Model::DescribePatchBaselinesRequest& request) const;
 
         /**
-         * <p>Lists the patch baselines in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the patch baselines in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">AWS
          * API Reference</a></p>
          *
@@ -2721,7 +2747,7 @@ namespace Model
         virtual Model::DescribePatchBaselinesOutcomeCallable DescribePatchBaselinesCallable(const Model::DescribePatchBaselinesRequest& request) const;
 
         /**
-         * <p>Lists the patch baselines in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the patch baselines in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">AWS
          * API Reference</a></p>
          *
@@ -2730,7 +2756,7 @@ namespace Model
         virtual void DescribePatchBaselinesAsync(const Model::DescribePatchBaselinesRequest& request, const DescribePatchBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns high-level aggregated patch compliance state for a patch
+         * <p>Returns high-level aggregated patch compliance state information for a patch
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">AWS
          * API Reference</a></p>
@@ -2738,7 +2764,7 @@ namespace Model
         virtual Model::DescribePatchGroupStateOutcome DescribePatchGroupState(const Model::DescribePatchGroupStateRequest& request) const;
 
         /**
-         * <p>Returns high-level aggregated patch compliance state for a patch
+         * <p>Returns high-level aggregated patch compliance state information for a patch
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">AWS
          * API Reference</a></p>
@@ -2748,7 +2774,7 @@ namespace Model
         virtual Model::DescribePatchGroupStateOutcomeCallable DescribePatchGroupStateCallable(const Model::DescribePatchGroupStateRequest& request) const;
 
         /**
-         * <p>Returns high-level aggregated patch compliance state for a patch
+         * <p>Returns high-level aggregated patch compliance state information for a patch
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">AWS
          * API Reference</a></p>
@@ -2789,21 +2815,27 @@ namespace Model
          * <p>Lists the properties of available patches organized by product, product
          * family, classification, severity, and other properties of available patches. You
          * can use the reported properties in the filters you specify in requests for
-         * actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
+         * operations such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
          * <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The
          * following section lists the properties that can be used in filters for each
          * major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt>
-         * <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd>
-         * <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
-         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd>
-         * <dt>MACOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION</p> </dd>
-         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
-         * SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties:
-         * PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd>
-         * <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid
-         * properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
+         * <code>PRIORITY</code> </p> </dd> <dt>MACOS</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p> </dd>
+         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
+         * <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd>
+         * <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code>
+         * | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>SUSE</dt>
+         * <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>UBUNTU</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>PRIORITY</code> </p> </dd> <dt>WINDOWS</dt> <dd>
+         * <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> |
+         * <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p> </dd>
          * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">AWS
          * API Reference</a></p>
@@ -2814,21 +2846,27 @@ namespace Model
          * <p>Lists the properties of available patches organized by product, product
          * family, classification, severity, and other properties of available patches. You
          * can use the reported properties in the filters you specify in requests for
-         * actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
+         * operations such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
          * <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The
          * following section lists the properties that can be used in filters for each
          * major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt>
-         * <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd>
-         * <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
-         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd>
-         * <dt>MACOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION</p> </dd>
-         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
-         * SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties:
-         * PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd>
-         * <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid
-         * properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
+         * <code>PRIORITY</code> </p> </dd> <dt>MACOS</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p> </dd>
+         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
+         * <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd>
+         * <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code>
+         * | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>SUSE</dt>
+         * <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>UBUNTU</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>PRIORITY</code> </p> </dd> <dt>WINDOWS</dt> <dd>
+         * <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> |
+         * <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p> </dd>
          * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">AWS
          * API Reference</a></p>
@@ -2841,21 +2879,27 @@ namespace Model
          * <p>Lists the properties of available patches organized by product, product
          * family, classification, severity, and other properties of available patches. You
          * can use the reported properties in the filters you specify in requests for
-         * actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
+         * operations such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>,
          * <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The
          * following section lists the properties that can be used in filters for each
          * major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt>
-         * <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd>
-         * <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
-         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd>
-         * <dt>MACOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION</p> </dd>
-         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION,
-         * SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties:
-         * PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid
-         * properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd>
-         * <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid
-         * properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd>
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid
+         * properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+         * </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
+         * <code>PRIORITY</code> </p> </dd> <dt>MACOS</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p> </dd>
+         * <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code> |
+         * <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd>
+         * <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties: <code>PRODUCT</code>
+         * | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> </dd> <dt>SUSE</dt>
+         * <dd> <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+         * <code>SEVERITY</code> </p> </dd> <dt>UBUNTU</dt> <dd> <p>Valid properties:
+         * <code>PRODUCT</code> | <code>PRIORITY</code> </p> </dd> <dt>WINDOWS</dt> <dd>
+         * <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> |
+         * <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p> </dd>
          * </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties">AWS
          * API Reference</a></p>
@@ -2894,9 +2938,9 @@ namespace Model
 
         /**
          * <p>Deletes the association between an OpsItem and a related resource. For
-         * example, this API action can delete an Incident Manager incident from an
-         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
-         * Also:</h3>   <a
+         * example, this API operation can delete an Incident Manager incident from an
+         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          */
@@ -2904,9 +2948,9 @@ namespace Model
 
         /**
          * <p>Deletes the association between an OpsItem and a related resource. For
-         * example, this API action can delete an Incident Manager incident from an
-         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
-         * Also:</h3>   <a
+         * example, this API operation can delete an Incident Manager incident from an
+         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          *
@@ -2916,9 +2960,9 @@ namespace Model
 
         /**
          * <p>Deletes the association between an OpsItem and a related resource. For
-         * example, this API action can delete an Incident Manager incident from an
-         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
-         * Also:</h3>   <a
+         * example, this API operation can delete an Incident Manager incident from an
+         * OpsItem. Incident Manager is a capability of Amazon Web Services Systems
+         * Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
          * API Reference</a></p>
          *
@@ -2955,40 +2999,40 @@ namespace Model
         virtual void GetAutomationExecutionAsync(const Model::GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the state of the AWS Systems Manager Change Calendar at an optional,
-         * specified time. If you specify a time, <code>GetCalendarState</code> returns the
-         * state of the calendar at a specific time, and returns the next time that the
-         * Change Calendar state will transition. If you do not specify a time,
-         * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If
-         * you specify more than one calendar in a request, the command returns the status
-         * of <code>OPEN</code> only if all calendars in the request are open. If one or
-         * more calendars in the request are closed, the status returned is
-         * <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change
-         * Calendar, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
-         * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the state of a Amazon Web Services Systems Manager change calendar at
+         * the current time or a specified time. If you specify a time,
+         * <code>GetCalendarState</code> returns the state of the calendar at that specific
+         * time, and returns the next time that the change calendar state will transition.
+         * If you don't specify a time, <code>GetCalendarState</code> uses the current
+         * time. Change Calendar entries have two possible states: <code>OPEN</code> or
+         * <code>CLOSED</code>.</p> <p>If you specify more than one calendar in a request,
+         * the command returns the status of <code>OPEN</code> only if all calendars in the
+         * request are open. If one or more calendars in the request are closed, the status
+         * returned is <code>CLOSED</code>.</p> <p>For more information about Change
+         * Calendar, a capability of Amazon Web Services Systems Manager, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
+         * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
+         * Systems Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCalendarStateOutcome GetCalendarState(const Model::GetCalendarStateRequest& request) const;
 
         /**
-         * <p>Gets the state of the AWS Systems Manager Change Calendar at an optional,
-         * specified time. If you specify a time, <code>GetCalendarState</code> returns the
-         * state of the calendar at a specific time, and returns the next time that the
-         * Change Calendar state will transition. If you do not specify a time,
-         * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If
-         * you specify more than one calendar in a request, the command returns the status
-         * of <code>OPEN</code> only if all calendars in the request are open. If one or
-         * more calendars in the request are closed, the status returned is
-         * <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change
-         * Calendar, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
-         * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the state of a Amazon Web Services Systems Manager change calendar at
+         * the current time or a specified time. If you specify a time,
+         * <code>GetCalendarState</code> returns the state of the calendar at that specific
+         * time, and returns the next time that the change calendar state will transition.
+         * If you don't specify a time, <code>GetCalendarState</code> uses the current
+         * time. Change Calendar entries have two possible states: <code>OPEN</code> or
+         * <code>CLOSED</code>.</p> <p>If you specify more than one calendar in a request,
+         * the command returns the status of <code>OPEN</code> only if all calendars in the
+         * request are open. If one or more calendars in the request are closed, the status
+         * returned is <code>CLOSED</code>.</p> <p>For more information about Change
+         * Calendar, a capability of Amazon Web Services Systems Manager, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
+         * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
+         * Systems Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">AWS
          * API Reference</a></p>
          *
@@ -2997,20 +3041,20 @@ namespace Model
         virtual Model::GetCalendarStateOutcomeCallable GetCalendarStateCallable(const Model::GetCalendarStateRequest& request) const;
 
         /**
-         * <p>Gets the state of the AWS Systems Manager Change Calendar at an optional,
-         * specified time. If you specify a time, <code>GetCalendarState</code> returns the
-         * state of the calendar at a specific time, and returns the next time that the
-         * Change Calendar state will transition. If you do not specify a time,
-         * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If
-         * you specify more than one calendar in a request, the command returns the status
-         * of <code>OPEN</code> only if all calendars in the request are open. If one or
-         * more calendars in the request are closed, the status returned is
-         * <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change
-         * Calendar, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
-         * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the state of a Amazon Web Services Systems Manager change calendar at
+         * the current time or a specified time. If you specify a time,
+         * <code>GetCalendarState</code> returns the state of the calendar at that specific
+         * time, and returns the next time that the change calendar state will transition.
+         * If you don't specify a time, <code>GetCalendarState</code> uses the current
+         * time. Change Calendar entries have two possible states: <code>OPEN</code> or
+         * <code>CLOSED</code>.</p> <p>If you specify more than one calendar in a request,
+         * the command returns the status of <code>OPEN</code> only if all calendars in the
+         * request are open. If one or more calendars in the request are closed, the status
+         * returned is <code>CLOSED</code>.</p> <p>For more information about Change
+         * Calendar, a capability of Amazon Web Services Systems Manager, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
+         * Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services
+         * Systems Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">AWS
          * API Reference</a></p>
          *
@@ -3090,10 +3134,10 @@ namespace Model
         virtual void GetConnectionStatusAsync(const Model::GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the default patch baseline. Note that Systems Manager supports
-         * creating multiple default patch baselines. For example, you can create a default
-         * patch baseline for each operating system.</p> <p>If you do not specify an
-         * operating system value, the default patch baseline for Windows is
+         * <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager
+         * supports creating multiple default patch baselines. For example, you can create
+         * a default patch baseline for each operating system.</p> <p>If you don't specify
+         * an operating system value, the default patch baseline for Windows is
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
@@ -3101,10 +3145,10 @@ namespace Model
         virtual Model::GetDefaultPatchBaselineOutcome GetDefaultPatchBaseline(const Model::GetDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves the default patch baseline. Note that Systems Manager supports
-         * creating multiple default patch baselines. For example, you can create a default
-         * patch baseline for each operating system.</p> <p>If you do not specify an
-         * operating system value, the default patch baseline for Windows is
+         * <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager
+         * supports creating multiple default patch baselines. For example, you can create
+         * a default patch baseline for each operating system.</p> <p>If you don't specify
+         * an operating system value, the default patch baseline for Windows is
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
@@ -3114,10 +3158,10 @@ namespace Model
         virtual Model::GetDefaultPatchBaselineOutcomeCallable GetDefaultPatchBaselineCallable(const Model::GetDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Retrieves the default patch baseline. Note that Systems Manager supports
-         * creating multiple default patch baselines. For example, you can create a default
-         * patch baseline for each operating system.</p> <p>If you do not specify an
-         * operating system value, the default patch baseline for Windows is
+         * <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager
+         * supports creating multiple default patch baselines. For example, you can create
+         * a default patch baseline for each operating system.</p> <p>If you don't specify
+         * an operating system value, the default patch baseline for Windows is
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">AWS
          * API Reference</a></p>
@@ -3128,8 +3172,16 @@ namespace Model
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the AWS-RunPatchBaseline Systems Manager document.
-         * </p><p><h3>See Also:</h3>   <a
+         * API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager
+         * document (SSM document).</p>  <p>If you run the command locally, such as
+         * with the Command Line Interface (CLI), the system attempts to use your local AWS
+         * credentials and the operation fails. To avoid this, you can run the command in
+         * the Amazon Web Services Systems Manager console. Use Run Command, a capability
+         * of Amazon Web Services Systems Manager, with an SSM document that enables you to
+         * target an instance with a script or command. For example, run the command using
+         * the <code>AWS-RunShellScript</code> document or the
+         * <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>
          */
@@ -3137,8 +3189,16 @@ namespace Model
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the AWS-RunPatchBaseline Systems Manager document.
-         * </p><p><h3>See Also:</h3>   <a
+         * API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager
+         * document (SSM document).</p>  <p>If you run the command locally, such as
+         * with the Command Line Interface (CLI), the system attempts to use your local AWS
+         * credentials and the operation fails. To avoid this, you can run the command in
+         * the Amazon Web Services Systems Manager console. Use Run Command, a capability
+         * of Amazon Web Services Systems Manager, with an SSM document that enables you to
+         * target an instance with a script or command. For example, run the command using
+         * the <code>AWS-RunShellScript</code> document or the
+         * <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>
          *
@@ -3148,8 +3208,16 @@ namespace Model
 
         /**
          * <p>Retrieves the current snapshot for the patch baseline the instance uses. This
-         * API is primarily used by the AWS-RunPatchBaseline Systems Manager document.
-         * </p><p><h3>See Also:</h3>   <a
+         * API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager
+         * document (SSM document).</p>  <p>If you run the command locally, such as
+         * with the Command Line Interface (CLI), the system attempts to use your local AWS
+         * credentials and the operation fails. To avoid this, you can run the command in
+         * the Amazon Web Services Systems Manager console. Use Run Command, a capability
+         * of Amazon Web Services Systems Manager, with an SSM document that enables you to
+         * target an instance with a script or command. For example, run the command using
+         * the <code>AWS-RunShellScript</code> document or the
+         * <code>AWS-RunPowerShellScript</code> document.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS
          * API Reference</a></p>
          *
@@ -3158,16 +3226,16 @@ namespace Model
         virtual void GetDeployablePatchSnapshotForInstanceAsync(const Model::GetDeployablePatchSnapshotForInstanceRequest& request, const GetDeployablePatchSnapshotForInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the contents of the specified Systems Manager document.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the contents of the specified Amazon Web Services Systems Manager
+         * document (SSM document).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS API
          * Reference</a></p>
          */
         virtual Model::GetDocumentOutcome GetDocument(const Model::GetDocumentRequest& request) const;
 
         /**
-         * <p>Gets the contents of the specified Systems Manager document.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the contents of the specified Amazon Web Services Systems Manager
+         * document (SSM document).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS API
          * Reference</a></p>
          *
@@ -3176,8 +3244,8 @@ namespace Model
         virtual Model::GetDocumentOutcomeCallable GetDocumentCallable(const Model::GetDocumentRequest& request) const;
 
         /**
-         * <p>Gets the contents of the specified Systems Manager document.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the contents of the specified Amazon Web Services Systems Manager
+         * document (SSM document).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">AWS API
          * Reference</a></p>
          *
@@ -3352,11 +3420,11 @@ namespace Model
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you cannot supply values for
+         * tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
-         * the response to this command. These values do not affect the running of your
-         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * the response to this command. These values don't affect the running of your task
+         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          */
@@ -3364,11 +3432,11 @@ namespace Model
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you cannot supply values for
+         * tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
-         * the response to this command. These values do not affect the running of your
-         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * the response to this command. These values don't affect the running of your task
+         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3378,11 +3446,11 @@ namespace Model
 
         /**
          * <p>Lists the tasks in a maintenance window.</p>  <p>For maintenance window
-         * tasks without a specified target, you cannot supply values for
+         * tasks without a specified target, you can't supply values for
          * <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the
          * system inserts a placeholder value of <code>1</code>, which may be reported in
-         * the response to this command. These values do not affect the running of your
-         * task and can be ignored.</p> <p><h3>See Also:</h3>   <a
+         * the response to this command. These values don't affect the running of your task
+         * and can be ignored.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask">AWS
          * API Reference</a></p>
          *
@@ -3392,16 +3460,17 @@ namespace Model
 
         /**
          * <p>Get information about an OpsItem by using the ID. You must have permission in
-         * AWS Identity and Access Management (IAM) to view information about an OpsItem.
-         * For more information, see <a
+         * Identity and Access Management (IAM) to view information about an OpsItem. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
          */
@@ -3409,16 +3478,17 @@ namespace Model
 
         /**
          * <p>Get information about an OpsItem by using the ID. You must have permission in
-         * AWS Identity and Access Management (IAM) to view information about an OpsItem.
-         * For more information, see <a
+         * Identity and Access Management (IAM) to view information about an OpsItem. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
          *
@@ -3428,16 +3498,17 @@ namespace Model
 
         /**
          * <p>Get information about an OpsItem by using the ID. You must have permission in
-         * AWS Identity and Access Management (IAM) to view information about an OpsItem.
-         * For more information, see <a
+         * Identity and Access Management (IAM) to view information about an OpsItem. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
          *
@@ -3474,16 +3545,24 @@ namespace Model
         virtual void GetOpsMetadataAsync(const Model::GetOpsMetadataRequest& request, const GetOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>View a summary of OpsItems based on specified filters and
-         * aggregators.</p><p><h3>See Also:</h3>   <a
+         * <p>View a summary of operations metadata (OpsData) based on specified filters
+         * and aggregators. OpsData can include information about Amazon Web Services
+         * Systems Manager OpsCenter operational workitems (OpsItems) as well as
+         * information about any Amazon Web Services resource or service configured to
+         * report OpsData to Amazon Web Services Systems Manager Explorer. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">AWS
          * API Reference</a></p>
          */
         virtual Model::GetOpsSummaryOutcome GetOpsSummary(const Model::GetOpsSummaryRequest& request) const;
 
         /**
-         * <p>View a summary of OpsItems based on specified filters and
-         * aggregators.</p><p><h3>See Also:</h3>   <a
+         * <p>View a summary of operations metadata (OpsData) based on specified filters
+         * and aggregators. OpsData can include information about Amazon Web Services
+         * Systems Manager OpsCenter operational workitems (OpsItems) as well as
+         * information about any Amazon Web Services resource or service configured to
+         * report OpsData to Amazon Web Services Systems Manager Explorer. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">AWS
          * API Reference</a></p>
          *
@@ -3492,8 +3571,12 @@ namespace Model
         virtual Model::GetOpsSummaryOutcomeCallable GetOpsSummaryCallable(const Model::GetOpsSummaryRequest& request) const;
 
         /**
-         * <p>View a summary of OpsItems based on specified filters and
-         * aggregators.</p><p><h3>See Also:</h3>   <a
+         * <p>View a summary of operations metadata (OpsData) based on specified filters
+         * and aggregators. OpsData can include information about Amazon Web Services
+         * Systems Manager OpsCenter operational workitems (OpsItems) as well as
+         * information about any Amazon Web Services resource or service configured to
+         * report OpsData to Amazon Web Services Systems Manager Explorer. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary">AWS
          * API Reference</a></p>
          *
@@ -3503,7 +3586,7 @@ namespace Model
 
         /**
          * <p>Get information about a parameter by using the parameter name. Don't confuse
-         * this API action with the <a>GetParameters</a> API action.</p><p><h3>See
+         * this API operation with the <a>GetParameters</a> API operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
@@ -3512,7 +3595,7 @@ namespace Model
 
         /**
          * <p>Get information about a parameter by using the parameter name. Don't confuse
-         * this API action with the <a>GetParameters</a> API action.</p><p><h3>See
+         * this API operation with the <a>GetParameters</a> API operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
@@ -3523,7 +3606,7 @@ namespace Model
 
         /**
          * <p>Get information about a parameter by using the parameter name. Don't confuse
-         * this API action with the <a>GetParameters</a> API action.</p><p><h3>See
+         * this API operation with the <a>GetParameters</a> API operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter">AWS
          * API Reference</a></p>
@@ -3561,16 +3644,16 @@ namespace Model
         virtual void GetParameterHistoryAsync(const Model::GetParameterHistoryRequest& request, const GetParameterHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get details of a parameter. Don't confuse this API action with the
-         * <a>GetParameter</a> API action.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details of a parameter. Don't confuse this API operation with the
+         * <a>GetParameter</a> API operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::GetParametersOutcome GetParameters(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get details of a parameter. Don't confuse this API action with the
-         * <a>GetParameter</a> API action.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details of a parameter. Don't confuse this API operation with the
+         * <a>GetParameter</a> API operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          *
@@ -3579,8 +3662,8 @@ namespace Model
         virtual Model::GetParametersOutcomeCallable GetParametersCallable(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get details of a parameter. Don't confuse this API action with the
-         * <a>GetParameter</a> API action.</p><p><h3>See Also:</h3>   <a
+         * <p>Get details of a parameter. Don't confuse this API operation with the
+         * <a>GetParameter</a> API operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          *
@@ -3590,14 +3673,14 @@ namespace Model
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p>  <p>Request results are returned on a best-effort basis. If you
-         * specify <code>MaxResults</code> in the request, the response includes
-         * information up to the limit specified. The number of items returned, however,
-         * can be between zero and the value of <code>MaxResults</code>. If the service
-         * reaches an internal limit while processing the results, it stops the operation
-         * and returns the matching values up to that point and a <code>NextToken</code>.
-         * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> <p><h3>See Also:</h3>   <a
+         * </p> <p>Request results are returned on a best-effort basis. If you specify
+         * <code>MaxResults</code> in the request, the response includes information up to
+         * the limit specified. The number of items returned, however, can be between zero
+         * and the value of <code>MaxResults</code>. If the service reaches an internal
+         * limit while processing the results, it stops the operation and returns the
+         * matching values up to that point and a <code>NextToken</code>. You can specify
+         * the <code>NextToken</code> in a subsequent call to get the next set of
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -3605,14 +3688,14 @@ namespace Model
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p>  <p>Request results are returned on a best-effort basis. If you
-         * specify <code>MaxResults</code> in the request, the response includes
-         * information up to the limit specified. The number of items returned, however,
-         * can be between zero and the value of <code>MaxResults</code>. If the service
-         * reaches an internal limit while processing the results, it stops the operation
-         * and returns the matching values up to that point and a <code>NextToken</code>.
-         * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> <p><h3>See Also:</h3>   <a
+         * </p> <p>Request results are returned on a best-effort basis. If you specify
+         * <code>MaxResults</code> in the request, the response includes information up to
+         * the limit specified. The number of items returned, however, can be between zero
+         * and the value of <code>MaxResults</code>. If the service reaches an internal
+         * limit while processing the results, it stops the operation and returns the
+         * matching values up to that point and a <code>NextToken</code>. You can specify
+         * the <code>NextToken</code> in a subsequent call to get the next set of
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -3622,14 +3705,14 @@ namespace Model
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p>  <p>Request results are returned on a best-effort basis. If you
-         * specify <code>MaxResults</code> in the request, the response includes
-         * information up to the limit specified. The number of items returned, however,
-         * can be between zero and the value of <code>MaxResults</code>. If the service
-         * reaches an internal limit while processing the results, it stops the operation
-         * and returns the matching values up to that point and a <code>NextToken</code>.
-         * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> <p><h3>See Also:</h3>   <a
+         * </p> <p>Request results are returned on a best-effort basis. If you specify
+         * <code>MaxResults</code> in the request, the response includes information up to
+         * the limit specified. The number of items returned, however, can be between zero
+         * and the value of <code>MaxResults</code>. If the service reaches an internal
+         * limit while processing the results, it stops the operation and returns the
+         * matching values up to that point and a <code>NextToken</code>. You can specify
+         * the <code>NextToken</code> in a subsequent call to get the next set of
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -3691,40 +3774,44 @@ namespace Model
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
-         * teams define the default value for a <code>SettingId</code>. You can't create a
-         * new <code>SettingId</code>, but you can overwrite the default value if you have
-         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the
-         * <a>ResetServiceSetting</a> to change the value back to the original value
-         * defined by the AWS service team.</p> <p>Query the current service setting for
-         * the account. </p><p><h3>See Also:</h3>   <a
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of
+         * <code>false</code>. This means the user can't use this feature unless they
+         * change the setting to <code>true</code> and intentionally opt in for a paid
+         * feature.</p> <p>Services map a <code>SettingId</code> object to a setting value.
+         * Amazon Web Services services teams define the default value for a
+         * <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you
+         * can overwrite the default value if you have the
+         * <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>UpdateServiceSetting</a> API operation to change the default setting. Or use
+         * the <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the Amazon Web Services service team.</p> <p>Query the current
+         * service setting for the account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::GetServiceSettingOutcome GetServiceSetting(const Model::GetServiceSettingRequest& request) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
-         * teams define the default value for a <code>SettingId</code>. You can't create a
-         * new <code>SettingId</code>, but you can overwrite the default value if you have
-         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the
-         * <a>ResetServiceSetting</a> to change the value back to the original value
-         * defined by the AWS service team.</p> <p>Query the current service setting for
-         * the account. </p><p><h3>See Also:</h3>   <a
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of
+         * <code>false</code>. This means the user can't use this feature unless they
+         * change the setting to <code>true</code> and intentionally opt in for a paid
+         * feature.</p> <p>Services map a <code>SettingId</code> object to a setting value.
+         * Amazon Web Services services teams define the default value for a
+         * <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you
+         * can overwrite the default value if you have the
+         * <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>UpdateServiceSetting</a> API operation to change the default setting. Or use
+         * the <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the Amazon Web Services service team.</p> <p>Query the current
+         * service setting for the account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">AWS
          * API Reference</a></p>
          *
@@ -3733,20 +3820,22 @@ namespace Model
         virtual Model::GetServiceSettingOutcomeCallable GetServiceSettingCallable(const Model::GetServiceSettingRequest& request) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
-         * teams define the default value for a <code>SettingId</code>. You can't create a
-         * new <code>SettingId</code>, but you can overwrite the default value if you have
-         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the
-         * <a>ResetServiceSetting</a> to change the value back to the original value
-         * defined by the AWS service team.</p> <p>Query the current service setting for
-         * the account. </p><p><h3>See Also:</h3>   <a
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of
+         * <code>false</code>. This means the user can't use this feature unless they
+         * change the setting to <code>true</code> and intentionally opt in for a paid
+         * feature.</p> <p>Services map a <code>SettingId</code> object to a setting value.
+         * Amazon Web Services services teams define the default value for a
+         * <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you
+         * can overwrite the default value if you have the
+         * <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>UpdateServiceSetting</a> API operation to change the default setting. Or use
+         * the <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the Amazon Web Services service team.</p> <p>Query the current
+         * service setting for the account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">AWS
          * API Reference</a></p>
          *
@@ -3756,25 +3845,26 @@ namespace Model
 
         /**
          * <p>A parameter label is a user-defined alias to help you manage different
-         * versions of a parameter. When you modify a parameter, Systems Manager
-         * automatically saves a new version and increments the version number by one. A
-         * label can help you remember the purpose of a parameter when there are multiple
-         * versions. </p> <p>Parameter labels have the following requirements and
-         * restrictions.</p> <ul> <li> <p>A version of a parameter can have a maximum of 10
-         * labels.</p> </li> <li> <p>You can't attach the same label to different versions
-         * of the same parameter. For example, if version 1 has the label Production, then
-         * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
-         * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
-         * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
-         * parameter label, then you can either delete it or move it to a different version
-         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
-         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
-         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
-         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
-         * fails to meet these requirements, then the label is not associated with a
-         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * versions of a parameter. When you modify a parameter, Amazon Web Services
+         * Systems Manager automatically saves a new version and increments the version
+         * number by one. A label can help you remember the purpose of a parameter when
+         * there are multiple versions. </p> <p>Parameter labels have the following
+         * requirements and restrictions.</p> <ul> <li> <p>A version of a parameter can
+         * have a maximum of 10 labels.</p> </li> <li> <p>You can't attach the same label
+         * to different versions of the same parameter. For example, if version 1 has the
+         * label Production, then you can't attach Production to version 2.</p> </li> <li>
+         * <p>You can move a label from one version of a parameter to another.</p> </li>
+         * <li> <p>You can't create a label when you create a new parameter. You must
+         * attach a label to a specific version of a parameter.</p> </li> <li> <p>If you no
+         * longer want to use a parameter label, then you can either delete it or move it
+         * to a different version of a parameter.</p> </li> <li> <p>A label can have a
+         * maximum of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
+         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
+         * <li> <p>Labels can't begin with a number, "<code>aws</code>" or
+         * "<code>ssm</code>" (not case sensitive). If a label fails to meet these
+         * requirements, then the label isn't associated with a parameter and the system
+         * displays it in the list of InvalidLabels.</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          */
@@ -3782,25 +3872,26 @@ namespace Model
 
         /**
          * <p>A parameter label is a user-defined alias to help you manage different
-         * versions of a parameter. When you modify a parameter, Systems Manager
-         * automatically saves a new version and increments the version number by one. A
-         * label can help you remember the purpose of a parameter when there are multiple
-         * versions. </p> <p>Parameter labels have the following requirements and
-         * restrictions.</p> <ul> <li> <p>A version of a parameter can have a maximum of 10
-         * labels.</p> </li> <li> <p>You can't attach the same label to different versions
-         * of the same parameter. For example, if version 1 has the label Production, then
-         * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
-         * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
-         * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
-         * parameter label, then you can either delete it or move it to a different version
-         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
-         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
-         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
-         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
-         * fails to meet these requirements, then the label is not associated with a
-         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * versions of a parameter. When you modify a parameter, Amazon Web Services
+         * Systems Manager automatically saves a new version and increments the version
+         * number by one. A label can help you remember the purpose of a parameter when
+         * there are multiple versions. </p> <p>Parameter labels have the following
+         * requirements and restrictions.</p> <ul> <li> <p>A version of a parameter can
+         * have a maximum of 10 labels.</p> </li> <li> <p>You can't attach the same label
+         * to different versions of the same parameter. For example, if version 1 has the
+         * label Production, then you can't attach Production to version 2.</p> </li> <li>
+         * <p>You can move a label from one version of a parameter to another.</p> </li>
+         * <li> <p>You can't create a label when you create a new parameter. You must
+         * attach a label to a specific version of a parameter.</p> </li> <li> <p>If you no
+         * longer want to use a parameter label, then you can either delete it or move it
+         * to a different version of a parameter.</p> </li> <li> <p>A label can have a
+         * maximum of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
+         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
+         * <li> <p>Labels can't begin with a number, "<code>aws</code>" or
+         * "<code>ssm</code>" (not case sensitive). If a label fails to meet these
+         * requirements, then the label isn't associated with a parameter and the system
+         * displays it in the list of InvalidLabels.</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          *
@@ -3810,25 +3901,26 @@ namespace Model
 
         /**
          * <p>A parameter label is a user-defined alias to help you manage different
-         * versions of a parameter. When you modify a parameter, Systems Manager
-         * automatically saves a new version and increments the version number by one. A
-         * label can help you remember the purpose of a parameter when there are multiple
-         * versions. </p> <p>Parameter labels have the following requirements and
-         * restrictions.</p> <ul> <li> <p>A version of a parameter can have a maximum of 10
-         * labels.</p> </li> <li> <p>You can't attach the same label to different versions
-         * of the same parameter. For example, if version 1 has the label Production, then
-         * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
-         * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
-         * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
-         * parameter label, then you can either delete it or move it to a different version
-         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
-         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
-         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
-         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
-         * fails to meet these requirements, then the label is not associated with a
-         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * versions of a parameter. When you modify a parameter, Amazon Web Services
+         * Systems Manager automatically saves a new version and increments the version
+         * number by one. A label can help you remember the purpose of a parameter when
+         * there are multiple versions. </p> <p>Parameter labels have the following
+         * requirements and restrictions.</p> <ul> <li> <p>A version of a parameter can
+         * have a maximum of 10 labels.</p> </li> <li> <p>You can't attach the same label
+         * to different versions of the same parameter. For example, if version 1 has the
+         * label Production, then you can't attach Production to version 2.</p> </li> <li>
+         * <p>You can move a label from one version of a parameter to another.</p> </li>
+         * <li> <p>You can't create a label when you create a new parameter. You must
+         * attach a label to a specific version of a parameter.</p> </li> <li> <p>If you no
+         * longer want to use a parameter label, then you can either delete it or move it
+         * to a different version of a parameter.</p> </li> <li> <p>A label can have a
+         * maximum of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
+         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
+         * <li> <p>Labels can't begin with a number, "<code>aws</code>" or
+         * "<code>ssm</code>" (not case sensitive). If a label fails to meet these
+         * requirements, then the label isn't associated with a parameter and the system
+         * displays it in the list of InvalidLabels.</p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          *
@@ -3865,18 +3957,20 @@ namespace Model
         virtual void ListAssociationVersionsAsync(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all State Manager associations in the current AWS account and Region.
-         * You can limit the results to a specific State Manager association document or
-         * instance by specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all State Manager associations in the current account and Region. You
+         * can limit the results to a specific State Manager association document or
+         * instance by specifying a filter. State Manager is a capability of Amazon Web
+         * Services Systems Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Returns all State Manager associations in the current AWS account and Region.
-         * You can limit the results to a specific State Manager association document or
-         * instance by specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all State Manager associations in the current account and Region. You
+         * can limit the results to a specific State Manager association document or
+         * instance by specifying a filter. State Manager is a capability of Amazon Web
+         * Services Systems Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
          *
@@ -3885,9 +3979,10 @@ namespace Model
         virtual Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Returns all State Manager associations in the current AWS account and Region.
-         * You can limit the results to a specific State Manager association document or
-         * instance by specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all State Manager associations in the current account and Region. You
+         * can limit the results to a specific State Manager association document or
+         * instance by specifying a filter. State Manager is a capability of Amazon Web
+         * Services Systems Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
          *
@@ -3898,9 +3993,10 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user runs SendCommand against three instances, then a command
-         * invocation is created for each requested instance ID. ListCommandInvocations
-         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
+         * For example, if a user runs <code>SendCommand</code> against three instances,
+         * then a command invocation is created for each requested instance ID.
+         * <code>ListCommandInvocations</code> provide status about command
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          */
@@ -3909,9 +4005,10 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user runs SendCommand against three instances, then a command
-         * invocation is created for each requested instance ID. ListCommandInvocations
-         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
+         * For example, if a user runs <code>SendCommand</code> against three instances,
+         * then a command invocation is created for each requested instance ID.
+         * <code>ListCommandInvocations</code> provide status about command
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          *
@@ -3922,9 +4019,10 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user runs SendCommand against three instances, then a command
-         * invocation is created for each requested instance ID. ListCommandInvocations
-         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
+         * For example, if a user runs <code>SendCommand</code> against three instances,
+         * then a command invocation is created for each requested instance ID.
+         * <code>ListCommandInvocations</code> provide status about command
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          *
@@ -3933,7 +4031,7 @@ namespace Model
         virtual void ListCommandInvocationsAsync(const Model::ListCommandInvocationsRequest& request, const ListCommandInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the commands requested by users of the AWS account.</p><p><h3>See
+         * <p>Lists the commands requested by users of the account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">AWS
          * API Reference</a></p>
@@ -3941,7 +4039,7 @@ namespace Model
         virtual Model::ListCommandsOutcome ListCommands(const Model::ListCommandsRequest& request) const;
 
         /**
-         * <p>Lists the commands requested by users of the AWS account.</p><p><h3>See
+         * <p>Lists the commands requested by users of the account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">AWS
          * API Reference</a></p>
@@ -3951,7 +4049,7 @@ namespace Model
         virtual Model::ListCommandsOutcomeCallable ListCommandsCallable(const Model::ListCommandsRequest& request) const;
 
         /**
-         * <p>Lists the commands requested by users of the AWS account.</p><p><h3>See
+         * <p>Lists the commands requested by users of the account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">AWS
          * API Reference</a></p>
@@ -3961,7 +4059,7 @@ namespace Model
         virtual void ListCommandsAsync(const Model::ListCommandsRequest& request, const ListCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For a specified resource ID, this API action returns a list of compliance
+         * <p>For a specified resource ID, this API operation returns a list of compliance
          * statuses for different resource types. Currently, you can only specify one
          * resource ID per call. List results depend on the criteria specified in the
          * filter.</p><p><h3>See Also:</h3>   <a
@@ -3971,7 +4069,7 @@ namespace Model
         virtual Model::ListComplianceItemsOutcome ListComplianceItems(const Model::ListComplianceItemsRequest& request) const;
 
         /**
-         * <p>For a specified resource ID, this API action returns a list of compliance
+         * <p>For a specified resource ID, this API operation returns a list of compliance
          * statuses for different resource types. Currently, you can only specify one
          * resource ID per call. List results depend on the criteria specified in the
          * filter.</p><p><h3>See Also:</h3>   <a
@@ -3983,7 +4081,7 @@ namespace Model
         virtual Model::ListComplianceItemsOutcomeCallable ListComplianceItemsCallable(const Model::ListComplianceItemsRequest& request) const;
 
         /**
-         * <p>For a specified resource ID, this API action returns a list of compliance
+         * <p>For a specified resource ID, this API operation returns a list of compliance
          * statuses for different resource types. Currently, you can only specify one
          * resource ID per call. List results depend on the criteria specified in the
          * filter.</p><p><h3>See Also:</h3>   <a
@@ -4082,7 +4180,7 @@ namespace Model
         virtual void ListDocumentVersionsAsync(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all Systems Manager (SSM) documents in the current AWS account and
+         * <p>Returns all Systems Manager (SSM) documents in the current account and
          * Region. You can limit the results of this request by using a
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
@@ -4091,7 +4189,7 @@ namespace Model
         virtual Model::ListDocumentsOutcome ListDocuments(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Returns all Systems Manager (SSM) documents in the current AWS account and
+         * <p>Returns all Systems Manager (SSM) documents in the current account and
          * Region. You can limit the results of this request by using a
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
@@ -4102,7 +4200,7 @@ namespace Model
         virtual Model::ListDocumentsOutcomeCallable ListDocumentsCallable(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Returns all Systems Manager (SSM) documents in the current AWS account and
+         * <p>Returns all Systems Manager (SSM) documents in the current account and
          * Region. You can limit the results of this request by using a
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
@@ -4141,18 +4239,18 @@ namespace Model
         virtual void ListInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all OpsItem events in the current AWS account and Region.
-         * You can limit the results to events associated with specific OpsItems by
-         * specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all OpsItem events in the current Region and account. You
+         * can limit the results to events associated with specific OpsItems by specifying
+         * a filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOpsItemEventsOutcome ListOpsItemEvents(const Model::ListOpsItemEventsRequest& request) const;
 
         /**
-         * <p>Returns a list of all OpsItem events in the current AWS account and Region.
-         * You can limit the results to events associated with specific OpsItems by
-         * specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all OpsItem events in the current Region and account. You
+         * can limit the results to events associated with specific OpsItems by specifying
+         * a filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">AWS
          * API Reference</a></p>
          *
@@ -4161,9 +4259,9 @@ namespace Model
         virtual Model::ListOpsItemEventsOutcomeCallable ListOpsItemEventsCallable(const Model::ListOpsItemEventsRequest& request) const;
 
         /**
-         * <p>Returns a list of all OpsItem events in the current AWS account and Region.
-         * You can limit the results to events associated with specific OpsItems by
-         * specifying a filter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all OpsItem events in the current Region and account. You
+         * can limit the results to events associated with specific OpsItems by specifying
+         * a filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents">AWS
          * API Reference</a></p>
          *
@@ -4200,16 +4298,18 @@ namespace Model
         virtual void ListOpsItemRelatedItemsAsync(const Model::ListOpsItemRelatedItemsRequest& request, const ListOpsItemRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Systems Manager calls this API action when displaying all Application Manager
-         * OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon Web Services Systems Manager calls this API operation when displaying
+         * all Application Manager OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOpsMetadataOutcome ListOpsMetadata(const Model::ListOpsMetadataRequest& request) const;
 
         /**
-         * <p>Systems Manager calls this API action when displaying all Application Manager
-         * OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon Web Services Systems Manager calls this API operation when displaying
+         * all Application Manager OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -4218,8 +4318,9 @@ namespace Model
         virtual Model::ListOpsMetadataOutcomeCallable ListOpsMetadataCallable(const Model::ListOpsMetadataRequest& request) const;
 
         /**
-         * <p>Systems Manager calls this API action when displaying all Application Manager
-         * OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon Web Services Systems Manager calls this API operation when displaying
+         * all Application Manager OpsMetadata objects or blobs.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -4314,16 +4415,18 @@ namespace Model
         virtual void ListResourceDataSyncAsync(const Model::ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the tags assigned to the specified resource.</p> <p>For
+         * information about the ID format for each supported resource type, see
+         * <a>AddTagsToResource</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the tags assigned to the specified resource.</p> <p>For
+         * information about the ID format for each supported resource type, see
+         * <a>AddTagsToResource</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -4332,8 +4435,9 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the tags assigned to the specified resource.</p> <p>For
+         * information about the ID format for each supported resource type, see
+         * <a>AddTagsToResource</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -4342,20 +4446,22 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Shares a Systems Manager document publicly or privately. If you share a
-         * document privately, you must specify the AWS user account IDs for those people
-         * who can use the document. If you share a document publicly, you must specify
-         * <i>All</i> as the account ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly
+         * or privately. If you share a document privately, you must specify the Amazon Web
+         * Services user account IDs for those people who can use the document. If you
+         * share a document publicly, you must specify <i>All</i> as the account
+         * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyDocumentPermissionOutcome ModifyDocumentPermission(const Model::ModifyDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Shares a Systems Manager document publicly or privately. If you share a
-         * document privately, you must specify the AWS user account IDs for those people
-         * who can use the document. If you share a document publicly, you must specify
-         * <i>All</i> as the account ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly
+         * or privately. If you share a document privately, you must specify the Amazon Web
+         * Services user account IDs for those people who can use the document. If you
+         * share a document publicly, you must specify <i>All</i> as the account
+         * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -4364,10 +4470,11 @@ namespace Model
         virtual Model::ModifyDocumentPermissionOutcomeCallable ModifyDocumentPermissionCallable(const Model::ModifyDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Shares a Systems Manager document publicly or privately. If you share a
-         * document privately, you must specify the AWS user account IDs for those people
-         * who can use the document. If you share a document publicly, you must specify
-         * <i>All</i> as the account ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly
+         * or privately. If you share a document privately, you must specify the Amazon Web
+         * Services user account IDs for those people who can use the document. If you
+         * share a document publicly, you must specify <i>All</i> as the account
+         * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -4377,7 +4484,7 @@ namespace Model
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
-         * resource. This action lets you register custom compliance details with a
+         * resource. This operation lets you register custom compliance details with a
          * resource. This call overwrites existing compliance information on the resource,
          * so you must provide a full list of compliance items each time that you send the
          * request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li>
@@ -4389,12 +4496,12 @@ namespace Model
          * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
          * the compliance item. For example, <code>approved</code> for patches, or
          * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
-         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A
-         * SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li>
-         * <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
-         * <li> <p>Classification: A patch classification. For example, <code>security
-         * updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p>
-         * </li> <li> <p>PatchSeverity: A patch severity. For example,
+         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: An
+         * SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
+         * <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p>
+         * </li> <li> <p>Classification: A patch classification. For example,
+         * <code>security updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch
+         * baseline ID.</p> </li> <li> <p>PatchSeverity: A patch severity. For example,
          * <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example,
          * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
          * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
@@ -4408,7 +4515,7 @@ namespace Model
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
-         * resource. This action lets you register custom compliance details with a
+         * resource. This operation lets you register custom compliance details with a
          * resource. This call overwrites existing compliance information on the resource,
          * so you must provide a full list of compliance items each time that you send the
          * request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li>
@@ -4420,12 +4527,12 @@ namespace Model
          * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
          * the compliance item. For example, <code>approved</code> for patches, or
          * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
-         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A
-         * SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li>
-         * <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
-         * <li> <p>Classification: A patch classification. For example, <code>security
-         * updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p>
-         * </li> <li> <p>PatchSeverity: A patch severity. For example,
+         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: An
+         * SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
+         * <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p>
+         * </li> <li> <p>Classification: A patch classification. For example,
+         * <code>security updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch
+         * baseline ID.</p> </li> <li> <p>PatchSeverity: A patch severity. For example,
          * <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example,
          * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
          * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
@@ -4441,7 +4548,7 @@ namespace Model
 
         /**
          * <p>Registers a compliance type and other compliance details on a designated
-         * resource. This action lets you register custom compliance details with a
+         * resource. This operation lets you register custom compliance details with a
          * resource. This call overwrites existing compliance information on the resource,
          * so you must provide a full list of compliance items each time that you send the
          * request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li>
@@ -4453,12 +4560,12 @@ namespace Model
          * ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of
          * the compliance item. For example, <code>approved</code> for patches, or
          * <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch
-         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A
-         * SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li>
-         * <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
-         * <li> <p>Classification: A patch classification. For example, <code>security
-         * updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p>
-         * </li> <li> <p>PatchSeverity: A patch severity. For example,
+         * severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: An
+         * SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
+         * <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p>
+         * </li> <li> <p>Classification: A patch classification. For example,
+         * <code>security updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch
+         * baseline ID.</p> </li> <li> <p>PatchSeverity: A patch severity. For example,
          * <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example,
          * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
          * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
@@ -4530,8 +4637,9 @@ namespace Model
 
         /**
          * <p>Defines the default patch baseline for the relevant operating system.</p>
-         * <p>To reset the AWS predefined patch baseline as the default, specify the full
-         * patch baseline ARN as the baseline ID value. For example, for CentOS, specify
+         * <p>To reset the Amazon Web Services-predefined patch baseline as the default,
+         * specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID
+         * value. For example, for CentOS, specify
          * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
          * instead of <code>pb-0574b43a65ea646ed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
@@ -4541,8 +4649,9 @@ namespace Model
 
         /**
          * <p>Defines the default patch baseline for the relevant operating system.</p>
-         * <p>To reset the AWS predefined patch baseline as the default, specify the full
-         * patch baseline ARN as the baseline ID value. For example, for CentOS, specify
+         * <p>To reset the Amazon Web Services-predefined patch baseline as the default,
+         * specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID
+         * value. For example, for CentOS, specify
          * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
          * instead of <code>pb-0574b43a65ea646ed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
@@ -4554,8 +4663,9 @@ namespace Model
 
         /**
          * <p>Defines the default patch baseline for the relevant operating system.</p>
-         * <p>To reset the AWS predefined patch baseline as the default, specify the full
-         * patch baseline ARN as the baseline ID value. For example, for CentOS, specify
+         * <p>To reset the Amazon Web Services-predefined patch baseline as the default,
+         * specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID
+         * value. For example, for CentOS, specify
          * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
          * instead of <code>pb-0574b43a65ea646ed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
@@ -4666,40 +4776,42 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of "false". This
+         * means the user can't use this feature unless they change the setting to "true"
+         * and intentionally opt in for a paid feature.</p> <p>Services map a
+         * <code>SettingId</code> object to a setting value. Amazon Web Services services
          * teams define the default value for a <code>SettingId</code>. You can't create a
          * new <code>SettingId</code>, but you can overwrite the default value if you have
          * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>GetServiceSetting</a> API action to view the current value. Use the
-         * <a>UpdateServiceSetting</a> API action to change the default setting. </p>
+         * <a>GetServiceSetting</a> API operation to view the current value. Use the
+         * <a>UpdateServiceSetting</a> API operation to change the default setting. </p>
          * <p>Reset the service setting for the account to the default value as provisioned
-         * by the AWS service team. </p><p><h3>See Also:</h3>   <a
+         * by the Amazon Web Services service team. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::ResetServiceSettingOutcome ResetServiceSetting(const Model::ResetServiceSettingRequest& request) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of "false". This
+         * means the user can't use this feature unless they change the setting to "true"
+         * and intentionally opt in for a paid feature.</p> <p>Services map a
+         * <code>SettingId</code> object to a setting value. Amazon Web Services services
          * teams define the default value for a <code>SettingId</code>. You can't create a
          * new <code>SettingId</code>, but you can overwrite the default value if you have
          * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>GetServiceSetting</a> API action to view the current value. Use the
-         * <a>UpdateServiceSetting</a> API action to change the default setting. </p>
+         * <a>GetServiceSetting</a> API operation to view the current value. Use the
+         * <a>UpdateServiceSetting</a> API operation to change the default setting. </p>
          * <p>Reset the service setting for the account to the default value as provisioned
-         * by the AWS service team. </p><p><h3>See Also:</h3>   <a
+         * by the Amazon Web Services service team. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">AWS
          * API Reference</a></p>
          *
@@ -4708,20 +4820,21 @@ namespace Model
         virtual Model::ResetServiceSettingOutcomeCallable ResetServiceSettingCallable(const Model::ResetServiceSettingRequest& request) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of "false". This
+         * means the user can't use this feature unless they change the setting to "true"
+         * and intentionally opt in for a paid feature.</p> <p>Services map a
+         * <code>SettingId</code> object to a setting value. Amazon Web Services services
          * teams define the default value for a <code>SettingId</code>. You can't create a
          * new <code>SettingId</code>, but you can overwrite the default value if you have
          * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>GetServiceSetting</a> API action to view the current value. Use the
-         * <a>UpdateServiceSetting</a> API action to change the default setting. </p>
+         * <a>GetServiceSetting</a> API operation to view the current value. Use the
+         * <a>UpdateServiceSetting</a> API operation to change the default setting. </p>
          * <p>Reset the service setting for the account to the default value as provisioned
-         * by the AWS service team. </p><p><h3>See Also:</h3>   <a
+         * by the Amazon Web Services service team. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">AWS
          * API Reference</a></p>
          *
@@ -4733,7 +4846,7 @@ namespace Model
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p>  <p>This command is primarily for use by client machines to
-         * automatically reconnect during intermittent network issues. It is not intended
+         * automatically reconnect during intermittent network issues. It isn't intended
          * for any other use.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
          * API Reference</a></p>
@@ -4744,7 +4857,7 @@ namespace Model
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p>  <p>This command is primarily for use by client machines to
-         * automatically reconnect during intermittent network issues. It is not intended
+         * automatically reconnect during intermittent network issues. It isn't intended
          * for any other use.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
          * API Reference</a></p>
@@ -4757,7 +4870,7 @@ namespace Model
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p>  <p>This command is primarily for use by client machines to
-         * automatically reconnect during intermittent network issues. It is not intended
+         * automatically reconnect during intermittent network issues. It isn't intended
          * for any other use.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
          * API Reference</a></p>
@@ -4820,18 +4933,16 @@ namespace Model
         virtual void SendCommandAsync(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this API action to run an association immediately and only one time. This
-         * action can be helpful when troubleshooting associations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Runs an association immediately and only one time. This operation can be
+         * helpful when troubleshooting associations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
          */
         virtual Model::StartAssociationsOnceOutcome StartAssociationsOnce(const Model::StartAssociationsOnceRequest& request) const;
 
         /**
-         * <p>Use this API action to run an association immediately and only one time. This
-         * action can be helpful when troubleshooting associations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Runs an association immediately and only one time. This operation can be
+         * helpful when troubleshooting associations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
          *
@@ -4840,9 +4951,8 @@ namespace Model
         virtual Model::StartAssociationsOnceOutcomeCallable StartAssociationsOnceCallable(const Model::StartAssociationsOnceRequest& request) const;
 
         /**
-         * <p>Use this API action to run an association immediately and only one time. This
-         * action can be helpful when troubleshooting associations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Runs an association immediately and only one time. This operation can be
+         * helpful when troubleshooting associations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
          *
@@ -4851,14 +4961,14 @@ namespace Model
         virtual void StartAssociationsOnceAsync(const Model::StartAssociationsOnceRequest& request, const StartAssociationsOnceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates execution of an Automation document.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates execution of an Automation runbook.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StartAutomationExecutionOutcome StartAutomationExecution(const Model::StartAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Initiates execution of an Automation document.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates execution of an Automation runbook.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">AWS
          * API Reference</a></p>
          *
@@ -4867,7 +4977,7 @@ namespace Model
         virtual Model::StartAutomationExecutionOutcomeCallable StartAutomationExecutionCallable(const Model::StartAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Initiates execution of an Automation document.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates execution of an Automation runbook.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">AWS
          * API Reference</a></p>
          *
@@ -4876,18 +4986,18 @@ namespace Model
         virtual void StartAutomationExecutionAsync(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a change request for Change Manager. The runbooks (Automation
-         * documents) specified in the change request run only after all required approvals
-         * for the change request have been received.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a change request for Change Manager. The Automation runbooks
+         * specified in the change request run only after all required approvals for the
+         * change request have been received.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StartChangeRequestExecutionOutcome StartChangeRequestExecution(const Model::StartChangeRequestExecutionRequest& request) const;
 
         /**
-         * <p>Creates a change request for Change Manager. The runbooks (Automation
-         * documents) specified in the change request run only after all required approvals
-         * for the change request have been received.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a change request for Change Manager. The Automation runbooks
+         * specified in the change request run only after all required approvals for the
+         * change request have been received.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
          * API Reference</a></p>
          *
@@ -4896,9 +5006,9 @@ namespace Model
         virtual Model::StartChangeRequestExecutionOutcomeCallable StartChangeRequestExecutionCallable(const Model::StartChangeRequestExecutionRequest& request) const;
 
         /**
-         * <p>Creates a change request for Change Manager. The runbooks (Automation
-         * documents) specified in the change request run only after all required approvals
-         * for the change request have been received.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a change request for Change Manager. The Automation runbooks
+         * specified in the change request run only after all required approvals for the
+         * change request have been received.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">AWS
          * API Reference</a></p>
          *
@@ -4909,15 +5019,16 @@ namespace Model
         /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
-         * <code>start-session</code> is an interactive command that requires the Session
-         * Manager plugin to be installed on the client machine making the call. For
-         * information, see <a
+         * connection for sending input and receiving outputs.</p>  <p>Amazon Web
+         * Services CLI usage: <code>start-session</code> is an interactive command that
+         * requires the Session Manager plugin to be installed on the client machine making
+         * the call. For information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-         * the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager
-         * User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession is not
-         * currently supported by AWS Tools for PowerShell on Windows local machines.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon
+         * Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools
+         * for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web
+         * Services Tools for PowerShell on Windows local machines.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          */
@@ -4926,15 +5037,16 @@ namespace Model
         /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
-         * <code>start-session</code> is an interactive command that requires the Session
-         * Manager plugin to be installed on the client machine making the call. For
-         * information, see <a
+         * connection for sending input and receiving outputs.</p>  <p>Amazon Web
+         * Services CLI usage: <code>start-session</code> is an interactive command that
+         * requires the Session Manager plugin to be installed on the client machine making
+         * the call. For information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-         * the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager
-         * User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession is not
-         * currently supported by AWS Tools for PowerShell on Windows local machines.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon
+         * Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools
+         * for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web
+         * Services Tools for PowerShell on Windows local machines.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          *
@@ -4945,15 +5057,16 @@ namespace Model
         /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
-         * <code>start-session</code> is an interactive command that requires the Session
-         * Manager plugin to be installed on the client machine making the call. For
-         * information, see <a
+         * connection for sending input and receiving outputs.</p>  <p>Amazon Web
+         * Services CLI usage: <code>start-session</code> is an interactive command that
+         * requires the Session Manager plugin to be installed on the client machine making
+         * the call. For information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-         * the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager
-         * User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession is not
-         * currently supported by AWS Tools for PowerShell on Windows local machines.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon
+         * Web Services Systems Manager User Guide</i>.</p> <p>Amazon Web Services Tools
+         * for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web
+         * Services Tools for PowerShell on Windows local machines.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          *
@@ -4988,7 +5101,7 @@ namespace Model
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
-         * Manager client and SSM Agent on the instance. A terminated session cannot be
+         * Manager client and SSM Agent on the instance. A terminated session isn't be
          * resumed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
          * API Reference</a></p>
@@ -4997,7 +5110,7 @@ namespace Model
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
-         * Manager client and SSM Agent on the instance. A terminated session cannot be
+         * Manager client and SSM Agent on the instance. A terminated session isn't be
          * resumed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
          * API Reference</a></p>
@@ -5008,7 +5121,7 @@ namespace Model
 
         /**
          * <p>Permanently ends a session and closes the data connection between the Session
-         * Manager client and SSM Agent on the instance. A terminated session cannot be
+         * Manager client and SSM Agent on the instance. A terminated session isn't be
          * resumed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
          * API Reference</a></p>
@@ -5044,12 +5157,13 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
-         * to call this API action, your IAM user account, group, or role must be
-         * configured with permission to call the <a>DescribeAssociation</a> API action. If
-         * you don't have permission to call DescribeAssociation, then you receive the
+         * document version, schedule, parameters, and Amazon Simple Storage Service
+         * (Amazon S3) output. </p> <p>In order to call this API operation, your Identity
+         * and Access Management (IAM) user account, group, or role must be configured with
+         * permission to call the <a>DescribeAssociation</a> API operation. If you don't
+         * have permission to call <code>DescribeAssociation</code>, then you receive the
          * following error: <code>An error occurred (AccessDeniedException) when calling
-         * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
+         * the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to
          * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
          *  <p>When you update an association, the association immediately runs
          * against the specified targets.</p> <p><h3>See Also:</h3>   <a
@@ -5060,12 +5174,13 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
-         * to call this API action, your IAM user account, group, or role must be
-         * configured with permission to call the <a>DescribeAssociation</a> API action. If
-         * you don't have permission to call DescribeAssociation, then you receive the
+         * document version, schedule, parameters, and Amazon Simple Storage Service
+         * (Amazon S3) output. </p> <p>In order to call this API operation, your Identity
+         * and Access Management (IAM) user account, group, or role must be configured with
+         * permission to call the <a>DescribeAssociation</a> API operation. If you don't
+         * have permission to call <code>DescribeAssociation</code>, then you receive the
          * following error: <code>An error occurred (AccessDeniedException) when calling
-         * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
+         * the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to
          * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
          *  <p>When you update an association, the association immediately runs
          * against the specified targets.</p> <p><h3>See Also:</h3>   <a
@@ -5078,12 +5193,13 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
-         * to call this API action, your IAM user account, group, or role must be
-         * configured with permission to call the <a>DescribeAssociation</a> API action. If
-         * you don't have permission to call DescribeAssociation, then you receive the
+         * document version, schedule, parameters, and Amazon Simple Storage Service
+         * (Amazon S3) output. </p> <p>In order to call this API operation, your Identity
+         * and Access Management (IAM) user account, group, or role must be configured with
+         * permission to call the <a>DescribeAssociation</a> API operation. If you don't
+         * have permission to call <code>DescribeAssociation</code>, then you receive the
          * following error: <code>An error occurred (AccessDeniedException) when calling
-         * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
+         * the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to
          * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
          *  <p>When you update an association, the association immediately runs
          * against the specified targets.</p> <p><h3>See Also:</h3>   <a
@@ -5095,16 +5211,16 @@ namespace Model
         virtual void UpdateAssociationAsync(const Model::UpdateAssociationRequest& request, const UpdateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the status of the Systems Manager document associated with the
-         * specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
+         * document) associated with the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAssociationStatusOutcome UpdateAssociationStatus(const Model::UpdateAssociationStatusRequest& request) const;
 
         /**
-         * <p>Updates the status of the Systems Manager document associated with the
-         * specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
+         * document) associated with the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
          * API Reference</a></p>
          *
@@ -5113,8 +5229,8 @@ namespace Model
         virtual Model::UpdateAssociationStatusOutcomeCallable UpdateAssociationStatusCallable(const Model::UpdateAssociationStatusRequest& request) const;
 
         /**
-         * <p>Updates the status of the Systems Manager document associated with the
-         * specified instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the Amazon Web Services Systems Manager document (SSM
+         * document) associated with the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
          * API Reference</a></p>
          *
@@ -5253,7 +5369,7 @@ namespace Model
          * target</p> </li> <li> <p>From any supported tag type to another. The three
          * supported tag types are ID target, Tag target, and resource group. For more
          * information, see <a>Target</a>.</p> </li> </ul>  <p>If a parameter is
-         * null, then the corresponding field is not modified.</p> <p><h3>See
+         * null, then the corresponding field isn't modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
@@ -5267,7 +5383,7 @@ namespace Model
          * target</p> </li> <li> <p>From any supported tag type to another. The three
          * supported tag types are ID target, Tag target, and resource group. For more
          * information, see <a>Target</a>.</p> </li> </ul>  <p>If a parameter is
-         * null, then the corresponding field is not modified.</p> <p><h3>See
+         * null, then the corresponding field isn't modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
@@ -5283,7 +5399,7 @@ namespace Model
          * target</p> </li> <li> <p>From any supported tag type to another. The three
          * supported tag types are ID target, Tag target, and resource group. For more
          * information, see <a>Target</a>.</p> </li> </ul>  <p>If a parameter is
-         * null, then the corresponding field is not modified.</p> <p><h3>See
+         * null, then the corresponding field isn't modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
@@ -5294,26 +5410,28 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a maintenance window. You can't change the task
-         * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
-         * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
-         * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul>  <p>One or
-         * more targets must be specified for maintenance window Run Command-type tasks.
-         * Depending on the task, targets are optional for other maintenance window task
-         * types (Automation, AWS Lambda, and AWS Step Functions). For more information
-         * about running tasks that do not specify targets, see <a
+         * type, but you can change the following values:</p> <ul> <li> <p>
+         * <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code>
+         * task from <code>AWS-RunPowerShellScript</code> to
+         * <code>AWS-RunShellScript</code>.</p> </li> <li> <p> <code>ServiceRoleArn</code>
+         * </p> </li> <li> <p> <code>TaskInvocationParameters</code> </p> </li> <li> <p>
+         * <code>Priority</code> </p> </li> <li> <p> <code>MaxConcurrency</code> </p> </li>
+         * <li> <p> <code>MaxErrors</code> </p> </li> </ul>  <p>One or more targets
+         * must be specified for maintenance window Run Command-type tasks. Depending on
+         * the task, targets are optional for other maintenance window task types
+         * (Automation, Lambda, and Step Functions). For more information about running
+         * tasks that don't specify targets, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-         * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p>  <p>If the value for a parameter in
+         * maintenance window tasks without targets</a> in the <i>Amazon Web Services
+         * Systems Manager User Guide</i>.</p>  <p>If the value for a parameter in
          * <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field
-         * is not modified. If you set <code>Replace</code> to true, then all fields
-         * required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for
-         * this request. Optional fields that aren't specified are set to null.</p>
+         * isn't modified. If you set <code>Replace</code> to true, then all fields
+         * required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are required
+         * for this request. Optional fields that aren't specified are set to null.</p>
          *  <p>When you update a maintenance window task that has options
          * specified in <code>TaskInvocationParameters</code>, you must provide again all
          * the <code>TaskInvocationParameters</code> values that you want to retain. The
-         * values you do not specify again are removed. For example, suppose that when you
+         * values you don't specify again are removed. For example, suppose that when you
          * registered a Run Command task, you specified
          * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
          * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
@@ -5328,26 +5446,28 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a maintenance window. You can't change the task
-         * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
-         * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
-         * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul>  <p>One or
-         * more targets must be specified for maintenance window Run Command-type tasks.
-         * Depending on the task, targets are optional for other maintenance window task
-         * types (Automation, AWS Lambda, and AWS Step Functions). For more information
-         * about running tasks that do not specify targets, see <a
+         * type, but you can change the following values:</p> <ul> <li> <p>
+         * <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code>
+         * task from <code>AWS-RunPowerShellScript</code> to
+         * <code>AWS-RunShellScript</code>.</p> </li> <li> <p> <code>ServiceRoleArn</code>
+         * </p> </li> <li> <p> <code>TaskInvocationParameters</code> </p> </li> <li> <p>
+         * <code>Priority</code> </p> </li> <li> <p> <code>MaxConcurrency</code> </p> </li>
+         * <li> <p> <code>MaxErrors</code> </p> </li> </ul>  <p>One or more targets
+         * must be specified for maintenance window Run Command-type tasks. Depending on
+         * the task, targets are optional for other maintenance window task types
+         * (Automation, Lambda, and Step Functions). For more information about running
+         * tasks that don't specify targets, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-         * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p>  <p>If the value for a parameter in
+         * maintenance window tasks without targets</a> in the <i>Amazon Web Services
+         * Systems Manager User Guide</i>.</p>  <p>If the value for a parameter in
          * <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field
-         * is not modified. If you set <code>Replace</code> to true, then all fields
-         * required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for
-         * this request. Optional fields that aren't specified are set to null.</p>
+         * isn't modified. If you set <code>Replace</code> to true, then all fields
+         * required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are required
+         * for this request. Optional fields that aren't specified are set to null.</p>
          *  <p>When you update a maintenance window task that has options
          * specified in <code>TaskInvocationParameters</code>, you must provide again all
          * the <code>TaskInvocationParameters</code> values that you want to retain. The
-         * values you do not specify again are removed. For example, suppose that when you
+         * values you don't specify again are removed. For example, suppose that when you
          * registered a Run Command task, you specified
          * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
          * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
@@ -5364,26 +5484,28 @@ namespace Model
 
         /**
          * <p>Modifies a task assigned to a maintenance window. You can't change the task
-         * type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For
-         * example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-         * AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li>
-         * <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li>
-         * <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul>  <p>One or
-         * more targets must be specified for maintenance window Run Command-type tasks.
-         * Depending on the task, targets are optional for other maintenance window task
-         * types (Automation, AWS Lambda, and AWS Step Functions). For more information
-         * about running tasks that do not specify targets, see <a
+         * type, but you can change the following values:</p> <ul> <li> <p>
+         * <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code>
+         * task from <code>AWS-RunPowerShellScript</code> to
+         * <code>AWS-RunShellScript</code>.</p> </li> <li> <p> <code>ServiceRoleArn</code>
+         * </p> </li> <li> <p> <code>TaskInvocationParameters</code> </p> </li> <li> <p>
+         * <code>Priority</code> </p> </li> <li> <p> <code>MaxConcurrency</code> </p> </li>
+         * <li> <p> <code>MaxErrors</code> </p> </li> </ul>  <p>One or more targets
+         * must be specified for maintenance window Run Command-type tasks. Depending on
+         * the task, targets are optional for other maintenance window task types
+         * (Automation, Lambda, and Step Functions). For more information about running
+         * tasks that don't specify targets, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-         * maintenance window tasks without targets</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p>  <p>If the value for a parameter in
+         * maintenance window tasks without targets</a> in the <i>Amazon Web Services
+         * Systems Manager User Guide</i>.</p>  <p>If the value for a parameter in
          * <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field
-         * is not modified. If you set <code>Replace</code> to true, then all fields
-         * required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for
-         * this request. Optional fields that aren't specified are set to null.</p>
+         * isn't modified. If you set <code>Replace</code> to true, then all fields
+         * required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are required
+         * for this request. Optional fields that aren't specified are set to null.</p>
          *  <p>When you update a maintenance window task that has options
          * specified in <code>TaskInvocationParameters</code>, you must provide again all
          * the <code>TaskInvocationParameters</code> values that you want to retain. The
-         * values you do not specify again are removed. For example, suppose that when you
+         * values you don't specify again are removed. For example, suppose that when you
          * registered a Run Command task, you specified
          * <code>TaskInvocationParameters</code> values for <code>Comment</code>,
          * <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you
@@ -5399,20 +5521,20 @@ namespace Model
         virtual void UpdateMaintenanceWindowTaskAsync(const Model::UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the Amazon Identity and Access Management (IAM) role that is assigned
-         * to the on-premises instance or virtual machines (VM). IAM roles are first
-         * assigned to these hybrid instances during the activation process. For more
-         * information, see <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
+         * on-premises instance or virtual machines (VM). IAM roles are first assigned to
+         * these hybrid instances during the activation process. For more information, see
+         * <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateManagedInstanceRoleOutcome UpdateManagedInstanceRole(const Model::UpdateManagedInstanceRoleRequest& request) const;
 
         /**
-         * <p>Changes the Amazon Identity and Access Management (IAM) role that is assigned
-         * to the on-premises instance or virtual machines (VM). IAM roles are first
-         * assigned to these hybrid instances during the activation process. For more
-         * information, see <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
+         * on-premises instance or virtual machines (VM). IAM roles are first assigned to
+         * these hybrid instances during the activation process. For more information, see
+         * <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          *
@@ -5421,10 +5543,10 @@ namespace Model
         virtual Model::UpdateManagedInstanceRoleOutcomeCallable UpdateManagedInstanceRoleCallable(const Model::UpdateManagedInstanceRoleRequest& request) const;
 
         /**
-         * <p>Changes the Amazon Identity and Access Management (IAM) role that is assigned
-         * to the on-premises instance or virtual machines (VM). IAM roles are first
-         * assigned to these hybrid instances during the activation process. For more
-         * information, see <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the Identity and Access Management (IAM) role that is assigned to the
+         * on-premises instance or virtual machines (VM). IAM roles are first assigned to
+         * these hybrid instances during the activation process. For more information, see
+         * <a>CreateActivation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          *
@@ -5433,32 +5555,34 @@ namespace Model
         virtual void UpdateManagedInstanceRoleAsync(const Model::UpdateManagedInstanceRoleRequest& request, const UpdateManagedInstanceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
-         * Access Management (IAM) to update an OpsItem. For more information, see <a
+         * <p>Edit or change an OpsItem. You must have permission in Identity and Access
+         * Management (IAM) to update an OpsItem. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateOpsItemOutcome UpdateOpsItem(const Model::UpdateOpsItemRequest& request) const;
 
         /**
-         * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
-         * Access Management (IAM) to update an OpsItem. For more information, see <a
+         * <p>Edit or change an OpsItem. You must have permission in Identity and Access
+         * Management (IAM) to update an OpsItem. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>
          *
@@ -5467,16 +5591,17 @@ namespace Model
         virtual Model::UpdateOpsItemOutcomeCallable UpdateOpsItemCallable(const Model::UpdateOpsItemRequest& request) const;
 
         /**
-         * <p>Edit or change an OpsItem. You must have permission in AWS Identity and
-         * Access Management (IAM) to update an OpsItem. For more information, see <a
+         * <p>Edit or change an OpsItem. You must have permission in Identity and Access
+         * Management (IAM) to update an OpsItem. For more information, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-         * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-         * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-         * and remediate operational issues impacting the performance and health of their
-         * AWS resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-         * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web
+         * Services Systems Manager OpsCenter to view, investigate, and remediate
+         * operational issues impacting the performance and health of their Amazon Web
+         * Services resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>
          *
@@ -5485,16 +5610,16 @@ namespace Model
         virtual void UpdateOpsItemAsync(const Model::UpdateOpsItemRequest& request, const UpdateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Systems Manager calls this API action when you edit OpsMetadata in
-         * Application Manager.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon Web Services Systems Manager calls this API operation when you edit
+         * OpsMetadata in Application Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateOpsMetadataOutcome UpdateOpsMetadata(const Model::UpdateOpsMetadataRequest& request) const;
 
         /**
-         * <p>Systems Manager calls this API action when you edit OpsMetadata in
-         * Application Manager.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon Web Services Systems Manager calls this API operation when you edit
+         * OpsMetadata in Application Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -5503,8 +5628,8 @@ namespace Model
         virtual Model::UpdateOpsMetadataOutcomeCallable UpdateOpsMetadataCallable(const Model::UpdateOpsMetadataRequest& request) const;
 
         /**
-         * <p>Systems Manager calls this API action when you edit OpsMetadata in
-         * Application Manager.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon Web Services Systems Manager calls this API operation when you edit
+         * OpsMetadata in Application Manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">AWS
          * API Reference</a></p>
          *
@@ -5514,10 +5639,9 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p>  <p>For information about valid key and value pairs in
-         * <code>PatchFilters</code> for each supported operating system type, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * left unchanged.</p>  <p>For information about valid key-value pairs in
+         * <code>PatchFilters</code> for each supported operating system type, see
+         * <a>PatchFilter</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          */
@@ -5525,10 +5649,9 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p>  <p>For information about valid key and value pairs in
-         * <code>PatchFilters</code> for each supported operating system type, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * left unchanged.</p>  <p>For information about valid key-value pairs in
+         * <code>PatchFilters</code> for each supported operating system type, see
+         * <a>PatchFilter</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -5538,10 +5661,9 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p>  <p>For information about valid key and value pairs in
-         * <code>PatchFilters</code> for each supported operating system type, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * left unchanged.</p>  <p>For information about valid key-value pairs in
+         * <code>PatchFilters</code> for each supported operating system type, see
+         * <a>PatchFilter</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -5552,12 +5674,13 @@ namespace Model
         /**
          * <p>Update a resource data sync. After you create a resource data sync for a
          * Region, you can't change the account options for that sync. For example, if you
-         * create a sync in the us-east-2 (Ohio) Region and you choose the Include only the
-         * current account option, you can't edit that sync later and choose the Include
-         * all accounts from my AWS Organizations configuration option. Instead, you must
-         * delete the first resource data sync, and create a new one.</p>  <p>This
-         * API action only supports a resource data sync that was created with a
-         * SyncFromSource <code>SyncType</code>.</p> <p><h3>See Also:</h3>   <a
+         * create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include
+         * only the current account</code> option, you can't edit that sync later and
+         * choose the <code>Include all accounts from my Organizations configuration</code>
+         * option. Instead, you must delete the first resource data sync, and create a new
+         * one.</p>  <p>This API operation only supports a resource data sync that
+         * was created with a SyncFromSource <code>SyncType</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -5566,12 +5689,13 @@ namespace Model
         /**
          * <p>Update a resource data sync. After you create a resource data sync for a
          * Region, you can't change the account options for that sync. For example, if you
-         * create a sync in the us-east-2 (Ohio) Region and you choose the Include only the
-         * current account option, you can't edit that sync later and choose the Include
-         * all accounts from my AWS Organizations configuration option. Instead, you must
-         * delete the first resource data sync, and create a new one.</p>  <p>This
-         * API action only supports a resource data sync that was created with a
-         * SyncFromSource <code>SyncType</code>.</p> <p><h3>See Also:</h3>   <a
+         * create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include
+         * only the current account</code> option, you can't edit that sync later and
+         * choose the <code>Include all accounts from my Organizations configuration</code>
+         * option. Instead, you must delete the first resource data sync, and create a new
+         * one.</p>  <p>This API operation only supports a resource data sync that
+         * was created with a SyncFromSource <code>SyncType</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -5582,12 +5706,13 @@ namespace Model
         /**
          * <p>Update a resource data sync. After you create a resource data sync for a
          * Region, you can't change the account options for that sync. For example, if you
-         * create a sync in the us-east-2 (Ohio) Region and you choose the Include only the
-         * current account option, you can't edit that sync later and choose the Include
-         * all accounts from my AWS Organizations configuration option. Instead, you must
-         * delete the first resource data sync, and create a new one.</p>  <p>This
-         * API action only supports a resource data sync that was created with a
-         * SyncFromSource <code>SyncType</code>.</p> <p><h3>See Also:</h3>   <a
+         * create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include
+         * only the current account</code> option, you can't edit that sync later and
+         * choose the <code>Include all accounts from my Organizations configuration</code>
+         * option. Instead, you must delete the first resource data sync, and create a new
+         * one.</p>  <p>This API operation only supports a resource data sync that
+         * was created with a SyncFromSource <code>SyncType</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -5596,40 +5721,42 @@ namespace Model
         virtual void UpdateResourceDataSyncAsync(const Model::UpdateResourceDataSyncRequest& request, const UpdateResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of "false". This
+         * means the user can't use this feature unless they change the setting to "true"
+         * and intentionally opt in for a paid feature.</p> <p>Services map a
+         * <code>SettingId</code> object to a setting value. Amazon Web Services services
          * teams define the default value for a <code>SettingId</code>. You can't create a
          * new <code>SettingId</code>, but you can overwrite the default value if you have
          * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>GetServiceSetting</a> API action to view the current value. Or, use the
+         * <a>GetServiceSetting</a> API operation to view the current value. Or, use the
          * <a>ResetServiceSetting</a> to change the value back to the original value
-         * defined by the AWS service team.</p> <p>Update the service setting for the
-         * account. </p><p><h3>See Also:</h3>   <a
+         * defined by the Amazon Web Services service team.</p> <p>Update the service
+         * setting for the account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateServiceSettingOutcome UpdateServiceSetting(const Model::UpdateServiceSettingRequest& request) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of "false". This
+         * means the user can't use this feature unless they change the setting to "true"
+         * and intentionally opt in for a paid feature.</p> <p>Services map a
+         * <code>SettingId</code> object to a setting value. Amazon Web Services services
          * teams define the default value for a <code>SettingId</code>. You can't create a
          * new <code>SettingId</code>, but you can overwrite the default value if you have
          * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>GetServiceSetting</a> API action to view the current value. Or, use the
+         * <a>GetServiceSetting</a> API operation to view the current value. Or, use the
          * <a>ResetServiceSetting</a> to change the value back to the original value
-         * defined by the AWS service team.</p> <p>Update the service setting for the
-         * account. </p><p><h3>See Also:</h3>   <a
+         * defined by the Amazon Web Services service team.</p> <p>Update the service
+         * setting for the account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">AWS
          * API Reference</a></p>
          *
@@ -5638,20 +5765,21 @@ namespace Model
         virtual Model::UpdateServiceSettingOutcomeCallable UpdateServiceSettingCallable(const Model::UpdateServiceSettingRequest& request) const;
 
         /**
-         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
-         * This setting defines how a user interacts with or uses a service or a feature of
-         * a service. For example, if an AWS service charges money to the account based on
-         * feature or service usage, then the AWS service team might create a default
-         * setting of "false". This means the user can't use this feature unless they
-         * change the setting to "true" and intentionally opt in for a paid feature.</p>
-         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web
+         * Services service. This setting defines how a user interacts with or uses a
+         * service or a feature of a service. For example, if an Amazon Web Services
+         * service charges money to the account based on feature or service usage, then the
+         * Amazon Web Services service team might create a default setting of "false". This
+         * means the user can't use this feature unless they change the setting to "true"
+         * and intentionally opt in for a paid feature.</p> <p>Services map a
+         * <code>SettingId</code> object to a setting value. Amazon Web Services services
          * teams define the default value for a <code>SettingId</code>. You can't create a
          * new <code>SettingId</code>, but you can overwrite the default value if you have
          * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
-         * <a>GetServiceSetting</a> API action to view the current value. Or, use the
+         * <a>GetServiceSetting</a> API operation to view the current value. Or, use the
          * <a>ResetServiceSetting</a> to change the value back to the original value
-         * defined by the AWS service team.</p> <p>Update the service setting for the
-         * account. </p><p><h3>See Also:</h3>   <a
+         * defined by the Amazon Web Services service team.</p> <p>Update the service
+         * setting for the account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">AWS
          * API Reference</a></p>
          *

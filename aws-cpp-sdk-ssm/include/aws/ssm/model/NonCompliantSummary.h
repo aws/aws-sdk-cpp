@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of resources that are not compliant. The summary is organized
+   * <p>A summary of resources that aren't compliant. The summary is organized
    * according to resource type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/NonCompliantSummary">AWS
    * API Reference</a></p>
@@ -39,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>The total number of compliance items that are not compliant.</p>
+     * <p>The total number of compliance items that aren't compliant.</p>
      */
     inline int GetNonCompliantCount() const{ return m_nonCompliantCount; }
 
     /**
-     * <p>The total number of compliance items that are not compliant.</p>
+     * <p>The total number of compliance items that aren't compliant.</p>
      */
     inline bool NonCompliantCountHasBeenSet() const { return m_nonCompliantCountHasBeenSet; }
 
     /**
-     * <p>The total number of compliance items that are not compliant.</p>
+     * <p>The total number of compliance items that aren't compliant.</p>
      */
     inline void SetNonCompliantCount(int value) { m_nonCompliantCountHasBeenSet = true; m_nonCompliantCount = value; }
 
     /**
-     * <p>The total number of compliance items that are not compliant.</p>
+     * <p>The total number of compliance items that aren't compliant.</p>
      */
     inline NonCompliantSummary& WithNonCompliantCount(int value) { SetNonCompliantCount(value); return *this;}
 

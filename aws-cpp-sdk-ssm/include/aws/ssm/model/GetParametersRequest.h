@@ -83,29 +83,29 @@ namespace Model
 
     /**
      * <p>Return decrypted secure string value. Return decrypted values for secure
-     * string parameters. This flag is ignored for String and StringList parameter
-     * types.</p>
+     * string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.</p>
      */
     inline bool GetWithDecryption() const{ return m_withDecryption; }
 
     /**
      * <p>Return decrypted secure string value. Return decrypted values for secure
-     * string parameters. This flag is ignored for String and StringList parameter
-     * types.</p>
+     * string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.</p>
      */
     inline bool WithDecryptionHasBeenSet() const { return m_withDecryptionHasBeenSet; }
 
     /**
      * <p>Return decrypted secure string value. Return decrypted values for secure
-     * string parameters. This flag is ignored for String and StringList parameter
-     * types.</p>
+     * string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.</p>
      */
     inline void SetWithDecryption(bool value) { m_withDecryptionHasBeenSet = true; m_withDecryption = value; }
 
     /**
      * <p>Return decrypted secure string value. Return decrypted values for secure
-     * string parameters. This flag is ignored for String and StringList parameter
-     * types.</p>
+     * string parameters. This flag is ignored for <code>String</code> and
+     * <code>StringList</code> parameter types.</p>
      */
     inline GetParametersRequest& WithWithDecryption(bool value) { SetWithDecryption(value); return *this;}
 

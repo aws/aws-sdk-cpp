@@ -108,6 +108,12 @@ UpdateLagResult& UpdateLagResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+  }
+
   if(jsonValue.ValueExists("connections"))
   {
     Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");

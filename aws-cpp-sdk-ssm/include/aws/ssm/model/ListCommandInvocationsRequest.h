@@ -247,25 +247,25 @@ namespace Model
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. The default value is 'false'. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline bool GetDetails() const{ return m_details; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. The default value is 'false'. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. The default value is 'false'. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline void SetDetails(bool value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. The default value is 'false'. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline ListCommandInvocationsRequest& WithDetails(bool value) { SetDetails(value); return *this;}
 

@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>The request body of the UpdateServiceSetting API action.</p><p><h3>See
+   * <p>The request body of the UpdateServiceSetting API operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSettingRequest">AWS
    * API Reference</a></p>
@@ -152,11 +152,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline const Aws::String& GetSettingValue() const{ return m_settingValue; }
 
@@ -169,11 +169,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline bool SettingValueHasBeenSet() const { return m_settingValueHasBeenSet; }
 
@@ -186,11 +186,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline void SetSettingValue(const Aws::String& value) { m_settingValueHasBeenSet = true; m_settingValue = value; }
 
@@ -203,11 +203,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline void SetSettingValue(Aws::String&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::move(value); }
 
@@ -220,11 +220,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline void SetSettingValue(const char* value) { m_settingValueHasBeenSet = true; m_settingValue.assign(value); }
 
@@ -237,11 +237,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(const Aws::String& value) { SetSettingValue(value); return *this;}
 
@@ -254,11 +254,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(Aws::String&& value) { SetSettingValue(std::move(value)); return *this;}
 
@@ -271,11 +271,11 @@ namespace Model
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting
      * value can be true or false.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-     * setting value can be CloudWatch.</p> <p>For the
+     * setting value can be <code>CloudWatch</code>.</p> <p>For the
      * <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-     * setting value can be the name of a CloudWatch Logs log group.</p> <p>For the
-     * <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
-     * setting value can be Enable or Disable.</p>
+     * setting value can be the name of an Amazon CloudWatch Logs log group.</p> <p>For
+     * the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
+     * the setting value can be <code>Enable</code> or <code>Disable</code>.</p>
      */
     inline UpdateServiceSettingRequest& WithSettingValue(const char* value) { SetSettingValue(value); return *this;}
 

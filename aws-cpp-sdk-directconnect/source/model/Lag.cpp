@@ -33,6 +33,7 @@ Lag::Lag() :
     m_minimumLinksHasBeenSet(false),
     m_awsDeviceHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_allowsHostedConnections(false),
     m_allowsHostedConnectionsHasBeenSet(false),
@@ -64,6 +65,7 @@ Lag::Lag(JsonView jsonValue) :
     m_minimumLinksHasBeenSet(false),
     m_awsDeviceHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_allowsHostedConnections(false),
     m_allowsHostedConnectionsHasBeenSet(false),
@@ -158,6 +160,13 @@ Lag& Lag::operator =(JsonView jsonValue)
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
 
     m_awsDeviceV2HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("connections"))
@@ -301,6 +310,12 @@ JsonValue Lag::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
 
   }
 

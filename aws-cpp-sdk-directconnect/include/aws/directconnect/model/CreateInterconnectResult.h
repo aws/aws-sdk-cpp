@@ -191,37 +191,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_region = value; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline void SetRegion(const char* value) { m_region.assign(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline CreateInterconnectResult& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline CreateInterconnectResult& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Region where the connection is located.</p>
      */
     inline CreateInterconnectResult& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -454,6 +454,49 @@ namespace Model
 
 
     /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceId = value; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceId = std::move(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceId.assign(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline CreateInterconnectResult& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline CreateInterconnectResult& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
+     * sessions.</p>
+     */
+    inline CreateInterconnectResult& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the interconnect supports a secondary BGP in the same
      * address family (IPv4/IPv6).</p>
      */
@@ -578,6 +621,8 @@ namespace Model
     bool m_jumboFrameCapable;
 
     Aws::String m_awsDeviceV2;
+
+    Aws::String m_awsLogicalDeviceId;
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
 

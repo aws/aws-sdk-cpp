@@ -448,6 +448,31 @@ namespace Model
      */
     inline BGPPeer& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
+
+    
+    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+
+    
+    inline bool AwsLogicalDeviceIdHasBeenSet() const { return m_awsLogicalDeviceIdHasBeenSet; }
+
+    
+    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = value; }
+
+    
+    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = std::move(value); }
+
+    
+    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId.assign(value); }
+
+    
+    inline BGPPeer& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
+
+    
+    inline BGPPeer& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
+
+    
+    inline BGPPeer& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
+
   private:
 
     Aws::String m_bgpPeerId;
@@ -476,6 +501,9 @@ namespace Model
 
     Aws::String m_awsDeviceV2;
     bool m_awsDeviceV2HasBeenSet;
+
+    Aws::String m_awsLogicalDeviceId;
+    bool m_awsLogicalDeviceIdHasBeenSet;
   };
 
 } // namespace Model

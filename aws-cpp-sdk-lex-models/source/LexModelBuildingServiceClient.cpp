@@ -47,6 +47,8 @@
 #include <aws/lex-models/model/GetIntentRequest.h>
 #include <aws/lex-models/model/GetIntentVersionsRequest.h>
 #include <aws/lex-models/model/GetIntentsRequest.h>
+#include <aws/lex-models/model/GetMigrationRequest.h>
+#include <aws/lex-models/model/GetMigrationsRequest.h>
 #include <aws/lex-models/model/GetSlotTypeRequest.h>
 #include <aws/lex-models/model/GetSlotTypeVersionsRequest.h>
 #include <aws/lex-models/model/GetSlotTypesRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/lex-models/model/PutIntentRequest.h>
 #include <aws/lex-models/model/PutSlotTypeRequest.h>
 #include <aws/lex-models/model/StartImportRequest.h>
+#include <aws/lex-models/model/StartMigrationRequest.h>
 #include <aws/lex-models/model/TagResourceRequest.h>
 #include <aws/lex-models/model/UntagResourceRequest.h>
 
@@ -1058,6 +1061,62 @@ void LexModelBuildingServiceClient::GetIntentsAsyncHelper(const GetIntentsReques
   handler(this, request, GetIntents(request), context);
 }
 
+GetMigrationOutcome LexModelBuildingServiceClient::GetMigration(const GetMigrationRequest& request) const
+{
+  if (!request.MigrationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMigration", "Required field: MigrationId, is not set");
+    return GetMigrationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MigrationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/migrations/");
+  uri.AddPathSegment(request.GetMigrationId());
+  return GetMigrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMigrationOutcomeCallable LexModelBuildingServiceClient::GetMigrationCallable(const GetMigrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMigrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMigration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::GetMigrationAsync(const GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMigrationAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::GetMigrationAsyncHelper(const GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMigration(request), context);
+}
+
+GetMigrationsOutcome LexModelBuildingServiceClient::GetMigrations(const GetMigrationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/migrations");
+  return GetMigrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMigrationsOutcomeCallable LexModelBuildingServiceClient::GetMigrationsCallable(const GetMigrationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMigrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMigrations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::GetMigrationsAsync(const GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMigrationsAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::GetMigrationsAsyncHelper(const GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMigrations(request), context);
+}
+
 GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -1386,6 +1445,31 @@ void LexModelBuildingServiceClient::StartImportAsync(const StartImportRequest& r
 void LexModelBuildingServiceClient::StartImportAsyncHelper(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartImport(request), context);
+}
+
+StartMigrationOutcome LexModelBuildingServiceClient::StartMigration(const StartMigrationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/migrations");
+  return StartMigrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartMigrationOutcomeCallable LexModelBuildingServiceClient::StartMigrationCallable(const StartMigrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMigrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMigration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::StartMigrationAsync(const StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMigrationAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::StartMigrationAsyncHelper(const StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMigration(request), context);
 }
 
 TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceRequest& request) const

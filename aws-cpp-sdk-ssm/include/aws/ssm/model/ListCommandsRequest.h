@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline ListCommandsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline ListCommandsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>  <p>You
      * can't specify an instance ID in the same command that you specify
-     * <code>Status</code> = <code>Pending</code>. This is because the command has not
+     * <code>Status</code> = <code>Pending</code>. This is because the command hasn't
      * reached the instance yet.</p> 
      */
     inline ListCommandsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}

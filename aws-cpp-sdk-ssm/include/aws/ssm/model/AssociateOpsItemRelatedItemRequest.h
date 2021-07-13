@@ -144,7 +144,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
@@ -153,7 +153,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -162,7 +162,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
@@ -171,7 +171,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
@@ -180,7 +180,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
@@ -189,7 +189,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
@@ -198,7 +198,7 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
@@ -207,57 +207,57 @@ namespace Model
      * <p>The type of resource that you want to associate with an OpsItem. OpsCenter
      * supports the following types:</p> <p>
      * <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.
-     * Incident Manager is a capability of AWS Systems Manager.</p> <p>
+     * Incident Manager is a capability of Amazon Web Services Systems Manager.</p> <p>
      * <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline const Aws::String& GetResourceUri() const{ return m_resourceUri; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline bool ResourceUriHasBeenSet() const { return m_resourceUriHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline void SetResourceUri(const Aws::String& value) { m_resourceUriHasBeenSet = true; m_resourceUri = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline void SetResourceUri(Aws::String&& value) { m_resourceUriHasBeenSet = true; m_resourceUri = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline void SetResourceUri(const char* value) { m_resourceUriHasBeenSet = true; m_resourceUri.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceUri(const Aws::String& value) { SetResourceUri(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceUri(Aws::String&& value) { SetResourceUri(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate
-     * with the OpsItem.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you
+     * want to associate with the OpsItem.</p>
      */
     inline AssociateOpsItemRelatedItemRequest& WithResourceUri(const char* value) { SetResourceUri(value); return *this;}
 

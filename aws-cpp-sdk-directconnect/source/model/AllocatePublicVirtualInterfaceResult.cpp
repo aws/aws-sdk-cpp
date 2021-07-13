@@ -186,6 +186,12 @@ AllocatePublicVirtualInterfaceResult& AllocatePublicVirtualInterfaceResult::oper
 
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");

@@ -43,7 +43,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -53,7 +53,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
-     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * must be unique for all snapshots within the account.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two

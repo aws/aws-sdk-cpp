@@ -224,98 +224,106 @@ namespace Model
 
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetInstallOverrideList() const{ return m_installOverrideList; }
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline bool InstallOverrideListHasBeenSet() const { return m_installOverrideListHasBeenSet; }
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstallOverrideList(const Aws::String& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = value; }
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstallOverrideList(Aws::String&& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = std::move(value); }
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstallOverrideList(const char* value) { m_installOverrideListHasBeenSet = true; m_installOverrideList.assign(value); }
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(const Aws::String& value) { SetInstallOverrideList(value); return *this;}
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(Aws::String&& value) { SetInstallOverrideList(std::move(value)); return *this;}
 
     /**
-     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an S3 bucket in
-     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
-     * overrides the patches specified by the default patch baseline.</p> <p>For more
-     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL
+     * to a list of patches to be installed. This patch installation list, which you
+     * maintain in an S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p>
+     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(const char* value) { SetInstallOverrideList(value); return *this;}
 
@@ -447,8 +455,8 @@ namespace Model
     /**
      * <p>The number of patches installed on an instance that are specified in a
      * <code>RejectedPatches</code> list. Patches with a status of
-     * <i>InstalledRejected</i> were typically installed before they were added to a
-     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>InstalledRejected</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
      * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
      * <code>RejectedPatchesAction</code>, the value of
      * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
@@ -459,8 +467,8 @@ namespace Model
     /**
      * <p>The number of patches installed on an instance that are specified in a
      * <code>RejectedPatches</code> list. Patches with a status of
-     * <i>InstalledRejected</i> were typically installed before they were added to a
-     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>InstalledRejected</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
      * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
      * <code>RejectedPatchesAction</code>, the value of
      * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
@@ -471,8 +479,8 @@ namespace Model
     /**
      * <p>The number of patches installed on an instance that are specified in a
      * <code>RejectedPatches</code> list. Patches with a status of
-     * <i>InstalledRejected</i> were typically installed before they were added to a
-     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>InstalledRejected</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
      * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
      * <code>RejectedPatchesAction</code>, the value of
      * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
@@ -483,8 +491,8 @@ namespace Model
     /**
      * <p>The number of patches installed on an instance that are specified in a
      * <code>RejectedPatches</code> list. Patches with a status of
-     * <i>InstalledRejected</i> were typically installed before they were added to a
-     * <code>RejectedPatches</code> list.</p>  <p>If
+     * <code>InstalledRejected</code> were typically installed before they were added
+     * to a <code>RejectedPatches</code> list.</p>  <p>If
      * <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
      * <code>RejectedPatchesAction</code>, the value of
      * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p>
@@ -545,29 +553,29 @@ namespace Model
 
     /**
      * <p>The number of patches beyond the supported limit of
-     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
-     * Inventory.</p>
+     * <code>NotApplicableCount</code> that aren't reported by name to Inventory.
+     * Inventory is a capability of Amazon Web Services Systems Manager.</p>
      */
     inline int GetUnreportedNotApplicableCount() const{ return m_unreportedNotApplicableCount; }
 
     /**
      * <p>The number of patches beyond the supported limit of
-     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
-     * Inventory.</p>
+     * <code>NotApplicableCount</code> that aren't reported by name to Inventory.
+     * Inventory is a capability of Amazon Web Services Systems Manager.</p>
      */
     inline bool UnreportedNotApplicableCountHasBeenSet() const { return m_unreportedNotApplicableCountHasBeenSet; }
 
     /**
      * <p>The number of patches beyond the supported limit of
-     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
-     * Inventory.</p>
+     * <code>NotApplicableCount</code> that aren't reported by name to Inventory.
+     * Inventory is a capability of Amazon Web Services Systems Manager.</p>
      */
     inline void SetUnreportedNotApplicableCount(int value) { m_unreportedNotApplicableCountHasBeenSet = true; m_unreportedNotApplicableCount = value; }
 
     /**
      * <p>The number of patches beyond the supported limit of
-     * <code>NotApplicableCount</code> that are not reported by name to Systems Manager
-     * Inventory.</p>
+     * <code>NotApplicableCount</code> that aren't reported by name to Inventory.
+     * Inventory is a capability of Amazon Web Services Systems Manager.</p>
      */
     inline InstancePatchState& WithUnreportedNotApplicableCount(int value) { SetUnreportedNotApplicableCount(value); return *this;}
 
@@ -668,38 +676,44 @@ namespace Model
 
 
     /**
-     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
-     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
+     * <p>The type of patching operation that was performed: or </p> <ul> <li> <p>
+     * <code>SCAN</code> assesses the patch compliance state.</p> </li> <li> <p>
+     * <code>INSTALL</code> installs missing patches.</p> </li> </ul>
      */
     inline const PatchOperationType& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
-     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
+     * <p>The type of patching operation that was performed: or </p> <ul> <li> <p>
+     * <code>SCAN</code> assesses the patch compliance state.</p> </li> <li> <p>
+     * <code>INSTALL</code> installs missing patches.</p> </li> </ul>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
-     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
+     * <p>The type of patching operation that was performed: or </p> <ul> <li> <p>
+     * <code>SCAN</code> assesses the patch compliance state.</p> </li> <li> <p>
+     * <code>INSTALL</code> installs missing patches.</p> </li> </ul>
      */
     inline void SetOperation(const PatchOperationType& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
-     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
+     * <p>The type of patching operation that was performed: or </p> <ul> <li> <p>
+     * <code>SCAN</code> assesses the patch compliance state.</p> </li> <li> <p>
+     * <code>INSTALL</code> installs missing patches.</p> </li> </ul>
      */
     inline void SetOperation(PatchOperationType&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
-     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
+     * <p>The type of patching operation that was performed: or </p> <ul> <li> <p>
+     * <code>SCAN</code> assesses the patch compliance state.</p> </li> <li> <p>
+     * <code>INSTALL</code> installs missing patches.</p> </li> </ul>
      */
     inline InstancePatchState& WithOperation(const PatchOperationType& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The type of patching operation that was performed: <code>SCAN</code> (assess
-     * patch compliance state) or <code>INSTALL</code> (install missing patches).</p>
+     * <p>The type of patching operation that was performed: or </p> <ul> <li> <p>
+     * <code>SCAN</code> assesses the patch compliance state.</p> </li> <li> <p>
+     * <code>INSTALL</code> installs missing patches.</p> </li> </ul>
      */
     inline InstancePatchState& WithOperation(PatchOperationType&& value) { SetOperation(std::move(value)); return *this;}
 
@@ -743,12 +757,12 @@ namespace Model
 
     /**
      * <p>Indicates the reboot option specified in the patch baseline.</p> 
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
+     * <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't
      * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
+     * <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if
+     * it installed any patches, or if any patches are detected with a status of
+     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <code>NoReboot</code>:
+     * Patch Manager attempts to install missing packages without trying to reboot the
      * system. Patches installed with this option are assigned a status of
      * <code>InstalledPendingReboot</code>. These patches might not be in effect until
      * a reboot is performed.</p> </li> </ul>
@@ -757,12 +771,12 @@ namespace Model
 
     /**
      * <p>Indicates the reboot option specified in the patch baseline.</p> 
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
+     * <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't
      * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
+     * <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if
+     * it installed any patches, or if any patches are detected with a status of
+     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <code>NoReboot</code>:
+     * Patch Manager attempts to install missing packages without trying to reboot the
      * system. Patches installed with this option are assigned a status of
      * <code>InstalledPendingReboot</code>. These patches might not be in effect until
      * a reboot is performed.</p> </li> </ul>
@@ -771,12 +785,12 @@ namespace Model
 
     /**
      * <p>Indicates the reboot option specified in the patch baseline.</p> 
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
+     * <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't
      * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
+     * <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if
+     * it installed any patches, or if any patches are detected with a status of
+     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <code>NoReboot</code>:
+     * Patch Manager attempts to install missing packages without trying to reboot the
      * system. Patches installed with this option are assigned a status of
      * <code>InstalledPendingReboot</code>. These patches might not be in effect until
      * a reboot is performed.</p> </li> </ul>
@@ -785,12 +799,12 @@ namespace Model
 
     /**
      * <p>Indicates the reboot option specified in the patch baseline.</p> 
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
+     * <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't
      * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
+     * <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if
+     * it installed any patches, or if any patches are detected with a status of
+     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <code>NoReboot</code>:
+     * Patch Manager attempts to install missing packages without trying to reboot the
      * system. Patches installed with this option are assigned a status of
      * <code>InstalledPendingReboot</code>. These patches might not be in effect until
      * a reboot is performed.</p> </li> </ul>
@@ -799,12 +813,12 @@ namespace Model
 
     /**
      * <p>Indicates the reboot option specified in the patch baseline.</p> 
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
+     * <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't
      * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
+     * <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if
+     * it installed any patches, or if any patches are detected with a status of
+     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <code>NoReboot</code>:
+     * Patch Manager attempts to install missing packages without trying to reboot the
      * system. Patches installed with this option are assigned a status of
      * <code>InstalledPendingReboot</code>. These patches might not be in effect until
      * a reboot is performed.</p> </li> </ul>
@@ -813,12 +827,12 @@ namespace Model
 
     /**
      * <p>Indicates the reboot option specified in the patch baseline.</p> 
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
+     * <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't
      * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
+     * <p> <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if
+     * it installed any patches, or if any patches are detected with a status of
+     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <code>NoReboot</code>:
+     * Patch Manager attempts to install missing packages without trying to reboot the
      * system. Patches installed with this option are assigned a status of
      * <code>InstalledPendingReboot</code>. These patches might not be in effect until
      * a reboot is performed.</p> </li> </ul>
@@ -827,100 +841,108 @@ namespace Model
 
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetCriticalNonCompliantCount() const{ return m_criticalNonCompliantCount; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline bool CriticalNonCompliantCountHasBeenSet() const { return m_criticalNonCompliantCountHasBeenSet; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetCriticalNonCompliantCount(int value) { m_criticalNonCompliantCountHasBeenSet = true; m_criticalNonCompliantCount = value; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Critical" for
-     * compliance reporting in the patch baseline are not installed. These patches
-     * might be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required instance reboot. The status of these instances is
-     * <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Critical</code> for compliance reporting in the patch baseline aren't
+     * installed. These patches might be missing, have failed installation, were
+     * rejected, or were installed but awaiting a required instance reboot. The status
+     * of these instances is <code>NON_COMPLIANT</code>.</p>
      */
     inline InstancePatchState& WithCriticalNonCompliantCount(int value) { SetCriticalNonCompliantCount(value); return *this;}
 
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetSecurityNonCompliantCount() const{ return m_securityNonCompliantCount; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline bool SecurityNonCompliantCountHasBeenSet() const { return m_securityNonCompliantCountHasBeenSet; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetSecurityNonCompliantCount(int value) { m_securityNonCompliantCountHasBeenSet = true; m_securityNonCompliantCount = value; }
 
     /**
-     * <p>The number of instances where patches that are specified as "Security" in a
-     * patch advisory are not installed. These patches might be missing, have failed
-     * installation, were rejected, or were installed but awaiting a required instance
-     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of instances where patches that are specified as
+     * <code>Security</code> in a patch advisory aren't installed. These patches might
+     * be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline InstancePatchState& WithSecurityNonCompliantCount(int value) { SetSecurityNonCompliantCount(value); return *this;}
 
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetOtherNonCompliantCount() const{ return m_otherNonCompliantCount; }
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline bool OtherNonCompliantCountHasBeenSet() const { return m_otherNonCompliantCountHasBeenSet; }
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetOtherNonCompliantCount(int value) { m_otherNonCompliantCountHasBeenSet = true; m_otherNonCompliantCount = value; }
 
     /**
      * <p>The number of instances with patches installed that are specified as other
-     * than "Critical" or "Security" but are not compliant with the patch baseline. The
-     * status of these instances is NON_COMPLIANT.</p>
+     * than <code>Critical</code> or <code>Security</code> but aren't compliant with
+     * the patch baseline. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline InstancePatchState& WithOtherNonCompliantCount(int value) { SetOtherNonCompliantCount(value); return *this;}
 

@@ -29,6 +29,8 @@
 #include <aws/lex-models/model/GetIntentResult.h>
 #include <aws/lex-models/model/GetIntentVersionsResult.h>
 #include <aws/lex-models/model/GetIntentsResult.h>
+#include <aws/lex-models/model/GetMigrationResult.h>
+#include <aws/lex-models/model/GetMigrationsResult.h>
 #include <aws/lex-models/model/GetSlotTypeResult.h>
 #include <aws/lex-models/model/GetSlotTypeVersionsResult.h>
 #include <aws/lex-models/model/GetSlotTypesResult.h>
@@ -39,6 +41,7 @@
 #include <aws/lex-models/model/PutIntentResult.h>
 #include <aws/lex-models/model/PutSlotTypeResult.h>
 #include <aws/lex-models/model/StartImportResult.h>
+#include <aws/lex-models/model/StartMigrationResult.h>
 #include <aws/lex-models/model/TagResourceResult.h>
 #include <aws/lex-models/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
@@ -108,6 +111,8 @@ namespace Model
         class GetIntentRequest;
         class GetIntentVersionsRequest;
         class GetIntentsRequest;
+        class GetMigrationRequest;
+        class GetMigrationsRequest;
         class GetSlotTypeRequest;
         class GetSlotTypeVersionsRequest;
         class GetSlotTypesRequest;
@@ -118,6 +123,7 @@ namespace Model
         class PutIntentRequest;
         class PutSlotTypeRequest;
         class StartImportRequest;
+        class StartMigrationRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
 
@@ -148,6 +154,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetIntentResult, LexModelBuildingServiceError> GetIntentOutcome;
         typedef Aws::Utils::Outcome<GetIntentVersionsResult, LexModelBuildingServiceError> GetIntentVersionsOutcome;
         typedef Aws::Utils::Outcome<GetIntentsResult, LexModelBuildingServiceError> GetIntentsOutcome;
+        typedef Aws::Utils::Outcome<GetMigrationResult, LexModelBuildingServiceError> GetMigrationOutcome;
+        typedef Aws::Utils::Outcome<GetMigrationsResult, LexModelBuildingServiceError> GetMigrationsOutcome;
         typedef Aws::Utils::Outcome<GetSlotTypeResult, LexModelBuildingServiceError> GetSlotTypeOutcome;
         typedef Aws::Utils::Outcome<GetSlotTypeVersionsResult, LexModelBuildingServiceError> GetSlotTypeVersionsOutcome;
         typedef Aws::Utils::Outcome<GetSlotTypesResult, LexModelBuildingServiceError> GetSlotTypesOutcome;
@@ -158,6 +166,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutIntentResult, LexModelBuildingServiceError> PutIntentOutcome;
         typedef Aws::Utils::Outcome<PutSlotTypeResult, LexModelBuildingServiceError> PutSlotTypeOutcome;
         typedef Aws::Utils::Outcome<StartImportResult, LexModelBuildingServiceError> StartImportOutcome;
+        typedef Aws::Utils::Outcome<StartMigrationResult, LexModelBuildingServiceError> StartMigrationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LexModelBuildingServiceError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LexModelBuildingServiceError> UntagResourceOutcome;
 
@@ -188,6 +197,8 @@ namespace Model
         typedef std::future<GetIntentOutcome> GetIntentOutcomeCallable;
         typedef std::future<GetIntentVersionsOutcome> GetIntentVersionsOutcomeCallable;
         typedef std::future<GetIntentsOutcome> GetIntentsOutcomeCallable;
+        typedef std::future<GetMigrationOutcome> GetMigrationOutcomeCallable;
+        typedef std::future<GetMigrationsOutcome> GetMigrationsOutcomeCallable;
         typedef std::future<GetSlotTypeOutcome> GetSlotTypeOutcomeCallable;
         typedef std::future<GetSlotTypeVersionsOutcome> GetSlotTypeVersionsOutcomeCallable;
         typedef std::future<GetSlotTypesOutcome> GetSlotTypesOutcomeCallable;
@@ -198,6 +209,7 @@ namespace Model
         typedef std::future<PutIntentOutcome> PutIntentOutcomeCallable;
         typedef std::future<PutSlotTypeOutcome> PutSlotTypeOutcomeCallable;
         typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
+        typedef std::future<StartMigrationOutcome> StartMigrationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
@@ -231,6 +243,8 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentRequest&, const Model::GetIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentVersionsRequest&, const Model::GetIntentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentsRequest&, const Model::GetIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentsResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetMigrationRequest&, const Model::GetMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMigrationResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetMigrationsRequest&, const Model::GetMigrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMigrationsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetSlotTypeRequest&, const Model::GetSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSlotTypeResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetSlotTypeVersionsRequest&, const Model::GetSlotTypeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSlotTypeVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetSlotTypesRequest&, const Model::GetSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSlotTypesResponseReceivedHandler;
@@ -241,6 +255,7 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutIntentRequest&, const Model::PutIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutSlotTypeRequest&, const Model::PutSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSlotTypeResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::StartMigrationRequest&, const Model::StartMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMigrationResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
@@ -1397,6 +1412,65 @@ namespace Model
         virtual void GetIntentsAsync(const Model::GetIntentsRequest& request, const GetIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides details about an ongoing or complete migration from an Amazon Lex V1
+         * bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and
+         * warnings related to the migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMigrationOutcome GetMigration(const Model::GetMigrationRequest& request) const;
+
+        /**
+         * <p>Provides details about an ongoing or complete migration from an Amazon Lex V1
+         * bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and
+         * warnings related to the migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMigrationOutcomeCallable GetMigrationCallable(const Model::GetMigrationRequest& request) const;
+
+        /**
+         * <p>Provides details about an ongoing or complete migration from an Amazon Lex V1
+         * bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and
+         * warnings related to the migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMigrationAsync(const Model::GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex
+         * V2.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMigrationsOutcome GetMigrations(const Model::GetMigrationsRequest& request) const;
+
+        /**
+         * <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex
+         * V2.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMigrationsOutcomeCallable GetMigrationsCallable(const Model::GetMigrationsRequest& request) const;
+
+        /**
+         * <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex
+         * V2.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMigrationsAsync(const Model::GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a specific version of a slot type. In addition to
          * specifying the slot type name, you must specify the slot type version.</p>
          * <p>This operation requires permissions for the <code>lex:GetSlotType</code>
@@ -1542,8 +1616,9 @@ namespace Model
          * frequent utterances received by the bot in the last 15 days. The response
          * contains information about a maximum of 100 utterances for each version.</p>
          * <p>If you set <code>childDirected</code> field to true when you created your
-         * bot, or if you opted out of participating in improving Amazon Lex, utterances
-         * are not available.</p> <p>This operation requires permissions for the
+         * bot, if you are using slot obfuscation with one or more slots, or if you opted
+         * out of participating in improving Amazon Lex, utterances are not available.</p>
+         * <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1567,8 +1642,9 @@ namespace Model
          * frequent utterances received by the bot in the last 15 days. The response
          * contains information about a maximum of 100 utterances for each version.</p>
          * <p>If you set <code>childDirected</code> field to true when you created your
-         * bot, or if you opted out of participating in improving Amazon Lex, utterances
-         * are not available.</p> <p>This operation requires permissions for the
+         * bot, if you are using slot obfuscation with one or more slots, or if you opted
+         * out of participating in improving Amazon Lex, utterances are not available.</p>
+         * <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1594,8 +1670,9 @@ namespace Model
          * frequent utterances received by the bot in the last 15 days. The response
          * contains information about a maximum of 100 utterances for each version.</p>
          * <p>If you set <code>childDirected</code> field to true when you created your
-         * bot, or if you opted out of participating in improving Amazon Lex, utterances
-         * are not available.</p> <p>This operation requires permissions for the
+         * bot, if you are using slot obfuscation with one or more slots, or if you opted
+         * out of participating in improving Amazon Lex, utterances are not available.</p>
+         * <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1944,6 +2021,43 @@ namespace Model
         virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot
+         * when you want to take advantage of the new features of Amazon Lex V2.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a
+         * bot</a> in the <i>Amazon Lex developer guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMigrationOutcome StartMigration(const Model::StartMigrationRequest& request) const;
+
+        /**
+         * <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot
+         * when you want to take advantage of the new features of Amazon Lex V2.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a
+         * bot</a> in the <i>Amazon Lex developer guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMigrationOutcomeCallable StartMigrationCallable(const Model::StartMigrationRequest& request) const;
+
+        /**
+         * <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot
+         * when you want to take advantage of the new features of Amazon Lex V2.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a
+         * bot</a> in the <i>Amazon Lex developer guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMigrationAsync(const Model::StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds the specified tags to the specified resource. If a tag key already
          * exists, the existing value is replaced with the new value.</p><p><h3>See
          * Also:</h3>   <a
@@ -2033,6 +2147,8 @@ namespace Model
         void GetIntentAsyncHelper(const Model::GetIntentRequest& request, const GetIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentVersionsAsyncHelper(const Model::GetIntentVersionsRequest& request, const GetIntentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentsAsyncHelper(const Model::GetIntentsRequest& request, const GetIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMigrationAsyncHelper(const Model::GetMigrationRequest& request, const GetMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMigrationsAsyncHelper(const Model::GetMigrationsRequest& request, const GetMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSlotTypeAsyncHelper(const Model::GetSlotTypeRequest& request, const GetSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSlotTypeVersionsAsyncHelper(const Model::GetSlotTypeVersionsRequest& request, const GetSlotTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSlotTypesAsyncHelper(const Model::GetSlotTypesRequest& request, const GetSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2043,6 +2159,7 @@ namespace Model
         void PutIntentAsyncHelper(const Model::PutIntentRequest& request, const PutIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSlotTypeAsyncHelper(const Model::PutSlotTypeRequest& request, const PutSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImportAsyncHelper(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMigrationAsyncHelper(const Model::StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

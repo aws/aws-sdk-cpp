@@ -42,7 +42,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline const Aws::Vector<AssociationFilter>& GetAssociationFilterList() const{ return m_associationFilterList; }
 
@@ -52,7 +52,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline bool AssociationFilterListHasBeenSet() const { return m_associationFilterListHasBeenSet; }
 
@@ -62,7 +62,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline void SetAssociationFilterList(const Aws::Vector<AssociationFilter>& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList = value; }
 
@@ -72,7 +72,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline void SetAssociationFilterList(Aws::Vector<AssociationFilter>&& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList = std::move(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline ListAssociationsRequest& WithAssociationFilterList(const Aws::Vector<AssociationFilter>& value) { SetAssociationFilterList(value); return *this;}
 
@@ -92,7 +92,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline ListAssociationsRequest& WithAssociationFilterList(Aws::Vector<AssociationFilter>&& value) { SetAssociationFilterList(std::move(value)); return *this;}
 
@@ -102,7 +102,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline ListAssociationsRequest& AddAssociationFilterList(const AssociationFilter& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList.push_back(value); return *this; }
 
@@ -112,7 +112,7 @@ namespace Model
      * attribute only returns legacy associations created using the
      * <code>InstanceID</code> attribute. Associations targeting the instance that are
      * part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-     * are not returned.</p> 
+     * aren't returned.</p> 
      */
     inline ListAssociationsRequest& AddAssociationFilterList(AssociationFilter&& value) { m_associationFilterListHasBeenSet = true; m_associationFilterList.push_back(std::move(value)); return *this; }
 

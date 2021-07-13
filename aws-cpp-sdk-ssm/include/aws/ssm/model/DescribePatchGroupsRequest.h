@@ -58,114 +58,90 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline DescribePatchGroupsRequest& WithFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline DescribePatchGroupsRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline DescribePatchGroupsRequest& AddFilters(const PatchOrchestratorFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p> <p>For <code>DescribePatchGroups</code>,valid filter keys include
-     * the following:</p> <ul> <li> <p> <code>NAME_PREFIX</code>: The name of the patch
-     * group. Wildcards (*) are accepted.</p> </li> <li> <p>
-     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return
-     * results for. For valid operating system values, see
-     * <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
-     * <a>CreatePatchBaseline</a>.</p> <p>Examples:</p> <ul> <li> <p> <code>--filters
-     * Key=NAME_PREFIX,Values=MyPatchGroup*</code> </p> </li> <li> <p> <code>--filters
-     * Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code> </p> </li> </ul> </li> </ul>
+     * <p>Each element in the array is a structure containing a key-value pair.</p>
+     * <p>Supported keys for <code>DescribePatchGroups</code> include the
+     * following:</p> <ul> <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample
+     * values: <code>AWS-</code> | <code>My-</code>.</p> </li> <li> <p> <b>
+     * <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values:
+     * <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+     * </ul>
      */
     inline DescribePatchGroupsRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

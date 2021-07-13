@@ -203,26 +203,26 @@ namespace Model
 
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline int GetCutoff() const{ return m_cutoff; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline bool CutoffHasBeenSet() const { return m_cutoffHasBeenSet; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline void SetCutoff(int value) { m_cutoffHasBeenSet = true; m_cutoff = value; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline MaintenanceWindowIdentity& WithCutoff(int value) { SetCutoff(value); return *this;}
 
@@ -327,25 +327,25 @@ namespace Model
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline int GetScheduleOffset() const{ return m_scheduleOffset; }
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline MaintenanceWindowIdentity& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
 

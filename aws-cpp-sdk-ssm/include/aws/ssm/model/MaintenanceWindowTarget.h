@@ -228,50 +228,58 @@ namespace Model
 
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>A user-provided value that will be included in any CloudWatch events that are
-     * raised while running tasks for these targets in this maintenance window.</p>
+     * <p>A user-provided value that will be included in any Amazon CloudWatch Events
+     * events that are raised while running tasks for these targets in this maintenance
+     * window.</p>
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
