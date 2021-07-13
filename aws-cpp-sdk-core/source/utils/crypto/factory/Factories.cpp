@@ -967,5 +967,5 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    return GetSecureRandom();
+    return GetSecureRandomFactory()->CreateImplementation();
 }
