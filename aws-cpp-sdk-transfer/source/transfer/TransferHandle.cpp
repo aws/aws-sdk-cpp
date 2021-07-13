@@ -67,6 +67,8 @@ namespace Aws
             m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(totalSize),
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
             m_offset(0),
             m_bucket(bucketName),
             m_key(keyName),
@@ -85,6 +87,8 @@ namespace Aws
             m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(0),
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
             m_offset(0),
             m_bucket(bucketName),
             m_key(keyName),
@@ -103,6 +107,8 @@ namespace Aws
             m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(0),
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
             m_offset(0),
             m_bucket(bucketName),
             m_key(keyName),
@@ -124,6 +130,8 @@ namespace Aws
             m_bytesTransferred(0),
             m_lastPart(false),
             m_bytesTotalSize(downloadBytes),
+            m_bytesAvailableFromStart(0),
+            m_nextPartToWatch(1),
             m_offset(fileOffset),
             m_bucket(bucketName),
             m_key(keyName),
@@ -158,6 +166,15 @@ namespace Aws
             m_completedParts[partId] = partState;
             AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Setting part [" << partId
                     << "] to [" << TransferStatus::COMPLETED << "].");
+
+            // Each completed part is accounted for exactly once, by caching the next part number to watch for.
+            // The data is immediately available for consumers since it's flushed via
+            // WritePartToDownloadStream() already.
+            while (m_completedParts.count(m_nextPartToWatch)) {
+                m_bytesAvailableFromStart.fetch_add(m_completedParts[m_nextPartToWatch]->GetSizeInBytes(),
+                                                    std::memory_order_relaxed);
+                m_nextPartToWatch++;
+            }
         }
 
         PartStateMap TransferHandle::GetQueuedParts() const
