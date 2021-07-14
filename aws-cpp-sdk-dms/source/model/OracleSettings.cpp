@@ -68,7 +68,15 @@ OracleSettings::OracleSettings() :
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet(false),
+    m_standbyDelayTime(0),
+    m_standbyDelayTimeHasBeenSet(false),
     m_usernameHasBeenSet(false),
+    m_useBFile(false),
+    m_useBFileHasBeenSet(false),
+    m_useDirectPathFullLoad(false),
+    m_useDirectPathFullLoadHasBeenSet(false),
+    m_useLogminerReader(false),
+    m_useLogminerReaderHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
@@ -126,7 +134,15 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet(false),
+    m_standbyDelayTime(0),
+    m_standbyDelayTimeHasBeenSet(false),
     m_usernameHasBeenSet(false),
+    m_useBFile(false),
+    m_useBFileHasBeenSet(false),
+    m_useDirectPathFullLoad(false),
+    m_useDirectPathFullLoadHasBeenSet(false),
+    m_useLogminerReader(false),
+    m_useLogminerReaderHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
@@ -347,11 +363,39 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StandbyDelayTime"))
+  {
+    m_standbyDelayTime = jsonValue.GetInteger("StandbyDelayTime");
+
+    m_standbyDelayTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
 
     m_usernameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseBFile"))
+  {
+    m_useBFile = jsonValue.GetBool("UseBFile");
+
+    m_useBFileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseDirectPathFullLoad"))
+  {
+    m_useDirectPathFullLoad = jsonValue.GetBool("UseDirectPathFullLoad");
+
+    m_useDirectPathFullLoadHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseLogminerReader"))
+  {
+    m_useLogminerReader = jsonValue.GetBool("UseLogminerReader");
+
+    m_useLogminerReaderHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
@@ -568,9 +612,33 @@ JsonValue OracleSettings::Jsonize() const
 
   }
 
+  if(m_standbyDelayTimeHasBeenSet)
+  {
+   payload.WithInteger("StandbyDelayTime", m_standbyDelayTime);
+
+  }
+
   if(m_usernameHasBeenSet)
   {
    payload.WithString("Username", m_username);
+
+  }
+
+  if(m_useBFileHasBeenSet)
+  {
+   payload.WithBool("UseBFile", m_useBFile);
+
+  }
+
+  if(m_useDirectPathFullLoadHasBeenSet)
+  {
+   payload.WithBool("UseDirectPathFullLoad", m_useDirectPathFullLoad);
+
+  }
+
+  if(m_useLogminerReaderHasBeenSet)
+  {
+   payload.WithBool("UseLogminerReader", m_useLogminerReader);
 
   }
 

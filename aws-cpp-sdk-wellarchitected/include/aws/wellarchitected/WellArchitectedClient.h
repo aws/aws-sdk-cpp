@@ -460,14 +460,16 @@ namespace Model
         virtual void DisassociateLensesAsync(const Model::DisassociateLensesRequest& request, const DisassociateLensesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get lens review.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the answer to a specific question in a workload review.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAnswer">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAnswerOutcome GetAnswer(const Model::GetAnswerRequest& request) const;
 
         /**
-         * <p>Get lens review.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the answer to a specific question in a workload review.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAnswer">AWS
          * API Reference</a></p>
          *
@@ -476,7 +478,8 @@ namespace Model
         virtual Model::GetAnswerOutcomeCallable GetAnswerCallable(const Model::GetAnswerRequest& request) const;
 
         /**
-         * <p>Get lens review.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the answer to a specific question in a workload review.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAnswer">AWS
          * API Reference</a></p>
          *
@@ -891,14 +894,20 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes specified tags from a resource.</p> <p>To specify multiple tags, use
+         * separate <b>tagKeys</b> parameters, for example:</p> <p> <code>DELETE
+         * /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes specified tags from a resource.</p> <p>To specify multiple tags, use
+         * separate <b>tagKeys</b> parameters, for example:</p> <p> <code>DELETE
+         * /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -907,7 +916,10 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes specified tags from a resource.</p> <p>To specify multiple tags, use
+         * separate <b>tagKeys</b> parameters, for example:</p> <p> <code>DELETE
+         * /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UntagResource">AWS
          * API Reference</a></p>
          *

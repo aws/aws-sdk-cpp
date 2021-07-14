@@ -38,49 +38,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending
+     * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}

@@ -39,6 +39,7 @@ namespace Aws
         static const int ContactMethod_HASH = HashingUtils::HashString("ContactMethod");
         static const int Distribution_HASH = HashingUtils::HashString("Distribution");
         static const int Certificate_HASH = HashingUtils::HashString("Certificate");
+        static const int Bucket_HASH = HashingUtils::HashString("Bucket");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -120,6 +121,10 @@ namespace Aws
           {
             return ResourceType::Certificate;
           }
+          else if (hashCode == Bucket_HASH)
+          {
+            return ResourceType::Bucket;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -172,6 +177,8 @@ namespace Aws
             return "Distribution";
           case ResourceType::Certificate:
             return "Certificate";
+          case ResourceType::Bucket:
+            return "Bucket";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

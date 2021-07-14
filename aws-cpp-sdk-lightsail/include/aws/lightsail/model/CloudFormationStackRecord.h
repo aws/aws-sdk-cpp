@@ -32,10 +32,10 @@ namespace Model
 
   /**
    * <p>Describes a CloudFormation stack record created as a result of the
-   * <code>create cloud formation stack</code> operation.</p> <p>A CloudFormation
-   * stack record provides information about the AWS CloudFormation stack used to
-   * create a new Amazon Elastic Compute Cloud instance from an exported Lightsail
-   * instance snapshot.</p><p><h3>See Also:</h3>   <a
+   * <code>create cloud formation stack</code> action.</p> <p>A CloudFormation stack
+   * record provides information about the AWS CloudFormation stack used to create a
+   * new Amazon Elastic Compute Cloud instance from an exported Lightsail instance
+   * snapshot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloudFormationStackRecord">AWS
    * API Reference</a></p>
    */

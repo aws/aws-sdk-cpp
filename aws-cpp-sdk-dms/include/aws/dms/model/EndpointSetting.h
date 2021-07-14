@@ -323,6 +323,55 @@ namespace Model
      */
     inline EndpointSetting& WithIntValueMax(int value) { SetIntValueMax(value); return *this;}
 
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline EndpointSetting& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline EndpointSetting& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The default value of the endpoint setting if no value is specified using
+     * <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
+     */
+    inline EndpointSetting& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -348,6 +397,9 @@ namespace Model
 
     int m_intValueMax;
     bool m_intValueMaxHasBeenSet;
+
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet;
   };
 
 } // namespace Model

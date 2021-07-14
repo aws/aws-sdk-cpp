@@ -134,50 +134,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline KinesisSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline KinesisSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that AWS DMS uses to write to the Kinesis data stream.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
+     * action.</p>
      */
     inline KinesisSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
@@ -375,6 +383,35 @@ namespace Model
      */
     inline KinesisSettings& WithIncludeNullAndEmpty(bool value) { SetIncludeNullAndEmpty(value); return *this;}
 
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
+     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     */
+    inline bool GetNoHexPrefix() const{ return m_noHexPrefix; }
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
+     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     */
+    inline bool NoHexPrefixHasBeenSet() const { return m_noHexPrefixHasBeenSet; }
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
+     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     */
+    inline void SetNoHexPrefix(bool value) { m_noHexPrefixHasBeenSet = true; m_noHexPrefix = value; }
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
+     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     */
+    inline KinesisSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
+
   private:
 
     Aws::String m_streamArn;
@@ -403,6 +440,9 @@ namespace Model
 
     bool m_includeNullAndEmpty;
     bool m_includeNullAndEmptyHasBeenSet;
+
+    bool m_noHexPrefix;
+    bool m_noHexPrefixHasBeenSet;
   };
 
 } // namespace Model

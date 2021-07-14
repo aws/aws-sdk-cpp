@@ -55,7 +55,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
@@ -63,7 +64,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
@@ -71,7 +73,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
@@ -79,7 +82,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
@@ -87,7 +91,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
@@ -95,7 +100,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
@@ -103,7 +109,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
@@ -111,7 +118,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline CertificateDetail& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
@@ -788,56 +796,65 @@ namespace Model
 
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline const Aws::Vector<Aws::String>& GetInUseBy() const{ return m_inUseBy; }
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline bool InUseByHasBeenSet() const { return m_inUseByHasBeenSet; }
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline void SetInUseBy(const Aws::Vector<Aws::String>& value) { m_inUseByHasBeenSet = true; m_inUseBy = value; }
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline void SetInUseBy(Aws::Vector<Aws::String>&& value) { m_inUseByHasBeenSet = true; m_inUseBy = std::move(value); }
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline CertificateDetail& WithInUseBy(const Aws::Vector<Aws::String>& value) { SetInUseBy(value); return *this;}
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline CertificateDetail& WithInUseBy(Aws::Vector<Aws::String>&& value) { SetInUseBy(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline CertificateDetail& AddInUseBy(const Aws::String& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline CertificateDetail& AddInUseBy(Aws::String&& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of ARNs for the AWS resources that are using the certificate. A
-     * certificate can be used by multiple AWS resources. </p>
+     * <p>A list of ARNs for the Amazon Web Services resources that are using the
+     * certificate. A certificate can be used by multiple Amazon Web Services
+     * resources. </p>
      */
     inline CertificateDetail& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
@@ -846,7 +863,8 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -854,7 +872,8 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -862,7 +881,8 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -870,7 +890,8 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -878,7 +899,8 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -886,7 +908,8 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
@@ -901,7 +924,8 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
 
@@ -915,7 +939,8 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -929,7 +954,8 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -943,7 +969,8 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -957,7 +984,8 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline CertificateDetail& WithType(const CertificateType& value) { SetType(value); return *this;}
 
@@ -971,7 +999,8 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+     * Guide</i>. </p>
      */
     inline CertificateDetail& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
 

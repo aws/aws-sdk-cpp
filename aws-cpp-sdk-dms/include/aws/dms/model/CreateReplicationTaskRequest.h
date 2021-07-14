@@ -285,64 +285,64 @@ namespace Model
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
-     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration
-     * Service User Guide.</i> </p>
+     * Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service
+     * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
@@ -350,64 +350,64 @@ namespace Model
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
-     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Task Settings for Database Migration Service Tasks</a> in the <i>Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 
@@ -476,8 +476,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -496,8 +495,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -516,8 +514,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -536,8 +533,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -556,8 +552,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -576,8 +571,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -596,8 +590,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -616,8 +609,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 
@@ -732,7 +724,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline const Aws::String& GetTaskData() const{ return m_taskData; }
@@ -741,7 +733,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
@@ -750,7 +742,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
@@ -759,7 +751,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
@@ -768,7 +760,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
@@ -777,7 +769,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
@@ -786,7 +778,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
@@ -795,7 +787,7 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * Supplemental Data for Task Settings</a> in the <i>Database Migration Service
      * User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}
@@ -810,8 +802,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
@@ -824,8 +816,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
@@ -838,8 +830,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
@@ -852,8 +844,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
@@ -866,8 +858,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
@@ -880,8 +872,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline CreateReplicationTaskRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
 
@@ -894,8 +886,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline CreateReplicationTaskRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
@@ -908,8 +900,8 @@ namespace Model
      * begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
      * value might result in the <code>EndpointArn</code> value
      * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you
-     * don't specify a <code>ResourceIdentifier</code> value, AWS DMS generates a
-     * default identifier value for the end of <code>EndpointArn</code>.</p>
+     * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
+     * identifier value for the end of <code>EndpointArn</code>.</p>
      */
     inline CreateReplicationTaskRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 

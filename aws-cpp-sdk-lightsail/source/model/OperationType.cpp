@@ -92,6 +92,13 @@ namespace Aws
         static const int CreateContainerServiceRegistryLogin_HASH = HashingUtils::HashString("CreateContainerServiceRegistryLogin");
         static const int RegisterContainerImage_HASH = HashingUtils::HashString("RegisterContainerImage");
         static const int DeleteContainerImage_HASH = HashingUtils::HashString("DeleteContainerImage");
+        static const int CreateBucket_HASH = HashingUtils::HashString("CreateBucket");
+        static const int DeleteBucket_HASH = HashingUtils::HashString("DeleteBucket");
+        static const int CreateBucketAccessKey_HASH = HashingUtils::HashString("CreateBucketAccessKey");
+        static const int DeleteBucketAccessKey_HASH = HashingUtils::HashString("DeleteBucketAccessKey");
+        static const int UpdateBucketBundle_HASH = HashingUtils::HashString("UpdateBucketBundle");
+        static const int UpdateBucket_HASH = HashingUtils::HashString("UpdateBucket");
+        static const int SetResourceAccessForBucket_HASH = HashingUtils::HashString("SetResourceAccessForBucket");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -385,6 +392,34 @@ namespace Aws
           {
             return OperationType::DeleteContainerImage;
           }
+          else if (hashCode == CreateBucket_HASH)
+          {
+            return OperationType::CreateBucket;
+          }
+          else if (hashCode == DeleteBucket_HASH)
+          {
+            return OperationType::DeleteBucket;
+          }
+          else if (hashCode == CreateBucketAccessKey_HASH)
+          {
+            return OperationType::CreateBucketAccessKey;
+          }
+          else if (hashCode == DeleteBucketAccessKey_HASH)
+          {
+            return OperationType::DeleteBucketAccessKey;
+          }
+          else if (hashCode == UpdateBucketBundle_HASH)
+          {
+            return OperationType::UpdateBucketBundle;
+          }
+          else if (hashCode == UpdateBucket_HASH)
+          {
+            return OperationType::UpdateBucket;
+          }
+          else if (hashCode == SetResourceAccessForBucket_HASH)
+          {
+            return OperationType::SetResourceAccessForBucket;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -543,6 +578,20 @@ namespace Aws
             return "RegisterContainerImage";
           case OperationType::DeleteContainerImage:
             return "DeleteContainerImage";
+          case OperationType::CreateBucket:
+            return "CreateBucket";
+          case OperationType::DeleteBucket:
+            return "DeleteBucket";
+          case OperationType::CreateBucketAccessKey:
+            return "CreateBucketAccessKey";
+          case OperationType::DeleteBucketAccessKey:
+            return "DeleteBucketAccessKey";
+          case OperationType::UpdateBucketBundle:
+            return "UpdateBucketBundle";
+          case OperationType::UpdateBucket:
+            return "UpdateBucket";
+          case OperationType::SetResourceAccessForBucket:
+            return "SetResourceAccessForBucket";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

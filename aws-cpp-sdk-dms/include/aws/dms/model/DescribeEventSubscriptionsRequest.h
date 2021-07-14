@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 

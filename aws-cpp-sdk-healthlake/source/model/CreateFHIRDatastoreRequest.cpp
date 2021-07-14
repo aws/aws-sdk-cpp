@@ -16,9 +16,11 @@ CreateFHIRDatastoreRequest::CreateFHIRDatastoreRequest() :
     m_datastoreNameHasBeenSet(false),
     m_datastoreTypeVersion(FHIRVersion::NOT_SET),
     m_datastoreTypeVersionHasBeenSet(false),
+    m_sseConfigurationHasBeenSet(false),
     m_preloadDataConfigHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -37,6 +39,12 @@ Aws::String CreateFHIRDatastoreRequest::SerializePayload() const
    payload.WithString("DatastoreTypeVersion", FHIRVersionMapper::GetNameForFHIRVersion(m_datastoreTypeVersion));
   }
 
+  if(m_sseConfigurationHasBeenSet)
+  {
+   payload.WithObject("SseConfiguration", m_sseConfiguration.Jsonize());
+
+  }
+
   if(m_preloadDataConfigHasBeenSet)
   {
    payload.WithObject("PreloadDataConfig", m_preloadDataConfig.Jsonize());
@@ -46,6 +54,17 @@ Aws::String CreateFHIRDatastoreRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>Expiration events configuration options associated with the AWS account.</p>
+     * <p>Expiration events configuration options associated with the Amazon Web
+     * Services account.</p>
      */
     inline const ExpiryEventsConfiguration& GetExpiryEvents() const{ return m_expiryEvents; }
 
     /**
-     * <p>Expiration events configuration options associated with the AWS account.</p>
+     * <p>Expiration events configuration options associated with the Amazon Web
+     * Services account.</p>
      */
     inline void SetExpiryEvents(const ExpiryEventsConfiguration& value) { m_expiryEvents = value; }
 
     /**
-     * <p>Expiration events configuration options associated with the AWS account.</p>
+     * <p>Expiration events configuration options associated with the Amazon Web
+     * Services account.</p>
      */
     inline void SetExpiryEvents(ExpiryEventsConfiguration&& value) { m_expiryEvents = std::move(value); }
 
     /**
-     * <p>Expiration events configuration options associated with the AWS account.</p>
+     * <p>Expiration events configuration options associated with the Amazon Web
+     * Services account.</p>
      */
     inline GetAccountConfigurationResult& WithExpiryEvents(const ExpiryEventsConfiguration& value) { SetExpiryEvents(value); return *this;}
 
     /**
-     * <p>Expiration events configuration options associated with the AWS account.</p>
+     * <p>Expiration events configuration options associated with the Amazon Web
+     * Services account.</p>
      */
     inline GetAccountConfigurationResult& WithExpiryEvents(ExpiryEventsConfiguration&& value) { SetExpiryEvents(std::move(value)); return *this;}
 

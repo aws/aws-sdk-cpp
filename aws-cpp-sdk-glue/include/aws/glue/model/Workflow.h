@@ -28,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>A workflow represents a flow in which Glue components should be run to
-   * complete a logical task.</p><p><h3>See Also:</h3>   <a
+   * <p>A workflow is a collection of multiple dependent Glue jobs and crawlers that
+   * are run to complete a complex ETL task. A workflow manages the execution and
+   * monitoring of all its jobs and crawlers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Workflow">AWS API
    * Reference</a></p>
    */
@@ -43,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline Workflow& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline Workflow& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the workflow representing the flow.</p>
+     * <p>The name of the workflow.</p>
      */
     inline Workflow& WithName(const char* value) { SetName(value); return *this;}
 
@@ -126,79 +127,92 @@ namespace Model
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDefaultRunProperties() const{ return m_defaultRunProperties; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline bool DefaultRunPropertiesHasBeenSet() const { return m_defaultRunPropertiesHasBeenSet; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline void SetDefaultRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = value; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline void SetDefaultRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties = std::move(value); }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& WithDefaultRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultRunProperties(value); return *this;}
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& WithDefaultRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultRunProperties(std::move(value)); return *this;}
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const Aws::String& key, const Aws::String& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, value); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(Aws::String&& key, const Aws::String& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const Aws::String& key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(Aws::String&& key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const char* key, Aws::String&& value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(Aws::String&& key, const char* value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A collection of properties to be used as part of each execution of the
-     * workflow.</p>
+     * workflow. The run properties are made available to each job in the workflow. A
+     * job can modify the properties for the next jobs in the flow.</p>
      */
     inline Workflow& AddDefaultRunProperties(const char* key, const char* value) { m_defaultRunPropertiesHasBeenSet = true; m_defaultRunProperties.emplace(key, value); return *this; }
 

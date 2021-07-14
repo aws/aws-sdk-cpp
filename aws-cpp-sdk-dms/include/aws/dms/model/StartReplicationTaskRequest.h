@@ -175,8 +175,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -195,8 +194,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -215,8 +213,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -235,8 +232,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -255,8 +251,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -275,8 +270,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -295,8 +289,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -315,8 +308,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 

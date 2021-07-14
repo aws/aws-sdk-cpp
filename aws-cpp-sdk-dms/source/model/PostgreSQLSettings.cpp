@@ -30,12 +30,19 @@ PostgreSQLSettings::PostgreSQLSettings() :
     m_executeTimeoutHasBeenSet(false),
     m_failTasksOnLobTruncation(false),
     m_failTasksOnLobTruncationHasBeenSet(false),
+    m_heartbeatEnable(false),
+    m_heartbeatEnableHasBeenSet(false),
+    m_heartbeatSchemaHasBeenSet(false),
+    m_heartbeatFrequency(0),
+    m_heartbeatFrequencyHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_slotNameHasBeenSet(false),
+    m_pluginName(PluginNameValue::NOT_SET),
+    m_pluginNameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false)
 {
@@ -53,12 +60,19 @@ PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue) :
     m_executeTimeoutHasBeenSet(false),
     m_failTasksOnLobTruncation(false),
     m_failTasksOnLobTruncationHasBeenSet(false),
+    m_heartbeatEnable(false),
+    m_heartbeatEnableHasBeenSet(false),
+    m_heartbeatSchemaHasBeenSet(false),
+    m_heartbeatFrequency(0),
+    m_heartbeatFrequencyHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_slotNameHasBeenSet(false),
+    m_pluginName(PluginNameValue::NOT_SET),
+    m_pluginNameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false)
 {
@@ -116,6 +130,27 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_failTasksOnLobTruncationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HeartbeatEnable"))
+  {
+    m_heartbeatEnable = jsonValue.GetBool("HeartbeatEnable");
+
+    m_heartbeatEnableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HeartbeatSchema"))
+  {
+    m_heartbeatSchema = jsonValue.GetString("HeartbeatSchema");
+
+    m_heartbeatSchemaHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HeartbeatFrequency"))
+  {
+    m_heartbeatFrequency = jsonValue.GetInteger("HeartbeatFrequency");
+
+    m_heartbeatFrequencyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
@@ -149,6 +184,13 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_slotName = jsonValue.GetString("SlotName");
 
     m_slotNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PluginName"))
+  {
+    m_pluginName = PluginNameValueMapper::GetPluginNameValueForName(jsonValue.GetString("PluginName"));
+
+    m_pluginNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
@@ -214,6 +256,24 @@ JsonValue PostgreSQLSettings::Jsonize() const
 
   }
 
+  if(m_heartbeatEnableHasBeenSet)
+  {
+   payload.WithBool("HeartbeatEnable", m_heartbeatEnable);
+
+  }
+
+  if(m_heartbeatSchemaHasBeenSet)
+  {
+   payload.WithString("HeartbeatSchema", m_heartbeatSchema);
+
+  }
+
+  if(m_heartbeatFrequencyHasBeenSet)
+  {
+   payload.WithInteger("HeartbeatFrequency", m_heartbeatFrequency);
+
+  }
+
   if(m_passwordHasBeenSet)
   {
    payload.WithString("Password", m_password);
@@ -242,6 +302,11 @@ JsonValue PostgreSQLSettings::Jsonize() const
   {
    payload.WithString("SlotName", m_slotName);
 
+  }
+
+  if(m_pluginNameHasBeenSet)
+  {
+   payload.WithString("PluginName", PluginNameValueMapper::GetNameForPluginNameValue(m_pluginName));
   }
 
   if(m_secretsManagerAccessRoleArnHasBeenSet)

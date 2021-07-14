@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>A node represents an Glue component such as a trigger, or job, etc., that is
-   * part of a workflow.</p><p><h3>See Also:</h3>   <a
+   * <p>A node represents an Glue component (trigger, crawler, or job) on a workflow
+   * graph.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Node">AWS API
    * Reference</a></p>
    */

@@ -46,7 +46,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
@@ -55,7 +55,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
@@ -64,7 +64,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
@@ -73,7 +73,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
@@ -91,7 +91,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -100,7 +100,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
@@ -109,7 +109,7 @@ namespace Model
      * the specified replication instance class.</p> <p>For more information on the
      * settings and capacities for the available replication instance classes, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
+     * Selecting the right DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 

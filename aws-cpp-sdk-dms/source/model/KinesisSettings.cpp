@@ -34,7 +34,9 @@ KinesisSettings::KinesisSettings() :
     m_includeControlDetails(false),
     m_includeControlDetailsHasBeenSet(false),
     m_includeNullAndEmpty(false),
-    m_includeNullAndEmptyHasBeenSet(false)
+    m_includeNullAndEmptyHasBeenSet(false),
+    m_noHexPrefix(false),
+    m_noHexPrefixHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ KinesisSettings::KinesisSettings(JsonView jsonValue) :
     m_includeControlDetails(false),
     m_includeControlDetailsHasBeenSet(false),
     m_includeNullAndEmpty(false),
-    m_includeNullAndEmptyHasBeenSet(false)
+    m_includeNullAndEmptyHasBeenSet(false),
+    m_noHexPrefix(false),
+    m_noHexPrefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +128,13 @@ KinesisSettings& KinesisSettings::operator =(JsonView jsonValue)
     m_includeNullAndEmptyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NoHexPrefix"))
+  {
+    m_noHexPrefix = jsonValue.GetBool("NoHexPrefix");
+
+    m_noHexPrefixHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +192,12 @@ JsonValue KinesisSettings::Jsonize() const
   if(m_includeNullAndEmptyHasBeenSet)
   {
    payload.WithBool("IncludeNullAndEmpty", m_includeNullAndEmpty);
+
+  }
+
+  if(m_noHexPrefixHasBeenSet)
+  {
+   payload.WithBool("NoHexPrefix", m_noHexPrefix);
 
   }
 

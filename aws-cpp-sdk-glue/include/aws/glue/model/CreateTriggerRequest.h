@@ -11,6 +11,7 @@
 #include <aws/glue/model/Predicate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/glue/model/EventBatchingCondition.h>
 #include <aws/glue/model/Action.h>
 #include <utility>
 
@@ -477,6 +478,25 @@ namespace Model
      */
     inline CreateTriggerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    
+    inline const EventBatchingCondition& GetEventBatchingCondition() const{ return m_eventBatchingCondition; }
+
+    
+    inline bool EventBatchingConditionHasBeenSet() const { return m_eventBatchingConditionHasBeenSet; }
+
+    
+    inline void SetEventBatchingCondition(const EventBatchingCondition& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = value; }
+
+    
+    inline void SetEventBatchingCondition(EventBatchingCondition&& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = std::move(value); }
+
+    
+    inline CreateTriggerRequest& WithEventBatchingCondition(const EventBatchingCondition& value) { SetEventBatchingCondition(value); return *this;}
+
+    
+    inline CreateTriggerRequest& WithEventBatchingCondition(EventBatchingCondition&& value) { SetEventBatchingCondition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -505,6 +525,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    EventBatchingCondition m_eventBatchingCondition;
+    bool m_eventBatchingConditionHasBeenSet;
   };
 
 } // namespace Model

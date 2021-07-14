@@ -19,8 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>Associates a set of tags with an AWS DMS resource.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Associates a set of tags with an DMS resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResourceMessage">AWS
    * API Reference</a></p>
    */
@@ -41,58 +40,58 @@ namespace Model
 
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline AddTagsToResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline AddTagsToResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the AWS DMS resource to which tags should be added. The value for
-     * this parameter is an Amazon Resource Name (ARN).</p> <p>For AWS DMS, you can tag
-     * a replication instance, an endpoint, or a replication task.</p>
+     * <p>Identifies the DMS resource to which tags should be added. The value for this
+     * parameter is an Amazon Resource Name (ARN).</p> <p>For DMS, you can tag a
+     * replication instance, an endpoint, or a replication task.</p>
      */
     inline AddTagsToResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

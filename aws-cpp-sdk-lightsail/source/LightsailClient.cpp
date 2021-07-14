@@ -28,6 +28,8 @@
 #include <aws/lightsail/model/AttachStaticIpRequest.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/CopySnapshotRequest.h>
+#include <aws/lightsail/model/CreateBucketRequest.h>
+#include <aws/lightsail/model/CreateBucketAccessKeyRequest.h>
 #include <aws/lightsail/model/CreateCertificateRequest.h>
 #include <aws/lightsail/model/CreateCloudFormationStackRequest.h>
 #include <aws/lightsail/model/CreateContactMethodRequest.h>
@@ -51,6 +53,8 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteAlarmRequest.h>
 #include <aws/lightsail/model/DeleteAutoSnapshotRequest.h>
+#include <aws/lightsail/model/DeleteBucketRequest.h>
+#include <aws/lightsail/model/DeleteBucketAccessKeyRequest.h>
 #include <aws/lightsail/model/DeleteCertificateRequest.h>
 #include <aws/lightsail/model/DeleteContactMethodRequest.h>
 #include <aws/lightsail/model/DeleteContainerImageRequest.h>
@@ -80,6 +84,10 @@
 #include <aws/lightsail/model/GetAlarmsRequest.h>
 #include <aws/lightsail/model/GetAutoSnapshotsRequest.h>
 #include <aws/lightsail/model/GetBlueprintsRequest.h>
+#include <aws/lightsail/model/GetBucketAccessKeysRequest.h>
+#include <aws/lightsail/model/GetBucketBundlesRequest.h>
+#include <aws/lightsail/model/GetBucketMetricDataRequest.h>
+#include <aws/lightsail/model/GetBucketsRequest.h>
 #include <aws/lightsail/model/GetBundlesRequest.h>
 #include <aws/lightsail/model/GetCertificatesRequest.h>
 #include <aws/lightsail/model/GetCloudFormationStackRecordsRequest.h>
@@ -147,6 +155,7 @@
 #include <aws/lightsail/model/ResetDistributionCacheRequest.h>
 #include <aws/lightsail/model/SendContactMethodVerificationRequest.h>
 #include <aws/lightsail/model/SetIpAddressTypeRequest.h>
+#include <aws/lightsail/model/SetResourceAccessForBucketRequest.h>
 #include <aws/lightsail/model/StartInstanceRequest.h>
 #include <aws/lightsail/model/StartRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/StopInstanceRequest.h>
@@ -155,6 +164,8 @@
 #include <aws/lightsail/model/TestAlarmRequest.h>
 #include <aws/lightsail/model/UnpeerVpcRequest.h>
 #include <aws/lightsail/model/UntagResourceRequest.h>
+#include <aws/lightsail/model/UpdateBucketRequest.h>
+#include <aws/lightsail/model/UpdateBucketBundleRequest.h>
 #include <aws/lightsail/model/UpdateContainerServiceRequest.h>
 #include <aws/lightsail/model/UpdateDistributionRequest.h>
 #include <aws/lightsail/model/UpdateDistributionBundleRequest.h>
@@ -426,6 +437,54 @@ void LightsailClient::CopySnapshotAsync(const CopySnapshotRequest& request, cons
 void LightsailClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CopySnapshot(request), context);
+}
+
+CreateBucketOutcome LightsailClient::CreateBucket(const CreateBucketRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBucketOutcomeCallable LightsailClient::CreateBucketCallable(const CreateBucketRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBucket(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateBucketAsync(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBucketAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateBucketAsyncHelper(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBucket(request), context);
+}
+
+CreateBucketAccessKeyOutcome LightsailClient::CreateBucketAccessKey(const CreateBucketAccessKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateBucketAccessKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBucketAccessKeyOutcomeCallable LightsailClient::CreateBucketAccessKeyCallable(const CreateBucketAccessKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBucketAccessKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBucketAccessKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateBucketAccessKeyAsync(const CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBucketAccessKeyAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateBucketAccessKeyAsyncHelper(const CreateBucketAccessKeyRequest& request, const CreateBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBucketAccessKey(request), context);
 }
 
 CreateCertificateOutcome LightsailClient::CreateCertificate(const CreateCertificateRequest& request) const
@@ -978,6 +1037,54 @@ void LightsailClient::DeleteAutoSnapshotAsync(const DeleteAutoSnapshotRequest& r
 void LightsailClient::DeleteAutoSnapshotAsyncHelper(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAutoSnapshot(request), context);
+}
+
+DeleteBucketOutcome LightsailClient::DeleteBucket(const DeleteBucketRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBucketOutcomeCallable LightsailClient::DeleteBucketCallable(const DeleteBucketRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucket(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteBucketAsyncHelper(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucket(request), context);
+}
+
+DeleteBucketAccessKeyOutcome LightsailClient::DeleteBucketAccessKey(const DeleteBucketAccessKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteBucketAccessKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBucketAccessKeyOutcomeCallable LightsailClient::DeleteBucketAccessKeyCallable(const DeleteBucketAccessKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBucketAccessKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBucketAccessKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteBucketAccessKeyAsync(const DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAccessKeyAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteBucketAccessKeyAsyncHelper(const DeleteBucketAccessKeyRequest& request, const DeleteBucketAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBucketAccessKey(request), context);
 }
 
 DeleteCertificateOutcome LightsailClient::DeleteCertificate(const DeleteCertificateRequest& request) const
@@ -1674,6 +1781,102 @@ void LightsailClient::GetBlueprintsAsync(const GetBlueprintsRequest& request, co
 void LightsailClient::GetBlueprintsAsyncHelper(const GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBlueprints(request), context);
+}
+
+GetBucketAccessKeysOutcome LightsailClient::GetBucketAccessKeys(const GetBucketAccessKeysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBucketAccessKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBucketAccessKeysOutcomeCallable LightsailClient::GetBucketAccessKeysCallable(const GetBucketAccessKeysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketAccessKeysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketAccessKeys(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetBucketAccessKeysAsync(const GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketAccessKeysAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetBucketAccessKeysAsyncHelper(const GetBucketAccessKeysRequest& request, const GetBucketAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketAccessKeys(request), context);
+}
+
+GetBucketBundlesOutcome LightsailClient::GetBucketBundles(const GetBucketBundlesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBucketBundlesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBucketBundlesOutcomeCallable LightsailClient::GetBucketBundlesCallable(const GetBucketBundlesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketBundlesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketBundles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetBucketBundlesAsync(const GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketBundlesAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetBucketBundlesAsyncHelper(const GetBucketBundlesRequest& request, const GetBucketBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketBundles(request), context);
+}
+
+GetBucketMetricDataOutcome LightsailClient::GetBucketMetricData(const GetBucketMetricDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBucketMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBucketMetricDataOutcomeCallable LightsailClient::GetBucketMetricDataCallable(const GetBucketMetricDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketMetricDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketMetricData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetBucketMetricDataAsync(const GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketMetricDataAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetBucketMetricDataAsyncHelper(const GetBucketMetricDataRequest& request, const GetBucketMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketMetricData(request), context);
+}
+
+GetBucketsOutcome LightsailClient::GetBuckets(const GetBucketsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBucketsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBucketsOutcomeCallable LightsailClient::GetBucketsCallable(const GetBucketsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBuckets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetBucketsAsync(const GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetBucketsAsyncHelper(const GetBucketsRequest& request, const GetBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBuckets(request), context);
 }
 
 GetBundlesOutcome LightsailClient::GetBundles(const GetBundlesRequest& request) const
@@ -3284,6 +3487,30 @@ void LightsailClient::SetIpAddressTypeAsyncHelper(const SetIpAddressTypeRequest&
   handler(this, request, SetIpAddressType(request), context);
 }
 
+SetResourceAccessForBucketOutcome LightsailClient::SetResourceAccessForBucket(const SetResourceAccessForBucketRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SetResourceAccessForBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SetResourceAccessForBucketOutcomeCallable LightsailClient::SetResourceAccessForBucketCallable(const SetResourceAccessForBucketRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetResourceAccessForBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetResourceAccessForBucket(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::SetResourceAccessForBucketAsync(const SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetResourceAccessForBucketAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::SetResourceAccessForBucketAsyncHelper(const SetResourceAccessForBucketRequest& request, const SetResourceAccessForBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetResourceAccessForBucket(request), context);
+}
+
 StartInstanceOutcome LightsailClient::StartInstance(const StartInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3474,6 +3701,54 @@ void LightsailClient::UntagResourceAsync(const UntagResourceRequest& request, co
 void LightsailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateBucketOutcome LightsailClient::UpdateBucket(const UpdateBucketRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBucketOutcomeCallable LightsailClient::UpdateBucketCallable(const UpdateBucketRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBucketOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBucket(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::UpdateBucketAsync(const UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBucketAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::UpdateBucketAsyncHelper(const UpdateBucketRequest& request, const UpdateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBucket(request), context);
+}
+
+UpdateBucketBundleOutcome LightsailClient::UpdateBucketBundle(const UpdateBucketBundleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateBucketBundleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBucketBundleOutcomeCallable LightsailClient::UpdateBucketBundleCallable(const UpdateBucketBundleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBucketBundleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBucketBundle(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::UpdateBucketBundleAsync(const UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBucketBundleAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::UpdateBucketBundleAsyncHelper(const UpdateBucketBundleRequest& request, const UpdateBucketBundleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBucketBundle(request), context);
 }
 
 UpdateContainerServiceOutcome LightsailClient::UpdateContainerService(const UpdateContainerServiceRequest& request) const

@@ -40,58 +40,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline const Aws::String& GetAfterConnectScript() const{ return m_afterConnectScript; }
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline bool AfterConnectScriptHasBeenSet() const { return m_afterConnectScriptHasBeenSet; }
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline void SetAfterConnectScript(const Aws::String& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = value; }
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline void SetAfterConnectScript(Aws::String&& value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript = std::move(value); }
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline void SetAfterConnectScript(const char* value) { m_afterConnectScriptHasBeenSet = true; m_afterConnectScript.assign(value); }
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline MySQLSettings& WithAfterConnectScript(const Aws::String& value) { SetAfterConnectScript(value); return *this;}
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline MySQLSettings& WithAfterConnectScript(Aws::String&& value) { SetAfterConnectScript(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a script to run immediately after AWS DMS connects to the endpoint.
-     * The migration task continues running regardless if the SQL statement succeeds or
-     * fails.</p>
+     * <p>Specifies a script to run immediately after DMS connects to the endpoint. The
+     * migration task continues running regardless if the SQL statement succeeds or
+     * fails.</p> <p>For this parameter, provide the code of the script itself, not the
+     * name of a file containing the script.</p>
      */
     inline MySQLSettings& WithAfterConnectScript(const char* value) { SetAfterConnectScript(value); return *this;}
 
@@ -130,42 +138,90 @@ namespace Model
 
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline MySQLSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline MySQLSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>Database name for the endpoint.</p>
+     * <p>Database name for the endpoint. For a MySQL source or target endpoint, don't
+     * explicitly specify the database using the <code>DatabaseName</code> request
+     * parameter on either the <code>CreateEndpoint</code> or
+     * <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when
+     * you create or modify a MySQL endpoint replicates all the task tables to this
+     * single database. For MySQL endpoints, you specify the database only when you
+     * specify the schema in the table-mapping rules of the DMS task.</p>
      */
     inline MySQLSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
@@ -173,32 +229,28 @@ namespace Model
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
      * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, AWS DMS checks for changes in the binary logs every five
-     * seconds.</p>
+     * the example, DMS checks for changes in the binary logs every five seconds.</p>
      */
     inline int GetEventsPollInterval() const{ return m_eventsPollInterval; }
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
      * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, AWS DMS checks for changes in the binary logs every five
-     * seconds.</p>
+     * the example, DMS checks for changes in the binary logs every five seconds.</p>
      */
     inline bool EventsPollIntervalHasBeenSet() const { return m_eventsPollIntervalHasBeenSet; }
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
      * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, AWS DMS checks for changes in the binary logs every five
-     * seconds.</p>
+     * the example, DMS checks for changes in the binary logs every five seconds.</p>
      */
     inline void SetEventsPollInterval(int value) { m_eventsPollIntervalHasBeenSet = true; m_eventsPollInterval = value; }
 
     /**
      * <p>Specifies how often to check the binary log for new changes/events when the
      * database is idle.</p> <p>Example: <code>eventsPollInterval=5;</code> </p> <p>In
-     * the example, AWS DMS checks for changes in the binary logs every five
-     * seconds.</p>
+     * the example, DMS checks for changes in the binary logs every five seconds.</p>
      */
     inline MySQLSettings& WithEventsPollInterval(int value) { SetEventsPollInterval(value); return *this;}
 
@@ -514,154 +566,162 @@ namespace Model
 
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline MySQLSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline MySQLSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the MySQL
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the MySQL endpoint.</p>  <p>You can specify one of two sets of values for
+     * these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline MySQLSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
 

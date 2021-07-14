@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>Describes an identifiable significant activity that affects a replication
    * instance or task. This object can provide the message, the available event
-   * categories, the date and source of the event, and the AWS DMS resource
+   * categories, the date and source of the event, and the DMS resource
    * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Event">AWS API
    * Reference</a></p>
@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
     inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | replication-task</p>
      */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}

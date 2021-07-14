@@ -127,57 +127,57 @@ namespace Model
 
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline const Aws::String& GetControlTablesFileGroup() const{ return m_controlTablesFileGroup; }
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline bool ControlTablesFileGroupHasBeenSet() const { return m_controlTablesFileGroupHasBeenSet; }
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline void SetControlTablesFileGroup(const Aws::String& value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup = value; }
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline void SetControlTablesFileGroup(Aws::String&& value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup = std::move(value); }
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline void SetControlTablesFileGroup(const char* value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup.assign(value); }
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline MicrosoftSQLServerSettings& WithControlTablesFileGroup(const Aws::String& value) { SetControlTablesFileGroup(value); return *this;}
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline MicrosoftSQLServerSettings& WithControlTablesFileGroup(Aws::String&& value) { SetControlTablesFileGroup(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a file group for the AWS DMS internal tables. When the replication
-     * task starts, all the internal AWS DMS control tables (awsdms_ apply_exception,
+     * <p>Specifies a file group for the DMS internal tables. When the replication task
+     * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
     inline MicrosoftSQLServerSettings& WithControlTablesFileGroup(const char* value) { SetControlTablesFileGroup(value); return *this;}
@@ -258,7 +258,7 @@ namespace Model
 
 
     /**
-     * <p>When this attribute is set to <code>Y</code>, AWS DMS only reads changes from
+     * <p>When this attribute is set to <code>Y</code>, DMS only reads changes from
      * transaction log backups and doesn't read from the active transaction log file
      * during ongoing replication. Setting this parameter to <code>Y</code> enables you
      * to control active transaction log file growth during full load and ongoing
@@ -268,7 +268,7 @@ namespace Model
     inline bool GetReadBackupOnly() const{ return m_readBackupOnly; }
 
     /**
-     * <p>When this attribute is set to <code>Y</code>, AWS DMS only reads changes from
+     * <p>When this attribute is set to <code>Y</code>, DMS only reads changes from
      * transaction log backups and doesn't read from the active transaction log file
      * during ongoing replication. Setting this parameter to <code>Y</code> enables you
      * to control active transaction log file growth during full load and ongoing
@@ -278,7 +278,7 @@ namespace Model
     inline bool ReadBackupOnlyHasBeenSet() const { return m_readBackupOnlyHasBeenSet; }
 
     /**
-     * <p>When this attribute is set to <code>Y</code>, AWS DMS only reads changes from
+     * <p>When this attribute is set to <code>Y</code>, DMS only reads changes from
      * transaction log backups and doesn't read from the active transaction log file
      * during ongoing replication. Setting this parameter to <code>Y</code> enables you
      * to control active transaction log file growth during full load and ongoing
@@ -288,7 +288,7 @@ namespace Model
     inline void SetReadBackupOnly(bool value) { m_readBackupOnlyHasBeenSet = true; m_readBackupOnly = value; }
 
     /**
-     * <p>When this attribute is set to <code>Y</code>, AWS DMS only reads changes from
+     * <p>When this attribute is set to <code>Y</code>, DMS only reads changes from
      * transaction log backups and doesn't read from the active transaction log file
      * during ongoing replication. Setting this parameter to <code>Y</code> enables you
      * to control active transaction log file growth during full load and ongoing
@@ -300,109 +300,109 @@ namespace Model
 
     /**
      * <p>Use this attribute to minimize the need to access the backup log and enable
-     * AWS DMS to prevent truncation using one of the following two methods.</p> <p>
+     * DMS to prevent truncation using one of the following two methods.</p> <p>
      * <i>Start transactions in the database:</i> This is the default method. When this
-     * method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in
-     * the database. As long as such a transaction is open, changes that appear after
-     * the transaction started aren't truncated. If you need Microsoft Replication to
-     * be enabled in your database, then you must choose this method.</p> <p>
+     * method is used, DMS prevents TLOG truncation by mimicking a transaction in the
+     * database. As long as such a transaction is open, changes that appear after the
+     * transaction started aren't truncated. If you need Microsoft Replication to be
+     * enabled in your database, then you must choose this method.</p> <p>
      * <i>Exclusively use sp_repldone within a single task</i>: When this method is
-     * used, AWS DMS reads the changes and then uses sp_repldone to mark the TLOG
+     * used, DMS reads the changes and then uses sp_repldone to mark the TLOG
      * transactions as ready for truncation. Although this method doesn't involve any
      * transactional activities, it can only be used when Microsoft Replication isn't
-     * running. Also, when using this method, only one AWS DMS task can access the
-     * database at any given time. Therefore, if you need to run parallel AWS DMS tasks
-     * against the same database, use the default method.</p>
+     * running. Also, when using this method, only one DMS task can access the database
+     * at any given time. Therefore, if you need to run parallel DMS tasks against the
+     * same database, use the default method.</p>
      */
     inline const SafeguardPolicy& GetSafeguardPolicy() const{ return m_safeguardPolicy; }
 
     /**
      * <p>Use this attribute to minimize the need to access the backup log and enable
-     * AWS DMS to prevent truncation using one of the following two methods.</p> <p>
+     * DMS to prevent truncation using one of the following two methods.</p> <p>
      * <i>Start transactions in the database:</i> This is the default method. When this
-     * method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in
-     * the database. As long as such a transaction is open, changes that appear after
-     * the transaction started aren't truncated. If you need Microsoft Replication to
-     * be enabled in your database, then you must choose this method.</p> <p>
+     * method is used, DMS prevents TLOG truncation by mimicking a transaction in the
+     * database. As long as such a transaction is open, changes that appear after the
+     * transaction started aren't truncated. If you need Microsoft Replication to be
+     * enabled in your database, then you must choose this method.</p> <p>
      * <i>Exclusively use sp_repldone within a single task</i>: When this method is
-     * used, AWS DMS reads the changes and then uses sp_repldone to mark the TLOG
+     * used, DMS reads the changes and then uses sp_repldone to mark the TLOG
      * transactions as ready for truncation. Although this method doesn't involve any
      * transactional activities, it can only be used when Microsoft Replication isn't
-     * running. Also, when using this method, only one AWS DMS task can access the
-     * database at any given time. Therefore, if you need to run parallel AWS DMS tasks
-     * against the same database, use the default method.</p>
+     * running. Also, when using this method, only one DMS task can access the database
+     * at any given time. Therefore, if you need to run parallel DMS tasks against the
+     * same database, use the default method.</p>
      */
     inline bool SafeguardPolicyHasBeenSet() const { return m_safeguardPolicyHasBeenSet; }
 
     /**
      * <p>Use this attribute to minimize the need to access the backup log and enable
-     * AWS DMS to prevent truncation using one of the following two methods.</p> <p>
+     * DMS to prevent truncation using one of the following two methods.</p> <p>
      * <i>Start transactions in the database:</i> This is the default method. When this
-     * method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in
-     * the database. As long as such a transaction is open, changes that appear after
-     * the transaction started aren't truncated. If you need Microsoft Replication to
-     * be enabled in your database, then you must choose this method.</p> <p>
+     * method is used, DMS prevents TLOG truncation by mimicking a transaction in the
+     * database. As long as such a transaction is open, changes that appear after the
+     * transaction started aren't truncated. If you need Microsoft Replication to be
+     * enabled in your database, then you must choose this method.</p> <p>
      * <i>Exclusively use sp_repldone within a single task</i>: When this method is
-     * used, AWS DMS reads the changes and then uses sp_repldone to mark the TLOG
+     * used, DMS reads the changes and then uses sp_repldone to mark the TLOG
      * transactions as ready for truncation. Although this method doesn't involve any
      * transactional activities, it can only be used when Microsoft Replication isn't
-     * running. Also, when using this method, only one AWS DMS task can access the
-     * database at any given time. Therefore, if you need to run parallel AWS DMS tasks
-     * against the same database, use the default method.</p>
+     * running. Also, when using this method, only one DMS task can access the database
+     * at any given time. Therefore, if you need to run parallel DMS tasks against the
+     * same database, use the default method.</p>
      */
     inline void SetSafeguardPolicy(const SafeguardPolicy& value) { m_safeguardPolicyHasBeenSet = true; m_safeguardPolicy = value; }
 
     /**
      * <p>Use this attribute to minimize the need to access the backup log and enable
-     * AWS DMS to prevent truncation using one of the following two methods.</p> <p>
+     * DMS to prevent truncation using one of the following two methods.</p> <p>
      * <i>Start transactions in the database:</i> This is the default method. When this
-     * method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in
-     * the database. As long as such a transaction is open, changes that appear after
-     * the transaction started aren't truncated. If you need Microsoft Replication to
-     * be enabled in your database, then you must choose this method.</p> <p>
+     * method is used, DMS prevents TLOG truncation by mimicking a transaction in the
+     * database. As long as such a transaction is open, changes that appear after the
+     * transaction started aren't truncated. If you need Microsoft Replication to be
+     * enabled in your database, then you must choose this method.</p> <p>
      * <i>Exclusively use sp_repldone within a single task</i>: When this method is
-     * used, AWS DMS reads the changes and then uses sp_repldone to mark the TLOG
+     * used, DMS reads the changes and then uses sp_repldone to mark the TLOG
      * transactions as ready for truncation. Although this method doesn't involve any
      * transactional activities, it can only be used when Microsoft Replication isn't
-     * running. Also, when using this method, only one AWS DMS task can access the
-     * database at any given time. Therefore, if you need to run parallel AWS DMS tasks
-     * against the same database, use the default method.</p>
+     * running. Also, when using this method, only one DMS task can access the database
+     * at any given time. Therefore, if you need to run parallel DMS tasks against the
+     * same database, use the default method.</p>
      */
     inline void SetSafeguardPolicy(SafeguardPolicy&& value) { m_safeguardPolicyHasBeenSet = true; m_safeguardPolicy = std::move(value); }
 
     /**
      * <p>Use this attribute to minimize the need to access the backup log and enable
-     * AWS DMS to prevent truncation using one of the following two methods.</p> <p>
+     * DMS to prevent truncation using one of the following two methods.</p> <p>
      * <i>Start transactions in the database:</i> This is the default method. When this
-     * method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in
-     * the database. As long as such a transaction is open, changes that appear after
-     * the transaction started aren't truncated. If you need Microsoft Replication to
-     * be enabled in your database, then you must choose this method.</p> <p>
+     * method is used, DMS prevents TLOG truncation by mimicking a transaction in the
+     * database. As long as such a transaction is open, changes that appear after the
+     * transaction started aren't truncated. If you need Microsoft Replication to be
+     * enabled in your database, then you must choose this method.</p> <p>
      * <i>Exclusively use sp_repldone within a single task</i>: When this method is
-     * used, AWS DMS reads the changes and then uses sp_repldone to mark the TLOG
+     * used, DMS reads the changes and then uses sp_repldone to mark the TLOG
      * transactions as ready for truncation. Although this method doesn't involve any
      * transactional activities, it can only be used when Microsoft Replication isn't
-     * running. Also, when using this method, only one AWS DMS task can access the
-     * database at any given time. Therefore, if you need to run parallel AWS DMS tasks
-     * against the same database, use the default method.</p>
+     * running. Also, when using this method, only one DMS task can access the database
+     * at any given time. Therefore, if you need to run parallel DMS tasks against the
+     * same database, use the default method.</p>
      */
     inline MicrosoftSQLServerSettings& WithSafeguardPolicy(const SafeguardPolicy& value) { SetSafeguardPolicy(value); return *this;}
 
     /**
      * <p>Use this attribute to minimize the need to access the backup log and enable
-     * AWS DMS to prevent truncation using one of the following two methods.</p> <p>
+     * DMS to prevent truncation using one of the following two methods.</p> <p>
      * <i>Start transactions in the database:</i> This is the default method. When this
-     * method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in
-     * the database. As long as such a transaction is open, changes that appear after
-     * the transaction started aren't truncated. If you need Microsoft Replication to
-     * be enabled in your database, then you must choose this method.</p> <p>
+     * method is used, DMS prevents TLOG truncation by mimicking a transaction in the
+     * database. As long as such a transaction is open, changes that appear after the
+     * transaction started aren't truncated. If you need Microsoft Replication to be
+     * enabled in your database, then you must choose this method.</p> <p>
      * <i>Exclusively use sp_repldone within a single task</i>: When this method is
-     * used, AWS DMS reads the changes and then uses sp_repldone to mark the TLOG
+     * used, DMS reads the changes and then uses sp_repldone to mark the TLOG
      * transactions as ready for truncation. Although this method doesn't involve any
      * transactional activities, it can only be used when Microsoft Replication isn't
-     * running. Also, when using this method, only one AWS DMS task can access the
-     * database at any given time. Therefore, if you need to run parallel AWS DMS tasks
-     * against the same database, use the default method.</p>
+     * running. Also, when using this method, only one DMS task can access the database
+     * at any given time. Therefore, if you need to run parallel DMS tasks against the
+     * same database, use the default method.</p>
      */
     inline MicrosoftSQLServerSettings& WithSafeguardPolicy(SafeguardPolicy&& value) { SetSafeguardPolicy(std::move(value)); return *this;}
 
@@ -544,154 +544,162 @@ namespace Model
 
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
-     * the trusted entity and grants the required permissions to access the value in
-     * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
-     * value of the AWS Secrets Manager secret that allows access to the SQL Server
-     * endpoint.</p>  <p>You can specify one of two sets of values for these
-     * permissions. You can specify the values for this setting and
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+     * trusted entity and grants the required permissions to access the value in
+     * <code>SecretsManagerSecret</code>. The role must allow the
+     * <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the
+     * value of the Amazon Web Services Secrets Manager secret that allows access to
+     * the SQL Server endpoint.</p>  <p>You can specify one of two sets of values
+     * for these permissions. You can specify the values for this setting and
      * <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for
      * <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and
      * <code>Port</code>. You can't specify both. For more information on creating this
      * <code>SecretsManagerSecret</code> and the
      * <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
      * required to access it, see <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-     * secrets to access AWS Database Migration Service resources</a> in the <i>AWS
-     * Database Migration Service User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+     * secrets to access Database Migration Service resources</a> in the <i>Database
+     * Migration Service User Guide</i>.</p> 
      */
     inline MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
 

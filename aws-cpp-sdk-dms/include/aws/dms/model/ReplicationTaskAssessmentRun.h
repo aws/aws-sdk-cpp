@@ -435,139 +435,147 @@ namespace Model
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the service role used to start the assessment run using the
-     * <code>StartReplicationTaskAssessmentRun</code> operation.</p>
+     * <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow
+     * the <code>iam:PassRole</code> action.</p>
      */
     inline ReplicationTaskAssessmentRun& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline const Aws::String& GetResultLocationBucket() const{ return m_resultLocationBucket; }
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline bool ResultLocationBucketHasBeenSet() const { return m_resultLocationBucketHasBeenSet; }
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline void SetResultLocationBucket(const Aws::String& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = value; }
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline void SetResultLocationBucket(Aws::String&& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = std::move(value); }
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline void SetResultLocationBucket(const char* value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket.assign(value); }
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultLocationBucket(const Aws::String& value) { SetResultLocationBucket(value); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultLocationBucket(Aws::String&& value) { SetResultLocationBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon S3 bucket where AWS DMS stores the results of this assessment run.</p>
+     * <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultLocationBucket(const char* value) { SetResultLocationBucket(value); return *this;}
 
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline const Aws::String& GetResultLocationFolder() const{ return m_resultLocationFolder; }
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline bool ResultLocationFolderHasBeenSet() const { return m_resultLocationFolderHasBeenSet; }
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline void SetResultLocationFolder(const Aws::String& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = value; }
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline void SetResultLocationFolder(Aws::String&& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = std::move(value); }
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline void SetResultLocationFolder(const char* value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder.assign(value); }
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultLocationFolder(const Aws::String& value) { SetResultLocationFolder(value); return *this;}
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultLocationFolder(Aws::String&& value) { SetResultLocationFolder(std::move(value)); return *this;}
 
     /**
-     * <p>Folder in an Amazon S3 bucket where AWS DMS stores the results of this
-     * assessment run.</p>
+     * <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+     * run.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultLocationFolder(const char* value) { SetResultLocationFolder(value); return *this;}
 
@@ -614,50 +622,42 @@ namespace Model
 
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline const Aws::String& GetResultKmsKeyArn() const{ return m_resultKmsKeyArn; }
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline bool ResultKmsKeyArnHasBeenSet() const { return m_resultKmsKeyArnHasBeenSet; }
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline void SetResultKmsKeyArn(const Aws::String& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = value; }
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline void SetResultKmsKeyArn(Aws::String&& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = std::move(value); }
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline void SetResultKmsKeyArn(const char* value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn.assign(value); }
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultKmsKeyArn(const Aws::String& value) { SetResultKmsKeyArn(value); return *this;}
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultKmsKeyArn(Aws::String&& value) { SetResultKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the AWS KMS encryption key used to encrypt the assessment run
-     * results.</p>
+     * <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
      */
     inline ReplicationTaskAssessmentRun& WithResultKmsKeyArn(const char* value) { SetResultKmsKeyArn(value); return *this;}
 
