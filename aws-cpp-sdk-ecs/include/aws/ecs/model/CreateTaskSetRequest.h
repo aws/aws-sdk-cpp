@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline CreateTaskSetRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline CreateTaskSetRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline CreateTaskSetRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
@@ -474,13 +474,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
@@ -498,13 +497,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
@@ -522,13 +520,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
@@ -546,13 +543,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
@@ -570,13 +566,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
@@ -594,13 +589,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
@@ -618,13 +612,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
@@ -642,13 +635,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -811,9 +803,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -832,9 +824,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -853,9 +845,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -874,9 +866,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -895,9 +887,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -916,9 +908,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -937,9 +929,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -958,9 +950,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

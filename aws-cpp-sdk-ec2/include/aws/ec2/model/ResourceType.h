@@ -32,6 +32,7 @@ namespace Model
     import_image_task,
     import_snapshot_task,
     instance,
+    instance_event_window,
     internet_gateway,
     key_pair,
     launch_template,

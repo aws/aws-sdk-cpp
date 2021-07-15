@@ -173,7 +173,7 @@ AssociateAssetsOutcome IoTSiteWiseClient::AssociateAssets(const AssociateAssetsR
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("AssociateAssets", "Invalid DNS host: " << uri.GetAuthority());
@@ -359,7 +359,7 @@ CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& requ
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("CreateAsset", "Invalid DNS host: " << uri.GetAuthority());
@@ -393,7 +393,7 @@ CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetMod
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("CreateAssetModel", "Invalid DNS host: " << uri.GetAuthority());
@@ -461,7 +461,7 @@ CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("CreateGateway", "Invalid DNS host: " << uri.GetAuthority());
@@ -608,7 +608,7 @@ DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& requ
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DeleteAsset", "Invalid DNS host: " << uri.GetAuthority());
@@ -648,7 +648,7 @@ DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetMod
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DeleteAssetModel", "Invalid DNS host: " << uri.GetAuthority());
@@ -728,7 +728,7 @@ DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DeleteGateway", "Invalid DNS host: " << uri.GetAuthority());
@@ -888,7 +888,7 @@ DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DescribeAsset", "Invalid DNS host: " << uri.GetAuthority());
@@ -928,7 +928,7 @@ DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAs
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DescribeAssetModel", "Invalid DNS host: " << uri.GetAuthority());
@@ -973,7 +973,7 @@ DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const Desc
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DescribeAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
@@ -1048,6 +1048,15 @@ void IoTSiteWiseClient::DescribeDashboardAsyncHelper(const DescribeDashboardRequ
 DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(const DescribeDefaultEncryptionConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeDefaultEncryptionConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeDefaultEncryptionConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/configuration/account/encryption");
   return DescribeDefaultEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -1080,7 +1089,7 @@ DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayR
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DescribeGateway", "Invalid DNS host: " << uri.GetAuthority());
@@ -1125,7 +1134,7 @@ DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGateway
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DescribeGatewayCapabilityConfiguration", "Invalid DNS host: " << uri.GetAuthority());
@@ -1162,7 +1171,7 @@ DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const De
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DescribeLoggingOptions", "Invalid DNS host: " << uri.GetAuthority());
@@ -1274,6 +1283,15 @@ void IoTSiteWiseClient::DescribeProjectAsyncHelper(const DescribeProjectRequest&
 DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(const DescribeStorageConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeStorageConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeStorageConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/configuration/account/storage");
   return DescribeStorageConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -1306,7 +1324,7 @@ DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const Disassocia
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("DisassociateAssets", "Invalid DNS host: " << uri.GetAuthority());
@@ -1557,7 +1575,7 @@ ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsR
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("ListAssetModels", "Invalid DNS host: " << uri.GetAuthority());
@@ -1601,7 +1619,7 @@ ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const Li
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Invalid DNS host: " << uri.GetAuthority());
@@ -1637,7 +1655,7 @@ ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("ListAssets", "Invalid DNS host: " << uri.GetAuthority());
@@ -1676,7 +1694,7 @@ ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAs
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("ListAssociatedAssets", "Invalid DNS host: " << uri.GetAuthority());
@@ -1751,7 +1769,7 @@ ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& r
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("ListGateways", "Invalid DNS host: " << uri.GetAuthority());
@@ -1902,6 +1920,15 @@ ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTags
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListTagsForResource", "Invalid DNS host: " << uri.GetAuthority());
+      return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
@@ -1927,6 +1954,15 @@ void IoTSiteWiseClient::ListTagsForResourceAsyncHelper(const ListTagsForResource
 PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(const PutDefaultEncryptionConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutDefaultEncryptionConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return PutDefaultEncryptionConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/configuration/account/encryption");
   return PutDefaultEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -1954,7 +1990,7 @@ PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOp
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("PutLoggingOptions", "Invalid DNS host: " << uri.GetAuthority());
@@ -1986,6 +2022,15 @@ void IoTSiteWiseClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsRequ
 PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const PutStorageConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutStorageConfiguration", "Invalid DNS host: " << uri.GetAuthority());
+      return PutStorageConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/configuration/account/storage");
   return PutStorageConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -2016,6 +2061,15 @@ TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& requ
     return TagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("TagResource", "Invalid DNS host: " << uri.GetAuthority());
+      return TagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/tags");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -2051,6 +2105,15 @@ UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest
     return UntagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UntagResource", "Invalid DNS host: " << uri.GetAuthority());
+      return UntagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
   uri.AddPathSegments("/tags");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
@@ -2123,7 +2186,7 @@ UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& requ
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("UpdateAsset", "Invalid DNS host: " << uri.GetAuthority());
@@ -2163,7 +2226,7 @@ UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetMod
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("UpdateAssetModel", "Invalid DNS host: " << uri.GetAuthority());
@@ -2208,7 +2271,7 @@ UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAs
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("model." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("UpdateAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
@@ -2290,7 +2353,7 @@ UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("UpdateGateway", "Invalid DNS host: " << uri.GetAuthority());
@@ -2330,7 +2393,7 @@ UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapa
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {
-    uri.SetAuthority("edge." + uri.GetAuthority());
+    uri.SetAuthority("api." + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("UpdateGatewayCapabilityConfiguration", "Invalid DNS host: " << uri.GetAuthority());

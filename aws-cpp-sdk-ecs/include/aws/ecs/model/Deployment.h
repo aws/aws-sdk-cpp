@@ -495,9 +495,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
@@ -506,9 +506,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
@@ -517,9 +517,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
@@ -528,9 +528,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
@@ -539,9 +539,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
@@ -550,9 +550,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Deployment& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
@@ -561,9 +561,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Deployment& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
@@ -572,9 +572,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Deployment& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

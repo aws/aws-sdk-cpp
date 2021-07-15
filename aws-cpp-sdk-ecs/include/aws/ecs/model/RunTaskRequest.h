@@ -49,6 +49,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
@@ -58,6 +60,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
@@ -67,6 +71,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
@@ -76,6 +82,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
@@ -85,6 +93,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline RunTaskRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
@@ -94,6 +104,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline RunTaskRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
@@ -103,6 +115,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline RunTaskRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
@@ -112,6 +126,8 @@ namespace Model
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <p>When you use cluster auto scaling, you must specify
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
      */
     inline RunTaskRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -318,19 +334,20 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A task can use
-     * either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A task can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
+     * use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
+     * and not <code>launchType</code>. </p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
@@ -339,19 +356,20 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A task can use
-     * either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A task can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
+     * use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
+     * and not <code>launchType</code>. </p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
@@ -360,19 +378,20 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A task can use
-     * either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A task can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
+     * use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
+     * and not <code>launchType</code>. </p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
@@ -381,19 +400,20 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A task can use
-     * either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A task can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
+     * use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
+     * and not <code>launchType</code>. </p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
@@ -402,19 +422,20 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A task can use
-     * either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A task can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
+     * use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
+     * and not <code>launchType</code>. </p>
      */
     inline RunTaskRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
@@ -423,19 +444,20 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A task can use
-     * either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A task can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
+     * use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
+     * and not <code>launchType</code>. </p>
      */
     inline RunTaskRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
@@ -697,9 +719,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
@@ -708,9 +730,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
@@ -719,9 +741,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
@@ -730,9 +752,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
@@ -741,9 +763,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
@@ -752,9 +774,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
@@ -763,9 +785,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
@@ -774,9 +796,9 @@ namespace Model
      * specified for tasks using the Fargate launch type. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -1002,9 +1024,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1022,9 +1044,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1042,9 +1064,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1062,9 +1084,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1082,9 +1104,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline RunTaskRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1102,9 +1124,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline RunTaskRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1122,9 +1144,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline RunTaskRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1142,9 +1164,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline RunTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

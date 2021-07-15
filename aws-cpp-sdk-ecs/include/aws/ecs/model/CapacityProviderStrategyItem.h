@@ -33,11 +33,11 @@ namespace Model
    * to associate a capacity provider with a cluster.</p> <p>If specifying a capacity
    * provider that uses an Auto Scaling group, the capacity provider must already be
    * created. New Auto Scaling group capacity providers can be created with the
-   * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-   * capacity provider, specify either the <code>FARGATE</code> or
-   * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-   * are available to all accounts and only need to be associated with a cluster to
-   * be used in a capacity provider strategy.</p><p><h3>See Also:</h3>   <a
+   * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+   * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+   * capacity providers. The Fargate capacity providers are available to all accounts
+   * and only need to be associated with a cluster to be used in a capacity provider
+   * strategy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProviderStrategyItem">AWS
    * API Reference</a></p>
    */

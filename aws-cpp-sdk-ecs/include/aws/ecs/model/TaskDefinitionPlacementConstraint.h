@@ -30,7 +30,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
    * placement constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p>  <p>Task placement constraints are not supported for tasks
-   * run on AWS Fargate.</p> <p><h3>See Also:</h3>   <a
+   * run on Fargate.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinitionPlacementConstraint">AWS
    * API Reference</a></p>
    */

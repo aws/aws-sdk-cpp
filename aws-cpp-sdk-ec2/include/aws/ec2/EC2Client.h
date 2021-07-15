@@ -28,6 +28,7 @@
 #include <aws/ec2/model/AssociateClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/AssociateEnclaveCertificateIamRoleResponse.h>
 #include <aws/ec2/model/AssociateIamInstanceProfileResponse.h>
+#include <aws/ec2/model/AssociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayMulticastDomainResponse.h>
@@ -65,6 +66,7 @@
 #include <aws/ec2/model/CreateFlowLogsResponse.h>
 #include <aws/ec2/model/CreateFpgaImageResponse.h>
 #include <aws/ec2/model/CreateImageResponse.h>
+#include <aws/ec2/model/CreateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
 #include <aws/ec2/model/CreateKeyPairResponse.h>
@@ -118,6 +120,7 @@
 #include <aws/ec2/model/DeleteFleetsResponse.h>
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteFpgaImageResponse.h>
+#include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteResponse.h>
@@ -192,6 +195,7 @@
 #include <aws/ec2/model/DescribeInstanceAttributeResponse.h>
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsResponse.h>
 #include <aws/ec2/model/DescribeInstanceEventNotificationAttributesResponse.h>
+#include <aws/ec2/model/DescribeInstanceEventWindowsResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypesResponse.h>
@@ -285,6 +289,7 @@
 #include <aws/ec2/model/DisassociateClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/DisassociateEnclaveCertificateIamRoleResponse.h>
 #include <aws/ec2/model/DisassociateIamInstanceProfileResponse.h>
+#include <aws/ec2/model/DisassociateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableResponse.h>
@@ -342,6 +347,7 @@
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesResponse.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyInstanceEventStartTimeResponse.h>
+#include <aws/ec2/model/ModifyInstanceEventWindowResponse.h>
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
@@ -475,6 +481,7 @@ namespace Model
         class AssociateDhcpOptionsRequest;
         class AssociateEnclaveCertificateIamRoleRequest;
         class AssociateIamInstanceProfileRequest;
+        class AssociateInstanceEventWindowRequest;
         class AssociateRouteTableRequest;
         class AssociateSubnetCidrBlockRequest;
         class AssociateTransitGatewayMulticastDomainRequest;
@@ -515,6 +522,7 @@ namespace Model
         class CreateFlowLogsRequest;
         class CreateFpgaImageRequest;
         class CreateImageRequest;
+        class CreateInstanceEventWindowRequest;
         class CreateInstanceExportTaskRequest;
         class CreateInternetGatewayRequest;
         class CreateKeyPairRequest;
@@ -573,6 +581,7 @@ namespace Model
         class DeleteFleetsRequest;
         class DeleteFlowLogsRequest;
         class DeleteFpgaImageRequest;
+        class DeleteInstanceEventWindowRequest;
         class DeleteInternetGatewayRequest;
         class DeleteKeyPairRequest;
         class DeleteLaunchTemplateRequest;
@@ -666,6 +675,7 @@ namespace Model
         class DescribeInstanceAttributeRequest;
         class DescribeInstanceCreditSpecificationsRequest;
         class DescribeInstanceEventNotificationAttributesRequest;
+        class DescribeInstanceEventWindowsRequest;
         class DescribeInstanceStatusRequest;
         class DescribeInstanceTypeOfferingsRequest;
         class DescribeInstanceTypesRequest;
@@ -764,6 +774,7 @@ namespace Model
         class DisassociateClientVpnTargetNetworkRequest;
         class DisassociateEnclaveCertificateIamRoleRequest;
         class DisassociateIamInstanceProfileRequest;
+        class DisassociateInstanceEventWindowRequest;
         class DisassociateRouteTableRequest;
         class DisassociateSubnetCidrBlockRequest;
         class DisassociateTransitGatewayMulticastDomainRequest;
@@ -828,6 +839,7 @@ namespace Model
         class ModifyInstanceCapacityReservationAttributesRequest;
         class ModifyInstanceCreditSpecificationRequest;
         class ModifyInstanceEventStartTimeRequest;
+        class ModifyInstanceEventWindowRequest;
         class ModifyInstanceMetadataOptionsRequest;
         class ModifyInstancePlacementRequest;
         class ModifyLaunchTemplateRequest;
@@ -932,6 +944,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> AssociateDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<AssociateEnclaveCertificateIamRoleResponse, EC2Error> AssociateEnclaveCertificateIamRoleOutcome;
         typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, EC2Error> AssociateIamInstanceProfileOutcome;
+        typedef Aws::Utils::Outcome<AssociateInstanceEventWindowResponse, EC2Error> AssociateInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, EC2Error> AssociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, EC2Error> AssociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AssociateTransitGatewayMulticastDomainResponse, EC2Error> AssociateTransitGatewayMulticastDomainOutcome;
@@ -972,6 +985,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateFlowLogsResponse, EC2Error> CreateFlowLogsOutcome;
         typedef Aws::Utils::Outcome<CreateFpgaImageResponse, EC2Error> CreateFpgaImageOutcome;
         typedef Aws::Utils::Outcome<CreateImageResponse, EC2Error> CreateImageOutcome;
+        typedef Aws::Utils::Outcome<CreateInstanceEventWindowResponse, EC2Error> CreateInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, EC2Error> CreateInstanceExportTaskOutcome;
         typedef Aws::Utils::Outcome<CreateInternetGatewayResponse, EC2Error> CreateInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateKeyPairResponse, EC2Error> CreateKeyPairOutcome;
@@ -1030,6 +1044,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteFleetsResponse, EC2Error> DeleteFleetsOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowLogsResponse, EC2Error> DeleteFlowLogsOutcome;
         typedef Aws::Utils::Outcome<DeleteFpgaImageResponse, EC2Error> DeleteFpgaImageOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstanceEventWindowResponse, EC2Error> DeleteInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteInternetGatewayOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteKeyPairOutcome;
         typedef Aws::Utils::Outcome<DeleteLaunchTemplateResponse, EC2Error> DeleteLaunchTemplateOutcome;
@@ -1123,6 +1138,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResponse, EC2Error> DescribeInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceCreditSpecificationsResponse, EC2Error> DescribeInstanceCreditSpecificationsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceEventNotificationAttributesResponse, EC2Error> DescribeInstanceEventNotificationAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceEventWindowsResponse, EC2Error> DescribeInstanceEventWindowsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, EC2Error> DescribeInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceTypeOfferingsResponse, EC2Error> DescribeInstanceTypeOfferingsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceTypesResponse, EC2Error> DescribeInstanceTypesOutcome;
@@ -1221,6 +1237,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateClientVpnTargetNetworkResponse, EC2Error> DisassociateClientVpnTargetNetworkOutcome;
         typedef Aws::Utils::Outcome<DisassociateEnclaveCertificateIamRoleResponse, EC2Error> DisassociateEnclaveCertificateIamRoleOutcome;
         typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, EC2Error> DisassociateIamInstanceProfileOutcome;
+        typedef Aws::Utils::Outcome<DisassociateInstanceEventWindowResponse, EC2Error> DisassociateInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, EC2Error> DisassociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<DisassociateTransitGatewayMulticastDomainResponse, EC2Error> DisassociateTransitGatewayMulticastDomainOutcome;
@@ -1285,6 +1302,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyInstanceCapacityReservationAttributesResponse, EC2Error> ModifyInstanceCapacityReservationAttributesOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceCreditSpecificationResponse, EC2Error> ModifyInstanceCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceEventStartTimeResponse, EC2Error> ModifyInstanceEventStartTimeOutcome;
+        typedef Aws::Utils::Outcome<ModifyInstanceEventWindowResponse, EC2Error> ModifyInstanceEventWindowOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceMetadataOptionsResponse, EC2Error> ModifyInstanceMetadataOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, EC2Error> ModifyInstancePlacementOutcome;
         typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, EC2Error> ModifyLaunchTemplateOutcome;
@@ -1389,6 +1407,7 @@ namespace Model
         typedef std::future<AssociateDhcpOptionsOutcome> AssociateDhcpOptionsOutcomeCallable;
         typedef std::future<AssociateEnclaveCertificateIamRoleOutcome> AssociateEnclaveCertificateIamRoleOutcomeCallable;
         typedef std::future<AssociateIamInstanceProfileOutcome> AssociateIamInstanceProfileOutcomeCallable;
+        typedef std::future<AssociateInstanceEventWindowOutcome> AssociateInstanceEventWindowOutcomeCallable;
         typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
         typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<AssociateTransitGatewayMulticastDomainOutcome> AssociateTransitGatewayMulticastDomainOutcomeCallable;
@@ -1429,6 +1448,7 @@ namespace Model
         typedef std::future<CreateFlowLogsOutcome> CreateFlowLogsOutcomeCallable;
         typedef std::future<CreateFpgaImageOutcome> CreateFpgaImageOutcomeCallable;
         typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
+        typedef std::future<CreateInstanceEventWindowOutcome> CreateInstanceEventWindowOutcomeCallable;
         typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
         typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCallable;
         typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
@@ -1487,6 +1507,7 @@ namespace Model
         typedef std::future<DeleteFleetsOutcome> DeleteFleetsOutcomeCallable;
         typedef std::future<DeleteFlowLogsOutcome> DeleteFlowLogsOutcomeCallable;
         typedef std::future<DeleteFpgaImageOutcome> DeleteFpgaImageOutcomeCallable;
+        typedef std::future<DeleteInstanceEventWindowOutcome> DeleteInstanceEventWindowOutcomeCallable;
         typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
         typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
         typedef std::future<DeleteLaunchTemplateOutcome> DeleteLaunchTemplateOutcomeCallable;
@@ -1580,6 +1601,7 @@ namespace Model
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
         typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanceCreditSpecificationsOutcomeCallable;
         typedef std::future<DescribeInstanceEventNotificationAttributesOutcome> DescribeInstanceEventNotificationAttributesOutcomeCallable;
+        typedef std::future<DescribeInstanceEventWindowsOutcome> DescribeInstanceEventWindowsOutcomeCallable;
         typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
         typedef std::future<DescribeInstanceTypeOfferingsOutcome> DescribeInstanceTypeOfferingsOutcomeCallable;
         typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
@@ -1678,6 +1700,7 @@ namespace Model
         typedef std::future<DisassociateClientVpnTargetNetworkOutcome> DisassociateClientVpnTargetNetworkOutcomeCallable;
         typedef std::future<DisassociateEnclaveCertificateIamRoleOutcome> DisassociateEnclaveCertificateIamRoleOutcomeCallable;
         typedef std::future<DisassociateIamInstanceProfileOutcome> DisassociateIamInstanceProfileOutcomeCallable;
+        typedef std::future<DisassociateInstanceEventWindowOutcome> DisassociateInstanceEventWindowOutcomeCallable;
         typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
         typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<DisassociateTransitGatewayMulticastDomainOutcome> DisassociateTransitGatewayMulticastDomainOutcomeCallable;
@@ -1742,6 +1765,7 @@ namespace Model
         typedef std::future<ModifyInstanceCapacityReservationAttributesOutcome> ModifyInstanceCapacityReservationAttributesOutcomeCallable;
         typedef std::future<ModifyInstanceCreditSpecificationOutcome> ModifyInstanceCreditSpecificationOutcomeCallable;
         typedef std::future<ModifyInstanceEventStartTimeOutcome> ModifyInstanceEventStartTimeOutcomeCallable;
+        typedef std::future<ModifyInstanceEventWindowOutcome> ModifyInstanceEventWindowOutcomeCallable;
         typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
         typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
@@ -1849,6 +1873,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AssociateDhcpOptionsRequest&, const Model::AssociateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateEnclaveCertificateIamRoleRequest&, const Model::AssociateEnclaveCertificateIamRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEnclaveCertificateIamRoleResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateIamInstanceProfileRequest&, const Model::AssociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIamInstanceProfileResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateInstanceEventWindowRequest&, const Model::AssociateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayMulticastDomainRequest&, const Model::AssociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayMulticastDomainResponseReceivedHandler;
@@ -1889,6 +1914,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateFlowLogsRequest&, const Model::CreateFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFpgaImageRequest&, const Model::CreateFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateInstanceEventWindowRequest&, const Model::CreateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTaskRequest&, const Model::CreateInstanceExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceExportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInternetGatewayRequest&, const Model::CreateInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateKeyPairRequest&, const Model::CreateKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyPairResponseReceivedHandler;
@@ -1947,6 +1973,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteFleetsRequest&, const Model::DeleteFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFlowLogsRequest&, const Model::DeleteFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFpgaImageRequest&, const Model::DeleteFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFpgaImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteInstanceEventWindowRequest&, const Model::DeleteInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInternetGatewayRequest&, const Model::DeleteInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteKeyPairRequest&, const Model::DeleteKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateRequest&, const Model::DeleteLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateResponseReceivedHandler;
@@ -2040,6 +2067,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceCreditSpecificationsRequest&, const Model::DescribeInstanceCreditSpecificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceCreditSpecificationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventNotificationAttributesRequest&, const Model::DescribeInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventNotificationAttributesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventWindowsRequest&, const Model::DescribeInstanceEventWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventWindowsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypeOfferingsRequest&, const Model::DescribeInstanceTypeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypesRequest&, const Model::DescribeInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypesResponseReceivedHandler;
@@ -2138,6 +2166,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateClientVpnTargetNetworkRequest&, const Model::DisassociateClientVpnTargetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateClientVpnTargetNetworkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateEnclaveCertificateIamRoleRequest&, const Model::DisassociateEnclaveCertificateIamRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEnclaveCertificateIamRoleResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateIamInstanceProfileRequest&, const Model::DisassociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIamInstanceProfileResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateInstanceEventWindowRequest&, const Model::DisassociateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayMulticastDomainRequest&, const Model::DisassociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayMulticastDomainResponseReceivedHandler;
@@ -2202,6 +2231,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCapacityReservationAttributesRequest&, const Model::ModifyInstanceCapacityReservationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCapacityReservationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCreditSpecificationRequest&, const Model::ModifyInstanceCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventStartTimeRequest&, const Model::ModifyInstanceEventStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventStartTimeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventWindowRequest&, const Model::ModifyInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataOptionsRequest&, const Model::ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
@@ -3192,6 +3222,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateIamInstanceProfileAsync(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates one or more targets with an event window. Only one type of target
+         * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
+         * window.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateInstanceEventWindowOutcome AssociateInstanceEventWindow(const Model::AssociateInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Associates one or more targets with an event window. Only one type of target
+         * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
+         * window.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateInstanceEventWindowOutcomeCallable AssociateInstanceEventWindowCallable(const Model::AssociateInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Associates one or more targets with an event window. Only one type of target
+         * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
+         * window.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateInstanceEventWindowAsync(const Model::AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a subnet in your VPC or an internet gateway or virtual private
@@ -5155,6 +5225,76 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an event window in which scheduled events for the associated Amazon
+         * EC2 instances can run.</p> <p>You can define either a set of time ranges or a
+         * cron expression when creating the event window, but not both. All event window
+         * times are in UTC.</p> <p>You can create up to 200 event windows per Amazon Web
+         * Services Region.</p> <p>When you create the event window, targets (instance IDs,
+         * Dedicated Host IDs, or tags) are not yet associated with it. To ensure that the
+         * event window can be used, you must associate one or more targets with it by
+         * using the <a>AssociateInstanceEventWindow</a> API.</p>  <p>Event
+         * windows are applicable only for scheduled events that stop, reboot, or terminate
+         * instances.</p> <p>Event windows are <i>not</i> applicable for:</p> <ul> <li>
+         * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
+         * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
+         * </ul>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInstanceEventWindowOutcome CreateInstanceEventWindow(const Model::CreateInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Creates an event window in which scheduled events for the associated Amazon
+         * EC2 instances can run.</p> <p>You can define either a set of time ranges or a
+         * cron expression when creating the event window, but not both. All event window
+         * times are in UTC.</p> <p>You can create up to 200 event windows per Amazon Web
+         * Services Region.</p> <p>When you create the event window, targets (instance IDs,
+         * Dedicated Host IDs, or tags) are not yet associated with it. To ensure that the
+         * event window can be used, you must associate one or more targets with it by
+         * using the <a>AssociateInstanceEventWindow</a> API.</p>  <p>Event
+         * windows are applicable only for scheduled events that stop, reboot, or terminate
+         * instances.</p> <p>Event windows are <i>not</i> applicable for:</p> <ul> <li>
+         * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
+         * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
+         * </ul>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateInstanceEventWindowOutcomeCallable CreateInstanceEventWindowCallable(const Model::CreateInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Creates an event window in which scheduled events for the associated Amazon
+         * EC2 instances can run.</p> <p>You can define either a set of time ranges or a
+         * cron expression when creating the event window, but not both. All event window
+         * times are in UTC.</p> <p>You can create up to 200 event windows per Amazon Web
+         * Services Region.</p> <p>When you create the event window, targets (instance IDs,
+         * Dedicated Host IDs, or tags) are not yet associated with it. To ensure that the
+         * event window can be used, you must associate one or more targets with it by
+         * using the <a>AssociateInstanceEventWindow</a> API.</p>  <p>Event
+         * windows are applicable only for scheduled events that stop, reboot, or terminate
+         * instances.</p> <p>Event windows are <i>not</i> applicable for:</p> <ul> <li>
+         * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
+         * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
+         * </ul>  <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateInstanceEventWindowAsync(const Model::CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Exports a running or stopped instance to an Amazon S3 bucket.</p> <p>For
@@ -7981,6 +8121,40 @@ namespace Model
         virtual void DeleteFpgaImageAsync(const Model::DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified event window.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInstanceEventWindowOutcome DeleteInstanceEventWindow(const Model::DeleteInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Deletes the specified event window.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteInstanceEventWindowOutcomeCallable DeleteInstanceEventWindowCallable(const Model::DeleteInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Deletes the specified event window.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteInstanceEventWindowAsync(const Model::DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified internet gateway. You must detach the internet gateway
          * from the VPC before you can delete it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">AWS
@@ -9510,8 +9684,8 @@ namespace Model
         virtual void DeregisterImageAsync(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
-         * being included in scheduled event notifications for resources in the
+         * <p>c</p> <p>Deregisters tag keys to prevent tags that have the specified tag
+         * keys from being included in scheduled event notifications for resources in the
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
@@ -9519,8 +9693,8 @@ namespace Model
         virtual Model::DeregisterInstanceEventNotificationAttributesOutcome DeregisterInstanceEventNotificationAttributes(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
 
         /**
-         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
-         * being included in scheduled event notifications for resources in the
+         * <p>c</p> <p>Deregisters tag keys to prevent tags that have the specified tag
+         * keys from being included in scheduled event notifications for resources in the
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
@@ -9530,8 +9704,8 @@ namespace Model
         virtual Model::DeregisterInstanceEventNotificationAttributesOutcomeCallable DeregisterInstanceEventNotificationAttributesCallable(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
 
         /**
-         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
-         * being included in scheduled event notifications for resources in the
+         * <p>c</p> <p>Deregisters tag keys to prevent tags that have the specified tag
+         * keys from being included in scheduled event notifications for resources in the
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
@@ -11294,6 +11468,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceEventNotificationAttributesAsync(const Model::DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified event windows or all event windows.</p> <p>If you
+         * specify event window IDs, the output includes information for only the specified
+         * event windows. If you specify filters, the output includes information for only
+         * those event windows that meet the filter criteria. If you do not specify event
+         * windows IDs or filters, the output includes information for all event windows,
+         * which can affect performance. We recommend that you use pagination to ensure
+         * that the operation returns quickly and successfully. </p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceEventWindowsOutcome DescribeInstanceEventWindows(const Model::DescribeInstanceEventWindowsRequest& request) const;
+
+        /**
+         * <p>Describes the specified event windows or all event windows.</p> <p>If you
+         * specify event window IDs, the output includes information for only the specified
+         * event windows. If you specify filters, the output includes information for only
+         * those event windows that meet the filter criteria. If you do not specify event
+         * windows IDs or filters, the output includes information for all event windows,
+         * which can affect performance. We recommend that you use pagination to ensure
+         * that the operation returns quickly and successfully. </p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceEventWindowsOutcomeCallable DescribeInstanceEventWindowsCallable(const Model::DescribeInstanceEventWindowsRequest& request) const;
+
+        /**
+         * <p>Describes the specified event windows or all event windows.</p> <p>If you
+         * specify event window IDs, the output includes information for only the specified
+         * event windows. If you specify filters, the output includes information for only
+         * those event windows that meet the filter criteria. If you do not specify event
+         * windows IDs or filters, the output includes information for all event windows,
+         * which can affect performance. We recommend that you use pagination to ensure
+         * that the operation returns quickly and successfully. </p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceEventWindowsAsync(const Model::DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the status of the specified instances or all of your instances. By
@@ -15030,6 +15259,43 @@ namespace Model
         virtual void DisassociateIamInstanceProfileAsync(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates one or more targets from an event window.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateInstanceEventWindowOutcome DisassociateInstanceEventWindow(const Model::DisassociateInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Disassociates one or more targets from an event window.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateInstanceEventWindowOutcomeCallable DisassociateInstanceEventWindowCallable(const Model::DisassociateInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Disassociates one or more targets from an event window.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateInstanceEventWindowAsync(const Model::DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a subnet or gateway from a route table.</p> <p>After you
          * perform this action, the subnet no longer uses the routes in the route table.
          * Instead, it uses the routes in the VPC's main route table. For more information
@@ -17726,6 +17992,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyInstanceEventStartTimeAsync(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the specified event window.</p> <p>You can define either a set of
+         * time ranges or a cron expression when modifying the event window, but not
+         * both.</p> <p>To modify the targets associated with the event window, use the
+         * <a>AssociateInstanceEventWindow</a> and <a>DisassociateInstanceEventWindow</a>
+         * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
+         * event window won't change the time of the scheduled event.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceEventWindowOutcome ModifyInstanceEventWindow(const Model::ModifyInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Modifies the specified event window.</p> <p>You can define either a set of
+         * time ranges or a cron expression when modifying the event window, but not
+         * both.</p> <p>To modify the targets associated with the event window, use the
+         * <a>AssociateInstanceEventWindow</a> and <a>DisassociateInstanceEventWindow</a>
+         * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
+         * event window won't change the time of the scheduled event.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyInstanceEventWindowOutcomeCallable ModifyInstanceEventWindowCallable(const Model::ModifyInstanceEventWindowRequest& request) const;
+
+        /**
+         * <p>Modifies the specified event window.</p> <p>You can define either a set of
+         * time ranges or a cron expression when modifying the event window, but not
+         * both.</p> <p>To modify the targets associated with the event window, use the
+         * <a>AssociateInstanceEventWindow</a> and <a>DisassociateInstanceEventWindow</a>
+         * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
+         * event window won't change the time of the scheduled event.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * event windows for scheduled events</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyInstanceEventWindowAsync(const Model::ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modify the instance metadata parameters on a running or stopped instance.
@@ -21893,6 +22211,7 @@ namespace Model
         void AssociateDhcpOptionsAsyncHelper(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateEnclaveCertificateIamRoleAsyncHelper(const Model::AssociateEnclaveCertificateIamRoleRequest& request, const AssociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateIamInstanceProfileAsyncHelper(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateInstanceEventWindowAsyncHelper(const Model::AssociateInstanceEventWindowRequest& request, const AssociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateRouteTableAsyncHelper(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSubnetCidrBlockAsyncHelper(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateTransitGatewayMulticastDomainAsyncHelper(const Model::AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21933,6 +22252,7 @@ namespace Model
         void CreateFlowLogsAsyncHelper(const Model::CreateFlowLogsRequest& request, const CreateFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFpgaImageAsyncHelper(const Model::CreateFpgaImageRequest& request, const CreateFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateInstanceEventWindowAsyncHelper(const Model::CreateInstanceEventWindowRequest& request, const CreateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceExportTaskAsyncHelper(const Model::CreateInstanceExportTaskRequest& request, const CreateInstanceExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInternetGatewayAsyncHelper(const Model::CreateInternetGatewayRequest& request, const CreateInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateKeyPairAsyncHelper(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -21991,6 +22311,7 @@ namespace Model
         void DeleteFleetsAsyncHelper(const Model::DeleteFleetsRequest& request, const DeleteFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowLogsAsyncHelper(const Model::DeleteFlowLogsRequest& request, const DeleteFlowLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFpgaImageAsyncHelper(const Model::DeleteFpgaImageRequest& request, const DeleteFpgaImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteInstanceEventWindowAsyncHelper(const Model::DeleteInstanceEventWindowRequest& request, const DeleteInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInternetGatewayAsyncHelper(const Model::DeleteInternetGatewayRequest& request, const DeleteInternetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteKeyPairAsyncHelper(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLaunchTemplateAsyncHelper(const Model::DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22084,6 +22405,7 @@ namespace Model
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceCreditSpecificationsAsyncHelper(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceEventNotificationAttributesAsyncHelper(const Model::DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceEventWindowsAsyncHelper(const Model::DescribeInstanceEventWindowsRequest& request, const DescribeInstanceEventWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceStatusAsyncHelper(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceTypeOfferingsAsyncHelper(const Model::DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceTypesAsyncHelper(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22182,6 +22504,7 @@ namespace Model
         void DisassociateClientVpnTargetNetworkAsyncHelper(const Model::DisassociateClientVpnTargetNetworkRequest& request, const DisassociateClientVpnTargetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateEnclaveCertificateIamRoleAsyncHelper(const Model::DisassociateEnclaveCertificateIamRoleRequest& request, const DisassociateEnclaveCertificateIamRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateIamInstanceProfileAsyncHelper(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateInstanceEventWindowAsyncHelper(const Model::DisassociateInstanceEventWindowRequest& request, const DisassociateInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRouteTableAsyncHelper(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTransitGatewayMulticastDomainAsyncHelper(const Model::DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22246,6 +22569,7 @@ namespace Model
         void ModifyInstanceCapacityReservationAttributesAsyncHelper(const Model::ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceCreditSpecificationAsyncHelper(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceEventStartTimeAsyncHelper(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyInstanceEventWindowAsyncHelper(const Model::ModifyInstanceEventWindowRequest& request, const ModifyInstanceEventWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceMetadataOptionsAsyncHelper(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLaunchTemplateAsyncHelper(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

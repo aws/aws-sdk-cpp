@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
-     * instance, the AWS account ID of the container instance owner, the
+     * instance, the account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
@@ -129,57 +129,57 @@ namespace Model
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
-     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
-     * Manager managed instance ID.</p>
+     * Amazon EC2 instance ID. For external instances, this value is the Amazon Web
+     * Services Systems Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
@@ -990,9 +990,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1010,9 +1011,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1030,9 +1032,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1050,9 +1053,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1070,9 +1074,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline ContainerInstance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1090,9 +1095,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline ContainerInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1110,9 +1116,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline ContainerInstance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1130,9 +1137,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline ContainerInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

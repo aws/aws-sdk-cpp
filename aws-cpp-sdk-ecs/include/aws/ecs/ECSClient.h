@@ -322,9 +322,9 @@ namespace Model
    * Container Service (Amazon ECS) is a highly scalable, fast, container management
    * service that makes it easy to run, stop, and manage Docker containers on a
    * cluster. You can host your cluster on a serverless infrastructure that is
-   * managed by Amazon ECS by launching your services or tasks on AWS Fargate. For
-   * more control, you can host your tasks on a cluster of Amazon Elastic Compute
-   * Cloud (Amazon EC2) instances that you manage.</p> <p>Amazon ECS makes it easy to
+   * managed by Amazon ECS by launching your services or tasks on Fargate. For more
+   * control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud
+   * (Amazon EC2) instances that you manage.</p> <p>Amazon ECS makes it easy to
    * launch and stop container-based applications with simple API calls, allows you
    * to get the state of your cluster from a centralized service, and gives you
    * access to many familiar Amazon EC2 features.</p> <p>You can use Amazon ECS to
@@ -364,9 +364,9 @@ namespace Model
          * <p>Creates a new capacity provider. Capacity providers are associated with an
          * Amazon ECS cluster and are used in capacity provider strategies to facilitate
          * cluster auto scaling.</p> <p>Only capacity providers using an Auto Scaling group
-         * can be created. Amazon ECS tasks on AWS Fargate use the <code>FARGATE</code> and
+         * can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code> and
          * <code>FARGATE_SPOT</code> capacity providers which are already created and
-         * available to all accounts in Regions supported by AWS Fargate.</p><p><h3>See
+         * available to all accounts in Regions supported by Fargate.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">AWS
          * API Reference</a></p>
@@ -377,9 +377,9 @@ namespace Model
          * <p>Creates a new capacity provider. Capacity providers are associated with an
          * Amazon ECS cluster and are used in capacity provider strategies to facilitate
          * cluster auto scaling.</p> <p>Only capacity providers using an Auto Scaling group
-         * can be created. Amazon ECS tasks on AWS Fargate use the <code>FARGATE</code> and
+         * can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code> and
          * <code>FARGATE_SPOT</code> capacity providers which are already created and
-         * available to all accounts in Regions supported by AWS Fargate.</p><p><h3>See
+         * available to all accounts in Regions supported by Fargate.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">AWS
          * API Reference</a></p>
@@ -392,9 +392,9 @@ namespace Model
          * <p>Creates a new capacity provider. Capacity providers are associated with an
          * Amazon ECS cluster and are used in capacity provider strategies to facilitate
          * cluster auto scaling.</p> <p>Only capacity providers using an Auto Scaling group
-         * can be created. Amazon ECS tasks on AWS Fargate use the <code>FARGATE</code> and
+         * can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code> and
          * <code>FARGATE_SPOT</code> capacity providers which are already created and
-         * available to all accounts in Regions supported by AWS Fargate.</p><p><h3>See
+         * available to all accounts in Regions supported by Fargate.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">AWS
          * API Reference</a></p>
@@ -409,10 +409,10 @@ namespace Model
          * However, you can create your own cluster with a unique name with the
          * <code>CreateCluster</code> action.</p>  <p>When you call the
          * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS
-         * service-linked role for your account so that required resources in other AWS
-         * services can be managed on your behalf. However, if the IAM user that makes the
-         * call does not have permissions to create the service-linked role, it is not
-         * created. For more information, see <a
+         * service-linked role for your account so that required resources in other Amazon
+         * Web Services services can be managed on your behalf. However, if the IAM user
+         * that makes the call does not have permissions to create the service-linked role,
+         * it is not created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -427,10 +427,10 @@ namespace Model
          * However, you can create your own cluster with a unique name with the
          * <code>CreateCluster</code> action.</p>  <p>When you call the
          * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS
-         * service-linked role for your account so that required resources in other AWS
-         * services can be managed on your behalf. However, if the IAM user that makes the
-         * call does not have permissions to create the service-linked role, it is not
-         * created. For more information, see <a
+         * service-linked role for your account so that required resources in other Amazon
+         * Web Services services can be managed on your behalf. However, if the IAM user
+         * that makes the call does not have permissions to create the service-linked role,
+         * it is not created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -447,10 +447,10 @@ namespace Model
          * However, you can create your own cluster with a unique name with the
          * <code>CreateCluster</code> action.</p>  <p>When you call the
          * <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS
-         * service-linked role for your account so that required resources in other AWS
-         * services can be managed on your behalf. However, if the IAM user that makes the
-         * call does not have permissions to create the service-linked role, it is not
-         * created. For more information, see <a
+         * service-linked role for your account so that required resources in other Amazon
+         * Web Services services can be managed on your behalf. However, if the IAM user
+         * that makes the call does not have permissions to create the service-linked role,
+         * it is not created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -2090,9 +2090,9 @@ namespace Model
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
-         * containers can then use the latest versions of the AWS CLI or SDKs to make API
-         * requests to the AWS services that are specified in the IAM policy associated
-         * with the role. For more information, see <a
+         * containers can then use the latest versions of the CLI or SDKs to make API
+         * requests to the Amazon Web Services services that are specified in the IAM
+         * policy associated with the role. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
@@ -2120,9 +2120,9 @@ namespace Model
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
-         * containers can then use the latest versions of the AWS CLI or SDKs to make API
-         * requests to the AWS services that are specified in the IAM policy associated
-         * with the role. For more information, see <a
+         * containers can then use the latest versions of the CLI or SDKs to make API
+         * requests to the Amazon Web Services services that are specified in the IAM
+         * policy associated with the role. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
@@ -2152,9 +2152,9 @@ namespace Model
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
-         * containers can then use the latest versions of the AWS CLI or SDKs to make API
-         * requests to the AWS services that are specified in the IAM policy associated
-         * with the role. For more information, see <a
+         * containers can then use the latest versions of the CLI or SDKs to make API
+         * requests to the Amazon Web Services services that are specified in the IAM
+         * policy associated with the role. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
@@ -2835,29 +2835,29 @@ namespace Model
          * only the desired count, deployment configuration, task placement constraints and
          * strategies, and health check grace period can be updated using this API. If the
          * network configuration, platform version, or task definition need to be updated,
-         * a new AWS CodeDeploy deployment should be created. For more information, see <a
+         * a new CodeDeploy deployment should be created. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
-         * external deployment controller, you can update only the desired count, task
-         * placement constraints and strategies, and health check grace period using this
-         * API. If the launch type, load balancer, network configuration, platform version,
-         * or task definition need to be updated, you should create a new task set. For
-         * more information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract
-         * from the number of instantiations of a task definition in a service by
-         * specifying the cluster that the service is running in and a new
-         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
-         * of your application, you can create a new task definition with that image and
-         * deploy it to your service. The service scheduler uses the minimum healthy
-         * percent and maximum percent parameters (in the service's deployment
-         * configuration) to determine the deployment strategy.</p>  <p>If your
-         * updated Docker image uses the same tag as what is in the existing task
-         * definition for your service (for example, <code>my_image:latest</code>), you do
-         * not need to create a new revision of your task definition. You can update the
-         * service using the <code>forceNewDeployment</code> option. The new tasks launched
-         * by the deployment pull the current image/tag combination from your repository
-         * when they start.</p>  <p>You can also update the deployment configuration
-         * of a service. When a deployment is triggered by updating the task definition of
-         * a service, the service scheduler uses the deployment configuration parameters,
+         * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
+         * deployment controller, you can update only the desired count, task placement
+         * constraints and strategies, and health check grace period using this API. If the
+         * launch type, load balancer, network configuration, platform version, or task
+         * definition need to be updated, you should create a new task set. For more
+         * information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from
+         * the number of instantiations of a task definition in a service by specifying the
+         * cluster that the service is running in and a new <code>desiredCount</code>
+         * parameter.</p> <p>If you have updated the Docker image of your application, you
+         * can create a new task definition with that image and deploy it to your service.
+         * The service scheduler uses the minimum healthy percent and maximum percent
+         * parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p>  <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
+         * <code>my_image:latest</code>), you do not need to create a new revision of your
+         * task definition. You can update the service using the
+         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
+         * pull the current image/tag combination from your repository when they start.</p>
+         *  <p>You can also update the deployment configuration of a service. When a
+         * deployment is triggered by updating the task definition of a service, the
+         * service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
@@ -2922,29 +2922,29 @@ namespace Model
          * only the desired count, deployment configuration, task placement constraints and
          * strategies, and health check grace period can be updated using this API. If the
          * network configuration, platform version, or task definition need to be updated,
-         * a new AWS CodeDeploy deployment should be created. For more information, see <a
+         * a new CodeDeploy deployment should be created. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
-         * external deployment controller, you can update only the desired count, task
-         * placement constraints and strategies, and health check grace period using this
-         * API. If the launch type, load balancer, network configuration, platform version,
-         * or task definition need to be updated, you should create a new task set. For
-         * more information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract
-         * from the number of instantiations of a task definition in a service by
-         * specifying the cluster that the service is running in and a new
-         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
-         * of your application, you can create a new task definition with that image and
-         * deploy it to your service. The service scheduler uses the minimum healthy
-         * percent and maximum percent parameters (in the service's deployment
-         * configuration) to determine the deployment strategy.</p>  <p>If your
-         * updated Docker image uses the same tag as what is in the existing task
-         * definition for your service (for example, <code>my_image:latest</code>), you do
-         * not need to create a new revision of your task definition. You can update the
-         * service using the <code>forceNewDeployment</code> option. The new tasks launched
-         * by the deployment pull the current image/tag combination from your repository
-         * when they start.</p>  <p>You can also update the deployment configuration
-         * of a service. When a deployment is triggered by updating the task definition of
-         * a service, the service scheduler uses the deployment configuration parameters,
+         * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
+         * deployment controller, you can update only the desired count, task placement
+         * constraints and strategies, and health check grace period using this API. If the
+         * launch type, load balancer, network configuration, platform version, or task
+         * definition need to be updated, you should create a new task set. For more
+         * information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from
+         * the number of instantiations of a task definition in a service by specifying the
+         * cluster that the service is running in and a new <code>desiredCount</code>
+         * parameter.</p> <p>If you have updated the Docker image of your application, you
+         * can create a new task definition with that image and deploy it to your service.
+         * The service scheduler uses the minimum healthy percent and maximum percent
+         * parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p>  <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
+         * <code>my_image:latest</code>), you do not need to create a new revision of your
+         * task definition. You can update the service using the
+         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
+         * pull the current image/tag combination from your repository when they start.</p>
+         *  <p>You can also update the deployment configuration of a service. When a
+         * deployment is triggered by updating the task definition of a service, the
+         * service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
@@ -3011,29 +3011,29 @@ namespace Model
          * only the desired count, deployment configuration, task placement constraints and
          * strategies, and health check grace period can be updated using this API. If the
          * network configuration, platform version, or task definition need to be updated,
-         * a new AWS CodeDeploy deployment should be created. For more information, see <a
+         * a new CodeDeploy deployment should be created. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
-         * external deployment controller, you can update only the desired count, task
-         * placement constraints and strategies, and health check grace period using this
-         * API. If the launch type, load balancer, network configuration, platform version,
-         * or task definition need to be updated, you should create a new task set. For
-         * more information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract
-         * from the number of instantiations of a task definition in a service by
-         * specifying the cluster that the service is running in and a new
-         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
-         * of your application, you can create a new task definition with that image and
-         * deploy it to your service. The service scheduler uses the minimum healthy
-         * percent and maximum percent parameters (in the service's deployment
-         * configuration) to determine the deployment strategy.</p>  <p>If your
-         * updated Docker image uses the same tag as what is in the existing task
-         * definition for your service (for example, <code>my_image:latest</code>), you do
-         * not need to create a new revision of your task definition. You can update the
-         * service using the <code>forceNewDeployment</code> option. The new tasks launched
-         * by the deployment pull the current image/tag combination from your repository
-         * when they start.</p>  <p>You can also update the deployment configuration
-         * of a service. When a deployment is triggered by updating the task definition of
-         * a service, the service scheduler uses the deployment configuration parameters,
+         * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
+         * deployment controller, you can update only the desired count, task placement
+         * constraints and strategies, and health check grace period using this API. If the
+         * launch type, load balancer, network configuration, platform version, or task
+         * definition need to be updated, you should create a new task set. For more
+         * information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from
+         * the number of instantiations of a task definition in a service by specifying the
+         * cluster that the service is running in and a new <code>desiredCount</code>
+         * parameter.</p> <p>If you have updated the Docker image of your application, you
+         * can create a new task definition with that image and deploy it to your service.
+         * The service scheduler uses the minimum healthy percent and maximum percent
+         * parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p>  <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
+         * <code>my_image:latest</code>), you do not need to create a new revision of your
+         * task definition. You can update the service using the
+         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
+         * pull the current image/tag combination from your repository when they start.</p>
+         *  <p>You can also update the deployment configuration of a service. When a
+         * deployment is triggered by updating the task definition of a service, the
+         * service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
