@@ -25,10 +25,10 @@ namespace Model
 
   /**
    * <p>The SMS configuration type that includes the settings the Cognito User Pool
-   * needs to call for the Amazon SNS service to send an SMS message from your AWS
+   * needs to call for the Amazon SNS service to send an SMS message from your
    * account. The Cognito User Pool makes the request to the Amazon SNS Service by
-   * using an AWS IAM role that you provide for your AWS account.</p><p><h3>See
-   * Also:</h3>   <a
+   * using an IAM role that you provide for your account.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -43,8 +43,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -52,8 +52,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -61,8 +61,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -70,8 +70,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -79,8 +79,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -88,8 +88,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -97,8 +97,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -106,8 +106,8 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) caller. This is the ARN of the IAM role in your AWS account which Cognito
-     * will use to send SMS messages. SMS messages are subject to a <a
+     * (SNS) caller. This is the ARN of the IAM role in your account which Cognito will
+     * use to send SMS messages. SMS messages are subject to a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
@@ -125,8 +125,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -141,8 +141,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
@@ -157,8 +157,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -173,8 +173,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
@@ -189,8 +189,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -205,8 +205,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -221,8 +221,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
@@ -237,8 +237,8 @@ namespace Model
      * the <code>ExternalId</code>.</p> <p>For more information about the
      * <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
-     * to use an external ID when granting access to your AWS resources to a third
-     * party</a> </p>
+     * to use an external ID when granting access to your Amazon Web Services resources
+     * to a third party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

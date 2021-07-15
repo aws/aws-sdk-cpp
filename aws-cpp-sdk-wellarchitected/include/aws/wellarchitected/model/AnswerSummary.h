@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wellarchitected/model/Risk.h>
+#include <aws/wellarchitected/model/AnswerReason.h>
 #include <aws/wellarchitected/model/Choice.h>
+#include <aws/wellarchitected/model/ChoiceAnswerSummary.h>
 #include <utility>
 
 namespace Aws
@@ -169,6 +171,47 @@ namespace Model
     inline AnswerSummary& AddSelectedChoices(const char* value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
 
 
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline const Aws::Vector<ChoiceAnswerSummary>& GetChoiceAnswerSummaries() const{ return m_choiceAnswerSummaries; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline bool ChoiceAnswerSummariesHasBeenSet() const { return m_choiceAnswerSummariesHasBeenSet; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline void SetChoiceAnswerSummaries(const Aws::Vector<ChoiceAnswerSummary>& value) { m_choiceAnswerSummariesHasBeenSet = true; m_choiceAnswerSummaries = value; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline void SetChoiceAnswerSummaries(Aws::Vector<ChoiceAnswerSummary>&& value) { m_choiceAnswerSummariesHasBeenSet = true; m_choiceAnswerSummaries = std::move(value); }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline AnswerSummary& WithChoiceAnswerSummaries(const Aws::Vector<ChoiceAnswerSummary>& value) { SetChoiceAnswerSummaries(value); return *this;}
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline AnswerSummary& WithChoiceAnswerSummaries(Aws::Vector<ChoiceAnswerSummary>&& value) { SetChoiceAnswerSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline AnswerSummary& AddChoiceAnswerSummaries(const ChoiceAnswerSummary& value) { m_choiceAnswerSummariesHasBeenSet = true; m_choiceAnswerSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>A list of selected choices to a question in your workload.</p>
+     */
+    inline AnswerSummary& AddChoiceAnswerSummaries(ChoiceAnswerSummary&& value) { m_choiceAnswerSummariesHasBeenSet = true; m_choiceAnswerSummaries.push_back(std::move(value)); return *this; }
+
+
     
     inline bool GetIsApplicable() const{ return m_isApplicable; }
 
@@ -200,6 +243,37 @@ namespace Model
     
     inline AnswerSummary& WithRisk(Risk&& value) { SetRisk(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
+     */
+    inline const AnswerReason& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
+     */
+    inline void SetReason(const AnswerReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
+     */
+    inline void SetReason(AnswerReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
+     */
+    inline AnswerSummary& WithReason(const AnswerReason& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason why a choice is non-applicable to a question in your workload.</p>
+     */
+    inline AnswerSummary& WithReason(AnswerReason&& value) { SetReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_questionId;
@@ -217,11 +291,17 @@ namespace Model
     Aws::Vector<Aws::String> m_selectedChoices;
     bool m_selectedChoicesHasBeenSet;
 
+    Aws::Vector<ChoiceAnswerSummary> m_choiceAnswerSummaries;
+    bool m_choiceAnswerSummariesHasBeenSet;
+
     bool m_isApplicable;
     bool m_isApplicableHasBeenSet;
 
     Risk m_risk;
     bool m_riskHasBeenSet;
+
+    AnswerReason m_reason;
+    bool m_reasonHasBeenSet;
   };
 
 } // namespace Model

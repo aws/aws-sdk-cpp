@@ -123,37 +123,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline UpdateUserPoolRequest& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The AWS Lambda configuration information from the request to update the user
+     * <p>The Lambda configuration information from the request to update the user
      * pool.</p>
      */
     inline UpdateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}

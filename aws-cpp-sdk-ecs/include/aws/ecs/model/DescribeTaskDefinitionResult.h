@@ -74,9 +74,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -94,9 +95,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
@@ -114,9 +116,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
@@ -134,9 +137,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline DescribeTaskDefinitionResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -154,9 +158,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline DescribeTaskDefinitionResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -174,9 +179,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline DescribeTaskDefinitionResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
@@ -194,9 +200,10 @@ namespace Model
      * representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
      * <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use
      * <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of
-     * such as a prefix for either keys or values as it is reserved for AWS use. You
-     * cannot edit or delete tag keys or values with this prefix. Tags with this prefix
-     * do not count against your tags per resource limit.</p> </li> </ul>
+     * such as a prefix for either keys or values as it is reserved for Amazon Web
+     * Services use. You cannot edit or delete tag keys or values with this prefix.
+     * Tags with this prefix do not count against your tags per resource limit.</p>
+     * </li> </ul>
      */
     inline DescribeTaskDefinitionResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

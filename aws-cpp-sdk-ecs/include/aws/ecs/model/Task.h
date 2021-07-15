@@ -1256,9 +1256,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
@@ -1267,9 +1267,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
@@ -1278,9 +1278,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
@@ -1289,9 +1289,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
@@ -1300,9 +1300,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
@@ -1311,9 +1311,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Task& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
@@ -1322,9 +1322,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Task& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
@@ -1333,9 +1333,9 @@ namespace Model
      * only specified for tasks using the Fargate launch type. If one is not specified,
      * the <code>LATEST</code> platform version is used by default. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Task& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -1662,9 +1662,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1682,9 +1682,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1702,9 +1702,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1722,9 +1722,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1742,9 +1742,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Task& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1762,9 +1762,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Task& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1782,9 +1782,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Task& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1802,9 +1802,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Task& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

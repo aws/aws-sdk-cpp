@@ -336,8 +336,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
@@ -348,8 +348,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
@@ -360,8 +360,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -372,8 +372,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
@@ -384,8 +384,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
@@ -396,8 +396,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
@@ -408,8 +408,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
@@ -420,8 +420,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 

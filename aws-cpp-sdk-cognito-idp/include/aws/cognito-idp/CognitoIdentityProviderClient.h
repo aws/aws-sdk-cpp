@@ -686,8 +686,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -719,8 +719,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -754,8 +754,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1099,8 +1099,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1124,8 +1124,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1151,8 +1151,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1368,8 +1368,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1401,8 +1401,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1436,8 +1436,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1463,8 +1463,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1488,8 +1488,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1515,8 +1515,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1736,8 +1736,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1764,8 +1764,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -1794,8 +1794,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2125,8 +2125,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2149,8 +2149,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2175,8 +2175,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2688,8 +2688,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2722,8 +2722,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2758,8 +2758,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -2983,8 +2983,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3007,8 +3007,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3033,8 +3033,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3121,8 +3121,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3145,8 +3145,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3171,8 +3171,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3384,7 +3384,7 @@ namespace Model
         virtual void ListUserPoolClientsAsync(const Model::ListUserPoolClientsRequest& request, const ListUserPoolClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the user pools associated with an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Lists the user pools associated with an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">AWS
          * API Reference</a></p>
@@ -3392,7 +3392,7 @@ namespace Model
         virtual Model::ListUserPoolsOutcome ListUserPools(const Model::ListUserPoolsRequest& request) const;
 
         /**
-         * <p>Lists the user pools associated with an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Lists the user pools associated with an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">AWS
          * API Reference</a></p>
@@ -3402,7 +3402,7 @@ namespace Model
         virtual Model::ListUserPoolsOutcomeCallable ListUserPoolsCallable(const Model::ListUserPoolsRequest& request) const;
 
         /**
-         * <p>Lists the user pools associated with an AWS account.</p><p><h3>See Also:</h3>
+         * <p>Lists the user pools associated with an account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">AWS
          * API Reference</a></p>
@@ -3477,8 +3477,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3501,8 +3501,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3527,8 +3527,8 @@ namespace Model
          * Pinpoint</a>. Cognito will use the the registered number automatically.
          * Otherwise, Cognito users that must receive SMS messages might be unable to sign
          * up, activate their accounts, or sign in.</p> <p>If you have never used SMS text
-         * messages with Amazon Cognito or any other AWS service, Amazon SNS might place
-         * your account in SMS sandbox. In <i> <a
+         * messages with Amazon Cognito or any other Amazon Web Service, Amazon SNS might
+         * place your account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3553,8 +3553,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3577,8 +3577,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3603,8 +3603,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3801,8 +3801,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3825,8 +3825,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3851,8 +3851,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3915,8 +3915,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3940,8 +3940,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -3967,8 +3967,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4186,9 +4186,7 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p>  <p>If you don't
-         * provide a value for an attribute, it will be set to the default value.</p>
-         * <p><h3>See Also:</h3>   <a
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          */
@@ -4196,9 +4194,7 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p>  <p>If you don't
-         * provide a value for an attribute, it will be set to the default value.</p>
-         * <p><h3>See Also:</h3>   <a
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -4208,9 +4204,7 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p>  <p>If you don't
-         * provide a value for an attribute, it will be set to the default value.</p>
-         * <p><h3>See Also:</h3>   <a
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -4287,8 +4281,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4311,8 +4305,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4337,8 +4331,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4366,8 +4360,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4393,8 +4387,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4422,8 +4416,8 @@ namespace Model
          * Cognito will use the the registered number automatically. Otherwise, Cognito
          * users that must receive SMS messages might be unable to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other AWS service, Amazon SNS might place your account in
-         * SMS sandbox. In <i> <a
+         * Amazon Cognito or any other Amazon Web Service, Amazon SNS might place your
+         * account in SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you’ll have limitations, such as sending messages to only
          * verified phone numbers. After testing in the sandbox environment, you can move
@@ -4494,7 +4488,7 @@ namespace Model
          * the domain for a user pool.</p> <p>A custom domain is used to host the Amazon
          * Cognito hosted UI, which provides sign-up and sign-in pages for your
          * application. When you set up a custom domain, you provide a certificate that you
-         * manage with AWS Certificate Manager (ACM). When necessary, you can use this
+         * manage with Certificate Manager (ACM). When necessary, you can use this
          * operation to change the certificate that you applied to your custom domain.</p>
          * <p>Usually, this is unnecessary following routine certificate renewal with ACM.
          * When you renew your existing certificate in ACM, the ARN for your certificate
@@ -4503,9 +4497,9 @@ namespace Model
          * new one, ACM gives the new certificate a new ARN. To apply the new certificate
          * to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When
          * you add your new certificate in ACM, you must choose US East (N. Virginia) as
-         * the AWS Region.</p> <p>After you submit your request, Amazon Cognito requires up
-         * to 1 hour to distribute your new certificate to your custom domain.</p> <p>For
-         * more information about adding a custom domain to your user pool, see <a
+         * the Region.</p> <p>After you submit your request, Amazon Cognito requires up to
+         * 1 hour to distribute your new certificate to your custom domain.</p> <p>For more
+         * information about adding a custom domain to your user pool, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
          * Your Own Domain for the Hosted UI</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">AWS
@@ -4520,7 +4514,7 @@ namespace Model
          * the domain for a user pool.</p> <p>A custom domain is used to host the Amazon
          * Cognito hosted UI, which provides sign-up and sign-in pages for your
          * application. When you set up a custom domain, you provide a certificate that you
-         * manage with AWS Certificate Manager (ACM). When necessary, you can use this
+         * manage with Certificate Manager (ACM). When necessary, you can use this
          * operation to change the certificate that you applied to your custom domain.</p>
          * <p>Usually, this is unnecessary following routine certificate renewal with ACM.
          * When you renew your existing certificate in ACM, the ARN for your certificate
@@ -4529,9 +4523,9 @@ namespace Model
          * new one, ACM gives the new certificate a new ARN. To apply the new certificate
          * to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When
          * you add your new certificate in ACM, you must choose US East (N. Virginia) as
-         * the AWS Region.</p> <p>After you submit your request, Amazon Cognito requires up
-         * to 1 hour to distribute your new certificate to your custom domain.</p> <p>For
-         * more information about adding a custom domain to your user pool, see <a
+         * the Region.</p> <p>After you submit your request, Amazon Cognito requires up to
+         * 1 hour to distribute your new certificate to your custom domain.</p> <p>For more
+         * information about adding a custom domain to your user pool, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
          * Your Own Domain for the Hosted UI</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">AWS
@@ -4548,7 +4542,7 @@ namespace Model
          * the domain for a user pool.</p> <p>A custom domain is used to host the Amazon
          * Cognito hosted UI, which provides sign-up and sign-in pages for your
          * application. When you set up a custom domain, you provide a certificate that you
-         * manage with AWS Certificate Manager (ACM). When necessary, you can use this
+         * manage with Certificate Manager (ACM). When necessary, you can use this
          * operation to change the certificate that you applied to your custom domain.</p>
          * <p>Usually, this is unnecessary following routine certificate renewal with ACM.
          * When you renew your existing certificate in ACM, the ARN for your certificate
@@ -4557,9 +4551,9 @@ namespace Model
          * new one, ACM gives the new certificate a new ARN. To apply the new certificate
          * to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When
          * you add your new certificate in ACM, you must choose US East (N. Virginia) as
-         * the AWS Region.</p> <p>After you submit your request, Amazon Cognito requires up
-         * to 1 hour to distribute your new certificate to your custom domain.</p> <p>For
-         * more information about adding a custom domain to your user pool, see <a
+         * the Region.</p> <p>After you submit your request, Amazon Cognito requires up to
+         * 1 hour to distribute your new certificate to your custom domain.</p> <p>For more
+         * information about adding a custom domain to your user pool, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
          * Your Own Domain for the Hosted UI</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">AWS

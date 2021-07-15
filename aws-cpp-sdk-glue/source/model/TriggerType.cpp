@@ -23,6 +23,7 @@ namespace Aws
         static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
         static const int CONDITIONAL_HASH = HashingUtils::HashString("CONDITIONAL");
         static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
+        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
 
 
         TriggerType GetTriggerTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ON_DEMAND_HASH)
           {
             return TriggerType::ON_DEMAND;
+          }
+          else if (hashCode == EVENT_HASH)
+          {
+            return TriggerType::EVENT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "CONDITIONAL";
           case TriggerType::ON_DEMAND:
             return "ON_DEMAND";
+          case TriggerType::EVENT:
+            return "EVENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

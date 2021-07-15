@@ -37,10 +37,10 @@ namespace Model
    * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
    * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
    * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-   * either keys or values as it is reserved for AWS use. You cannot edit or delete
-   * tag keys or values with this prefix. Tags with this prefix do not count against
-   * your tags per resource limit.</p> </li> </ul><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Tag">AWS API
+   * either keys or values as it is reserved for Amazon Web Services use. You cannot
+   * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+   * count against your tags per resource limit.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Tag">AWS API
    * Reference</a></p>
    */
   class AWS_ECS_API Tag

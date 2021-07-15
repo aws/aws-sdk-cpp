@@ -33,7 +33,7 @@ namespace Model
 
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. A task set includes details such as the
      * desired number of tasks, how many tasks are running, and whether the task set
      * serves production traffic.</p>
@@ -41,7 +41,7 @@ namespace Model
     inline const TaskSet& GetTaskSet() const{ return m_taskSet; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. A task set includes details such as the
      * desired number of tasks, how many tasks are running, and whether the task set
      * serves production traffic.</p>
@@ -49,7 +49,7 @@ namespace Model
     inline void SetTaskSet(const TaskSet& value) { m_taskSet = value; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. A task set includes details such as the
      * desired number of tasks, how many tasks are running, and whether the task set
      * serves production traffic.</p>
@@ -57,7 +57,7 @@ namespace Model
     inline void SetTaskSet(TaskSet&& value) { m_taskSet = std::move(value); }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. A task set includes details such as the
      * desired number of tasks, how many tasks are running, and whether the task set
      * serves production traffic.</p>
@@ -65,7 +65,7 @@ namespace Model
     inline CreateTaskSetResult& WithTaskSet(const TaskSet& value) { SetTaskSet(value); return *this;}
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. A task set includes details such as the
      * desired number of tasks, how many tasks are running, and whether the task set
      * serves production traffic.</p>

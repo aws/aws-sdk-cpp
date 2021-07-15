@@ -259,9 +259,9 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -275,9 +275,9 @@ namespace Model
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -291,9 +291,9 @@ namespace Model
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -307,9 +307,9 @@ namespace Model
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -323,9 +323,9 @@ namespace Model
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -339,9 +339,9 @@ namespace Model
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -355,9 +355,9 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -371,9 +371,9 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
-     * Access Management (IAM) role that grants containers in the task permission to
-     * call AWS APIs on your behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access
+     * Management role that grants containers in the task permission to call Amazon Web
+     * Services APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -389,9 +389,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -400,9 +400,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -411,9 +411,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -422,9 +422,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -433,9 +433,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -444,9 +444,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -455,9 +455,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -466,9 +466,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
-     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
-     * task execution IAM role is required depending on the requirements of your task.
-     * For more information, see <a
+     * Amazon ECS container agent permission to make Amazon Web Services API calls on
+     * your behalf. The task execution IAM role is required depending on the
+     * requirements of your task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -482,35 +482,29 @@ namespace Model
      * <code>host</code>. If no network mode is specified, the default is
      * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
      * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
-     * instances, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the tasks containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>If the
-     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
-     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
-     * create a service or run a task with the task definition. For more information,
-     * see <a
+     * Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon
+     * EC2 Windows instances, <code>&lt;default&gt;</code> or <code>awsvpc</code> can
+     * be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not
+     * have external connectivity. The <code>host</code> and <code>awsvpc</code>
+     * network modes offer the highest networking performance for containers because
+     * they use the EC2 network stack instead of the virtualized network stack provided
+     * by the <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p>
+     *  <p>When using the <code>host</code> network mode, you should not run
+     * containers using the root user (UID 0). It is considered best practice to use a
+     * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
+     * the task is allocated an elastic network interface, and you must specify a
+     * <a>NetworkConfiguration</a> value when you create a service or run a task with
+     * the task definition. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
-     * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
-     * the network mode is <code>host</code>, you cannot run multiple instantiations of
-     * the same task on a single container instance when port mappings are used.</p>
-     * <p>Docker for Windows uses different network modes than Docker for Linux. When
-     * you register a task definition with Windows containers, you must not specify a
-     * network mode. If you use the console to register a task definition with Windows
-     * containers, you must choose the <code>&lt;default&gt;</code> network mode
-     * object. </p> <p>For more information, see <a
+     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
+     * multiple instantiations of the same task on a single container instance when
+     * port mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -522,35 +516,29 @@ namespace Model
      * <code>host</code>. If no network mode is specified, the default is
      * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
      * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
-     * instances, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the tasks containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>If the
-     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
-     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
-     * create a service or run a task with the task definition. For more information,
-     * see <a
+     * Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon
+     * EC2 Windows instances, <code>&lt;default&gt;</code> or <code>awsvpc</code> can
+     * be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not
+     * have external connectivity. The <code>host</code> and <code>awsvpc</code>
+     * network modes offer the highest networking performance for containers because
+     * they use the EC2 network stack instead of the virtualized network stack provided
+     * by the <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p>
+     *  <p>When using the <code>host</code> network mode, you should not run
+     * containers using the root user (UID 0). It is considered best practice to use a
+     * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
+     * the task is allocated an elastic network interface, and you must specify a
+     * <a>NetworkConfiguration</a> value when you create a service or run a task with
+     * the task definition. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
-     * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
-     * the network mode is <code>host</code>, you cannot run multiple instantiations of
-     * the same task on a single container instance when port mappings are used.</p>
-     * <p>Docker for Windows uses different network modes than Docker for Linux. When
-     * you register a task definition with Windows containers, you must not specify a
-     * network mode. If you use the console to register a task definition with Windows
-     * containers, you must choose the <code>&lt;default&gt;</code> network mode
-     * object. </p> <p>For more information, see <a
+     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
+     * multiple instantiations of the same task on a single container instance when
+     * port mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -562,35 +550,29 @@ namespace Model
      * <code>host</code>. If no network mode is specified, the default is
      * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
      * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
-     * instances, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the tasks containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>If the
-     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
-     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
-     * create a service or run a task with the task definition. For more information,
-     * see <a
+     * Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon
+     * EC2 Windows instances, <code>&lt;default&gt;</code> or <code>awsvpc</code> can
+     * be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not
+     * have external connectivity. The <code>host</code> and <code>awsvpc</code>
+     * network modes offer the highest networking performance for containers because
+     * they use the EC2 network stack instead of the virtualized network stack provided
+     * by the <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p>
+     *  <p>When using the <code>host</code> network mode, you should not run
+     * containers using the root user (UID 0). It is considered best practice to use a
+     * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
+     * the task is allocated an elastic network interface, and you must specify a
+     * <a>NetworkConfiguration</a> value when you create a service or run a task with
+     * the task definition. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
-     * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
-     * the network mode is <code>host</code>, you cannot run multiple instantiations of
-     * the same task on a single container instance when port mappings are used.</p>
-     * <p>Docker for Windows uses different network modes than Docker for Linux. When
-     * you register a task definition with Windows containers, you must not specify a
-     * network mode. If you use the console to register a task definition with Windows
-     * containers, you must choose the <code>&lt;default&gt;</code> network mode
-     * object. </p> <p>For more information, see <a
+     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
+     * multiple instantiations of the same task on a single container instance when
+     * port mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -602,35 +584,29 @@ namespace Model
      * <code>host</code>. If no network mode is specified, the default is
      * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
      * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
-     * instances, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the tasks containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>If the
-     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
-     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
-     * create a service or run a task with the task definition. For more information,
-     * see <a
+     * Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon
+     * EC2 Windows instances, <code>&lt;default&gt;</code> or <code>awsvpc</code> can
+     * be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not
+     * have external connectivity. The <code>host</code> and <code>awsvpc</code>
+     * network modes offer the highest networking performance for containers because
+     * they use the EC2 network stack instead of the virtualized network stack provided
+     * by the <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p>
+     *  <p>When using the <code>host</code> network mode, you should not run
+     * containers using the root user (UID 0). It is considered best practice to use a
+     * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
+     * the task is allocated an elastic network interface, and you must specify a
+     * <a>NetworkConfiguration</a> value when you create a service or run a task with
+     * the task definition. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
-     * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
-     * the network mode is <code>host</code>, you cannot run multiple instantiations of
-     * the same task on a single container instance when port mappings are used.</p>
-     * <p>Docker for Windows uses different network modes than Docker for Linux. When
-     * you register a task definition with Windows containers, you must not specify a
-     * network mode. If you use the console to register a task definition with Windows
-     * containers, you must choose the <code>&lt;default&gt;</code> network mode
-     * object. </p> <p>For more information, see <a
+     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
+     * multiple instantiations of the same task on a single container instance when
+     * port mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -642,35 +618,29 @@ namespace Model
      * <code>host</code>. If no network mode is specified, the default is
      * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
      * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
-     * instances, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the tasks containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>If the
-     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
-     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
-     * create a service or run a task with the task definition. For more information,
-     * see <a
+     * Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon
+     * EC2 Windows instances, <code>&lt;default&gt;</code> or <code>awsvpc</code> can
+     * be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not
+     * have external connectivity. The <code>host</code> and <code>awsvpc</code>
+     * network modes offer the highest networking performance for containers because
+     * they use the EC2 network stack instead of the virtualized network stack provided
+     * by the <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p>
+     *  <p>When using the <code>host</code> network mode, you should not run
+     * containers using the root user (UID 0). It is considered best practice to use a
+     * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
+     * the task is allocated an elastic network interface, and you must specify a
+     * <a>NetworkConfiguration</a> value when you create a service or run a task with
+     * the task definition. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
-     * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
-     * the network mode is <code>host</code>, you cannot run multiple instantiations of
-     * the same task on a single container instance when port mappings are used.</p>
-     * <p>Docker for Windows uses different network modes than Docker for Linux. When
-     * you register a task definition with Windows containers, you must not specify a
-     * network mode. If you use the console to register a task definition with Windows
-     * containers, you must choose the <code>&lt;default&gt;</code> network mode
-     * object. </p> <p>For more information, see <a
+     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
+     * multiple instantiations of the same task on a single container instance when
+     * port mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -682,35 +652,29 @@ namespace Model
      * <code>host</code>. If no network mode is specified, the default is
      * <code>bridge</code>.</p> <p>For Amazon ECS tasks on Fargate, the
      * <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2
-     * instances, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container
-     * definitions, and the tasks containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p>  <p>When using the <code>host</code>
-     * network mode, you should not run containers using the root user (UID 0). It is
-     * considered best practice to use a non-root user.</p>  <p>If the
-     * network mode is <code>awsvpc</code>, the task is allocated an elastic network
-     * interface, and you must specify a <a>NetworkConfiguration</a> value when you
-     * create a service or run a task with the task definition. For more information,
-     * see <a
+     * Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon
+     * EC2 Windows instances, <code>&lt;default&gt;</code> or <code>awsvpc</code> can
+     * be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not
+     * have external connectivity. The <code>host</code> and <code>awsvpc</code>
+     * network modes offer the highest networking performance for containers because
+     * they use the EC2 network stack instead of the virtualized network stack provided
+     * by the <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p>
+     *  <p>When using the <code>host</code> network mode, you should not run
+     * containers using the root user (UID 0). It is considered best practice to use a
+     * non-root user.</p>  <p>If the network mode is <code>awsvpc</code>,
+     * the task is allocated an elastic network interface, and you must specify a
+     * <a>NetworkConfiguration</a> value when you create a service or run a task with
+     * the task definition. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
-     * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
-     * the network mode is <code>host</code>, you cannot run multiple instantiations of
-     * the same task on a single container instance when port mappings are used.</p>
-     * <p>Docker for Windows uses different network modes than Docker for Linux. When
-     * you register a task definition with Windows containers, you must not specify a
-     * network mode. If you use the console to register a task definition with Windows
-     * containers, you must choose the <code>&lt;default&gt;</code> network mode
-     * object. </p> <p>For more information, see <a
+     * Guide</i>.</p> <p>If the network mode is <code>host</code>, you cannot run
+     * multiple instantiations of the same task on a single container instance when
+     * port mappings are used.</p> <p>For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.</p>
      */
@@ -764,7 +728,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
@@ -774,7 +738,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
@@ -784,7 +748,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
@@ -794,7 +758,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
@@ -804,7 +768,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
@@ -814,7 +778,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
@@ -824,7 +788,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
@@ -834,7 +798,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported for tasks run on AWS Fargate.</p> 
+     * parameters are not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
@@ -879,7 +843,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline const Aws::Vector<Attribute>& GetRequiresAttributes() const{ return m_requiresAttributes; }
 
@@ -892,7 +856,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline bool RequiresAttributesHasBeenSet() const { return m_requiresAttributesHasBeenSet; }
 
@@ -905,7 +869,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline void SetRequiresAttributes(const Aws::Vector<Attribute>& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes = value; }
 
@@ -918,7 +882,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline void SetRequiresAttributes(Aws::Vector<Attribute>&& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes = std::move(value); }
 
@@ -931,7 +895,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithRequiresAttributes(const Aws::Vector<Attribute>& value) { SetRequiresAttributes(value); return *this;}
 
@@ -944,7 +908,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithRequiresAttributes(Aws::Vector<Attribute>&& value) { SetRequiresAttributes(std::move(value)); return *this;}
 
@@ -957,7 +921,7 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& AddRequiresAttributes(const Attribute& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes.push_back(value); return *this; }
 
@@ -970,56 +934,56 @@ namespace Model
      * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
-     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
+     * <p>This parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& AddRequiresAttributes(Attribute&& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
-     * parameter is not supported for tasks run on AWS Fargate.</p> 
+     * parameter is not supported for tasks run on Fargate.</p> 
      */
     inline TaskDefinition& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
@@ -1307,18 +1271,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
@@ -1330,18 +1293,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
@@ -1353,18 +1315,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -1376,18 +1337,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
@@ -1399,18 +1359,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
@@ -1422,18 +1381,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline TaskDefinition& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
@@ -1445,18 +1403,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline TaskDefinition& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
@@ -1468,18 +1425,17 @@ namespace Model
      * value is optional. For more information regarding container-level memory and
      * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
-     * use one of the following values, which determines your range of valid values for
-     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
-     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
-     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
-     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
-     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
-     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
-     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
-     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
-     * </li> </ul>
+     * <p>If your tasks will be run on Fargate, this field is required and you must use
+     * one of the following values, which determines your range of valid values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
     inline TaskDefinition& WithMemory(const char* value) { SetMemory(value); return *this;}
 
@@ -1539,7 +1495,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on AWS Fargate.</p> 
+     * containers or tasks run on Fargate.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
@@ -1557,7 +1513,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on AWS Fargate.</p> 
+     * containers or tasks run on Fargate.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
@@ -1575,7 +1531,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on AWS Fargate.</p> 
+     * containers or tasks run on Fargate.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
@@ -1593,7 +1549,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on AWS Fargate.</p> 
+     * containers or tasks run on Fargate.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
@@ -1611,7 +1567,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on AWS Fargate.</p> 
+     * containers or tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
@@ -1629,7 +1585,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks run on AWS Fargate.</p> 
+     * containers or tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1661,7 +1617,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks run on AWS Fargate.</p> 
+     * tasks run on Fargate.</p> 
      */
     inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
 
@@ -1692,7 +1648,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks run on AWS Fargate.</p> 
+     * tasks run on Fargate.</p> 
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
@@ -1723,7 +1679,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks run on AWS Fargate.</p> 
+     * tasks run on Fargate.</p> 
      */
     inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
@@ -1754,7 +1710,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks run on AWS Fargate.</p> 
+     * tasks run on Fargate.</p> 
      */
     inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
@@ -1785,7 +1741,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks run on AWS Fargate.</p> 
+     * tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
 
@@ -1816,7 +1772,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks run on AWS Fargate.</p> 
+     * tasks run on Fargate.</p> 
      */
     inline TaskDefinition& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 

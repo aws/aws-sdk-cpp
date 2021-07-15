@@ -54,8 +54,8 @@ namespace Model
    * options. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
    * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
-   * Developer Guide</i>.</p> </li> <li> <p>For tasks on AWS Fargate, because you do
-   * not have access to the underlying infrastructure your tasks are hosted on, any
+   * Developer Guide</i>.</p> </li> <li> <p>For tasks on Fargate, because you do not
+   * have access to the underlying infrastructure your tasks are hosted on, any
    * additional software needed will have to be installed outside of the task. For
    * example, the Fluentd output aggregators or a remote host running Logstash to
    * send Gelf logs to.</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -72,7 +72,7 @@ namespace Model
 
 
     /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on AWS Fargate, the
+     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
@@ -96,7 +96,7 @@ namespace Model
     inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
 
     /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on AWS Fargate, the
+     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
@@ -120,7 +120,7 @@ namespace Model
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
 
     /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on AWS Fargate, the
+     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
@@ -144,7 +144,7 @@ namespace Model
     inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
     /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on AWS Fargate, the
+     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
@@ -168,7 +168,7 @@ namespace Model
     inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
 
     /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on AWS Fargate, the
+     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
@@ -192,7 +192,7 @@ namespace Model
     inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
 
     /**
-     * <p>The log driver to use for the container.</p> <p>For tasks on AWS Fargate, the
+     * <p>The log driver to use for the container.</p> <p>For tasks on Fargate, the
      * supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
      * <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,

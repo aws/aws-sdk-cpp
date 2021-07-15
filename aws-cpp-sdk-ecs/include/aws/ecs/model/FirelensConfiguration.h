@@ -89,7 +89,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
@@ -103,7 +103,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
@@ -117,7 +117,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
@@ -131,7 +131,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
@@ -145,7 +145,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
@@ -159,7 +159,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
@@ -173,7 +173,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
@@ -187,7 +187,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
@@ -201,7 +201,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
@@ -215,7 +215,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
@@ -229,7 +229,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
@@ -243,7 +243,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
@@ -257,7 +257,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon
-     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on AWS
+     * Elastic Container Service Developer Guide</i>.</p>  <p>Tasks hosted on
      * Fargate only support the <code>file</code> configuration file type.</p> 
      */
     inline FirelensConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }

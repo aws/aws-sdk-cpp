@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline void SetAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline DomainDescriptionType& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline DomainDescriptionType& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the user pool owner.</p>
+     * <p>The account ID for the user pool owner.</p>
      */
     inline DomainDescriptionType& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
 

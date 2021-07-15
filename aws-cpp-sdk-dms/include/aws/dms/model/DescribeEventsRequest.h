@@ -83,37 +83,37 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS DMS resource that generates events.</p> <p>Valid values:
+     * <p>The type of DMS resource that generates events.</p> <p>Valid values:
      * replication-instance | replication-task</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The type of AWS DMS resource that generates events.</p> <p>Valid values:
+     * <p>The type of DMS resource that generates events.</p> <p>Valid values:
      * replication-instance | replication-task</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS DMS resource that generates events.</p> <p>Valid values:
+     * <p>The type of DMS resource that generates events.</p> <p>Valid values:
      * replication-instance | replication-task</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The type of AWS DMS resource that generates events.</p> <p>Valid values:
+     * <p>The type of DMS resource that generates events.</p> <p>Valid values:
      * replication-instance | replication-task</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS DMS resource that generates events.</p> <p>Valid values:
+     * <p>The type of DMS resource that generates events.</p> <p>Valid values:
      * replication-instance | replication-task</p>
      */
     inline DescribeEventsRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS DMS resource that generates events.</p> <p>Valid values:
+     * <p>The type of DMS resource that generates events.</p> <p>Valid values:
      * replication-instance | replication-task</p>
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}

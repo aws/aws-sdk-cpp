@@ -20,8 +20,9 @@ namespace Aws
       namespace KeyAlgorithmMapper
       {
 
-        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
         static const int RSA_1024_HASH = HashingUtils::HashString("RSA_1024");
+        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
+        static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
         static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
         static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
         static const int EC_secp384r1_HASH = HashingUtils::HashString("EC_secp384r1");
@@ -31,13 +32,17 @@ namespace Aws
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RSA_2048_HASH)
+          if (hashCode == RSA_1024_HASH)
+          {
+            return KeyAlgorithm::RSA_1024;
+          }
+          else if (hashCode == RSA_2048_HASH)
           {
             return KeyAlgorithm::RSA_2048;
           }
-          else if (hashCode == RSA_1024_HASH)
+          else if (hashCode == RSA_3072_HASH)
           {
-            return KeyAlgorithm::RSA_1024;
+            return KeyAlgorithm::RSA_3072;
           }
           else if (hashCode == RSA_4096_HASH)
           {
@@ -69,10 +74,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case KeyAlgorithm::RSA_2048:
-            return "RSA_2048";
           case KeyAlgorithm::RSA_1024:
             return "RSA_1024";
+          case KeyAlgorithm::RSA_2048:
+            return "RSA_2048";
+          case KeyAlgorithm::RSA_3072:
+            return "RSA_3072";
           case KeyAlgorithm::RSA_4096:
             return "RSA_4096";
           case KeyAlgorithm::EC_prime256v1:

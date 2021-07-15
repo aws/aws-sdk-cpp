@@ -27,11 +27,14 @@ Answer::Answer() :
     m_helpfulResourceUrlHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
+    m_choiceAnswersHasBeenSet(false),
     m_isApplicable(false),
     m_isApplicableHasBeenSet(false),
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
-    m_notesHasBeenSet(false)
+    m_notesHasBeenSet(false),
+    m_reason(AnswerReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -44,11 +47,14 @@ Answer::Answer(JsonView jsonValue) :
     m_helpfulResourceUrlHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
+    m_choiceAnswersHasBeenSet(false),
     m_isApplicable(false),
     m_isApplicableHasBeenSet(false),
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
-    m_notesHasBeenSet(false)
+    m_notesHasBeenSet(false),
+    m_reason(AnswerReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +123,16 @@ Answer& Answer::operator =(JsonView jsonValue)
     m_selectedChoicesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChoiceAnswers"))
+  {
+    Array<JsonView> choiceAnswersJsonList = jsonValue.GetArray("ChoiceAnswers");
+    for(unsigned choiceAnswersIndex = 0; choiceAnswersIndex < choiceAnswersJsonList.GetLength(); ++choiceAnswersIndex)
+    {
+      m_choiceAnswers.push_back(choiceAnswersJsonList[choiceAnswersIndex].AsObject());
+    }
+    m_choiceAnswersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("IsApplicable"))
   {
     m_isApplicable = jsonValue.GetBool("IsApplicable");
@@ -136,6 +152,13 @@ Answer& Answer::operator =(JsonView jsonValue)
     m_notes = jsonValue.GetString("Notes");
 
     m_notesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Reason"))
+  {
+    m_reason = AnswerReasonMapper::GetAnswerReasonForName(jsonValue.GetString("Reason"));
+
+    m_reasonHasBeenSet = true;
   }
 
   return *this;
@@ -203,6 +226,17 @@ JsonValue Answer::Jsonize() const
 
   }
 
+  if(m_choiceAnswersHasBeenSet)
+  {
+   Array<JsonValue> choiceAnswersJsonList(m_choiceAnswers.size());
+   for(unsigned choiceAnswersIndex = 0; choiceAnswersIndex < choiceAnswersJsonList.GetLength(); ++choiceAnswersIndex)
+   {
+     choiceAnswersJsonList[choiceAnswersIndex].AsObject(m_choiceAnswers[choiceAnswersIndex].Jsonize());
+   }
+   payload.WithArray("ChoiceAnswers", std::move(choiceAnswersJsonList));
+
+  }
+
   if(m_isApplicableHasBeenSet)
   {
    payload.WithBool("IsApplicable", m_isApplicable);
@@ -218,6 +252,11 @@ JsonValue Answer::Jsonize() const
   {
    payload.WithString("Notes", m_notes);
 
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", AnswerReasonMapper::GetNameForAnswerReason(m_reason));
   }
 
   return payload;

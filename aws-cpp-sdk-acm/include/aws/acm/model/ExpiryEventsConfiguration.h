@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Object containing expiration events options associated with an AWS
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>Object containing expiration events options associated with an Amazon Web
+   * Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExpiryEventsConfiguration">AWS
    * API Reference</a></p>
    */

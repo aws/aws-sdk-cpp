@@ -24,10 +24,13 @@ AnswerSummary::AnswerSummary() :
     m_questionTitleHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
+    m_choiceAnswerSummariesHasBeenSet(false),
     m_isApplicable(false),
     m_isApplicableHasBeenSet(false),
     m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false)
+    m_riskHasBeenSet(false),
+    m_reason(AnswerReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -37,10 +40,13 @@ AnswerSummary::AnswerSummary(JsonView jsonValue) :
     m_questionTitleHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
+    m_choiceAnswerSummariesHasBeenSet(false),
     m_isApplicable(false),
     m_isApplicableHasBeenSet(false),
     m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false)
+    m_riskHasBeenSet(false),
+    m_reason(AnswerReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +94,16 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     m_selectedChoicesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChoiceAnswerSummaries"))
+  {
+    Array<JsonView> choiceAnswerSummariesJsonList = jsonValue.GetArray("ChoiceAnswerSummaries");
+    for(unsigned choiceAnswerSummariesIndex = 0; choiceAnswerSummariesIndex < choiceAnswerSummariesJsonList.GetLength(); ++choiceAnswerSummariesIndex)
+    {
+      m_choiceAnswerSummaries.push_back(choiceAnswerSummariesJsonList[choiceAnswerSummariesIndex].AsObject());
+    }
+    m_choiceAnswerSummariesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("IsApplicable"))
   {
     m_isApplicable = jsonValue.GetBool("IsApplicable");
@@ -100,6 +116,13 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     m_risk = RiskMapper::GetRiskForName(jsonValue.GetString("Risk"));
 
     m_riskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Reason"))
+  {
+    m_reason = AnswerReasonMapper::GetAnswerReasonForName(jsonValue.GetString("Reason"));
+
+    m_reasonHasBeenSet = true;
   }
 
   return *this;
@@ -149,6 +172,17 @@ JsonValue AnswerSummary::Jsonize() const
 
   }
 
+  if(m_choiceAnswerSummariesHasBeenSet)
+  {
+   Array<JsonValue> choiceAnswerSummariesJsonList(m_choiceAnswerSummaries.size());
+   for(unsigned choiceAnswerSummariesIndex = 0; choiceAnswerSummariesIndex < choiceAnswerSummariesJsonList.GetLength(); ++choiceAnswerSummariesIndex)
+   {
+     choiceAnswerSummariesJsonList[choiceAnswerSummariesIndex].AsObject(m_choiceAnswerSummaries[choiceAnswerSummariesIndex].Jsonize());
+   }
+   payload.WithArray("ChoiceAnswerSummaries", std::move(choiceAnswerSummariesJsonList));
+
+  }
+
   if(m_isApplicableHasBeenSet)
   {
    payload.WithBool("IsApplicable", m_isApplicable);
@@ -158,6 +192,11 @@ JsonValue AnswerSummary::Jsonize() const
   if(m_riskHasBeenSet)
   {
    payload.WithString("Risk", RiskMapper::GetNameForRisk(m_risk));
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", AnswerReasonMapper::GetNameForAnswerReason(m_reason));
   }
 
   return payload;

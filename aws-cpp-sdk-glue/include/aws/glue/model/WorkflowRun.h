@@ -11,6 +11,7 @@
 #include <aws/glue/model/WorkflowRunStatus.h>
 #include <aws/glue/model/WorkflowRunStatistics.h>
 #include <aws/glue/model/WorkflowGraph.h>
+#include <aws/glue/model/StartingEventBatchCondition.h>
 #include <utility>
 
 namespace Aws
@@ -449,6 +450,37 @@ namespace Model
      */
     inline WorkflowRun& WithGraph(WorkflowGraph&& value) { SetGraph(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline const StartingEventBatchCondition& GetStartingEventBatchCondition() const{ return m_startingEventBatchCondition; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline bool StartingEventBatchConditionHasBeenSet() const { return m_startingEventBatchConditionHasBeenSet; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline void SetStartingEventBatchCondition(const StartingEventBatchCondition& value) { m_startingEventBatchConditionHasBeenSet = true; m_startingEventBatchCondition = value; }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline void SetStartingEventBatchCondition(StartingEventBatchCondition&& value) { m_startingEventBatchConditionHasBeenSet = true; m_startingEventBatchCondition = std::move(value); }
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline WorkflowRun& WithStartingEventBatchCondition(const StartingEventBatchCondition& value) { SetStartingEventBatchCondition(value); return *this;}
+
+    /**
+     * <p>The batch condition that started the workflow run.</p>
+     */
+    inline WorkflowRun& WithStartingEventBatchCondition(StartingEventBatchCondition&& value) { SetStartingEventBatchCondition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -480,6 +512,9 @@ namespace Model
 
     WorkflowGraph m_graph;
     bool m_graphHasBeenSet;
+
+    StartingEventBatchCondition m_startingEventBatchCondition;
+    bool m_startingEventBatchConditionHasBeenSet;
   };
 
 } // namespace Model

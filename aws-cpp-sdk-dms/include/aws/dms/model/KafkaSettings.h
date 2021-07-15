@@ -49,8 +49,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline const Aws::String& GetBroker() const{ return m_broker; }
 
@@ -61,8 +61,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline bool BrokerHasBeenSet() const { return m_brokerHasBeenSet; }
 
@@ -73,8 +73,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline void SetBroker(const Aws::String& value) { m_brokerHasBeenSet = true; m_broker = value; }
 
@@ -85,8 +85,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline void SetBroker(Aws::String&& value) { m_brokerHasBeenSet = true; m_broker = std::move(value); }
 
@@ -97,8 +97,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline void SetBroker(const char* value) { m_brokerHasBeenSet = true; m_broker.assign(value); }
 
@@ -109,8 +109,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline KafkaSettings& WithBroker(const Aws::String& value) { SetBroker(value); return *this;}
 
@@ -121,8 +121,8 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline KafkaSettings& WithBroker(Aws::String&& value) { SetBroker(std::move(value)); return *this;}
 
@@ -133,57 +133,57 @@ namespace Model
      * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
      * information and examples of specifying a list of broker locations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
-     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
-     * Data Migration Service User Guide</i>. </p>
+     * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
+     * Migration Service User Guide</i>. </p>
      */
     inline KafkaSettings& WithBroker(const char* value) { SetBroker(value); return *this;}
 
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline KafkaSettings& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline KafkaSettings& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
 
     /**
-     * <p>The topic to which you migrate the data. If you don't specify a topic, AWS
-     * DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
+     * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+     * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
     inline KafkaSettings& WithTopic(const char* value) { SetTopic(value); return *this;}
 
@@ -269,28 +269,28 @@ namespace Model
 
 
     /**
-     * <p>Shows the partition value within the Kafka message output, unless the
+     * <p>Shows the partition value within the Kafka message output unless the
      * partition type is <code>schema-table-type</code>. The default is
      * <code>false</code>.</p>
      */
     inline bool GetIncludePartitionValue() const{ return m_includePartitionValue; }
 
     /**
-     * <p>Shows the partition value within the Kafka message output, unless the
+     * <p>Shows the partition value within the Kafka message output unless the
      * partition type is <code>schema-table-type</code>. The default is
      * <code>false</code>.</p>
      */
     inline bool IncludePartitionValueHasBeenSet() const { return m_includePartitionValueHasBeenSet; }
 
     /**
-     * <p>Shows the partition value within the Kafka message output, unless the
+     * <p>Shows the partition value within the Kafka message output unless the
      * partition type is <code>schema-table-type</code>. The default is
      * <code>false</code>.</p>
      */
     inline void SetIncludePartitionValue(bool value) { m_includePartitionValueHasBeenSet = true; m_includePartitionValue = value; }
 
     /**
-     * <p>Shows the partition value within the Kafka message output, unless the
+     * <p>Shows the partition value within the Kafka message output unless the
      * partition type is <code>schema-table-type</code>. The default is
      * <code>false</code>.</p>
      */
@@ -654,104 +654,104 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline const Aws::String& GetSslCaCertificateArn() const{ return m_sslCaCertificateArn; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline bool SslCaCertificateArnHasBeenSet() const { return m_sslCaCertificateArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline void SetSslCaCertificateArn(const Aws::String& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline void SetSslCaCertificateArn(Aws::String&& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline void SetSslCaCertificateArn(const char* value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline KafkaSettings& WithSslCaCertificateArn(const Aws::String& value) { SetSslCaCertificateArn(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline KafkaSettings& WithSslCaCertificateArn(Aws::String&& value) { SetSslCaCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
-     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
     inline KafkaSettings& WithSslCaCertificateArn(const char* value) { SetSslCaCertificateArn(value); return *this;}
 
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline const Aws::String& GetSaslUsername() const{ return m_saslUsername; }
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline bool SaslUsernameHasBeenSet() const { return m_saslUsernameHasBeenSet; }
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline void SetSaslUsername(const Aws::String& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = value; }
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline void SetSaslUsername(Aws::String&& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = std::move(value); }
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline void SetSaslUsername(const char* value) { m_saslUsernameHasBeenSet = true; m_saslUsername.assign(value); }
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline KafkaSettings& WithSaslUsername(const Aws::String& value) { SetSaslUsername(value); return *this;}
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
     inline KafkaSettings& WithSaslUsername(Aws::String&& value) { SetSaslUsername(std::move(value)); return *this;}
 
     /**
-     * <p> The secure username you created when you first set up your MSK cluster to
+     * <p> The secure user name you created when you first set up your MSK cluster to
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
@@ -814,6 +814,35 @@ namespace Model
      */
     inline KafkaSettings& WithSaslPassword(const char* value) { SetSaslPassword(value); return *this;}
 
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kafka target. If this attribute is N,
+     * all hexadecimal values include this prefix when migrated to Kafka.</p>
+     */
+    inline bool GetNoHexPrefix() const{ return m_noHexPrefix; }
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kafka target. If this attribute is N,
+     * all hexadecimal values include this prefix when migrated to Kafka.</p>
+     */
+    inline bool NoHexPrefixHasBeenSet() const { return m_noHexPrefixHasBeenSet; }
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kafka target. If this attribute is N,
+     * all hexadecimal values include this prefix when migrated to Kafka.</p>
+     */
+    inline void SetNoHexPrefix(bool value) { m_noHexPrefixHasBeenSet = true; m_noHexPrefix = value; }
+
+    /**
+     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
+     * <code>0x</code> prefix when migrated to a Kafka target. If this attribute is N,
+     * all hexadecimal values include this prefix when migrated to Kafka.</p>
+     */
+    inline KafkaSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
+
   private:
 
     Aws::String m_broker;
@@ -866,6 +895,9 @@ namespace Model
 
     Aws::String m_saslPassword;
     bool m_saslPasswordHasBeenSet;
+
+    bool m_noHexPrefix;
+    bool m_noHexPrefixHasBeenSet;
   };
 
 } // namespace Model

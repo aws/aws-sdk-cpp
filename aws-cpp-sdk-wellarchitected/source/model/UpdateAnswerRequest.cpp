@@ -17,9 +17,12 @@ UpdateAnswerRequest::UpdateAnswerRequest() :
     m_lensAliasHasBeenSet(false),
     m_questionIdHasBeenSet(false),
     m_selectedChoicesHasBeenSet(false),
+    m_choiceUpdatesHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_isApplicable(false),
-    m_isApplicableHasBeenSet(false)
+    m_isApplicableHasBeenSet(false),
+    m_reason(AnswerReason::NOT_SET),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,17 @@ Aws::String UpdateAnswerRequest::SerializePayload() const
 
   }
 
+  if(m_choiceUpdatesHasBeenSet)
+  {
+   JsonValue choiceUpdatesJsonMap;
+   for(auto& choiceUpdatesItem : m_choiceUpdates)
+   {
+     choiceUpdatesJsonMap.WithObject(choiceUpdatesItem.first, choiceUpdatesItem.second.Jsonize());
+   }
+   payload.WithObject("ChoiceUpdates", std::move(choiceUpdatesJsonMap));
+
+  }
+
   if(m_notesHasBeenSet)
   {
    payload.WithString("Notes", m_notes);
@@ -48,6 +62,11 @@ Aws::String UpdateAnswerRequest::SerializePayload() const
   {
    payload.WithBool("IsApplicable", m_isApplicable);
 
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("Reason", AnswerReasonMapper::GetNameForAnswerReason(m_reason));
   }
 
   return payload.View().WriteReadable();

@@ -130,7 +130,7 @@ namespace Model
      * instance protection from scale-in actions enabled as well. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p> <p>When managed
+     * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is disabled, your Amazon EC2 instances are not protected
      * from termination when the Auto Scaling group scales in.</p>
      */
@@ -148,7 +148,7 @@ namespace Model
      * instance protection from scale-in actions enabled as well. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p> <p>When managed
+     * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is disabled, your Amazon EC2 instances are not protected
      * from termination when the Auto Scaling group scales in.</p>
      */
@@ -166,7 +166,7 @@ namespace Model
      * instance protection from scale-in actions enabled as well. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p> <p>When managed
+     * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is disabled, your Amazon EC2 instances are not protected
      * from termination when the Auto Scaling group scales in.</p>
      */
@@ -184,7 +184,7 @@ namespace Model
      * instance protection from scale-in actions enabled as well. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p> <p>When managed
+     * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is disabled, your Amazon EC2 instances are not protected
      * from termination when the Auto Scaling group scales in.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
      * instance protection from scale-in actions enabled as well. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p> <p>When managed
+     * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is disabled, your Amazon EC2 instances are not protected
      * from termination when the Auto Scaling group scales in.</p>
      */
@@ -220,7 +220,7 @@ namespace Model
      * instance protection from scale-in actions enabled as well. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>AWS Auto Scaling User Guide</i>.</p> <p>When managed
+     * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is disabled, your Amazon EC2 instances are not protected
      * from termination when the Auto Scaling group scales in.</p>
      */

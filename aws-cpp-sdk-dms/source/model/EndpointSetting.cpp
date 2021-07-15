@@ -30,7 +30,8 @@ EndpointSetting::EndpointSetting() :
     m_intValueMin(0),
     m_intValueMinHasBeenSet(false),
     m_intValueMax(0),
-    m_intValueMaxHasBeenSet(false)
+    m_intValueMaxHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ EndpointSetting::EndpointSetting(JsonView jsonValue) :
     m_intValueMin(0),
     m_intValueMinHasBeenSet(false),
     m_intValueMax(0),
-    m_intValueMaxHasBeenSet(false)
+    m_intValueMaxHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ EndpointSetting& EndpointSetting::operator =(JsonView jsonValue)
     m_intValueMaxHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultValue"))
+  {
+    m_defaultValue = jsonValue.GetString("DefaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue EndpointSetting::Jsonize() const
   if(m_intValueMaxHasBeenSet)
   {
    payload.WithInteger("IntValueMax", m_intValueMax);
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("DefaultValue", m_defaultValue);
 
   }
 

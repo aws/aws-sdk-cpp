@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline ExecuteCommandConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline ExecuteCommandConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specify an AWS Key Management Service key ID to encrypt the data between the
+     * <p>Specify an Key Management Service key ID to encrypt the data between the
      * local client and the container.</p>
      */
     inline ExecuteCommandConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

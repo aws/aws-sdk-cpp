@@ -134,7 +134,7 @@ namespace Model
      * function.</p> <p/> <p>For more information on using the Lambda API to add
      * permission, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -148,7 +148,7 @@ namespace Model
      * function.</p> <p/> <p>For more information on using the Lambda API to add
      * permission, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -162,7 +162,7 @@ namespace Model
      * function.</p> <p/> <p>For more information on using the Lambda API to add
      * permission, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -176,7 +176,7 @@ namespace Model
      * function.</p> <p/> <p>For more information on using the Lambda API to add
      * permission, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -190,7 +190,7 @@ namespace Model
      * function.</p> <p/> <p>For more information on using the Lambda API to add
      * permission, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */
@@ -204,7 +204,7 @@ namespace Model
      * function.</p> <p/> <p>For more information on using the Lambda API to add
      * permission, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * AddPermission </a>. </p> <p>For adding permission using the CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
      * add-permission </a>.</p> 
      */

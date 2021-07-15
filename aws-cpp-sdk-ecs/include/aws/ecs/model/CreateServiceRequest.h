@@ -265,29 +265,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -313,29 +313,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -361,29 +361,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -409,29 +409,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -457,29 +457,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -505,29 +505,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -553,29 +553,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -601,29 +601,29 @@ namespace Model
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
-     * AWS CodeDeploy deployment group, you specify two target groups (referred to as a
-     * <code>targetGroupPair</code>). During a deployment, AWS CodeDeploy determines
-     * which task set in your service has the status <code>PRIMARY</code> and
-     * associates one target group with it, and then associates the other target group
-     * with the replacement task set. The load balancer can also have up to two
-     * listeners: a required listener for production traffic and an optional listener
-     * that allows you perform validation tests with Lambda functions before routing
-     * production traffic to it.</p> <p>After you create a service using the
-     * <code>ECS</code> deployment controller, the load balancer name or target group
-     * ARN, container name, and container port specified in the service definition are
-     * immutable. If you are using the <code>CODE_DEPLOY</code> deployment controller,
-     * these values can be changed when updating the service.</p> <p>For Application
-     * Load Balancers and Network Load Balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. The load
-     * balancer name parameter must be omitted. When a task from this service is placed
-     * on a container instance, the container instance and port combination is
-     * registered as a target in the target group specified here.</p> <p>For Classic
-     * Load Balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access
-     * from the load balancer. The target group ARN parameter must be omitted. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>Services with tasks
+     * CodeDeploy deployment group, you specify two target groups (referred to as a
+     * <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
+     * task set in your service has the status <code>PRIMARY</code> and associates one
+     * target group with it, and then associates the other target group with the
+     * replacement task set. The load balancer can also have up to two listeners: a
+     * required listener for production traffic and an optional listener that allows
+     * you perform validation tests with Lambda functions before routing production
+     * traffic to it.</p> <p>After you create a service using the <code>ECS</code>
+     * deployment controller, the load balancer name or target group ARN, container
+     * name, and container port specified in the service definition are immutable. If
+     * you are using the <code>CODE_DEPLOY</code> deployment controller, these values
+     * can be changed when updating the service.</p> <p>For Application Load Balancers
+     * and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the
+     * container port to access from the load balancer. The load balancer name
+     * parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. The target group ARN parameter must be omitted. When a task from
+     * this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.</p> <p>Services with tasks
      * that use the <code>awsvpc</code> network mode (for example, those with the
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -798,19 +798,18 @@ namespace Model
      * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
-     * use either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A service can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
@@ -818,19 +817,18 @@ namespace Model
      * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
-     * use either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A service can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
@@ -838,19 +836,18 @@ namespace Model
      * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
-     * use either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A service can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
@@ -858,19 +855,18 @@ namespace Model
      * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
-     * use either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A service can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
@@ -878,19 +874,18 @@ namespace Model
      * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
-     * use either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A service can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline CreateServiceRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
@@ -898,19 +893,18 @@ namespace Model
      * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
-     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
-     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
-     * Amazon EC2 instances registered to your cluster.</p> <p>The
-     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
-     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
-     * use either a launch type or a capacity provider strategy. If a
-     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-     * parameter must be omitted.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
+     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
+     * type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.</p> <p>A service can use either a launch type or a
+     * capacity provider strategy. If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline CreateServiceRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
@@ -993,9 +987,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
@@ -1004,9 +998,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
@@ -1015,9 +1009,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
@@ -1026,9 +1020,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
@@ -1037,9 +1031,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
@@ -1048,9 +1042,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
@@ -1059,9 +1053,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
@@ -1070,9 +1064,9 @@ namespace Model
      * platform version is specified only for tasks using the Fargate launch type. If
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -1748,9 +1742,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1769,9 +1763,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1790,9 +1784,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1811,9 +1805,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1832,9 +1826,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1853,9 +1847,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1874,9 +1868,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1895,9 +1889,9 @@ namespace Model
      * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
      * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline CreateServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

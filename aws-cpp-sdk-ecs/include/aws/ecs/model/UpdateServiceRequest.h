@@ -259,13 +259,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
@@ -284,13 +284,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
@@ -309,13 +309,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
@@ -334,13 +334,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
@@ -359,13 +359,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline UpdateServiceRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
@@ -384,13 +384,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline UpdateServiceRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
@@ -409,13 +409,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline UpdateServiceRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
@@ -434,13 +434,13 @@ namespace Model
      * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p> <p/>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
+     * <p/>
      */
     inline UpdateServiceRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -688,9 +688,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
@@ -699,9 +699,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
@@ -710,9 +710,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
@@ -721,9 +721,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
@@ -732,9 +732,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
@@ -743,9 +743,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
@@ -754,9 +754,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
@@ -765,9 +765,9 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
      * used by default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
@@ -548,9 +548,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -568,9 +568,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -588,9 +588,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -608,9 +608,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -628,9 +628,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Cluster& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -648,9 +648,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -668,9 +668,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Cluster& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -688,9 +688,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

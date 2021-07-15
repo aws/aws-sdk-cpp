@@ -57,8 +57,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
@@ -66,8 +66,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
@@ -75,8 +75,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
@@ -84,8 +84,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
@@ -93,8 +93,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
@@ -102,8 +102,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
@@ -111,8 +111,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
@@ -120,8 +120,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * AWS account ID of the service owner, the <code>service</code> namespace, and
-     * then the service name. For example,
+     * account ID of the service owner, the <code>service</code> namespace, and then
+     * the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
@@ -484,186 +484,190 @@ namespace Model
 
 
     /**
-     * <p>The infrastructure on which your service is running. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The launch type the service is using. When using the DescribeServices API,
+     * this field is omitted if the service was created using a capacity provider
+     * strategy.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The infrastructure on which your service is running. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The launch type the service is using. When using the DescribeServices API,
+     * this field is omitted if the service was created using a capacity provider
+     * strategy.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The infrastructure on which your service is running. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The launch type the service is using. When using the DescribeServices API,
+     * this field is omitted if the service was created using a capacity provider
+     * strategy.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The infrastructure on which your service is running. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The launch type the service is using. When using the DescribeServices API,
+     * this field is omitted if the service was created using a capacity provider
+     * strategy.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The infrastructure on which your service is running. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The launch type the service is using. When using the DescribeServices API,
+     * this field is omitted if the service was created using a capacity provider
+     * strategy.</p>
      */
     inline Service& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The infrastructure on which your service is running. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The launch type the service is using. When using the DescribeServices API,
+     * this field is omitted if the service was created using a capacity provider
+     * strategy.</p>
      */
     inline Service& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline Service& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline Service& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline Service& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
     /**
-     * <p>The capacity provider strategy associated with the service.</p>
+     * <p>The capacity provider strategy the service is using. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline Service& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Service& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Service& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
      * <p>The platform version on which to run your service. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Service& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -763,7 +767,7 @@ namespace Model
 
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -771,7 +775,7 @@ namespace Model
     inline const Aws::Vector<TaskSet>& GetTaskSets() const{ return m_taskSets; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -779,7 +783,7 @@ namespace Model
     inline bool TaskSetsHasBeenSet() const { return m_taskSetsHasBeenSet; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -787,7 +791,7 @@ namespace Model
     inline void SetTaskSets(const Aws::Vector<TaskSet>& value) { m_taskSetsHasBeenSet = true; m_taskSets = value; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -795,7 +799,7 @@ namespace Model
     inline void SetTaskSets(Aws::Vector<TaskSet>&& value) { m_taskSetsHasBeenSet = true; m_taskSets = std::move(value); }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -803,7 +807,7 @@ namespace Model
     inline Service& WithTaskSets(const Aws::Vector<TaskSet>& value) { SetTaskSets(value); return *this;}
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -811,7 +815,7 @@ namespace Model
     inline Service& WithTaskSets(Aws::Vector<TaskSet>&& value) { SetTaskSets(std::move(value)); return *this;}
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -819,7 +823,7 @@ namespace Model
     inline Service& AddTaskSets(const TaskSet& value) { m_taskSetsHasBeenSet = true; m_taskSets.push_back(value); return *this; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
      * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
      * as the desired number of tasks, how many tasks are running, and whether the task
      * set serves production traffic.</p>
@@ -1327,9 +1331,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1347,9 +1351,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1367,9 +1371,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1387,9 +1391,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1407,9 +1411,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Service& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1427,9 +1431,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Service& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1447,9 +1451,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Service& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1467,9 +1471,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline Service& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

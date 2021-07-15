@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+   * <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
    * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
    * as the desired number of tasks, how many tasks are running, and whether the task
    * set serves production traffic.</p><p><h3>See Also:</h3>   <a
@@ -224,7 +224,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -232,7 +232,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -240,7 +240,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -248,7 +248,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -256,7 +256,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -264,7 +264,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -272,7 +272,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -280,7 +280,7 @@ namespace Model
 
     /**
      * <p>The tag specified when a task set is started. If the task set is created by
-     * an AWS CodeDeploy deployment, the <code>startedBy</code> parameter is
+     * an CodeDeploy deployment, the <code>startedBy</code> parameter is
      * <code>CODE_DEPLOY</code>. For a task set created for an external deployment, the
      * startedBy field isn't used.</p>
      */
@@ -289,81 +289,81 @@ namespace Model
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline TaskSet& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline TaskSet& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>The external ID associated with the task set.</p> <p>If a task set is created
-     * by an AWS CodeDeploy deployment, the <code>externalId</code> parameter contains
-     * the AWS CodeDeploy deployment ID.</p> <p>If a task set is created for an
-     * external deployment and is associated with a service discovery registry, the
+     * by an CodeDeploy deployment, the <code>externalId</code> parameter contains the
+     * CodeDeploy deployment ID.</p> <p>If a task set is created for an external
+     * deployment and is associated with a service discovery registry, the
      * <code>externalId</code> parameter contains the
-     * <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map attribute.</p>
+     * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
     inline TaskSet& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
@@ -748,82 +748,82 @@ namespace Model
 
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskSet& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskSet& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Fargate platform version on which the tasks in the task set are
-     * running. A platform version is only specified for tasks run on AWS Fargate. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The Fargate platform version on which the tasks in the task set are running.
+     * A platform version is only specified for tasks run on Fargate. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskSet& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -1132,9 +1132,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1152,9 +1152,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1172,9 +1172,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1192,9 +1192,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1212,9 +1212,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline TaskSet& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1232,9 +1232,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline TaskSet& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1252,9 +1252,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline TaskSet& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1272,9 +1272,9 @@ namespace Model
      * the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values
      * are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
      * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * either keys or values as it is reserved for Amazon Web Services use. You cannot
+     * edit or delete tag keys or values with this prefix. Tags with this prefix do not
+     * count against your tags per resource limit.</p> </li> </ul>
      */
     inline TaskSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

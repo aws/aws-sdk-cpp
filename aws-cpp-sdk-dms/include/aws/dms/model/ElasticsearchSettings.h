@@ -39,90 +39,98 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline ElasticsearchSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline ElasticsearchSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+     * The role must allow the <code>iam:PassRole</code> action.</p>
      */
     inline ElasticsearchSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline const Aws::String& GetEndpointUri() const{ return m_endpointUri; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline bool EndpointUriHasBeenSet() const { return m_endpointUriHasBeenSet; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(const Aws::String& value) { m_endpointUriHasBeenSet = true; m_endpointUri = value; }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(Aws::String&& value) { m_endpointUriHasBeenSet = true; m_endpointUri = std::move(value); }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline void SetEndpointUri(const char* value) { m_endpointUriHasBeenSet = true; m_endpointUri.assign(value); }
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(const Aws::String& value) { SetEndpointUri(value); return *this;}
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(Aws::String&& value) { SetEndpointUri(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport
+     * <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
     inline ElasticsearchSettings& WithEndpointUri(const char* value) { SetEndpointUri(value); return *this;}

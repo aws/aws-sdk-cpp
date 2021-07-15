@@ -87,7 +87,14 @@ namespace Model
     CreateContainerServiceDeployment,
     CreateContainerServiceRegistryLogin,
     RegisterContainerImage,
-    DeleteContainerImage
+    DeleteContainerImage,
+    CreateBucket,
+    DeleteBucket,
+    CreateBucketAccessKey,
+    DeleteBucketAccessKey,
+    UpdateBucketBundle,
+    UpdateBucket,
+    SetResourceAccessForBucket
   };
 
 namespace OperationTypeMapper

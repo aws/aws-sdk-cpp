@@ -8,7 +8,10 @@
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/model/FHIRVersion.h>
+#include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/healthlake/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -110,6 +113,43 @@ namespace Model
 
 
     /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key specified for creating a Data Store. </p>
+     */
+    inline const SseConfiguration& GetSseConfiguration() const{ return m_sseConfiguration; }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key specified for creating a Data Store. </p>
+     */
+    inline bool SseConfigurationHasBeenSet() const { return m_sseConfigurationHasBeenSet; }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key specified for creating a Data Store. </p>
+     */
+    inline void SetSseConfiguration(const SseConfiguration& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = value; }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key specified for creating a Data Store. </p>
+     */
+    inline void SetSseConfiguration(SseConfiguration&& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = std::move(value); }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key specified for creating a Data Store. </p>
+     */
+    inline CreateFHIRDatastoreRequest& WithSseConfiguration(const SseConfiguration& value) { SetSseConfiguration(value); return *this;}
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key specified for creating a Data Store. </p>
+     */
+    inline CreateFHIRDatastoreRequest& WithSseConfiguration(SseConfiguration&& value) { SetSseConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Optional parameter to preload data upon creation of the Data Store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
@@ -192,6 +232,47 @@ namespace Model
      */
     inline CreateFHIRDatastoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline CreateFHIRDatastoreRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline CreateFHIRDatastoreRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline CreateFHIRDatastoreRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     */
+    inline CreateFHIRDatastoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_datastoreName;
@@ -200,11 +281,17 @@ namespace Model
     FHIRVersion m_datastoreTypeVersion;
     bool m_datastoreTypeVersionHasBeenSet;
 
+    SseConfiguration m_sseConfiguration;
+    bool m_sseConfigurationHasBeenSet;
+
     PreloadDataConfig m_preloadDataConfig;
     bool m_preloadDataConfigHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

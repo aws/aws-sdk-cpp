@@ -209,15 +209,15 @@ namespace Model
      * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
      * email from your verified email address. When you use this option, the email
      * delivery limits are the same limits that apply to your Amazon SES verified email
-     * address in your AWS account.</p> <p>If you use this option, you must provide the
-     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * address in your account.</p> <p>If you use this option, you must provide the ARN
+     * of an Amazon SES verified email address for the <code>SourceArn</code>
      * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
      * additional permissions to call Amazon SES on your behalf. When you update your
      * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
-     * which is a type of IAM role, in your AWS account. This role contains the
-     * permissions that allow Amazon Cognito to access Amazon SES and send email
-     * messages with your address. For more information about the service-linked role
-     * that Amazon Cognito creates, see <a
+     * which is a type of IAM role, in your account. This role contains the permissions
+     * that allow Amazon Cognito to access Amazon SES and send email messages with your
+     * address. For more information about the service-linked role that Amazon Cognito
+     * creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -252,15 +252,15 @@ namespace Model
      * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
      * email from your verified email address. When you use this option, the email
      * delivery limits are the same limits that apply to your Amazon SES verified email
-     * address in your AWS account.</p> <p>If you use this option, you must provide the
-     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * address in your account.</p> <p>If you use this option, you must provide the ARN
+     * of an Amazon SES verified email address for the <code>SourceArn</code>
      * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
      * additional permissions to call Amazon SES on your behalf. When you update your
      * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
-     * which is a type of IAM role, in your AWS account. This role contains the
-     * permissions that allow Amazon Cognito to access Amazon SES and send email
-     * messages with your address. For more information about the service-linked role
-     * that Amazon Cognito creates, see <a
+     * which is a type of IAM role, in your account. This role contains the permissions
+     * that allow Amazon Cognito to access Amazon SES and send email messages with your
+     * address. For more information about the service-linked role that Amazon Cognito
+     * creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -295,15 +295,15 @@ namespace Model
      * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
      * email from your verified email address. When you use this option, the email
      * delivery limits are the same limits that apply to your Amazon SES verified email
-     * address in your AWS account.</p> <p>If you use this option, you must provide the
-     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * address in your account.</p> <p>If you use this option, you must provide the ARN
+     * of an Amazon SES verified email address for the <code>SourceArn</code>
      * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
      * additional permissions to call Amazon SES on your behalf. When you update your
      * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
-     * which is a type of IAM role, in your AWS account. This role contains the
-     * permissions that allow Amazon Cognito to access Amazon SES and send email
-     * messages with your address. For more information about the service-linked role
-     * that Amazon Cognito creates, see <a
+     * which is a type of IAM role, in your account. This role contains the permissions
+     * that allow Amazon Cognito to access Amazon SES and send email messages with your
+     * address. For more information about the service-linked role that Amazon Cognito
+     * creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -338,15 +338,15 @@ namespace Model
      * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
      * email from your verified email address. When you use this option, the email
      * delivery limits are the same limits that apply to your Amazon SES verified email
-     * address in your AWS account.</p> <p>If you use this option, you must provide the
-     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * address in your account.</p> <p>If you use this option, you must provide the ARN
+     * of an Amazon SES verified email address for the <code>SourceArn</code>
      * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
      * additional permissions to call Amazon SES on your behalf. When you update your
      * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
-     * which is a type of IAM role, in your AWS account. This role contains the
-     * permissions that allow Amazon Cognito to access Amazon SES and send email
-     * messages with your address. For more information about the service-linked role
-     * that Amazon Cognito creates, see <a
+     * which is a type of IAM role, in your account. This role contains the permissions
+     * that allow Amazon Cognito to access Amazon SES and send email messages with your
+     * address. For more information about the service-linked role that Amazon Cognito
+     * creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -381,15 +381,15 @@ namespace Model
      * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
      * email from your verified email address. When you use this option, the email
      * delivery limits are the same limits that apply to your Amazon SES verified email
-     * address in your AWS account.</p> <p>If you use this option, you must provide the
-     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * address in your account.</p> <p>If you use this option, you must provide the ARN
+     * of an Amazon SES verified email address for the <code>SourceArn</code>
      * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
      * additional permissions to call Amazon SES on your behalf. When you update your
      * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
-     * which is a type of IAM role, in your AWS account. This role contains the
-     * permissions that allow Amazon Cognito to access Amazon SES and send email
-     * messages with your address. For more information about the service-linked role
-     * that Amazon Cognito creates, see <a
+     * which is a type of IAM role, in your account. This role contains the permissions
+     * that allow Amazon Cognito to access Amazon SES and send email messages with your
+     * address. For more information about the service-linked role that Amazon Cognito
+     * creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -424,15 +424,15 @@ namespace Model
      * Amazon SES configuration. Amazon Cognito calls Amazon SES on your behalf to send
      * email from your verified email address. When you use this option, the email
      * delivery limits are the same limits that apply to your Amazon SES verified email
-     * address in your AWS account.</p> <p>If you use this option, you must provide the
-     * ARN of an Amazon SES verified email address for the <code>SourceArn</code>
+     * address in your account.</p> <p>If you use this option, you must provide the ARN
+     * of an Amazon SES verified email address for the <code>SourceArn</code>
      * parameter.</p> <p>Before Amazon Cognito can email your users, it requires
      * additional permissions to call Amazon SES on your behalf. When you update your
      * user pool with this option, Amazon Cognito creates a <i>service-linked role</i>,
-     * which is a type of IAM role, in your AWS account. This role contains the
-     * permissions that allow Amazon Cognito to access Amazon SES and send email
-     * messages with your address. For more information about the service-linked role
-     * that Amazon Cognito creates, see <a
+     * which is a type of IAM role, in your account. This role contains the permissions
+     * that allow Amazon Cognito to access Amazon SES and send email messages with your
+     * address. For more information about the service-linked role that Amazon Cognito
+     * creates, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> </dd> </dl>
@@ -513,8 +513,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -529,8 +529,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -545,8 +545,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -561,8 +561,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -577,8 +577,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -593,8 +593,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -609,8 +609,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>
@@ -625,8 +625,8 @@ namespace Model
      * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
      * publishing – Amazon SES can track the number of send, delivery, open, click,
      * bounce, and complaint events for each email sent. Use event publishing to send
-     * information about these events to other AWS services such as SNS and
-     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * information about these events to other Amazon Web Services services such as SNS
+     * and CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
      * addresses with Amazon SES, you can create groups of IP addresses, called
      * dedicated IP pools. You can then associate the dedicated IP pools with
      * configuration sets.</p> </li> </ul>

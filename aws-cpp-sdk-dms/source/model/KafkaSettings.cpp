@@ -44,7 +44,9 @@ KafkaSettings::KafkaSettings() :
     m_sslClientKeyPasswordHasBeenSet(false),
     m_sslCaCertificateArnHasBeenSet(false),
     m_saslUsernameHasBeenSet(false),
-    m_saslPasswordHasBeenSet(false)
+    m_saslPasswordHasBeenSet(false),
+    m_noHexPrefix(false),
+    m_noHexPrefixHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ KafkaSettings::KafkaSettings(JsonView jsonValue) :
     m_sslClientKeyPasswordHasBeenSet(false),
     m_sslCaCertificateArnHasBeenSet(false),
     m_saslUsernameHasBeenSet(false),
-    m_saslPasswordHasBeenSet(false)
+    m_saslPasswordHasBeenSet(false),
+    m_noHexPrefix(false),
+    m_noHexPrefixHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +204,13 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_saslPasswordHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NoHexPrefix"))
+  {
+    m_noHexPrefix = jsonValue.GetBool("NoHexPrefix");
+
+    m_noHexPrefixHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -304,6 +315,12 @@ JsonValue KafkaSettings::Jsonize() const
   if(m_saslPasswordHasBeenSet)
   {
    payload.WithString("SaslPassword", m_saslPassword);
+
+  }
+
+  if(m_noHexPrefixHasBeenSet)
+  {
+   payload.WithBool("NoHexPrefix", m_noHexPrefix);
 
   }
 

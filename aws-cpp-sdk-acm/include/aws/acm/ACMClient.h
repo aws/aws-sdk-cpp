@@ -126,11 +126,12 @@ namespace Model
     typedef std::function<void(const ACMClient*, const Model::UpdateCertificateOptionsRequest&, const Model::UpdateCertificateOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateOptionsResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Certificate Manager</fullname> <p>You can use AWS Certificate
-   * Manager (ACM) to manage SSL/TLS certificates for your AWS-based websites and
-   * applications. For more information about using ACM, see the <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-   * User Guide</a>.</p>
+   * <fullname>Amazon Web Services Certificate Manager</fullname> <p>You can use
+   * Amazon Web Services Certificate Manager (ACM) to manage SSL/TLS certificates for
+   * your Amazon Web Services-based websites and applications. For more information
+   * about using ACM, see the <a
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/">Amazon Web Services
+   * Certificate Manager User Guide</a>.</p>
    */
   class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
   {
@@ -161,12 +162,12 @@ namespace Model
 
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
-         * to identify and organize your AWS resources. Each tag consists of a
-         * <code>key</code> and an optional <code>value</code>. You specify the certificate
-         * on input by its Amazon Resource Name (ARN). You specify the tag by using a
-         * key-value pair. </p> <p>You can apply a tag to just one certificate if you want
-         * to identify a specific characteristic of that certificate, or you can apply the
-         * same tag to multiple certificates if you want to filter for a common
+         * to identify and organize your Amazon Web Services resources. Each tag consists
+         * of a <code>key</code> and an optional <code>value</code>. You specify the
+         * certificate on input by its Amazon Resource Name (ARN). You specify the tag by
+         * using a key-value pair. </p> <p>You can apply a tag to just one certificate if
+         * you want to identify a specific characteristic of that certificate, or you can
+         * apply the same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
          * multiple resources if you want to specify a relationship among those resources.
          * For example, you can add the same tag to an ACM certificate and an Elastic Load
@@ -184,12 +185,12 @@ namespace Model
 
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
-         * to identify and organize your AWS resources. Each tag consists of a
-         * <code>key</code> and an optional <code>value</code>. You specify the certificate
-         * on input by its Amazon Resource Name (ARN). You specify the tag by using a
-         * key-value pair. </p> <p>You can apply a tag to just one certificate if you want
-         * to identify a specific characteristic of that certificate, or you can apply the
-         * same tag to multiple certificates if you want to filter for a common
+         * to identify and organize your Amazon Web Services resources. Each tag consists
+         * of a <code>key</code> and an optional <code>value</code>. You specify the
+         * certificate on input by its Amazon Resource Name (ARN). You specify the tag by
+         * using a key-value pair. </p> <p>You can apply a tag to just one certificate if
+         * you want to identify a specific characteristic of that certificate, or you can
+         * apply the same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
          * multiple resources if you want to specify a relationship among those resources.
          * For example, you can add the same tag to an ACM certificate and an Elastic Load
@@ -209,12 +210,12 @@ namespace Model
 
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
-         * to identify and organize your AWS resources. Each tag consists of a
-         * <code>key</code> and an optional <code>value</code>. You specify the certificate
-         * on input by its Amazon Resource Name (ARN). You specify the tag by using a
-         * key-value pair. </p> <p>You can apply a tag to just one certificate if you want
-         * to identify a specific characteristic of that certificate, or you can apply the
-         * same tag to multiple certificates if you want to filter for a common
+         * to identify and organize your Amazon Web Services resources. Each tag consists
+         * of a <code>key</code> and an optional <code>value</code>. You specify the
+         * certificate on input by its Amazon Resource Name (ARN). You specify the tag by
+         * using a key-value pair. </p> <p>You can apply a tag to just one certificate if
+         * you want to identify a specific characteristic of that certificate, or you can
+         * apply the same tag to multiple certificates if you want to filter for a common
          * relationship among those certificates. Similarly, you can apply the same tag to
          * multiple resources if you want to specify a relationship among those resources.
          * For example, you can add the same tag to an ACM certificate and an Elastic Load
@@ -237,10 +238,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
-         * certificate that is being used by another AWS service. To delete a certificate
-         * that is in use, the certificate association must first be removed.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Amazon Web Services services integrated with ACM. </p>  <p>You cannot
+         * delete an ACM certificate that is being used by another Amazon Web Services
+         * service. To delete a certificate that is in use, the certificate association
+         * must first be removed.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          */
@@ -251,10 +252,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
-         * certificate that is being used by another AWS service. To delete a certificate
-         * that is in use, the certificate association must first be removed.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Amazon Web Services services integrated with ACM. </p>  <p>You cannot
+         * delete an ACM certificate that is being used by another Amazon Web Services
+         * service. To delete a certificate that is in use, the certificate association
+         * must first be removed.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -267,10 +268,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
-         * certificate that is being used by another AWS service. To delete a certificate
-         * that is in use, the certificate association must first be removed.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Amazon Web Services services integrated with ACM. </p>  <p>You cannot
+         * delete an ACM certificate that is being used by another Amazon Web Services
+         * service. To delete a certificate that is in use, the certificate association
+         * must first be removed.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -353,16 +354,16 @@ namespace Model
         virtual void ExportCertificateAsync(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the account configuration options associated with an AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the account configuration options associated with an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration() const;
 
         /**
-         * <p>Returns the account configuration options associated with an AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the account configuration options associated with an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
          * API Reference</a></p>
          *
@@ -371,8 +372,8 @@ namespace Model
         virtual Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable() const;
 
         /**
-         * <p>Returns the account configuration options associated with an AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the account configuration options associated with an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
          * API Reference</a></p>
          *
@@ -423,8 +424,8 @@ namespace Model
         virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
-         * that are integrated with ACM. Note that <a
+         * <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to
+         * use with services that are integrated with ACM. Note that <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
@@ -432,8 +433,8 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
-         * <p>ACM does not provide <a
+         * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+         * Guide</i>. </p>  <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
@@ -473,8 +474,8 @@ namespace Model
         virtual Model::ImportCertificateOutcome ImportCertificate(const Model::ImportCertificateRequest& request) const;
 
         /**
-         * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
-         * that are integrated with ACM. Note that <a
+         * <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to
+         * use with services that are integrated with ACM. Note that <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
@@ -482,8 +483,8 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
-         * <p>ACM does not provide <a
+         * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+         * Guide</i>. </p>  <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
@@ -525,8 +526,8 @@ namespace Model
         virtual Model::ImportCertificateOutcomeCallable ImportCertificateCallable(const Model::ImportCertificateRequest& request) const;
 
         /**
-         * <p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
-         * that are integrated with ACM. Note that <a
+         * <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to
+         * use with services that are integrated with ACM. Note that <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
@@ -534,8 +535,8 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
-         * <p>ACM does not provide <a
+         * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
+         * Guide</i>. </p>  <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
@@ -780,38 +781,46 @@ namespace Model
         virtual void RenewCertificateAsync(const Model::RenewCertificateRequest& request, const RenewCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests an ACM certificate for use with other AWS services. To request an
-         * ACM certificate, you must specify a fully qualified domain name (FQDN) in the
-         * <code>DomainName</code> parameter. You can also specify additional FQDNs in the
-         * <code>SubjectAlternativeNames</code> parameter. </p> <p>If you are requesting a
-         * private certificate, domain validation is not required. If you are requesting a
-         * public certificate, each domain name that you specify must be validated to
-         * verify that you own or control the domain. You can use <a
+         * <p>Requests an ACM certificate for use with other Amazon Web Services services.
+         * To request an ACM certificate, you must specify a fully qualified domain name
+         * (FQDN) in the <code>DomainName</code> parameter. You can also specify additional
+         * FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p> <p>If you are
+         * requesting a private certificate, domain validation is not required. If you are
+         * requesting a public certificate, each domain name that you specify must be
+         * validated to verify that you own or control the domain. You can use <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
          * validation</a>. We recommend that you use DNS validation. ACM issues public
-         * certificates after receiving approval from the domain owner. </p><p><h3>See
-         * Also:</h3>   <a
+         * certificates after receiving approval from the domain owner. </p>  <p>ACM
+         * behavior differs from the <a
+         * href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
+         * 6125 specification of the certificate validation process. first checks for a
+         * subject alternative name, and, if it finds one, ignores the common name (CN)</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::RequestCertificateOutcome RequestCertificate(const Model::RequestCertificateRequest& request) const;
 
         /**
-         * <p>Requests an ACM certificate for use with other AWS services. To request an
-         * ACM certificate, you must specify a fully qualified domain name (FQDN) in the
-         * <code>DomainName</code> parameter. You can also specify additional FQDNs in the
-         * <code>SubjectAlternativeNames</code> parameter. </p> <p>If you are requesting a
-         * private certificate, domain validation is not required. If you are requesting a
-         * public certificate, each domain name that you specify must be validated to
-         * verify that you own or control the domain. You can use <a
+         * <p>Requests an ACM certificate for use with other Amazon Web Services services.
+         * To request an ACM certificate, you must specify a fully qualified domain name
+         * (FQDN) in the <code>DomainName</code> parameter. You can also specify additional
+         * FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p> <p>If you are
+         * requesting a private certificate, domain validation is not required. If you are
+         * requesting a public certificate, each domain name that you specify must be
+         * validated to verify that you own or control the domain. You can use <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
          * validation</a>. We recommend that you use DNS validation. ACM issues public
-         * certificates after receiving approval from the domain owner. </p><p><h3>See
-         * Also:</h3>   <a
+         * certificates after receiving approval from the domain owner. </p>  <p>ACM
+         * behavior differs from the <a
+         * href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
+         * 6125 specification of the certificate validation process. first checks for a
+         * subject alternative name, and, if it finds one, ignores the common name (CN)</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          *
@@ -820,19 +829,23 @@ namespace Model
         virtual Model::RequestCertificateOutcomeCallable RequestCertificateCallable(const Model::RequestCertificateRequest& request) const;
 
         /**
-         * <p>Requests an ACM certificate for use with other AWS services. To request an
-         * ACM certificate, you must specify a fully qualified domain name (FQDN) in the
-         * <code>DomainName</code> parameter. You can also specify additional FQDNs in the
-         * <code>SubjectAlternativeNames</code> parameter. </p> <p>If you are requesting a
-         * private certificate, domain validation is not required. If you are requesting a
-         * public certificate, each domain name that you specify must be validated to
-         * verify that you own or control the domain. You can use <a
+         * <p>Requests an ACM certificate for use with other Amazon Web Services services.
+         * To request an ACM certificate, you must specify a fully qualified domain name
+         * (FQDN) in the <code>DomainName</code> parameter. You can also specify additional
+         * FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p> <p>If you are
+         * requesting a private certificate, domain validation is not required. If you are
+         * requesting a public certificate, each domain name that you specify must be
+         * validated to verify that you own or control the domain. You can use <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
          * validation</a> or <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
          * validation</a>. We recommend that you use DNS validation. ACM issues public
-         * certificates after receiving approval from the domain owner. </p><p><h3>See
-         * Also:</h3>   <a
+         * certificates after receiving approval from the domain owner. </p>  <p>ACM
+         * behavior differs from the <a
+         * href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
+         * 6125 specification of the certificate validation process. first checks for a
+         * subject alternative name, and, if it finds one, ignores the common name (CN)</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          *

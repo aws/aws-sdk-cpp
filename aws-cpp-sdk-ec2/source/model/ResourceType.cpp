@@ -36,6 +36,7 @@ namespace Aws
         static const int import_image_task_HASH = HashingUtils::HashString("import-image-task");
         static const int import_snapshot_task_HASH = HashingUtils::HashString("import-snapshot-task");
         static const int instance_HASH = HashingUtils::HashString("instance");
+        static const int instance_event_window_HASH = HashingUtils::HashString("instance-event-window");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
         static const int key_pair_HASH = HashingUtils::HashString("key-pair");
         static const int launch_template_HASH = HashingUtils::HashString("launch-template");
@@ -136,6 +137,10 @@ namespace Aws
           else if (hashCode == instance_HASH)
           {
             return ResourceType::instance;
+          }
+          else if (hashCode == instance_event_window_HASH)
+          {
+            return ResourceType::instance_event_window;
           }
           else if (hashCode == internet_gateway_HASH)
           {
@@ -311,6 +316,8 @@ namespace Aws
             return "import-snapshot-task";
           case ResourceType::instance:
             return "instance";
+          case ResourceType::instance_event_window:
+            return "instance-event-window";
           case ResourceType::internet_gateway:
             return "internet-gateway";
           case ResourceType::key_pair:
