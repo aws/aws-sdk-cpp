@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-   * change.</p> <p>The event integration.</p><p><h3>See Also:</h3>   <a
+   * <p>The event integration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventIntegration">AWS
    * API Reference</a></p>
    */
@@ -195,42 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline const Aws::String& GetEventBridgeBus() const{ return m_eventBridgeBus; }
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline bool EventBridgeBusHasBeenSet() const { return m_eventBridgeBusHasBeenSet; }
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline void SetEventBridgeBus(const Aws::String& value) { m_eventBridgeBusHasBeenSet = true; m_eventBridgeBus = value; }
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline void SetEventBridgeBus(Aws::String&& value) { m_eventBridgeBusHasBeenSet = true; m_eventBridgeBus = std::move(value); }
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline void SetEventBridgeBus(const char* value) { m_eventBridgeBusHasBeenSet = true; m_eventBridgeBus.assign(value); }
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline EventIntegration& WithEventBridgeBus(const Aws::String& value) { SetEventBridgeBus(value); return *this;}
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline EventIntegration& WithEventBridgeBus(Aws::String&& value) { SetEventBridgeBus(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Eventbridge bus for the event integration.</p>
+     * <p>The Amazon EventBridge bus for the event integration.</p>
      */
     inline EventIntegration& WithEventBridgeBus(const char* value) { SetEventBridgeBus(value); return *this;}
 

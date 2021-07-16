@@ -85,50 +85,50 @@ namespace Model
 
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline const Aws::String& GetSourceDescription() const{ return m_sourceDescription; }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline bool SourceDescriptionHasBeenSet() const { return m_sourceDescriptionHasBeenSet; }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline void SetSourceDescription(const Aws::String& value) { m_sourceDescriptionHasBeenSet = true; m_sourceDescription = value; }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline void SetSourceDescription(Aws::String&& value) { m_sourceDescriptionHasBeenSet = true; m_sourceDescription = std::move(value); }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline void SetSourceDescription(const char* value) { m_sourceDescriptionHasBeenSet = true; m_sourceDescription.assign(value); }
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline CreateControlMappingSource& WithSourceDescription(const Aws::String& value) { SetSourceDescription(value); return *this;}
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline CreateControlMappingSource& WithSourceDescription(Aws::String&& value) { SetSourceDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the data source that determines from where AWS Audit
-     * Manager collects evidence for the control. </p>
+     * <p> The description of the data source that determines from where Audit Manager
+     * collects evidence for the control. </p>
      */
     inline CreateControlMappingSource& WithSourceDescription(const char* value) { SetSourceDescription(value); return *this;}
 

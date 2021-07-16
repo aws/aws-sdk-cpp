@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p> The file used to structure and automate AWS Audit Manager assessments for a
+   * <p> The file used to structure and automate Audit Manager assessments for a
    * given compliance standard. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Framework">AWS
    * API Reference</a></p>
@@ -329,50 +329,42 @@ namespace Model
 
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline const Aws::String& GetControlSources() const{ return m_controlSources; }
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline bool ControlSourcesHasBeenSet() const { return m_controlSourcesHasBeenSet; }
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline void SetControlSources(const Aws::String& value) { m_controlSourcesHasBeenSet = true; m_controlSources = value; }
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline void SetControlSources(Aws::String&& value) { m_controlSourcesHasBeenSet = true; m_controlSources = std::move(value); }
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline void SetControlSources(const char* value) { m_controlSourcesHasBeenSet = true; m_controlSources.assign(value); }
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline Framework& WithControlSources(const Aws::String& value) { SetControlSources(value); return *this;}
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline Framework& WithControlSources(Aws::String&& value) { SetControlSources(std::move(value)); return *this;}
 
     /**
-     * <p> The sources from which AWS Audit Manager collects evidence for the control.
-     * </p>
+     * <p> The sources from which Audit Manager collects evidence for the control. </p>
      */
     inline Framework& WithControlSources(const char* value) { SetControlSources(value); return *this;}
 

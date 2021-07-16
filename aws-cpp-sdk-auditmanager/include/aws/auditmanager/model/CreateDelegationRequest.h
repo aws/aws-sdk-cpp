@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p> A collection of attributes used to create a delegation for an assessment in
-   * AWS Audit Manager. </p><p><h3>See Also:</h3>   <a
+   * Audit Manager. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateDelegationRequest">AWS
    * API Reference</a></p>
    */

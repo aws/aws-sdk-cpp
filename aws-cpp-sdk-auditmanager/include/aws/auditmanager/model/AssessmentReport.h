@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p> A finalized document generated from an AWS Audit Manager assessment. These
+   * <p> A finalized document generated from an Audit Manager assessment. These
    * reports summarize the relevant evidence collected for your audit, and link to
    * the relevant evidence folders which are named and organized according to the
    * controls specified in your assessment. </p><p><h3>See Also:</h3>   <a
@@ -166,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline AssessmentReport& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline AssessmentReport& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline AssessmentReport& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

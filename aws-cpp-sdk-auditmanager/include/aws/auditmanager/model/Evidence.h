@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline const Aws::String& GetEvidenceAwsAccountId() const{ return m_evidenceAwsAccountId; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline bool EvidenceAwsAccountIdHasBeenSet() const { return m_evidenceAwsAccountIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetEvidenceAwsAccountId(const Aws::String& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = value; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetEvidenceAwsAccountId(Aws::String&& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetEvidenceAwsAccountId(const char* value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId.assign(value); }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline Evidence& WithEvidenceAwsAccountId(const Aws::String& value) { SetEvidenceAwsAccountId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline Evidence& WithEvidenceAwsAccountId(Aws::String&& value) { SetEvidenceAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline Evidence& WithEvidenceAwsAccountId(const char* value) { SetEvidenceAwsAccountId(value); return *this;}
 
@@ -158,42 +158,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline Evidence& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline Evidence& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS service from which the evidence is collected. </p>
+     * <p> The Amazon Web Service from which the evidence is collected. </p>
      */
     inline Evidence& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 
@@ -464,155 +464,155 @@ namespace Model
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline const Aws::String& GetComplianceCheck() const{ return m_complianceCheck; }
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline bool ComplianceCheckHasBeenSet() const { return m_complianceCheckHasBeenSet; }
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline void SetComplianceCheck(const Aws::String& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = value; }
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline void SetComplianceCheck(Aws::String&& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = std::move(value); }
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline void SetComplianceCheck(const char* value) { m_complianceCheckHasBeenSet = true; m_complianceCheck.assign(value); }
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline Evidence& WithComplianceCheck(const Aws::String& value) { SetComplianceCheck(value); return *this;}
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline Evidence& WithComplianceCheck(Aws::String&& value) { SetComplianceCheck(std::move(value)); return *this;}
 
     /**
      * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from AWS Security Hub, a <i>Pass</i> or
-     * <i>Fail</i> result is shown. For evidence collected from AWS Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
+     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
+     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
+     * <i>Noncompliant</i> result is shown. </p>
      */
     inline Evidence& WithComplianceCheck(const char* value) { SetComplianceCheck(value); return *this;}
 
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline const Aws::String& GetAwsOrganization() const{ return m_awsOrganization; }
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline bool AwsOrganizationHasBeenSet() const { return m_awsOrganizationHasBeenSet; }
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline void SetAwsOrganization(const Aws::String& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = value; }
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline void SetAwsOrganization(Aws::String&& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = std::move(value); }
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline void SetAwsOrganization(const char* value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization.assign(value); }
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline Evidence& WithAwsOrganization(const Aws::String& value) { SetAwsOrganization(value); return *this;}
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline Evidence& WithAwsOrganization(Aws::String&& value) { SetAwsOrganization(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS account from which the evidence is collected, and its AWS
-     * organization path. </p>
+     * <p> The account from which the evidence is collected, and its organization path.
+     * </p>
      */
     inline Evidence& WithAwsOrganization(const char* value) { SetAwsOrganization(value); return *this;}
 
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline Evidence& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline Evidence& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS account. </p>
+     * <p> The identifier for the specified account. </p>
      */
     inline Evidence& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

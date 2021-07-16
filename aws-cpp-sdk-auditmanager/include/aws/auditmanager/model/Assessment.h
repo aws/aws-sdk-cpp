@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p> An entity that defines the scope of audit evidence collected by AWS Audit
-   * Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit
-   * Manager framework. </p><p><h3>See Also:</h3>   <a
+   * <p> An entity that defines the scope of audit evidence collected by Audit
+   * Manager. An Audit Manager assessment is an implementation of an Audit Manager
+   * framework. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Assessment">AWS
    * API Reference</a></p>
    */
@@ -85,32 +85,32 @@ namespace Model
 
 
     /**
-     * <p> The AWS account associated with the assessment. </p>
+     * <p> The account associated with the assessment. </p>
      */
     inline const AWSAccount& GetAwsAccount() const{ return m_awsAccount; }
 
     /**
-     * <p> The AWS account associated with the assessment. </p>
+     * <p> The account associated with the assessment. </p>
      */
     inline bool AwsAccountHasBeenSet() const { return m_awsAccountHasBeenSet; }
 
     /**
-     * <p> The AWS account associated with the assessment. </p>
+     * <p> The account associated with the assessment. </p>
      */
     inline void SetAwsAccount(const AWSAccount& value) { m_awsAccountHasBeenSet = true; m_awsAccount = value; }
 
     /**
-     * <p> The AWS account associated with the assessment. </p>
+     * <p> The account associated with the assessment. </p>
      */
     inline void SetAwsAccount(AWSAccount&& value) { m_awsAccountHasBeenSet = true; m_awsAccount = std::move(value); }
 
     /**
-     * <p> The AWS account associated with the assessment. </p>
+     * <p> The account associated with the assessment. </p>
      */
     inline Assessment& WithAwsAccount(const AWSAccount& value) { SetAwsAccount(value); return *this;}
 
     /**
-     * <p> The AWS account associated with the assessment. </p>
+     * <p> The account associated with the assessment. </p>
      */
     inline Assessment& WithAwsAccount(AWSAccount&& value) { SetAwsAccount(std::move(value)); return *this;}
 

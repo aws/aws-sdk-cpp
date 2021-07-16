@@ -286,32 +286,32 @@ namespace Model
 
 
     /**
-     * <p> The wrapper of AWS accounts and services in scope for the assessment. </p>
+     * <p> The wrapper of accounts and services in scope for the assessment. </p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p> The wrapper of AWS accounts and services in scope for the assessment. </p>
+     * <p> The wrapper of accounts and services in scope for the assessment. </p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p> The wrapper of AWS accounts and services in scope for the assessment. </p>
+     * <p> The wrapper of accounts and services in scope for the assessment. </p>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p> The wrapper of AWS accounts and services in scope for the assessment. </p>
+     * <p> The wrapper of accounts and services in scope for the assessment. </p>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p> The wrapper of AWS accounts and services in scope for the assessment. </p>
+     * <p> The wrapper of accounts and services in scope for the assessment. </p>
      */
     inline AssessmentMetadata& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p> The wrapper of AWS accounts and services in scope for the assessment. </p>
+     * <p> The wrapper of accounts and services in scope for the assessment. </p>
      */
     inline AssessmentMetadata& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 

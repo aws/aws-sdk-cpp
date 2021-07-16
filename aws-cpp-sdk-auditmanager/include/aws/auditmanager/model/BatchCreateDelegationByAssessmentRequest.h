@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline const Aws::Vector<CreateDelegationRequest>& GetCreateDelegationRequests() const{ return m_createDelegationRequests; }
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline bool CreateDelegationRequestsHasBeenSet() const { return m_createDelegationRequestsHasBeenSet; }
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline void SetCreateDelegationRequests(const Aws::Vector<CreateDelegationRequest>& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests = value; }
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline void SetCreateDelegationRequests(Aws::Vector<CreateDelegationRequest>&& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests = std::move(value); }
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline BatchCreateDelegationByAssessmentRequest& WithCreateDelegationRequests(const Aws::Vector<CreateDelegationRequest>& value) { SetCreateDelegationRequests(value); return *this;}
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline BatchCreateDelegationByAssessmentRequest& WithCreateDelegationRequests(Aws::Vector<CreateDelegationRequest>&& value) { SetCreateDelegationRequests(std::move(value)); return *this;}
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline BatchCreateDelegationByAssessmentRequest& AddCreateDelegationRequests(const CreateDelegationRequest& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests.push_back(value); return *this; }
 
     /**
-     * <p> The API request to batch create delegations in AWS Audit Manager. </p>
+     * <p> The API request to batch create delegations in Audit Manager. </p>
      */
     inline BatchCreateDelegationByAssessmentRequest& AddCreateDelegationRequests(CreateDelegationRequest&& value) { m_createDelegationRequestsHasBeenSet = true; m_createDelegationRequests.push_back(std::move(value)); return *this; }
 

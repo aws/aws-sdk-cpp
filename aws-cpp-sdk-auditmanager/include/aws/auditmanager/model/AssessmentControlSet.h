@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p> Represents a set of controls in an AWS Audit Manager assessment.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Represents a set of controls in an Audit Manager assessment. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentControlSet">AWS
    * API Reference</a></p>
    */
