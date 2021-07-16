@@ -63,6 +63,16 @@ static ClientConfiguration makeClientConfigurationWithProxy()
     return configuration;
 }
 
+static ClientConfiguration makeClientConfigurationWithSocksProxy()
+{
+    ClientConfiguration configuration = Aws::Client::ClientConfiguration();
+    configuration.proxyHost = "127.0.0.1";
+    configuration.proxyPort = 1080;
+    configuration.proxyScheme = Aws::Http::Scheme::SOCKS5H;
+
+    return configuration;
+}
+
 TEST(HttpClientTest, TestRandomURLWithNoProxy)
 {
     auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
@@ -74,6 +84,17 @@ TEST(HttpClientTest, TestRandomURLWithProxy)
     ClientConfiguration configuration = makeClientConfigurationWithProxy();
     auto httpClient = CreateHttpClient(configuration);
     makeRandomHttpRequest(httpClient, true); // we expect it to try to use proxy that is invalid
+}
+
+/*
+ * docker build . -t aws_test
+ * docker run -p 127.0.0.1:1080:1080/tcp aws_test
+ */
+TEST(HttpClientTest, TestRandomURLWithSocksProxy)
+{
+    ClientConfiguration configuration = makeClientConfigurationWithSocksProxy();
+    auto httpClient = CreateHttpClient(configuration);
+    makeRandomHttpRequest(httpClient, false); // we expect it to try to use proxy that is valid
 }
 
 TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
