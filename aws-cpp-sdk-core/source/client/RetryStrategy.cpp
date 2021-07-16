@@ -60,7 +60,8 @@ namespace Aws
         long StandardRetryStrategy::CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const
         {
             AWS_UNREFERENCED_PARAM(error);
-            return (std::min)(rand() % 1000 * (1 << attemptedRetries), 20000);
+            // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
+            return std::min(rand() % 1000 * (1 << std::min(attemptedRetries, 15L)), 20000);
         }
 
         DefaultRetryQuotaContainer::DefaultRetryQuotaContainer() : m_retryQuota(INITIAL_RETRY_TOKENS)
