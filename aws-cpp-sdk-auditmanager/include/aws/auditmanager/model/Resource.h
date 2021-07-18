@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> A system asset that is evaluated in an AWS Audit Manager assessment.
+   * <p> A system asset that is evaluated in an Audit Manager assessment.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Resource">AWS
    * API Reference</a></p>

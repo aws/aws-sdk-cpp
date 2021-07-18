@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p> The data source that determines from where AWS Audit Manager collects
-   * evidence for the control. </p><p><h3>See Also:</h3>   <a
+   * <p> The data source that determines from where Audit Manager collects evidence
+   * for the control. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlMappingSource">AWS
    * API Reference</a></p>
    */

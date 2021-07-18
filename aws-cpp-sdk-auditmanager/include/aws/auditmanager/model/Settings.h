@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> The settings object that holds all supported AWS Audit Manager settings.
+   * <p> The settings object that holds all supported Audit Manager settings.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Settings">AWS
    * API Reference</a></p>
@@ -42,22 +42,22 @@ namespace Model
 
 
     /**
-     * <p> Specifies whether AWS Organizations is enabled. </p>
+     * <p> Specifies whether Organizations is enabled. </p>
      */
     inline bool GetIsAwsOrgEnabled() const{ return m_isAwsOrgEnabled; }
 
     /**
-     * <p> Specifies whether AWS Organizations is enabled. </p>
+     * <p> Specifies whether Organizations is enabled. </p>
      */
     inline bool IsAwsOrgEnabledHasBeenSet() const { return m_isAwsOrgEnabledHasBeenSet; }
 
     /**
-     * <p> Specifies whether AWS Organizations is enabled. </p>
+     * <p> Specifies whether Organizations is enabled. </p>
      */
     inline void SetIsAwsOrgEnabled(bool value) { m_isAwsOrgEnabledHasBeenSet = true; m_isAwsOrgEnabled = value; }
 
     /**
-     * <p> Specifies whether AWS Organizations is enabled. </p>
+     * <p> Specifies whether Organizations is enabled. </p>
      */
     inline Settings& WithIsAwsOrgEnabled(bool value) { SetIsAwsOrgEnabled(value); return *this;}
 
@@ -176,42 +176,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline Settings& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline Settings& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS KMS key details. </p>
+     * <p> The KMS key details. </p>
      */
     inline Settings& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 

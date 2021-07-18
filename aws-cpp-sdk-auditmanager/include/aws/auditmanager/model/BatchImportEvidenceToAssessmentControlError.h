@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p> Manual evidence that cannot be collected automatically by AWS Audit Manager.
+     * <p> Manual evidence that cannot be collected automatically by Audit Manager.
      * </p>
      */
     inline const ManualEvidence& GetManualEvidence() const{ return m_manualEvidence; }
 
     /**
-     * <p> Manual evidence that cannot be collected automatically by AWS Audit Manager.
+     * <p> Manual evidence that cannot be collected automatically by Audit Manager.
      * </p>
      */
     inline bool ManualEvidenceHasBeenSet() const { return m_manualEvidenceHasBeenSet; }
 
     /**
-     * <p> Manual evidence that cannot be collected automatically by AWS Audit Manager.
+     * <p> Manual evidence that cannot be collected automatically by Audit Manager.
      * </p>
      */
     inline void SetManualEvidence(const ManualEvidence& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence = value; }
 
     /**
-     * <p> Manual evidence that cannot be collected automatically by AWS Audit Manager.
+     * <p> Manual evidence that cannot be collected automatically by Audit Manager.
      * </p>
      */
     inline void SetManualEvidence(ManualEvidence&& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence = std::move(value); }
 
     /**
-     * <p> Manual evidence that cannot be collected automatically by AWS Audit Manager.
+     * <p> Manual evidence that cannot be collected automatically by Audit Manager.
      * </p>
      */
     inline BatchImportEvidenceToAssessmentControlError& WithManualEvidence(const ManualEvidence& value) { SetManualEvidence(value); return *this;}
 
     /**
-     * <p> Manual evidence that cannot be collected automatically by AWS Audit Manager.
+     * <p> Manual evidence that cannot be collected automatically by Audit Manager.
      * </p>
      */
     inline BatchImportEvidenceToAssessmentControlError& WithManualEvidence(ManualEvidence&& value) { SetManualEvidence(std::move(value)); return *this;}

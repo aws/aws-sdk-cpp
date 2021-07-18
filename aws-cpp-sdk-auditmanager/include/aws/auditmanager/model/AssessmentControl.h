@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p> The control entity that represents a standard or custom control used in an
-   * AWS Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
+   * Audit Manager assessment. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentControl">AWS
    * API Reference</a></p>
    */

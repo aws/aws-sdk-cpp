@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p> A metadata object associated with an assessment in AWS Audit Manager.
+   * <p> A metadata object associated with an assessment in Audit Manager.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentMetadataItem">AWS
    * API Reference</a></p>

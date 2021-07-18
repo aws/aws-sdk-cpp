@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationId = value; }
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationId.assign(value); }
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline RegisterOrganizationAdminAccountResult& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline RegisterOrganizationAdminAccountResult& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified AWS organization. </p>
+     * <p> The identifier for the specified organization. </p>
      */
     inline RegisterOrganizationAdminAccountResult& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 

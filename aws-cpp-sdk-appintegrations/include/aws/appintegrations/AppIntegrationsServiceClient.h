@@ -103,10 +103,9 @@ namespace Model
     typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateEventIntegrationRequest&, const Model::UpdateEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventIntegrationResponseReceivedHandler;
 
   /**
-   * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-   * change.</p> <p>The Amazon AppIntegrations service enables you to configure and
-   * reuse connections to external applications.</p> <p>For information about how you
-   * can use external applications with Amazon Connect, see <a
+   * <p>The Amazon AppIntegrations service enables you to configure and reuse
+   * connections to external applications.</p> <p>For information about how you can
+   * use external applications with Amazon Connect, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/crm.html">Set up
    * pre-built integrations</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
    */
@@ -138,10 +137,9 @@ namespace Model
 
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Creates an EventIntegration, given a specified name, description,
-         * and a reference to an Amazon Eventbridge bus in your account and a partner event
-         * source that will push events to that bus. No objects are created in the your
+         * <p>Creates an EventIntegration, given a specified name, description, and a
+         * reference to an Amazon EventBridge bus in your account and a partner event
+         * source that pushes events to that bus. No objects are created in the your
          * account, only metadata that is persisted on the EventIntegration control
          * plane.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateEventIntegration">AWS
@@ -150,10 +148,9 @@ namespace Model
         virtual Model::CreateEventIntegrationOutcome CreateEventIntegration(const Model::CreateEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Creates an EventIntegration, given a specified name, description,
-         * and a reference to an Amazon Eventbridge bus in your account and a partner event
-         * source that will push events to that bus. No objects are created in the your
+         * <p>Creates an EventIntegration, given a specified name, description, and a
+         * reference to an Amazon EventBridge bus in your account and a partner event
+         * source that pushes events to that bus. No objects are created in the your
          * account, only metadata that is persisted on the EventIntegration control
          * plane.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateEventIntegration">AWS
@@ -164,10 +161,9 @@ namespace Model
         virtual Model::CreateEventIntegrationOutcomeCallable CreateEventIntegrationCallable(const Model::CreateEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Creates an EventIntegration, given a specified name, description,
-         * and a reference to an Amazon Eventbridge bus in your account and a partner event
-         * source that will push events to that bus. No objects are created in the your
+         * <p>Creates an EventIntegration, given a specified name, description, and a
+         * reference to an Amazon EventBridge bus in your account and a partner event
+         * source that pushes events to that bus. No objects are created in the your
          * account, only metadata that is persisted on the EventIntegration control
          * plane.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateEventIntegration">AWS
@@ -178,20 +174,16 @@ namespace Model
         virtual void CreateEventIntegrationAsync(const Model::CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Deletes the specified existing event integration. If the event
-         * integration is associated with clients, the request is rejected.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified existing event integration. If the event integration is
+         * associated with clients, the request is rejected.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteEventIntegration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEventIntegrationOutcome DeleteEventIntegration(const Model::DeleteEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Deletes the specified existing event integration. If the event
-         * integration is associated with clients, the request is rejected.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified existing event integration. If the event integration is
+         * associated with clients, the request is rejected.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteEventIntegration">AWS
          * API Reference</a></p>
          *
@@ -200,10 +192,8 @@ namespace Model
         virtual Model::DeleteEventIntegrationOutcomeCallable DeleteEventIntegrationCallable(const Model::DeleteEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Deletes the specified existing event integration. If the event
-         * integration is associated with clients, the request is rejected.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified existing event integration. If the event integration is
+         * associated with clients, the request is rejected.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteEventIntegration">AWS
          * API Reference</a></p>
          *
@@ -212,18 +202,14 @@ namespace Model
         virtual void DeleteEventIntegrationAsync(const Model::DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Return information about the event integration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Return information about the event integration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEventIntegrationOutcome GetEventIntegration(const Model::GetEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Return information about the event integration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Return information about the event integration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">AWS
          * API Reference</a></p>
          *
@@ -232,9 +218,7 @@ namespace Model
         virtual Model::GetEventIntegrationOutcomeCallable GetEventIntegrationCallable(const Model::GetEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Return information about the event integration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Return information about the event integration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">AWS
          * API Reference</a></p>
          *
@@ -243,18 +227,16 @@ namespace Model
         virtual void GetEventIntegrationAsync(const Model::GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Returns a paginated list of event integration associations in the
-         * account. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of event integration associations in the account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrationAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListEventIntegrationAssociationsOutcome ListEventIntegrationAssociations(const Model::ListEventIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Returns a paginated list of event integration associations in the
-         * account. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of event integration associations in the account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -263,9 +245,8 @@ namespace Model
         virtual Model::ListEventIntegrationAssociationsOutcomeCallable ListEventIntegrationAssociationsCallable(const Model::ListEventIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Returns a paginated list of event integration associations in the
-         * account. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of event integration associations in the account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -274,18 +255,16 @@ namespace Model
         virtual void ListEventIntegrationAssociationsAsync(const Model::ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Returns a paginated list of event integrations in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of event integrations in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListEventIntegrationsOutcome ListEventIntegrations(const Model::ListEventIntegrationsRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Returns a paginated list of event integrations in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of event integrations in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrations">AWS
          * API Reference</a></p>
          *
@@ -294,9 +273,8 @@ namespace Model
         virtual Model::ListEventIntegrationsOutcomeCallable ListEventIntegrationsCallable(const Model::ListEventIntegrationsRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Returns a paginated list of event integrations in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a paginated list of event integrations in the account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrations">AWS
          * API Reference</a></p>
          *
@@ -305,18 +283,14 @@ namespace Model
         virtual void ListEventIntegrationsAsync(const Model::ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Lists the tags for the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Lists the tags for the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -325,9 +299,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Lists the tags for the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -336,18 +308,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Adds the specified tags to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Adds the specified tags to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/TagResource">AWS
          * API Reference</a></p>
          *
@@ -356,9 +326,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Adds the specified tags to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/TagResource">AWS
          * API Reference</a></p>
          *
@@ -367,18 +336,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Removes the specified tags from the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Removes the specified tags from the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -387,9 +354,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Removes the specified tags from the specified
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -398,18 +364,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Updates the description of an event integration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the description of an event integration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateEventIntegration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEventIntegrationOutcome UpdateEventIntegration(const Model::UpdateEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Updates the description of an event integration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the description of an event integration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateEventIntegration">AWS
          * API Reference</a></p>
          *
@@ -418,9 +382,8 @@ namespace Model
         virtual Model::UpdateEventIntegrationOutcomeCallable UpdateEventIntegrationCallable(const Model::UpdateEventIntegrationRequest& request) const;
 
         /**
-         * <p>The Amazon AppIntegrations APIs are in preview release and are subject to
-         * change.</p> <p>Updates the description of an event integration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the description of an event integration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateEventIntegration">AWS
          * API Reference</a></p>
          *

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> The notification used to inform a user of an update in AWS Audit Manager.
-   * For example, this includes the notification that is sent when a control set is
+   * <p> The notification used to inform a user of an update in Audit Manager. For
+   * example, this includes the notification that is sent when a control set is
    * delegated for review. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Notification">AWS
    * API Reference</a></p>

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS
-   * Security Hub checks, and AWS API names. </p><p><h3>See Also:</h3>   <a
+   * <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub
+   * checks, and Amazon Web Services API names. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/SourceKeyword">AWS
    * API Reference</a></p>
    */
@@ -71,58 +71,58 @@ namespace Model
 
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline const Aws::String& GetKeywordValue() const{ return m_keywordValue; }
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline bool KeywordValueHasBeenSet() const { return m_keywordValueHasBeenSet; }
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline void SetKeywordValue(const Aws::String& value) { m_keywordValueHasBeenSet = true; m_keywordValue = value; }
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline void SetKeywordValue(Aws::String&& value) { m_keywordValueHasBeenSet = true; m_keywordValue = std::move(value); }
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline void SetKeywordValue(const char* value) { m_keywordValueHasBeenSet = true; m_keywordValue.assign(value); }
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline SourceKeyword& WithKeywordValue(const Aws::String& value) { SetKeywordValue(value); return *this;}
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline SourceKeyword& WithKeywordValue(Aws::String&& value) { SetKeywordValue(std::move(value)); return *this;}
 
     /**
-     * <p> The value of the keyword used to search AWS CloudTrail logs, AWS Config
-     * rules, AWS Security Hub checks, and AWS API names when mapping a control data
-     * source. </p>
+     * <p> The value of the keyword used to search CloudTrail logs, Config rules,
+     * Security Hub checks, and Amazon Web Services API names when mapping a control
+     * data source. </p>
      */
     inline SourceKeyword& WithKeywordValue(const char* value) { SetKeywordValue(value); return *this;}
 

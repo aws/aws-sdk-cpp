@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p> A <code>controlSet</code> entity that represents a collection of controls in
-   * AWS Audit Manager. This does not contain the control set ID. </p><p><h3>See
+   * Audit Manager. This does not contain the control set ID. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkControlSet">AWS
    * API Reference</a></p>
