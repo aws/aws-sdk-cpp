@@ -126,26 +126,22 @@ namespace Model
 
 
     /**
-     * <p>Returns the list of component build versions for the specified semantic
-     * version.</p>
+     * <p>Returns the list of component build versions for the specified name.</p>
      */
     inline bool GetByName() const{ return m_byName; }
 
     /**
-     * <p>Returns the list of component build versions for the specified semantic
-     * version.</p>
+     * <p>Returns the list of component build versions for the specified name.</p>
      */
     inline bool ByNameHasBeenSet() const { return m_byNameHasBeenSet; }
 
     /**
-     * <p>Returns the list of component build versions for the specified semantic
-     * version.</p>
+     * <p>Returns the list of component build versions for the specified name.</p>
      */
     inline void SetByName(bool value) { m_byNameHasBeenSet = true; m_byName = value; }
 
     /**
-     * <p>Returns the list of component build versions for the specified semantic
-     * version.</p>
+     * <p>Returns the list of component build versions for the specified name.</p>
      */
     inline ListComponentsRequest& WithByName(bool value) { SetByName(value); return *this;}
 

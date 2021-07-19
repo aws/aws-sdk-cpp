@@ -34,6 +34,9 @@ Endpoint::Endpoint() :
     m_createdAtHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_stateDetailsHasBeenSet(false),
+    m_failureReason(FailureReason::NOT_SET),
+    m_failureReasonHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -54,6 +57,9 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_stateDetailsHasBeenSet(false),
+    m_failureReason(FailureReason::NOT_SET),
+    m_failureReasonHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -162,6 +168,20 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_subnetIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stateDetails"))
+  {
+    m_stateDetails = jsonValue.GetString("stateDetails");
+
+    m_stateDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("failureReason"));
+
+    m_failureReasonHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -264,6 +284,17 @@ JsonValue Endpoint::Jsonize() const
    }
    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
 
+  }
+
+  if(m_stateDetailsHasBeenSet)
+  {
+   payload.WithString("stateDetails", m_stateDetails);
+
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("failureReason", FailureReasonMapper::GetNameForFailureReason(m_failureReason));
   }
 
   if(m_tagsHasBeenSet)

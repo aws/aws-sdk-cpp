@@ -212,7 +212,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower
@@ -227,7 +227,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower
@@ -242,7 +242,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower
@@ -257,7 +257,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower
@@ -272,7 +272,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower
@@ -287,7 +287,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower
@@ -302,7 +302,7 @@ namespace Model
     /**
      * <p>Specifies a geographical box surrounding a route. Used to zoom into a route
      * when displaying it in a map. For example, <code>[min x, min y, max x, max
-     * y]</code> </p> <p>The first 2 <code>bbox</code> parameters describe the lower
+     * y]</code>.</p> <p>The first 2 <code>bbox</code> parameters describe the lower
      * southwest corner: </p> <ul> <li> <p>The first <code>bbox</code> position is the
      * X coordinate or longitude of the lower southwest corner. </p> </li> <li> <p>The
      * second <code>bbox</code> position is the Y coordinate or latitude of the lower

@@ -171,50 +171,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline const Aws::String& GetMapArn() const{ return m_mapArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline void SetMapArn(const Aws::String& value) { m_mapArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline void SetMapArn(Aws::String&& value) { m_mapArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline void SetMapArn(const char* value) { m_mapArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline DescribeMapResult& WithMapArn(const Aws::String& value) { SetMapArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline DescribeMapResult& WithMapArn(Aws::String&& value) { SetMapArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the map resource. Used when you need to
-     * specify a resource across all AWS.</p> <ul> <li> <p>Format example:
+     * <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a
+     * resource across all AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li> </ul>
      */
     inline DescribeMapResult& WithMapArn(const char* value) { SetMapArn(value); return *this;}

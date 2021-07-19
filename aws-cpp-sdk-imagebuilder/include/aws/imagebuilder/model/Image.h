@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>An image build version.</p><p><h3>See Also:</h3>   <a
+   * <p>An Image Builder image. You must specify exactly one recipe for the image –
+   * either a container recipe (<code>containerRecipe</code>), which creates a
+   * container image, or an image recipe (<code>imageRecipe</code>), which creates an
+   * AMI.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Image">AWS
    * API Reference</a></p>
    */
@@ -48,42 +51,106 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline Image& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline Image& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The Amazon Resource Name (ARN) of the image.</p>  <p>Semantic
+     * versioning is included in each object's Amazon Resource Name (ARN), at the level
+     * that applies to that object as follows:</p> <ol> <li> <p>Versionless ARNs and
+     * Name ARNs do not include specific values in any of the nodes. The nodes are
+     * either left off entirely, or they are specified as wildcards, for example:
+     * x.x.x.</p> </li> <li> <p>Version ARNs have only the first three nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</p> </li> <li> <p>Build version ARNs
+     * have all four nodes, and point to a specific build for a specific version of an
+     * object.</p> </li> </ol> 
      */
     inline Image& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -161,42 +228,162 @@ namespace Model
 
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline Image& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline Image& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The semantic version of the image.</p>
+     * <p>The semantic version of the image.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Assignment:</b> For the first three nodes you can assign any positive integer
+     * value, including zero, with an upper limit of 2^30-1, or 1073741823 for each
+     * node. Image Builder automatically assigns the build number, and that is not open
+     * for updates.</p> <p> <b>Patterns:</b> You can use any numeric pattern that
+     * adheres to the assignment requirements for the nodes that you can assign. For
+     * example, you might choose a software version pattern, such as 1.0.0, or a date,
+     * such as 2021.01.01.</p> <p> <b>Filtering:</b> When you retrieve or reference a
+     * resource with a semantic version, you can use wildcards (x) to filter your
+     * results. When you use a wildcard in any node, all nodes to the right of the
+     * first wildcard must also be wildcards. For example, specifying "1.2.x", or
+     * "1.x.x" works to filter list results, but neither "1.x.2", nor "x.2.x" will
+     * work. You do not have to specify the build - Image Builder automatically uses a
+     * wildcard for that, if applicable.</p> 
      */
     inline Image& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -377,32 +564,32 @@ namespace Model
 
 
     /**
-     * <p>The container recipe used to create the container image type.</p>
+     * <p>The recipe that is used to create an Image Builder container image.</p>
      */
     inline const ContainerRecipe& GetContainerRecipe() const{ return m_containerRecipe; }
 
     /**
-     * <p>The container recipe used to create the container image type.</p>
+     * <p>The recipe that is used to create an Image Builder container image.</p>
      */
     inline bool ContainerRecipeHasBeenSet() const { return m_containerRecipeHasBeenSet; }
 
     /**
-     * <p>The container recipe used to create the container image type.</p>
+     * <p>The recipe that is used to create an Image Builder container image.</p>
      */
     inline void SetContainerRecipe(const ContainerRecipe& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = value; }
 
     /**
-     * <p>The container recipe used to create the container image type.</p>
+     * <p>The recipe that is used to create an Image Builder container image.</p>
      */
     inline void SetContainerRecipe(ContainerRecipe&& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = std::move(value); }
 
     /**
-     * <p>The container recipe used to create the container image type.</p>
+     * <p>The recipe that is used to create an Image Builder container image.</p>
      */
     inline Image& WithContainerRecipe(const ContainerRecipe& value) { SetContainerRecipe(value); return *this;}
 
     /**
-     * <p>The container recipe used to create the container image type.</p>
+     * <p>The recipe that is used to create an Image Builder container image.</p>
      */
     inline Image& WithContainerRecipe(ContainerRecipe&& value) { SetContainerRecipe(std::move(value)); return *this;}
 

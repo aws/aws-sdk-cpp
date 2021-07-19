@@ -38,167 +38,231 @@ namespace Model
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline CreatePlaceIndexRequest& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline CreatePlaceIndexRequest& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
-     * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
-     *  <p>Place index resources using HERE as a data provider can't be used
-     * to <a
-     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-     * results for locations in Japan. For more information, see the <a
+     * <code>HERE</code> returns an error.</p>  <p>Valid values include:</p>
+     * <ul> <li> <p> <code>Esri</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+     * details on geocoding coverage</a>.</p> </li> <li> <p> <code>Here</code> – For
+     * additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+     * details on goecoding coverage</a>.</p>  <p>Place index resources
+     * using HERE Technologies as a data provider can't <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+     * results</a> for locations in Japan. For more information, see the <a
      * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.</p>  </li> </ul> <p>For additional details on data
-     * providers, see the <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers page</a>.</p>
+     * Location Service.</p>  </li> </ul> <p>For additional information ,
+     * see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline CreatePlaceIndexRequest& WithDataSource(const char* value) { SetDataSource(value); return *this;}
 
 
     /**
-     * <p>Specifies the data storage option for requesting Places.</p>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
     inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
 
     /**
-     * <p>Specifies the data storage option for requesting Places.</p>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
     inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies the data storage option for requesting Places.</p>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
     inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
 
     /**
-     * <p>Specifies the data storage option for requesting Places.</p>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
     inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies the data storage option for requesting Places.</p>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
     inline CreatePlaceIndexRequest& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the data storage option for requesting Places.</p>
+     * <p>Specifies the data storage option requesting Places.</p>
      */
     inline CreatePlaceIndexRequest& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
 

@@ -44,16 +44,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -64,16 +64,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -84,16 +84,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -104,16 +104,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -124,16 +124,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -144,16 +144,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -164,16 +164,16 @@ namespace Model
      * <p>Contains details about each path between a pair of positions included along a
      * route such as: <code>StartPosition</code>, <code>EndPosition</code>,
      * <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and
-     * <code>Steps</code>. The number of legs returned corresponds to one less than the
-     * total number of positions in the request. </p> <p>For example, a route with a
-     * departure position and destination position returns one leg with the positions
+     * <code>Steps</code>. The number of legs returned corresponds to one fewer than
+     * the total number of positions in the request. </p> <p>For example, a route with
+     * a departure position and destination position returns one leg with the positions
      * <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped
      * to a nearby road</a>:</p> <ul> <li> <p>The <code>StartPosition</code> is the
      * departure position.</p> </li> <li> <p>The <code>EndPosition</code> is the
      * destination position.</p> </li> </ul> <p>A route with a waypoint between the
      * departure and destination position returns two legs with the positions snapped
-     * to a nearby road.:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
+     * to a nearby road:</p> <ul> <li> <p>Leg 1: The <code>StartPosition</code> is the
      * departure position . The <code>EndPosition</code> is the waypoint positon.</p>
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
@@ -184,35 +184,35 @@ namespace Model
     /**
      * <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
      * <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-     * <code>DurationSeconds</code> </p>
+     * <code>DurationSeconds</code>.</p>
      */
     inline const CalculateRouteSummary& GetSummary() const{ return m_summary; }
 
     /**
      * <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
      * <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-     * <code>DurationSeconds</code> </p>
+     * <code>DurationSeconds</code>.</p>
      */
     inline void SetSummary(const CalculateRouteSummary& value) { m_summary = value; }
 
     /**
      * <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
      * <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-     * <code>DurationSeconds</code> </p>
+     * <code>DurationSeconds</code>.</p>
      */
     inline void SetSummary(CalculateRouteSummary&& value) { m_summary = std::move(value); }
 
     /**
      * <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
      * <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-     * <code>DurationSeconds</code> </p>
+     * <code>DurationSeconds</code>.</p>
      */
     inline CalculateRouteResult& WithSummary(const CalculateRouteSummary& value) { SetSummary(value); return *this;}
 
     /**
      * <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
      * <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-     * <code>DurationSeconds</code> </p>
+     * <code>DurationSeconds</code>.</p>
      */
     inline CalculateRouteResult& WithSummary(CalculateRouteSummary&& value) { SetSummary(std::move(value)); return *this;}
 
