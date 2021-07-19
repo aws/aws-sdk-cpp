@@ -71,37 +71,100 @@ namespace Model
 
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline const Aws::Vector<ImageVersion>& GetImageVersionList() const{ return m_imageVersionList; }
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline void SetImageVersionList(const Aws::Vector<ImageVersion>& value) { m_imageVersionList = value; }
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline void SetImageVersionList(Aws::Vector<ImageVersion>&& value) { m_imageVersionList = std::move(value); }
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline ListImagesResult& WithImageVersionList(const Aws::Vector<ImageVersion>& value) { SetImageVersionList(value); return *this;}
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline ListImagesResult& WithImageVersionList(Aws::Vector<ImageVersion>&& value) { SetImageVersionList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline ListImagesResult& AddImageVersionList(const ImageVersion& value) { m_imageVersionList.push_back(value); return *this; }
 
     /**
-     * <p>The list of image semantic versions.</p>
+     * <p>The list of image semantic versions.</p>  <p>The semantic version has
+     * four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> <p>
+     * <b>Filtering:</b> When you retrieve or reference a resource with a semantic
+     * version, you can use wildcards (x) to filter your results. When you use a
+     * wildcard in any node, all nodes to the right of the first wildcard must also be
+     * wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+     * results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify
+     * the build - Image Builder automatically uses a wildcard for that, if
+     * applicable.</p> 
      */
     inline ListImagesResult& AddImageVersionList(ImageVersion&& value) { m_imageVersionList.push_back(std::move(value)); return *this; }
 

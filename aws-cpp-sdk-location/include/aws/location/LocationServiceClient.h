@@ -56,6 +56,11 @@
 #include <aws/location/model/SearchPlaceIndexForTextResult.h>
 #include <aws/location/model/TagResourceResult.h>
 #include <aws/location/model/UntagResourceResult.h>
+#include <aws/location/model/UpdateGeofenceCollectionResult.h>
+#include <aws/location/model/UpdateMapResult.h>
+#include <aws/location/model/UpdatePlaceIndexResult.h>
+#include <aws/location/model/UpdateRouteCalculatorResult.h>
+#include <aws/location/model/UpdateTrackerResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -140,6 +145,11 @@ namespace Model
         class SearchPlaceIndexForTextRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateGeofenceCollectionRequest;
+        class UpdateMapRequest;
+        class UpdatePlaceIndexRequest;
+        class UpdateRouteCalculatorRequest;
+        class UpdateTrackerRequest;
 
         typedef Aws::Utils::Outcome<AssociateTrackerConsumerResult, LocationServiceError> AssociateTrackerConsumerOutcome;
         typedef Aws::Utils::Outcome<BatchDeleteDevicePositionHistoryResult, LocationServiceError> BatchDeleteDevicePositionHistoryOutcome;
@@ -186,6 +196,11 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchPlaceIndexForTextResult, LocationServiceError> SearchPlaceIndexForTextOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LocationServiceError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LocationServiceError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateGeofenceCollectionResult, LocationServiceError> UpdateGeofenceCollectionOutcome;
+        typedef Aws::Utils::Outcome<UpdateMapResult, LocationServiceError> UpdateMapOutcome;
+        typedef Aws::Utils::Outcome<UpdatePlaceIndexResult, LocationServiceError> UpdatePlaceIndexOutcome;
+        typedef Aws::Utils::Outcome<UpdateRouteCalculatorResult, LocationServiceError> UpdateRouteCalculatorOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrackerResult, LocationServiceError> UpdateTrackerOutcome;
 
         typedef std::future<AssociateTrackerConsumerOutcome> AssociateTrackerConsumerOutcomeCallable;
         typedef std::future<BatchDeleteDevicePositionHistoryOutcome> BatchDeleteDevicePositionHistoryOutcomeCallable;
@@ -232,6 +247,11 @@ namespace Model
         typedef std::future<SearchPlaceIndexForTextOutcome> SearchPlaceIndexForTextOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateGeofenceCollectionOutcome> UpdateGeofenceCollectionOutcomeCallable;
+        typedef std::future<UpdateMapOutcome> UpdateMapOutcomeCallable;
+        typedef std::future<UpdatePlaceIndexOutcome> UpdatePlaceIndexOutcomeCallable;
+        typedef std::future<UpdateRouteCalculatorOutcome> UpdateRouteCalculatorOutcomeCallable;
+        typedef std::future<UpdateTrackerOutcome> UpdateTrackerOutcomeCallable;
 } // namespace Model
 
   class LocationServiceClient;
@@ -281,6 +301,11 @@ namespace Model
     typedef std::function<void(const LocationServiceClient*, const Model::SearchPlaceIndexForTextRequest&, const Model::SearchPlaceIndexForTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPlaceIndexForTextResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LocationServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::UpdateGeofenceCollectionRequest&, const Model::UpdateGeofenceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeofenceCollectionResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::UpdateMapRequest&, const Model::UpdateMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMapResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::UpdatePlaceIndexRequest&, const Model::UpdatePlaceIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePlaceIndexResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::UpdateRouteCalculatorRequest&, const Model::UpdateRouteCalculatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRouteCalculatorResponseReceivedHandler;
+    typedef std::function<void(const LocationServiceClient*, const Model::UpdateTrackerRequest&, const Model::UpdateTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrackerResponseReceivedHandler;
 
   /**
    * <p>Suite of geospatial services including Maps, Places, Routes, Tracking, and
@@ -316,7 +341,8 @@ namespace Model
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
-         * geofence collection.</p>  <p>Currently not supported — Cross-account
+         * geofence collection. </p> <p>You can associate up to five geofence collections
+         * to each tracker resource.</p>  <p>Currently not supported — Cross-account
          * configurations, such as creating associations between a tracker resource in one
          * account and a geofence collection in another account.</p> <p><h3>See
          * Also:</h3>   <a
@@ -328,7 +354,8 @@ namespace Model
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
-         * geofence collection.</p>  <p>Currently not supported — Cross-account
+         * geofence collection. </p> <p>You can associate up to five geofence collections
+         * to each tracker resource.</p>  <p>Currently not supported — Cross-account
          * configurations, such as creating associations between a tracker resource in one
          * account and a geofence collection in another account.</p> <p><h3>See
          * Also:</h3>   <a
@@ -342,7 +369,8 @@ namespace Model
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
          * This allows the tracker resource to communicate location data to the linked
-         * geofence collection.</p>  <p>Currently not supported — Cross-account
+         * geofence collection. </p> <p>You can associate up to five geofence collections
+         * to each tracker resource.</p>  <p>Currently not supported — Cross-account
          * configurations, such as creating associations between a tracker resource in one
          * account and a geofence collection in another account.</p> <p><h3>See
          * Also:</h3>   <a
@@ -414,11 +442,15 @@ namespace Model
 
         /**
          * <p>Evaluates device positions against the geofence geometries from a given
-         * geofence collection. The evaluation determines if the device has entered or
-         * exited a geofenced area, which publishes ENTER or EXIT geofence events to Amazon
-         * EventBridge.</p>  <p>The last geofence that a device was observed within,
-         * if any, is tracked for 30 days after the most recent device position update</p>
-         * <p><h3>See Also:</h3>   <a
+         * geofence collection.</p> <p>This operation always returns an empty response
+         * because geofences are asynchronously evaluated. The evaluation determines if the
+         * device has entered or exited a geofenced area, and then publishes one of the
+         * following events to Amazon EventBridge:</p> <ul> <li> <p> <code>ENTER</code> if
+         * Amazon Location determines that the tracked device has entered a geofenced
+         * area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that
+         * the tracked device has exited a geofenced area.</p> </li> </ul>  <p>The
+         * last geofence that a device was observed within is tracked for 30 days after the
+         * most recent device position update.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          */
@@ -426,11 +458,15 @@ namespace Model
 
         /**
          * <p>Evaluates device positions against the geofence geometries from a given
-         * geofence collection. The evaluation determines if the device has entered or
-         * exited a geofenced area, which publishes ENTER or EXIT geofence events to Amazon
-         * EventBridge.</p>  <p>The last geofence that a device was observed within,
-         * if any, is tracked for 30 days after the most recent device position update</p>
-         * <p><h3>See Also:</h3>   <a
+         * geofence collection.</p> <p>This operation always returns an empty response
+         * because geofences are asynchronously evaluated. The evaluation determines if the
+         * device has entered or exited a geofenced area, and then publishes one of the
+         * following events to Amazon EventBridge:</p> <ul> <li> <p> <code>ENTER</code> if
+         * Amazon Location determines that the tracked device has entered a geofenced
+         * area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that
+         * the tracked device has exited a geofenced area.</p> </li> </ul>  <p>The
+         * last geofence that a device was observed within is tracked for 30 days after the
+         * most recent device position update.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -440,11 +476,15 @@ namespace Model
 
         /**
          * <p>Evaluates device positions against the geofence geometries from a given
-         * geofence collection. The evaluation determines if the device has entered or
-         * exited a geofenced area, which publishes ENTER or EXIT geofence events to Amazon
-         * EventBridge.</p>  <p>The last geofence that a device was observed within,
-         * if any, is tracked for 30 days after the most recent device position update</p>
-         * <p><h3>See Also:</h3>   <a
+         * geofence collection.</p> <p>This operation always returns an empty response
+         * because geofences are asynchronously evaluated. The evaluation determines if the
+         * device has entered or exited a geofenced area, and then publishes one of the
+         * following events to Amazon EventBridge:</p> <ul> <li> <p> <code>ENTER</code> if
+         * Amazon Location determines that the tracked device has entered a geofenced
+         * area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that
+         * the tracked device has exited a geofenced area.</p> </li> </ul>  <p>The
+         * last geofence that a device was observed within is tracked for 30 days after the
+         * most recent device position update.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">AWS
          * API Reference</a></p>
          *
@@ -453,16 +493,16 @@ namespace Model
         virtual void BatchEvaluateGeofencesAsync(const Model::BatchEvaluateGeofencesRequest& request, const BatchEvaluateGeofencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the latest device positions for requested devices.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetDevicePositionOutcome BatchGetDevicePosition(const Model::BatchGetDevicePositionRequest& request) const;
 
         /**
-         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the latest device positions for requested devices.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -471,8 +511,8 @@ namespace Model
         virtual Model::BatchGetDevicePositionOutcomeCallable BatchGetDevicePositionCallable(const Model::BatchGetDevicePositionRequest& request) const;
 
         /**
-         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the latest device positions for requested devices.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">AWS
          * API Reference</a></p>
          *
@@ -558,7 +598,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * aroute calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a> </p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -570,7 +610,7 @@ namespace Model
          * Specifying both parameters returns an error message.</p>  </li> <li> <p>
          * <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-         * a travel mode</a> using TravelMode. This lets you specify additional route
+         * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
          * or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
          * </ul> <p> </p><p><h3>See Also:</h3>   <a
@@ -586,7 +626,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * aroute calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a> </p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -598,7 +638,7 @@ namespace Model
          * Specifying both parameters returns an error message.</p>  </li> <li> <p>
          * <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-         * a travel mode</a> using TravelMode. This lets you specify additional route
+         * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
          * or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
          * </ul> <p> </p><p><h3>See Also:</h3>   <a
@@ -616,7 +656,7 @@ namespace Model
          * <code>DeparturePostiton</code> and <code>DestinationPosition</code>. Requires
          * that you first <a
          * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-         * aroute calculator resource</a> </p> <p>By default, a request that doesn't
+         * a route calculator resource</a> </p> <p>By default, a request that doesn't
          * specify a departure time uses the best time of day to travel with the best
          * traffic conditions when calculating the route.</p> <p>Additional options
          * include:</p> <ul> <li> <p> <a
@@ -628,7 +668,7 @@ namespace Model
          * Specifying both parameters returns an error message.</p>  </li> <li> <p>
          * <a
          * href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
-         * a travel mode</a> using TravelMode. This lets you specify additional route
+         * a travel mode</a> using TravelMode. This lets you specify an additional route
          * preference such as <code>CarModeOptions</code> if traveling by <code>Car</code>,
          * or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li>
          * </ul> <p> </p><p><h3>See Also:</h3>   <a
@@ -1344,16 +1384,16 @@ namespace Model
         virtual void GetMapTileAsync(const Model::GetMapTileRequest& request, const GetMapTileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the latest device positions for requested devices.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDevicePositionsOutcome ListDevicePositions(const Model::ListDevicePositionsRequest& request) const;
 
         /**
-         * <p>Lists the latest device positions for requested devices.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">AWS
          * API Reference</a></p>
          *
@@ -1362,8 +1402,8 @@ namespace Model
         virtual Model::ListDevicePositionsOutcomeCallable ListDevicePositionsCallable(const Model::ListDevicePositionsRequest& request) const;
 
         /**
-         * <p>Lists the latest device positions for requested devices.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>A batch request to retrieve all device positions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">AWS
          * API Reference</a></p>
          *
@@ -1506,7 +1546,7 @@ namespace Model
         virtual void ListRouteCalculatorsAsync(const Model::ListRouteCalculatorsRequest& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the tags for the specified Amazon Location Service
+         * <p>Returns a list of tags that are applied to the specified Amazon Location
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1514,7 +1554,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the tags for the specified Amazon Location Service
+         * <p>Returns a list of tags that are applied to the specified Amazon Location
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1524,7 +1564,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the tags for the specified Amazon Location Service
+         * <p>Returns a list of tags that are applied to the specified Amazon Location
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1696,15 +1736,13 @@ namespace Model
          * Service resource.</p> <pre><code> &lt;p&gt;Tags can help you organize and
          * categorize your resources. You can also use them to scope user permissions, by
          * granting a user permission to access or change only resources with certain tag
-         * values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are
-         * interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use
-         * the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service
-         * resource that already has tags. If you specify a new tag key for the resource,
-         * this tag is appended to the tags already associated with the resource. If you
-         * specify a tag key that is already associated with the resource, the new tag
-         * value that you specify replaces the previous value for that tag. &lt;/p&gt;
-         * &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt;
-         * </code></pre><p><h3>See Also:</h3>   <a
+         * values.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt;
+         * operation with an Amazon Location Service resource that already has tags. If you
+         * specify a new tag key for the resource, this tag is appended to the tags already
+         * associated with the resource. If you specify a tag key that's already associated
+         * with the resource, the new tag value that you specify replaces the previous
+         * value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags with a
+         * resource.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1715,15 +1753,13 @@ namespace Model
          * Service resource.</p> <pre><code> &lt;p&gt;Tags can help you organize and
          * categorize your resources. You can also use them to scope user permissions, by
          * granting a user permission to access or change only resources with certain tag
-         * values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are
-         * interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use
-         * the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service
-         * resource that already has tags. If you specify a new tag key for the resource,
-         * this tag is appended to the tags already associated with the resource. If you
-         * specify a tag key that is already associated with the resource, the new tag
-         * value that you specify replaces the previous value for that tag. &lt;/p&gt;
-         * &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt;
-         * </code></pre><p><h3>See Also:</h3>   <a
+         * values.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt;
+         * operation with an Amazon Location Service resource that already has tags. If you
+         * specify a new tag key for the resource, this tag is appended to the tags already
+         * associated with the resource. If you specify a tag key that's already associated
+         * with the resource, the new tag value that you specify replaces the previous
+         * value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags with a
+         * resource.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1736,15 +1772,13 @@ namespace Model
          * Service resource.</p> <pre><code> &lt;p&gt;Tags can help you organize and
          * categorize your resources. You can also use them to scope user permissions, by
          * granting a user permission to access or change only resources with certain tag
-         * values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are
-         * interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use
-         * the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service
-         * resource that already has tags. If you specify a new tag key for the resource,
-         * this tag is appended to the tags already associated with the resource. If you
-         * specify a tag key that is already associated with the resource, the new tag
-         * value that you specify replaces the previous value for that tag. &lt;/p&gt;
-         * &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt;
-         * </code></pre><p><h3>See Also:</h3>   <a
+         * values.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt;
+         * operation with an Amazon Location Service resource that already has tags. If you
+         * specify a new tag key for the resource, this tag is appended to the tags already
+         * associated with the resource. If you specify a tag key that's already associated
+         * with the resource, the new tag value that you specify replaces the previous
+         * value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags with a
+         * resource.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1753,7 +1787,7 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified Amazon Location Service
+         * <p>Removes one or more tags from the specified Amazon Location
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">AWS
          * API Reference</a></p>
@@ -1761,7 +1795,7 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified Amazon Location Service
+         * <p>Removes one or more tags from the specified Amazon Location
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">AWS
          * API Reference</a></p>
@@ -1771,7 +1805,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified Amazon Location Service
+         * <p>Removes one or more tags from the specified Amazon Location
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">AWS
          * API Reference</a></p>
@@ -1779,6 +1813,146 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified properties of a given geofence
+         * collection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGeofenceCollectionOutcome UpdateGeofenceCollection(const Model::UpdateGeofenceCollectionRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given geofence
+         * collection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGeofenceCollectionOutcomeCallable UpdateGeofenceCollectionCallable(const Model::UpdateGeofenceCollectionRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given geofence
+         * collection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGeofenceCollectionAsync(const Model::UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified properties of a given map resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMapOutcome UpdateMap(const Model::UpdateMapRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given map resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMapOutcomeCallable UpdateMapCallable(const Model::UpdateMapRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given map resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMapAsync(const Model::UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified properties of a given place index
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePlaceIndexOutcome UpdatePlaceIndex(const Model::UpdatePlaceIndexRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given place index
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePlaceIndexOutcomeCallable UpdatePlaceIndexCallable(const Model::UpdatePlaceIndexRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given place index
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePlaceIndexAsync(const Model::UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified properties for a given route calculator
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRouteCalculatorOutcome UpdateRouteCalculator(const Model::UpdateRouteCalculatorRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties for a given route calculator
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRouteCalculatorOutcomeCallable UpdateRouteCalculatorCallable(const Model::UpdateRouteCalculatorRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties for a given route calculator
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRouteCalculatorAsync(const Model::UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the specified properties of a given tracker resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrackerOutcome UpdateTracker(const Model::UpdateTrackerRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given tracker resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrackerOutcomeCallable UpdateTrackerCallable(const Model::UpdateTrackerRequest& request) const;
+
+        /**
+         * <p>Updates the specified properties of a given tracker resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrackerAsync(const Model::UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -1829,6 +2003,11 @@ namespace Model
         void SearchPlaceIndexForTextAsyncHelper(const Model::SearchPlaceIndexForTextRequest& request, const SearchPlaceIndexForTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGeofenceCollectionAsyncHelper(const Model::UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMapAsyncHelper(const Model::UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePlaceIndexAsyncHelper(const Model::UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRouteCalculatorAsyncHelper(const Model::UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTrackerAsyncHelper(const Model::UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_baseUri;
       Aws::String m_scheme;

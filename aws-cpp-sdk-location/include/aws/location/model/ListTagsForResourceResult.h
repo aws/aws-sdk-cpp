@@ -34,74 +34,98 @@ namespace Model
 
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The mapping from tag key to tag value for each tag associated with the
-     * specified resource.</p>
+     * <p>Tags that have been applied to the specified resource. Tags are mapped from
+     * the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p> <ul> <li>
+     * <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p>
+     * </li> </ul>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

@@ -154,50 +154,122 @@ namespace Model
 
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The semantic version of the container recipe
-     * (&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;).</p>
+     * <p>The semantic version of the container recipe. This version follows the
+     * semantic version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Assignment:</b>
+     * For the first three nodes you can assign any positive integer value, including
+     * zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder
+     * automatically assigns the build number, and that is not open for updates.</p>
+     * <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the
+     * assignment requirements for the nodes that you can assign. For example, you
+     * might choose a software version pattern, such as 1.0.0, or a date, such as
+     * 2021.01.01.</p> 
      */
     inline CreateContainerRecipeRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 

@@ -80,57 +80,113 @@ namespace Model
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline ImportComponentRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline ImportComponentRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
      * <p>The semantic version of the component. This version follows the semantic
-     * version syntax. For example, major.minor.patch. This could be versioned like
-     * software (2.0.1) or like a date (2019.12.01).</p>
+     * version syntax.</p>  <p>The semantic version has four nodes:
+     * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
+     * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
+     * When you retrieve or reference a resource with a semantic version, you can use
+     * wildcards (x) to filter your results. When you use a wildcard in any node, all
+     * nodes to the right of the first wildcard must also be wildcards. For example,
+     * specifying "1.2.x", or "1.x.x" works to filter list results, but neither
+     * "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image
+     * Builder automatically uses a wildcard for that, if applicable.</p> 
      */
     inline ImportComponentRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
@@ -243,37 +299,37 @@ namespace Model
 
     /**
      * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * image, or only to test it.</p>
      */
     inline const ComponentType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * image, or only to test it.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * image, or only to test it.</p>
      */
     inline void SetType(const ComponentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * image, or only to test it.</p>
      */
     inline void SetType(ComponentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * image, or only to test it.</p>
      */
     inline ImportComponentRequest& WithType(const ComponentType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of the component denotes whether the component is used to build the
-     * image or only to test it.</p>
+     * image, or only to test it.</p>
      */
     inline ImportComponentRequest& WithType(ComponentType&& value) { SetType(std::move(value)); return *this;}
 

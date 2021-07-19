@@ -33,50 +33,186 @@ namespace Model
 
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline const Aws::String& GetFontStack() const{ return m_fontStack; }
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline bool FontStackHasBeenSet() const { return m_fontStackHasBeenSet; }
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline void SetFontStack(const Aws::String& value) { m_fontStackHasBeenSet = true; m_fontStack = value; }
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline void SetFontStack(Aws::String&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::move(value); }
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline void SetFontStack(const char* value) { m_fontStackHasBeenSet = true; m_fontStack.assign(value); }
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline GetMapGlyphsRequest& WithFontStack(const Aws::String& value) { SetFontStack(value); return *this;}
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline GetMapGlyphsRequest& WithFontStack(Aws::String&& value) { SetFontStack(std::move(value)); return *this;}
 
     /**
-     * <p>A comma-separated list of fonts to load glyphs from in order of preference..
-     * For example, <code>Noto Sans, Arial Unicode</code>.</p>
+     * <p>A comma-separated list of fonts to load glyphs from in order of preference.
+     * For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts
+     * for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium
+     * Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> |
+     * <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li>
+     * <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+     * Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+     * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+     * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
+     * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
+     * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
+     * fonts for <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a> styles: </p> <ul> <li> <p> <code>VectorHereBerlin</code> –
+     * <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> </ul>
      */
     inline GetMapGlyphsRequest& WithFontStack(const char* value) { SetFontStack(value); return *this;}
 

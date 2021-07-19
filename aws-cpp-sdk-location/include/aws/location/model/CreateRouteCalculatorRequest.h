@@ -110,88 +110,184 @@ namespace Model
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDataSource() const{ return m_dataSource; }
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline CreateRouteCalculatorRequest& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline CreateRouteCalculatorRequest& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the data provider of traffic and road network data.</p> 
      * <p>This field is case-sensitive. Enter the valid values as shown. For example,
-     * entering <code>HERE</code> returns an error.</p>  <p>Valid Values:
-     * <code>Esri</code> | <code>Here</code> </p> <p>For more information about data
-     * providers, see <a
-     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-     * Location Service data providers</a>.</p>
+     * entering <code>HERE</code> returns an error.</p>  <p>Valid values
+     * include:</p> <ul> <li> <p> <code>Esri</code> – For additional information about
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+     * coverage in your region of interest, see <a
+     * href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
+     * details on street networks and traffic coverage</a>.</p> </li> <li> <p>
+     * <code>Here</code> – For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+     * Technologies</a>'s coverage in your region of interest, see <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+     * car routing coverage</a> and <a
+     * href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
+     * truck routing coverage</a>.</p> </li> </ul> <p>For additional information , see
+     * <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+     * providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
      */
     inline CreateRouteCalculatorRequest& WithDataSource(const char* value) { SetDataSource(value); return *this;}
 

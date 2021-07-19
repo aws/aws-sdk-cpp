@@ -10,6 +10,7 @@
 #include <aws/emr-containers/model/ConfigurationOverrides.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/emr-containers/model/FailureReason.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -599,6 +600,78 @@ namespace Model
 
 
     /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline const Aws::String& GetStateDetails() const{ return m_stateDetails; }
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline bool StateDetailsHasBeenSet() const { return m_stateDetailsHasBeenSet; }
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline void SetStateDetails(const Aws::String& value) { m_stateDetailsHasBeenSet = true; m_stateDetails = value; }
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline void SetStateDetails(Aws::String&& value) { m_stateDetailsHasBeenSet = true; m_stateDetails = std::move(value); }
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline void SetStateDetails(const char* value) { m_stateDetailsHasBeenSet = true; m_stateDetails.assign(value); }
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline Endpoint& WithStateDetails(const Aws::String& value) { SetStateDetails(value); return *this;}
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline Endpoint& WithStateDetails(Aws::String&& value) { SetStateDetails(std::move(value)); return *this;}
+
+    /**
+     * <p> Additional details of the endpoint state. </p>
+     */
+    inline Endpoint& WithStateDetails(const char* value) { SetStateDetails(value); return *this;}
+
+
+    /**
+     * <p> The reasons why the endpoint has failed. </p>
+     */
+    inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p> The reasons why the endpoint has failed. </p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p> The reasons why the endpoint has failed. </p>
+     */
+    inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p> The reasons why the endpoint has failed. </p>
+     */
+    inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
+
+    /**
+     * <p> The reasons why the endpoint has failed. </p>
+     */
+    inline Endpoint& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p> The reasons why the endpoint has failed. </p>
+     */
+    inline Endpoint& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags of the endpoint. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -706,6 +779,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
+    Aws::String m_stateDetails;
+    bool m_stateDetailsHasBeenSet;
+
+    FailureReason m_failureReason;
+    bool m_failureReasonHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

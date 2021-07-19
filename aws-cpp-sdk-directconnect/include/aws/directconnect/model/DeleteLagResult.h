@@ -449,44 +449,51 @@ namespace Model
 
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceId = value; }
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceId = std::move(value); }
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceId.assign(value); }
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline DeleteLagResult& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline DeleteLagResult& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint that terminates a physical connection's BGP
-     * sessions.</p>
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
      */
     inline DeleteLagResult& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
 

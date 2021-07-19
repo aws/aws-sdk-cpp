@@ -71,37 +71,51 @@ namespace Model
 
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline const Aws::Vector<ComponentVersion>& GetComponentVersionList() const{ return m_componentVersionList; }
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline void SetComponentVersionList(const Aws::Vector<ComponentVersion>& value) { m_componentVersionList = value; }
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline void SetComponentVersionList(Aws::Vector<ComponentVersion>&& value) { m_componentVersionList = std::move(value); }
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline ListComponentsResult& WithComponentVersionList(const Aws::Vector<ComponentVersion>& value) { SetComponentVersionList(value); return *this;}
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline ListComponentsResult& WithComponentVersionList(Aws::Vector<ComponentVersion>&& value) { SetComponentVersionList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline ListComponentsResult& AddComponentVersionList(const ComponentVersion& value) { m_componentVersionList.push_back(value); return *this; }
 
     /**
-     * <p>The list of component semantic versions.</p>
+     * <p>The list of component semantic versions.</p>  <p>The semantic version
+     * has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can
+     * assign values for the first three, and can filter on all of them.</p> 
      */
     inline ListComponentsResult& AddComponentVersionList(ComponentVersion&& value) { m_componentVersionList.push_back(std::move(value)); return *this; }
 
