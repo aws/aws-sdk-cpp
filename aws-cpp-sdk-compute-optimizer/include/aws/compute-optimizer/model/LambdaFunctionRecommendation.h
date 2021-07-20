@@ -477,7 +477,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -505,7 +505,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -533,7 +533,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -561,7 +561,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -589,7 +589,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -617,7 +617,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -645,7 +645,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -673,7 +673,7 @@ namespace Model
      * the performance requirements of the workload. An under-provisioned function
      * might lead to poor application performance. This finding reason code is part of
      * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> �� The function does not have sufficient
+     * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported

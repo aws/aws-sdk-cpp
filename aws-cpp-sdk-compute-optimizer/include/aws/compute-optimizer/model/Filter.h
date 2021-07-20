@@ -146,8 +146,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -215,8 +215,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -284,8 +284,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -353,8 +353,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -422,8 +422,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -491,8 +491,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -560,8 +560,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -629,8 +629,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS
@@ -698,8 +698,8 @@ namespace Model
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS throughput
      * performance.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> —
-     * The instance���s EBS IOPS configuration can be sized down while still meeting
-     * the performance requirements of your workload.</p> </li> <li> <p> <b>
+     * The instance’s EBS IOPS configuration can be sized down while still meeting the
+     * performance requirements of your workload.</p> </li> <li> <p> <b>
      * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS

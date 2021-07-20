@@ -188,99 +188,91 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline Snapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline Snapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to protect the volume encryption key for
-     * the parent volume.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key
+     * that was used to protect the volume encryption key for the parent volume.</p>
      */
     inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline Snapshot& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline Snapshot& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     * <p>The ID of the account that owns the EBS snapshot.</p>
      */
     inline Snapshot& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -439,7 +431,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -448,7 +440,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -457,7 +449,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -466,7 +458,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -475,7 +467,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -484,7 +476,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -493,7 +485,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -502,7 +494,7 @@ namespace Model
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
-     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * operation fails (for example, if the proper Key Management Service (KMS)
      * permissions are not obtained) this field displays error state details to help
      * you diagnose why the error occurred. This parameter is only returned by
      * <a>DescribeSnapshots</a>.</p>
@@ -589,122 +581,130 @@ namespace Model
 
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline void SetOwnerAlias(Aws::String&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::move(value); }
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline void SetOwnerAlias(const char* value) { m_ownerAliasHasBeenSet = true; m_ownerAlias.assign(value); }
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline Snapshot& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline Snapshot& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>).
-     * This is not the user-configured AWS account alias set using the IAM console.</p>
+     * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured account alias set using
+     * the IAM console.</p>
      */
     inline Snapshot& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline Snapshot& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline Snapshot& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Outpost on which the snapshot is stored. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
-     * Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
+     * <p>The ARN of the Outpost on which the snapshot is stored. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline Snapshot& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
