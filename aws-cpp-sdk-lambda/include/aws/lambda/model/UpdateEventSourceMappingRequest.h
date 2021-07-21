@@ -427,50 +427,50 @@ namespace Model
 
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline bool SourceAccessConfigurationsHasBeenSet() const { return m_sourceAccessConfigurationsHasBeenSet; }
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = value; }
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::move(value); }
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline UpdateEventSourceMappingRequest& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline UpdateEventSourceMappingRequest& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline UpdateEventSourceMappingRequest& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>An array of the authentication protocol, or the VPC components to secure your
-     * event source.</p>
+     * <p>An array of authentication protocols or VPC components required to secure
+     * your event source.</p>
      */
     inline UpdateEventSourceMappingRequest& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
 

@@ -327,7 +327,7 @@ namespace Model
    * the service instance <i>list</i> and <i>update</i> API operations.</p> <p>To
    * learn more about AWS Proton administration, see the <a
    * href="https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html">AWS
-   * Proton Administration Guide</a>.</p> <p>To learn more about deploying serverless
+   * Proton Administrator Guide</a>.</p> <p>To learn more about deploying serverless
    * and containerized applications on AWS Proton, see the <a
    * href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">AWS
    * Proton User Guide</a>.</p> <p> <b>Ensuring Idempotency</b> </p> <p>When you make
@@ -365,28 +365,23 @@ namespace Model
    * you retry the request, a new resource is created.</p> <p>Idempotent create APIs
    * with a client token:</p> <ul> <li> <p>CreateEnvironmentTemplateVersion</p> </li>
    * <li> <p>CreateServiceTemplateVersion</p> </li> <li>
-   * <p>CreateEnvironmentAccountConnection</p> </li> </ul> <pre><code> &lt;p&gt;
-   * &lt;b&gt;Idempotent delete APIs&lt;/b&gt; &lt;/p&gt; &lt;p&gt;Given a request
-   * action that has succeeded:&lt;/p&gt; &lt;p&gt;When you retry the request with an
-   * API from this group and the resource was deleted, its metadata is returned in
-   * the response.&lt;/p&gt; &lt;p&gt;If you retry and the resource doesn't exist,
-   * the response is empty.&lt;/p&gt; &lt;p&gt;In both cases, the retry
-   * succeeds.&lt;/p&gt; &lt;p&gt;Idempotent delete APIs:&lt;/p&gt; &lt;ul&gt;
-   * &lt;li&gt; &lt;p&gt;DeleteEnvironmentTemplate&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-   * &lt;p&gt;DeleteEnvironmentTemplateVersion&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-   * &lt;p&gt;DeleteServiceTemplate&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-   * &lt;p&gt;DeleteServiceTemplateVersion&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-   * &lt;p&gt;DeleteEnvironmentAccountConnection&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-   * &lt;p&gt; &lt;b&gt;Asynchronous idempotent delete APIs&lt;/b&gt; &lt;/p&gt;
-   * &lt;p&gt;Given a request action that has succeeded:&lt;/p&gt; &lt;p&gt;If you
-   * retry the request with an API from this group, if the original request delete
-   * operation status is &lt;code&gt;DELETE_IN_PROGRESS&lt;/code&gt;, the retry
-   * returns the resource detail data in the response without performing any further
-   * actions.&lt;/p&gt; &lt;p&gt;If the original request delete operation is
-   * complete, a retry returns an empty response.&lt;/p&gt; &lt;p&gt;Asynchronous
-   * idempotent delete APIs:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;
-   * &lt;p&gt;DeleteEnvironment&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-   * &lt;p&gt;DeleteService&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
+   * <p>CreateEnvironmentAccountConnection</p> </li> </ul> <p> <b>Idempotent delete
+   * APIs</b> </p> <p>Given a request action that has succeeded:</p> <p>When you
+   * retry the request with an API from this group and the resource was deleted, its
+   * metadata is returned in the response.</p> <p>If you retry and the resource
+   * doesn't exist, the response is empty.</p> <p>In both cases, the retry
+   * succeeds.</p> <p>Idempotent delete APIs:</p> <ul> <li>
+   * <p>DeleteEnvironmentTemplate</p> </li> <li>
+   * <p>DeleteEnvironmentTemplateVersion</p> </li> <li> <p>DeleteServiceTemplate</p>
+   * </li> <li> <p>DeleteServiceTemplateVersion</p> </li> <li>
+   * <p>DeleteEnvironmentAccountConnection</p> </li> </ul> <p> <b>Asynchronous
+   * idempotent delete APIs</b> </p> <p>Given a request action that has
+   * succeeded:</p> <p>If you retry the request with an API from this group, if the
+   * original request delete operation status is <code>DELETE_IN_PROGRESS</code>, the
+   * retry returns the resource detail data in the response without performing any
+   * further actions.</p> <p>If the original request delete operation is complete, a
+   * retry returns an empty response.</p> <p>Asynchronous idempotent delete APIs:</p>
+   * <ul> <li> <p>DeleteEnvironment</p> </li> <li> <p>DeleteService</p> </li> </ul>
    */
   class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient
   {
@@ -422,7 +417,7 @@ namespace Model
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -436,7 +431,7 @@ namespace Model
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -452,7 +447,7 @@ namespace Model
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -466,7 +461,7 @@ namespace Model
          * action, if the deployment is <code>IN_PROGRESS</code>. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-         * an environment</a> in the <i>AWS Proton Administration guide</i>.</p> <p>The
+         * an environment</a> in the <i>AWS Proton Administrator guide</i>.</p> <p>The
          * following list includes potential cancellation scenarios.</p> <ul> <li> <p>If
          * the cancellation attempt succeeds, the resulting deployment state is
          * <code>CANCELLED</code>.</p> </li> <li> <p>If the cancellation attempt fails, the
@@ -484,7 +479,7 @@ namespace Model
          * action, if the deployment is <code>IN_PROGRESS</code>. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-         * an environment</a> in the <i>AWS Proton Administration guide</i>.</p> <p>The
+         * an environment</a> in the <i>AWS Proton Administrator guide</i>.</p> <p>The
          * following list includes potential cancellation scenarios.</p> <ul> <li> <p>If
          * the cancellation attempt succeeds, the resulting deployment state is
          * <code>CANCELLED</code>.</p> </li> <li> <p>If the cancellation attempt fails, the
@@ -504,7 +499,7 @@ namespace Model
          * action, if the deployment is <code>IN_PROGRESS</code>. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-         * an environment</a> in the <i>AWS Proton Administration guide</i>.</p> <p>The
+         * an environment</a> in the <i>AWS Proton Administrator guide</i>.</p> <p>The
          * following list includes potential cancellation scenarios.</p> <ul> <li> <p>If
          * the cancellation attempt succeeds, the resulting deployment state is
          * <code>CANCELLED</code>.</p> </li> <li> <p>If the cancellation attempt fails, the
@@ -525,7 +520,7 @@ namespace Model
          * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
          * instance</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">AWS
-         * Proton Administration guide</a> or the <a
+         * Proton Administrator guide</a> or the <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">AWS
          * Proton User guide</a>.</p> <p>The following list includes potential cancellation
          * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
@@ -546,7 +541,7 @@ namespace Model
          * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
          * instance</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">AWS
-         * Proton Administration guide</a> or the <a
+         * Proton Administrator guide</a> or the <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">AWS
          * Proton User guide</a>.</p> <p>The following list includes potential cancellation
          * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
@@ -569,7 +564,7 @@ namespace Model
          * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
          * instance</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">AWS
-         * Proton Administration guide</a> or the <a
+         * Proton Administrator guide</a> or the <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">AWS
          * Proton User guide</a>.</p> <p>The following list includes potential cancellation
          * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
@@ -592,7 +587,7 @@ namespace Model
          * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
          * pipeline</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">AWS
-         * Proton Administration guide</a> or the <a
+         * Proton Administrator guide</a> or the <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">AWS
          * Proton User guide</a>.</p> <p>The following list includes potential cancellation
          * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
@@ -613,7 +608,7 @@ namespace Model
          * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
          * pipeline</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">AWS
-         * Proton Administration guide</a> or the <a
+         * Proton Administrator guide</a> or the <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">AWS
          * Proton User guide</a>.</p> <p>The following list includes potential cancellation
          * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
@@ -636,7 +631,7 @@ namespace Model
          * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
          * pipeline</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">AWS
-         * Proton Administration guide</a> or the <a
+         * Proton Administrator guide</a> or the <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">AWS
          * Proton User guide</a>.</p> <p>The following list includes potential cancellation
          * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
@@ -658,7 +653,7 @@ namespace Model
          * environment template that defines infrastructure and resources that can be
          * shared across services. For more information, see the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-         * in the <i>AWS Proton Administration Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * in the <i>AWS Proton Administrator Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          */
@@ -669,7 +664,7 @@ namespace Model
          * environment template that defines infrastructure and resources that can be
          * shared across services. For more information, see the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-         * in the <i>AWS Proton Administration Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * in the <i>AWS Proton Administrator Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -682,7 +677,7 @@ namespace Model
          * environment template that defines infrastructure and resources that can be
          * shared across services. For more information, see the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-         * in the <i>AWS Proton Administration Guide.</i> </p><p><h3>See Also:</h3>   <a
+         * in the <i>AWS Proton Administrator Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -693,12 +688,12 @@ namespace Model
         /**
          * <p>Create an environment account connection in an environment account so that
          * environment infrastructure resources can be provisioned in the environment
-         * account from the management account.</p> <p>An environment account connection is
-         * a secure bi-directional connection between a <i>management account</i> and an
+         * account from a management account.</p> <p>An environment account connection is a
+         * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -708,12 +703,12 @@ namespace Model
         /**
          * <p>Create an environment account connection in an environment account so that
          * environment infrastructure resources can be provisioned in the environment
-         * account from the management account.</p> <p>An environment account connection is
-         * a secure bi-directional connection between a <i>management account</i> and an
+         * account from a management account.</p> <p>An environment account connection is a
+         * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -725,12 +720,12 @@ namespace Model
         /**
          * <p>Create an environment account connection in an environment account so that
          * environment infrastructure resources can be provisioned in the environment
-         * account from the management account.</p> <p>An environment account connection is
-         * a secure bi-directional connection between a <i>management account</i> and an
+         * account from a management account.</p> <p>An environment account connection is a
+         * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -741,8 +736,8 @@ namespace Model
 
         /**
          * <p>Create an environment template for AWS Proton. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-         * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p> <p>You can
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+         * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p> <p>You can
          * create an environment template in one of the two following ways:</p> <ul> <li>
          * <p>Register and publish a <i>standard</i> environment template that instructs
          * AWS Proton to deploy and manage environment infrastructure.</p> </li> <li>
@@ -752,8 +747,8 @@ namespace Model
          * create an environment template for customer provisioned and managed
          * infrastructure, include the <code>provisioning</code> parameter and set the
          * value to <code>CUSTOMER_MANAGED</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/env-template-v1.html">Register
-         * and publish an environment template</a> in the <i>AWS Proton Administration
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
+         * and publish an environment template</a> in the <i>AWS Proton Administrator
          * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">AWS
          * API Reference</a></p>
@@ -762,8 +757,8 @@ namespace Model
 
         /**
          * <p>Create an environment template for AWS Proton. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-         * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p> <p>You can
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+         * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p> <p>You can
          * create an environment template in one of the two following ways:</p> <ul> <li>
          * <p>Register and publish a <i>standard</i> environment template that instructs
          * AWS Proton to deploy and manage environment infrastructure.</p> </li> <li>
@@ -773,8 +768,8 @@ namespace Model
          * create an environment template for customer provisioned and managed
          * infrastructure, include the <code>provisioning</code> parameter and set the
          * value to <code>CUSTOMER_MANAGED</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/env-template-v1.html">Register
-         * and publish an environment template</a> in the <i>AWS Proton Administration
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
+         * and publish an environment template</a> in the <i>AWS Proton Administrator
          * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">AWS
          * API Reference</a></p>
@@ -785,8 +780,8 @@ namespace Model
 
         /**
          * <p>Create an environment template for AWS Proton. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-         * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p> <p>You can
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+         * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p> <p>You can
          * create an environment template in one of the two following ways:</p> <ul> <li>
          * <p>Register and publish a <i>standard</i> environment template that instructs
          * AWS Proton to deploy and manage environment infrastructure.</p> </li> <li>
@@ -796,8 +791,8 @@ namespace Model
          * create an environment template for customer provisioned and managed
          * infrastructure, include the <code>provisioning</code> parameter and set the
          * value to <code>CUSTOMER_MANAGED</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/env-template-v1.html">Register
-         * and publish an environment template</a> in the <i>AWS Proton Administration
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
+         * and publish an environment template</a> in the <i>AWS Proton Administrator
          * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">AWS
          * API Reference</a></p>
@@ -845,7 +840,7 @@ namespace Model
          * service template and often includes several service instances and pipeline. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-         * in the <i>AWS Proton Administration Guide</i> and <a
+         * in the <i>AWS Proton Administrator Guide</i> and <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
          * in the <i>AWS Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">AWS
@@ -858,7 +853,7 @@ namespace Model
          * service template and often includes several service instances and pipeline. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-         * in the <i>AWS Proton Administration Guide</i> and <a
+         * in the <i>AWS Proton Administrator Guide</i> and <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
          * in the <i>AWS Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">AWS
@@ -873,7 +868,7 @@ namespace Model
          * service template and often includes several service instances and pipeline. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-         * in the <i>AWS Proton Administration Guide</i> and <a
+         * in the <i>AWS Proton Administrator Guide</i> and <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
          * in the <i>AWS Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">AWS
@@ -892,7 +887,7 @@ namespace Model
          * infrastructure defined by the selected service template. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-         * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p><p><h3>See
+         * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">AWS
          * API Reference</a></p>
@@ -908,7 +903,7 @@ namespace Model
          * infrastructure defined by the selected service template. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-         * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p><p><h3>See
+         * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">AWS
          * API Reference</a></p>
@@ -926,7 +921,7 @@ namespace Model
          * infrastructure defined by the selected service template. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-         * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p><p><h3>See
+         * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">AWS
          * API Reference</a></p>
@@ -1003,7 +998,7 @@ namespace Model
          * cleaning up provisioned resources that remain without an environment
          * connection.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1019,7 +1014,7 @@ namespace Model
          * cleaning up provisioned resources that remain without an environment
          * connection.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1037,7 +1032,7 @@ namespace Model
          * cleaning up provisioned resources that remain without an environment
          * connection.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1291,7 +1286,7 @@ namespace Model
          * <p>In an environment account, view the detail data for an environment account
          * connection.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1302,7 +1297,7 @@ namespace Model
          * <p>In an environment account, view the detail data for an environment account
          * connection.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1315,7 +1310,7 @@ namespace Model
          * <p>In an environment account, view the detail data for an environment account
          * connection.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1490,7 +1485,7 @@ namespace Model
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
          * API Reference</a></p>
@@ -1501,7 +1496,7 @@ namespace Model
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
          * API Reference</a></p>
@@ -1514,7 +1509,7 @@ namespace Model
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
          * API Reference</a></p>
@@ -1711,7 +1706,7 @@ namespace Model
          * <p>List tags for a resource. For more information, see <i>AWS Proton resources
          * and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">AWS
@@ -1723,7 +1718,7 @@ namespace Model
          * <p>List tags for a resource. For more information, see <i>AWS Proton resources
          * and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">AWS
@@ -1737,7 +1732,7 @@ namespace Model
          * <p>List tags for a resource. For more information, see <i>AWS Proton resources
          * and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">AWS
@@ -1755,7 +1750,7 @@ namespace Model
          * account connection that is connected to an environment.</p> <p>For more
          * information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1770,7 +1765,7 @@ namespace Model
          * account connection that is connected to an environment.</p> <p>For more
          * information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1787,7 +1782,7 @@ namespace Model
          * account connection that is connected to an environment.</p> <p>For more
          * information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1800,7 +1795,7 @@ namespace Model
          * <p>Tag a resource. For more information, see <i>AWS Proton resources and
          * tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">AWS
@@ -1812,7 +1807,7 @@ namespace Model
          * <p>Tag a resource. For more information, see <i>AWS Proton resources and
          * tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">AWS
@@ -1826,7 +1821,7 @@ namespace Model
          * <p>Tag a resource. For more information, see <i>AWS Proton resources and
          * tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">AWS
@@ -1840,7 +1835,7 @@ namespace Model
          * <p>Remove a tag from a resource. For more information, see <i>AWS Proton
          * resources and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">AWS
@@ -1852,7 +1847,7 @@ namespace Model
          * <p>Remove a tag from a resource. For more information, see <i>AWS Proton
          * resources and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">AWS
@@ -1866,7 +1861,7 @@ namespace Model
          * <p>Remove a tag from a resource. For more information, see <i>AWS Proton
          * resources and tagging</i> in the <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-         * Proton Administration Guide</a> or <a
+         * Proton Administrator Guide</a> or <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
          * Proton User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">AWS
@@ -1910,7 +1905,7 @@ namespace Model
          * <code>protonServiceRoleArn</code> parameter to update or connect to an
          * environment account connection. </p> <p>You can only update to a new environment
          * account connection if it was created in the same environment account that the
-         * current environment account connection was created in and associated with the
+         * current environment account connection was created in and is associated with the
          * current environment.</p> <p>If the environment <i>isn't</i> associated with an
          * environment account connection, <i>don't</i> update or include the
          * <code>environmentAccountConnectionId</code> parameter to update or connect to an
@@ -1945,7 +1940,7 @@ namespace Model
          * <code>protonServiceRoleArn</code> parameter to update or connect to an
          * environment account connection. </p> <p>You can only update to a new environment
          * account connection if it was created in the same environment account that the
-         * current environment account connection was created in and associated with the
+         * current environment account connection was created in and is associated with the
          * current environment.</p> <p>If the environment <i>isn't</i> associated with an
          * environment account connection, <i>don't</i> update or include the
          * <code>environmentAccountConnectionId</code> parameter to update or connect to an
@@ -1982,7 +1977,7 @@ namespace Model
          * <code>protonServiceRoleArn</code> parameter to update or connect to an
          * environment account connection. </p> <p>You can only update to a new environment
          * account connection if it was created in the same environment account that the
-         * current environment account connection was created in and associated with the
+         * current environment account connection was created in and is associated with the
          * current environment.</p> <p>If the environment <i>isn't</i> associated with an
          * environment account connection, <i>don't</i> update or include the
          * <code>environmentAccountConnectionId</code> parameter to update or connect to an
@@ -2017,7 +2012,7 @@ namespace Model
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -2028,7 +2023,7 @@ namespace Model
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -2041,7 +2036,7 @@ namespace Model
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
          * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>AWS Proton Administration
+         * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS
          * API Reference</a></p>

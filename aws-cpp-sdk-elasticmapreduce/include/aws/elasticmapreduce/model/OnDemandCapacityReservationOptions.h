@@ -50,7 +50,7 @@ namespace Model
      * unused Capacity Reservations is less than the On-Demand target capacity, the
      * remaining On-Demand target capacity is launched according to the On-Demand
      * allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity according to the chosen
+     * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
     inline const OnDemandCapacityReservationUsageStrategy& GetUsageStrategy() const{ return m_usageStrategy; }
@@ -65,7 +65,7 @@ namespace Model
      * unused Capacity Reservations is less than the On-Demand target capacity, the
      * remaining On-Demand target capacity is launched according to the On-Demand
      * allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity according to the chosen
+     * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
     inline bool UsageStrategyHasBeenSet() const { return m_usageStrategyHasBeenSet; }
@@ -80,7 +80,7 @@ namespace Model
      * unused Capacity Reservations is less than the On-Demand target capacity, the
      * remaining On-Demand target capacity is launched according to the On-Demand
      * allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity according to the chosen
+     * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
     inline void SetUsageStrategy(const OnDemandCapacityReservationUsageStrategy& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = value; }
@@ -95,7 +95,7 @@ namespace Model
      * unused Capacity Reservations is less than the On-Demand target capacity, the
      * remaining On-Demand target capacity is launched according to the On-Demand
      * allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity according to the chosen
+     * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
     inline void SetUsageStrategy(OnDemandCapacityReservationUsageStrategy&& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = std::move(value); }
@@ -110,7 +110,7 @@ namespace Model
      * unused Capacity Reservations is less than the On-Demand target capacity, the
      * remaining On-Demand target capacity is launched according to the On-Demand
      * allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity according to the chosen
+     * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
     inline OnDemandCapacityReservationOptions& WithUsageStrategy(const OnDemandCapacityReservationUsageStrategy& value) { SetUsageStrategy(value); return *this;}
@@ -125,7 +125,7 @@ namespace Model
      * unused Capacity Reservations is less than the On-Demand target capacity, the
      * remaining On-Demand target capacity is launched according to the On-Demand
      * allocation strategy (<code>lowest-price</code>).</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity according to the chosen
+     * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
     inline OnDemandCapacityReservationOptions& WithUsageStrategy(OnDemandCapacityReservationUsageStrategy&& value) { SetUsageStrategy(std::move(value)); return *this;}

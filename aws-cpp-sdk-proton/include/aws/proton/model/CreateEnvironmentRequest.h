@@ -84,7 +84,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline const Aws::String& GetEnvironmentAccountConnectionId() const{ return m_environmentAccountConnectionId; }
 
@@ -95,7 +95,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline bool EnvironmentAccountConnectionIdHasBeenSet() const { return m_environmentAccountConnectionIdHasBeenSet; }
 
@@ -106,7 +106,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const Aws::String& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = value; }
 
@@ -117,7 +117,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(Aws::String&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::move(value); }
 
@@ -128,7 +128,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const char* value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId.assign(value); }
 
@@ -139,7 +139,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const Aws::String& value) { SetEnvironmentAccountConnectionId(value); return *this;}
 
@@ -150,7 +150,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(Aws::String&& value) { SetEnvironmentAccountConnectionId(std::move(value)); return *this;}
 
@@ -161,7 +161,7 @@ namespace Model
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
      * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
-     * account connections</a> in the <i>AWS Proton Administration guide</i>.</p>
+     * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const char* value) { SetEnvironmentAccountConnectionId(value); return *this;}
 
@@ -275,64 +275,64 @@ namespace Model
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline const Aws::String& GetSpec() const{ return m_spec; }
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetSpec(const Aws::String& value) { m_specHasBeenSet = true; m_spec = value; }
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetSpec(Aws::String&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetSpec(const char* value) { m_specHasBeenSet = true; m_spec.assign(value); }
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithSpec(const Aws::String& value) { SetSpec(value); return *this;}
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithSpec(Aws::String&& value) { SetSpec(std::move(value)); return *this;}
 
     /**
      * <p>A link to a YAML formatted spec file that provides inputs as defined in the
      * environment template bundle schema file. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-managing-environments.html">Environments</a>
-     * in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+     * in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithSpec(const char* value) { SetSpec(value); return *this;}
 
@@ -341,7 +341,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -351,7 +351,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -361,7 +361,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -371,7 +371,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -381,7 +381,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -391,7 +391,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -401,7 +401,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -411,7 +411,7 @@ namespace Model
      * <p>Create tags for your environment. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -502,57 +502,57 @@ namespace Model
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the environment template. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment
-     * Templates</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+     * Templates</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 

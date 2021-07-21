@@ -136,38 +136,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
-     * (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+     * Changes for the copy when the snapshot is copied.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
-     * (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+     * Changes for the copy when the snapshot is copied.</p>
      */
     inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
-     * (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+     * Changes for the copy when the snapshot is copied.</p>
      */
     inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
-     * (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+     * Changes for the copy when the snapshot is copied.</p>
      */
     inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::move(value); }
 
     /**
-     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
-     * (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+     * Changes for the copy when the snapshot is copied.</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
 
     /**
-     * <p>Specifies when the snapshot was taken in Coordinated Universal Time
-     * (UTC).</p>
+     * <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
+     * Changes for the copy when the snapshot is copied.</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
 
@@ -729,49 +729,57 @@ namespace Model
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline bool SourceDBSnapshotIdentifierHasBeenSet() const { return m_sourceDBSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline void SetSourceDBSnapshotIdentifier(const Aws::String& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = value; }
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline void SetSourceDBSnapshotIdentifier(Aws::String&& value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline void SetSourceDBSnapshotIdentifier(const char* value) { m_sourceDBSnapshotIdentifierHasBeenSet = true; m_sourceDBSnapshotIdentifier.assign(value); }
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(const Aws::String& value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(Aws::String&& value) { SetSourceDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
-     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     * from. It only has a value in the case of a cross-account or cross-Region
+     * copy.</p>
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
@@ -1205,6 +1213,43 @@ namespace Model
     
     inline DBSnapshot& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
+     * Time (UTC). Doesn't change when the snapshot is copied.</p>
+     */
+    inline const Aws::Utils::DateTime& GetOriginalSnapshotCreateTime() const{ return m_originalSnapshotCreateTime; }
+
+    /**
+     * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
+     * Time (UTC). Doesn't change when the snapshot is copied.</p>
+     */
+    inline bool OriginalSnapshotCreateTimeHasBeenSet() const { return m_originalSnapshotCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
+     * Time (UTC). Doesn't change when the snapshot is copied.</p>
+     */
+    inline void SetOriginalSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_originalSnapshotCreateTimeHasBeenSet = true; m_originalSnapshotCreateTime = value; }
+
+    /**
+     * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
+     * Time (UTC). Doesn't change when the snapshot is copied.</p>
+     */
+    inline void SetOriginalSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_originalSnapshotCreateTimeHasBeenSet = true; m_originalSnapshotCreateTime = std::move(value); }
+
+    /**
+     * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
+     * Time (UTC). Doesn't change when the snapshot is copied.</p>
+     */
+    inline DBSnapshot& WithOriginalSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetOriginalSnapshotCreateTime(value); return *this;}
+
+    /**
+     * <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal
+     * Time (UTC). Doesn't change when the snapshot is copied.</p>
+     */
+    inline DBSnapshot& WithOriginalSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetOriginalSnapshotCreateTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1293,6 +1338,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet;
+
+    Aws::Utils::DateTime m_originalSnapshotCreateTime;
+    bool m_originalSnapshotCreateTimeHasBeenSet;
   };
 
 } // namespace Model

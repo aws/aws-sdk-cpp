@@ -427,50 +427,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline EnvironmentSummary& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline EnvironmentSummary& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline EnvironmentSummary& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
 

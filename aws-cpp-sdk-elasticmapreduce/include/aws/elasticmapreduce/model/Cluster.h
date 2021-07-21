@@ -303,58 +303,50 @@ namespace Model
 
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline Cluster& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline Cluster& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
-     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
-     * 6.0.0. </p>
+     * <p> The KMS key used for encrypting log files. This attribute is only available
+     * with EMR version 5.30.0 and later, excluding EMR 6.0.0. </p>
      */
     inline Cluster& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
@@ -593,54 +585,82 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
-     * associated with the cluster. The default value, <code>true</code>, indicates
-     * that all IAM users in the AWS account can perform cluster actions if they have
-     * the proper IAM policy permissions. If this value is <code>false</code>, only the
-     * IAM user that created the cluster can perform actions. This value can be changed
-     * on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can
-     * override the default value of <code>true</code> when you create a cluster by
-     * using the <code>VisibleToAllUsers</code> parameter of the
-     * <code>RunJobFlow</code> action.</p>
+     * <p>Indicates whether the cluster is visible to IAM principals in the account
+     * associated with the cluster. When <code>true</code>, IAM principals in the
+     * account can perform EMR cluster actions on the cluster that their IAM policies
+     * allow. When <code>false</code>, only the IAM principal that created the cluster
+     * and the account root user can perform EMR actions, regardless of IAM permissions
+     * policies attached to other IAM principals.</p> <p>The default value is
+     * <code>false</code> if a value is not provided when creating a cluster using the
+     * EMR API <a>RunJobFlow</a> command or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command. The default value is <code>true</code> when a cluster is created using
+     * the Management Console. IAM principals that are allowed to perform actions on
+     * the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value
+     * on a running cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * Guide</i>.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
-     * associated with the cluster. The default value, <code>true</code>, indicates
-     * that all IAM users in the AWS account can perform cluster actions if they have
-     * the proper IAM policy permissions. If this value is <code>false</code>, only the
-     * IAM user that created the cluster can perform actions. This value can be changed
-     * on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can
-     * override the default value of <code>true</code> when you create a cluster by
-     * using the <code>VisibleToAllUsers</code> parameter of the
-     * <code>RunJobFlow</code> action.</p>
+     * <p>Indicates whether the cluster is visible to IAM principals in the account
+     * associated with the cluster. When <code>true</code>, IAM principals in the
+     * account can perform EMR cluster actions on the cluster that their IAM policies
+     * allow. When <code>false</code>, only the IAM principal that created the cluster
+     * and the account root user can perform EMR actions, regardless of IAM permissions
+     * policies attached to other IAM principals.</p> <p>The default value is
+     * <code>false</code> if a value is not provided when creating a cluster using the
+     * EMR API <a>RunJobFlow</a> command or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command. The default value is <code>true</code> when a cluster is created using
+     * the Management Console. IAM principals that are allowed to perform actions on
+     * the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value
+     * on a running cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * Guide</i>.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
-     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
-     * associated with the cluster. The default value, <code>true</code>, indicates
-     * that all IAM users in the AWS account can perform cluster actions if they have
-     * the proper IAM policy permissions. If this value is <code>false</code>, only the
-     * IAM user that created the cluster can perform actions. This value can be changed
-     * on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can
-     * override the default value of <code>true</code> when you create a cluster by
-     * using the <code>VisibleToAllUsers</code> parameter of the
-     * <code>RunJobFlow</code> action.</p>
+     * <p>Indicates whether the cluster is visible to IAM principals in the account
+     * associated with the cluster. When <code>true</code>, IAM principals in the
+     * account can perform EMR cluster actions on the cluster that their IAM policies
+     * allow. When <code>false</code>, only the IAM principal that created the cluster
+     * and the account root user can perform EMR actions, regardless of IAM permissions
+     * policies attached to other IAM principals.</p> <p>The default value is
+     * <code>false</code> if a value is not provided when creating a cluster using the
+     * EMR API <a>RunJobFlow</a> command or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command. The default value is <code>true</code> when a cluster is created using
+     * the Management Console. IAM principals that are allowed to perform actions on
+     * the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value
+     * on a running cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * Guide</i>.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
-     * associated with the cluster. The default value, <code>true</code>, indicates
-     * that all IAM users in the AWS account can perform cluster actions if they have
-     * the proper IAM policy permissions. If this value is <code>false</code>, only the
-     * IAM user that created the cluster can perform actions. This value can be changed
-     * on a running cluster by using the <a>SetVisibleToAllUsers</a> action. You can
-     * override the default value of <code>true</code> when you create a cluster by
-     * using the <code>VisibleToAllUsers</code> parameter of the
-     * <code>RunJobFlow</code> action.</p>
+     * <p>Indicates whether the cluster is visible to IAM principals in the account
+     * associated with the cluster. When <code>true</code>, IAM principals in the
+     * account can perform EMR cluster actions on the cluster that their IAM policies
+     * allow. When <code>false</code>, only the IAM principal that created the cluster
+     * and the account root user can perform EMR actions, regardless of IAM permissions
+     * policies attached to other IAM principals.</p> <p>The default value is
+     * <code>false</code> if a value is not provided when creating a cluster using the
+     * EMR API <a>RunJobFlow</a> command or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command. The default value is <code>true</code> when a cluster is created using
+     * the Management Console. IAM principals that are allowed to perform actions on
+     * the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value
+     * on a running cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * Guide</i>.</p>
      */
     inline Cluster& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
@@ -728,50 +748,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline Cluster& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline Cluster& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
-     * resources on your behalf.</p>
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access Amazon
+     * Web Services resources on your behalf.</p>
      */
     inline Cluster& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 

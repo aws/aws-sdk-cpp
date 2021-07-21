@@ -30,8 +30,8 @@ namespace Model
    * create a dataset and add it to a dataset group by calling <a>CreateDataset</a>.
    * The dataset group is used to create and train a solution by calling
    * <a>CreateSolution</a>. A dataset group can contain only one of each type of
-   * dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to
-   * encrypt the datasets in the group.</p><p><h3>See Also:</h3>   <a
+   * dataset.</p> <p>You can specify an Key Management Service (KMS) key to encrypt
+   * the datasets in the group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetGroup">AWS
    * API Reference</a></p>
    */
@@ -225,50 +225,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline DatasetGroup& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline DatasetGroup& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the datasets.</p>
      */
     inline DatasetGroup& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

@@ -1510,7 +1510,7 @@ namespace Model
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
-         * of the service. </p><p><h3>See Also:</h3>   <a
+         * of your index. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">AWS
          * API Reference</a></p>
          */
@@ -1518,7 +1518,7 @@ namespace Model
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
-         * of the service. </p><p><h3>See Also:</h3>   <a
+         * of your index. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">AWS
          * API Reference</a></p>
          *
@@ -1528,7 +1528,7 @@ namespace Model
 
         /**
          * <p>Enables you to provide feedback to Amazon Kendra to improve the performance
-         * of the service. </p><p><h3>See Also:</h3>   <a
+         * of your index. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">AWS
          * API Reference</a></p>
          *

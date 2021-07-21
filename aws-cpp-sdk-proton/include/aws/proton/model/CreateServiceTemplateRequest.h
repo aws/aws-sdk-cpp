@@ -206,8 +206,8 @@ namespace Model
      * included, this parameter indicates that an AWS Proton service pipeline
      * <i>won't</i> be included for your service. Once specified, this parameter
      * <i>can't</i> be changed. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline const Provisioning& GetPipelineProvisioning() const{ return m_pipelineProvisioning; }
 
@@ -216,8 +216,8 @@ namespace Model
      * included, this parameter indicates that an AWS Proton service pipeline
      * <i>won't</i> be included for your service. Once specified, this parameter
      * <i>can't</i> be changed. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline bool PipelineProvisioningHasBeenSet() const { return m_pipelineProvisioningHasBeenSet; }
 
@@ -226,8 +226,8 @@ namespace Model
      * included, this parameter indicates that an AWS Proton service pipeline
      * <i>won't</i> be included for your service. Once specified, this parameter
      * <i>can't</i> be changed. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetPipelineProvisioning(const Provisioning& value) { m_pipelineProvisioningHasBeenSet = true; m_pipelineProvisioning = value; }
 
@@ -236,8 +236,8 @@ namespace Model
      * included, this parameter indicates that an AWS Proton service pipeline
      * <i>won't</i> be included for your service. Once specified, this parameter
      * <i>can't</i> be changed. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline void SetPipelineProvisioning(Provisioning&& value) { m_pipelineProvisioningHasBeenSet = true; m_pipelineProvisioning = std::move(value); }
 
@@ -246,8 +246,8 @@ namespace Model
      * included, this parameter indicates that an AWS Proton service pipeline
      * <i>won't</i> be included for your service. Once specified, this parameter
      * <i>can't</i> be changed. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithPipelineProvisioning(const Provisioning& value) { SetPipelineProvisioning(value); return *this;}
 
@@ -256,8 +256,8 @@ namespace Model
      * included, this parameter indicates that an AWS Proton service pipeline
      * <i>won't</i> be included for your service. Once specified, this parameter
      * <i>can't</i> be changed. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-template-bundles.html">Service
-     * template bundles</a> in the <i>AWS Proton Administration Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
+     * template bundles</a> in the <i>AWS Proton Administrator Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithPipelineProvisioning(Provisioning&& value) { SetPipelineProvisioning(std::move(value)); return *this;}
 
@@ -266,7 +266,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -276,7 +276,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -286,7 +286,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -296,7 +296,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -306,7 +306,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -316,7 +316,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -326,7 +326,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -336,7 +336,7 @@ namespace Model
      * <p>Create tags for your service template. For more information, see <i>AWS
      * Proton resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */

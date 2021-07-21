@@ -33,6 +33,7 @@
 #include <aws/elasticmapreduce/model/DeleteStudioSessionMappingRequest.h>
 #include <aws/elasticmapreduce/model/DescribeClusterRequest.h>
 #include <aws/elasticmapreduce/model/DescribeNotebookExecutionRequest.h>
+#include <aws/elasticmapreduce/model/DescribeReleaseLabelRequest.h>
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStudioRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/elasticmapreduce/model/ListInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/ListInstancesRequest.h>
 #include <aws/elasticmapreduce/model/ListNotebookExecutionsRequest.h>
+#include <aws/elasticmapreduce/model/ListReleaseLabelsRequest.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
 #include <aws/elasticmapreduce/model/ListStepsRequest.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
@@ -452,6 +454,30 @@ void EMRClient::DescribeNotebookExecutionAsyncHelper(const DescribeNotebookExecu
   handler(this, request, DescribeNotebookExecution(request), context);
 }
 
+DescribeReleaseLabelOutcome EMRClient::DescribeReleaseLabel(const DescribeReleaseLabelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeReleaseLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReleaseLabelOutcomeCallable EMRClient::DescribeReleaseLabelCallable(const DescribeReleaseLabelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReleaseLabelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReleaseLabel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::DescribeReleaseLabelAsync(const DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReleaseLabelAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DescribeReleaseLabelAsyncHelper(const DescribeReleaseLabelRequest& request, const DescribeReleaseLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReleaseLabel(request), context);
+}
+
 DescribeSecurityConfigurationOutcome EMRClient::DescribeSecurityConfiguration(const DescribeSecurityConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -738,6 +764,30 @@ void EMRClient::ListNotebookExecutionsAsync(const ListNotebookExecutionsRequest&
 void EMRClient::ListNotebookExecutionsAsyncHelper(const ListNotebookExecutionsRequest& request, const ListNotebookExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListNotebookExecutions(request), context);
+}
+
+ListReleaseLabelsOutcome EMRClient::ListReleaseLabels(const ListReleaseLabelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListReleaseLabelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReleaseLabelsOutcomeCallable EMRClient::ListReleaseLabelsCallable(const ListReleaseLabelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReleaseLabelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReleaseLabels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::ListReleaseLabelsAsync(const ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListReleaseLabelsAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ListReleaseLabelsAsyncHelper(const ListReleaseLabelsRequest& request, const ListReleaseLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReleaseLabels(request), context);
 }
 
 ListSecurityConfigurationsOutcome EMRClient::ListSecurityConfigurations(const ListSecurityConfigurationsRequest& request) const

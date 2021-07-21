@@ -139,56 +139,56 @@ namespace Model
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
 
     /**
      * <p>To create a new minor version of the environment template, include a
      * <code>majorVersion</code>.</p> <p>To create a new major and minor version of the
-     * environment template, exclude <code>majorVersion</code>.</p>
+     * environment template, <i>exclude</i> <code>majorVersion</code>.</p>
      */
     inline CreateEnvironmentTemplateVersionRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
 

@@ -1431,10 +1431,16 @@ namespace Model
          * provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP that you want to use to access Amazon Web
-         * Services.</p>  <p>The trust for the OIDC provider is derived from the IAM
-         * provider that this operation creates. Therefore, it is best to limit access to
-         * the <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Services.</p>  <p>Amazon Web Services secures communication with some OIDC
+         * identity providers (IdPs) through our library of trusted certificate authorities
+         * (CAs) instead of using a certificate thumbprint to verify your IdP server
+         * certificate. These OIDC IdPs include Google, and those that use an Amazon S3
+         * bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy
+         * thumbprint remains in your configuration, but is no longer used for
+         * validation.</p>   <p>The trust for the OIDC provider is derived
+         * from the IAM provider that this operation creates. Therefore, it is best to
+         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
+         * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          */
@@ -1460,10 +1466,16 @@ namespace Model
          * provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP that you want to use to access Amazon Web
-         * Services.</p>  <p>The trust for the OIDC provider is derived from the IAM
-         * provider that this operation creates. Therefore, it is best to limit access to
-         * the <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Services.</p>  <p>Amazon Web Services secures communication with some OIDC
+         * identity providers (IdPs) through our library of trusted certificate authorities
+         * (CAs) instead of using a certificate thumbprint to verify your IdP server
+         * certificate. These OIDC IdPs include Google, and those that use an Amazon S3
+         * bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy
+         * thumbprint remains in your configuration, but is no longer used for
+         * validation.</p>   <p>The trust for the OIDC provider is derived
+         * from the IAM provider that this operation creates. Therefore, it is best to
+         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
+         * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          *
@@ -1491,10 +1503,16 @@ namespace Model
          * provider</p> </li> <li> <p>A list of thumbprints of one or more server
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP that you want to use to access Amazon Web
-         * Services.</p>  <p>The trust for the OIDC provider is derived from the IAM
-         * provider that this operation creates. Therefore, it is best to limit access to
-         * the <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Services.</p>  <p>Amazon Web Services secures communication with some OIDC
+         * identity providers (IdPs) through our library of trusted certificate authorities
+         * (CAs) instead of using a certificate thumbprint to verify your IdP server
+         * certificate. These OIDC IdPs include Google, and those that use an Amazon S3
+         * bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy
+         * thumbprint remains in your configuration, but is no longer used for
+         * validation.</p>   <p>The trust for the OIDC provider is derived
+         * from the IAM provider that this operation creates. Therefore, it is best to
+         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
+         * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          *
@@ -8915,12 +8933,18 @@ namespace Model
          * an OpenID Connect (OIDC) provider resource object with a new list of
          * thumbprints.</p> <p>The list that you pass with this operation completely
          * replaces the existing list of thumbprints. (The lists are not merged.)</p>
-         * <p>Typically, you need to update a thumbprint only when the identity provider's
+         * <p>Typically, you need to update a thumbprint only when the identity provider
          * certificate changes, which occurs rarely. However, if the provider's certificate
          * <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC
          * provider as a principal fails until the certificate thumbprint is updated.</p>
-         *  <p>Trust for the OIDC provider is derived from the provider's certificate
-         * and is validated by the thumbprint. Therefore, it is best to limit access to the
+         *  <p>Amazon Web Services secures communication with some OIDC identity
+         * providers (IdPs) through our library of trusted certificate authorities (CAs)
+         * instead of using a certificate thumbprint to verify your IdP server certificate.
+         * These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a
+         * JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains
+         * in your configuration, but is no longer used for validation.</p>  
+         * <p>Trust for the OIDC provider is derived from the provider certificate and is
+         * validated by the thumbprint. Therefore, it is best to limit access to the
          * <code>UpdateOpenIDConnectProviderThumbprint</code> operation to highly
          * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">AWS
@@ -8933,12 +8957,18 @@ namespace Model
          * an OpenID Connect (OIDC) provider resource object with a new list of
          * thumbprints.</p> <p>The list that you pass with this operation completely
          * replaces the existing list of thumbprints. (The lists are not merged.)</p>
-         * <p>Typically, you need to update a thumbprint only when the identity provider's
+         * <p>Typically, you need to update a thumbprint only when the identity provider
          * certificate changes, which occurs rarely. However, if the provider's certificate
          * <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC
          * provider as a principal fails until the certificate thumbprint is updated.</p>
-         *  <p>Trust for the OIDC provider is derived from the provider's certificate
-         * and is validated by the thumbprint. Therefore, it is best to limit access to the
+         *  <p>Amazon Web Services secures communication with some OIDC identity
+         * providers (IdPs) through our library of trusted certificate authorities (CAs)
+         * instead of using a certificate thumbprint to verify your IdP server certificate.
+         * These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a
+         * JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains
+         * in your configuration, but is no longer used for validation.</p>  
+         * <p>Trust for the OIDC provider is derived from the provider certificate and is
+         * validated by the thumbprint. Therefore, it is best to limit access to the
          * <code>UpdateOpenIDConnectProviderThumbprint</code> operation to highly
          * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">AWS
@@ -8953,12 +8983,18 @@ namespace Model
          * an OpenID Connect (OIDC) provider resource object with a new list of
          * thumbprints.</p> <p>The list that you pass with this operation completely
          * replaces the existing list of thumbprints. (The lists are not merged.)</p>
-         * <p>Typically, you need to update a thumbprint only when the identity provider's
+         * <p>Typically, you need to update a thumbprint only when the identity provider
          * certificate changes, which occurs rarely. However, if the provider's certificate
          * <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC
          * provider as a principal fails until the certificate thumbprint is updated.</p>
-         *  <p>Trust for the OIDC provider is derived from the provider's certificate
-         * and is validated by the thumbprint. Therefore, it is best to limit access to the
+         *  <p>Amazon Web Services secures communication with some OIDC identity
+         * providers (IdPs) through our library of trusted certificate authorities (CAs)
+         * instead of using a certificate thumbprint to verify your IdP server certificate.
+         * These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a
+         * JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint remains
+         * in your configuration, but is no longer used for validation.</p>  
+         * <p>Trust for the OIDC provider is derived from the provider certificate and is
+         * validated by the thumbprint. Therefore, it is best to limit access to the
          * <code>UpdateOpenIDConnectProviderThumbprint</code> operation to highly
          * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">AWS

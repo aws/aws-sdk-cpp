@@ -280,57 +280,57 @@ namespace Model
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline CreateStudioRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline CreateStudioRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR Studio. The service role
-     * provides a way for Amazon EMR Studio to interoperate with other AWS
-     * services.</p>
+     * provides a way for Amazon EMR Studio to interoperate with other Amazon Web
+     * Services services.</p>
      */
     inline CreateStudioRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
