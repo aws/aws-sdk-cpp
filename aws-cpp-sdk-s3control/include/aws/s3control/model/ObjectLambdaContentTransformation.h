@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>A container for an AWS Lambda function.</p>
+     * <p>A container for an Lambda function.</p>
      */
     inline const AwsLambdaTransformation& GetAwsLambda() const{ return m_awsLambda; }
 
     /**
-     * <p>A container for an AWS Lambda function.</p>
+     * <p>A container for an Lambda function.</p>
      */
     inline bool AwsLambdaHasBeenSet() const { return m_awsLambdaHasBeenSet; }
 
     /**
-     * <p>A container for an AWS Lambda function.</p>
+     * <p>A container for an Lambda function.</p>
      */
     inline void SetAwsLambda(const AwsLambdaTransformation& value) { m_awsLambdaHasBeenSet = true; m_awsLambda = value; }
 
     /**
-     * <p>A container for an AWS Lambda function.</p>
+     * <p>A container for an Lambda function.</p>
      */
     inline void SetAwsLambda(AwsLambdaTransformation&& value) { m_awsLambdaHasBeenSet = true; m_awsLambda = std::move(value); }
 
     /**
-     * <p>A container for an AWS Lambda function.</p>
+     * <p>A container for an Lambda function.</p>
      */
     inline ObjectLambdaContentTransformation& WithAwsLambda(const AwsLambdaTransformation& value) { SetAwsLambda(value); return *this;}
 
     /**
-     * <p>A container for an AWS Lambda function.</p>
+     * <p>A container for an Lambda function.</p>
      */
     inline ObjectLambdaContentTransformation& WithAwsLambda(AwsLambdaTransformation&& value) { SetAwsLambda(std::move(value)); return *this;}
 

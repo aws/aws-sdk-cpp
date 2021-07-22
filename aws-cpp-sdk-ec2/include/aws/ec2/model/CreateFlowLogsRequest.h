@@ -78,7 +78,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -86,7 +86,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -94,7 +94,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -102,7 +102,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -110,7 +110,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -118,7 +118,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateFlowLogsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -126,7 +126,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateFlowLogsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -134,7 +134,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateFlowLogsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -636,11 +636,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
 
@@ -648,11 +648,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
 
@@ -660,11 +660,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
 
@@ -672,11 +672,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
 
@@ -684,11 +684,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
 
@@ -696,11 +696,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
 
@@ -708,11 +708,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
 
@@ -720,11 +720,11 @@ namespace Model
      * <p>The fields to include in the flow log record, in the order in which they
      * should appear. For a list of available fields, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * log records</a>. If you omit this parameter, the flow log is created using the
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p>
+     * separated by spaces. For the CLI, use single quotation marks (' ') to surround
+     * the parameter value.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
 

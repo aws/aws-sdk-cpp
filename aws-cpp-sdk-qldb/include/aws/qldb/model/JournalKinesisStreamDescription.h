@@ -167,37 +167,37 @@ namespace Model
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline JournalKinesisStreamDescription& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
 
     /**
      * <p>The exclusive date and time that specifies when the stream ends. If this
-     * parameter is blank, the stream runs indefinitely until you cancel it.</p>
+     * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
     inline JournalKinesisStreamDescription& WithExclusiveEndTime(Aws::Utils::DateTime&& value) { SetExclusiveEndTime(std::move(value)); return *this;}
 

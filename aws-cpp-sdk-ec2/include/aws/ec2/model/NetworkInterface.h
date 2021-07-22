@@ -15,6 +15,8 @@
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/NetworkInterfaceIpv6Address.h>
 #include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
+#include <aws/ec2/model/Ipv4PrefixSpecification.h>
+#include <aws/ec2/model/Ipv6PrefixSpecification.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -599,6 +601,104 @@ namespace Model
 
 
     /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline const Aws::Vector<Ipv4PrefixSpecification>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { SetIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& AddIpv4Prefixes(const Ipv4PrefixSpecification& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& AddIpv4Prefixes(Ipv4PrefixSpecification&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline const Aws::Vector<Ipv6PrefixSpecification>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecification>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecification>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecification>& value) { SetIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecification>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Prefixes(const Ipv6PrefixSpecification& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Prefixes(Ipv6PrefixSpecification&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The alias or account ID of the principal or service that created the network
      * interface.</p>
      */
@@ -889,6 +989,12 @@ namespace Model
 
     Aws::Vector<NetworkInterfacePrivateIpAddress> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+
+    Aws::Vector<Ipv4PrefixSpecification> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet;
+
+    Aws::Vector<Ipv6PrefixSpecification> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet;
 
     Aws::String m_requesterId;
     bool m_requesterIdHasBeenSet;

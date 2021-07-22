@@ -225,7 +225,7 @@ namespace Model
         virtual void CancelJournalKinesisStreamAsync(const Model::CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ledger in your AWS account in the current Region.</p><p><h3>See
+         * <p>Creates a new ledger in your account in the current Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
@@ -233,7 +233,7 @@ namespace Model
         virtual Model::CreateLedgerOutcome CreateLedger(const Model::CreateLedgerRequest& request) const;
 
         /**
-         * <p>Creates a new ledger in your AWS account in the current Region.</p><p><h3>See
+         * <p>Creates a new ledger in your account in the current Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
@@ -243,7 +243,7 @@ namespace Model
         virtual Model::CreateLedgerOutcomeCallable CreateLedgerCallable(const Model::CreateLedgerRequest& request) const;
 
         /**
-         * <p>Creates a new ledger in your AWS account in the current Region.</p><p><h3>See
+         * <p>Creates a new ledger in your account in the current Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
@@ -385,16 +385,18 @@ namespace Model
         virtual void DescribeJournalS3ExportAsync(const Model::DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a ledger, including its state and when it was
-         * created.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a ledger, including its state, permissions mode,
+         * encryption at rest settings, and when it was created.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeLedgerOutcome DescribeLedger(const Model::DescribeLedgerRequest& request) const;
 
         /**
-         * <p>Returns information about a ledger, including its state and when it was
-         * created.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a ledger, including its state, permissions mode,
+         * encryption at rest settings, and when it was created.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">AWS
          * API Reference</a></p>
          *
@@ -403,8 +405,9 @@ namespace Model
         virtual Model::DescribeLedgerOutcomeCallable DescribeLedgerCallable(const Model::DescribeLedgerRequest& request) const;
 
         /**
-         * <p>Returns information about a ledger, including its state and when it was
-         * created.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a ledger, including its state, permissions mode,
+         * encryption at rest settings, and when it was created.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">AWS
          * API Reference</a></p>
          *
@@ -635,7 +638,7 @@ namespace Model
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
-         * associated with the current AWS account and Region.</p> <p>This action returns a
+         * associated with the current account and Region.</p> <p>This action returns a
          * maximum of <code>MaxResults</code> items, and is paginated so that you can
          * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
          * times.</p> <p>This action does not return any expired export jobs. For more
@@ -650,7 +653,7 @@ namespace Model
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
-         * associated with the current AWS account and Region.</p> <p>This action returns a
+         * associated with the current account and Region.</p> <p>This action returns a
          * maximum of <code>MaxResults</code> items, and is paginated so that you can
          * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
          * times.</p> <p>This action does not return any expired export jobs. For more
@@ -667,7 +670,7 @@ namespace Model
 
         /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
-         * associated with the current AWS account and Region.</p> <p>This action returns a
+         * associated with the current account and Region.</p> <p>This action returns a
          * maximum of <code>MaxResults</code> items, and is paginated so that you can
          * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
          * times.</p> <p>This action does not return any expired export jobs. For more
@@ -729,7 +732,7 @@ namespace Model
         virtual void ListJournalS3ExportsForLedgerAsync(const Model::ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of ledger summaries that are associated with the current AWS
+         * <p>Returns an array of ledger summaries that are associated with the current
          * account and Region.</p> <p>This action returns a maximum of 100 items and is
          * paginated so that you can retrieve all the items by calling
          * <code>ListLedgers</code> multiple times.</p><p><h3>See Also:</h3>   <a
@@ -739,7 +742,7 @@ namespace Model
         virtual Model::ListLedgersOutcome ListLedgers(const Model::ListLedgersRequest& request) const;
 
         /**
-         * <p>Returns an array of ledger summaries that are associated with the current AWS
+         * <p>Returns an array of ledger summaries that are associated with the current
          * account and Region.</p> <p>This action returns a maximum of 100 items and is
          * paginated so that you can retrieve all the items by calling
          * <code>ListLedgers</code> multiple times.</p><p><h3>See Also:</h3>   <a
@@ -751,7 +754,7 @@ namespace Model
         virtual Model::ListLedgersOutcomeCallable ListLedgersCallable(const Model::ListLedgersRequest& request) const;
 
         /**
-         * <p>Returns an array of ledger summaries that are associated with the current AWS
+         * <p>Returns an array of ledger summaries that are associated with the current
          * account and Region.</p> <p>This action returns a maximum of 100 items and is
          * paginated so that you can retrieve all the items by calling
          * <code>ListLedgers</code> multiple times.</p><p><h3>See Also:</h3>   <a

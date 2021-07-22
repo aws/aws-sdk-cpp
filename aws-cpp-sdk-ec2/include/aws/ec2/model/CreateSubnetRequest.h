@@ -80,12 +80,12 @@ namespace Model
 
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -94,12 +94,12 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -108,12 +108,12 @@ namespace Model
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -122,12 +122,12 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -136,12 +136,12 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -150,12 +150,12 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -164,12 +164,12 @@ namespace Model
     inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -178,12 +178,12 @@ namespace Model
     inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
-     * selects one for you. If you create more than one subnet in your VPC, we do not
-     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
-     * in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
-     * Local Zones, see <a
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: Amazon
+     * Web Services selects one for you. If you create more than one subnet in your
+     * VPC, we do not necessarily select a different zone for each subnet.</p> <p>To
+     * create a subnet in a Local Zone, set this value to the Local Zone ID, for
+     * example <code>us-west-2-lax-1a</code>. For information about the Regions that
+     * support Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
      * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
      * create a subnet in an Outpost, set this value to the Availability Zone for the
@@ -231,71 +231,6 @@ namespace Model
      * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
-
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
-     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
-     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
-     * <code>100.68.0.0/18</code>.</p>
-     */
-    inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
 
     /**
@@ -469,6 +404,71 @@ namespace Model
      */
     inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical
+     * form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to
+     * <code>100.68.0.0/18</code>.</p>
+     */
+    inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
@@ -479,9 +479,6 @@ namespace Model
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet;
-
-    Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
 
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
@@ -494,6 +491,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_cidrBlock;
+    bool m_cidrBlockHasBeenSet;
   };
 
 } // namespace Model

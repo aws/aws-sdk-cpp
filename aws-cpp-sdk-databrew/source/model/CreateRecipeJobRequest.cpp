@@ -26,6 +26,7 @@ CreateRecipeJobRequest::CreateRecipeJobRequest() :
     m_maxRetriesHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_dataCatalogOutputsHasBeenSet(false),
+    m_databaseOutputsHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -98,6 +99,17 @@ Aws::String CreateRecipeJobRequest::SerializePayload() const
      dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject(m_dataCatalogOutputs[dataCatalogOutputsIndex].Jsonize());
    }
    payload.WithArray("DataCatalogOutputs", std::move(dataCatalogOutputsJsonList));
+
+  }
+
+  if(m_databaseOutputsHasBeenSet)
+  {
+   Array<JsonValue> databaseOutputsJsonList(m_databaseOutputs.size());
+   for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+   {
+     databaseOutputsJsonList[databaseOutputsIndex].AsObject(m_databaseOutputs[databaseOutputsIndex].Jsonize());
+   }
+   payload.WithArray("DatabaseOutputs", std::move(databaseOutputsJsonList));
 
   }
 

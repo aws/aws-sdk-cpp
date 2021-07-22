@@ -11,11 +11,13 @@
 #include <aws/databrew/model/JobType.h>
 #include <aws/databrew/model/LogSubscription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/databrew/model/ProfileConfiguration.h>
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
 #include <aws/databrew/model/DataCatalogOutput.h>
+#include <aws/databrew/model/DatabaseOutput.h>
 #include <utility>
 
 namespace Aws
@@ -468,46 +470,89 @@ namespace Model
 
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputs = value; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputs = std::move(value); }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline DescribeJobResult& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline DescribeJobResult& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline DescribeJobResult& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputs.push_back(value); return *this; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline DescribeJobResult& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline const Aws::Vector<DatabaseOutput>& GetDatabaseOutputs() const{ return m_databaseOutputs; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { m_databaseOutputs = value; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { m_databaseOutputs = std::move(value); }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline DescribeJobResult& WithDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { SetDatabaseOutputs(value); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline DescribeJobResult& WithDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { SetDatabaseOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline DescribeJobResult& AddDatabaseOutputs(const DatabaseOutput& value) { m_databaseOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline DescribeJobResult& AddDatabaseOutputs(DatabaseOutput&& value) { m_databaseOutputs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -544,6 +589,42 @@ namespace Model
      * <p>The DataBrew project associated with this job.</p>
      */
     inline DescribeJobResult& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline const ProfileConfiguration& GetProfileConfiguration() const{ return m_profileConfiguration; }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline void SetProfileConfiguration(const ProfileConfiguration& value) { m_profileConfiguration = value; }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline void SetProfileConfiguration(ProfileConfiguration&& value) { m_profileConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline DescribeJobResult& WithProfileConfiguration(const ProfileConfiguration& value) { SetProfileConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline DescribeJobResult& WithProfileConfiguration(ProfileConfiguration&& value) { SetProfileConfiguration(std::move(value)); return *this;}
 
 
     
@@ -781,7 +862,11 @@ namespace Model
 
     Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
 
+    Aws::Vector<DatabaseOutput> m_databaseOutputs;
+
     Aws::String m_projectName;
+
+    ProfileConfiguration m_profileConfiguration;
 
     RecipeReference m_recipeReference;
 

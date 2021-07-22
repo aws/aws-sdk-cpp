@@ -167,40 +167,40 @@ namespace Model
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>  <p>This element is empty if this access point is an
-     * Amazon S3 on Outposts access point that is used by other AWS services.</p>
-     * 
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>  <p>This element is empty if this access point is an
-     * Amazon S3 on Outposts access point that is used by other AWS services.</p>
-     * 
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfiguration = value; }
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>  <p>This element is empty if this access point is an
-     * Amazon S3 on Outposts access point that is used by other AWS services.</p>
-     * 
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfiguration = std::move(value); }
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>  <p>This element is empty if this access point is an
-     * Amazon S3 on Outposts access point that is used by other AWS services.</p>
-     * 
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline GetAccessPointResult& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
      * access point.</p>  <p>This element is empty if this access point is an
-     * Amazon S3 on Outposts access point that is used by other AWS services.</p>
-     * 
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline GetAccessPointResult& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 

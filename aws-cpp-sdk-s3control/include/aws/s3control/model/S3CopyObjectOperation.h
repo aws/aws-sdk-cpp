@@ -665,37 +665,41 @@ namespace Model
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an <i>object</i> action doesn’t
-     * affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an <i>object</i> action doesn’t
-     * affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
      */
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an <i>object</i> action doesn’t
-     * affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an <i>object</i> action doesn’t
-     * affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
+     * with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting
+     * this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for
+     * object encryption with SSE-KMS.</p> <p>Specifying this header with an
+     * <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.</p>
      */
     inline S3CopyObjectOperation& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 

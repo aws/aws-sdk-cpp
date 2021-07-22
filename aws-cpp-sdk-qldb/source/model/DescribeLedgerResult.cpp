@@ -70,6 +70,12 @@ DescribeLedgerResult& DescribeLedgerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("EncryptionDescription"))
+  {
+    m_encryptionDescription = jsonValue.GetObject("EncryptionDescription");
+
+  }
+
 
 
   return *this;

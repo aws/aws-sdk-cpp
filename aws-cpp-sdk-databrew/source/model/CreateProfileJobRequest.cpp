@@ -25,6 +25,7 @@ CreateProfileJobRequest::CreateProfileJobRequest() :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_timeout(0),
@@ -80,6 +81,12 @@ Aws::String CreateProfileJobRequest::SerializePayload() const
   if(m_outputLocationHasBeenSet)
   {
    payload.WithObject("OutputLocation", m_outputLocation.Jsonize());
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("Configuration", m_configuration.Jsonize());
 
   }
 

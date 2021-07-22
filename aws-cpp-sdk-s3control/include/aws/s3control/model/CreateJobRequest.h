@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline CreateJobRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline CreateJobRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that creates the job.</p>
+     * <p>The account ID that creates the job.</p>
      */
     inline CreateJobRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -353,58 +353,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline CreateJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline CreateJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role that Batch Operations will use to run this job's action on every
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role that Batch Operations will use to run this job's action on every object in
+     * the manifest.</p>
      */
     inline CreateJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

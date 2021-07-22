@@ -98,7 +98,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -115,7 +115,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -132,7 +132,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -149,7 +149,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -166,7 +166,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -183,7 +183,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -200,7 +200,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a
@@ -217,7 +217,7 @@ namespace Model
      * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
      * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
      * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * <code>owner-id</code> - The ID of the account that owns the DHCP options
      * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
      * of a tag assigned to the resource. Use the tag key in the filter name and the
      * tag value as the filter value. For example, to find all resources that have a

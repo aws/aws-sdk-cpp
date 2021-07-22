@@ -10,6 +10,7 @@
 #include <aws/databrew/model/EncryptionMode.h>
 #include <aws/databrew/model/LogSubscription.h>
 #include <aws/databrew/model/S3Location.h>
+#include <aws/databrew/model/ProfileConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/databrew/model/JobSample.h>
 #include <utility>
@@ -328,6 +329,49 @@ namespace Model
 
 
     /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline const ProfileConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline void SetConfiguration(const ProfileConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline void SetConfiguration(ProfileConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline CreateProfileJobRequest& WithConfiguration(const ProfileConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration for profile jobs. Used to select columns, do evaluations, and
+     * override default parameters of evaluations. When configuration is null, the
+     * profile job will run with default settings.</p>
+     */
+    inline CreateProfileJobRequest& WithConfiguration(ProfileConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
      * role to be assumed when DataBrew runs the job.</p>
      */
@@ -540,6 +584,9 @@ namespace Model
 
     S3Location m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
+    ProfileConfiguration m_configuration;
+    bool m_configurationHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

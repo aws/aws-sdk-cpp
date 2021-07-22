@@ -105,6 +105,7 @@
 #include <aws/ec2/model/CreateSpotDatafeedSubscriptionRequest.h>
 #include <aws/ec2/model/CreateStoreImageTaskRequest.h>
 #include <aws/ec2/model/CreateSubnetRequest.h>
+#include <aws/ec2/model/CreateSubnetCidrReservationRequest.h>
 #include <aws/ec2/model/CreateTagsRequest.h>
 #include <aws/ec2/model/CreateTrafficMirrorFilterRequest.h>
 #include <aws/ec2/model/CreateTrafficMirrorFilterRuleRequest.h>
@@ -160,6 +161,7 @@
 #include <aws/ec2/model/DeleteSnapshotRequest.h>
 #include <aws/ec2/model/DeleteSpotDatafeedSubscriptionRequest.h>
 #include <aws/ec2/model/DeleteSubnetRequest.h>
+#include <aws/ec2/model/DeleteSubnetCidrReservationRequest.h>
 #include <aws/ec2/model/DeleteTagsRequest.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRequest.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleRequest.h>
@@ -368,6 +370,7 @@
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
 #include <aws/ec2/model/GetSerialConsoleAccessStatusRequest.h>
+#include <aws/ec2/model/GetSubnetCidrReservationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesRequest.h>
@@ -2597,6 +2600,30 @@ void EC2Client::CreateSubnetAsyncHelper(const CreateSubnetRequest& request, cons
   handler(this, request, CreateSubnet(request), context);
 }
 
+CreateSubnetCidrReservationOutcome EC2Client::CreateSubnetCidrReservation(const CreateSubnetCidrReservationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateSubnetCidrReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateSubnetCidrReservationOutcomeCallable EC2Client::CreateSubnetCidrReservationCallable(const CreateSubnetCidrReservationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSubnetCidrReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSubnetCidrReservation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateSubnetCidrReservationAsync(const CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSubnetCidrReservationAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateSubnetCidrReservationAsyncHelper(const CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSubnetCidrReservation(request), context);
+}
+
 CreateTagsOutcome EC2Client::CreateTags(const CreateTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3915,6 +3942,30 @@ void EC2Client::DeleteSubnetAsync(const DeleteSubnetRequest& request, const Dele
 void EC2Client::DeleteSubnetAsyncHelper(const DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSubnet(request), context);
+}
+
+DeleteSubnetCidrReservationOutcome EC2Client::DeleteSubnetCidrReservation(const DeleteSubnetCidrReservationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteSubnetCidrReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteSubnetCidrReservationOutcomeCallable EC2Client::DeleteSubnetCidrReservationCallable(const DeleteSubnetCidrReservationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSubnetCidrReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSubnetCidrReservation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteSubnetCidrReservationAsync(const DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSubnetCidrReservationAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteSubnetCidrReservationAsyncHelper(const DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSubnetCidrReservation(request), context);
 }
 
 DeleteTagsOutcome EC2Client::DeleteTags(const DeleteTagsRequest& request) const
@@ -8907,6 +8958,30 @@ void EC2Client::GetSerialConsoleAccessStatusAsync(const GetSerialConsoleAccessSt
 void EC2Client::GetSerialConsoleAccessStatusAsyncHelper(const GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSerialConsoleAccessStatus(request), context);
+}
+
+GetSubnetCidrReservationsOutcome EC2Client::GetSubnetCidrReservations(const GetSubnetCidrReservationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetSubnetCidrReservationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetSubnetCidrReservationsOutcomeCallable EC2Client::GetSubnetCidrReservationsCallable(const GetSubnetCidrReservationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSubnetCidrReservationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSubnetCidrReservations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetSubnetCidrReservationsAsync(const GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSubnetCidrReservationsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetSubnetCidrReservationsAsyncHelper(const GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSubnetCidrReservations(request), context);
 }
 
 GetTransitGatewayAttachmentPropagationsOutcome EC2Client::GetTransitGatewayAttachmentPropagations(const GetTransitGatewayAttachmentPropagationsRequest& request) const

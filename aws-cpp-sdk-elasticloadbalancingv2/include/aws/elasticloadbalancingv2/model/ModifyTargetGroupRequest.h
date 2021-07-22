@@ -81,55 +81,73 @@ namespace Model
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.</p> <p>With Network Load
-     * Balancers, you can't modify this setting.</p>
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers
+     * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
+     * supported for health checks if the protocol of the target group is HTTP or
+     * HTTPS. It is supported for health checks only if the protocol of the target
+     * group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols
+     * are not supported for health checks.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.</p> <p>With Network Load
-     * Balancers, you can't modify this setting.</p>
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers
+     * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
+     * supported for health checks if the protocol of the target group is HTTP or
+     * HTTPS. It is supported for health checks only if the protocol of the target
+     * group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols
+     * are not supported for health checks.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.</p> <p>With Network Load
-     * Balancers, you can't modify this setting.</p>
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers
+     * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
+     * supported for health checks if the protocol of the target group is HTTP or
+     * HTTPS. It is supported for health checks only if the protocol of the target
+     * group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols
+     * are not supported for health checks.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.</p> <p>With Network Load
-     * Balancers, you can't modify this setting.</p>
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers
+     * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
+     * supported for health checks if the protocol of the target group is HTTP or
+     * HTTPS. It is supported for health checks only if the protocol of the target
+     * group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols
+     * are not supported for health checks.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.</p> <p>With Network Load
-     * Balancers, you can't modify this setting.</p>
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers
+     * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
+     * supported for health checks if the protocol of the target group is HTTP or
+     * HTTPS. It is supported for health checks only if the protocol of the target
+     * group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols
+     * are not supported for health checks.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported for health checks only if the protocol of the
-     * target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
-     * protocols are not supported for health checks.</p> <p>With Network Load
-     * Balancers, you can't modify this setting.</p>
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers
+     * and Gateway Load Balancers, the default is TCP. The TCP protocol is not
+     * supported for health checks if the protocol of the target group is HTTP or
+     * HTTPS. It is supported for health checks only if the protocol of the target
+     * group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols
+     * are not supported for health checks.</p> <p>With Network Load Balancers, you
+     * can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 

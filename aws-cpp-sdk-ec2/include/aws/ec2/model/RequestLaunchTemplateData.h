@@ -1266,7 +1266,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const LaunchTemplateHibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
@@ -1276,7 +1276,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
@@ -1286,7 +1286,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetHibernationOptions(const LaunchTemplateHibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
@@ -1296,7 +1296,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetHibernationOptions(LaunchTemplateHibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
@@ -1306,7 +1306,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithHibernationOptions(const LaunchTemplateHibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
@@ -1316,7 +1316,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithHibernationOptions(LaunchTemplateHibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
 
@@ -1324,7 +1324,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline const LaunchTemplateInstanceMetadataOptionsRequest& GetMetadataOptions() const{ return m_metadataOptions; }
@@ -1332,7 +1332,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
@@ -1340,7 +1340,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetMetadataOptions(const LaunchTemplateInstanceMetadataOptionsRequest& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
@@ -1348,7 +1348,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline void SetMetadataOptions(LaunchTemplateInstanceMetadataOptionsRequest&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
@@ -1356,7 +1356,7 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithMetadataOptions(const LaunchTemplateInstanceMetadataOptionsRequest& value) { SetMetadataOptions(value); return *this;}
@@ -1364,63 +1364,69 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
+     * metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithMetadataOptions(LaunchTemplateInstanceMetadataOptionsRequest&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline const LaunchTemplateEnclaveOptionsRequest& GetEnclaveOptions() const{ return m_enclaveOptions; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline void SetEnclaveOptions(const LaunchTemplateEnclaveOptionsRequest& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline void SetEnclaveOptions(LaunchTemplateEnclaveOptionsRequest&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline RequestLaunchTemplateData& WithEnclaveOptions(const LaunchTemplateEnclaveOptionsRequest& value) { SetEnclaveOptions(value); return *this;}
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline RequestLaunchTemplateData& WithEnclaveOptions(LaunchTemplateEnclaveOptionsRequest&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 

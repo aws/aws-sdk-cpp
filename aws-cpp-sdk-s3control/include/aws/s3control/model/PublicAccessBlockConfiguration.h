@@ -171,7 +171,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to
@@ -195,7 +195,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to
@@ -207,7 +207,7 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for
      * buckets in this account. Setting this element to <code>TRUE</code> restricts
-     * access to buckets with public policies to only AWS service principals and
+     * access to buckets with public policies to only Amazon Web Service principals and
      * authorized users within this account.</p> <p>Enabling this setting doesn't
      * affect previously stored bucket policies, except that public and cross-account
      * access within any public bucket policy, including non-public delegation to

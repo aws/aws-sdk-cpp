@@ -305,7 +305,8 @@ namespace Aws
     typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3ControlErrors>> ComputeEndpointOutcome;
 
     /**
-     * <p> AWS S3 Control provides access to Amazon S3 control plane actions. </p>
+     * <p> Amazon Web Services S3 Control provides access to Amazon S3 control plane
+   * actions. </p>
      */
     class AWS_S3CONTROL_API S3ControlClient : public Aws::Client::AWSXMLClient
     {
@@ -1110,7 +1111,7 @@ namespace Aws
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>This implementation of
          * the DELETE action uses the policy subresource to delete the policy of a
          * specified Amazon S3 on Outposts bucket. If you are using an identity other than
-         * the root user of the AWS account that owns the bucket, the calling identity must
+         * the root user of the account that owns the bucket, the calling identity must
          * have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
          * specified Outposts bucket and belong to the bucket owner's account to use this
          * action. For more information, see <a
@@ -1120,8 +1121,8 @@ namespace Aws
          * Access Denied</code> error. If you have the correct permissions, but you're not
          * using an identity that belongs to the bucket owner's account, Amazon S3 returns
          * a <code>405 Method Not Allowed</code> error. </p>  <p>As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action.</p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -1151,7 +1152,7 @@ namespace Aws
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>This implementation of
          * the DELETE action uses the policy subresource to delete the policy of a
          * specified Amazon S3 on Outposts bucket. If you are using an identity other than
-         * the root user of the AWS account that owns the bucket, the calling identity must
+         * the root user of the account that owns the bucket, the calling identity must
          * have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
          * specified Outposts bucket and belong to the bucket owner's account to use this
          * action. For more information, see <a
@@ -1161,8 +1162,8 @@ namespace Aws
          * Access Denied</code> error. If you have the correct permissions, but you're not
          * using an identity that belongs to the bucket owner's account, Amazon S3 returns
          * a <code>405 Method Not Allowed</code> error. </p>  <p>As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action.</p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -1194,7 +1195,7 @@ namespace Aws
          * in the <i>Amazon S3 API Reference</i>. </p>  <p>This implementation of
          * the DELETE action uses the policy subresource to delete the policy of a
          * specified Amazon S3 on Outposts bucket. If you are using an identity other than
-         * the root user of the AWS account that owns the bucket, the calling identity must
+         * the root user of the account that owns the bucket, the calling identity must
          * have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
          * specified Outposts bucket and belong to the bucket owner's account to use this
          * action. For more information, see <a
@@ -1204,8 +1205,8 @@ namespace Aws
          * Access Denied</code> error. If you have the correct permissions, but you're not
          * using an identity that belongs to the bucket owner's account, Amazon S3 returns
          * a <code>405 Method Not Allowed</code> error. </p>  <p>As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action.</p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -1377,8 +1378,8 @@ namespace Aws
         virtual void DeleteJobTaggingAsync(const Model::DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the <code>PublicAccessBlock</code> configuration for an AWS account.
-         * For more information, see <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -1392,8 +1393,8 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Removes the <code>PublicAccessBlock</code> configuration for an AWS account.
-         * For more information, see <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -1409,8 +1410,8 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Removes the <code>PublicAccessBlock</code> configuration for an AWS account.
-         * For more information, see <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an account. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -1904,8 +1905,8 @@ namespace Aws
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * you are using an identity other than the root user of the AWS account that owns
-         * the Outposts bucket, the calling identity must have the
+         * you are using an identity other than the root user of the account that owns the
+         * Outposts bucket, the calling identity must have the
          * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
          * and belong to the Outposts bucket owner's account in order to use this action.
          * Only users from Outposts bucket owner account with the right permissions can
@@ -1937,8 +1938,8 @@ namespace Aws
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * you are using an identity other than the root user of the AWS account that owns
-         * the Outposts bucket, the calling identity must have the
+         * you are using an identity other than the root user of the account that owns the
+         * Outposts bucket, the calling identity must have the
          * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
          * and belong to the Outposts bucket owner's account in order to use this action.
          * Only users from Outposts bucket owner account with the right permissions can
@@ -1972,8 +1973,8 @@ namespace Aws
          * <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
          * Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * you are using an identity other than the root user of the AWS account that owns
-         * the Outposts bucket, the calling identity must have the
+         * you are using an identity other than the root user of the account that owns the
+         * Outposts bucket, the calling identity must have the
          * <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
          * and belong to the Outposts bucket owner's account in order to use this action.
          * Only users from Outposts bucket owner account with the right permissions can
@@ -2144,16 +2145,16 @@ namespace Aws
          * specified Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the AWS account that owns the
-         * bucket, the calling identity must have the <code>GetBucketPolicy</code>
-         * permissions on the specified bucket and belong to the bucket owner's account in
-         * order to use this action.</p> <p>Only users from Outposts bucket owner account
-         * with the right permissions can perform actions on an Outposts bucket. If you
-         * don't have <code>s3-outposts:GetBucketPolicy</code> permissions or you're not
-         * using an identity that belongs to the bucket owner's account, Amazon S3 returns
-         * a <code>403 Access Denied</code> error.</p>  <p>As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * using an identity other than the root user of the account that owns the bucket,
+         * the calling identity must have the <code>GetBucketPolicy</code> permissions on
+         * the specified bucket and belong to the bucket owner's account in order to use
+         * this action.</p> <p>Only users from Outposts bucket owner account with the right
+         * permissions can perform actions on an Outposts bucket. If you don't have
+         * <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an
+         * identity that belongs to the bucket owner's account, Amazon S3 returns a
+         * <code>403 Access Denied</code> error.</p>  <p>As a security
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action.</p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -2186,16 +2187,16 @@ namespace Aws
          * specified Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the AWS account that owns the
-         * bucket, the calling identity must have the <code>GetBucketPolicy</code>
-         * permissions on the specified bucket and belong to the bucket owner's account in
-         * order to use this action.</p> <p>Only users from Outposts bucket owner account
-         * with the right permissions can perform actions on an Outposts bucket. If you
-         * don't have <code>s3-outposts:GetBucketPolicy</code> permissions or you're not
-         * using an identity that belongs to the bucket owner's account, Amazon S3 returns
-         * a <code>403 Access Denied</code> error.</p>  <p>As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * using an identity other than the root user of the account that owns the bucket,
+         * the calling identity must have the <code>GetBucketPolicy</code> permissions on
+         * the specified bucket and belong to the bucket owner's account in order to use
+         * this action.</p> <p>Only users from Outposts bucket owner account with the right
+         * permissions can perform actions on an Outposts bucket. If you don't have
+         * <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an
+         * identity that belongs to the bucket owner's account, Amazon S3 returns a
+         * <code>403 Access Denied</code> error.</p>  <p>As a security
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action.</p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -2230,16 +2231,16 @@ namespace Aws
          * specified Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the AWS account that owns the
-         * bucket, the calling identity must have the <code>GetBucketPolicy</code>
-         * permissions on the specified bucket and belong to the bucket owner's account in
-         * order to use this action.</p> <p>Only users from Outposts bucket owner account
-         * with the right permissions can perform actions on an Outposts bucket. If you
-         * don't have <code>s3-outposts:GetBucketPolicy</code> permissions or you're not
-         * using an identity that belongs to the bucket owner's account, Amazon S3 returns
-         * a <code>403 Access Denied</code> error.</p>  <p>As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * using an identity other than the root user of the account that owns the bucket,
+         * the calling identity must have the <code>GetBucketPolicy</code> permissions on
+         * the specified bucket and belong to the bucket owner's account in order to use
+         * this action.</p> <p>Only users from Outposts bucket owner account with the right
+         * permissions can perform actions on an Outposts bucket. If you don't have
+         * <code>s3-outposts:GetBucketPolicy</code> permissions or you're not using an
+         * identity that belongs to the bucket owner's account, Amazon S3 returns a
+         * <code>403 Access Denied</code> error.</p>  <p>As a security
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action.</p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -2422,8 +2423,8 @@ namespace Aws
         virtual void GetJobTaggingAsync(const Model::GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an AWS
-         * account. For more information, see <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -2437,8 +2438,8 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an AWS
-         * account. For more information, see <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -2454,8 +2455,8 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an AWS
-         * account. For more information, see <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an account.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -2713,8 +2714,7 @@ namespace Aws
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
-         * last 30 days for the AWS account making the request. For more information, see
-         * <a
+         * last 30 days for the account making the request. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Related actions
          * include:</p> <p/> <ul> <li> <p> <a
@@ -2733,8 +2733,7 @@ namespace Aws
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
-         * last 30 days for the AWS account making the request. For more information, see
-         * <a
+         * last 30 days for the account making the request. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Related actions
          * include:</p> <p/> <ul> <li> <p> <a
@@ -2755,8 +2754,7 @@ namespace Aws
 
         /**
          * <p>Lists current S3 Batch Operations jobs and jobs that have ended within the
-         * last 30 days for the AWS account making the request. For more information, see
-         * <a
+         * last 30 days for the account making the request. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
          * Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Related actions
          * include:</p> <p/> <ul> <li> <p> <a
@@ -3125,16 +3123,16 @@ namespace Aws
          * bucket policy to an Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the AWS account that owns the
-         * Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
+         * using an identity other than the root user of the account that owns the Outposts
+         * bucket, the calling identity must have the <code>PutBucketPolicy</code>
          * permissions on the specified Outposts bucket and belong to the bucket owner's
          * account in order to use this action.</p> <p>If you don't have
          * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
          * Denied</code> error. If you have the correct permissions, but you're not using
          * an identity that belongs to the bucket owner's account, Amazon S3 returns a
          * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action. </p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -3165,16 +3163,16 @@ namespace Aws
          * bucket policy to an Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the AWS account that owns the
-         * Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
+         * using an identity other than the root user of the account that owns the Outposts
+         * bucket, the calling identity must have the <code>PutBucketPolicy</code>
          * permissions on the specified Outposts bucket and belong to the bucket owner's
          * account in order to use this action.</p> <p>If you don't have
          * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
          * Denied</code> error. If you have the correct permissions, but you're not using
          * an identity that belongs to the bucket owner's account, Amazon S3 returns a
          * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action. </p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -3207,16 +3205,16 @@ namespace Aws
          * bucket policy to an Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you are
-         * using an identity other than the root user of the AWS account that owns the
-         * Outposts bucket, the calling identity must have the <code>PutBucketPolicy</code>
+         * using an identity other than the root user of the account that owns the Outposts
+         * bucket, the calling identity must have the <code>PutBucketPolicy</code>
          * permissions on the specified Outposts bucket and belong to the bucket owner's
          * account in order to use this action.</p> <p>If you don't have
          * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
          * Denied</code> error. If you have the correct permissions, but you're not using
          * an identity that belongs to the bucket owner's account, Amazon S3 returns a
          * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the AWS account that owns a bucket can always use
-         * this action, even if the policy explicitly denies the root user the ability to
+         * precaution, the root user of the account that owns a bucket can always use this
+         * action, even if the policy explicitly denies the root user the ability to
          * perform this action. </p>  <p>For more information about bucket
          * policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
@@ -3249,13 +3247,13 @@ namespace Aws
          * on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Use tags to
-         * organize your AWS bill to reflect your own cost structure. To do this, sign up
-         * to get your AWS account bill with tag key values included. Then, to see the cost
-         * of combined resources, organize your billing information according to resources
-         * with the same tag key values. For example, you can tag several resources with a
-         * specific application name, and then organize your billing information to see the
-         * total cost of that application across several services. For more information,
-         * see <a
+         * organize your Amazon Web Services bill to reflect your own cost structure. To do
+         * this, sign up to get your account bill with tag key values included. Then, to
+         * see the cost of combined resources, organize your billing information according
+         * to resources with the same tag key values. For example, you can tag several
+         * resources with a specific application name, and then organize your billing
+         * information to see the total cost of that application across several services.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
          * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
@@ -3277,18 +3275,18 @@ namespace Aws
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
          * User-Defined Tag Restrictions</a> and <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">
-         * AWS-Generated Cost Allocation Tag Restrictions</a>.</p> </li> </ul> </li> <li>
-         * <p>Error code: <code>MalformedXMLError</code> </p> <ul> <li> <p>Description: The
-         * XML provided does not match the schema.</p> </li> </ul> </li> <li> <p>Error
-         * code: <code>OperationAbortedError </code> </p> <ul> <li> <p>Description: A
-         * conflicting conditional action is currently in progress against this resource.
-         * Try again.</p> </li> </ul> </li> <li> <p>Error code: <code>InternalError</code>
-         * </p> <ul> <li> <p>Description: The service was unable to apply the provided tag
-         * to the bucket.</p> </li> </ul> </li> </ul> <p>All Amazon S3 on Outposts REST API
-         * requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
-         * Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an
-         * example of the request syntax for Amazon S3 on Outposts that uses the S3 on
+         * Amazon Web Services-Generated Cost Allocation Tag Restrictions</a>.</p> </li>
+         * </ul> </li> <li> <p>Error code: <code>MalformedXMLError</code> </p> <ul> <li>
+         * <p>Description: The XML provided does not match the schema.</p> </li> </ul>
+         * </li> <li> <p>Error code: <code>OperationAbortedError </code> </p> <ul> <li>
+         * <p>Description: A conflicting conditional action is currently in progress
+         * against this resource. Try again.</p> </li> </ul> </li> <li> <p>Error code:
+         * <code>InternalError</code> </p> <ul> <li> <p>Description: The service was unable
+         * to apply the provided tag to the bucket.</p> </li> </ul> </li> </ul> <p>All
+         * Amazon S3 on Outposts REST API requests for this action require an additional
+         * parameter of <code>x-amz-outpost-id</code> to be passed with the request and an
+         * S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For
+         * an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
          * Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived
          * using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a>
@@ -3311,13 +3309,13 @@ namespace Aws
          * on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Use tags to
-         * organize your AWS bill to reflect your own cost structure. To do this, sign up
-         * to get your AWS account bill with tag key values included. Then, to see the cost
-         * of combined resources, organize your billing information according to resources
-         * with the same tag key values. For example, you can tag several resources with a
-         * specific application name, and then organize your billing information to see the
-         * total cost of that application across several services. For more information,
-         * see <a
+         * organize your Amazon Web Services bill to reflect your own cost structure. To do
+         * this, sign up to get your account bill with tag key values included. Then, to
+         * see the cost of combined resources, organize your billing information according
+         * to resources with the same tag key values. For example, you can tag several
+         * resources with a specific application name, and then organize your billing
+         * information to see the total cost of that application across several services.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
          * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
@@ -3339,18 +3337,18 @@ namespace Aws
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
          * User-Defined Tag Restrictions</a> and <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">
-         * AWS-Generated Cost Allocation Tag Restrictions</a>.</p> </li> </ul> </li> <li>
-         * <p>Error code: <code>MalformedXMLError</code> </p> <ul> <li> <p>Description: The
-         * XML provided does not match the schema.</p> </li> </ul> </li> <li> <p>Error
-         * code: <code>OperationAbortedError </code> </p> <ul> <li> <p>Description: A
-         * conflicting conditional action is currently in progress against this resource.
-         * Try again.</p> </li> </ul> </li> <li> <p>Error code: <code>InternalError</code>
-         * </p> <ul> <li> <p>Description: The service was unable to apply the provided tag
-         * to the bucket.</p> </li> </ul> </li> </ul> <p>All Amazon S3 on Outposts REST API
-         * requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
-         * Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an
-         * example of the request syntax for Amazon S3 on Outposts that uses the S3 on
+         * Amazon Web Services-Generated Cost Allocation Tag Restrictions</a>.</p> </li>
+         * </ul> </li> <li> <p>Error code: <code>MalformedXMLError</code> </p> <ul> <li>
+         * <p>Description: The XML provided does not match the schema.</p> </li> </ul>
+         * </li> <li> <p>Error code: <code>OperationAbortedError </code> </p> <ul> <li>
+         * <p>Description: A conflicting conditional action is currently in progress
+         * against this resource. Try again.</p> </li> </ul> </li> <li> <p>Error code:
+         * <code>InternalError</code> </p> <ul> <li> <p>Description: The service was unable
+         * to apply the provided tag to the bucket.</p> </li> </ul> </li> </ul> <p>All
+         * Amazon S3 on Outposts REST API requests for this action require an additional
+         * parameter of <code>x-amz-outpost-id</code> to be passed with the request and an
+         * S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For
+         * an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
          * Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived
          * using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a>
@@ -3375,13 +3373,13 @@ namespace Aws
          * on Outposts bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
          * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Use tags to
-         * organize your AWS bill to reflect your own cost structure. To do this, sign up
-         * to get your AWS account bill with tag key values included. Then, to see the cost
-         * of combined resources, organize your billing information according to resources
-         * with the same tag key values. For example, you can tag several resources with a
-         * specific application name, and then organize your billing information to see the
-         * total cost of that application across several services. For more information,
-         * see <a
+         * organize your Amazon Web Services bill to reflect your own cost structure. To do
+         * this, sign up to get your account bill with tag key values included. Then, to
+         * see the cost of combined resources, organize your billing information according
+         * to resources with the same tag key values. For example, you can tag several
+         * resources with a specific application name, and then organize your billing
+         * information to see the total cost of that application across several services.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost
          * allocation and tagging</a>.</p>  <p>Within a bucket, if you add a tag that
          * has the same key as an existing tag, the new value overwrites the old value. For
@@ -3403,18 +3401,18 @@ namespace Aws
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
          * User-Defined Tag Restrictions</a> and <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html">
-         * AWS-Generated Cost Allocation Tag Restrictions</a>.</p> </li> </ul> </li> <li>
-         * <p>Error code: <code>MalformedXMLError</code> </p> <ul> <li> <p>Description: The
-         * XML provided does not match the schema.</p> </li> </ul> </li> <li> <p>Error
-         * code: <code>OperationAbortedError </code> </p> <ul> <li> <p>Description: A
-         * conflicting conditional action is currently in progress against this resource.
-         * Try again.</p> </li> </ul> </li> <li> <p>Error code: <code>InternalError</code>
-         * </p> <ul> <li> <p>Description: The service was unable to apply the provided tag
-         * to the bucket.</p> </li> </ul> </li> </ul> <p>All Amazon S3 on Outposts REST API
-         * requests for this action require an additional parameter of
-         * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on
-         * Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an
-         * example of the request syntax for Amazon S3 on Outposts that uses the S3 on
+         * Amazon Web Services-Generated Cost Allocation Tag Restrictions</a>.</p> </li>
+         * </ul> </li> <li> <p>Error code: <code>MalformedXMLError</code> </p> <ul> <li>
+         * <p>Description: The XML provided does not match the schema.</p> </li> </ul>
+         * </li> <li> <p>Error code: <code>OperationAbortedError </code> </p> <ul> <li>
+         * <p>Description: A conflicting conditional action is currently in progress
+         * against this resource. Try again.</p> </li> </ul> </li> <li> <p>Error code:
+         * <code>InternalError</code> </p> <ul> <li> <p>Description: The service was unable
+         * to apply the provided tag to the bucket.</p> </li> </ul> </li> </ul> <p>All
+         * Amazon S3 on Outposts REST API requests for this action require an additional
+         * parameter of <code>x-amz-outpost-id</code> to be passed with the request and an
+         * S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For
+         * an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
          * Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived
          * using the access point ARN, see the <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a>
@@ -3458,10 +3456,10 @@ namespace Aws
          * </li> <li> <p>The key and values are case sensitive.</p> </li> <li> <p>For
          * tagging-related restrictions related to characters and encodings, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-         * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> </li> </ul> </li> </ul>  <p/> <p>To use this action, you
-         * must have permission to perform the <code>s3:PutJobTagging</code> action.</p>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
+         * Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
+         * </li> </ul> </li> </ul>  <p/> <p>To use this action, you must have
+         * permission to perform the <code>s3:PutJobTagging</code> action.</p> <p>Related
+         * actions include:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
@@ -3500,10 +3498,10 @@ namespace Aws
          * </li> <li> <p>The key and values are case sensitive.</p> </li> <li> <p>For
          * tagging-related restrictions related to characters and encodings, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-         * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> </li> </ul> </li> </ul>  <p/> <p>To use this action, you
-         * must have permission to perform the <code>s3:PutJobTagging</code> action.</p>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
+         * Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
+         * </li> </ul> </li> </ul>  <p/> <p>To use this action, you must have
+         * permission to perform the <code>s3:PutJobTagging</code> action.</p> <p>Related
+         * actions include:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
@@ -3544,10 +3542,10 @@ namespace Aws
          * </li> <li> <p>The key and values are case sensitive.</p> </li> <li> <p>For
          * tagging-related restrictions related to characters and encodings, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-         * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> </li> </ul> </li> </ul>  <p/> <p>To use this action, you
-         * must have permission to perform the <code>s3:PutJobTagging</code> action.</p>
-         * <p>Related actions include:</p> <ul> <li> <p> <a
+         * Tag Restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
+         * </li> </ul> </li> </ul>  <p/> <p>To use this action, you must have
+         * permission to perform the <code>s3:PutJobTagging</code> action.</p> <p>Related
+         * actions include:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
@@ -3563,7 +3561,7 @@ namespace Aws
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
-         * AWS account. For more information, see <a
+         * account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -3578,7 +3576,7 @@ namespace Aws
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
-         * AWS account. For more information, see <a
+         * account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a
@@ -3595,7 +3593,7 @@ namespace Aws
 
         /**
          * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
-         * AWS account. For more information, see <a
+         * account. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
          * Using Amazon S3 block public access</a>.</p> <p>Related actions include:</p>
          * <ul> <li> <p> <a

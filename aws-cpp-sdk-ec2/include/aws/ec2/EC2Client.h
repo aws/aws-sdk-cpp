@@ -92,6 +92,7 @@
 #include <aws/ec2/model/CreateSpotDatafeedSubscriptionResponse.h>
 #include <aws/ec2/model/CreateStoreImageTaskResponse.h>
 #include <aws/ec2/model/CreateSubnetResponse.h>
+#include <aws/ec2/model/CreateSubnetCidrReservationResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorFilterResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorSessionResponse.h>
@@ -131,6 +132,7 @@
 #include <aws/ec2/model/DeleteNetworkInsightsPathResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
+#include <aws/ec2/model/DeleteSubnetCidrReservationResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
@@ -324,6 +326,7 @@
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetSerialConsoleAccessStatusResponse.h>
+#include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesResponse.h>
@@ -549,6 +552,7 @@ namespace Model
         class CreateSpotDatafeedSubscriptionRequest;
         class CreateStoreImageTaskRequest;
         class CreateSubnetRequest;
+        class CreateSubnetCidrReservationRequest;
         class CreateTagsRequest;
         class CreateTrafficMirrorFilterRequest;
         class CreateTrafficMirrorFilterRuleRequest;
@@ -604,6 +608,7 @@ namespace Model
         class DeleteSnapshotRequest;
         class DeleteSpotDatafeedSubscriptionRequest;
         class DeleteSubnetRequest;
+        class DeleteSubnetCidrReservationRequest;
         class DeleteTagsRequest;
         class DeleteTrafficMirrorFilterRequest;
         class DeleteTrafficMirrorFilterRuleRequest;
@@ -812,6 +817,7 @@ namespace Model
         class GetPasswordDataRequest;
         class GetReservedInstancesExchangeQuoteRequest;
         class GetSerialConsoleAccessStatusRequest;
+        class GetSubnetCidrReservationsRequest;
         class GetTransitGatewayAttachmentPropagationsRequest;
         class GetTransitGatewayMulticastDomainAssociationsRequest;
         class GetTransitGatewayPrefixListReferencesRequest;
@@ -1012,6 +1018,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSpotDatafeedSubscriptionResponse, EC2Error> CreateSpotDatafeedSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateStoreImageTaskResponse, EC2Error> CreateStoreImageTaskOutcome;
         typedef Aws::Utils::Outcome<CreateSubnetResponse, EC2Error> CreateSubnetOutcome;
+        typedef Aws::Utils::Outcome<CreateSubnetCidrReservationResponse, EC2Error> CreateSubnetCidrReservationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficMirrorFilterResponse, EC2Error> CreateTrafficMirrorFilterOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficMirrorFilterRuleResponse, EC2Error> CreateTrafficMirrorFilterRuleOutcome;
@@ -1067,6 +1074,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSnapshotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSpotDatafeedSubscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSubnetOutcome;
+        typedef Aws::Utils::Outcome<DeleteSubnetCidrReservationResponse, EC2Error> DeleteSubnetCidrReservationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficMirrorFilterResponse, EC2Error> DeleteTrafficMirrorFilterOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficMirrorFilterRuleResponse, EC2Error> DeleteTrafficMirrorFilterRuleOutcome;
@@ -1275,6 +1283,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, EC2Error> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, EC2Error> GetReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetSerialConsoleAccessStatusOutcome;
+        typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error> GetTransitGatewayMulticastDomainAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayPrefixListReferencesResponse, EC2Error> GetTransitGatewayPrefixListReferencesOutcome;
@@ -1475,6 +1484,7 @@ namespace Model
         typedef std::future<CreateSpotDatafeedSubscriptionOutcome> CreateSpotDatafeedSubscriptionOutcomeCallable;
         typedef std::future<CreateStoreImageTaskOutcome> CreateStoreImageTaskOutcomeCallable;
         typedef std::future<CreateSubnetOutcome> CreateSubnetOutcomeCallable;
+        typedef std::future<CreateSubnetCidrReservationOutcome> CreateSubnetCidrReservationOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<CreateTrafficMirrorFilterOutcome> CreateTrafficMirrorFilterOutcomeCallable;
         typedef std::future<CreateTrafficMirrorFilterRuleOutcome> CreateTrafficMirrorFilterRuleOutcomeCallable;
@@ -1530,6 +1540,7 @@ namespace Model
         typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
         typedef std::future<DeleteSpotDatafeedSubscriptionOutcome> DeleteSpotDatafeedSubscriptionOutcomeCallable;
         typedef std::future<DeleteSubnetOutcome> DeleteSubnetOutcomeCallable;
+        typedef std::future<DeleteSubnetCidrReservationOutcome> DeleteSubnetCidrReservationOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DeleteTrafficMirrorFilterOutcome> DeleteTrafficMirrorFilterOutcomeCallable;
         typedef std::future<DeleteTrafficMirrorFilterRuleOutcome> DeleteTrafficMirrorFilterRuleOutcomeCallable;
@@ -1738,6 +1749,7 @@ namespace Model
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessStatusOutcomeCallable;
+        typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
         typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
         typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayPrefixListReferencesOutcome> GetTransitGatewayPrefixListReferencesOutcomeCallable;
@@ -1941,6 +1953,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateSpotDatafeedSubscriptionRequest&, const Model::CreateSpotDatafeedSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSpotDatafeedSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateStoreImageTaskRequest&, const Model::CreateStoreImageTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStoreImageTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateSubnetRequest&, const Model::CreateSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubnetResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateSubnetCidrReservationRequest&, const Model::CreateSubnetCidrReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubnetCidrReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTrafficMirrorFilterRequest&, const Model::CreateTrafficMirrorFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficMirrorFilterResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTrafficMirrorFilterRuleRequest&, const Model::CreateTrafficMirrorFilterRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficMirrorFilterRuleResponseReceivedHandler;
@@ -1996,6 +2009,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteSpotDatafeedSubscriptionRequest&, const Model::DeleteSpotDatafeedSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSpotDatafeedSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteSubnetRequest&, const Model::DeleteSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubnetResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteSubnetCidrReservationRequest&, const Model::DeleteSubnetCidrReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubnetCidrReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorFilterRequest&, const Model::DeleteTrafficMirrorFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficMirrorFilterResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorFilterRuleRequest&, const Model::DeleteTrafficMirrorFilterRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficMirrorFilterRuleResponseReceivedHandler;
@@ -2204,6 +2218,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSerialConsoleAccessStatusRequest&, const Model::GetSerialConsoleAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSerialConsoleAccessStatusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetSubnetCidrReservationsRequest&, const Model::GetSubnetCidrReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubnetCidrReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMulticastDomainAssociationsRequest&, const Model::GetTransitGatewayMulticastDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPrefixListReferencesRequest&, const Model::GetTransitGatewayPrefixListReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPrefixListReferencesResponseReceivedHandler;
@@ -2788,7 +2803,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
-         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
+         * or the IPv6 address count in the request. </p> <p>You can optionally use Prefix
+         * Delegation on the network interface. You must specify either the IPV6 Prefix
+         * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          */
@@ -2804,7 +2825,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
-         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
+         * or the IPv6 address count in the request. </p> <p>You can optionally use Prefix
+         * Delegation on the network interface. You must specify either the IPV6 Prefix
+         * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2822,7 +2849,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
-         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
+         * or the IPv6 address count in the request. </p> <p>You can optionally use Prefix
+         * Delegation on the network interface. You must specify either the IPV6 Prefix
+         * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2848,7 +2881,13 @@ namespace Model
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
          * confirm that the remapping is complete.</p> <p>You must specify either the IP
-         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
+         * addresses or the IP address count in the request.</p> <p>You can optionally use
+         * Prefix Delegation on the network interface. You must specify either the IPv4
+         * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
@@ -2872,7 +2911,13 @@ namespace Model
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
          * confirm that the remapping is complete.</p> <p>You must specify either the IP
-         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
+         * addresses or the IP address count in the request.</p> <p>You can optionally use
+         * Prefix Delegation on the network interface. You must specify either the IPv4
+         * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -2898,7 +2943,13 @@ namespace Model
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
          * confirm that the remapping is complete.</p> <p>You must specify either the IP
-         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
+         * addresses or the IP address count in the request.</p> <p>You can optionally use
+         * Prefix Delegation on the network interface. You must specify either the IPv4
+         * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -3068,7 +3119,7 @@ namespace Model
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
          * API Reference</a></p>
@@ -3085,7 +3136,7 @@ namespace Model
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
          * API Reference</a></p>
@@ -3104,7 +3155,7 @@ namespace Model
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
          * API Reference</a></p>
@@ -3227,7 +3278,7 @@ namespace Model
          * <p>Associates one or more targets with an event window. Only one type of target
          * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
          * window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
@@ -3239,7 +3290,7 @@ namespace Model
          * <p>Associates one or more targets with an event window. Only one type of target
          * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
          * window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
@@ -3253,7 +3304,7 @@ namespace Model
          * <p>Associates one or more targets with an event window. Only one type of target
          * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
          * window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
@@ -3271,7 +3322,7 @@ namespace Model
          * order to disassociate the route table later. A route table can be associated
          * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
          * API Reference</a></p>
@@ -3286,7 +3337,7 @@ namespace Model
          * order to disassociate the route table later. A route table can be associated
          * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
          * API Reference</a></p>
@@ -3303,7 +3354,7 @@ namespace Model
          * order to disassociate the route table later. A route table can be associated
          * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
          * API Reference</a></p>
@@ -3470,7 +3521,7 @@ namespace Model
          * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
@@ -3487,7 +3538,7 @@ namespace Model
          * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
@@ -3506,7 +3557,7 @@ namespace Model
          * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
@@ -4567,8 +4618,8 @@ namespace Model
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
          * <a
          * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateways</a> in the <i>Amazon Web Services Wavelength Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
          * API Reference</a></p>
          */
@@ -4578,8 +4629,8 @@ namespace Model
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
          * <a
          * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateways</a> in the <i>Amazon Web Services Wavelength Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
          * API Reference</a></p>
          *
@@ -4591,8 +4642,8 @@ namespace Model
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
          * <a
          * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateways</a> in the <i>Amazon Web Services Wavelength Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
          * API Reference</a></p>
          *
@@ -4761,7 +4812,7 @@ namespace Model
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-         * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
+         * a default subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
          * API Reference</a></p>
@@ -4773,7 +4824,7 @@ namespace Model
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-         * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
+         * a default subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
          * API Reference</a></p>
@@ -4787,7 +4838,7 @@ namespace Model
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-         * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
+         * a default subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
          * API Reference</a></p>
@@ -4801,7 +4852,7 @@ namespace Model
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
          * cannot have more than one default VPC per Region.</p> <p>If your account
@@ -4821,7 +4872,7 @@ namespace Model
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
          * cannot have more than one default VPC per Region.</p> <p>If your account
@@ -4843,7 +4894,7 @@ namespace Model
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
          * cannot have more than one default VPC per Region.</p> <p>If your account
@@ -4896,7 +4947,7 @@ namespace Model
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -4939,7 +4990,7 @@ namespace Model
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -4984,7 +5035,7 @@ namespace Model
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -5074,7 +5125,7 @@ namespace Model
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-         * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
@@ -5095,7 +5146,7 @@ namespace Model
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-         * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
@@ -5118,7 +5169,7 @@ namespace Model
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-         * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
@@ -5240,7 +5291,7 @@ namespace Model
          * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
          * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
          * </ul>  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
@@ -5262,7 +5313,7 @@ namespace Model
          * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
          * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
          * </ul>  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
@@ -5286,7 +5337,7 @@ namespace Model
          * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
          * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
          * </ul>  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
@@ -5623,7 +5674,7 @@ namespace Model
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * Gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
@@ -5643,7 +5694,7 @@ namespace Model
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * Gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
@@ -5665,7 +5716,7 @@ namespace Model
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * Gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
@@ -6139,7 +6190,7 @@ namespace Model
          * specific, so we use that route to determine where to target the traffic.</p>
          * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
          * Reference</a></p>
@@ -6161,7 +6212,7 @@ namespace Model
          * specific, so we use that route to determine where to target the traffic.</p>
          * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
          * Reference</a></p>
@@ -6185,7 +6236,7 @@ namespace Model
          * specific, so we use that route to determine where to target the traffic.</p>
          * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
          * Reference</a></p>
@@ -6199,7 +6250,7 @@ namespace Model
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
          * API Reference</a></p>
@@ -6211,7 +6262,7 @@ namespace Model
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
          * API Reference</a></p>
@@ -6225,7 +6276,7 @@ namespace Model
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
          * API Reference</a></p>
@@ -6585,16 +6636,16 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
-         * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
-         * up in a star topology with a logical router in the middle.</p> <p>When you stop
-         * an instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information about subnets,
-         * see <a
+         * /64 prefix length. </p>  <p>Amazon Web Services reserves both the
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
+         * available for use.</p>  <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p>
+         * <p>When you stop an instance in a subnet, it retains its private IPv4 address.
+         * It's therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information
+         * about subnets, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
          * API Reference</a></p>
@@ -6608,16 +6659,16 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
-         * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
-         * up in a star topology with a logical router in the middle.</p> <p>When you stop
-         * an instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information about subnets,
-         * see <a
+         * /64 prefix length. </p>  <p>Amazon Web Services reserves both the
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
+         * available for use.</p>  <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p>
+         * <p>When you stop an instance in a subnet, it retains its private IPv4 address.
+         * It's therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information
+         * about subnets, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
          * API Reference</a></p>
@@ -6633,16 +6684,16 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
-         * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
-         * up in a star topology with a logical router in the middle.</p> <p>When you stop
-         * an instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information about subnets,
-         * see <a
+         * /64 prefix length. </p>  <p>Amazon Web Services reserves both the
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
+         * available for use.</p>  <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p>
+         * <p>When you stop an instance in a subnet, it retains its private IPv4 address.
+         * It's therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information
+         * about subnets, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
          * API Reference</a></p>
@@ -6650,6 +6701,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSubnetAsync(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
+         * reservations, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSubnetCidrReservationOutcome CreateSubnetCidrReservation(const Model::CreateSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
+         * reservations, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSubnetCidrReservationOutcomeCallable CreateSubnetCidrReservationCallable(const Model::CreateSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
+         * reservations, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSubnetCidrReservationAsync(const Model::CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites only the specified tags for the specified Amazon EC2
@@ -7314,7 +7402,7 @@ namespace Model
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
          * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
          * CIDR block from an IPv6 address pool that you provisioned through bring your own
@@ -7324,7 +7412,7 @@ namespace Model
          * which include only a default DNS server that we provide (AmazonProvidedDNS). For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
@@ -7342,7 +7430,7 @@ namespace Model
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
          * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
          * CIDR block from an IPv6 address pool that you provisioned through bring your own
@@ -7352,7 +7440,7 @@ namespace Model
          * which include only a default DNS server that we provide (AmazonProvidedDNS). For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
@@ -7372,7 +7460,7 @@ namespace Model
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
          * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
          * CIDR block from an IPv6 address pool that you provisioned through bring your own
@@ -7382,7 +7470,7 @@ namespace Model
          * which include only a default DNS server that we provide (AmazonProvidedDNS). For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
@@ -7597,10 +7685,10 @@ namespace Model
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
          * own and an accepter VPC with which to create the connection. The accepter VPC
-         * can belong to another AWS account and can be in a different Region to the
-         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
-         * For more information, see the <a
+         * can belong to another account and can be in a different Region to the requester
+         * VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+         *  <p>Limitations and rules apply to a VPC peering connection. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
@@ -7616,10 +7704,10 @@ namespace Model
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
          * own and an accepter VPC with which to create the connection. The accepter VPC
-         * can belong to another AWS account and can be in a different Region to the
-         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
-         * For more information, see the <a
+         * can belong to another account and can be in a different Region to the requester
+         * VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+         *  <p>Limitations and rules apply to a VPC peering connection. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
@@ -7637,10 +7725,10 @@ namespace Model
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
          * own and an accepter VPC with which to create the connection. The accepter VPC
-         * can belong to another AWS account and can be in a different Region to the
-         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
-         * For more information, see the <a
+         * can belong to another account and can be in a different Region to the requester
+         * VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+         *  <p>Limitations and rules apply to a VPC peering connection. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
@@ -8125,7 +8213,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
@@ -8135,7 +8223,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
@@ -8147,7 +8235,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
@@ -8838,6 +8926,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSubnetAsync(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSubnetCidrReservationOutcome DeleteSubnetCidrReservation(const Model::DeleteSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSubnetCidrReservationOutcomeCallable DeleteSubnetCidrReservationCallable(const Model::DeleteSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSubnetCidrReservationAsync(const Model::DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified set of tags from the specified set of resources.</p>
@@ -10467,7 +10580,7 @@ namespace Model
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
          * API Reference</a></p>
@@ -10478,7 +10591,7 @@ namespace Model
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
          * API Reference</a></p>
@@ -10491,7 +10604,7 @@ namespace Model
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
          * API Reference</a></p>
@@ -11481,7 +11594,7 @@ namespace Model
          * which can affect performance. We recommend that you use pagination to ensure
          * that the operation returns quickly and successfully. </p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
@@ -11498,7 +11611,7 @@ namespace Model
          * which can affect performance. We recommend that you use pagination to ensure
          * that the operation returns quickly and successfully. </p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
@@ -11517,7 +11630,7 @@ namespace Model
          * which can affect performance. We recommend that you use pagination to ensure
          * that the operation returns quickly and successfully. </p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
@@ -12795,7 +12908,7 @@ namespace Model
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
          * API Reference</a></p>
@@ -12809,7 +12922,7 @@ namespace Model
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
          * API Reference</a></p>
@@ -12825,7 +12938,7 @@ namespace Model
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
          * API Reference</a></p>
@@ -13536,7 +13649,7 @@ namespace Model
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
          * API Reference</a></p>
@@ -13546,7 +13659,7 @@ namespace Model
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
          * API Reference</a></p>
@@ -13558,7 +13671,7 @@ namespace Model
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
          * API Reference</a></p>
@@ -15267,7 +15380,7 @@ namespace Model
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
@@ -15278,7 +15391,7 @@ namespace Model
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
@@ -15291,7 +15404,7 @@ namespace Model
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
@@ -15307,7 +15420,7 @@ namespace Model
          * Instead, it uses the routes in the VPC's main route table. For more information
          * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
          * API Reference</a></p>
@@ -15320,7 +15433,7 @@ namespace Model
          * Instead, it uses the routes in the VPC's main route table. For more information
          * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
          * API Reference</a></p>
@@ -15335,7 +15448,7 @@ namespace Model
          * Instead, it uses the routes in the VPC's main route table. For more information
          * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
          * API Reference</a></p>
@@ -16734,6 +16847,34 @@ namespace Model
         virtual void GetSerialConsoleAccessStatusAsync(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSubnetCidrReservationsOutcome GetSubnetCidrReservations(const Model::GetSubnetCidrReservationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSubnetCidrReservationsOutcomeCallable GetSubnetCidrReservationsCallable(const Model::GetSubnetCidrReservationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSubnetCidrReservationsAsync(const Model::GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the route tables to which the specified resource attachment propagates
          * routes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">AWS
@@ -18007,7 +18148,7 @@ namespace Model
          * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
          * event window won't change the time of the scheduled event.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
@@ -18023,7 +18164,7 @@ namespace Model
          * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
          * event window won't change the time of the scheduled event.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
@@ -18041,7 +18182,7 @@ namespace Model
          * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
          * event window won't change the time of the scheduled event.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
@@ -19079,12 +19220,12 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same account, you can
          * enable DNS resolution for queries from the local VPC. This ensures that queries
          * from the local VPC resolve to private IP addresses in the peer VPC. This option
-         * is not available if the peered VPCs are in different AWS accounts or different
-         * Regions. For peered VPCs in different AWS accounts, each AWS account owner must
-         * initiate a separate request to modify the peering connection options. For
+         * is not available if the peered VPCs are in different different accounts or
+         * different Regions. For peered VPCs in different accounts, each account owner
+         * must initiate a separate request to modify the peering connection options. For
          * inter-region peering connections, you must use the Region for the requester VPC
          * to modify the requester VPC peering options and the Region for the accepter VPC
          * to modify the accepter VPC peering options. To verify which VPCs are the
@@ -19104,12 +19245,12 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same account, you can
          * enable DNS resolution for queries from the local VPC. This ensures that queries
          * from the local VPC resolve to private IP addresses in the peer VPC. This option
-         * is not available if the peered VPCs are in different AWS accounts or different
-         * Regions. For peered VPCs in different AWS accounts, each AWS account owner must
-         * initiate a separate request to modify the peering connection options. For
+         * is not available if the peered VPCs are in different different accounts or
+         * different Regions. For peered VPCs in different accounts, each account owner
+         * must initiate a separate request to modify the peering connection options. For
          * inter-region peering connections, you must use the Region for the requester VPC
          * to modify the requester VPC peering options and the Region for the accepter VPC
          * to modify the accepter VPC peering options. To verify which VPCs are the
@@ -19131,12 +19272,12 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same account, you can
          * enable DNS resolution for queries from the local VPC. This ensures that queries
          * from the local VPC resolve to private IP addresses in the peer VPC. This option
-         * is not available if the peered VPCs are in different AWS accounts or different
-         * Regions. For peered VPCs in different AWS accounts, each AWS account owner must
-         * initiate a separate request to modify the peering connection options. For
+         * is not available if the peered VPCs are in different different accounts or
+         * different Regions. For peered VPCs in different accounts, each account owner
+         * must initiate a separate request to modify the peering connection options. For
          * inter-region peering connections, you must use the Region for the requester VPC
          * to modify the requester VPC peering options and the Region for the accepter VPC
          * to modify the accepter VPC peering options. To verify which VPCs are the
@@ -20417,7 +20558,7 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, network interface, egress-only
          * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
          * API Reference</a></p>
@@ -20430,7 +20571,7 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, network interface, egress-only
          * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
          * API Reference</a></p>
@@ -20445,7 +20586,7 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, network interface, egress-only
          * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
          * API Reference</a></p>
@@ -20460,7 +20601,7 @@ namespace Model
          * gateway uses the routes in the new route table. For more information about route
          * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use this operation to change which table is the main route table in the
          * VPC. Specify the main route table's association ID and the route table ID of the
          * new main route table.</p><p><h3>See Also:</h3>   <a
@@ -20475,7 +20616,7 @@ namespace Model
          * gateway uses the routes in the new route table. For more information about route
          * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use this operation to change which table is the main route table in the
          * VPC. Specify the main route table's association ID and the route table ID of the
          * new main route table.</p><p><h3>See Also:</h3>   <a
@@ -20492,7 +20633,7 @@ namespace Model
          * gateway uses the routes in the new route table. For more information about route
          * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use this operation to change which table is the main route table in the
          * VPC. Specify the main route table's association ID and the route table ID of the
          * new main route table.</p><p><h3>See Also:</h3>   <a
@@ -21975,16 +22116,16 @@ namespace Model
         virtual void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unassigns one or more IPv6 addresses from a network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
          */
         virtual Model::UnassignIpv6AddressesOutcome UnassignIpv6Addresses(const Model::UnassignIpv6AddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more IPv6 addresses from a network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -21993,8 +22134,8 @@ namespace Model
         virtual Model::UnassignIpv6AddressesOutcomeCallable UnassignIpv6AddressesCallable(const Model::UnassignIpv6AddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more IPv6 addresses from a network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -22003,16 +22144,16 @@ namespace Model
         virtual void UnassignIpv6AddressesAsync(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses from a network
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
         virtual Model::UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses from a network
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -22021,8 +22162,8 @@ namespace Model
         virtual Model::UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses from a network
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -22264,6 +22405,7 @@ namespace Model
         void CreateSpotDatafeedSubscriptionAsyncHelper(const Model::CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStoreImageTaskAsyncHelper(const Model::CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubnetAsyncHelper(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSubnetCidrReservationAsyncHelper(const Model::CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficMirrorFilterAsyncHelper(const Model::CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficMirrorFilterRuleAsyncHelper(const Model::CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22319,6 +22461,7 @@ namespace Model
         void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSpotDatafeedSubscriptionAsyncHelper(const Model::DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSubnetAsyncHelper(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSubnetCidrReservationAsyncHelper(const Model::DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficMirrorFilterAsyncHelper(const Model::DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficMirrorFilterRuleAsyncHelper(const Model::DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22527,6 +22670,7 @@ namespace Model
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSerialConsoleAccessStatusAsyncHelper(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSubnetCidrReservationsAsyncHelper(const Model::GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayAttachmentPropagationsAsyncHelper(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayPrefixListReferencesAsyncHelper(const Model::GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

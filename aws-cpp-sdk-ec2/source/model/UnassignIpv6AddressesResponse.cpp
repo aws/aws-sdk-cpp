@@ -54,6 +54,17 @@ UnassignIpv6AddressesResponse& UnassignIpv6AddressesResponse::operator =(const A
       }
 
     }
+    XmlNode unassignedIpv6PrefixesNode = resultNode.FirstChild("unassignedIpv6PrefixSet");
+    if(!unassignedIpv6PrefixesNode.IsNull())
+    {
+      XmlNode unassignedIpv6PrefixesMember = unassignedIpv6PrefixesNode.FirstChild("item");
+      while(!unassignedIpv6PrefixesMember.IsNull())
+      {
+        m_unassignedIpv6Prefixes.push_back(unassignedIpv6PrefixesMember.GetText());
+        unassignedIpv6PrefixesMember = unassignedIpv6PrefixesMember.NextNode("item");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

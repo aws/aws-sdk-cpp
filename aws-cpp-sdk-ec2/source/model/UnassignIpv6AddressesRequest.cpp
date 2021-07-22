@@ -11,8 +11,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 UnassignIpv6AddressesRequest::UnassignIpv6AddressesRequest() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false)
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -20,11 +21,6 @@ Aws::String UnassignIpv6AddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=UnassignIpv6Addresses&";
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
-  }
-
   if(m_ipv6AddressesHasBeenSet)
   {
     unsigned ipv6AddressesCount = 1;
@@ -34,6 +30,22 @@ Aws::String UnassignIpv6AddressesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       ipv6AddressesCount++;
     }
+  }
+
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+    unsigned ipv6PrefixesCount = 1;
+    for(auto& item : m_ipv6Prefixes)
+    {
+      ss << "Ipv6Prefix." << ipv6PrefixesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      ipv6PrefixesCount++;
+    }
+  }
+
+  if(m_networkInterfaceIdHasBeenSet)
+  {
+    ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

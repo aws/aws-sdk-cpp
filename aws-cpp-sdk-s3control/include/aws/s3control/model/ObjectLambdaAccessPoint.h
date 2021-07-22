@@ -23,8 +23,8 @@ namespace Model
 {
 
   /**
-   * <p>An access point with an attached AWS Lambda function used to access
-   * transformed data from an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>An access point with an attached Lambda function used to access transformed
+   * data from an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectLambdaAccessPoint">AWS
    * API Reference</a></p>
    */
