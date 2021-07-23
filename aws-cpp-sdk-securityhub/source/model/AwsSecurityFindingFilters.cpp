@@ -23,6 +23,7 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_awsAccountIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_generatorIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
@@ -82,9 +83,10 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_resourceAwsEc2InstanceLaunchedAtHasBeenSet(false),
     m_resourceAwsS3BucketOwnerIdHasBeenSet(false),
     m_resourceAwsS3BucketOwnerNameHasBeenSet(false),
-    m_resourceAwsIamAccessKeyUserNameHasBeenSet(false),
+    m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet(false),
     m_resourceAwsIamAccessKeyStatusHasBeenSet(false),
     m_resourceAwsIamAccessKeyCreatedAtHasBeenSet(false),
+    m_resourceAwsIamUserUserNameHasBeenSet(false),
     m_resourceContainerNameHasBeenSet(false),
     m_resourceContainerImageIdHasBeenSet(false),
     m_resourceContainerImageNameHasBeenSet(false),
@@ -115,6 +117,7 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_awsAccountIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_generatorIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
@@ -174,9 +177,10 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_resourceAwsEc2InstanceLaunchedAtHasBeenSet(false),
     m_resourceAwsS3BucketOwnerIdHasBeenSet(false),
     m_resourceAwsS3BucketOwnerNameHasBeenSet(false),
-    m_resourceAwsIamAccessKeyUserNameHasBeenSet(false),
+    m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet(false),
     m_resourceAwsIamAccessKeyStatusHasBeenSet(false),
     m_resourceAwsIamAccessKeyCreatedAtHasBeenSet(false),
+    m_resourceAwsIamUserUserNameHasBeenSet(false),
     m_resourceContainerNameHasBeenSet(false),
     m_resourceContainerImageIdHasBeenSet(false),
     m_resourceContainerImageNameHasBeenSet(false),
@@ -243,6 +247,16 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_generatorId.push_back(generatorIdJsonList[generatorIdIndex].AsObject());
     }
     m_generatorIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Region"))
+  {
+    Array<JsonView> regionJsonList = jsonValue.GetArray("Region");
+    for(unsigned regionIndex = 0; regionIndex < regionJsonList.GetLength(); ++regionIndex)
+    {
+      m_region.push_back(regionJsonList[regionIndex].AsObject());
+    }
+    m_regionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -835,14 +849,14 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
     m_resourceAwsS3BucketOwnerNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ResourceAwsIamAccessKeyUserName"))
+  if(jsonValue.ValueExists("ResourceAwsIamAccessKeyPrincipalName"))
   {
-    Array<JsonView> resourceAwsIamAccessKeyUserNameJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyUserName");
-    for(unsigned resourceAwsIamAccessKeyUserNameIndex = 0; resourceAwsIamAccessKeyUserNameIndex < resourceAwsIamAccessKeyUserNameJsonList.GetLength(); ++resourceAwsIamAccessKeyUserNameIndex)
+    Array<JsonView> resourceAwsIamAccessKeyPrincipalNameJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyPrincipalName");
+    for(unsigned resourceAwsIamAccessKeyPrincipalNameIndex = 0; resourceAwsIamAccessKeyPrincipalNameIndex < resourceAwsIamAccessKeyPrincipalNameJsonList.GetLength(); ++resourceAwsIamAccessKeyPrincipalNameIndex)
     {
-      m_resourceAwsIamAccessKeyUserName.push_back(resourceAwsIamAccessKeyUserNameJsonList[resourceAwsIamAccessKeyUserNameIndex].AsObject());
+      m_resourceAwsIamAccessKeyPrincipalName.push_back(resourceAwsIamAccessKeyPrincipalNameJsonList[resourceAwsIamAccessKeyPrincipalNameIndex].AsObject());
     }
-    m_resourceAwsIamAccessKeyUserNameHasBeenSet = true;
+    m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceAwsIamAccessKeyStatus"))
@@ -863,6 +877,16 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_resourceAwsIamAccessKeyCreatedAt.push_back(resourceAwsIamAccessKeyCreatedAtJsonList[resourceAwsIamAccessKeyCreatedAtIndex].AsObject());
     }
     m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceAwsIamUserUserName"))
+  {
+    Array<JsonView> resourceAwsIamUserUserNameJsonList = jsonValue.GetArray("ResourceAwsIamUserUserName");
+    for(unsigned resourceAwsIamUserUserNameIndex = 0; resourceAwsIamUserUserNameIndex < resourceAwsIamUserUserNameJsonList.GetLength(); ++resourceAwsIamUserUserNameIndex)
+    {
+      m_resourceAwsIamUserUserName.push_back(resourceAwsIamUserUserNameJsonList[resourceAwsIamUserUserNameIndex].AsObject());
+    }
+    m_resourceAwsIamUserUserNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceContainerName"))
@@ -1133,6 +1157,17 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      generatorIdJsonList[generatorIdIndex].AsObject(m_generatorId[generatorIdIndex].Jsonize());
    }
    payload.WithArray("GeneratorId", std::move(generatorIdJsonList));
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   Array<JsonValue> regionJsonList(m_region.size());
+   for(unsigned regionIndex = 0; regionIndex < regionJsonList.GetLength(); ++regionIndex)
+   {
+     regionJsonList[regionIndex].AsObject(m_region[regionIndex].Jsonize());
+   }
+   payload.WithArray("Region", std::move(regionJsonList));
 
   }
 
@@ -1785,14 +1820,14 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   }
 
-  if(m_resourceAwsIamAccessKeyUserNameHasBeenSet)
+  if(m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet)
   {
-   Array<JsonValue> resourceAwsIamAccessKeyUserNameJsonList(m_resourceAwsIamAccessKeyUserName.size());
-   for(unsigned resourceAwsIamAccessKeyUserNameIndex = 0; resourceAwsIamAccessKeyUserNameIndex < resourceAwsIamAccessKeyUserNameJsonList.GetLength(); ++resourceAwsIamAccessKeyUserNameIndex)
+   Array<JsonValue> resourceAwsIamAccessKeyPrincipalNameJsonList(m_resourceAwsIamAccessKeyPrincipalName.size());
+   for(unsigned resourceAwsIamAccessKeyPrincipalNameIndex = 0; resourceAwsIamAccessKeyPrincipalNameIndex < resourceAwsIamAccessKeyPrincipalNameJsonList.GetLength(); ++resourceAwsIamAccessKeyPrincipalNameIndex)
    {
-     resourceAwsIamAccessKeyUserNameJsonList[resourceAwsIamAccessKeyUserNameIndex].AsObject(m_resourceAwsIamAccessKeyUserName[resourceAwsIamAccessKeyUserNameIndex].Jsonize());
+     resourceAwsIamAccessKeyPrincipalNameJsonList[resourceAwsIamAccessKeyPrincipalNameIndex].AsObject(m_resourceAwsIamAccessKeyPrincipalName[resourceAwsIamAccessKeyPrincipalNameIndex].Jsonize());
    }
-   payload.WithArray("ResourceAwsIamAccessKeyUserName", std::move(resourceAwsIamAccessKeyUserNameJsonList));
+   payload.WithArray("ResourceAwsIamAccessKeyPrincipalName", std::move(resourceAwsIamAccessKeyPrincipalNameJsonList));
 
   }
 
@@ -1815,6 +1850,17 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      resourceAwsIamAccessKeyCreatedAtJsonList[resourceAwsIamAccessKeyCreatedAtIndex].AsObject(m_resourceAwsIamAccessKeyCreatedAt[resourceAwsIamAccessKeyCreatedAtIndex].Jsonize());
    }
    payload.WithArray("ResourceAwsIamAccessKeyCreatedAt", std::move(resourceAwsIamAccessKeyCreatedAtJsonList));
+
+  }
+
+  if(m_resourceAwsIamUserUserNameHasBeenSet)
+  {
+   Array<JsonValue> resourceAwsIamUserUserNameJsonList(m_resourceAwsIamUserUserName.size());
+   for(unsigned resourceAwsIamUserUserNameIndex = 0; resourceAwsIamUserUserNameIndex < resourceAwsIamUserUserNameJsonList.GetLength(); ++resourceAwsIamUserUserNameIndex)
+   {
+     resourceAwsIamUserUserNameJsonList[resourceAwsIamUserUserNameIndex].AsObject(m_resourceAwsIamUserUserName[resourceAwsIamUserUserNameIndex].Jsonize());
+   }
+   payload.WithArray("ResourceAwsIamUserUserName", std::move(resourceAwsIamUserUserNameJsonList));
 
   }
 

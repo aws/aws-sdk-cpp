@@ -65,7 +65,9 @@ ResourceDetails::ResourceDetails() :
     m_awsEcsClusterHasBeenSet(false),
     m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
-    m_otherHasBeenSet(false)
+    m_otherHasBeenSet(false),
+    m_awsRdsEventSubscriptionHasBeenSet(false),
+    m_awsEcsServiceHasBeenSet(false)
 {
 }
 
@@ -116,7 +118,9 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEcsClusterHasBeenSet(false),
     m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
-    m_otherHasBeenSet(false)
+    m_otherHasBeenSet(false),
+    m_awsRdsEventSubscriptionHasBeenSet(false),
+    m_awsEcsServiceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -455,6 +459,20 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_otherHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsRdsEventSubscription"))
+  {
+    m_awsRdsEventSubscription = jsonValue.GetObject("AwsRdsEventSubscription");
+
+    m_awsRdsEventSubscriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcsService"))
+  {
+    m_awsEcsService = jsonValue.GetObject("AwsEcsService");
+
+    m_awsEcsServiceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -746,6 +764,18 @@ JsonValue ResourceDetails::Jsonize() const
      otherJsonMap.WithString(otherItem.first, otherItem.second);
    }
    payload.WithObject("Other", std::move(otherJsonMap));
+
+  }
+
+  if(m_awsRdsEventSubscriptionHasBeenSet)
+  {
+   payload.WithObject("AwsRdsEventSubscription", m_awsRdsEventSubscription.Jsonize());
+
+  }
+
+  if(m_awsEcsServiceHasBeenSet)
+  {
+   payload.WithObject("AwsEcsService", m_awsEcsService.Jsonize());
 
   }
 

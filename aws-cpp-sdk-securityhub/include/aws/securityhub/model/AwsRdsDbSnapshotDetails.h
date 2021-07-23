@@ -694,42 +694,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline AwsRdsDbSnapshotDetails& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline AwsRdsDbSnapshotDetails& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline AwsRdsDbSnapshotDetails& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
@@ -887,50 +895,50 @@ namespace Model
 
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline AwsRdsDbSnapshotDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline AwsRdsDbSnapshotDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier
-     * for the encrypted DB snapshot.</p>
+     * <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for
+     * the encrypted DB snapshot.</p>
      */
     inline AwsRdsDbSnapshotDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

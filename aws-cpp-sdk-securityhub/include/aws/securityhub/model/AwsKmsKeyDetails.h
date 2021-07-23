@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline void SetAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.assign(value); }
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline AwsKmsKeyDetails& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline AwsKmsKeyDetails& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+     * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
+     * CMK.</p>
      */
     inline AwsKmsKeyDetails& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
 
@@ -158,50 +166,50 @@ namespace Model
 
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline const Aws::String& GetKeyManager() const{ return m_keyManager; }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline bool KeyManagerHasBeenSet() const { return m_keyManagerHasBeenSet; }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline void SetKeyManager(const Aws::String& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline void SetKeyManager(Aws::String&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline void SetKeyManager(const char* value) { m_keyManagerHasBeenSet = true; m_keyManager.assign(value); }
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline AwsKmsKeyDetails& WithKeyManager(const Aws::String& value) { SetKeyManager(value); return *this;}
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline AwsKmsKeyDetails& WithKeyManager(Aws::String&& value) { SetKeyManager(std::move(value)); return *this;}
 
     /**
-     * <p>The manager of the CMK. CMKs in your AWS account are either customer managed
-     * or AWS managed.</p>
+     * <p>The manager of the CMK. CMKs in your Amazon Web Services account are either
+     * customer managed or Amazon Web Services managed.</p>
      */
     inline AwsKmsKeyDetails& WithKeyManager(const char* value) { SetKeyManager(value); return *this;}
 
@@ -249,80 +257,80 @@ namespace Model
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline const Aws::String& GetOrigin() const{ return m_origin; }
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(const Aws::String& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(Aws::String&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(const char* value) { m_originHasBeenSet = true; m_origin.assign(value); }
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline AwsKmsKeyDetails& WithOrigin(const Aws::String& value) { SetOrigin(value); return *this;}
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline AwsKmsKeyDetails& WithOrigin(Aws::String&& value) { SetOrigin(std::move(value)); return *this;}
 
     /**
      * <p>The source of the CMK's key material.</p> <p>When this value is
-     * <code>AWS_KMS</code>, AWS KMS created the key material.</p> <p>When this value
-     * is <code>EXTERNAL</code>, the key material was imported from your existing key
+     * <code>AWS_KMS</code>, KMS created the key material.</p> <p>When this value is
+     * <code>EXTERNAL</code>, the key material was imported from your existing key
      * management infrastructure or the CMK lacks key material.</p> <p>When this value
-     * is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM
      * cluster associated with a custom key store.</p>
      */
     inline AwsKmsKeyDetails& WithOrigin(const char* value) { SetOrigin(value); return *this;}

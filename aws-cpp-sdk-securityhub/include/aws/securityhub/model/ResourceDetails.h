@@ -52,6 +52,8 @@
 #include <aws/securityhub/model/AwsEcsTaskDefinitionDetails.h>
 #include <aws/securityhub/model/ContainerDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/AwsRdsEventSubscriptionDetails.h>
+#include <aws/securityhub/model/AwsEcsServiceDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -124,32 +126,32 @@ namespace Model
 
 
     /**
-     * <p>Details for an AWS CodeBuild project.</p>
+     * <p>Details for an CodeBuild project.</p>
      */
     inline const AwsCodeBuildProjectDetails& GetAwsCodeBuildProject() const{ return m_awsCodeBuildProject; }
 
     /**
-     * <p>Details for an AWS CodeBuild project.</p>
+     * <p>Details for an CodeBuild project.</p>
      */
     inline bool AwsCodeBuildProjectHasBeenSet() const { return m_awsCodeBuildProjectHasBeenSet; }
 
     /**
-     * <p>Details for an AWS CodeBuild project.</p>
+     * <p>Details for an CodeBuild project.</p>
      */
     inline void SetAwsCodeBuildProject(const AwsCodeBuildProjectDetails& value) { m_awsCodeBuildProjectHasBeenSet = true; m_awsCodeBuildProject = value; }
 
     /**
-     * <p>Details for an AWS CodeBuild project.</p>
+     * <p>Details for an CodeBuild project.</p>
      */
     inline void SetAwsCodeBuildProject(AwsCodeBuildProjectDetails&& value) { m_awsCodeBuildProjectHasBeenSet = true; m_awsCodeBuildProject = std::move(value); }
 
     /**
-     * <p>Details for an AWS CodeBuild project.</p>
+     * <p>Details for an CodeBuild project.</p>
      */
     inline ResourceDetails& WithAwsCodeBuildProject(const AwsCodeBuildProjectDetails& value) { SetAwsCodeBuildProject(value); return *this;}
 
     /**
-     * <p>Details for an AWS CodeBuild project.</p>
+     * <p>Details for an CodeBuild project.</p>
      */
     inline ResourceDetails& WithAwsCodeBuildProject(AwsCodeBuildProjectDetails&& value) { SetAwsCodeBuildProject(std::move(value)); return *this;}
 
@@ -217,32 +219,32 @@ namespace Model
 
 
     /**
-     * <p>Details for an Amazon EC2 network interface.</p>
+     * <p>Details for an EC2 network interface.</p>
      */
     inline const AwsEc2NetworkInterfaceDetails& GetAwsEc2NetworkInterface() const{ return m_awsEc2NetworkInterface; }
 
     /**
-     * <p>Details for an Amazon EC2 network interface.</p>
+     * <p>Details for an EC2 network interface.</p>
      */
     inline bool AwsEc2NetworkInterfaceHasBeenSet() const { return m_awsEc2NetworkInterfaceHasBeenSet; }
 
     /**
-     * <p>Details for an Amazon EC2 network interface.</p>
+     * <p>Details for an EC2 network interface.</p>
      */
     inline void SetAwsEc2NetworkInterface(const AwsEc2NetworkInterfaceDetails& value) { m_awsEc2NetworkInterfaceHasBeenSet = true; m_awsEc2NetworkInterface = value; }
 
     /**
-     * <p>Details for an Amazon EC2 network interface.</p>
+     * <p>Details for an EC2 network interface.</p>
      */
     inline void SetAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails&& value) { m_awsEc2NetworkInterfaceHasBeenSet = true; m_awsEc2NetworkInterface = std::move(value); }
 
     /**
-     * <p>Details for an Amazon EC2 network interface.</p>
+     * <p>Details for an EC2 network interface.</p>
      */
     inline ResourceDetails& WithAwsEc2NetworkInterface(const AwsEc2NetworkInterfaceDetails& value) { SetAwsEc2NetworkInterface(value); return *this;}
 
     /**
-     * <p>Details for an Amazon EC2 network interface.</p>
+     * <p>Details for an EC2 network interface.</p>
      */
     inline ResourceDetails& WithAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails&& value) { SetAwsEc2NetworkInterface(std::move(value)); return *this;}
 
@@ -372,32 +374,32 @@ namespace Model
 
 
     /**
-     * <p>Details about a subnet in EC2.</p>
+     * <p>Details about a subnet in Amazon EC2.</p>
      */
     inline const AwsEc2SubnetDetails& GetAwsEc2Subnet() const{ return m_awsEc2Subnet; }
 
     /**
-     * <p>Details about a subnet in EC2.</p>
+     * <p>Details about a subnet in Amazon EC2.</p>
      */
     inline bool AwsEc2SubnetHasBeenSet() const { return m_awsEc2SubnetHasBeenSet; }
 
     /**
-     * <p>Details about a subnet in EC2.</p>
+     * <p>Details about a subnet in Amazon EC2.</p>
      */
     inline void SetAwsEc2Subnet(const AwsEc2SubnetDetails& value) { m_awsEc2SubnetHasBeenSet = true; m_awsEc2Subnet = value; }
 
     /**
-     * <p>Details about a subnet in EC2.</p>
+     * <p>Details about a subnet in Amazon EC2.</p>
      */
     inline void SetAwsEc2Subnet(AwsEc2SubnetDetails&& value) { m_awsEc2SubnetHasBeenSet = true; m_awsEc2Subnet = std::move(value); }
 
     /**
-     * <p>Details about a subnet in EC2.</p>
+     * <p>Details about a subnet in Amazon EC2.</p>
      */
     inline ResourceDetails& WithAwsEc2Subnet(const AwsEc2SubnetDetails& value) { SetAwsEc2Subnet(value); return *this;}
 
     /**
-     * <p>Details about a subnet in EC2.</p>
+     * <p>Details about a subnet in Amazon EC2.</p>
      */
     inline ResourceDetails& WithAwsEc2Subnet(AwsEc2SubnetDetails&& value) { SetAwsEc2Subnet(std::move(value)); return *this;}
 
@@ -527,32 +529,32 @@ namespace Model
 
 
     /**
-     * <p>Details about an Amazon S3 bucket related to a finding.</p>
+     * <p>Details about an S3 bucket related to a finding.</p>
      */
     inline const AwsS3BucketDetails& GetAwsS3Bucket() const{ return m_awsS3Bucket; }
 
     /**
-     * <p>Details about an Amazon S3 bucket related to a finding.</p>
+     * <p>Details about an S3 bucket related to a finding.</p>
      */
     inline bool AwsS3BucketHasBeenSet() const { return m_awsS3BucketHasBeenSet; }
 
     /**
-     * <p>Details about an Amazon S3 bucket related to a finding.</p>
+     * <p>Details about an S3 bucket related to a finding.</p>
      */
     inline void SetAwsS3Bucket(const AwsS3BucketDetails& value) { m_awsS3BucketHasBeenSet = true; m_awsS3Bucket = value; }
 
     /**
-     * <p>Details about an Amazon S3 bucket related to a finding.</p>
+     * <p>Details about an S3 bucket related to a finding.</p>
      */
     inline void SetAwsS3Bucket(AwsS3BucketDetails&& value) { m_awsS3BucketHasBeenSet = true; m_awsS3Bucket = std::move(value); }
 
     /**
-     * <p>Details about an Amazon S3 bucket related to a finding.</p>
+     * <p>Details about an S3 bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(const AwsS3BucketDetails& value) { SetAwsS3Bucket(value); return *this;}
 
     /**
-     * <p>Details about an Amazon S3 bucket related to a finding.</p>
+     * <p>Details about an S3 bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(AwsS3BucketDetails&& value) { SetAwsS3Bucket(std::move(value)); return *this;}
 
@@ -595,32 +597,32 @@ namespace Model
 
 
     /**
-     * <p>Details about an Amazon S3 object related to a finding.</p>
+     * <p>Details about an S3 object related to a finding.</p>
      */
     inline const AwsS3ObjectDetails& GetAwsS3Object() const{ return m_awsS3Object; }
 
     /**
-     * <p>Details about an Amazon S3 object related to a finding.</p>
+     * <p>Details about an S3 object related to a finding.</p>
      */
     inline bool AwsS3ObjectHasBeenSet() const { return m_awsS3ObjectHasBeenSet; }
 
     /**
-     * <p>Details about an Amazon S3 object related to a finding.</p>
+     * <p>Details about an S3 object related to a finding.</p>
      */
     inline void SetAwsS3Object(const AwsS3ObjectDetails& value) { m_awsS3ObjectHasBeenSet = true; m_awsS3Object = value; }
 
     /**
-     * <p>Details about an Amazon S3 object related to a finding.</p>
+     * <p>Details about an S3 object related to a finding.</p>
      */
     inline void SetAwsS3Object(AwsS3ObjectDetails&& value) { m_awsS3ObjectHasBeenSet = true; m_awsS3Object = std::move(value); }
 
     /**
-     * <p>Details about an Amazon S3 object related to a finding.</p>
+     * <p>Details about an S3 object related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Object(const AwsS3ObjectDetails& value) { SetAwsS3Object(value); return *this;}
 
     /**
-     * <p>Details about an Amazon S3 object related to a finding.</p>
+     * <p>Details about an S3 object related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Object(AwsS3ObjectDetails&& value) { SetAwsS3Object(std::move(value)); return *this;}
 
@@ -973,32 +975,32 @@ namespace Model
 
 
     /**
-     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+     * <p>Provides details about an Certificate Manager certificate.</p>
      */
     inline const AwsCertificateManagerCertificateDetails& GetAwsCertificateManagerCertificate() const{ return m_awsCertificateManagerCertificate; }
 
     /**
-     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+     * <p>Provides details about an Certificate Manager certificate.</p>
      */
     inline bool AwsCertificateManagerCertificateHasBeenSet() const { return m_awsCertificateManagerCertificateHasBeenSet; }
 
     /**
-     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+     * <p>Provides details about an Certificate Manager certificate.</p>
      */
     inline void SetAwsCertificateManagerCertificate(const AwsCertificateManagerCertificateDetails& value) { m_awsCertificateManagerCertificateHasBeenSet = true; m_awsCertificateManagerCertificate = value; }
 
     /**
-     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+     * <p>Provides details about an Certificate Manager certificate.</p>
      */
     inline void SetAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails&& value) { m_awsCertificateManagerCertificateHasBeenSet = true; m_awsCertificateManagerCertificate = std::move(value); }
 
     /**
-     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+     * <p>Provides details about an Certificate Manager certificate.</p>
      */
     inline ResourceDetails& WithAwsCertificateManagerCertificate(const AwsCertificateManagerCertificateDetails& value) { SetAwsCertificateManagerCertificate(value); return *this;}
 
     /**
-     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+     * <p>Provides details about an Certificate Manager certificate.</p>
      */
     inline ResourceDetails& WithAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails&& value) { SetAwsCertificateManagerCertificate(std::move(value)); return *this;}
 
@@ -1128,32 +1130,32 @@ namespace Model
 
 
     /**
-     * <p>Details about a KMS key.</p>
+     * <p>Details about an KMS key.</p>
      */
     inline const AwsKmsKeyDetails& GetAwsKmsKey() const{ return m_awsKmsKey; }
 
     /**
-     * <p>Details about a KMS key.</p>
+     * <p>Details about an KMS key.</p>
      */
     inline bool AwsKmsKeyHasBeenSet() const { return m_awsKmsKeyHasBeenSet; }
 
     /**
-     * <p>Details about a KMS key.</p>
+     * <p>Details about an KMS key.</p>
      */
     inline void SetAwsKmsKey(const AwsKmsKeyDetails& value) { m_awsKmsKeyHasBeenSet = true; m_awsKmsKey = value; }
 
     /**
-     * <p>Details about a KMS key.</p>
+     * <p>Details about an KMS key.</p>
      */
     inline void SetAwsKmsKey(AwsKmsKeyDetails&& value) { m_awsKmsKeyHasBeenSet = true; m_awsKmsKey = std::move(value); }
 
     /**
-     * <p>Details about a KMS key.</p>
+     * <p>Details about an KMS key.</p>
      */
     inline ResourceDetails& WithAwsKmsKey(const AwsKmsKeyDetails& value) { SetAwsKmsKey(value); return *this;}
 
     /**
-     * <p>Details about a KMS key.</p>
+     * <p>Details about an KMS key.</p>
      */
     inline ResourceDetails& WithAwsKmsKey(AwsKmsKeyDetails&& value) { SetAwsKmsKey(std::move(value)); return *this;}
 
@@ -1314,32 +1316,32 @@ namespace Model
 
 
     /**
-     * <p>Details for a WAF WebACL.</p>
+     * <p>Details for an WAF WebACL.</p>
      */
     inline const AwsWafWebAclDetails& GetAwsWafWebAcl() const{ return m_awsWafWebAcl; }
 
     /**
-     * <p>Details for a WAF WebACL.</p>
+     * <p>Details for an WAF WebACL.</p>
      */
     inline bool AwsWafWebAclHasBeenSet() const { return m_awsWafWebAclHasBeenSet; }
 
     /**
-     * <p>Details for a WAF WebACL.</p>
+     * <p>Details for an WAF WebACL.</p>
      */
     inline void SetAwsWafWebAcl(const AwsWafWebAclDetails& value) { m_awsWafWebAclHasBeenSet = true; m_awsWafWebAcl = value; }
 
     /**
-     * <p>Details for a WAF WebACL.</p>
+     * <p>Details for an WAF WebACL.</p>
      */
     inline void SetAwsWafWebAcl(AwsWafWebAclDetails&& value) { m_awsWafWebAclHasBeenSet = true; m_awsWafWebAcl = std::move(value); }
 
     /**
-     * <p>Details for a WAF WebACL.</p>
+     * <p>Details for an WAF WebACL.</p>
      */
     inline ResourceDetails& WithAwsWafWebAcl(const AwsWafWebAclDetails& value) { SetAwsWafWebAcl(value); return *this;}
 
     /**
-     * <p>Details for a WAF WebACL.</p>
+     * <p>Details for an WAF WebACL.</p>
      */
     inline ResourceDetails& WithAwsWafWebAcl(AwsWafWebAclDetails&& value) { SetAwsWafWebAcl(std::move(value)); return *this;}
 
@@ -1692,6 +1694,68 @@ namespace Model
      */
     inline ResourceDetails& AddOther(const char* key, const char* value) { m_otherHasBeenSet = true; m_other.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Details about an RDS event notification subscription.</p>
+     */
+    inline const AwsRdsEventSubscriptionDetails& GetAwsRdsEventSubscription() const{ return m_awsRdsEventSubscription; }
+
+    /**
+     * <p>Details about an RDS event notification subscription.</p>
+     */
+    inline bool AwsRdsEventSubscriptionHasBeenSet() const { return m_awsRdsEventSubscriptionHasBeenSet; }
+
+    /**
+     * <p>Details about an RDS event notification subscription.</p>
+     */
+    inline void SetAwsRdsEventSubscription(const AwsRdsEventSubscriptionDetails& value) { m_awsRdsEventSubscriptionHasBeenSet = true; m_awsRdsEventSubscription = value; }
+
+    /**
+     * <p>Details about an RDS event notification subscription.</p>
+     */
+    inline void SetAwsRdsEventSubscription(AwsRdsEventSubscriptionDetails&& value) { m_awsRdsEventSubscriptionHasBeenSet = true; m_awsRdsEventSubscription = std::move(value); }
+
+    /**
+     * <p>Details about an RDS event notification subscription.</p>
+     */
+    inline ResourceDetails& WithAwsRdsEventSubscription(const AwsRdsEventSubscriptionDetails& value) { SetAwsRdsEventSubscription(value); return *this;}
+
+    /**
+     * <p>Details about an RDS event notification subscription.</p>
+     */
+    inline ResourceDetails& WithAwsRdsEventSubscription(AwsRdsEventSubscriptionDetails&& value) { SetAwsRdsEventSubscription(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a service within an ECS cluster.</p>
+     */
+    inline const AwsEcsServiceDetails& GetAwsEcsService() const{ return m_awsEcsService; }
+
+    /**
+     * <p>Details about a service within an ECS cluster.</p>
+     */
+    inline bool AwsEcsServiceHasBeenSet() const { return m_awsEcsServiceHasBeenSet; }
+
+    /**
+     * <p>Details about a service within an ECS cluster.</p>
+     */
+    inline void SetAwsEcsService(const AwsEcsServiceDetails& value) { m_awsEcsServiceHasBeenSet = true; m_awsEcsService = value; }
+
+    /**
+     * <p>Details about a service within an ECS cluster.</p>
+     */
+    inline void SetAwsEcsService(AwsEcsServiceDetails&& value) { m_awsEcsServiceHasBeenSet = true; m_awsEcsService = std::move(value); }
+
+    /**
+     * <p>Details about a service within an ECS cluster.</p>
+     */
+    inline ResourceDetails& WithAwsEcsService(const AwsEcsServiceDetails& value) { SetAwsEcsService(value); return *this;}
+
+    /**
+     * <p>Details about a service within an ECS cluster.</p>
+     */
+    inline ResourceDetails& WithAwsEcsService(AwsEcsServiceDetails&& value) { SetAwsEcsService(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -1834,6 +1898,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_other;
     bool m_otherHasBeenSet;
+
+    AwsRdsEventSubscriptionDetails m_awsRdsEventSubscription;
+    bool m_awsRdsEventSubscriptionHasBeenSet;
+
+    AwsEcsServiceDetails m_awsEcsService;
+    bool m_awsEcsServiceHasBeenSet;
   };
 
 } // namespace Model

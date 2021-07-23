@@ -104,42 +104,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline AwsEc2NetworkAclDetails& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline AwsEc2NetworkAclDetails& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the network ACL.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the network
+     * ACL.</p>
      */
     inline AwsEc2NetworkAclDetails& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

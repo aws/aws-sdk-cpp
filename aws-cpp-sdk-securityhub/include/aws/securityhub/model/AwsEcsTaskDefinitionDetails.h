@@ -550,49 +550,49 @@ namespace Model
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The short name or ARN of the IAM role that grants containers in the task
-     * permission to call AWS API operations on your behalf.</p>
+     * permission to call Amazon Web Services API operations on your behalf.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 

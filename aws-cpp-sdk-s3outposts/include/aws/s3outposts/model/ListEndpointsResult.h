@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline const Aws::Vector<Endpoint>& GetEndpoints() const{ return m_endpoints; }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline void SetEndpoints(const Aws::Vector<Endpoint>& value) { m_endpoints = value; }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline void SetEndpoints(Aws::Vector<Endpoint>&& value) { m_endpoints = std::move(value); }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline ListEndpointsResult& WithEndpoints(const Aws::Vector<Endpoint>& value) { SetEndpoints(value); return *this;}
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline ListEndpointsResult& WithEndpoints(Aws::Vector<Endpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline ListEndpointsResult& AddEndpoints(const Endpoint& value) { m_endpoints.push_back(value); return *this; }
 
     /**
-     * <p>Returns an array of endpoints associated with AWS Outpost.</p>
+     * <p>Returns an array of endpoints associated with AWS Outposts.</p>
      */
     inline ListEndpointsResult& AddEndpoints(Endpoint&& value) { m_endpoints.push_back(std::move(value)); return *this; }
 

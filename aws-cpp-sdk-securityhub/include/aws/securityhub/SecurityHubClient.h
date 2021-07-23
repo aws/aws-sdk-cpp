@@ -299,35 +299,35 @@ namespace Model
 
   /**
    * <p>Security Hub provides you with a comprehensive view of the security state of
-   * your AWS environment and resources. It also provides you with the readiness
-   * status of your environment based on controls from supported security standards.
-   * Security Hub collects security data from AWS accounts, services, and integrated
-   * third-party products and helps you analyze security trends in your environment
-   * to identify the highest priority security issues. For more information about
-   * Security Hub, see the <i> <a
-   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS
-   * Security Hub User Guide</a> </i>.</p> <p>When you use operations in the Security
-   * Hub API, the requests are executed only in the AWS Region that is currently
-   * active or in the specific AWS Region that you specify in your request. Any
-   * configuration or settings change that results from the operation is applied only
-   * to that Region. To make the same change in other Regions, execute the same
-   * command for each Region to apply the change to.</p> <p>For example, if your
-   * Region is set to <code>us-west-2</code>, when you use <code>
-   * <a>CreateMembers</a> </code> to add a member account to Security Hub, the
+   * your Amazon Web Services environment and resources. It also provides you with
+   * the readiness status of your environment based on controls from supported
+   * security standards. Security Hub collects security data from Amazon Web Services
+   * accounts, services, and integrated third-party products and helps you analyze
+   * security trends in your environment to identify the highest priority security
+   * issues. For more information about Security Hub, see the <i>Security Hub<a
+   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">User
+   * Guide</a> </i>.</p> <p>When you use operations in the Security Hub API, the
+   * requests are executed only in the Amazon Web Services Region that is currently
+   * active or in the specific Amazon Web Services Region that you specify in your
+   * request. Any configuration or settings change that results from the operation is
+   * applied only to that Region. To make the same change in other Regions, execute
+   * the same command for each Region to apply the change to.</p> <p>For example, if
+   * your Region is set to <code>us-west-2</code>, when you use
+   * <code>CreateMembers</code> to add a member account to Security Hub, the
    * association of the member account with the administrator account is created only
    * in the <code>us-west-2</code> Region. Security Hub must be enabled for the
    * member account in the same Region that the invitation was sent from.</p> <p>The
    * following throttling limits apply to using Security Hub API operations.</p> <ul>
-   * <li> <p> <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of
-   * 1 request per second, <code>BurstLimit</code> of 1 request per second.</p> </li>
-   * <li> <p> <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3
-   * requests per second. <code>BurstLimit</code> of 6 requests per second.</p> </li>
-   * <li> <p> <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1
-   * request per second. <code>BurstLimit</code> of 5 requests per second.</p> </li>
-   * <li> <p> <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code>
-   * of 1 request per second, <code>BurstLimit</code> of 5 requests per second.</p>
-   * </li> <li> <p>All other operations - <code>RateLimit</code> of 10 requests per
-   * second. <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
+   * <li> <p> <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request
+   * per second, <code>BurstLimit</code> of 1 request per second.</p> </li> <li> <p>
+   * <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second.
+   * <code>BurstLimit</code> of 6 requests per second.</p> </li> <li> <p>
+   * <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second.
+   * <code>BurstLimit</code> of 5 requests per second.</p> </li> <li> <p>
+   * <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per
+   * second, <code>BurstLimit</code> of 5 requests per second.</p> </li> <li> <p>All
+   * other operations - <code>RateLimit</code> of 10 requests per second.
+   * <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
    */
   class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient
   {
@@ -400,7 +400,7 @@ namespace Model
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
@@ -411,7 +411,7 @@ namespace Model
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
@@ -424,7 +424,7 @@ namespace Model
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
@@ -435,10 +435,10 @@ namespace Model
 
         /**
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
-         * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
+         * obtain the ARN for a standard, use the <code>DescribeStandards</code>
          * operation.</p> <p>For more information, see the <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
          * API Reference</a></p>
@@ -447,10 +447,10 @@ namespace Model
 
         /**
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
-         * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
+         * obtain the ARN for a standard, use the <code>DescribeStandards</code>
          * operation.</p> <p>For more information, see the <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
          * API Reference</a></p>
@@ -461,10 +461,10 @@ namespace Model
 
         /**
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
-         * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
+         * obtain the ARN for a standard, use the <code>DescribeStandards</code>
          * operation.</p> <p>For more information, see the <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
          * API Reference</a></p>
@@ -561,7 +561,7 @@ namespace Model
          * field values. For example, you might not want member accounts to be able to
          * suppress findings or change the finding severity. See <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-         * access to BatchUpdateFindings</a> in the <i>AWS Security Hub User
+         * access to BatchUpdateFindings</a> in the <i>Security Hub User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
@@ -586,7 +586,7 @@ namespace Model
          * field values. For example, you might not want member accounts to be able to
          * suppress findings or change the finding severity. See <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-         * access to BatchUpdateFindings</a> in the <i>AWS Security Hub User
+         * access to BatchUpdateFindings</a> in the <i>Security Hub User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
@@ -613,7 +613,7 @@ namespace Model
          * field values. For example, you might not want member accounts to be able to
          * suppress findings or change the finding severity. See <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-         * access to BatchUpdateFindings</a> in the <i>AWS Security Hub User
+         * access to BatchUpdateFindings</a> in the <i>Security Hub User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
          * API Reference</a></p>
@@ -693,25 +693,29 @@ namespace Model
          * you are integrated with Organizations, then the administrator account is
          * designated by the organization management account.</p> <p>
          * <code>CreateMembers</code> is always used to add accounts that are not
-         * organization members.</p> <p>For accounts that are part of an organization,
+         * organization members.</p> <p>For accounts that are managed using Organizations,
          * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
-         * <p>Security Hub is not configured to automatically add new accounts in an
-         * organization.</p> </li> <li> <p>The account was disassociated or deleted in
-         * Security Hub.</p> </li> </ul> <p>This action can only be used by an account that
-         * has Security Hub enabled. To enable Security Hub, you can use the <code>
-         * <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are not
+         * <p>Security Hub is not configured to automatically add new organization
+         * accounts.</p> </li> <li> <p>The account was disassociated or deleted in Security
+         * Hub.</p> </li> </ul> <p>This action can only be used by an account that has
+         * Security Hub enabled. To enable Security Hub, you can use the
+         * <code>EnableSecurityHub</code> operation.</p> <p>For accounts that are not
          * organization members, you create the account association and then send an
-         * invitation to the member account. To send the invitation, you use the <code>
-         * <a>InviteMembers</a> </code> operation. If the account owner accepts the
+         * invitation to the member account. To send the invitation, you use the
+         * <code>InviteMembers</code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
-         * <p>Accounts that are part of an organization do not receive an invitation. They
-         * automatically become a member account in Security Hub.</p> <p>A permissions
-         * policy is added that permits the administrator account to view the findings
-         * generated in the member account. When Security Hub is enabled in a member
-         * account, the member account findings are also visible to the administrator
-         * account. </p> <p>To remove the association between the administrator and member
-         * accounts, use the <code> <a>DisassociateFromMasterAccount</a> </code> or <code>
-         * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Accounts that are managed using Organizations do not receive an invitation.
+         * They automatically become a member account in Security Hub, and Security Hub is
+         * automatically enabled for those accounts. Note that Security Hub cannot be
+         * enabled automatically for the organization management account. The organization
+         * management account must enable Security Hub before the administrator account
+         * enables it as a member account.</p> <p>A permissions policy is added that
+         * permits the administrator account to view the findings generated in the member
+         * account. When Security Hub is enabled in a member account, the member account
+         * findings are also visible to the administrator account. </p> <p>To remove the
+         * association between the administrator and member accounts, use the
+         * <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          */
@@ -723,25 +727,29 @@ namespace Model
          * you are integrated with Organizations, then the administrator account is
          * designated by the organization management account.</p> <p>
          * <code>CreateMembers</code> is always used to add accounts that are not
-         * organization members.</p> <p>For accounts that are part of an organization,
+         * organization members.</p> <p>For accounts that are managed using Organizations,
          * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
-         * <p>Security Hub is not configured to automatically add new accounts in an
-         * organization.</p> </li> <li> <p>The account was disassociated or deleted in
-         * Security Hub.</p> </li> </ul> <p>This action can only be used by an account that
-         * has Security Hub enabled. To enable Security Hub, you can use the <code>
-         * <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are not
+         * <p>Security Hub is not configured to automatically add new organization
+         * accounts.</p> </li> <li> <p>The account was disassociated or deleted in Security
+         * Hub.</p> </li> </ul> <p>This action can only be used by an account that has
+         * Security Hub enabled. To enable Security Hub, you can use the
+         * <code>EnableSecurityHub</code> operation.</p> <p>For accounts that are not
          * organization members, you create the account association and then send an
-         * invitation to the member account. To send the invitation, you use the <code>
-         * <a>InviteMembers</a> </code> operation. If the account owner accepts the
+         * invitation to the member account. To send the invitation, you use the
+         * <code>InviteMembers</code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
-         * <p>Accounts that are part of an organization do not receive an invitation. They
-         * automatically become a member account in Security Hub.</p> <p>A permissions
-         * policy is added that permits the administrator account to view the findings
-         * generated in the member account. When Security Hub is enabled in a member
-         * account, the member account findings are also visible to the administrator
-         * account. </p> <p>To remove the association between the administrator and member
-         * accounts, use the <code> <a>DisassociateFromMasterAccount</a> </code> or <code>
-         * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Accounts that are managed using Organizations do not receive an invitation.
+         * They automatically become a member account in Security Hub, and Security Hub is
+         * automatically enabled for those accounts. Note that Security Hub cannot be
+         * enabled automatically for the organization management account. The organization
+         * management account must enable Security Hub before the administrator account
+         * enables it as a member account.</p> <p>A permissions policy is added that
+         * permits the administrator account to view the findings generated in the member
+         * account. When Security Hub is enabled in a member account, the member account
+         * findings are also visible to the administrator account. </p> <p>To remove the
+         * association between the administrator and member accounts, use the
+         * <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -755,25 +763,29 @@ namespace Model
          * you are integrated with Organizations, then the administrator account is
          * designated by the organization management account.</p> <p>
          * <code>CreateMembers</code> is always used to add accounts that are not
-         * organization members.</p> <p>For accounts that are part of an organization,
+         * organization members.</p> <p>For accounts that are managed using Organizations,
          * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
-         * <p>Security Hub is not configured to automatically add new accounts in an
-         * organization.</p> </li> <li> <p>The account was disassociated or deleted in
-         * Security Hub.</p> </li> </ul> <p>This action can only be used by an account that
-         * has Security Hub enabled. To enable Security Hub, you can use the <code>
-         * <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are not
+         * <p>Security Hub is not configured to automatically add new organization
+         * accounts.</p> </li> <li> <p>The account was disassociated or deleted in Security
+         * Hub.</p> </li> </ul> <p>This action can only be used by an account that has
+         * Security Hub enabled. To enable Security Hub, you can use the
+         * <code>EnableSecurityHub</code> operation.</p> <p>For accounts that are not
          * organization members, you create the account association and then send an
-         * invitation to the member account. To send the invitation, you use the <code>
-         * <a>InviteMembers</a> </code> operation. If the account owner accepts the
+         * invitation to the member account. To send the invitation, you use the
+         * <code>InviteMembers</code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
-         * <p>Accounts that are part of an organization do not receive an invitation. They
-         * automatically become a member account in Security Hub.</p> <p>A permissions
-         * policy is added that permits the administrator account to view the findings
-         * generated in the member account. When Security Hub is enabled in a member
-         * account, the member account findings are also visible to the administrator
-         * account. </p> <p>To remove the association between the administrator and member
-         * accounts, use the <code> <a>DisassociateFromMasterAccount</a> </code> or <code>
-         * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Accounts that are managed using Organizations do not receive an invitation.
+         * They automatically become a member account in Security Hub, and Security Hub is
+         * automatically enabled for those accounts. Note that Security Hub cannot be
+         * enabled automatically for the organization management account. The organization
+         * management account must enable Security Hub before the administrator account
+         * enables it as a member account.</p> <p>A permissions policy is added that
+         * permits the administrator account to view the findings generated in the member
+         * account. When Security Hub is enabled in a member account, the member account
+         * findings are also visible to the administrator account. </p> <p>To remove the
+         * association between the administrator and member accounts, use the
+         * <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -872,20 +884,20 @@ namespace Model
         virtual void DeleteInsightAsync(const Model::DeleteInsightRequest& request, const DeleteInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes invitations received by the AWS account to become a member
-         * account.</p> <p>This operation is only used by accounts that are not part of an
-         * organization. Organization accounts do not receive invitations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes invitations received by the Amazon Web Services account to become a
+         * member account.</p> <p>This operation is only used by accounts that are not part
+         * of an organization. Organization accounts do not receive
+         * invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInvitationsOutcome DeleteInvitations(const Model::DeleteInvitationsRequest& request) const;
 
         /**
-         * <p>Deletes invitations received by the AWS account to become a member
-         * account.</p> <p>This operation is only used by accounts that are not part of an
-         * organization. Organization accounts do not receive invitations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes invitations received by the Amazon Web Services account to become a
+         * member account.</p> <p>This operation is only used by accounts that are not part
+         * of an organization. Organization accounts do not receive
+         * invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
          * API Reference</a></p>
          *
@@ -894,10 +906,10 @@ namespace Model
         virtual Model::DeleteInvitationsOutcomeCallable DeleteInvitationsCallable(const Model::DeleteInvitationsRequest& request) const;
 
         /**
-         * <p>Deletes invitations received by the AWS account to become a member
-         * account.</p> <p>This operation is only used by accounts that are not part of an
-         * organization. Organization accounts do not receive invitations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes invitations received by the Amazon Web Services account to become a
+         * member account.</p> <p>This operation is only used by accounts that are not part
+         * of an organization. Organization accounts do not receive
+         * invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
          * API Reference</a></p>
          *
@@ -1375,18 +1387,18 @@ namespace Model
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the following standards.</p> <ul> <li> <p>CIS AWS
-         * Foundations</p> </li> <li> <p>AWS Foundational Security Best Practices</p> </li>
-         * </ul> <p>You do not enable the Payment Card Industry Data Security Standard (PCI
-         * DSS) standard. </p> <p>To not enable the automatically enabled standards, set
-         * <code>EnableDefaultStandards</code> to <code>false</code>.</p> <p>After you
-         * enable Security Hub, to enable a standard, use the <code>
-         * <a>BatchEnableStandards</a> </code> operation. To disable a standard, use the
-         * <code> <a>BatchDisableStandards</a> </code> operation.</p> <p>To learn more, see
+         * automatically enable the following standards.</p> <ul> <li> <p>CIS Amazon Web
+         * Services Foundations</p> </li> <li> <p>Amazon Web Services Foundational Security
+         * Best Practices</p> </li> </ul> <p>You do not enable the Payment Card Industry
+         * Data Security Standard (PCI DSS) standard. </p> <p>To not enable the
+         * automatically enabled standards, set <code>EnableDefaultStandards</code> to
+         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
+         * use the <code>BatchEnableStandards</code> operation. To disable a standard, use
+         * the <code>BatchDisableStandards</code> operation.</p> <p>To learn more, see the
          * <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-         * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
+         * information</a> in the <i>Security Hub User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          */
@@ -1398,18 +1410,18 @@ namespace Model
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the following standards.</p> <ul> <li> <p>CIS AWS
-         * Foundations</p> </li> <li> <p>AWS Foundational Security Best Practices</p> </li>
-         * </ul> <p>You do not enable the Payment Card Industry Data Security Standard (PCI
-         * DSS) standard. </p> <p>To not enable the automatically enabled standards, set
-         * <code>EnableDefaultStandards</code> to <code>false</code>.</p> <p>After you
-         * enable Security Hub, to enable a standard, use the <code>
-         * <a>BatchEnableStandards</a> </code> operation. To disable a standard, use the
-         * <code> <a>BatchDisableStandards</a> </code> operation.</p> <p>To learn more, see
+         * automatically enable the following standards.</p> <ul> <li> <p>CIS Amazon Web
+         * Services Foundations</p> </li> <li> <p>Amazon Web Services Foundational Security
+         * Best Practices</p> </li> </ul> <p>You do not enable the Payment Card Industry
+         * Data Security Standard (PCI DSS) standard. </p> <p>To not enable the
+         * automatically enabled standards, set <code>EnableDefaultStandards</code> to
+         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
+         * use the <code>BatchEnableStandards</code> operation. To disable a standard, use
+         * the <code>BatchDisableStandards</code> operation.</p> <p>To learn more, see the
          * <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-         * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
+         * information</a> in the <i>Security Hub User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -1423,18 +1435,18 @@ namespace Model
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the following standards.</p> <ul> <li> <p>CIS AWS
-         * Foundations</p> </li> <li> <p>AWS Foundational Security Best Practices</p> </li>
-         * </ul> <p>You do not enable the Payment Card Industry Data Security Standard (PCI
-         * DSS) standard. </p> <p>To not enable the automatically enabled standards, set
-         * <code>EnableDefaultStandards</code> to <code>false</code>.</p> <p>After you
-         * enable Security Hub, to enable a standard, use the <code>
-         * <a>BatchEnableStandards</a> </code> operation. To disable a standard, use the
-         * <code> <a>BatchDisableStandards</a> </code> operation.</p> <p>To learn more, see
+         * automatically enable the following standards.</p> <ul> <li> <p>CIS Amazon Web
+         * Services Foundations</p> </li> <li> <p>Amazon Web Services Foundational Security
+         * Best Practices</p> </li> </ul> <p>You do not enable the Payment Card Industry
+         * Data Security Standard (PCI DSS) standard. </p> <p>To not enable the
+         * automatically enabled standards, set <code>EnableDefaultStandards</code> to
+         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
+         * use the <code>BatchEnableStandards</code> operation. To disable a standard, use
+         * the <code>BatchDisableStandards</code> operation.</p> <p>To learn more, see the
          * <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-         * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
+         * information</a> in the <i>Security Hub User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -1660,11 +1672,11 @@ namespace Model
         virtual void GetMembersAsync(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Invites other AWS accounts to become member accounts for the Security Hub
-         * administrator account that the invitation is sent from.</p> <p>This operation is
-         * only used to invite accounts that do not belong to an organization. Organization
-         * accounts do not receive invitations.</p> <p>Before you can use this action to
-         * invite a member, you must first use the <code> <a>CreateMembers</a> </code>
+         * <p>Invites other Amazon Web Services accounts to become member accounts for the
+         * Security Hub administrator account that the invitation is sent from.</p> <p>This
+         * operation is only used to invite accounts that do not belong to an organization.
+         * Organization accounts do not receive invitations.</p> <p>Before you can use this
+         * action to invite a member, you must first use the <code>CreateMembers</code>
          * action to create the member account in Security Hub.</p> <p>When the account
          * owner enables Security Hub and accepts the invitation to become a member
          * account, the administrator account can view the findings generated from the
@@ -1675,11 +1687,11 @@ namespace Model
         virtual Model::InviteMembersOutcome InviteMembers(const Model::InviteMembersRequest& request) const;
 
         /**
-         * <p>Invites other AWS accounts to become member accounts for the Security Hub
-         * administrator account that the invitation is sent from.</p> <p>This operation is
-         * only used to invite accounts that do not belong to an organization. Organization
-         * accounts do not receive invitations.</p> <p>Before you can use this action to
-         * invite a member, you must first use the <code> <a>CreateMembers</a> </code>
+         * <p>Invites other Amazon Web Services accounts to become member accounts for the
+         * Security Hub administrator account that the invitation is sent from.</p> <p>This
+         * operation is only used to invite accounts that do not belong to an organization.
+         * Organization accounts do not receive invitations.</p> <p>Before you can use this
+         * action to invite a member, you must first use the <code>CreateMembers</code>
          * action to create the member account in Security Hub.</p> <p>When the account
          * owner enables Security Hub and accepts the invitation to become a member
          * account, the administrator account can view the findings generated from the
@@ -1692,11 +1704,11 @@ namespace Model
         virtual Model::InviteMembersOutcomeCallable InviteMembersCallable(const Model::InviteMembersRequest& request) const;
 
         /**
-         * <p>Invites other AWS accounts to become member accounts for the Security Hub
-         * administrator account that the invitation is sent from.</p> <p>This operation is
-         * only used to invite accounts that do not belong to an organization. Organization
-         * accounts do not receive invitations.</p> <p>Before you can use this action to
-         * invite a member, you must first use the <code> <a>CreateMembers</a> </code>
+         * <p>Invites other Amazon Web Services accounts to become member accounts for the
+         * Security Hub administrator account that the invitation is sent from.</p> <p>This
+         * operation is only used to invite accounts that do not belong to an organization.
+         * Organization accounts do not receive invitations.</p> <p>Before you can use this
+         * action to invite a member, you must first use the <code>CreateMembers</code>
          * action to create the member account in Security Hub.</p> <p>When the account
          * owner enables Security Hub and accepts the invitation to become a member
          * account, the administrator account can view the findings generated from the
@@ -1738,8 +1750,8 @@ namespace Model
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
-         * AWS account.</p> <p>This operation is only used by accounts that are managed by
-         * invitation. Accounts that are managed using the integration with AWS
+         * Amazon Web Services account.</p> <p>This operation is only used by accounts that
+         * are managed by invitation. Accounts that are managed using the integration with
          * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
@@ -1748,8 +1760,8 @@ namespace Model
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
-         * AWS account.</p> <p>This operation is only used by accounts that are managed by
-         * invitation. Accounts that are managed using the integration with AWS
+         * Amazon Web Services account.</p> <p>This operation is only used by accounts that
+         * are managed by invitation. Accounts that are managed using the integration with
          * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
@@ -1760,8 +1772,8 @@ namespace Model
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
-         * AWS account.</p> <p>This operation is only used by accounts that are managed by
-         * invitation. Accounts that are managed using the integration with AWS
+         * Amazon Web Services account.</p> <p>This operation is only used by accounts that
+         * are managed by invitation. Accounts that are managed using the integration with
          * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>

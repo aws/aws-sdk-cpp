@@ -99,6 +99,25 @@ namespace Model
      */
     inline AwsElasticsearchDomainLogPublishingOptions& WithSearchSlowLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { SetSearchSlowLogs(std::move(value)); return *this;}
 
+
+    
+    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetAuditLogs() const{ return m_auditLogs; }
+
+    
+    inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
+
+    
+    inline void SetAuditLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
+
+    
+    inline void SetAuditLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
+
+    
+    inline AwsElasticsearchDomainLogPublishingOptions& WithAuditLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { SetAuditLogs(value); return *this;}
+
+    
+    inline AwsElasticsearchDomainLogPublishingOptions& WithAuditLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { SetAuditLogs(std::move(value)); return *this;}
+
   private:
 
     AwsElasticsearchDomainLogPublishingOptionsLogConfig m_indexSlowLogs;
@@ -106,6 +125,9 @@ namespace Model
 
     AwsElasticsearchDomainLogPublishingOptionsLogConfig m_searchSlowLogs;
     bool m_searchSlowLogsHasBeenSet;
+
+    AwsElasticsearchDomainLogPublishingOptionsLogConfig m_auditLogs;
+    bool m_auditLogsHasBeenSet;
   };
 
 } // namespace Model

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An AWS Lambda layer.</p><p><h3>See Also:</h3>   <a
+   * <p>An Lambda layer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionLayer">AWS
    * API Reference</a></p>
    */

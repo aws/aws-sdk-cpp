@@ -471,50 +471,50 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline const Aws::String& GetWebAclId() const{ return m_webAclId; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline bool WebAclIdHasBeenSet() const { return m_webAclIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(const Aws::String& value) { m_webAclIdHasBeenSet = true; m_webAclId = value; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::move(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(const char* value) { m_webAclIdHasBeenSet = true; m_webAclId.assign(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(const Aws::String& value) { SetWebAclId(value); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(Aws::String&& value) { SetWebAclId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
 
