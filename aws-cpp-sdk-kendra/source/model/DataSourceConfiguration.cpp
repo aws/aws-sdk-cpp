@@ -27,7 +27,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_serviceNowConfigurationHasBeenSet(false),
     m_confluenceConfigurationHasBeenSet(false),
     m_googleDriveConfigurationHasBeenSet(false),
-    m_webCrawlerConfigurationHasBeenSet(false)
+    m_webCrawlerConfigurationHasBeenSet(false),
+    m_workDocsConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_serviceNowConfigurationHasBeenSet(false),
     m_confluenceConfigurationHasBeenSet(false),
     m_googleDriveConfigurationHasBeenSet(false),
-    m_webCrawlerConfigurationHasBeenSet(false)
+    m_webCrawlerConfigurationHasBeenSet(false),
+    m_workDocsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_webCrawlerConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkDocsConfiguration"))
+  {
+    m_workDocsConfiguration = jsonValue.GetObject("WorkDocsConfiguration");
+
+    m_workDocsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_webCrawlerConfigurationHasBeenSet)
   {
    payload.WithObject("WebCrawlerConfiguration", m_webCrawlerConfiguration.Jsonize());
+
+  }
+
+  if(m_workDocsConfigurationHasBeenSet)
+  {
+   payload.WithObject("WorkDocsConfiguration", m_workDocsConfiguration.Jsonize());
 
   }
 

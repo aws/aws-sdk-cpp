@@ -428,50 +428,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline Environment& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline Environment& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make calls
-     * to other services on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make calls to other services on your behalf.</p>
      */
     inline Environment& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
 
@@ -637,42 +637,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline Environment& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline Environment& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the environment template.</p>
+     * <p>The Amazon Resource Name (ARN) of the environment template.</p>
      */
     inline Environment& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 

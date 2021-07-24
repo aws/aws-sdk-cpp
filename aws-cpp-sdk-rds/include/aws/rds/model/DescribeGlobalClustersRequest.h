@@ -104,74 +104,42 @@ namespace Model
 
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeGlobalClustersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeGlobalClustersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeGlobalClustersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A filter that specifies one or more global DB clusters to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list will only include information about the DB clusters identified by these
-     * ARNs.</p> </li> </ul>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeGlobalClustersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

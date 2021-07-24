@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline PutAccessPointPolicyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline PutAccessPointPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for owner of the bucket associated with the specified
-     * access point.</p>
+     * <p>The account ID for owner of the bucket associated with the specified access
+     * point.</p>
      */
     inline PutAccessPointPolicyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -87,8 +87,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -102,8 +102,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -117,8 +117,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -132,8 +132,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -147,8 +147,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -162,8 +162,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -177,8 +177,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -192,8 +192,8 @@ namespace Model
      * <p>The name of the access point that you want to associate with the specified
      * policy.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST
      * API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For
-     * using this parameter with S3 on Outposts with the AWS SDK and CLI, you must
-     * specify the ARN of the access point accessed in the format
+     * using this parameter with S3 on Outposts with the Amazon Web Services SDK and
+     * CLI, you must specify the ARN of the access point accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
      * For example, to access the access point <code>reports-ap</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region

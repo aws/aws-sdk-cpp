@@ -20,13 +20,15 @@ namespace Model
 
 AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingOptions() : 
     m_indexSlowLogsHasBeenSet(false),
-    m_searchSlowLogsHasBeenSet(false)
+    m_searchSlowLogsHasBeenSet(false),
+    m_auditLogsHasBeenSet(false)
 {
 }
 
 AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingOptions(JsonView jsonValue) : 
     m_indexSlowLogsHasBeenSet(false),
-    m_searchSlowLogsHasBeenSet(false)
+    m_searchSlowLogsHasBeenSet(false),
+    m_auditLogsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AwsElasticsearchDomainLogPublishingOptions& AwsElasticsearchDomainLogPublishingO
     m_searchSlowLogsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuditLogs"))
+  {
+    m_auditLogs = jsonValue.GetObject("AuditLogs");
+
+    m_auditLogsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue AwsElasticsearchDomainLogPublishingOptions::Jsonize() const
   if(m_searchSlowLogsHasBeenSet)
   {
    payload.WithObject("SearchSlowLogs", m_searchSlowLogs.Jsonize());
+
+  }
+
+  if(m_auditLogsHasBeenSet)
+  {
+   payload.WithObject("AuditLogs", m_auditLogs.Jsonize());
 
   }
 

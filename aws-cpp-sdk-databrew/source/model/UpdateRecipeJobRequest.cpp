@@ -25,6 +25,7 @@ UpdateRecipeJobRequest::UpdateRecipeJobRequest() :
     m_maxRetriesHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_dataCatalogOutputsHasBeenSet(false),
+    m_databaseOutputsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false)
@@ -82,6 +83,17 @@ Aws::String UpdateRecipeJobRequest::SerializePayload() const
      dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject(m_dataCatalogOutputs[dataCatalogOutputsIndex].Jsonize());
    }
    payload.WithArray("DataCatalogOutputs", std::move(dataCatalogOutputsJsonList));
+
+  }
+
+  if(m_databaseOutputsHasBeenSet)
+  {
+   Array<JsonValue> databaseOutputsJsonList(m_databaseOutputs.size());
+   for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+   {
+     databaseOutputsJsonList[databaseOutputsIndex].AsObject(m_databaseOutputs[databaseOutputsIndex].Jsonize());
+   }
+   payload.WithArray("DatabaseOutputs", std::move(databaseOutputsJsonList));
 
   }
 

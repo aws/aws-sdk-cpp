@@ -25,7 +25,8 @@ namespace Model
     CUSTOM,
     CONFLUENCE,
     GOOGLEDRIVE,
-    WEBCRAWLER
+    WEBCRAWLER,
+    WORKDOCS
   };
 
 namespace DataSourceTypeMapper

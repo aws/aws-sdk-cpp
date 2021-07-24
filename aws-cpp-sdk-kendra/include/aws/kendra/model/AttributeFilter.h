@@ -33,8 +33,11 @@ namespace Model
    * &lt;OrAllFilters&gt;</code> </p> </li> <li> <p> <code> &lt;EqualTo&gt;</code>
    * </p> </li> </ol> <p>If you use more than 2 layers, you receive a
    * <code>ValidationException</code> exception with the message
-   * "<code>AttributeFilter</code> cannot have a depth of more than 2."</p><p><h3>See
-   * Also:</h3>   <a
+   * "<code>AttributeFilter</code> cannot have a depth of more than 2."</p> <p>If you
+   * use more than 10 attribute filters, you receive a
+   * <code>ValidationException</code> exception with the message
+   * "<code>AttributeFilter</code> cannot have a length of more than
+   * 10".</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AttributeFilter">AWS
    * API Reference</a></p>
    */

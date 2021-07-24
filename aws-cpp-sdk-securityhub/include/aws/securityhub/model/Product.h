@@ -347,58 +347,66 @@ namespace Model
 
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline const Aws::String& GetMarketplaceUrl() const{ return m_marketplaceUrl; }
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline bool MarketplaceUrlHasBeenSet() const { return m_marketplaceUrlHasBeenSet; }
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline void SetMarketplaceUrl(const Aws::String& value) { m_marketplaceUrlHasBeenSet = true; m_marketplaceUrl = value; }
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline void SetMarketplaceUrl(Aws::String&& value) { m_marketplaceUrlHasBeenSet = true; m_marketplaceUrl = std::move(value); }
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline void SetMarketplaceUrl(const char* value) { m_marketplaceUrlHasBeenSet = true; m_marketplaceUrl.assign(value); }
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline Product& WithMarketplaceUrl(const Aws::String& value) { SetMarketplaceUrl(value); return *this;}
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline Product& WithMarketplaceUrl(Aws::String&& value) { SetMarketplaceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>For integrations with AWS services, the AWS Console URL from which to
-     * activate the service.</p> <p>For integrations with third-party products, the AWS
-     * Marketplace URL from which to subscribe to or purchase the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Marketplace URL from which to subscribe to or purchase
+     * the product.</p>
      */
     inline Product& WithMarketplaceUrl(const char* value) { SetMarketplaceUrl(value); return *this;}
 

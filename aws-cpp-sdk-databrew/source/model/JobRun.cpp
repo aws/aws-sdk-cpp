@@ -35,6 +35,7 @@ JobRun::JobRun() :
     m_logGroupNameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_dataCatalogOutputsHasBeenSet(false),
+    m_databaseOutputsHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_startedOnHasBeenSet(false),
@@ -59,6 +60,7 @@ JobRun::JobRun(JsonView jsonValue) :
     m_logGroupNameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_dataCatalogOutputsHasBeenSet(false),
+    m_databaseOutputsHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_startedOnHasBeenSet(false),
@@ -157,6 +159,16 @@ JobRun& JobRun::operator =(JsonView jsonValue)
       m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
     }
     m_dataCatalogOutputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatabaseOutputs"))
+  {
+    Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
+    for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+    {
+      m_databaseOutputs.push_back(databaseOutputsJsonList[databaseOutputsIndex].AsObject());
+    }
+    m_databaseOutputsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RecipeReference"))
@@ -270,6 +282,17 @@ JsonValue JobRun::Jsonize() const
      dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject(m_dataCatalogOutputs[dataCatalogOutputsIndex].Jsonize());
    }
    payload.WithArray("DataCatalogOutputs", std::move(dataCatalogOutputsJsonList));
+
+  }
+
+  if(m_databaseOutputsHasBeenSet)
+  {
+   Array<JsonValue> databaseOutputsJsonList(m_databaseOutputs.size());
+   for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+   {
+     databaseOutputsJsonList[databaseOutputsIndex].AsObject(m_databaseOutputs[databaseOutputsIndex].Jsonize());
+   }
+   payload.WithArray("DatabaseOutputs", std::move(databaseOutputsJsonList));
 
   }
 

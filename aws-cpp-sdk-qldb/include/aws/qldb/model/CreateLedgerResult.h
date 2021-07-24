@@ -222,6 +222,56 @@ namespace Model
      */
     inline CreateLedgerResult& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline CreateLedgerResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline CreateLedgerResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the customer managed KMS key that the ledger uses for encryption
+     * at rest. If this parameter is undefined, the ledger uses an Amazon Web Services
+     * owned KMS key for encryption.</p>
+     */
+    inline CreateLedgerResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -235,6 +285,8 @@ namespace Model
     PermissionsMode m_permissionsMode;
 
     bool m_deletionProtection;
+
+    Aws::String m_kmsKeyArn;
   };
 
 } // namespace Model

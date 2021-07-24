@@ -182,6 +182,7 @@ public class C2jModelToGeneratorModelTransformer {
                 } else if (shape.hasEventPayloadMembers() || shape.getMembers().size() == 1) {
                     if (shape.getMembers().size() == 1) {
                         shape.getMembers().entrySet().stream().forEach(memberEntry -> {
+                            memberEntry.getValue().setEventPayload(true);
                             shape.setEventPayloadMemberName(memberEntry.getKey());
                             shape.setEventPayloadType(memberEntry.getValue().getShape().getType());
                         });

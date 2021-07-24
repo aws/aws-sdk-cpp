@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateProfileJobRequest::UpdateProfileJobRequest() : 
+    m_configurationHasBeenSet(false),
     m_encryptionKeyArnHasBeenSet(false),
     m_encryptionMode(EncryptionMode::NOT_SET),
     m_encryptionModeHasBeenSet(false),
@@ -34,6 +35,12 @@ UpdateProfileJobRequest::UpdateProfileJobRequest() :
 Aws::String UpdateProfileJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("Configuration", m_configuration.Jsonize());
+
+  }
 
   if(m_encryptionKeyArnHasBeenSet)
   {

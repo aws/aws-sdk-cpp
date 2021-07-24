@@ -59,12 +59,7 @@ namespace Model
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
      * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+     * (Ningxia).</p> </li> </ul>
      */
     inline const EnvironmentType& GetType() const{ return m_type; }
 
@@ -83,12 +78,7 @@ namespace Model
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
      * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+     * (Ningxia).</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -107,12 +97,7 @@ namespace Model
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
      * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+     * (Ningxia).</p> </li> </ul>
      */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -131,12 +116,7 @@ namespace Model
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
      * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+     * (Ningxia).</p> </li> </ul>
      */
     inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -155,12 +135,7 @@ namespace Model
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
      * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+     * (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
 
@@ -179,12 +154,7 @@ namespace Model
      * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
      * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
      * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).</p> </li> </ul> <ul> <li> <p>The environment types
-     * <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code>
-     * are available only in regions US East (N. Virginia), US East (Ohio), US West
-     * (Oregon), and EU (Ireland).</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
+     * (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
 
@@ -199,9 +169,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
@@ -215,9 +183,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
@@ -231,9 +197,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
@@ -247,9 +211,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
@@ -263,9 +225,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
@@ -279,9 +239,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
@@ -295,9 +253,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
@@ -311,9 +267,7 @@ namespace Model
      * For example, to specify an image with the digest
      * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
      * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
-     * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
-     * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
+     * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}
 
@@ -334,9 +288,10 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
@@ -356,9 +311,10 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
 
@@ -378,9 +334,10 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
@@ -400,9 +357,10 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
@@ -422,9 +380,10 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline ProjectEnvironment& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
@@ -444,9 +403,10 @@ namespace Model
      * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
      * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
      * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
-     * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
@@ -581,7 +541,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
@@ -589,7 +549,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
@@ -597,7 +557,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
@@ -605,7 +565,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
@@ -613,7 +573,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
@@ -621,7 +581,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
@@ -629,7 +589,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
@@ -637,7 +597,7 @@ namespace Model
      * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
      * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
-     * in the <i>CodeBuild User Guide</i>.</p>
+     * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
@@ -674,74 +634,74 @@ namespace Model
 
 
     /**
-     * <p> The type of credentials CodeBuild uses to pull images in your build. There
-     * are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
-     * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust CodeBuild service principal. </p> </li> <li> <p>
-     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
-     * service role. </p> </li> </ul> <p> When you use a cross-account or private
-     * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
-     * curated image, you must use CODEBUILD credentials. </p>
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline const ImagePullCredentialsType& GetImagePullCredentialsType() const{ return m_imagePullCredentialsType; }
 
     /**
-     * <p> The type of credentials CodeBuild uses to pull images in your build. There
-     * are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
-     * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust CodeBuild service principal. </p> </li> <li> <p>
-     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
-     * service role. </p> </li> </ul> <p> When you use a cross-account or private
-     * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
-     * curated image, you must use CODEBUILD credentials. </p>
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline bool ImagePullCredentialsTypeHasBeenSet() const { return m_imagePullCredentialsTypeHasBeenSet; }
 
     /**
-     * <p> The type of credentials CodeBuild uses to pull images in your build. There
-     * are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
-     * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust CodeBuild service principal. </p> </li> <li> <p>
-     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
-     * service role. </p> </li> </ul> <p> When you use a cross-account or private
-     * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
-     * curated image, you must use CODEBUILD credentials. </p>
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline void SetImagePullCredentialsType(const ImagePullCredentialsType& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = value; }
 
     /**
-     * <p> The type of credentials CodeBuild uses to pull images in your build. There
-     * are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
-     * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust CodeBuild service principal. </p> </li> <li> <p>
-     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
-     * service role. </p> </li> </ul> <p> When you use a cross-account or private
-     * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
-     * curated image, you must use CODEBUILD credentials. </p>
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline void SetImagePullCredentialsType(ImagePullCredentialsType&& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = std::move(value); }
 
     /**
-     * <p> The type of credentials CodeBuild uses to pull images in your build. There
-     * are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
-     * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust CodeBuild service principal. </p> </li> <li> <p>
-     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
-     * service role. </p> </li> </ul> <p> When you use a cross-account or private
-     * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
-     * curated image, you must use CODEBUILD credentials. </p>
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline ProjectEnvironment& WithImagePullCredentialsType(const ImagePullCredentialsType& value) { SetImagePullCredentialsType(value); return *this;}
 
     /**
-     * <p> The type of credentials CodeBuild uses to pull images in your build. There
-     * are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
-     * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust CodeBuild service principal. </p> </li> <li> <p>
-     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
-     * service role. </p> </li> </ul> <p> When you use a cross-account or private
-     * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
-     * curated image, you must use CODEBUILD credentials. </p>
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline ProjectEnvironment& WithImagePullCredentialsType(ImagePullCredentialsType&& value) { SetImagePullCredentialsType(std::move(value)); return *this;}
 

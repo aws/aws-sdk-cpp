@@ -438,58 +438,50 @@ namespace Model
 
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline const Aws::Vector<InstanceTypeSpecification>& GetInstanceTypeSpecifications() const{ return m_instanceTypeSpecifications; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline bool InstanceTypeSpecificationsHasBeenSet() const { return m_instanceTypeSpecificationsHasBeenSet; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline void SetInstanceTypeSpecifications(const Aws::Vector<InstanceTypeSpecification>& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications = value; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline void SetInstanceTypeSpecifications(Aws::Vector<InstanceTypeSpecification>&& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications = std::move(value); }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& WithInstanceTypeSpecifications(const Aws::Vector<InstanceTypeSpecification>& value) { SetInstanceTypeSpecifications(value); return *this;}
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& WithInstanceTypeSpecifications(Aws::Vector<InstanceTypeSpecification>&& value) { SetInstanceTypeSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& AddInstanceTypeSpecifications(const InstanceTypeSpecification& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& AddInstanceTypeSpecifications(InstanceTypeSpecification&& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications.push_back(std::move(value)); return *this; }
 

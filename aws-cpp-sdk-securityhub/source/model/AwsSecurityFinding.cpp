@@ -22,6 +22,9 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_schemaVersionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_productArnHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_companyNameHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_generatorIdHasBeenSet(false),
     m_awsAccountIdHasBeenSet(false),
     m_typesHasBeenSet(false),
@@ -67,6 +70,9 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_schemaVersionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_productArnHasBeenSet(false),
+    m_productNameHasBeenSet(false),
+    m_companyNameHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_generatorIdHasBeenSet(false),
     m_awsAccountIdHasBeenSet(false),
     m_typesHasBeenSet(false),
@@ -130,6 +136,27 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_productArn = jsonValue.GetString("ProductArn");
 
     m_productArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProductName"))
+  {
+    m_productName = jsonValue.GetString("ProductName");
+
+    m_productNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompanyName"))
+  {
+    m_companyName = jsonValue.GetString("CompanyName");
+
+    m_companyNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Region"))
+  {
+    m_region = jsonValue.GetString("Region");
+
+    m_regionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GeneratorId"))
@@ -412,6 +439,24 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_productArnHasBeenSet)
   {
    payload.WithString("ProductArn", m_productArn);
+
+  }
+
+  if(m_productNameHasBeenSet)
+  {
+   payload.WithString("ProductName", m_productName);
+
+  }
+
+  if(m_companyNameHasBeenSet)
+  {
+   payload.WithString("CompanyName", m_companyName);
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("Region", m_region);
 
   }
 

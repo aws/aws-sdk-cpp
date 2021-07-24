@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/Output.h>
 #include <aws/databrew/model/DataCatalogOutput.h>
+#include <aws/databrew/model/DatabaseOutput.h>
 #include <utility>
 
 namespace Aws
@@ -301,52 +302,101 @@ namespace Model
 
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline bool DataCatalogOutputsHasBeenSet() const { return m_dataCatalogOutputsHasBeenSet; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = value; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::move(value); }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline UpdateRecipeJobRequest& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline UpdateRecipeJobRequest& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline UpdateRecipeJobRequest& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(value); return *this; }
 
     /**
-     * <p>One or more artifacts that represent the AWS Glue Data Catalog output from
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
      * running the job.</p>
      */
     inline UpdateRecipeJobRequest& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline const Aws::Vector<DatabaseOutput>& GetDatabaseOutputs() const{ return m_databaseOutputs; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline bool DatabaseOutputsHasBeenSet() const { return m_databaseOutputsHasBeenSet; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = value; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = std::move(value); }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline UpdateRecipeJobRequest& WithDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { SetDatabaseOutputs(value); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline UpdateRecipeJobRequest& WithDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { SetDatabaseOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline UpdateRecipeJobRequest& AddDatabaseOutputs(const DatabaseOutput& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline UpdateRecipeJobRequest& AddDatabaseOutputs(DatabaseOutput&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -447,6 +497,9 @@ namespace Model
 
     Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
     bool m_dataCatalogOutputsHasBeenSet;
+
+    Aws::Vector<DatabaseOutput> m_databaseOutputs;
+    bool m_databaseOutputsHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

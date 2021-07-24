@@ -47,32 +47,32 @@ namespace Model
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
 
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
      * <p>Deprecated. This attribute is being deprecated. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the AWS service or integrated partner product that generated the
-     * finding.</p>
+     * as defined by the Amazon Web Services service or integrated partner product that
+     * generated the finding.</p>
      */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
 

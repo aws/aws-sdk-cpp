@@ -32,7 +32,9 @@ ProjectArtifacts::ProjectArtifacts() :
     m_overrideArtifactNameHasBeenSet(false),
     m_encryptionDisabled(false),
     m_encryptionDisabledHasBeenSet(false),
-    m_artifactIdentifierHasBeenSet(false)
+    m_artifactIdentifierHasBeenSet(false),
+    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
+    m_bucketOwnerAccessHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ ProjectArtifacts::ProjectArtifacts(JsonView jsonValue) :
     m_overrideArtifactNameHasBeenSet(false),
     m_encryptionDisabled(false),
     m_encryptionDisabledHasBeenSet(false),
-    m_artifactIdentifierHasBeenSet(false)
+    m_artifactIdentifierHasBeenSet(false),
+    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
+    m_bucketOwnerAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +124,13 @@ ProjectArtifacts& ProjectArtifacts::operator =(JsonView jsonValue)
     m_artifactIdentifierHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("bucketOwnerAccess"))
+  {
+    m_bucketOwnerAccess = BucketOwnerAccessMapper::GetBucketOwnerAccessForName(jsonValue.GetString("bucketOwnerAccess"));
+
+    m_bucketOwnerAccessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +187,11 @@ JsonValue ProjectArtifacts::Jsonize() const
   {
    payload.WithString("artifactIdentifier", m_artifactIdentifier);
 
+  }
+
+  if(m_bucketOwnerAccessHasBeenSet)
+  {
+   payload.WithString("bucketOwnerAccess", BucketOwnerAccessMapper::GetNameForBucketOwnerAccess(m_bucketOwnerAccess));
   }
 
   return payload;

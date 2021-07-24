@@ -70,6 +70,12 @@ CreateLedgerResult& CreateLedgerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+  }
+
 
 
   return *this;

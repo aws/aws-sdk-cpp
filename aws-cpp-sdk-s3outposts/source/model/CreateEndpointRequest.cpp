@@ -15,7 +15,10 @@ using namespace Aws::Utils;
 CreateEndpointRequest::CreateEndpointRequest() : 
     m_outpostIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false)
+    m_securityGroupIdHasBeenSet(false),
+    m_accessType(EndpointAccessType::NOT_SET),
+    m_accessTypeHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,17 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_securityGroupIdHasBeenSet)
   {
    payload.WithString("SecurityGroupId", m_securityGroupId);
+
+  }
+
+  if(m_accessTypeHasBeenSet)
+  {
+   payload.WithString("AccessType", EndpointAccessTypeMapper::GetNameForEndpointAccessType(m_accessType));
+  }
+
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+   payload.WithString("CustomerOwnedIpv4Pool", m_customerOwnedIpv4Pool);
 
   }
 

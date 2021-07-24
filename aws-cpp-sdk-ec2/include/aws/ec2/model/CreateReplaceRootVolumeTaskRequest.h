@@ -142,7 +142,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -151,7 +151,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -160,7 +160,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -169,7 +169,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -178,7 +178,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -187,7 +187,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline CreateReplaceRootVolumeTaskRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -196,7 +196,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline CreateReplaceRootVolumeTaskRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -205,7 +205,7 @@ namespace Model
      * the request. If you do not specify a client token, a randomly generated token is
      * used for the request to ensure idempotency. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
+     * idempotency</a>.</p>
      */
     inline CreateReplaceRootVolumeTaskRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

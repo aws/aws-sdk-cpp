@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
+#include <aws/ec2/model/Ipv4PrefixSpecificationRequest.h>
+#include <aws/ec2/model/Ipv6PrefixSpecificationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -774,6 +776,178 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
 
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline const Aws::Vector<Ipv4PrefixSpecificationRequest>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecificationRequest>& value) { SetIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecificationRequest>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv4Prefixes(const Ipv4PrefixSpecificationRequest& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv4 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv4PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv4Prefixes(Ipv4PrefixSpecificationRequest&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
+
+    /**
+     * <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv4Prefix</code> option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
+
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline const Aws::Vector<Ipv6PrefixSpecificationRequest>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecificationRequest>& value) { SetIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecificationRequest>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Prefixes(const Ipv6PrefixSpecificationRequest& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv6 delegated prefixes to be assigned to the network interface.
+     * You cannot use this option if you use the <code>Ipv6PrefixCount</code>
+     * option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& AddIpv6Prefixes(Ipv6PrefixSpecificationRequest&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline int GetIpv6PrefixCount() const{ return m_ipv6PrefixCount; }
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline bool Ipv6PrefixCountHasBeenSet() const { return m_ipv6PrefixCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline void SetIpv6PrefixCount(int value) { m_ipv6PrefixCountHasBeenSet = true; m_ipv6PrefixCount = value; }
+
+    /**
+     * <p>The number of IPv6 delegated prefixes to be automatically assigned to the
+     * network interface. You cannot use this option if you use the
+     * <code>Ipv6Prefix</code> option.</p>
+     */
+    inline InstanceNetworkInterfaceSpecification& WithIpv6PrefixCount(int value) { SetIpv6PrefixCount(value); return *this;}
+
   private:
 
     bool m_associatePublicIpAddress;
@@ -820,6 +994,18 @@ namespace Model
 
     int m_networkCardIndex;
     bool m_networkCardIndexHasBeenSet;
+
+    Aws::Vector<Ipv4PrefixSpecificationRequest> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet;
+
+    int m_ipv4PrefixCount;
+    bool m_ipv4PrefixCountHasBeenSet;
+
+    Aws::Vector<Ipv6PrefixSpecificationRequest> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet;
+
+    int m_ipv6PrefixCount;
+    bool m_ipv6PrefixCountHasBeenSet;
   };
 
 } // namespace Model

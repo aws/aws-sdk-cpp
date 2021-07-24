@@ -80,7 +80,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -89,14 +89,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -105,14 +105,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -121,14 +121,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -137,14 +137,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -153,14 +153,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -169,14 +169,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline CreateSnapshotRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -185,14 +185,14 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline CreateSnapshotRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create a local
      * snapshot.</p> <ul> <li> <p>To create a snapshot of a volume in a Region, omit
      * this parameter. The snapshot is created in the same Region as the volume.</p>
      * </li> <li> <p>To create a snapshot of a volume on an Outpost and store the
@@ -201,50 +201,50 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
-     * Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline CreateSnapshotRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline CreateSnapshotRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline CreateSnapshotRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the EBS volume.</p>
+     * <p>The ID of the Amazon EBS volume.</p>
      */
     inline CreateSnapshotRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 

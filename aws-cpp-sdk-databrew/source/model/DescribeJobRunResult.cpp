@@ -72,6 +72,12 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("ProfileConfiguration"))
+  {
+    m_profileConfiguration = jsonValue.GetObject("ProfileConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
@@ -111,6 +117,15 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
     for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
     {
       m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("DatabaseOutputs"))
+  {
+    Array<JsonView> databaseOutputsJsonList = jsonValue.GetArray("DatabaseOutputs");
+    for(unsigned databaseOutputsIndex = 0; databaseOutputsIndex < databaseOutputsJsonList.GetLength(); ++databaseOutputsIndex)
+    {
+      m_databaseOutputs.push_back(databaseOutputsJsonList[databaseOutputsIndex].AsObject());
     }
   }
 

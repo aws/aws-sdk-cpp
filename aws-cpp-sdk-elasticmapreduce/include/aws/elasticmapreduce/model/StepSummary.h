@@ -156,48 +156,42 @@ namespace Model
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = std::move(value); }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline StepSummary& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
-     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
-     * instead.</p>
+     * available for backward compatibility.</p>
      */
     inline StepSummary& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
 

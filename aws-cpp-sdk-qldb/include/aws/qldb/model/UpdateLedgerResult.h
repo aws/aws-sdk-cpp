@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qldb/model/LedgerState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/qldb/model/LedgerEncryptionDescription.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +196,42 @@ namespace Model
      */
     inline UpdateLedgerResult& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline const LedgerEncryptionDescription& GetEncryptionDescription() const{ return m_encryptionDescription; }
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline void SetEncryptionDescription(const LedgerEncryptionDescription& value) { m_encryptionDescription = value; }
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline void SetEncryptionDescription(LedgerEncryptionDescription&& value) { m_encryptionDescription = std::move(value); }
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline UpdateLedgerResult& WithEncryptionDescription(const LedgerEncryptionDescription& value) { SetEncryptionDescription(value); return *this;}
+
+    /**
+     * <p>Information about the encryption of data at rest in the ledger. This includes
+     * the current status, the KMS key, and when the key became inaccessible (in the
+     * case of an error).</p>
+     */
+    inline UpdateLedgerResult& WithEncryptionDescription(LedgerEncryptionDescription&& value) { SetEncryptionDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -206,6 +243,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     bool m_deletionProtection;
+
+    LedgerEncryptionDescription m_encryptionDescription;
   };
 
 } // namespace Model

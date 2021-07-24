@@ -113,29 +113,29 @@ namespace Model
 
     /**
      * <p>Indicates whether to restrict access to an access point or S3 bucket that has
-     * a public policy to only AWS service principals and authorized users within the
-     * S3 bucket owner's account.</p>
+     * a public policy to only Amazon Web Services service principals and authorized
+     * users within the S3 bucket owner's account.</p>
      */
     inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
 
     /**
      * <p>Indicates whether to restrict access to an access point or S3 bucket that has
-     * a public policy to only AWS service principals and authorized users within the
-     * S3 bucket owner's account.</p>
+     * a public policy to only Amazon Web Services service principals and authorized
+     * users within the S3 bucket owner's account.</p>
      */
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
 
     /**
      * <p>Indicates whether to restrict access to an access point or S3 bucket that has
-     * a public policy to only AWS service principals and authorized users within the
-     * S3 bucket owner's account.</p>
+     * a public policy to only Amazon Web Services service principals and authorized
+     * users within the S3 bucket owner's account.</p>
      */
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
 
     /**
      * <p>Indicates whether to restrict access to an access point or S3 bucket that has
-     * a public policy to only AWS service principals and authorized users within the
-     * S3 bucket owner's account.</p>
+     * a public policy to only Amazon Web Services service principals and authorized
+     * users within the S3 bucket owner's account.</p>
      */
     inline AwsS3AccountPublicAccessBlockDetails& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
 

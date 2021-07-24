@@ -36,6 +36,8 @@ NetworkInterface::NetworkInterface() :
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
@@ -65,6 +67,8 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
     m_requesterIdHasBeenSet(false),
     m_requesterManaged(false),
     m_requesterManagedHasBeenSet(false),
@@ -186,6 +190,30 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
       }
 
       m_privateIpAddressesHasBeenSet = true;
+    }
+    XmlNode ipv4PrefixesNode = resultNode.FirstChild("ipv4PrefixSet");
+    if(!ipv4PrefixesNode.IsNull())
+    {
+      XmlNode ipv4PrefixesMember = ipv4PrefixesNode.FirstChild("item");
+      while(!ipv4PrefixesMember.IsNull())
+      {
+        m_ipv4Prefixes.push_back(ipv4PrefixesMember);
+        ipv4PrefixesMember = ipv4PrefixesMember.NextNode("item");
+      }
+
+      m_ipv4PrefixesHasBeenSet = true;
+    }
+    XmlNode ipv6PrefixesNode = resultNode.FirstChild("ipv6PrefixSet");
+    if(!ipv6PrefixesNode.IsNull())
+    {
+      XmlNode ipv6PrefixesMember = ipv6PrefixesNode.FirstChild("item");
+      while(!ipv6PrefixesMember.IsNull())
+      {
+        m_ipv6Prefixes.push_back(ipv6PrefixesMember);
+        ipv6PrefixesMember = ipv6PrefixesMember.NextNode("item");
+      }
+
+      m_ipv6PrefixesHasBeenSet = true;
     }
     XmlNode requesterIdNode = resultNode.FirstChild("requesterId");
     if(!requesterIdNode.IsNull())
@@ -334,6 +362,28 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+      unsigned ipv4PrefixesIdx = 1;
+      for(auto& item : m_ipv4Prefixes)
+      {
+        Aws::StringStream ipv4PrefixesSs;
+        ipv4PrefixesSs << location << index << locationValue << ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
+        item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
+      }
+  }
+
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+      unsigned ipv6PrefixesIdx = 1;
+      for(auto& item : m_ipv6Prefixes)
+      {
+        Aws::StringStream ipv6PrefixesSs;
+        ipv6PrefixesSs << location << index << locationValue << ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
+        item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
+      }
+  }
+
   if(m_requesterIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequesterId=" << StringUtils::URLEncode(m_requesterId.c_str()) << "&";
@@ -455,6 +505,26 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
         Aws::StringStream privateIpAddressesSs;
         privateIpAddressesSs << location <<  ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
+      }
+  }
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+      unsigned ipv4PrefixesIdx = 1;
+      for(auto& item : m_ipv4Prefixes)
+      {
+        Aws::StringStream ipv4PrefixesSs;
+        ipv4PrefixesSs << location <<  ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
+        item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
+      }
+  }
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+      unsigned ipv6PrefixesIdx = 1;
+      for(auto& item : m_ipv6Prefixes)
+      {
+        Aws::StringStream ipv6PrefixesSs;
+        ipv6PrefixesSs << location <<  ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
+        item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
       }
   }
   if(m_requesterIdHasBeenSet)

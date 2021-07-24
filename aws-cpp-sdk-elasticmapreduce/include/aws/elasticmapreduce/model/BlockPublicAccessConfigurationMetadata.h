@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Properties that describe the AWS principal that created the
+   * <p>Properties that describe the Amazon Web Services principal that created the
    * <code>BlockPublicAccessConfiguration</code> using the
    * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
    * time that the configuration was created. Each time a configuration for block

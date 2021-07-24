@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example,
-   * a web server), Amazon Elemental MediaStore, or other server from which
-   * CloudFront gets your files.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that describes the S3 bucket, HTTP server (for example, a web
+   * server), AWS Elemental MediaStore, or other server from which CloudFront gets
+   * your files.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem">AWS
    * API Reference</a></p>
    */
@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline AwsCloudFrontDistributionOriginItem& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline AwsCloudFrontDistributionOriginItem& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want
+     * <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want
      * CloudFront to get objects for this origin.</p>
      */
     inline AwsCloudFrontDistributionOriginItem& WithDomainName(const char* value) { SetDomainName(value); return *this;}

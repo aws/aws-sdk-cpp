@@ -176,97 +176,97 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline const Aws::String& GetRepositoryConnectionArn() const{ return m_repositoryConnectionArn; }
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline bool RepositoryConnectionArnHasBeenSet() const { return m_repositoryConnectionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(const Aws::String& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = value; }
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(Aws::String&& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(const char* value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn.assign(value); }
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(const Aws::String& value) { SetRepositoryConnectionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(Aws::String&& value) { SetRepositoryConnectionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the repository connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#settingSS-up-vcontrol">Set
-     * up repository connection</a> in the <i>AWS Proton Administration Guide</i> and
-     * <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-getting-started.html#getting-started-step1">Getting
-     * started</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * <p>The Amazon Resource Name (ARN) of the repository connection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
+     * up repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+     * up with AWS Proton</a> in the <i>AWS Proton User Guide</i>. <i>Don't</i> include
+     * this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(const char* value) { SetRepositoryConnectionArn(value); return *this;}
@@ -324,10 +324,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -336,10 +336,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -348,10 +348,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -360,10 +360,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -372,10 +372,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -384,10 +384,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -396,10 +396,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -408,10 +408,10 @@ namespace Model
     /**
      * <p>A link to a spec file that provides inputs as defined in the service template
      * bundle schema file. The spec file is in YAML format. Don’t include pipeline
-     * inputs in the spec if your service template doesn’t include a service pipeline.
-     * For more information, see <a
+     * inputs in the spec if your service template <i>doesn’t</i> include a service
+     * pipeline. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>AWS Proton Administration Guide</i> and <a
+     * a service</a> in the <i>AWS Proton Administrator Guide</i> and <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
      * a service</a> in the <i>AWS Proton User Guide</i>.</p>
      */
@@ -422,7 +422,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -432,7 +432,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -442,7 +442,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -452,7 +452,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -462,7 +462,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -472,7 +472,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -482,7 +482,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */
@@ -492,7 +492,7 @@ namespace Model
      * <p>Create tags for your service. For more information, see <i>AWS Proton
      * resources and tagging</i> in the <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-     * Proton Administration Guide</a> or <a
+     * Proton Administrator Guide</a> or <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
      * Proton User Guide</a>.</p>
      */

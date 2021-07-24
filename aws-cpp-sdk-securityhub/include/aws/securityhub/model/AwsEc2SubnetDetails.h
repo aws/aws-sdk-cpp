@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a subnet in EC2.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a subnet in Amazon EC2.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SubnetDetails">AWS
    * API Reference</a></p>
    */
@@ -255,42 +256,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline AwsEc2SubnetDetails& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline AwsEc2SubnetDetails& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the subnet.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
      */
     inline AwsEc2SubnetDetails& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

@@ -42,7 +42,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
 
@@ -50,7 +50,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
 
@@ -66,7 +66,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
 
@@ -74,7 +74,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline StatusReason& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline StatusReason& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>. </p>
+     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline StatusReason& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
 

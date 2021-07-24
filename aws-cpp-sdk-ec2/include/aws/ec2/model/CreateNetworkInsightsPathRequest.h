@@ -41,165 +41,181 @@ namespace Model
   public:
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline const Aws::String& GetSourceIp() const{ return m_sourceIp; }
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline void SetSourceIp(Aws::String&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline void SetSourceIp(const char* value) { m_sourceIpHasBeenSet = true; m_sourceIp.assign(value); }
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSourceIp(const Aws::String& value) { SetSourceIp(value); return *this;}
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSourceIp(Aws::String&& value) { SetSourceIp(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the AWS resource that is the source of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the source of the
+     * path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSourceIp(const char* value) { SetSourceIp(value); return *this;}
 
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline const Aws::String& GetDestinationIp() const{ return m_destinationIp; }
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline bool DestinationIpHasBeenSet() const { return m_destinationIpHasBeenSet; }
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline void SetDestinationIp(const Aws::String& value) { m_destinationIpHasBeenSet = true; m_destinationIp = value; }
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline void SetDestinationIp(Aws::String&& value) { m_destinationIpHasBeenSet = true; m_destinationIp = std::move(value); }
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline void SetDestinationIp(const char* value) { m_destinationIpHasBeenSet = true; m_destinationIp.assign(value); }
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestinationIp(const Aws::String& value) { SetDestinationIp(value); return *this;}
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestinationIp(Aws::String&& value) { SetDestinationIp(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the AWS resource that is the destination of the path.</p>
+     * <p>The IP address of the Amazon Web Services resource that is the destination of
+     * the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestinationIp(const char* value) { SetDestinationIp(value); return *this;}
 
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resource that is the source of the path.</p>
+     * <p>The Amazon Web Services resource that is the source of the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resource that is the destination of the path.</p>
+     * <p>The Amazon Web Services resource that is the destination of the path.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -334,7 +350,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -342,7 +358,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -350,7 +366,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -358,7 +374,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -366,7 +382,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -374,7 +390,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -382,7 +398,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -390,7 +406,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a>.</p>
+     * to ensure idempotency</a>.</p>
      */
     inline CreateNetworkInsightsPathRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

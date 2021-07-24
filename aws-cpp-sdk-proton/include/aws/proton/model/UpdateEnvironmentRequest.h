@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline const Aws::String& GetEnvironmentAccountConnectionId() const{ return m_environmentAccountConnectionId; }
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline bool EnvironmentAccountConnectionIdHasBeenSet() const { return m_environmentAccountConnectionIdHasBeenSet; }
@@ -222,7 +222,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const Aws::String& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = value; }
@@ -230,7 +230,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline void SetEnvironmentAccountConnectionId(Aws::String&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::move(value); }
@@ -238,7 +238,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const char* value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId.assign(value); }
@@ -246,7 +246,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(const Aws::String& value) { SetEnvironmentAccountConnectionId(value); return *this;}
@@ -254,7 +254,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(Aws::String&& value) { SetEnvironmentAccountConnectionId(std::move(value)); return *this;}
@@ -262,7 +262,7 @@ namespace Model
     /**
      * <p>The ID of the environment account connection.</p> <p>You can only update to a
      * new environment account connection if it was created in the same environment
-     * account that the current environment account connection was created in and
+     * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
     inline UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(const char* value) { SetEnvironmentAccountConnectionId(value); return *this;}
@@ -310,50 +310,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Proton service role that allows AWS Proton to make API
-     * calls to other services your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS
+     * Proton to make API calls to other services your behalf.</p>
      */
     inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
 

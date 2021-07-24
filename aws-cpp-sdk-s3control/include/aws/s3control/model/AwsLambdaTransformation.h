@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Lambda function used to transform objects through an Object Lambda Access
+   * <p>Lambda function used to transform objects through an Object Lambda Access
    * Point.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AwsLambdaTransformation">AWS
    * API Reference</a></p>
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline AwsLambdaTransformation& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline AwsLambdaTransformation& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
     inline AwsLambdaTransformation& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 

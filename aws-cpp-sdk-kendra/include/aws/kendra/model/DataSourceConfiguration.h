@@ -14,6 +14,7 @@
 #include <aws/kendra/model/ConfluenceConfiguration.h>
 #include <aws/kendra/model/GoogleDriveConfiguration.h>
 #include <aws/kendra/model/WebCrawlerConfiguration.h>
+#include <aws/kendra/model/WorkDocsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -354,6 +355,43 @@ namespace Model
     
     inline DataSourceConfiguration& WithWebCrawlerConfiguration(WebCrawlerConfiguration&& value) { SetWebCrawlerConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to WorkDocs as your data
+     * source.</p>
+     */
+    inline const WorkDocsConfiguration& GetWorkDocsConfiguration() const{ return m_workDocsConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to WorkDocs as your data
+     * source.</p>
+     */
+    inline bool WorkDocsConfigurationHasBeenSet() const { return m_workDocsConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to WorkDocs as your data
+     * source.</p>
+     */
+    inline void SetWorkDocsConfiguration(const WorkDocsConfiguration& value) { m_workDocsConfigurationHasBeenSet = true; m_workDocsConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to WorkDocs as your data
+     * source.</p>
+     */
+    inline void SetWorkDocsConfiguration(WorkDocsConfiguration&& value) { m_workDocsConfigurationHasBeenSet = true; m_workDocsConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to WorkDocs as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithWorkDocsConfiguration(const WorkDocsConfiguration& value) { SetWorkDocsConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to WorkDocs as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithWorkDocsConfiguration(WorkDocsConfiguration&& value) { SetWorkDocsConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -382,6 +420,9 @@ namespace Model
 
     WebCrawlerConfiguration m_webCrawlerConfiguration;
     bool m_webCrawlerConfigurationHasBeenSet;
+
+    WorkDocsConfiguration m_workDocsConfiguration;
+    bool m_workDocsConfigurationHasBeenSet;
   };
 
 } // namespace Model

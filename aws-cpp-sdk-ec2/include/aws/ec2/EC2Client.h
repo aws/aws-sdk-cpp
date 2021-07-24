@@ -92,6 +92,7 @@
 #include <aws/ec2/model/CreateSpotDatafeedSubscriptionResponse.h>
 #include <aws/ec2/model/CreateStoreImageTaskResponse.h>
 #include <aws/ec2/model/CreateSubnetResponse.h>
+#include <aws/ec2/model/CreateSubnetCidrReservationResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorFilterResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorSessionResponse.h>
@@ -131,6 +132,7 @@
 #include <aws/ec2/model/DeleteNetworkInsightsPathResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
+#include <aws/ec2/model/DeleteSubnetCidrReservationResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
@@ -324,6 +326,7 @@
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetSerialConsoleAccessStatusResponse.h>
+#include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayPrefixListReferencesResponse.h>
@@ -549,6 +552,7 @@ namespace Model
         class CreateSpotDatafeedSubscriptionRequest;
         class CreateStoreImageTaskRequest;
         class CreateSubnetRequest;
+        class CreateSubnetCidrReservationRequest;
         class CreateTagsRequest;
         class CreateTrafficMirrorFilterRequest;
         class CreateTrafficMirrorFilterRuleRequest;
@@ -604,6 +608,7 @@ namespace Model
         class DeleteSnapshotRequest;
         class DeleteSpotDatafeedSubscriptionRequest;
         class DeleteSubnetRequest;
+        class DeleteSubnetCidrReservationRequest;
         class DeleteTagsRequest;
         class DeleteTrafficMirrorFilterRequest;
         class DeleteTrafficMirrorFilterRuleRequest;
@@ -812,6 +817,7 @@ namespace Model
         class GetPasswordDataRequest;
         class GetReservedInstancesExchangeQuoteRequest;
         class GetSerialConsoleAccessStatusRequest;
+        class GetSubnetCidrReservationsRequest;
         class GetTransitGatewayAttachmentPropagationsRequest;
         class GetTransitGatewayMulticastDomainAssociationsRequest;
         class GetTransitGatewayPrefixListReferencesRequest;
@@ -1012,6 +1018,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSpotDatafeedSubscriptionResponse, EC2Error> CreateSpotDatafeedSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateStoreImageTaskResponse, EC2Error> CreateStoreImageTaskOutcome;
         typedef Aws::Utils::Outcome<CreateSubnetResponse, EC2Error> CreateSubnetOutcome;
+        typedef Aws::Utils::Outcome<CreateSubnetCidrReservationResponse, EC2Error> CreateSubnetCidrReservationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficMirrorFilterResponse, EC2Error> CreateTrafficMirrorFilterOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficMirrorFilterRuleResponse, EC2Error> CreateTrafficMirrorFilterRuleOutcome;
@@ -1067,6 +1074,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSnapshotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSpotDatafeedSubscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSubnetOutcome;
+        typedef Aws::Utils::Outcome<DeleteSubnetCidrReservationResponse, EC2Error> DeleteSubnetCidrReservationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficMirrorFilterResponse, EC2Error> DeleteTrafficMirrorFilterOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficMirrorFilterRuleResponse, EC2Error> DeleteTrafficMirrorFilterRuleOutcome;
@@ -1275,6 +1283,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, EC2Error> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, EC2Error> GetReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetSerialConsoleAccessStatusOutcome;
+        typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error> GetTransitGatewayMulticastDomainAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayPrefixListReferencesResponse, EC2Error> GetTransitGatewayPrefixListReferencesOutcome;
@@ -1475,6 +1484,7 @@ namespace Model
         typedef std::future<CreateSpotDatafeedSubscriptionOutcome> CreateSpotDatafeedSubscriptionOutcomeCallable;
         typedef std::future<CreateStoreImageTaskOutcome> CreateStoreImageTaskOutcomeCallable;
         typedef std::future<CreateSubnetOutcome> CreateSubnetOutcomeCallable;
+        typedef std::future<CreateSubnetCidrReservationOutcome> CreateSubnetCidrReservationOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<CreateTrafficMirrorFilterOutcome> CreateTrafficMirrorFilterOutcomeCallable;
         typedef std::future<CreateTrafficMirrorFilterRuleOutcome> CreateTrafficMirrorFilterRuleOutcomeCallable;
@@ -1530,6 +1540,7 @@ namespace Model
         typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
         typedef std::future<DeleteSpotDatafeedSubscriptionOutcome> DeleteSpotDatafeedSubscriptionOutcomeCallable;
         typedef std::future<DeleteSubnetOutcome> DeleteSubnetOutcomeCallable;
+        typedef std::future<DeleteSubnetCidrReservationOutcome> DeleteSubnetCidrReservationOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DeleteTrafficMirrorFilterOutcome> DeleteTrafficMirrorFilterOutcomeCallable;
         typedef std::future<DeleteTrafficMirrorFilterRuleOutcome> DeleteTrafficMirrorFilterRuleOutcomeCallable;
@@ -1738,6 +1749,7 @@ namespace Model
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessStatusOutcomeCallable;
+        typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
         typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
         typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayPrefixListReferencesOutcome> GetTransitGatewayPrefixListReferencesOutcomeCallable;
@@ -1941,6 +1953,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateSpotDatafeedSubscriptionRequest&, const Model::CreateSpotDatafeedSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSpotDatafeedSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateStoreImageTaskRequest&, const Model::CreateStoreImageTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStoreImageTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateSubnetRequest&, const Model::CreateSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubnetResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateSubnetCidrReservationRequest&, const Model::CreateSubnetCidrReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubnetCidrReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTrafficMirrorFilterRequest&, const Model::CreateTrafficMirrorFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficMirrorFilterResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTrafficMirrorFilterRuleRequest&, const Model::CreateTrafficMirrorFilterRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficMirrorFilterRuleResponseReceivedHandler;
@@ -1996,6 +2009,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteSpotDatafeedSubscriptionRequest&, const Model::DeleteSpotDatafeedSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSpotDatafeedSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteSubnetRequest&, const Model::DeleteSubnetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubnetResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteSubnetCidrReservationRequest&, const Model::DeleteSubnetCidrReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubnetCidrReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorFilterRequest&, const Model::DeleteTrafficMirrorFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficMirrorFilterResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorFilterRuleRequest&, const Model::DeleteTrafficMirrorFilterRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficMirrorFilterRuleResponseReceivedHandler;
@@ -2204,6 +2218,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetSerialConsoleAccessStatusRequest&, const Model::GetSerialConsoleAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSerialConsoleAccessStatusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetSubnetCidrReservationsRequest&, const Model::GetSubnetCidrReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubnetCidrReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMulticastDomainAssociationsRequest&, const Model::GetTransitGatewayMulticastDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayPrefixListReferencesRequest&, const Model::GetTransitGatewayPrefixListReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayPrefixListReferencesResponseReceivedHandler;
@@ -2788,7 +2803,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
-         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
+         * or the IPv6 address count in the request. </p> <p>You can optionally use Prefix
+         * Delegation on the network interface. You must specify either the IPV6 Prefix
+         * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          */
@@ -2804,7 +2825,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
-         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
+         * or the IPv6 address count in the request. </p> <p>You can optionally use Prefix
+         * Delegation on the network interface. You must specify either the IPV6 Prefix
+         * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2822,7 +2849,13 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
-         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
+         * or the IPv6 address count in the request. </p> <p>You can optionally use Prefix
+         * Delegation on the network interface. You must specify either the IPV6 Prefix
+         * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2848,7 +2881,13 @@ namespace Model
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
          * confirm that the remapping is complete.</p> <p>You must specify either the IP
-         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
+         * addresses or the IP address count in the request.</p> <p>You can optionally use
+         * Prefix Delegation on the network interface. You must specify either the IPv4
+         * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
@@ -2872,7 +2911,13 @@ namespace Model
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
          * confirm that the remapping is complete.</p> <p>You must specify either the IP
-         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
+         * addresses or the IP address count in the request.</p> <p>You can optionally use
+         * Prefix Delegation on the network interface. You must specify either the IPv4
+         * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -2898,7 +2943,13 @@ namespace Model
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
          * confirm that the remapping is complete.</p> <p>You must specify either the IP
-         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
+         * addresses or the IP address count in the request.</p> <p>You can optionally use
+         * Prefix Delegation on the network interface. You must specify either the IPv4
+         * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
+         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -3068,7 +3119,7 @@ namespace Model
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
          * API Reference</a></p>
@@ -3085,7 +3136,7 @@ namespace Model
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
          * API Reference</a></p>
@@ -3104,7 +3155,7 @@ namespace Model
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
          * API Reference</a></p>
@@ -3227,7 +3278,7 @@ namespace Model
          * <p>Associates one or more targets with an event window. Only one type of target
          * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
          * window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
@@ -3239,7 +3290,7 @@ namespace Model
          * <p>Associates one or more targets with an event window. Only one type of target
          * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
          * window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
@@ -3253,7 +3304,7 @@ namespace Model
          * <p>Associates one or more targets with an event window. Only one type of target
          * (instance IDs, Dedicated Host IDs, or tags) can be specified with an event
          * window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">AWS
@@ -3271,7 +3322,7 @@ namespace Model
          * order to disassociate the route table later. A route table can be associated
          * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
          * API Reference</a></p>
@@ -3286,7 +3337,7 @@ namespace Model
          * order to disassociate the route table later. A route table can be associated
          * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
          * API Reference</a></p>
@@ -3303,7 +3354,7 @@ namespace Model
          * order to disassociate the route table later. A route table can be associated
          * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
          * API Reference</a></p>
@@ -3470,7 +3521,7 @@ namespace Model
          * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
@@ -3487,7 +3538,7 @@ namespace Model
          * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
@@ -3506,7 +3557,7 @@ namespace Model
          * Amazon-provided IPv6 CIDR block.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
-         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * and subnet sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
@@ -3638,18 +3689,18 @@ namespace Model
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>After you attach an EBS volume, you must make it available. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
-         * an EBS volume available for use</a>.</p> <p>If a volume has an AWS Marketplace
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make
+         * an EBS volume available for use</a>.</p> <p>If a volume has an Marketplace
          * product code:</p> <ul> <li> <p>The volume can be attached only to a stopped
-         * instance.</p> </li> <li> <p>AWS Marketplace product codes are copied from the
-         * volume to the instance.</p> </li> <li> <p>You must be subscribed to the
-         * product.</p> </li> <li> <p>The instance type and operating system of the
-         * instance must support the product. For example, you can't detach a volume from a
-         * Windows instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
+         * instance.</p> </li> <li> <p>Marketplace product codes are copied from the volume
+         * to the instance.</p> </li> <li> <p>You must be subscribed to the product.</p>
+         * </li> <li> <p>The instance type and operating system of the instance must
+         * support the product. For example, you can't detach a volume from a Windows
+         * instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-         * Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach
+         * an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
          * API Reference</a></p>
          */
@@ -3664,18 +3715,18 @@ namespace Model
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>After you attach an EBS volume, you must make it available. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
-         * an EBS volume available for use</a>.</p> <p>If a volume has an AWS Marketplace
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make
+         * an EBS volume available for use</a>.</p> <p>If a volume has an Marketplace
          * product code:</p> <ul> <li> <p>The volume can be attached only to a stopped
-         * instance.</p> </li> <li> <p>AWS Marketplace product codes are copied from the
-         * volume to the instance.</p> </li> <li> <p>You must be subscribed to the
-         * product.</p> </li> <li> <p>The instance type and operating system of the
-         * instance must support the product. For example, you can't detach a volume from a
-         * Windows instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
+         * instance.</p> </li> <li> <p>Marketplace product codes are copied from the volume
+         * to the instance.</p> </li> <li> <p>You must be subscribed to the product.</p>
+         * </li> <li> <p>The instance type and operating system of the instance must
+         * support the product. For example, you can't detach a volume from a Windows
+         * instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-         * Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach
+         * an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
          * API Reference</a></p>
          *
@@ -3692,18 +3743,18 @@ namespace Model
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>After you attach an EBS volume, you must make it available. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making
-         * an EBS volume available for use</a>.</p> <p>If a volume has an AWS Marketplace
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make
+         * an EBS volume available for use</a>.</p> <p>If a volume has an Marketplace
          * product code:</p> <ul> <li> <p>The volume can be attached only to a stopped
-         * instance.</p> </li> <li> <p>AWS Marketplace product codes are copied from the
-         * volume to the instance.</p> </li> <li> <p>You must be subscribed to the
-         * product.</p> </li> <li> <p>The instance type and operating system of the
-         * instance must support the product. For example, you can't detach a volume from a
-         * Windows instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
+         * instance.</p> </li> <li> <p>Marketplace product codes are copied from the volume
+         * to the instance.</p> </li> <li> <p>You must be subscribed to the product.</p>
+         * </li> <li> <p>The instance type and operating system of the instance must
+         * support the product. For example, you can't detach a volume from a Windows
+         * instance and attach it to a Linux instance.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
-         * Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach
+         * an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
          * API Reference</a></p>
          *
@@ -4393,19 +4444,19 @@ namespace Model
          * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
          * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
          * encryption for the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default AWS Key Management Service (AWS KMS) customer master key
-         * (CMK); however, you can specify a different CMK. To copy an encrypted snapshot
-         * that has been shared from another account, you must have permissions for the CMK
-         * used to encrypt the snapshot.</p> <p>Snapshots copied to an Outpost are
-         * encrypted by default using the default encryption key for the Region, or a
-         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
-         * not support unencrypted snapshots. For more information, <a
+         * copies use the default Key Management Service (KMS) KMS key; however, you can
+         * specify a different KMS key. To copy an encrypted snapshot that has been shared
+         * from another account, you must have permissions for the KMS key used to encrypt
+         * the snapshot.</p> <p>Snapshots copied to an Outpost are encrypted by default
+         * using the default encryption key for the Region, or a different key that you
+         * specify in the request using <b>KmsKeyId</b>. Outposts do not support
+         * unencrypted snapshots. For more information, <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
          * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
          * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
@@ -4422,19 +4473,19 @@ namespace Model
          * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
          * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
          * encryption for the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default AWS Key Management Service (AWS KMS) customer master key
-         * (CMK); however, you can specify a different CMK. To copy an encrypted snapshot
-         * that has been shared from another account, you must have permissions for the CMK
-         * used to encrypt the snapshot.</p> <p>Snapshots copied to an Outpost are
-         * encrypted by default using the default encryption key for the Region, or a
-         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
-         * not support unencrypted snapshots. For more information, <a
+         * copies use the default Key Management Service (KMS) KMS key; however, you can
+         * specify a different KMS key. To copy an encrypted snapshot that has been shared
+         * from another account, you must have permissions for the KMS key used to encrypt
+         * the snapshot.</p> <p>Snapshots copied to an Outpost are encrypted by default
+         * using the default encryption key for the Region, or a different key that you
+         * specify in the request using <b>KmsKeyId</b>. Outposts do not support
+         * unencrypted snapshots. For more information, <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
          * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
          * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
@@ -4453,19 +4504,19 @@ namespace Model
          * <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain
          * encrypted. Copies of unencrypted snapshots remain unencrypted, unless you enable
          * encryption for the snapshot copy operation. By default, encrypted snapshot
-         * copies use the default AWS Key Management Service (AWS KMS) customer master key
-         * (CMK); however, you can specify a different CMK. To copy an encrypted snapshot
-         * that has been shared from another account, you must have permissions for the CMK
-         * used to encrypt the snapshot.</p> <p>Snapshots copied to an Outpost are
-         * encrypted by default using the default encryption key for the Region, or a
-         * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
-         * not support unencrypted snapshots. For more information, <a
+         * copies use the default Key Management Service (KMS) KMS key; however, you can
+         * specify a different KMS key. To copy an encrypted snapshot that has been shared
+         * from another account, you must have permissions for the KMS key used to encrypt
+         * the snapshot.</p> <p>Snapshots copied to an Outpost are encrypted by default
+         * using the default encryption key for the Region, or a different key that you
+         * specify in the request using <b>KmsKeyId</b>. Outposts do not support
+         * unencrypted snapshots. For more information, <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
          * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
          * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
          * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
@@ -4567,8 +4618,8 @@ namespace Model
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
          * <a
          * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateways</a> in the <i>Amazon Web Services Wavelength Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
          * API Reference</a></p>
          */
@@ -4578,8 +4629,8 @@ namespace Model
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
          * <a
          * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateways</a> in the <i>Amazon Web Services Wavelength Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
          * API Reference</a></p>
          *
@@ -4591,8 +4642,8 @@ namespace Model
          * <p>Creates a carrier gateway. For more information about carrier gateways, see
          * <a
          * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier
-         * gateways</a> in the <i>AWS Wavelength Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * gateways</a> in the <i>Amazon Web Services Wavelength Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">AWS
          * API Reference</a></p>
          *
@@ -4761,7 +4812,7 @@ namespace Model
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-         * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
+         * a default subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
          * API Reference</a></p>
@@ -4773,7 +4824,7 @@ namespace Model
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-         * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
+         * a default subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
          * API Reference</a></p>
@@ -4787,7 +4838,7 @@ namespace Model
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating
-         * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
+         * a default subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
          * API Reference</a></p>
@@ -4801,7 +4852,7 @@ namespace Model
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
          * cannot have more than one default VPC per Region.</p> <p>If your account
@@ -4821,7 +4872,7 @@ namespace Model
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
          * cannot have more than one default VPC per Region.</p> <p>If your account
@@ -4843,7 +4894,7 @@ namespace Model
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
-         * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and default subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
          * cannot have more than one default VPC per Region.</p> <p>If your account
@@ -4896,7 +4947,7 @@ namespace Model
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -4939,7 +4990,7 @@ namespace Model
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -4984,7 +5035,7 @@ namespace Model
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
@@ -5074,7 +5125,7 @@ namespace Model
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-         * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
@@ -5095,7 +5146,7 @@ namespace Model
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-         * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
@@ -5118,7 +5169,7 @@ namespace Model
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-         * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * log records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
@@ -5240,7 +5291,7 @@ namespace Model
          * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
          * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
          * </ul>  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
@@ -5262,7 +5313,7 @@ namespace Model
          * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
          * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
          * </ul>  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
@@ -5286,7 +5337,7 @@ namespace Model
          * <p>Expedited scheduled events and network maintenance events. </p> </li> <li>
          * <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p> </li>
          * </ul>  <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">AWS
@@ -5623,7 +5674,7 @@ namespace Model
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * Gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
@@ -5643,7 +5694,7 @@ namespace Model
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * Gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
@@ -5665,7 +5716,7 @@ namespace Model
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * Gateways</a> in the <i>Amazon Virtual Private Cloud User
+         * gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
@@ -5948,8 +5999,9 @@ namespace Model
          * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
          * volume can either be restored to its initial launch state, or it can be restored
          * using a specific snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
-         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
          * API Reference</a></p>
          */
@@ -5959,8 +6011,9 @@ namespace Model
          * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
          * volume can either be restored to its initial launch state, or it can be restored
          * using a specific snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
-         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
          * API Reference</a></p>
          *
@@ -5972,8 +6025,9 @@ namespace Model
          * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
          * volume can either be restored to its initial launch state, or it can be restored
          * using a specific snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
-         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">AWS
          * API Reference</a></p>
          *
@@ -6136,7 +6190,7 @@ namespace Model
          * specific, so we use that route to determine where to target the traffic.</p>
          * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
          * Reference</a></p>
@@ -6158,7 +6212,7 @@ namespace Model
          * specific, so we use that route to determine where to target the traffic.</p>
          * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
          * Reference</a></p>
@@ -6182,7 +6236,7 @@ namespace Model
          * specific, so we use that route to determine where to target the traffic.</p>
          * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
          * Reference</a></p>
@@ -6196,7 +6250,7 @@ namespace Model
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
          * API Reference</a></p>
@@ -6208,7 +6262,7 @@ namespace Model
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
          * API Reference</a></p>
@@ -6222,7 +6276,7 @@ namespace Model
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
          * API Reference</a></p>
@@ -6330,24 +6384,24 @@ namespace Model
          * Region, the snapshot must be stored in the same Region as the volume. If you
          * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
          * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
-         * snapshot is created, any AWS Marketplace product codes that are associated with
-         * the source volume are propagated to the snapshot.</p> <p>You can take a snapshot
-         * of an attached volume that is in use. However, snapshots only capture data that
-         * has been written to your EBS volume at the time the snapshot command is issued;
-         * this might exclude any data that has been cached by any applications or the
-         * operating system. If you can pause any file systems on the volume long enough to
-         * take a snapshot, your snapshot should be complete. However, if you cannot pause
-         * all file writes to the volume, you should unmount the volume from within the
-         * instance, issue the snapshot command, and then remount the volume to ensure a
-         * consistent and complete snapshot. You may remount and use your volume while the
-         * snapshot status is <code>pending</code>.</p> <p>To create a snapshot for EBS
-         * volumes that serve as root devices, you should stop the instance before taking
-         * the snapshot.</p> <p>Snapshots that are taken from encrypted volumes are
-         * automatically encrypted. Volumes that are created from encrypted snapshots are
-         * also automatically encrypted. Your encrypted volumes and any associated
-         * snapshots always remain protected.</p> <p>You can tag your snapshots during
-         * creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * snapshot is created, any Marketplace product codes that are associated with the
+         * source volume are propagated to the snapshot.</p> <p>You can take a snapshot of
+         * an attached volume that is in use. However, snapshots only capture data that has
+         * been written to your Amazon EBS volume at the time the snapshot command is
+         * issued; this might exclude any data that has been cached by any applications or
+         * the operating system. If you can pause any file systems on the volume long
+         * enough to take a snapshot, your snapshot should be complete. However, if you
+         * cannot pause all file writes to the volume, you should unmount the volume from
+         * within the instance, issue the snapshot command, and then remount the volume to
+         * ensure a consistent and complete snapshot. You may remount and use your volume
+         * while the snapshot status is <code>pending</code>.</p> <p>To create a snapshot
+         * for Amazon EBS volumes that serve as root devices, you should stop the instance
+         * before taking the snapshot.</p> <p>Snapshots that are taken from encrypted
+         * volumes are automatically encrypted. Volumes that are created from encrypted
+         * snapshots are also automatically encrypted. Your encrypted volumes and any
+         * associated snapshots always remain protected.</p> <p>You can tag your snapshots
+         * during creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
@@ -6368,24 +6422,24 @@ namespace Model
          * Region, the snapshot must be stored in the same Region as the volume. If you
          * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
          * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
-         * snapshot is created, any AWS Marketplace product codes that are associated with
-         * the source volume are propagated to the snapshot.</p> <p>You can take a snapshot
-         * of an attached volume that is in use. However, snapshots only capture data that
-         * has been written to your EBS volume at the time the snapshot command is issued;
-         * this might exclude any data that has been cached by any applications or the
-         * operating system. If you can pause any file systems on the volume long enough to
-         * take a snapshot, your snapshot should be complete. However, if you cannot pause
-         * all file writes to the volume, you should unmount the volume from within the
-         * instance, issue the snapshot command, and then remount the volume to ensure a
-         * consistent and complete snapshot. You may remount and use your volume while the
-         * snapshot status is <code>pending</code>.</p> <p>To create a snapshot for EBS
-         * volumes that serve as root devices, you should stop the instance before taking
-         * the snapshot.</p> <p>Snapshots that are taken from encrypted volumes are
-         * automatically encrypted. Volumes that are created from encrypted snapshots are
-         * also automatically encrypted. Your encrypted volumes and any associated
-         * snapshots always remain protected.</p> <p>You can tag your snapshots during
-         * creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * snapshot is created, any Marketplace product codes that are associated with the
+         * source volume are propagated to the snapshot.</p> <p>You can take a snapshot of
+         * an attached volume that is in use. However, snapshots only capture data that has
+         * been written to your Amazon EBS volume at the time the snapshot command is
+         * issued; this might exclude any data that has been cached by any applications or
+         * the operating system. If you can pause any file systems on the volume long
+         * enough to take a snapshot, your snapshot should be complete. However, if you
+         * cannot pause all file writes to the volume, you should unmount the volume from
+         * within the instance, issue the snapshot command, and then remount the volume to
+         * ensure a consistent and complete snapshot. You may remount and use your volume
+         * while the snapshot status is <code>pending</code>.</p> <p>To create a snapshot
+         * for Amazon EBS volumes that serve as root devices, you should stop the instance
+         * before taking the snapshot.</p> <p>Snapshots that are taken from encrypted
+         * volumes are automatically encrypted. Volumes that are created from encrypted
+         * snapshots are also automatically encrypted. Your encrypted volumes and any
+         * associated snapshots always remain protected.</p> <p>You can tag your snapshots
+         * during creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
@@ -6408,24 +6462,24 @@ namespace Model
          * Region, the snapshot must be stored in the same Region as the volume. If you
          * create a snapshot of a volume on an Outpost, the snapshot can be stored on the
          * same Outpost as the volume, or in the Region for that Outpost.</p> <p>When a
-         * snapshot is created, any AWS Marketplace product codes that are associated with
-         * the source volume are propagated to the snapshot.</p> <p>You can take a snapshot
-         * of an attached volume that is in use. However, snapshots only capture data that
-         * has been written to your EBS volume at the time the snapshot command is issued;
-         * this might exclude any data that has been cached by any applications or the
-         * operating system. If you can pause any file systems on the volume long enough to
-         * take a snapshot, your snapshot should be complete. However, if you cannot pause
-         * all file writes to the volume, you should unmount the volume from within the
-         * instance, issue the snapshot command, and then remount the volume to ensure a
-         * consistent and complete snapshot. You may remount and use your volume while the
-         * snapshot status is <code>pending</code>.</p> <p>To create a snapshot for EBS
-         * volumes that serve as root devices, you should stop the instance before taking
-         * the snapshot.</p> <p>Snapshots that are taken from encrypted volumes are
-         * automatically encrypted. Volumes that are created from encrypted snapshots are
-         * also automatically encrypted. Your encrypted volumes and any associated
-         * snapshots always remain protected.</p> <p>You can tag your snapshots during
-         * creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * snapshot is created, any Marketplace product codes that are associated with the
+         * source volume are propagated to the snapshot.</p> <p>You can take a snapshot of
+         * an attached volume that is in use. However, snapshots only capture data that has
+         * been written to your Amazon EBS volume at the time the snapshot command is
+         * issued; this might exclude any data that has been cached by any applications or
+         * the operating system. If you can pause any file systems on the volume long
+         * enough to take a snapshot, your snapshot should be complete. However, if you
+         * cannot pause all file writes to the volume, you should unmount the volume from
+         * within the instance, issue the snapshot command, and then remount the volume to
+         * ensure a consistent and complete snapshot. You may remount and use your volume
+         * while the snapshot status is <code>pending</code>.</p> <p>To create a snapshot
+         * for Amazon EBS volumes that serve as root devices, you should stop the instance
+         * before taking the snapshot.</p> <p>Snapshots that are taken from encrypted
+         * volumes are automatically encrypted. Volumes that are created from encrypted
+         * snapshots are also automatically encrypted. Your encrypted volumes and any
+         * associated snapshots always remain protected.</p> <p>You can tag your snapshots
+         * during creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
@@ -6582,16 +6636,16 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
-         * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
-         * up in a star topology with a logical router in the middle.</p> <p>When you stop
-         * an instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information about subnets,
-         * see <a
+         * /64 prefix length. </p>  <p>Amazon Web Services reserves both the
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
+         * available for use.</p>  <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p>
+         * <p>When you stop an instance in a subnet, it retains its private IPv4 address.
+         * It's therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information
+         * about subnets, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
          * API Reference</a></p>
@@ -6605,16 +6659,16 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
-         * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
-         * up in a star topology with a logical router in the middle.</p> <p>When you stop
-         * an instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information about subnets,
-         * see <a
+         * /64 prefix length. </p>  <p>Amazon Web Services reserves both the
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
+         * available for use.</p>  <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p>
+         * <p>When you stop an instance in a subnet, it retains its private IPv4 address.
+         * It's therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information
+         * about subnets, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
          * API Reference</a></p>
@@ -6630,16 +6684,16 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
-         * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
-         * up in a star topology with a logical router in the middle.</p> <p>When you stop
-         * an instance in a subnet, it retains its private IPv4 address. It's therefore
-         * possible to have a subnet with no running instances (they're all stopped), but
-         * no remaining IP addresses available.</p> <p>For more information about subnets,
-         * see <a
+         * /64 prefix length. </p>  <p>Amazon Web Services reserves both the
+         * first four and the last IPv4 address in each subnet's CIDR block. They're not
+         * available for use.</p>  <p>If you add more than one subnet to a VPC,
+         * they're set up in a star topology with a logical router in the middle.</p>
+         * <p>When you stop an instance in a subnet, it retains its private IPv4 address.
+         * It's therefore possible to have a subnet with no running instances (they're all
+         * stopped), but no remaining IP addresses available.</p> <p>For more information
+         * about subnets, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
          * API Reference</a></p>
@@ -6647,6 +6701,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSubnetAsync(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
+         * reservations, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSubnetCidrReservationOutcome CreateSubnetCidrReservation(const Model::CreateSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
+         * reservations, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSubnetCidrReservationOutcomeCallable CreateSubnetCidrReservationCallable(const Model::CreateSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
+         * reservations, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSubnetCidrReservationAsync(const Model::CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites only the specified tags for the specified Amazon EC2
@@ -7238,7 +7329,7 @@ namespace Model
         /**
          * <p>Creates an EBS volume that can be attached to an instance in the same
          * Availability Zone.</p> <p>You can create a new empty volume or restore a volume
-         * from an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+         * from an EBS snapshot. Any Marketplace product codes from the snapshot are
          * propagated to the volume.</p> <p>You can create encrypted volumes. Encrypted
          * volumes must be attached to instances that support Amazon EBS encryption.
          * Volumes that are created from encrypted snapshots are also automatically
@@ -7246,10 +7337,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
@@ -7260,7 +7351,7 @@ namespace Model
         /**
          * <p>Creates an EBS volume that can be attached to an instance in the same
          * Availability Zone.</p> <p>You can create a new empty volume or restore a volume
-         * from an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+         * from an EBS snapshot. Any Marketplace product codes from the snapshot are
          * propagated to the volume.</p> <p>You can create encrypted volumes. Encrypted
          * volumes must be attached to instances that support Amazon EBS encryption.
          * Volumes that are created from encrypted snapshots are also automatically
@@ -7268,10 +7359,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
@@ -7284,7 +7375,7 @@ namespace Model
         /**
          * <p>Creates an EBS volume that can be attached to an instance in the same
          * Availability Zone.</p> <p>You can create a new empty volume or restore a volume
-         * from an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
+         * from an EBS snapshot. Any Marketplace product codes from the snapshot are
          * propagated to the volume.</p> <p>You can create encrypted volumes. Encrypted
          * volumes must be attached to instances that support Amazon EBS encryption.
          * Volumes that are created from encrypted snapshots are also automatically
@@ -7292,10 +7383,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
@@ -7311,7 +7402,7 @@ namespace Model
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
          * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
          * CIDR block from an IPv6 address pool that you provisioned through bring your own
@@ -7321,7 +7412,7 @@ namespace Model
          * which include only a default DNS server that we provide (AmazonProvidedDNS). For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
@@ -7339,7 +7430,7 @@ namespace Model
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
          * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
          * CIDR block from an IPv6 address pool that you provisioned through bring your own
@@ -7349,7 +7440,7 @@ namespace Model
          * which include only a default DNS server that we provide (AmazonProvidedDNS). For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
@@ -7369,7 +7460,7 @@ namespace Model
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
          * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
          * CIDR block from an IPv6 address pool that you provisioned through bring your own
@@ -7379,7 +7470,7 @@ namespace Model
          * which include only a default DNS server that we provide (AmazonProvidedDNS). For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
@@ -7594,10 +7685,10 @@ namespace Model
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
          * own and an accepter VPC with which to create the connection. The accepter VPC
-         * can belong to another AWS account and can be in a different Region to the
-         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
-         * For more information, see the <a
+         * can belong to another account and can be in a different Region to the requester
+         * VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+         *  <p>Limitations and rules apply to a VPC peering connection. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
@@ -7613,10 +7704,10 @@ namespace Model
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
          * own and an accepter VPC with which to create the connection. The accepter VPC
-         * can belong to another AWS account and can be in a different Region to the
-         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
-         * For more information, see the <a
+         * can belong to another account and can be in a different Region to the requester
+         * VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+         *  <p>Limitations and rules apply to a VPC peering connection. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
@@ -7634,10 +7725,10 @@ namespace Model
         /**
          * <p>Requests a VPC peering connection between two VPCs: a requester VPC that you
          * own and an accepter VPC with which to create the connection. The accepter VPC
-         * can belong to another AWS account and can be in a different Region to the
-         * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
-         * For more information, see the <a
+         * can belong to another account and can be in a different Region to the requester
+         * VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+         *  <p>Limitations and rules apply to a VPC peering connection. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
@@ -8122,7 +8213,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
@@ -8132,7 +8223,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
@@ -8144,7 +8235,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified event window.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">AWS
@@ -8735,7 +8826,7 @@ namespace Model
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete
          * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
@@ -8753,7 +8844,7 @@ namespace Model
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete
          * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
@@ -8773,7 +8864,7 @@ namespace Model
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete
          * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
@@ -8835,6 +8926,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSubnetAsync(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSubnetCidrReservationOutcome DeleteSubnetCidrReservation(const Model::DeleteSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSubnetCidrReservationOutcomeCallable DeleteSubnetCidrReservationCallable(const Model::DeleteSubnetCidrReservationRequest& request) const;
+
+        /**
+         * <p>Deletes a subnet CIDR reservation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSubnetCidrReservationAsync(const Model::DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified set of tags from the specified set of resources.</p>
@@ -9236,7 +9352,7 @@ namespace Model
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
@@ -9249,7 +9365,7 @@ namespace Model
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
@@ -9264,7 +9380,7 @@ namespace Model
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
@@ -10464,7 +10580,7 @@ namespace Model
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
          * API Reference</a></p>
@@ -10475,7 +10591,7 @@ namespace Model
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
          * API Reference</a></p>
@@ -10488,7 +10604,7 @@ namespace Model
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
+         * options sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
          * API Reference</a></p>
@@ -11478,7 +11594,7 @@ namespace Model
          * which can affect performance. We recommend that you use pagination to ensure
          * that the operation returns quickly and successfully. </p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
@@ -11495,7 +11611,7 @@ namespace Model
          * which can affect performance. We recommend that you use pagination to ensure
          * that the operation returns quickly and successfully. </p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
@@ -11514,7 +11630,7 @@ namespace Model
          * which can affect performance. We recommend that you use pagination to ensure
          * that the operation returns quickly and successfully. </p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">AWS
@@ -12548,8 +12664,9 @@ namespace Model
 
         /**
          * <p>Describes a root volume replacement task. For more information, see <a
-         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
-         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
          * API Reference</a></p>
          */
@@ -12557,8 +12674,9 @@ namespace Model
 
         /**
          * <p>Describes a root volume replacement task. For more information, see <a
-         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
-         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
          * API Reference</a></p>
          *
@@ -12568,8 +12686,9 @@ namespace Model
 
         /**
          * <p>Describes a root volume replacement task. For more information, see <a
-         * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
-         * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
+         * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">AWS
          * API Reference</a></p>
          *
@@ -12789,7 +12908,7 @@ namespace Model
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
          * API Reference</a></p>
@@ -12803,7 +12922,7 @@ namespace Model
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
          * API Reference</a></p>
@@ -12819,7 +12938,7 @@ namespace Model
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
          * API Reference</a></p>
@@ -13051,15 +13170,15 @@ namespace Model
          * <p>Describes the specified EBS snapshots available to you or all of the EBS
          * snapshots available to you.</p> <p>The snapshots available to you include public
          * snapshots, private snapshots that you own, and private snapshots owned by other
-         * AWS accounts for which you have explicit create volume permissions.</p> <p>The
+         * accounts for which you have explicit create volume permissions.</p> <p>The
          * create volume permissions fall into the following categories:</p> <ul> <li> <p>
          * <i>public</i>: The owner of the snapshot granted create volume permissions for
-         * the snapshot to the <code>all</code> group. All AWS accounts have create volume
+         * the snapshot to the <code>all</code> group. All accounts have create volume
          * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
-         * of the snapshot granted create volume permissions to a specific AWS account.</p>
-         * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
+         * of the snapshot granted create volume permissions to a specific account.</p>
+         * </li> <li> <p> <i>implicit</i>: An account has implicit create volume
          * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
-         * returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS
+         * returned can be filtered by specifying snapshot IDs, snapshot owners, or
          * accounts with create volume permissions. If no options are specified, Amazon EC2
          * returns all snapshots for which you have create volume permissions.</p> <p>If
          * you specify one or more snapshot IDs, only snapshots that have the specified IDs
@@ -13067,11 +13186,11 @@ namespace Model
          * you specify a snapshot ID for which you do not have access, it is not included
          * in the returned results.</p> <p>If you specify one or more snapshot owners using
          * the <code>OwnerIds</code> option, only snapshots from the specified owners and
-         * for which you have access are returned. The results can include the AWS account
-         * IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon,
-         * or <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
+         * for which you have access are returned. The results can include the account IDs
+         * of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
+         * <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
          * restorable users, only snapshots with create snapshot permissions for those
-         * users are returned. You can specify AWS account IDs (if you own the snapshots),
+         * users are returned. You can specify account IDs (if you own the snapshots),
          * <code>self</code> for snapshots for which you own or have explicit permissions,
          * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
          * list of snapshots, we recommend that you paginate the output to make the list
@@ -13095,15 +13214,15 @@ namespace Model
          * <p>Describes the specified EBS snapshots available to you or all of the EBS
          * snapshots available to you.</p> <p>The snapshots available to you include public
          * snapshots, private snapshots that you own, and private snapshots owned by other
-         * AWS accounts for which you have explicit create volume permissions.</p> <p>The
+         * accounts for which you have explicit create volume permissions.</p> <p>The
          * create volume permissions fall into the following categories:</p> <ul> <li> <p>
          * <i>public</i>: The owner of the snapshot granted create volume permissions for
-         * the snapshot to the <code>all</code> group. All AWS accounts have create volume
+         * the snapshot to the <code>all</code> group. All accounts have create volume
          * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
-         * of the snapshot granted create volume permissions to a specific AWS account.</p>
-         * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
+         * of the snapshot granted create volume permissions to a specific account.</p>
+         * </li> <li> <p> <i>implicit</i>: An account has implicit create volume
          * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
-         * returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS
+         * returned can be filtered by specifying snapshot IDs, snapshot owners, or
          * accounts with create volume permissions. If no options are specified, Amazon EC2
          * returns all snapshots for which you have create volume permissions.</p> <p>If
          * you specify one or more snapshot IDs, only snapshots that have the specified IDs
@@ -13111,11 +13230,11 @@ namespace Model
          * you specify a snapshot ID for which you do not have access, it is not included
          * in the returned results.</p> <p>If you specify one or more snapshot owners using
          * the <code>OwnerIds</code> option, only snapshots from the specified owners and
-         * for which you have access are returned. The results can include the AWS account
-         * IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon,
-         * or <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
+         * for which you have access are returned. The results can include the account IDs
+         * of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
+         * <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
          * restorable users, only snapshots with create snapshot permissions for those
-         * users are returned. You can specify AWS account IDs (if you own the snapshots),
+         * users are returned. You can specify account IDs (if you own the snapshots),
          * <code>self</code> for snapshots for which you own or have explicit permissions,
          * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
          * list of snapshots, we recommend that you paginate the output to make the list
@@ -13141,15 +13260,15 @@ namespace Model
          * <p>Describes the specified EBS snapshots available to you or all of the EBS
          * snapshots available to you.</p> <p>The snapshots available to you include public
          * snapshots, private snapshots that you own, and private snapshots owned by other
-         * AWS accounts for which you have explicit create volume permissions.</p> <p>The
+         * accounts for which you have explicit create volume permissions.</p> <p>The
          * create volume permissions fall into the following categories:</p> <ul> <li> <p>
          * <i>public</i>: The owner of the snapshot granted create volume permissions for
-         * the snapshot to the <code>all</code> group. All AWS accounts have create volume
+         * the snapshot to the <code>all</code> group. All accounts have create volume
          * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
-         * of the snapshot granted create volume permissions to a specific AWS account.</p>
-         * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
+         * of the snapshot granted create volume permissions to a specific account.</p>
+         * </li> <li> <p> <i>implicit</i>: An account has implicit create volume
          * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
-         * returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS
+         * returned can be filtered by specifying snapshot IDs, snapshot owners, or
          * accounts with create volume permissions. If no options are specified, Amazon EC2
          * returns all snapshots for which you have create volume permissions.</p> <p>If
          * you specify one or more snapshot IDs, only snapshots that have the specified IDs
@@ -13157,11 +13276,11 @@ namespace Model
          * you specify a snapshot ID for which you do not have access, it is not included
          * in the returned results.</p> <p>If you specify one or more snapshot owners using
          * the <code>OwnerIds</code> option, only snapshots from the specified owners and
-         * for which you have access are returned. The results can include the AWS account
-         * IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon,
-         * or <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
+         * for which you have access are returned. The results can include the account IDs
+         * of the specified owners, <code>amazon</code> for snapshots owned by Amazon, or
+         * <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
          * restorable users, only snapshots with create snapshot permissions for those
-         * users are returned. You can specify AWS account IDs (if you own the snapshots),
+         * users are returned. You can specify account IDs (if you own the snapshots),
          * <code>self</code> for snapshots for which you own or have explicit permissions,
          * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
          * list of snapshots, we recommend that you paginate the output to make the list
@@ -13530,7 +13649,7 @@ namespace Model
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
          * API Reference</a></p>
@@ -13540,7 +13659,7 @@ namespace Model
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
          * API Reference</a></p>
@@ -13552,7 +13671,7 @@ namespace Model
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
-         * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
+         * VPC and subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
          * API Reference</a></p>
@@ -14000,7 +14119,7 @@ namespace Model
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks might still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
          * the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and might
          * require you to take action. For example, if your volume returns an
@@ -14039,7 +14158,7 @@ namespace Model
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks might still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
          * the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and might
          * require you to take action. For example, if your volume returns an
@@ -14080,7 +14199,7 @@ namespace Model
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks might still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
          * the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and might
          * require you to take action. For example, if your volume returns an
@@ -14168,9 +14287,9 @@ namespace Model
          * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * volume modifications</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          */
@@ -14185,9 +14304,9 @@ namespace Model
          * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * volume modifications</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          *
@@ -14204,9 +14323,9 @@ namespace Model
          * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * volume modifications</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          *
@@ -14727,10 +14846,10 @@ namespace Model
          * delayed indefinitely until you unmount the volume, force detachment, reboot the
          * instance, or all three. If an EBS volume is the root device of an instance, it
          * can't be detached while the instance is running. To detach the root volume, stop
-         * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
+         * the instance first.</p> <p>When a volume with an Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
          * instance.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
@@ -14746,10 +14865,10 @@ namespace Model
          * delayed indefinitely until you unmount the volume, force detachment, reboot the
          * instance, or all three. If an EBS volume is the root device of an instance, it
          * can't be detached while the instance is running. To detach the root volume, stop
-         * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
+         * the instance first.</p> <p>When a volume with an Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
          * instance.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
@@ -14767,10 +14886,10 @@ namespace Model
          * delayed indefinitely until you unmount the volume, force detachment, reboot the
          * instance, or all three. If an EBS volume is the root device of an instance, it
          * can't be detached while the instance is running. To detach the root volume, stop
-         * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
+         * the instance first.</p> <p>When a volume with an Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
          * instance.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
          * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
@@ -15261,7 +15380,7 @@ namespace Model
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
@@ -15272,7 +15391,7 @@ namespace Model
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
@@ -15285,7 +15404,7 @@ namespace Model
         /**
          * <p>Disassociates one or more targets from an event window.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">AWS
@@ -15301,7 +15420,7 @@ namespace Model
          * Instead, it uses the routes in the VPC's main route table. For more information
          * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
          * API Reference</a></p>
@@ -15314,7 +15433,7 @@ namespace Model
          * Instead, it uses the routes in the VPC's main route table. For more information
          * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
          * API Reference</a></p>
@@ -15329,7 +15448,7 @@ namespace Model
          * Instead, it uses the routes in the VPC's main route table. For more information
          * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
          * API Reference</a></p>
@@ -15499,11 +15618,11 @@ namespace Model
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
-         * always encrypted, either using the default CMK or the CMK that you specified
-         * when you created each volume. For more information, see <a
+         * always encrypted, either using the default KMS key or the KMS key that you
+         * specified when you created each volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can specify the default CMK for encryption by default using
+         * <p>You can specify the default KMS key for encryption by default using
          * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
          * <p>Enabling encryption by default has no effect on the encryption status of your
          * existing volumes.</p> <p>After you enable encryption by default, you can no
@@ -15519,11 +15638,11 @@ namespace Model
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
-         * always encrypted, either using the default CMK or the CMK that you specified
-         * when you created each volume. For more information, see <a
+         * always encrypted, either using the default KMS key or the KMS key that you
+         * specified when you created each volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can specify the default CMK for encryption by default using
+         * <p>You can specify the default KMS key for encryption by default using
          * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
          * <p>Enabling encryption by default has no effect on the encryption status of your
          * existing volumes.</p> <p>After you enable encryption by default, you can no
@@ -15541,11 +15660,11 @@ namespace Model
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>
          * <p>After you enable encryption by default, the EBS volumes that you create are
-         * always encrypted, either using the default CMK or the CMK that you specified
-         * when you created each volume. For more information, see <a
+         * always encrypted, either using the default KMS key or the KMS key that you
+         * specified when you created each volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can specify the default CMK for encryption by default using
+         * <p>You can specify the default KMS key for encryption by default using
          * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
          * <p>Enabling encryption by default has no effect on the encryption status of your
          * existing volumes.</p> <p>After you enable encryption by default, you can no
@@ -16279,10 +16398,10 @@ namespace Model
         virtual void GetDefaultCreditSpecificationAsync(const Model::GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the default customer master key (CMK) for EBS encryption by default
-         * for your account in this Region. You can change the default CMK for encryption
-         * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
-         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>For more information, see <a
+         * <p>Describes the default KMS key for EBS encryption by default for your account
+         * in this Region. You can change the default KMS key for encryption by default
+         * using <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -16292,10 +16411,10 @@ namespace Model
         virtual Model::GetEbsDefaultKmsKeyIdOutcome GetEbsDefaultKmsKeyId(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Describes the default customer master key (CMK) for EBS encryption by default
-         * for your account in this Region. You can change the default CMK for encryption
-         * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
-         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>For more information, see <a
+         * <p>Describes the default KMS key for EBS encryption by default for your account
+         * in this Region. You can change the default KMS key for encryption by default
+         * using <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -16307,10 +16426,10 @@ namespace Model
         virtual Model::GetEbsDefaultKmsKeyIdOutcomeCallable GetEbsDefaultKmsKeyIdCallable(const Model::GetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Describes the default customer master key (CMK) for EBS encryption by default
-         * for your account in this Region. You can change the default CMK for encryption
-         * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
-         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>For more information, see <a
+         * <p>Describes the default KMS key for EBS encryption by default for your account
+         * in this Region. You can change the default KMS key for encryption by default
+         * using <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -16726,6 +16845,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSerialConsoleAccessStatusAsync(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSubnetCidrReservationsOutcome GetSubnetCidrReservations(const Model::GetSubnetCidrReservationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSubnetCidrReservationsOutcomeCallable GetSubnetCidrReservationsCallable(const Model::GetSubnetCidrReservationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the subnet CIDR reservations.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSubnetCidrReservationsAsync(const Model::GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the route tables to which the specified resource attachment propagates
@@ -17347,15 +17494,15 @@ namespace Model
         virtual void ModifyDefaultCreditSpecificationAsync(const Model::ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the default customer master key (CMK) for EBS encryption by default
-         * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
-         * each Region for use with encryption by default. If you change the default CMK to
-         * a symmetric customer managed CMK, it is used instead of the AWS managed CMK. To
-         * reset the default CMK to the AWS managed CMK for EBS, use
-         * <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
-         * <p>If you delete or disable the customer managed CMK that you specified for use
-         * with encryption by default, your instances will fail to launch.</p> <p>For more
-         * information, see <a
+         * <p>Changes the default KMS key for EBS encryption by default for your account in
+         * this Region.</p> <p>Amazon Web Services creates a unique Amazon Web Services
+         * managed KMS key in each Region for use with encryption by default. If you change
+         * the default KMS key to a symmetric customer managed KMS key, it is used instead
+         * of the Amazon Web Services managed KMS key. To reset the default KMS key to the
+         * Amazon Web Services managed KMS key for EBS, use <a>ResetEbsDefaultKmsKeyId</a>.
+         * Amazon EBS does not support asymmetric KMS keys.</p> <p>If you delete or disable
+         * the customer managed KMS key that you specified for use with encryption by
+         * default, your instances will fail to launch.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17365,15 +17512,15 @@ namespace Model
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcome ModifyEbsDefaultKmsKeyId(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Changes the default customer master key (CMK) for EBS encryption by default
-         * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
-         * each Region for use with encryption by default. If you change the default CMK to
-         * a symmetric customer managed CMK, it is used instead of the AWS managed CMK. To
-         * reset the default CMK to the AWS managed CMK for EBS, use
-         * <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
-         * <p>If you delete or disable the customer managed CMK that you specified for use
-         * with encryption by default, your instances will fail to launch.</p> <p>For more
-         * information, see <a
+         * <p>Changes the default KMS key for EBS encryption by default for your account in
+         * this Region.</p> <p>Amazon Web Services creates a unique Amazon Web Services
+         * managed KMS key in each Region for use with encryption by default. If you change
+         * the default KMS key to a symmetric customer managed KMS key, it is used instead
+         * of the Amazon Web Services managed KMS key. To reset the default KMS key to the
+         * Amazon Web Services managed KMS key for EBS, use <a>ResetEbsDefaultKmsKeyId</a>.
+         * Amazon EBS does not support asymmetric KMS keys.</p> <p>If you delete or disable
+         * the customer managed KMS key that you specified for use with encryption by
+         * default, your instances will fail to launch.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -17385,15 +17532,15 @@ namespace Model
         virtual Model::ModifyEbsDefaultKmsKeyIdOutcomeCallable ModifyEbsDefaultKmsKeyIdCallable(const Model::ModifyEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Changes the default customer master key (CMK) for EBS encryption by default
-         * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
-         * each Region for use with encryption by default. If you change the default CMK to
-         * a symmetric customer managed CMK, it is used instead of the AWS managed CMK. To
-         * reset the default CMK to the AWS managed CMK for EBS, use
-         * <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
-         * <p>If you delete or disable the customer managed CMK that you specified for use
-         * with encryption by default, your instances will fail to launch.</p> <p>For more
-         * information, see <a
+         * <p>Changes the default KMS key for EBS encryption by default for your account in
+         * this Region.</p> <p>Amazon Web Services creates a unique Amazon Web Services
+         * managed KMS key in each Region for use with encryption by default. If you change
+         * the default KMS key to a symmetric customer managed KMS key, it is used instead
+         * of the Amazon Web Services managed KMS key. To reset the default KMS key to the
+         * Amazon Web Services managed KMS key for EBS, use <a>ResetEbsDefaultKmsKeyId</a>.
+         * Amazon EBS does not support asymmetric KMS keys.</p> <p>If you delete or disable
+         * the customer managed KMS key that you specified for use with encryption by
+         * default, your instances will fail to launch.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -18001,7 +18148,7 @@ namespace Model
          * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
          * event window won't change the time of the scheduled event.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
@@ -18017,7 +18164,7 @@ namespace Model
          * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
          * event window won't change the time of the scheduled event.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
@@ -18035,7 +18182,7 @@ namespace Model
          * API.</p> <p>If Amazon Web Services has already scheduled an event, modifying an
          * event window won't change the time of the scheduled event.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/monitoring-instances-status-check_sched.html#event-windows">Define
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define
          * event windows for scheduled events</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">AWS
@@ -18342,16 +18489,16 @@ namespace Model
 
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
-         * or remove specified AWS account IDs from a snapshot's list of create volume
+         * or remove specified account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple operations. You
          * can make up to 500 modifications to a snapshot in a single operation.</p>
-         * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
-         * be made public. Snapshots encrypted with your default CMK cannot be shared with
+         * <p>Encrypted snapshots and snapshots with Marketplace product codes cannot be
+         * made public. Snapshots encrypted with your default KMS key cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
          * permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
          * API Reference</a></p>
@@ -18360,16 +18507,16 @@ namespace Model
 
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
-         * or remove specified AWS account IDs from a snapshot's list of create volume
+         * or remove specified account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple operations. You
          * can make up to 500 modifications to a snapshot in a single operation.</p>
-         * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
-         * be made public. Snapshots encrypted with your default CMK cannot be shared with
+         * <p>Encrypted snapshots and snapshots with Marketplace product codes cannot be
+         * made public. Snapshots encrypted with your default KMS key cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
          * permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
          * API Reference</a></p>
@@ -18380,16 +18527,16 @@ namespace Model
 
         /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
-         * or remove specified AWS account IDs from a snapshot's list of create volume
+         * or remove specified account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
          * add and remove account IDs for a snapshot, you must use multiple operations. You
          * can make up to 500 modifications to a snapshot in a single operation.</p>
-         * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
-         * be made public. Snapshots encrypted with your default CMK cannot be shared with
+         * <p>Encrypted snapshots and snapshots with Marketplace product codes cannot be
+         * made public. Snapshots encrypted with your default KMS key cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
          * permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
          * API Reference</a></p>
@@ -18726,37 +18873,30 @@ namespace Model
          * size, volume type, and IOPS capacity. If your EBS volume is attached to a
          * current-generation EC2 instance type, you might be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
-         * information about modifying an EBS volume running Linux, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-         * the size, IOPS, or type of an EBS volume on Linux</a>. For more information
-         * about modifying an EBS volume running Windows, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-         * the size, IOPS, or type of an EBS volume on Windows</a>.</p> <p> When you
-         * complete a resize operation on your volume, you need to extend the volume's
-         * file-system size to take advantage of the new storage capacity. For information
-         * about extending a Linux file system, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
-         * a Linux file system</a>. For information about extending a Windows file system,
-         * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
-         * a Windows file system</a>. </p> <p> You can use CloudWatch Events to check the
+         * information about modifying EBS volumes, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> (Linux instances) or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> (Windows instances).</p> <p>When you complete a resize
+         * operation on your volume, you need to extend the volume's file-system size to
+         * take advantage of the new storage capacity. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
+         * a Linux file system</a> or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
+         * a Windows file system</a>.</p> <p> You can use CloudWatch Events to check the
          * status of a modification to an EBS volume. For information about CloudWatch
          * Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using <a>DescribeVolumesModifications</a>. For information about
          * tracking status changes using either method, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * volume modifications</a>. </p> <p>With previous-generation instance types,
-         * resizing an EBS volume might require detaching and reattaching the volume or
-         * stopping and restarting the instance. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Linux) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Windows).</p> <p>If you reach the maximum volume
-         * modification rate per volume limit, you will need to wait at least six hours
-         * before applying further modifications to the affected EBS volume.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a>.</p> <p>With previous-generation
+         * instance types, resizing an EBS volume might require detaching and reattaching
+         * the volume or stopping and restarting the instance.</p> <p>If you reach the
+         * maximum volume modification rate per volume limit, you must wait at least six
+         * hours before applying further modifications to the affected EBS
+         * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
          * API Reference</a></p>
          */
@@ -18767,37 +18907,30 @@ namespace Model
          * size, volume type, and IOPS capacity. If your EBS volume is attached to a
          * current-generation EC2 instance type, you might be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
-         * information about modifying an EBS volume running Linux, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-         * the size, IOPS, or type of an EBS volume on Linux</a>. For more information
-         * about modifying an EBS volume running Windows, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-         * the size, IOPS, or type of an EBS volume on Windows</a>.</p> <p> When you
-         * complete a resize operation on your volume, you need to extend the volume's
-         * file-system size to take advantage of the new storage capacity. For information
-         * about extending a Linux file system, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
-         * a Linux file system</a>. For information about extending a Windows file system,
-         * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
-         * a Windows file system</a>. </p> <p> You can use CloudWatch Events to check the
+         * information about modifying EBS volumes, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> (Linux instances) or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> (Windows instances).</p> <p>When you complete a resize
+         * operation on your volume, you need to extend the volume's file-system size to
+         * take advantage of the new storage capacity. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
+         * a Linux file system</a> or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
+         * a Windows file system</a>.</p> <p> You can use CloudWatch Events to check the
          * status of a modification to an EBS volume. For information about CloudWatch
          * Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using <a>DescribeVolumesModifications</a>. For information about
          * tracking status changes using either method, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * volume modifications</a>. </p> <p>With previous-generation instance types,
-         * resizing an EBS volume might require detaching and reattaching the volume or
-         * stopping and restarting the instance. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Linux) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Windows).</p> <p>If you reach the maximum volume
-         * modification rate per volume limit, you will need to wait at least six hours
-         * before applying further modifications to the affected EBS volume.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a>.</p> <p>With previous-generation
+         * instance types, resizing an EBS volume might require detaching and reattaching
+         * the volume or stopping and restarting the instance.</p> <p>If you reach the
+         * maximum volume modification rate per volume limit, you must wait at least six
+         * hours before applying further modifications to the affected EBS
+         * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
          * API Reference</a></p>
          *
@@ -18810,37 +18943,30 @@ namespace Model
          * size, volume type, and IOPS capacity. If your EBS volume is attached to a
          * current-generation EC2 instance type, you might be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
-         * information about modifying an EBS volume running Linux, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-         * the size, IOPS, or type of an EBS volume on Linux</a>. For more information
-         * about modifying an EBS volume running Windows, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-         * the size, IOPS, or type of an EBS volume on Windows</a>.</p> <p> When you
-         * complete a resize operation on your volume, you need to extend the volume's
-         * file-system size to take advantage of the new storage capacity. For information
-         * about extending a Linux file system, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
-         * a Linux file system</a>. For information about extending a Windows file system,
-         * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
-         * a Windows file system</a>. </p> <p> You can use CloudWatch Events to check the
+         * information about modifying EBS volumes, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> (Linux instances) or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> (Windows instances).</p> <p>When you complete a resize
+         * operation on your volume, you need to extend the volume's file-system size to
+         * take advantage of the new storage capacity. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
+         * a Linux file system</a> or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
+         * a Windows file system</a>.</p> <p> You can use CloudWatch Events to check the
          * status of a modification to an EBS volume. For information about CloudWatch
          * Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using <a>DescribeVolumesModifications</a>. For information about
          * tracking status changes using either method, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * volume modifications</a>. </p> <p>With previous-generation instance types,
-         * resizing an EBS volume might require detaching and reattaching the volume or
-         * stopping and restarting the instance. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Linux) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Windows).</p> <p>If you reach the maximum volume
-         * modification rate per volume limit, you will need to wait at least six hours
-         * before applying further modifications to the affected EBS volume.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a>.</p> <p>With previous-generation
+         * instance types, resizing an EBS volume might require detaching and reattaching
+         * the volume or stopping and restarting the instance.</p> <p>If you reach the
+         * maximum volume modification rate per volume limit, you must wait at least six
+         * hours before applying further modifications to the affected EBS
+         * volume.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
          * API Reference</a></p>
          *
@@ -19094,12 +19220,12 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same account, you can
          * enable DNS resolution for queries from the local VPC. This ensures that queries
          * from the local VPC resolve to private IP addresses in the peer VPC. This option
-         * is not available if the peered VPCs are in different AWS accounts or different
-         * Regions. For peered VPCs in different AWS accounts, each AWS account owner must
-         * initiate a separate request to modify the peering connection options. For
+         * is not available if the peered VPCs are in different different accounts or
+         * different Regions. For peered VPCs in different accounts, each account owner
+         * must initiate a separate request to modify the peering connection options. For
          * inter-region peering connections, you must use the Region for the requester VPC
          * to modify the requester VPC peering options and the Region for the accepter VPC
          * to modify the accepter VPC peering options. To verify which VPCs are the
@@ -19119,12 +19245,12 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same account, you can
          * enable DNS resolution for queries from the local VPC. This ensures that queries
          * from the local VPC resolve to private IP addresses in the peer VPC. This option
-         * is not available if the peered VPCs are in different AWS accounts or different
-         * Regions. For peered VPCs in different AWS accounts, each AWS account owner must
-         * initiate a separate request to modify the peering connection options. For
+         * is not available if the peered VPCs are in different different accounts or
+         * different Regions. For peered VPCs in different accounts, each account owner
+         * must initiate a separate request to modify the peering connection options. For
          * inter-region peering connections, you must use the Region for the requester VPC
          * to modify the requester VPC peering options and the Region for the accepter VPC
          * to modify the accepter VPC peering options. To verify which VPCs are the
@@ -19146,12 +19272,12 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same account, you can
          * enable DNS resolution for queries from the local VPC. This ensures that queries
          * from the local VPC resolve to private IP addresses in the peer VPC. This option
-         * is not available if the peered VPCs are in different AWS accounts or different
-         * Regions. For peered VPCs in different AWS accounts, each AWS account owner must
-         * initiate a separate request to modify the peering connection options. For
+         * is not available if the peered VPCs are in different different accounts or
+         * different Regions. For peered VPCs in different accounts, each account owner
+         * must initiate a separate request to modify the peering connection options. For
          * inter-region peering connections, you must use the Region for the requester VPC
          * to modify the requester VPC peering options and the Region for the accepter VPC
          * to modify the accepter VPC peering options. To verify which VPCs are the
@@ -20432,7 +20558,7 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, network interface, egress-only
          * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
          * API Reference</a></p>
@@ -20445,7 +20571,7 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, network interface, egress-only
          * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
          * API Reference</a></p>
@@ -20460,7 +20586,7 @@ namespace Model
          * instance, NAT gateway, VPC peering connection, network interface, egress-only
          * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
          * API Reference</a></p>
@@ -20475,7 +20601,7 @@ namespace Model
          * gateway uses the routes in the new route table. For more information about route
          * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use this operation to change which table is the main route table in the
          * VPC. Specify the main route table's association ID and the route table ID of the
          * new main route table.</p><p><h3>See Also:</h3>   <a
@@ -20490,7 +20616,7 @@ namespace Model
          * gateway uses the routes in the new route table. For more information about route
          * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use this operation to change which table is the main route table in the
          * VPC. Specify the main route table's association ID and the route table ID of the
          * new main route table.</p><p><h3>See Also:</h3>   <a
@@ -20507,7 +20633,7 @@ namespace Model
          * gateway uses the routes in the new route table. For more information about route
          * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-         * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
+         * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use this operation to change which table is the main route table in the
          * VPC. Specify the main route table's association ID and the route table ID of the
          * new main route table.</p><p><h3>See Also:</h3>   <a
@@ -20737,11 +20863,11 @@ namespace Model
         virtual void ResetAddressAttributeAsync(const Model::ResetAddressAttributeRequest& request, const ResetAddressAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets the default customer master key (CMK) for EBS encryption for your
-         * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
-         * the default CMK to the AWS managed CMK, you can continue to encrypt by a
-         * customer managed CMK by specifying it when you create the volume. For more
-         * information, see <a
+         * <p>Resets the default KMS key for EBS encryption for your account in this Region
+         * to the Amazon Web Services managed KMS key for EBS.</p> <p>After resetting the
+         * default KMS key to the Amazon Web Services managed KMS key, you can continue to
+         * encrypt by a customer managed KMS key by specifying it when you create the
+         * volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -20751,11 +20877,11 @@ namespace Model
         virtual Model::ResetEbsDefaultKmsKeyIdOutcome ResetEbsDefaultKmsKeyId(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Resets the default customer master key (CMK) for EBS encryption for your
-         * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
-         * the default CMK to the AWS managed CMK, you can continue to encrypt by a
-         * customer managed CMK by specifying it when you create the volume. For more
-         * information, see <a
+         * <p>Resets the default KMS key for EBS encryption for your account in this Region
+         * to the Amazon Web Services managed KMS key for EBS.</p> <p>After resetting the
+         * default KMS key to the Amazon Web Services managed KMS key, you can continue to
+         * encrypt by a customer managed KMS key by specifying it when you create the
+         * volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -20767,11 +20893,11 @@ namespace Model
         virtual Model::ResetEbsDefaultKmsKeyIdOutcomeCallable ResetEbsDefaultKmsKeyIdCallable(const Model::ResetEbsDefaultKmsKeyIdRequest& request) const;
 
         /**
-         * <p>Resets the default customer master key (CMK) for EBS encryption for your
-         * account in this Region to the AWS managed CMK for EBS.</p> <p>After resetting
-         * the default CMK to the AWS managed CMK, you can continue to encrypt by a
-         * customer managed CMK by specifying it when you create the volume. For more
-         * information, see <a
+         * <p>Resets the default KMS key for EBS encryption for your account in this Region
+         * to the Amazon Web Services managed KMS key for EBS.</p> <p>After resetting the
+         * default KMS key to the Amazon Web Services managed KMS key, you can continue to
+         * encrypt by a customer managed KMS key by specifying it when you create the
+         * volume. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -20924,8 +21050,8 @@ namespace Model
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
          * API Reference</a></p>
@@ -20935,8 +21061,8 @@ namespace Model
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
          * API Reference</a></p>
@@ -20948,8 +21074,8 @@ namespace Model
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-         * snapshots</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
          * API Reference</a></p>
@@ -21990,16 +22116,16 @@ namespace Model
         virtual void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unassigns one or more IPv6 addresses from a network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
          */
         virtual Model::UnassignIpv6AddressesOutcome UnassignIpv6Addresses(const Model::UnassignIpv6AddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more IPv6 addresses from a network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -22008,8 +22134,8 @@ namespace Model
         virtual Model::UnassignIpv6AddressesOutcomeCallable UnassignIpv6AddressesCallable(const Model::UnassignIpv6AddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more IPv6 addresses from a network interface.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
+         * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -22018,16 +22144,16 @@ namespace Model
         virtual void UnassignIpv6AddressesAsync(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses from a network
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
         virtual Model::UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses from a network
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -22036,8 +22162,8 @@ namespace Model
         virtual Model::UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request) const;
 
         /**
-         * <p>Unassigns one or more secondary private IP addresses from a network
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix
+         * Delegation prefixes from a network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -22279,6 +22405,7 @@ namespace Model
         void CreateSpotDatafeedSubscriptionAsyncHelper(const Model::CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStoreImageTaskAsyncHelper(const Model::CreateStoreImageTaskRequest& request, const CreateStoreImageTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubnetAsyncHelper(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSubnetCidrReservationAsyncHelper(const Model::CreateSubnetCidrReservationRequest& request, const CreateSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficMirrorFilterAsyncHelper(const Model::CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficMirrorFilterRuleAsyncHelper(const Model::CreateTrafficMirrorFilterRuleRequest& request, const CreateTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22334,6 +22461,7 @@ namespace Model
         void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSpotDatafeedSubscriptionAsyncHelper(const Model::DeleteSpotDatafeedSubscriptionRequest& request, const DeleteSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSubnetAsyncHelper(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSubnetCidrReservationAsyncHelper(const Model::DeleteSubnetCidrReservationRequest& request, const DeleteSubnetCidrReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficMirrorFilterAsyncHelper(const Model::DeleteTrafficMirrorFilterRequest& request, const DeleteTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficMirrorFilterRuleAsyncHelper(const Model::DeleteTrafficMirrorFilterRuleRequest& request, const DeleteTrafficMirrorFilterRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22542,6 +22670,7 @@ namespace Model
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSerialConsoleAccessStatusAsyncHelper(const Model::GetSerialConsoleAccessStatusRequest& request, const GetSerialConsoleAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSubnetCidrReservationsAsyncHelper(const Model::GetSubnetCidrReservationsRequest& request, const GetSubnetCidrReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayAttachmentPropagationsAsyncHelper(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayPrefixListReferencesAsyncHelper(const Model::GetTransitGatewayPrefixListReferencesRequest& request, const GetTransitGatewayPrefixListReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline AnalysisRouteTableRoute& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline AnalysisRouteTableRoute& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline AnalysisRouteTableRoute& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
 

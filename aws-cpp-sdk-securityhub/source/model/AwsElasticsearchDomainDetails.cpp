@@ -26,6 +26,7 @@ AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails() :
     m_endpointHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
+    m_elasticsearchClusterConfigHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
@@ -42,6 +43,7 @@ AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails(JsonView jsonValue)
     m_endpointHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
+    m_elasticsearchClusterConfigHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
@@ -103,6 +105,13 @@ AwsElasticsearchDomainDetails& AwsElasticsearchDomainDetails::operator =(JsonVie
     m_elasticsearchVersion = jsonValue.GetString("ElasticsearchVersion");
 
     m_elasticsearchVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ElasticsearchClusterConfig"))
+  {
+    m_elasticsearchClusterConfig = jsonValue.GetObject("ElasticsearchClusterConfig");
+
+    m_elasticsearchClusterConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EncryptionAtRestOptions"))
@@ -191,6 +200,12 @@ JsonValue AwsElasticsearchDomainDetails::Jsonize() const
   if(m_elasticsearchVersionHasBeenSet)
   {
    payload.WithString("ElasticsearchVersion", m_elasticsearchVersion);
+
+  }
+
+  if(m_elasticsearchClusterConfigHasBeenSet)
+  {
+   payload.WithObject("ElasticsearchClusterConfig", m_elasticsearchClusterConfig.Jsonize());
 
   }
 

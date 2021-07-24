@@ -92,6 +92,55 @@ namespace Model
 
 
     /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssignedIpv6Prefixes() const{ return m_assignedIpv6Prefixes; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline void SetAssignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_assignedIpv6Prefixes = value; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline void SetAssignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_assignedIpv6Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline AssignIpv6AddressesResponse& WithAssignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetAssignedIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline AssignIpv6AddressesResponse& WithAssignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetAssignedIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(const Aws::String& value) { m_assignedIpv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(Aws::String&& value) { m_assignedIpv6Prefixes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv6 Prefix Delegation prefixes that are assigned to the network
+     * interface.</p>
+     */
+    inline AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(const char* value) { m_assignedIpv6Prefixes.push_back(value); return *this; }
+
+
+    /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -145,6 +194,8 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_assignedIpv6Addresses;
+
+    Aws::Vector<Aws::String> m_assignedIpv6Prefixes;
 
     Aws::String m_networkInterfaceId;
 

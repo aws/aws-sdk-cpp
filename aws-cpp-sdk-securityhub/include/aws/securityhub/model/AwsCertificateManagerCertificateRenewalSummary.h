@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the AWS Certificate Manager managed renewal for an
+   * <p>Contains information about the Certificate Manager managed renewal for an
    * <code>AMAZON_ISSUED</code> certificate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateRenewalSummary">AWS
    * API Reference</a></p>
@@ -42,120 +42,120 @@ namespace Model
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline AwsCertificateManagerCertificateRenewalSummary& WithDomainValidationOptions(const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline AwsCertificateManagerCertificateRenewalSummary& WithDomainValidationOptions(Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline AwsCertificateManagerCertificateRenewalSummary& AddDomainValidationOptions(const AwsCertificateManagerCertificateDomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
     /**
      * <p>Information about the validation of each domain name in the certificate, as
-     * it pertains to AWS Certificate Manager managed renewal. Provided only when the
+     * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline AwsCertificateManagerCertificateRenewalSummary& AddDomainValidationOptions(AwsCertificateManagerCertificateDomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline const Aws::String& GetRenewalStatus() const{ return m_renewalStatus; }
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline void SetRenewalStatus(const Aws::String& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline void SetRenewalStatus(Aws::String&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline void SetRenewalStatus(const char* value) { m_renewalStatusHasBeenSet = true; m_renewalStatus.assign(value); }
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatus(const Aws::String& value) { SetRenewalStatus(value); return *this;}
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
     inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatus(Aws::String&& value) { SetRenewalStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the AWS Certificate Manager managed renewal of the
-     * certificate.</p> <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
+     * <p>The status of the Certificate Manager managed renewal of the certificate.</p>
+     * <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> |
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */

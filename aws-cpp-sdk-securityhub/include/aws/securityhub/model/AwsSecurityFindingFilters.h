@@ -104,42 +104,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
 
@@ -240,6 +240,47 @@ namespace Model
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline void SetRegion(const Aws::Vector<StringFilter>& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline void SetRegion(Aws::Vector<StringFilter>&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithRegion(const Aws::Vector<StringFilter>& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithRegion(Aws::Vector<StringFilter>&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddRegion(const StringFilter& value) { m_regionHasBeenSet = true; m_region.push_back(value); return *this; }
+
+    /**
+     * <p>The Region from which the finding was generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddRegion(StringFilter&& value) { m_regionHasBeenSet = true; m_region.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -896,91 +937,131 @@ namespace Model
 
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline const Aws::Vector<StringFilter>& GetProductName() const{ return m_productName; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline void SetProductName(const Aws::Vector<StringFilter>& value) { m_productNameHasBeenSet = true; m_productName = value; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline void SetProductName(Aws::Vector<StringFilter>&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& WithProductName(const Aws::Vector<StringFilter>& value) { SetProductName(value); return *this;}
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& WithProductName(Aws::Vector<StringFilter>&& value) { SetProductName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& AddProductName(const StringFilter& value) { m_productNameHasBeenSet = true; m_productName.push_back(value); return *this; }
 
     /**
-     * <p>The name of the solution (product) that generates findings.</p>
+     * <p>The name of the solution (product) that generates findings.</p> <p>Note that
+     * this is a filter against the <code>aws/securityhub/ProductName</code> field in
+     * <code>ProductFields</code>. It is not a filter for the top-level
+     * <code>ProductName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& AddProductName(StringFilter&& value) { m_productNameHasBeenSet = true; m_productName.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline const Aws::Vector<StringFilter>& GetCompanyName() const{ return m_companyName; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline void SetCompanyName(const Aws::Vector<StringFilter>& value) { m_companyNameHasBeenSet = true; m_companyName = value; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline void SetCompanyName(Aws::Vector<StringFilter>&& value) { m_companyNameHasBeenSet = true; m_companyName = std::move(value); }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& WithCompanyName(const Aws::Vector<StringFilter>& value) { SetCompanyName(value); return *this;}
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& WithCompanyName(Aws::Vector<StringFilter>&& value) { SetCompanyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& AddCompanyName(const StringFilter& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(value); return *this; }
 
     /**
      * <p>The name of the findings provider (company) that owns the solution (product)
-     * that generates findings.</p>
+     * that generates findings.</p> <p>Note that this is a filter against the
+     * <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It
+     * is not a filter for the top-level <code>CompanyName</code> field.</p>
      */
     inline AwsSecurityFindingFilters& AddCompanyName(StringFilter&& value) { m_companyNameHasBeenSet = true; m_companyName.push_back(std::move(value)); return *this; }
 
@@ -2248,132 +2329,148 @@ namespace Model
 
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline const Aws::Vector<StringFilter>& GetResourcePartition() const{ return m_resourcePartition; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline bool ResourcePartitionHasBeenSet() const { return m_resourcePartitionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline void SetResourcePartition(const Aws::Vector<StringFilter>& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = value; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline void SetResourcePartition(Aws::Vector<StringFilter>&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition = std::move(value); }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& WithResourcePartition(const Aws::Vector<StringFilter>& value) { SetResourcePartition(value); return *this;}
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& WithResourcePartition(Aws::Vector<StringFilter>&& value) { SetResourcePartition(std::move(value)); return *this;}
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& AddResourcePartition(const StringFilter& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(value); return *this; }
 
     /**
-     * <p>The canonical AWS partition name that the Region is assigned to.</p>
+     * <p>The canonical Amazon Web Services partition name that the Region is assigned
+     * to.</p>
      */
     inline AwsSecurityFindingFilters& AddResourcePartition(StringFilter&& value) { m_resourcePartitionHasBeenSet = true; m_resourcePartition.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline const Aws::Vector<StringFilter>& GetResourceRegion() const{ return m_resourceRegion; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetResourceRegion(const Aws::Vector<StringFilter>& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline void SetResourceRegion(Aws::Vector<StringFilter>&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceRegion(const Aws::Vector<StringFilter>& value) { SetResourceRegion(value); return *this;}
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceRegion(Aws::Vector<StringFilter>&& value) { SetResourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceRegion(const StringFilter& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(value); return *this; }
 
     /**
-     * <p>The canonical AWS external Region name where this resource is located.</p>
+     * <p>The canonical Amazon Web Services external Region name where this resource is
+     * located.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceRegion(StringFilter&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline const Aws::Vector<MapFilter>& GetResourceTags() const{ return m_resourceTags; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline void SetResourceTags(const Aws::Vector<MapFilter>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline void SetResourceTags(Aws::Vector<MapFilter>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceTags(const Aws::Vector<MapFilter>& value) { SetResourceTags(value); return *this;}
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceTags(Aws::Vector<MapFilter>&& value) { SetResourceTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceTags(const MapFilter& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS tags associated with a resource at the time the finding was
-     * processed.</p>
+     * <p>A list of Amazon Web Services tags associated with a resource at the time the
+     * finding was processed.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceTags(MapFilter&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
@@ -2830,44 +2927,44 @@ namespace Model
 
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyUserName() const{ return m_resourceAwsIamAccessKeyUserName; }
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamAccessKeyPrincipalName() const{ return m_resourceAwsIamAccessKeyPrincipalName; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline bool ResourceAwsIamAccessKeyUserNameHasBeenSet() const { return m_resourceAwsIamAccessKeyUserNameHasBeenSet; }
+    inline bool ResourceAwsIamAccessKeyPrincipalNameHasBeenSet() const { return m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline void SetResourceAwsIamAccessKeyUserName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName = value; }
+    inline void SetResourceAwsIamAccessKeyPrincipalName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = value; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline void SetResourceAwsIamAccessKeyUserName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName = std::move(value); }
+    inline void SetResourceAwsIamAccessKeyPrincipalName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName = std::move(value); }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyUserName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamAccessKeyUserName(value); return *this;}
+    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamAccessKeyPrincipalName(value); return *this;}
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyUserName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamAccessKeyUserName(std::move(value)); return *this;}
+    inline AwsSecurityFindingFilters& WithResourceAwsIamAccessKeyPrincipalName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamAccessKeyPrincipalName(std::move(value)); return *this;}
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyUserName(const StringFilter& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName.push_back(value); return *this; }
+    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(const StringFilter& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.push_back(value); return *this; }
 
     /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
+     * <p>The name of the principal that is associated with an IAM access key.</p>
      */
-    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyUserName(StringFilter&& value) { m_resourceAwsIamAccessKeyUserNameHasBeenSet = true; m_resourceAwsIamAccessKeyUserName.push_back(std::move(value)); return *this; }
+    inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyPrincipalName(StringFilter&& value) { m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true; m_resourceAwsIamAccessKeyPrincipalName.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -2950,6 +3047,47 @@ namespace Model
      * <p>The creation date/time of the IAM access key related to a finding.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceAwsIamAccessKeyCreatedAt(DateFilter&& value) { m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true; m_resourceAwsIamAccessKeyCreatedAt.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceAwsIamUserUserName() const{ return m_resourceAwsIamUserUserName; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline bool ResourceAwsIamUserUserNameHasBeenSet() const { return m_resourceAwsIamUserUserNameHasBeenSet; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline void SetResourceAwsIamUserUserName(const Aws::Vector<StringFilter>& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = value; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline void SetResourceAwsIamUserUserName(Aws::Vector<StringFilter>&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName = std::move(value); }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(const Aws::Vector<StringFilter>& value) { SetResourceAwsIamUserUserName(value); return *this;}
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceAwsIamUserUserName(Aws::Vector<StringFilter>&& value) { SetResourceAwsIamUserUserName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(const StringFilter& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.push_back(value); return *this; }
+
+    /**
+     * <p>The name of an IAM user.</p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceAwsIamUserUserName(StringFilter&& value) { m_resourceAwsIamUserUserNameHasBeenSet = true; m_resourceAwsIamUserUserName.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -3167,57 +3305,57 @@ namespace Model
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline const Aws::Vector<StringFilter>& GetComplianceStatus() const{ return m_complianceStatus; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline void SetComplianceStatus(const Aws::Vector<StringFilter>& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline void SetComplianceStatus(Aws::Vector<StringFilter>&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& WithComplianceStatus(const Aws::Vector<StringFilter>& value) { SetComplianceStatus(value); return *this;}
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& WithComplianceStatus(Aws::Vector<StringFilter>&& value) { SetComplianceStatus(std::move(value)); return *this;}
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& AddComplianceStatus(const StringFilter& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(value); return *this; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
-     * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * security standard-related finding details.</p>
+     * a specific rule in a supported standard, such as CIS Amazon Web Services
+     * Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& AddComplianceStatus(StringFilter&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(std::move(value)); return *this; }
 
@@ -4107,6 +4245,9 @@ namespace Model
     Aws::Vector<StringFilter> m_generatorId;
     bool m_generatorIdHasBeenSet;
 
+    Aws::Vector<StringFilter> m_region;
+    bool m_regionHasBeenSet;
+
     Aws::Vector<StringFilter> m_type;
     bool m_typeHasBeenSet;
 
@@ -4284,14 +4425,17 @@ namespace Model
     Aws::Vector<StringFilter> m_resourceAwsS3BucketOwnerName;
     bool m_resourceAwsS3BucketOwnerNameHasBeenSet;
 
-    Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyUserName;
-    bool m_resourceAwsIamAccessKeyUserNameHasBeenSet;
+    Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyPrincipalName;
+    bool m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet;
 
     Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyStatus;
     bool m_resourceAwsIamAccessKeyStatusHasBeenSet;
 
     Aws::Vector<DateFilter> m_resourceAwsIamAccessKeyCreatedAt;
     bool m_resourceAwsIamAccessKeyCreatedAtHasBeenSet;
+
+    Aws::Vector<StringFilter> m_resourceAwsIamUserUserName;
+    bool m_resourceAwsIamUserUserNameHasBeenSet;
 
     Aws::Vector<StringFilter> m_resourceContainerName;
     bool m_resourceContainerNameHasBeenSet;

@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an AWS CodeBuild project.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an CodeBuild project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectDetails">AWS
    * API Reference</a></p>
    */
@@ -41,58 +41,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to
-     * encrypt the build output artifacts.</p> <p>You can specify either the ARN of the
-     * CMK or, if available, the CMK alias (using the format alias/alias-name). </p>
+     * <p>The KMS customer master key (CMK) used to encrypt the build output
+     * artifacts.</p> <p>You can specify either the ARN of the CMK or, if available,
+     * the CMK alias (using the format alias/alias-name). </p>
      */
     inline AwsCodeBuildProjectDetails& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -201,81 +201,81 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline AwsCodeBuildProjectDetails& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline AwsCodeBuildProjectDetails& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent
-     * AWS services on behalf of the AWS account.</p>
+     * <p>The ARN of the IAM role that enables CodeBuild to interact with dependent
+     * Amazon Web Services services on behalf of the Amazon Web Services account.</p>
      */
     inline AwsCodeBuildProjectDetails& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
 
     /**
-     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline const AwsCodeBuildProjectVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline void SetVpcConfig(const AwsCodeBuildProjectVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline void SetVpcConfig(AwsCodeBuildProjectVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline AwsCodeBuildProjectDetails& WithVpcConfig(const AwsCodeBuildProjectVpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     * <p>Information about the VPC configuration that CodeBuild accesses.</p>
      */
     inline AwsCodeBuildProjectDetails& WithVpcConfig(AwsCodeBuildProjectVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

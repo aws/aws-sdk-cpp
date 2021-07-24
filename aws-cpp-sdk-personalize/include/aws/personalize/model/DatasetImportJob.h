@@ -206,50 +206,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline DatasetImportJob& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline DatasetImportJob& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that has
-     * permissions to read from the Amazon S3 data source.</p>
+     * <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
+     * source.</p>
      */
     inline DatasetImportJob& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

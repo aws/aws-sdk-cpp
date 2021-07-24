@@ -253,50 +253,50 @@ namespace Model
 
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const{ return m_ebsBlockDevices; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline bool EbsBlockDevicesHasBeenSet() const { return m_ebsBlockDevicesHasBeenSet; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = std::move(value); }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& WithEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { SetEbsBlockDevices(value); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(const EbsBlockDevice& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>.</p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
 

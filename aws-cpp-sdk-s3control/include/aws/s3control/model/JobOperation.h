@@ -48,38 +48,38 @@ namespace Model
 
 
     /**
-     * <p>Directs the specified job to invoke an AWS Lambda function on every object in
-     * the manifest.</p>
+     * <p>Directs the specified job to invoke an Lambda function on every object in the
+     * manifest.</p>
      */
     inline const LambdaInvokeOperation& GetLambdaInvoke() const{ return m_lambdaInvoke; }
 
     /**
-     * <p>Directs the specified job to invoke an AWS Lambda function on every object in
-     * the manifest.</p>
+     * <p>Directs the specified job to invoke an Lambda function on every object in the
+     * manifest.</p>
      */
     inline bool LambdaInvokeHasBeenSet() const { return m_lambdaInvokeHasBeenSet; }
 
     /**
-     * <p>Directs the specified job to invoke an AWS Lambda function on every object in
-     * the manifest.</p>
+     * <p>Directs the specified job to invoke an Lambda function on every object in the
+     * manifest.</p>
      */
     inline void SetLambdaInvoke(const LambdaInvokeOperation& value) { m_lambdaInvokeHasBeenSet = true; m_lambdaInvoke = value; }
 
     /**
-     * <p>Directs the specified job to invoke an AWS Lambda function on every object in
-     * the manifest.</p>
+     * <p>Directs the specified job to invoke an Lambda function on every object in the
+     * manifest.</p>
      */
     inline void SetLambdaInvoke(LambdaInvokeOperation&& value) { m_lambdaInvokeHasBeenSet = true; m_lambdaInvoke = std::move(value); }
 
     /**
-     * <p>Directs the specified job to invoke an AWS Lambda function on every object in
-     * the manifest.</p>
+     * <p>Directs the specified job to invoke an Lambda function on every object in the
+     * manifest.</p>
      */
     inline JobOperation& WithLambdaInvoke(const LambdaInvokeOperation& value) { SetLambdaInvoke(value); return *this;}
 
     /**
-     * <p>Directs the specified job to invoke an AWS Lambda function on every object in
-     * the manifest.</p>
+     * <p>Directs the specified job to invoke an Lambda function on every object in the
+     * manifest.</p>
      */
     inline JobOperation& WithLambdaInvoke(LambdaInvokeOperation&& value) { SetLambdaInvoke(std::move(value)); return *this;}
 

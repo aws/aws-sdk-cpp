@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline Route& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline Route& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix of the AWS service.</p>
+     * <p>The prefix of the Amazon Web Service.</p>
      */
     inline Route& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
 
@@ -288,42 +288,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline const Aws::String& GetInstanceOwnerId() const{ return m_instanceOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(const char* value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const Aws::String& value) { SetInstanceOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the instance.</p>
+     * <p>The ID of account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
 

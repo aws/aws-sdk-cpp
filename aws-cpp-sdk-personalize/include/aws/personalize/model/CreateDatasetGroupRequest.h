@@ -76,91 +76,107 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline CreateDatasetGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline CreateDatasetGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying
-     * an IAM role is only valid when also specifying a KMS key.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline CreateDatasetGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline CreateDatasetGroupRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline CreateDatasetGroupRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+     * <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to
+     * encrypt the datasets.</p>
      */
     inline CreateDatasetGroupRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
