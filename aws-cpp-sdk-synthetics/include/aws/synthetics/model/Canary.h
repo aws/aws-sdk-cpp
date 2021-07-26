@@ -12,6 +12,7 @@
 #include <aws/synthetics/model/CanaryStatus.h>
 #include <aws/synthetics/model/CanaryTimeline.h>
 #include <aws/synthetics/model/VpcConfigOutput.h>
+#include <aws/synthetics/model/VisualReferenceOutput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -559,6 +560,25 @@ namespace Model
     inline Canary& WithVpcConfig(VpcConfigOutput&& value) { SetVpcConfig(std::move(value)); return *this;}
 
 
+    
+    inline const VisualReferenceOutput& GetVisualReference() const{ return m_visualReference; }
+
+    
+    inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
+
+    
+    inline void SetVisualReference(const VisualReferenceOutput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
+
+    
+    inline void SetVisualReference(VisualReferenceOutput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
+
+    
+    inline Canary& WithVisualReference(const VisualReferenceOutput& value) { SetVisualReference(value); return *this;}
+
+    
+    inline Canary& WithVisualReference(VisualReferenceOutput&& value) { SetVisualReference(std::move(value)); return *this;}
+
+
     /**
      * <p>The list of key-value pairs that are associated with the canary.</p>
      */
@@ -667,6 +687,9 @@ namespace Model
 
     VpcConfigOutput m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    VisualReferenceOutput m_visualReference;
+    bool m_visualReferenceHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

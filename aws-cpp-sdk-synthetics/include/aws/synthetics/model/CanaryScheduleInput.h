@@ -39,7 +39,8 @@ namespace Model
 
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -47,12 +48,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -60,12 +66,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -73,12 +84,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -86,12 +102,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -99,12 +120,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -112,12 +138,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline CanaryScheduleInput& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -125,12 +156,17 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline CanaryScheduleInput& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A rate expression that defines how often the canary is to run. The syntax is
+     * <p>A <code>rate</code> expression or a <code>cron</code> expression that defines
+     * how often the canary is to run.</p> <p>For a rate expression, The syntax is
      * <code>rate(<i>number unit</i>)</code>. <i>unit</i> can be <code>minute</code>,
      * <code>minutes</code>, or <code>hour</code>. </p> <p>For example, <code>rate(1
      * minute)</code> runs the canary once a minute, <code>rate(10 minutes)</code> runs
@@ -138,7 +174,11 @@ namespace Model
      * You can specify a frequency between <code>rate(1 minute)</code> and <code>rate(1
      * hour)</code>.</p> <p>Specifying <code>rate(0 minute)</code> or <code>rate(0
      * hour)</code> is a special value that causes the canary to run only once when it
-     * is started.</p>
+     * is started.</p> <p>Use <code>cron(<i>expression</i>)</code> to specify a cron
+     * expression. You can't schedule a canary to wait for more than a year before
+     * running. For information about the syntax for cron expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
+     * Scheduling canary runs using cron</a>.</p>
      */
     inline CanaryScheduleInput& WithExpression(const char* value) { SetExpression(value); return *this;}
 

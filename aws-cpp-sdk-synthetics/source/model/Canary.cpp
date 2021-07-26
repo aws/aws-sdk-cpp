@@ -35,6 +35,7 @@ Canary::Canary() :
     m_engineArnHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_visualReferenceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -56,6 +57,7 @@ Canary::Canary(JsonView jsonValue) :
     m_engineArnHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_visualReferenceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -161,6 +163,13 @@ Canary& Canary::operator =(JsonView jsonValue)
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VisualReference"))
+  {
+    m_visualReference = jsonValue.GetObject("VisualReference");
+
+    m_visualReferenceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -259,6 +268,12 @@ JsonValue Canary::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_visualReferenceHasBeenSet)
+  {
+   payload.WithObject("VisualReference", m_visualReference.Jsonize());
 
   }
 

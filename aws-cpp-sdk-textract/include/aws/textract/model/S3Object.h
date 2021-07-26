@@ -42,42 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline S3Object& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline S3Object& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the S3 bucket. Note that the # character is not valid in the file
+     * name.</p>
      */
     inline S3Object& WithBucket(const char* value) { SetBucket(value); return *this;}
 

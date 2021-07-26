@@ -11,6 +11,7 @@
 #include <aws/synthetics/model/CanaryScheduleInput.h>
 #include <aws/synthetics/model/CanaryRunConfigInput.h>
 #include <aws/synthetics/model/VpcConfigInput.h>
+#include <aws/synthetics/model/VisualReferenceInput.h>
 #include <utility>
 
 namespace Aws
@@ -492,6 +493,25 @@ namespace Model
      */
     inline UpdateCanaryRequest& WithVpcConfig(VpcConfigInput&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    
+    inline const VisualReferenceInput& GetVisualReference() const{ return m_visualReference; }
+
+    
+    inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
+
+    
+    inline void SetVisualReference(const VisualReferenceInput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
+
+    
+    inline void SetVisualReference(VisualReferenceInput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
+
+    
+    inline UpdateCanaryRequest& WithVisualReference(const VisualReferenceInput& value) { SetVisualReference(value); return *this;}
+
+    
+    inline UpdateCanaryRequest& WithVisualReference(VisualReferenceInput&& value) { SetVisualReference(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -520,6 +540,9 @@ namespace Model
 
     VpcConfigInput m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    VisualReferenceInput m_visualReference;
+    bool m_visualReferenceHasBeenSet;
   };
 
 } // namespace Model

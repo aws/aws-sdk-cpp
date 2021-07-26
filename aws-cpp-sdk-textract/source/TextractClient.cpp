@@ -21,6 +21,7 @@
 #include <aws/textract/TextractEndpoint.h>
 #include <aws/textract/TextractErrorMarshaller.h>
 #include <aws/textract/model/AnalyzeDocumentRequest.h>
+#include <aws/textract/model/AnalyzeExpenseRequest.h>
 #include <aws/textract/model/DetectDocumentTextRequest.h>
 #include <aws/textract/model/GetDocumentAnalysisRequest.h>
 #include <aws/textract/model/GetDocumentTextDetectionRequest.h>
@@ -122,6 +123,30 @@ void TextractClient::AnalyzeDocumentAsync(const AnalyzeDocumentRequest& request,
 void TextractClient::AnalyzeDocumentAsyncHelper(const AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AnalyzeDocument(request), context);
+}
+
+AnalyzeExpenseOutcome TextractClient::AnalyzeExpense(const AnalyzeExpenseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AnalyzeExpenseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AnalyzeExpenseOutcomeCallable TextractClient::AnalyzeExpenseCallable(const AnalyzeExpenseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AnalyzeExpenseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AnalyzeExpense(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TextractClient::AnalyzeExpenseAsync(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AnalyzeExpenseAsyncHelper( request, handler, context ); } );
+}
+
+void TextractClient::AnalyzeExpenseAsyncHelper(const AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AnalyzeExpense(request), context);
 }
 
 DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumentTextRequest& request) const
