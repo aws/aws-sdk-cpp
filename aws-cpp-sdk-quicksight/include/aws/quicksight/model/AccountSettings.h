@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The QuickSight settings associated with your AWS account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The QuickSight settings associated with your Amazon Web Services
+   * account;.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountSettings">AWS
    * API Reference</a></p>
    */
@@ -40,58 +40,66 @@ namespace Model
 
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline const Aws::String& GetAccountName() const{ return m_accountName; }
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline AccountSettings& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline AccountSettings& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
 
     /**
-     * <p>The "account name" you provided for the QuickSight subscription in your AWS
-     * account. You create this name when you sign up for QuickSight. It is unique in
-     * all of AWS and it appears only in the console when users sign in.</p>
+     * <p>The "account name" you provided for the QuickSight subscription in your
+     * Amazon Web Services account;. You create this name when you sign up for
+     * QuickSight. It is unique in all of Amazon Web Services and it appears only when
+     * users sign in.</p>
      */
     inline AccountSettings& WithAccountName(const char* value) { SetAccountName(value); return *this;}
 
@@ -134,42 +142,42 @@ namespace Model
 
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline const Aws::String& GetDefaultNamespace() const{ return m_defaultNamespace; }
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline void SetDefaultNamespace(const Aws::String& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = value; }
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline void SetDefaultNamespace(Aws::String&& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = std::move(value); }
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline void SetDefaultNamespace(const char* value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace.assign(value); }
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline AccountSettings& WithDefaultNamespace(const Aws::String& value) { SetDefaultNamespace(value); return *this;}
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline AccountSettings& WithDefaultNamespace(Aws::String&& value) { SetDefaultNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The default QuickSight namespace for your AWS account. </p>
+     * <p>The default QuickSight namespace for your Amazon Web Services account;. </p>
      */
     inline AccountSettings& WithDefaultNamespace(const char* value) { SetDefaultNamespace(value); return *this;}
 

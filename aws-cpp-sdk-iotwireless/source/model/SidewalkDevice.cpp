@@ -19,6 +19,7 @@ namespace Model
 {
 
 SidewalkDevice::SidewalkDevice() : 
+    m_amazonIdHasBeenSet(false),
     m_sidewalkIdHasBeenSet(false),
     m_sidewalkManufacturingSnHasBeenSet(false),
     m_deviceCertificatesHasBeenSet(false)
@@ -26,6 +27,7 @@ SidewalkDevice::SidewalkDevice() :
 }
 
 SidewalkDevice::SidewalkDevice(JsonView jsonValue) : 
+    m_amazonIdHasBeenSet(false),
     m_sidewalkIdHasBeenSet(false),
     m_sidewalkManufacturingSnHasBeenSet(false),
     m_deviceCertificatesHasBeenSet(false)
@@ -35,6 +37,13 @@ SidewalkDevice::SidewalkDevice(JsonView jsonValue) :
 
 SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AmazonId"))
+  {
+    m_amazonId = jsonValue.GetString("AmazonId");
+
+    m_amazonIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SidewalkId"))
   {
     m_sidewalkId = jsonValue.GetString("SidewalkId");
@@ -65,6 +74,12 @@ SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
 JsonValue SidewalkDevice::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_amazonIdHasBeenSet)
+  {
+   payload.WithString("AmazonId", m_amazonId);
+
+  }
 
   if(m_sidewalkIdHasBeenSet)
   {

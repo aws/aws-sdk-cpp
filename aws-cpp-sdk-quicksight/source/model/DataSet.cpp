@@ -34,6 +34,7 @@ DataSet::DataSet() :
     m_columnGroupsHasBeenSet(false),
     m_fieldFoldersHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false)
 {
 }
@@ -54,6 +55,7 @@ DataSet::DataSet(JsonView jsonValue) :
     m_columnGroupsHasBeenSet(false),
     m_fieldFoldersHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -165,6 +167,13 @@ DataSet& DataSet::operator =(JsonView jsonValue)
     m_rowLevelPermissionDataSet = jsonValue.GetObject("RowLevelPermissionDataSet");
 
     m_rowLevelPermissionDataSetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RowLevelPermissionTagConfiguration"))
+  {
+    m_rowLevelPermissionTagConfiguration = jsonValue.GetObject("RowLevelPermissionTagConfiguration");
+
+    m_rowLevelPermissionTagConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ColumnLevelPermissionRules"))
@@ -281,6 +290,12 @@ JsonValue DataSet::Jsonize() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_rowLevelPermissionTagConfigurationHasBeenSet)
+  {
+   payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/model/StatusString.h>
 #include <aws/redshift-data/model/SqlParameter.h>
+#include <aws/redshift-data/model/SubStatementData.h>
 #include <utility>
 
 namespace Aws
@@ -405,7 +406,7 @@ namespace Model
      * <p>Either the number of rows returned from the SQL statement or the number of
      * rows affected. If result size is greater than zero, the result rows can be the
      * number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY,
-     * and others. </p>
+     * and others. A <code>-1</code> indicates the value is null.</p>
      */
     inline long long GetResultRows() const{ return m_resultRows; }
 
@@ -413,7 +414,7 @@ namespace Model
      * <p>Either the number of rows returned from the SQL statement or the number of
      * rows affected. If result size is greater than zero, the result rows can be the
      * number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY,
-     * and others. </p>
+     * and others. A <code>-1</code> indicates the value is null.</p>
      */
     inline void SetResultRows(long long value) { m_resultRows = value; }
 
@@ -421,23 +422,26 @@ namespace Model
      * <p>Either the number of rows returned from the SQL statement or the number of
      * rows affected. If result size is greater than zero, the result rows can be the
      * number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY,
-     * and others. </p>
+     * and others. A <code>-1</code> indicates the value is null.</p>
      */
     inline DescribeStatementResult& WithResultRows(long long value) { SetResultRows(value); return *this;}
 
 
     /**
-     * <p>The size in bytes of the returned results. </p>
+     * <p>The size in bytes of the returned results. A <code>-1</code> indicates the
+     * value is null.</p>
      */
     inline long long GetResultSize() const{ return m_resultSize; }
 
     /**
-     * <p>The size in bytes of the returned results. </p>
+     * <p>The size in bytes of the returned results. A <code>-1</code> indicates the
+     * value is null.</p>
      */
     inline void SetResultSize(long long value) { m_resultSize = value; }
 
     /**
-     * <p>The size in bytes of the returned results. </p>
+     * <p>The size in bytes of the returned results. A <code>-1</code> indicates the
+     * value is null.</p>
      */
     inline DescribeStatementResult& WithResultSize(long long value) { SetResultSize(value); return *this;}
 
@@ -547,6 +551,42 @@ namespace Model
 
 
     /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline const Aws::Vector<SubStatementData>& GetSubStatements() const{ return m_subStatements; }
+
+    /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline void SetSubStatements(const Aws::Vector<SubStatementData>& value) { m_subStatements = value; }
+
+    /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline void SetSubStatements(Aws::Vector<SubStatementData>&& value) { m_subStatements = std::move(value); }
+
+    /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline DescribeStatementResult& WithSubStatements(const Aws::Vector<SubStatementData>& value) { SetSubStatements(value); return *this;}
+
+    /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline DescribeStatementResult& WithSubStatements(Aws::Vector<SubStatementData>&& value) { SetSubStatements(std::move(value)); return *this;}
+
+    /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline DescribeStatementResult& AddSubStatements(const SubStatementData& value) { m_subStatements.push_back(value); return *this; }
+
+    /**
+     * <p>The SQL statements from a multiple statement run.</p>
+     */
+    inline DescribeStatementResult& AddSubStatements(SubStatementData&& value) { m_subStatements.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The date and time (UTC) that the metadata for the SQL statement was last
      * updated. An example is the time the status last changed. </p>
      */
@@ -609,6 +649,8 @@ namespace Model
     Aws::String m_secretArn;
 
     StatusString m_status;
+
+    Aws::Vector<SubStatementData> m_subStatements;
 
     Aws::Utils::DateTime m_updatedAt;
   };

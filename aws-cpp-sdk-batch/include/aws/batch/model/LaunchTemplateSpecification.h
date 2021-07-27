@@ -30,8 +30,8 @@ namespace Model
    * <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code>
    * and the launch template, the values in the <code>securityGroupIds</code>
    * parameter of <code>CreateComputeEnvironment</code> will be used.</p> 
-   * <p>This object isn't applicable to jobs running on Fargate resources.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>This object isn't applicable to jobs that are running on Fargate
+   * resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
@@ -131,7 +131,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -145,7 +145,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -159,7 +159,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -173,7 +173,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -187,7 +187,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -201,7 +201,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -215,7 +215,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job
@@ -229,7 +229,7 @@ namespace Model
      * <code>$Default</code>.</p> <p>If the value is <code>$Latest</code>, the latest
      * version of the launch template is used. If the value is <code>$Default</code>,
      * the default version of the launch template is used.</p>  <p>After the
-     * compute environment is created, the launch template version used will not be
+     * compute environment is created, the launch template version that's used isn't
      * changed, even if the <code>$Default</code> or <code>$Latest</code> version for
      * the launch template is updated. To use a new launch template version, create a
      * new compute environment, add the new compute environment to the existing job

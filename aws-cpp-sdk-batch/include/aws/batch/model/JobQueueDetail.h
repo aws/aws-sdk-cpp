@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of an AWS Batch job queue.</p><p><h3>See
+   * <p>An object representing the details of an Batch job queue.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobQueueDetail">AWS
    * API Reference</a></p>
@@ -373,91 +373,91 @@ namespace Model
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

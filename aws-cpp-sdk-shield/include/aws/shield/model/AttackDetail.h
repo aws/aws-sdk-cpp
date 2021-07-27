@@ -302,42 +302,82 @@ namespace Model
 
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline const Aws::Vector<AttackProperty>& GetAttackProperties() const{ return m_attackProperties; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline bool AttackPropertiesHasBeenSet() const { return m_attackPropertiesHasBeenSet; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline void SetAttackProperties(const Aws::Vector<AttackProperty>& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties = value; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline void SetAttackProperties(Aws::Vector<AttackProperty>&& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties = std::move(value); }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& WithAttackProperties(const Aws::Vector<AttackProperty>& value) { SetAttackProperties(value); return *this;}
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& WithAttackProperties(Aws::Vector<AttackProperty>&& value) { SetAttackProperties(std::move(value)); return *this;}
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& AddAttackProperties(const AttackProperty& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties.push_back(value); return *this; }
 
     /**
-     * <p>The array of <a>AttackProperty</a> objects.</p>
+     * <p>The array of objects that provide details of the Shield event. </p> <p>For
+     * infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
+     * view metrics for top contributors in Amazon CloudWatch metrics. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+     * metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
      */
     inline AttackDetail& AddAttackProperties(AttackProperty&& value) { m_attackPropertiesHasBeenSet = true; m_attackProperties.push_back(std::move(value)); return *this; }
 

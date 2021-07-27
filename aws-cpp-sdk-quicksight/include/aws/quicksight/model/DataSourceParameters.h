@@ -183,32 +183,32 @@ namespace Model
 
 
     /**
-     * <p>AWS IoT Analytics parameters.</p>
+     * <p>Amazon Web Services IoT Analytics parameters.</p>
      */
     inline const AwsIotAnalyticsParameters& GetAwsIotAnalyticsParameters() const{ return m_awsIotAnalyticsParameters; }
 
     /**
-     * <p>AWS IoT Analytics parameters.</p>
+     * <p>Amazon Web Services IoT Analytics parameters.</p>
      */
     inline bool AwsIotAnalyticsParametersHasBeenSet() const { return m_awsIotAnalyticsParametersHasBeenSet; }
 
     /**
-     * <p>AWS IoT Analytics parameters.</p>
+     * <p>Amazon Web Services IoT Analytics parameters.</p>
      */
     inline void SetAwsIotAnalyticsParameters(const AwsIotAnalyticsParameters& value) { m_awsIotAnalyticsParametersHasBeenSet = true; m_awsIotAnalyticsParameters = value; }
 
     /**
-     * <p>AWS IoT Analytics parameters.</p>
+     * <p>Amazon Web Services IoT Analytics parameters.</p>
      */
     inline void SetAwsIotAnalyticsParameters(AwsIotAnalyticsParameters&& value) { m_awsIotAnalyticsParametersHasBeenSet = true; m_awsIotAnalyticsParameters = std::move(value); }
 
     /**
-     * <p>AWS IoT Analytics parameters.</p>
+     * <p>Amazon Web Services IoT Analytics parameters.</p>
      */
     inline DataSourceParameters& WithAwsIotAnalyticsParameters(const AwsIotAnalyticsParameters& value) { SetAwsIotAnalyticsParameters(value); return *this;}
 
     /**
-     * <p>AWS IoT Analytics parameters.</p>
+     * <p>Amazon Web Services IoT Analytics parameters.</p>
      */
     inline DataSourceParameters& WithAwsIotAnalyticsParameters(AwsIotAnalyticsParameters&& value) { SetAwsIotAnalyticsParameters(std::move(value)); return *this;}
 

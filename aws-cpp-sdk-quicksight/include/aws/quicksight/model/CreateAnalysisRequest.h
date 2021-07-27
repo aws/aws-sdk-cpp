@@ -38,42 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline CreateAnalysisRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline CreateAnalysisRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you are creating an analysis.</p>
+     * <p>The ID of the Amazon Web Services account; where you are creating an
+     * analysis.</p>
      */
     inline CreateAnalysisRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -216,72 +224,72 @@ namespace Model
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline CreateAnalysisRequest& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline CreateAnalysisRequest& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline CreateAnalysisRequest& AddPermissions(const ResourcePermission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis. You can use the <code>Permissions</code> structure to grant
-     * permissions by providing a list of AWS Identity and Access Management (IAM)
-     * action information for each principal listed by Amazon Resource Name (ARN). </p>
-     * <p>To specify no permissions, omit <code>Permissions</code>.</p>
+     * permissions by providing a list of Identity and Access Management (IAM) action
+     * information for each principal listed by Amazon Resource Name (ARN). </p> <p>To
+     * specify no permissions, omit <code>Permissions</code>.</p>
      */
     inline CreateAnalysisRequest& AddPermissions(ResourcePermission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 

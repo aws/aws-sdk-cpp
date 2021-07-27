@@ -155,7 +155,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const ArrayProperties& GetArrayProperties() const{ return m_arrayProperties; }
 
@@ -164,7 +164,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
 
@@ -173,7 +173,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(const ArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
 
@@ -182,7 +182,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetArrayProperties(ArrayProperties&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
 
@@ -191,7 +191,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(const ArrayProperties& value) { SetArrayProperties(value); return *this;}
 
@@ -200,7 +200,7 @@ namespace Model
      * The array size can be between 2 and 10,000. If you specify array properties for
      * a job, it becomes an array job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array
-     * Jobs</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Jobs</a> in the <i>Batch User Guide</i>.</p>
      */
     inline SubmitJobRequest& WithArrayProperties(ArrayProperties&& value) { SetArrayProperties(std::move(value)); return *this;}
 
@@ -528,7 +528,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline const NodeOverrides& GetNodeOverrides() const{ return m_nodeOverrides; }
@@ -536,7 +536,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline bool NodeOverridesHasBeenSet() const { return m_nodeOverridesHasBeenSet; }
@@ -544,7 +544,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(const NodeOverrides& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = value; }
@@ -552,7 +552,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline void SetNodeOverrides(NodeOverrides&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::move(value); }
@@ -560,7 +560,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(const NodeOverrides& value) { SetNodeOverrides(value); return *this;}
@@ -568,7 +568,7 @@ namespace Model
     /**
      * <p>A list of node overrides in JSON format that specify the node range to target
      * and the container overrides for that node range.</p>  <p>This parameter
-     * isn't applicable to jobs running on Fargate resources; use
+     * isn't applicable to jobs that are running on Fargate resources; use
      * <code>containerOverrides</code> instead.</p> 
      */
     inline SubmitJobRequest& WithNodeOverrides(NodeOverrides&& value) { SetNodeOverrides(std::move(value)); return *this;}
@@ -664,7 +664,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -677,7 +677,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -690,7 +690,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -703,7 +703,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -716,7 +716,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -729,7 +729,7 @@ namespace Model
 
     /**
      * <p>The timeout configuration for this <a>SubmitJob</a> operation. You can
-     * specify a timeout duration after which AWS Batch terminates your jobs if they
+     * specify a timeout duration after which Batch terminates your jobs if they
      * haven't finished. If a job is terminated due to a timeout, it isn't retried. The
      * minimum value for the timeout is 60 seconds. This configuration overrides any
      * timeout configuration specified in the job definition. For array jobs, child
@@ -746,7 +746,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -755,7 +756,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -764,7 +766,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -773,7 +776,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -782,7 +786,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -791,7 +796,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -800,7 +806,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -809,7 +816,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -818,7 +826,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -827,7 +836,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -836,7 +846,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -845,7 +856,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -854,7 +866,8 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a> in <i>AWS General Reference</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline SubmitJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

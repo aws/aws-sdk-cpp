@@ -42,7 +42,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
@@ -51,7 +51,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
@@ -69,7 +69,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
@@ -78,7 +78,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
@@ -87,7 +87,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
@@ -96,7 +96,7 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
@@ -105,15 +105,15 @@ namespace Model
      * <p>(Optional) If you want to list the query logging configuration that is
      * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
      * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
-     * returns all of the configurations that are associated with the current AWS
+     * returns all of the configurations that are associated with the current
      * account.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -123,8 +123,8 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -134,8 +134,8 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -145,8 +145,8 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -156,8 +156,8 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -167,8 +167,8 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -178,8 +178,8 @@ namespace Model
     inline ListQueryLoggingConfigsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -189,8 +189,8 @@ namespace Model
     inline ListQueryLoggingConfigsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
-     * query logging configurations, use <code>NextToken</code> to get the second and
+     * <p>(Optional) If the current account has more than <code>MaxResults</code> query
+     * logging configurations, use <code>NextToken</code> to get the second and
      * subsequent pages of results.</p> <p>For the first
      * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
      * second and subsequent requests, get the value of <code>NextToken</code> from the
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -214,7 +214,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -226,7 +226,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -238,7 +238,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -250,7 +250,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -262,7 +262,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -274,7 +274,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
@@ -286,7 +286,7 @@ namespace Model
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want
-     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * Amazon Route 53 to return in response to the current request. If the current
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>

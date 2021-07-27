@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceErrors.h>
+#include <aws/redshift-data/model/BatchExecuteStatementException.h>
 #include <aws/redshift-data/model/ExecuteStatementException.h>
 #include <aws/redshift-data/model/ResourceNotFoundException.h>
 
@@ -18,6 +19,12 @@ namespace Aws
 {
 namespace RedshiftDataAPIService
 {
+template<> AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementException RedshiftDataAPIServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == RedshiftDataAPIServiceErrors::BATCH_EXECUTE_STATEMENT);
+  return BatchExecuteStatementException(this->GetJsonPayload().View());
+}
+
 template<> AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException RedshiftDataAPIServiceError::GetModeledError()
 {
   assert(this->GetErrorType() == RedshiftDataAPIServiceErrors::EXECUTE_STATEMENT);
@@ -33,6 +40,7 @@ template<> AWS_REDSHIFTDATAAPISERVICE_API ResourceNotFoundException RedshiftData
 namespace RedshiftDataAPIServiceErrorMapper
 {
 
+static const int BATCH_EXECUTE_STATEMENT_HASH = HashingUtils::HashString("BatchExecuteStatementException");
 static const int EXECUTE_STATEMENT_HASH = HashingUtils::HashString("ExecuteStatementException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int ACTIVE_STATEMENTS_EXCEEDED_HASH = HashingUtils::HashString("ActiveStatementsExceededException");
@@ -42,7 +50,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == EXECUTE_STATEMENT_HASH)
+  if (hashCode == BATCH_EXECUTE_STATEMENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::BATCH_EXECUTE_STATEMENT), false);
+  }
+  else if (hashCode == EXECUTE_STATEMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::EXECUTE_STATEMENT), false);
   }

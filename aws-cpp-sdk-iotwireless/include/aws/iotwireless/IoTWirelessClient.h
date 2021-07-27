@@ -1006,18 +1006,18 @@ namespace Model
         virtual void GetDeviceProfileAsync(const Model::GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns current default log-levels, or log levels by resource types, could be
-         * for wireless device log options or wireless gateway log options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns current default log levels or log levels by resource types. Based on
+         * resource types, log levels can be for wireless device log options or wireless
+         * gateway log options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLogLevelsByResourceTypesOutcome GetLogLevelsByResourceTypes(const Model::GetLogLevelsByResourceTypesRequest& request) const;
 
         /**
-         * <p>Returns current default log-levels, or log levels by resource types, could be
-         * for wireless device log options or wireless gateway log options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns current default log levels or log levels by resource types. Based on
+         * resource types, log levels can be for wireless device log options or wireless
+         * gateway log options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          *
@@ -1026,9 +1026,9 @@ namespace Model
         virtual Model::GetLogLevelsByResourceTypesOutcomeCallable GetLogLevelsByResourceTypesCallable(const Model::GetLogLevelsByResourceTypesRequest& request) const;
 
         /**
-         * <p>Returns current default log-levels, or log levels by resource types, could be
-         * for wireless device log options or wireless gateway log options.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns current default log levels or log levels by resource types. Based on
+         * resource types, log levels can be for wireless device log options or wireless
+         * gateway log options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          *
@@ -1068,18 +1068,18 @@ namespace Model
         virtual void GetPartnerAccountAsync(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Fetches the log-level override if any for a given resource-ID and
-         * resource-type, coulde be a wireless device or a wireless gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Fetches the log-level override, if any, for a given resource-ID and
+         * resource-type. It can be used for a wireless device or a wireless
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceLogLevelOutcome GetResourceLogLevel(const Model::GetResourceLogLevelRequest& request) const;
 
         /**
-         * <p>Fetches the log-level override if any for a given resource-ID and
-         * resource-type, coulde be a wireless device or a wireless gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Fetches the log-level override, if any, for a given resource-ID and
+         * resource-type. It can be used for a wireless device or a wireless
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
          * API Reference</a></p>
          *
@@ -1088,9 +1088,9 @@ namespace Model
         virtual Model::GetResourceLogLevelOutcomeCallable GetResourceLogLevelCallable(const Model::GetResourceLogLevelRequest& request) const;
 
         /**
-         * <p>Fetches the log-level override if any for a given resource-ID and
-         * resource-type, coulde be a wireless device or a wireless gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Fetches the log-level override, if any, for a given resource-ID and
+         * resource-type. It can be used for a wireless device or a wireless
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
          * API Reference</a></p>
          *
@@ -1594,16 +1594,18 @@ namespace Model
         virtual void ListWirelessGatewaysAsync(const Model::ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the log-level override for a resource-ID and resource-type, could be a
-         * wireless gateway or a wireless device.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the log-level override for a resource-ID and resource-type. This option
+         * can be specified for a wireless gateway or a wireless device. A limit of 200 log
+         * level override can be set per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
          * API Reference</a></p>
          */
         virtual Model::PutResourceLogLevelOutcome PutResourceLogLevel(const Model::PutResourceLogLevelRequest& request) const;
 
         /**
-         * <p>Sets the log-level override for a resource-ID and resource-type, could be a
-         * wireless gateway or a wireless device.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the log-level override for a resource-ID and resource-type. This option
+         * can be specified for a wireless gateway or a wireless device. A limit of 200 log
+         * level override can be set per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
          * API Reference</a></p>
          *
@@ -1612,8 +1614,9 @@ namespace Model
         virtual Model::PutResourceLogLevelOutcomeCallable PutResourceLogLevelCallable(const Model::PutResourceLogLevelRequest& request) const;
 
         /**
-         * <p>Sets the log-level override for a resource-ID and resource-type, could be a
-         * wireless gateway or a wireless device.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the log-level override for a resource-ID and resource-type. This option
+         * can be specified for a wireless gateway or a wireless device. A limit of 200 log
+         * level override can be set per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
          * API Reference</a></p>
          *
@@ -1622,16 +1625,16 @@ namespace Model
         virtual void PutResourceLogLevelAsync(const Model::PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove log-level overrides if any for all resources (both wireless devices
-         * and wireless gateways).</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the log-level overrides for all resources; both wireless devices and
+         * wireless gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
          * API Reference</a></p>
          */
         virtual Model::ResetAllResourceLogLevelsOutcome ResetAllResourceLogLevels(const Model::ResetAllResourceLogLevelsRequest& request) const;
 
         /**
-         * <p>Remove log-level overrides if any for all resources (both wireless devices
-         * and wireless gateways).</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the log-level overrides for all resources; both wireless devices and
+         * wireless gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
          * API Reference</a></p>
          *
@@ -1640,8 +1643,8 @@ namespace Model
         virtual Model::ResetAllResourceLogLevelsOutcomeCallable ResetAllResourceLogLevelsCallable(const Model::ResetAllResourceLogLevelsRequest& request) const;
 
         /**
-         * <p>Remove log-level overrides if any for all resources (both wireless devices
-         * and wireless gateways).</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the log-level overrides for all resources; both wireless devices and
+         * wireless gateways.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
          * API Reference</a></p>
          *
@@ -1650,18 +1653,18 @@ namespace Model
         virtual void ResetAllResourceLogLevelsAsync(const Model::ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove log-level override if any for a specific resource-ID and
-         * resource-type, could be a wireless device or a wireless gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the log-level override, if any, for a specific resource-ID and
+         * resource-type. It can be used for a wireless device or a wireless
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
          * API Reference</a></p>
          */
         virtual Model::ResetResourceLogLevelOutcome ResetResourceLogLevel(const Model::ResetResourceLogLevelRequest& request) const;
 
         /**
-         * <p>Remove log-level override if any for a specific resource-ID and
-         * resource-type, could be a wireless device or a wireless gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the log-level override, if any, for a specific resource-ID and
+         * resource-type. It can be used for a wireless device or a wireless
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
          * API Reference</a></p>
          *
@@ -1670,9 +1673,9 @@ namespace Model
         virtual Model::ResetResourceLogLevelOutcomeCallable ResetResourceLogLevelCallable(const Model::ResetResourceLogLevelRequest& request) const;
 
         /**
-         * <p>Remove log-level override if any for a specific resource-ID and
-         * resource-type, could be a wireless device or a wireless gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the log-level override, if any, for a specific resource-ID and
+         * resource-type. It can be used for a wireless device or a wireless
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
          * API Reference</a></p>
          *
@@ -1812,18 +1815,20 @@ namespace Model
         virtual void UpdateDestinationAsync(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set default log level, or log levels by resource types, could be for wireless
-         * device log options or wireless gateways log options. This is to control the log
-         * messages that will be displayed in CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * <p>Set default log level, or log levels by resource types. This can be for
+         * wireless device log options or wireless gateways log options and is used to
+         * control the log messages that'll be displayed in CloudWatch.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLogLevelsByResourceTypesOutcome UpdateLogLevelsByResourceTypes(const Model::UpdateLogLevelsByResourceTypesRequest& request) const;
 
         /**
-         * <p>Set default log level, or log levels by resource types, could be for wireless
-         * device log options or wireless gateways log options. This is to control the log
-         * messages that will be displayed in CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * <p>Set default log level, or log levels by resource types. This can be for
+         * wireless device log options or wireless gateways log options and is used to
+         * control the log messages that'll be displayed in CloudWatch.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          *
@@ -1832,9 +1837,10 @@ namespace Model
         virtual Model::UpdateLogLevelsByResourceTypesOutcomeCallable UpdateLogLevelsByResourceTypesCallable(const Model::UpdateLogLevelsByResourceTypesRequest& request) const;
 
         /**
-         * <p>Set default log level, or log levels by resource types, could be for wireless
-         * device log options or wireless gateways log options. This is to control the log
-         * messages that will be displayed in CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * <p>Set default log level, or log levels by resource types. This can be for
+         * wireless device log options or wireless gateways log options and is used to
+         * control the log messages that'll be displayed in CloudWatch.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS
          * API Reference</a></p>
          *

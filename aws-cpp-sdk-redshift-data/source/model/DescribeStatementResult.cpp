@@ -141,6 +141,15 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("SubStatements"))
+  {
+    Array<JsonView> subStatementsJsonList = jsonValue.GetArray("SubStatements");
+    for(unsigned subStatementsIndex = 0; subStatementsIndex < subStatementsJsonList.GetLength(); ++subStatementsIndex)
+    {
+      m_subStatements.push_back(subStatementsJsonList[subStatementsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");

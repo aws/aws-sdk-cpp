@@ -356,50 +356,58 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline RegisterUserRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline RegisterUserRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
-     * the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account; that the user is in. Currently,
+     * you use the ID for the Amazon Web Services account; that contains your Amazon
+     * QuickSight account.</p>
      */
     inline RegisterUserRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -509,8 +517,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
 
@@ -529,8 +536,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
 
@@ -549,8 +555,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
 
@@ -569,8 +574,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
 
@@ -589,8 +593,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
 
@@ -609,8 +612,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
 
@@ -629,8 +631,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
 
@@ -649,8 +650,7 @@ namespace Model
      * custom permissions are applied through IAM policies. Therefore, they override
      * the permissions typically granted by assigning QuickSight users to one of the
      * default security cohorts in QuickSight (admin, author, reader).</p> <p>This
-     * feature is available only to QuickSight Enterprise edition subscriptions that
-     * use SAML 2.0-Based Federation for Single Sign-On (SSO).</p>
+     * feature is available only to QuickSight Enterprise edition subscriptions.</p>
      */
     inline RegisterUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
 

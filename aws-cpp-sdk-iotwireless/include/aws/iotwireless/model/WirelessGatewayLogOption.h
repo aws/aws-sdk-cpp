@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The log option for wireless gateways. Can be used to set log level for a
+   * <p>The log options for wireless gateways and can be used to set log levels for a
    * specific type of wireless gateway.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessGatewayLogOption">AWS
    * API Reference</a></p>

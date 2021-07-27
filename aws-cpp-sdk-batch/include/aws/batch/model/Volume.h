@@ -45,7 +45,8 @@ namespace Model
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume. However, the data isn't guaranteed to persist after the containers
      * associated with it stop running.</p>  <p>This parameter isn't applicable
-     * to jobs running on Fargate resources and shouldn't be provided.</p> 
+     * to jobs that are running on Fargate resources and shouldn't be provided.</p>
+     * 
      */
     inline const Host& GetHost() const{ return m_host; }
 
@@ -55,7 +56,8 @@ namespace Model
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume. However, the data isn't guaranteed to persist after the containers
      * associated with it stop running.</p>  <p>This parameter isn't applicable
-     * to jobs running on Fargate resources and shouldn't be provided.</p> 
+     * to jobs that are running on Fargate resources and shouldn't be provided.</p>
+     * 
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
@@ -65,7 +67,8 @@ namespace Model
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume. However, the data isn't guaranteed to persist after the containers
      * associated with it stop running.</p>  <p>This parameter isn't applicable
-     * to jobs running on Fargate resources and shouldn't be provided.</p> 
+     * to jobs that are running on Fargate resources and shouldn't be provided.</p>
+     * 
      */
     inline void SetHost(const Host& value) { m_hostHasBeenSet = true; m_host = value; }
 
@@ -75,7 +78,8 @@ namespace Model
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume. However, the data isn't guaranteed to persist after the containers
      * associated with it stop running.</p>  <p>This parameter isn't applicable
-     * to jobs running on Fargate resources and shouldn't be provided.</p> 
+     * to jobs that are running on Fargate resources and shouldn't be provided.</p>
+     * 
      */
     inline void SetHost(Host&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
@@ -85,7 +89,8 @@ namespace Model
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume. However, the data isn't guaranteed to persist after the containers
      * associated with it stop running.</p>  <p>This parameter isn't applicable
-     * to jobs running on Fargate resources and shouldn't be provided.</p> 
+     * to jobs that are running on Fargate resources and shouldn't be provided.</p>
+     * 
      */
     inline Volume& WithHost(const Host& value) { SetHost(value); return *this;}
 
@@ -95,7 +100,8 @@ namespace Model
      * host parameter is empty, then the Docker daemon assigns a host path for your
      * data volume. However, the data isn't guaranteed to persist after the containers
      * associated with it stop running.</p>  <p>This parameter isn't applicable
-     * to jobs running on Fargate resources and shouldn't be provided.</p> 
+     * to jobs that are running on Fargate resources and shouldn't be provided.</p>
+     * 
      */
     inline Volume& WithHost(Host&& value) { SetHost(std::move(value)); return *this;}
 
@@ -167,43 +173,43 @@ namespace Model
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for job storage. Jobs running on Fargate resources must specify a
-     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     * file system for job storage. Jobs that are running on Fargate resources must
+     * specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
      */
     inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for job storage. Jobs running on Fargate resources must specify a
-     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     * file system for job storage. Jobs that are running on Fargate resources must
+     * specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
      */
     inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for job storage. Jobs running on Fargate resources must specify a
-     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     * file system for job storage. Jobs that are running on Fargate resources must
+     * specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
      */
     inline void SetEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for job storage. Jobs running on Fargate resources must specify a
-     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     * file system for job storage. Jobs that are running on Fargate resources must
+     * specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
      */
     inline void SetEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for job storage. Jobs running on Fargate resources must specify a
-     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     * file system for job storage. Jobs that are running on Fargate resources must
+     * specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
      */
     inline Volume& WithEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { SetEfsVolumeConfiguration(value); return *this;}
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for job storage. Jobs running on Fargate resources must specify a
-     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     * file system for job storage. Jobs that are running on Fargate resources must
+     * specify a <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
      */
     inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
 

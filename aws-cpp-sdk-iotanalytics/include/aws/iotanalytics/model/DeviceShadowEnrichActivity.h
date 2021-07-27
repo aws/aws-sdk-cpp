@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An activity that adds information from the AWS IoT Device Shadow service to a
+   * <p>An activity that adds information from the IoT Device Shadow service to a
    * message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceShadowEnrichActivity">AWS
    * API Reference</a></p>

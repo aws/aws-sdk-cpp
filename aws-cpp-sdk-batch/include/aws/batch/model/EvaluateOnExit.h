@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -51,7 +51,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -69,7 +69,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -87,7 +87,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -105,7 +105,7 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>StatusReason</code>
-     * returned for a job. The pattern can be up to 512 characters long, and can
+     * returned for a job. The pattern can be up to 512 characters in length. It can
      * contain letters, numbers, periods (.), colons (:), and white space (including
      * spaces or tabs). It can optionally end with an asterisk (*) so that only the
      * start of the string needs to be an exact match.</p>
@@ -115,73 +115,73 @@ namespace Model
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline const Aws::String& GetOnReason() const{ return m_onReason; }
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline bool OnReasonHasBeenSet() const { return m_onReasonHasBeenSet; }
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline void SetOnReason(const Aws::String& value) { m_onReasonHasBeenSet = true; m_onReason = value; }
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline void SetOnReason(Aws::String&& value) { m_onReasonHasBeenSet = true; m_onReason = std::move(value); }
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline void SetOnReason(const char* value) { m_onReasonHasBeenSet = true; m_onReason.assign(value); }
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline EvaluateOnExit& WithOnReason(const Aws::String& value) { SetOnReason(value); return *this;}
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline EvaluateOnExit& WithOnReason(Aws::String&& value) { SetOnReason(std::move(value)); return *this;}
 
     /**
      * <p>Contains a glob pattern to match against the <code>Reason</code> returned for
-     * a job. The pattern can be up to 512 characters long, and can contain letters,
-     * numbers, periods (.), colons (:), and white space (including spaces and tabs).
-     * It can optionally end with an asterisk (*) so that only the start of the string
-     * needs to be an exact match.</p>
+     * a job. The pattern can be up to 512 characters in length. It can contain
+     * letters, numbers, periods (.), colons (:), and white space (including spaces and
+     * tabs). It can optionally end with an asterisk (*) so that only the start of the
+     * string needs to be an exact match.</p>
      */
     inline EvaluateOnExit& WithOnReason(const char* value) { SetOnReason(value); return *this;}
 
@@ -189,8 +189,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline const Aws::String& GetOnExitCode() const{ return m_onExitCode; }
@@ -198,8 +198,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline bool OnExitCodeHasBeenSet() const { return m_onExitCodeHasBeenSet; }
@@ -207,8 +207,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline void SetOnExitCode(const Aws::String& value) { m_onExitCodeHasBeenSet = true; m_onExitCode = value; }
@@ -216,8 +216,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline void SetOnExitCode(Aws::String&& value) { m_onExitCodeHasBeenSet = true; m_onExitCode = std::move(value); }
@@ -225,8 +225,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline void SetOnExitCode(const char* value) { m_onExitCodeHasBeenSet = true; m_onExitCode.assign(value); }
@@ -234,8 +234,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline EvaluateOnExit& WithOnExitCode(const Aws::String& value) { SetOnExitCode(value); return *this;}
@@ -243,8 +243,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline EvaluateOnExit& WithOnExitCode(Aws::String&& value) { SetOnExitCode(std::move(value)); return *this;}
@@ -252,8 +252,8 @@ namespace Model
     /**
      * <p>Contains a glob pattern to match against the decimal representation of the
      * <code>ExitCode</code> returned for a job. The pattern can be up to 512
-     * characters long, can contain only numbers, and can optionally end with an
-     * asterisk (*) so that only the start of the string needs to be an exact
+     * characters in length. It can contain only numbers, and can optionally end with
+     * an asterisk (*) so that only the start of the string needs to be an exact
      * match.</p>
      */
     inline EvaluateOnExit& WithOnExitCode(const char* value) { SetOnExitCode(value); return *this;}

@@ -36,49 +36,49 @@ namespace Model
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline ListTablesRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline ListTablesRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The cluster identifier. This parameter is required when authenticating using
-     * either AWS Secrets Manager or temporary credentials. </p>
+     * either Secrets Manager or temporary credentials. </p>
      */
     inline ListTablesRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
@@ -423,49 +423,49 @@ namespace Model
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline ListTablesRequest& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline ListTablesRequest& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. This
-     * parameter is required when authenticating using AWS Secrets Manager. </p>
+     * parameter is required when authenticating using Secrets Manager. </p>
      */
     inline ListTablesRequest& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

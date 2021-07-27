@@ -97,7 +97,7 @@ namespace Model
      * <p>The type of job definition. For more information about multi-node parallel
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      *  <p>If the job is run on Fargate resources, then <code>multinode</code>
      * isn't supported.</p> 
      */
@@ -107,7 +107,7 @@ namespace Model
      * <p>The type of job definition. For more information about multi-node parallel
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      *  <p>If the job is run on Fargate resources, then <code>multinode</code>
      * isn't supported.</p> 
      */
@@ -117,7 +117,7 @@ namespace Model
      * <p>The type of job definition. For more information about multi-node parallel
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      *  <p>If the job is run on Fargate resources, then <code>multinode</code>
      * isn't supported.</p> 
      */
@@ -127,7 +127,7 @@ namespace Model
      * <p>The type of job definition. For more information about multi-node parallel
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      *  <p>If the job is run on Fargate resources, then <code>multinode</code>
      * isn't supported.</p> 
      */
@@ -137,7 +137,7 @@ namespace Model
      * <p>The type of job definition. For more information about multi-node parallel
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      *  <p>If the job is run on Fargate resources, then <code>multinode</code>
      * isn't supported.</p> 
      */
@@ -147,7 +147,7 @@ namespace Model
      * <p>The type of job definition. For more information about multi-node parallel
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
-     * a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.</p>
+     * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
      *  <p>If the job is run on Fargate resources, then <code>multinode</code>
      * isn't supported.</p> 
      */
@@ -331,7 +331,7 @@ namespace Model
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
@@ -345,7 +345,7 @@ namespace Model
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
@@ -359,7 +359,7 @@ namespace Model
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
@@ -373,7 +373,7 @@ namespace Model
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
@@ -387,7 +387,7 @@ namespace Model
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
@@ -401,7 +401,7 @@ namespace Model
      * you specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
      * <code>type</code> parameter is <code>container</code>, then you must specify
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
@@ -503,73 +503,73 @@ namespace Model
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition, after which AWS Batch terminates your jobs if they have not
-     * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that's specified
-     * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
-     * here. For more information, see <a
+     * definition, after which Batch terminates your jobs if they have not finished. If
+     * a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a
+     * <a>SubmitJob</a> operation overrides the timeout configuration defined here. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     * Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Timeouts</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition, after which AWS Batch terminates your jobs if they have not
-     * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that's specified
-     * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
-     * here. For more information, see <a
+     * definition, after which Batch terminates your jobs if they have not finished. If
+     * a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a
+     * <a>SubmitJob</a> operation overrides the timeout configuration defined here. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     * Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Timeouts</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition, after which AWS Batch terminates your jobs if they have not
-     * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that's specified
-     * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
-     * here. For more information, see <a
+     * definition, after which Batch terminates your jobs if they have not finished. If
+     * a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a
+     * <a>SubmitJob</a> operation overrides the timeout configuration defined here. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     * Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Timeouts</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition, after which AWS Batch terminates your jobs if they have not
-     * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that's specified
-     * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
-     * here. For more information, see <a
+     * definition, after which Batch terminates your jobs if they have not finished. If
+     * a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a
+     * <a>SubmitJob</a> operation overrides the timeout configuration defined here. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     * Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Timeouts</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition, after which AWS Batch terminates your jobs if they have not
-     * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that's specified
-     * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
-     * here. For more information, see <a
+     * definition, after which Batch terminates your jobs if they have not finished. If
+     * a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a
+     * <a>SubmitJob</a> operation overrides the timeout configuration defined here. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     * Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Timeouts</a> in the <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The timeout configuration for jobs that are submitted with this job
-     * definition, after which AWS Batch terminates your jobs if they have not
-     * finished. If a job is terminated due to a timeout, it isn't retried. The minimum
-     * value for the timeout is 60 seconds. Any timeout configuration that's specified
-     * during a <a>SubmitJob</a> operation overrides the timeout configuration defined
-     * here. For more information, see <a
+     * definition, after which Batch terminates your jobs if they have not finished. If
+     * a job is terminated due to a timeout, it isn't retried. The minimum value for
+     * the timeout is 60 seconds. Any timeout configuration that's specified during a
+     * <a>SubmitJob</a> operation overrides the timeout configuration defined here. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
-     * Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Timeouts</a> in the <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
@@ -579,7 +579,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -588,7 +588,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -597,7 +597,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -606,7 +606,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -615,7 +615,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -624,7 +624,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -633,7 +633,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -642,7 +642,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -651,7 +651,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -660,7 +660,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -669,7 +669,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -678,7 +678,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -687,7 +687,7 @@ namespace Model
      * organize your resources. Each tag consists of a key and an optional value. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * AWS Resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline RegisterJobDefinitionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

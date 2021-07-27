@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that you want to update QuickSight customizations
-     * for.</p>
+     * <p>The ID for the Amazon Web Services account; that you want to update
+     * QuickSight customizations for.</p>
      */
     inline UpdateAccountCustomizationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -130,32 +130,32 @@ namespace Model
 
 
     /**
-     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+     * <p>The QuickSight customizations you're updating in the current Region;. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+     * <p>The QuickSight customizations you're updating in the current Region;. </p>
      */
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+     * <p>The QuickSight customizations you're updating in the current Region;. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = value; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+     * <p>The QuickSight customizations you're updating in the current Region;. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+     * <p>The QuickSight customizations you're updating in the current Region;. </p>
      */
     inline UpdateAccountCustomizationRequest& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The QuickSight customizations you're updating in the current AWS Region. </p>
+     * <p>The QuickSight customizations you're updating in the current Region;. </p>
      */
     inline UpdateAccountCustomizationRequest& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

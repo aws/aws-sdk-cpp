@@ -48,6 +48,7 @@ enum class RedshiftDataAPIServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ACTIVE_STATEMENTS_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_EXECUTE_STATEMENT,
   EXECUTE_STATEMENT,
   INTERNAL_SERVER
 };

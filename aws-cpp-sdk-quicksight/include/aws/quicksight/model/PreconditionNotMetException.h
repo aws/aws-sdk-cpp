@@ -63,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline PreconditionNotMetException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline PreconditionNotMetException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline PreconditionNotMetException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

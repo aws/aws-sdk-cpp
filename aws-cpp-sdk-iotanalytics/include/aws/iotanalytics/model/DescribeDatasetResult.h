@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>An object that contains information about the data set.</p>
+     * <p>An object that contains information about the dataset.</p>
      */
     inline const Dataset& GetDataset() const{ return m_dataset; }
 
     /**
-     * <p>An object that contains information about the data set.</p>
+     * <p>An object that contains information about the dataset.</p>
      */
     inline void SetDataset(const Dataset& value) { m_dataset = value; }
 
     /**
-     * <p>An object that contains information about the data set.</p>
+     * <p>An object that contains information about the dataset.</p>
      */
     inline void SetDataset(Dataset&& value) { m_dataset = std::move(value); }
 
     /**
-     * <p>An object that contains information about the data set.</p>
+     * <p>An object that contains information about the dataset.</p>
      */
     inline DescribeDatasetResult& WithDataset(const Dataset& value) { SetDataset(value); return *this;}
 
     /**
-     * <p>An object that contains information about the data set.</p>
+     * <p>An object that contains information about the dataset.</p>
      */
     inline DescribeDatasetResult& WithDataset(Dataset&& value) { SetDataset(std::move(value)); return *this;}
 

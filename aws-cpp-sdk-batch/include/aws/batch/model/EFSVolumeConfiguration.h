@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>This parameter is specified when you are using an Amazon Elastic File System
-   * file system for task storage. For more information, see <a
-   * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html">Amazon EFS
-   * Volumes</a> in the <i>AWS Batch User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * <p>This is used when you're using an Amazon Elastic File System file system for
+   * job storage. For more information, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html">Amazon
+   * EFS Volumes</a> in the <i>Batch User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EFSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -86,147 +86,153 @@ namespace Model
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline const Aws::String& GetRootDirectory() const{ return m_rootDirectory; }
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline void SetRootDirectory(const Aws::String& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline void SetRootDirectory(Aws::String&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline void SetRootDirectory(const char* value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory.assign(value); }
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline EFSVolumeConfiguration& WithRootDirectory(const Aws::String& value) { SetRootDirectory(value); return *this;}
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline EFSVolumeConfiguration& WithRootDirectory(Aws::String&& value) { SetRootDirectory(std::move(value)); return *this;}
 
     /**
      * <p>The directory within the Amazon EFS file system to mount as the root
      * directory inside the host. If this parameter is omitted, the root of the Amazon
-     * EFS volume will be used. Specifying <code>/</code> will have the same effect as
-     * omitting this parameter.</p>  <p>If an EFS access point is specified
-     * in the <code>authorizationConfig</code>, the root directory parameter must
-     * either be omitted or set to <code>/</code> which will enforce the path set on
-     * the Amazon EFS access point.</p> 
+     * EFS volume is used instead. Specifying <code>/</code> has the same effect as
+     * omitting this parameter. The maximum length is 4,096 characters.</p> 
+     * <p>If an EFS access point is specified in the <code>authorizationConfig</code>,
+     * the root directory parameter must either be omitted or set to <code>/</code>,
+     * which enforces the path set on the Amazon EFS access point.</p> 
      */
     inline EFSVolumeConfiguration& WithRootDirectory(const char* value) { SetRootDirectory(value); return *this;}
 
 
     /**
-     * <p>Whether or not to enable encryption for Amazon EFS data in transit between
-     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
-     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * <p>Determines whether to enable encryption for Amazon EFS data in transit
+     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
+     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline const EFSTransitEncryption& GetTransitEncryption() const{ return m_transitEncryption; }
 
     /**
-     * <p>Whether or not to enable encryption for Amazon EFS data in transit between
-     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
-     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * <p>Determines whether to enable encryption for Amazon EFS data in transit
+     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
+     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline bool TransitEncryptionHasBeenSet() const { return m_transitEncryptionHasBeenSet; }
 
     /**
-     * <p>Whether or not to enable encryption for Amazon EFS data in transit between
-     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
-     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * <p>Determines whether to enable encryption for Amazon EFS data in transit
+     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
+     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryption(const EFSTransitEncryption& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = value; }
 
     /**
-     * <p>Whether or not to enable encryption for Amazon EFS data in transit between
-     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
-     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * <p>Determines whether to enable encryption for Amazon EFS data in transit
+     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
+     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline void SetTransitEncryption(EFSTransitEncryption&& value) { m_transitEncryptionHasBeenSet = true; m_transitEncryption = std::move(value); }
 
     /**
-     * <p>Whether or not to enable encryption for Amazon EFS data in transit between
-     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
-     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * <p>Determines whether to enable encryption for Amazon EFS data in transit
+     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
+     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
     inline EFSVolumeConfiguration& WithTransitEncryption(const EFSTransitEncryption& value) { SetTransitEncryption(value); return *this;}
 
     /**
-     * <p>Whether or not to enable encryption for Amazon EFS data in transit between
-     * the Amazon ECS host and the Amazon EFS server. Transit encryption must be
-     * enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
-     * the default value of <code>DISABLED</code> is used. For more information, see <a
+     * <p>Determines whether to enable encryption for Amazon EFS data in transit
+     * between the Amazon ECS host and the Amazon EFS server. Transit encryption must
+     * be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
      * data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
@@ -235,9 +241,9 @@ namespace Model
 
     /**
      * <p>The port to use when sending encrypted data between the Amazon ECS host and
-     * the Amazon EFS server. If you do not specify a transit encryption port, it will
-     * use the port selection strategy that the Amazon EFS mount helper uses. For more
-     * information, see <a
+     * the Amazon EFS server. If you don't specify a transit encryption port, it uses
+     * the port selection strategy that the Amazon EFS mount helper uses. The value
+     * must be between 0 and 65,535. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
      * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
@@ -245,9 +251,9 @@ namespace Model
 
     /**
      * <p>The port to use when sending encrypted data between the Amazon ECS host and
-     * the Amazon EFS server. If you do not specify a transit encryption port, it will
-     * use the port selection strategy that the Amazon EFS mount helper uses. For more
-     * information, see <a
+     * the Amazon EFS server. If you don't specify a transit encryption port, it uses
+     * the port selection strategy that the Amazon EFS mount helper uses. The value
+     * must be between 0 and 65,535. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
      * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
@@ -255,9 +261,9 @@ namespace Model
 
     /**
      * <p>The port to use when sending encrypted data between the Amazon ECS host and
-     * the Amazon EFS server. If you do not specify a transit encryption port, it will
-     * use the port selection strategy that the Amazon EFS mount helper uses. For more
-     * information, see <a
+     * the Amazon EFS server. If you don't specify a transit encryption port, it uses
+     * the port selection strategy that the Amazon EFS mount helper uses. The value
+     * must be between 0 and 65,535. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
      * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */
@@ -265,9 +271,9 @@ namespace Model
 
     /**
      * <p>The port to use when sending encrypted data between the Amazon ECS host and
-     * the Amazon EFS server. If you do not specify a transit encryption port, it will
-     * use the port selection strategy that the Amazon EFS mount helper uses. For more
-     * information, see <a
+     * the Amazon EFS server. If you don't specify a transit encryption port, it uses
+     * the port selection strategy that the Amazon EFS mount helper uses. The value
+     * must be between 0 and 65,535. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
      * Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
      */

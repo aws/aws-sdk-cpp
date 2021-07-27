@@ -191,7 +191,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
@@ -205,7 +205,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
@@ -219,7 +219,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
@@ -233,7 +233,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
@@ -247,7 +247,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
@@ -261,7 +261,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
@@ -275,7 +275,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
@@ -289,7 +289,7 @@ namespace Model
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
      * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>  <p>All compute environments that are associated with a job
-     * queue must share the same architecture. AWS Batch doesn't support mixing compute
+     * queue must share the same architecture. Batch doesn't support mixing compute
      * environment architecture types in a single job queue.</p> 
      */
     inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }

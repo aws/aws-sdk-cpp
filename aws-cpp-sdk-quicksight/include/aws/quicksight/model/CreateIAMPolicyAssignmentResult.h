@@ -36,44 +36,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentName = value; }
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentName = std::move(value); }
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentName.assign(value); }
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline CreateIAMPolicyAssignmentResult& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline CreateIAMPolicyAssignmentResult& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the assignment. This name must be unique within the AWS
-     * account.</p>
+     * <p>The name of the assignment. This name must be unique within the Amazon Web
+     * Services account;.</p>
      */
     inline CreateIAMPolicyAssignmentResult& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 
@@ -265,37 +265,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline CreateIAMPolicyAssignmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline CreateIAMPolicyAssignmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline CreateIAMPolicyAssignmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

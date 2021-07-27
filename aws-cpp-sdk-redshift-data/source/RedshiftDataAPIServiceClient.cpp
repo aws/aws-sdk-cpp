@@ -20,6 +20,7 @@
 #include <aws/redshift-data/RedshiftDataAPIServiceClient.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceEndpoint.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceErrorMarshaller.h>
+#include <aws/redshift-data/model/BatchExecuteStatementRequest.h>
 #include <aws/redshift-data/model/CancelStatementRequest.h>
 #include <aws/redshift-data/model/DescribeStatementRequest.h>
 #include <aws/redshift-data/model/DescribeTableRequest.h>
@@ -101,6 +102,30 @@ void RedshiftDataAPIServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchExecuteStatementOutcome RedshiftDataAPIServiceClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchExecuteStatementOutcomeCallable RedshiftDataAPIServiceClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchExecuteStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchExecuteStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftDataAPIServiceClient::BatchExecuteStatementAsync(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchExecuteStatementAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftDataAPIServiceClient::BatchExecuteStatementAsyncHelper(const BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchExecuteStatement(request), context);
 }
 
 CancelStatementOutcome RedshiftDataAPIServiceClient::CancelStatement(const CancelStatementRequest& request) const

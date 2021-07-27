@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> A partition defined by a timestamp. </p><p><h3>See Also:</h3>   <a
+   * <p> A partition dimension defined by a timestamp attribute. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TimestampPartition">AWS
    * API Reference</a></p>
    */
@@ -79,42 +80,50 @@ namespace Model
 
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline const Aws::String& GetTimestampFormat() const{ return m_timestampFormat; }
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline bool TimestampFormatHasBeenSet() const { return m_timestampFormatHasBeenSet; }
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline void SetTimestampFormat(const Aws::String& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = value; }
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline void SetTimestampFormat(Aws::String&& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = std::move(value); }
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline void SetTimestampFormat(const char* value) { m_timestampFormatHasBeenSet = true; m_timestampFormat.assign(value); }
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline TimestampPartition& WithTimestampFormat(const Aws::String& value) { SetTimestampFormat(value); return *this;}
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline TimestampPartition& WithTimestampFormat(Aws::String&& value) { SetTimestampFormat(std::move(value)); return *this;}
 
     /**
-     * <p> The timestamp format of a partition defined by a timestamp. </p>
+     * <p> The timestamp format of a partition defined by a timestamp. The default
+     * format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
      */
     inline TimestampPartition& WithTimestampFormat(const char* value) { SetTimestampFormat(value); return *this;}
 
