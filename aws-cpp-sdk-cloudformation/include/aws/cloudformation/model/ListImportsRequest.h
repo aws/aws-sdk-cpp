@@ -37,50 +37,50 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline const Aws::String& GetExportName() const{ return m_exportName; }
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline bool ExportNameHasBeenSet() const { return m_exportNameHasBeenSet; }
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline void SetExportName(const Aws::String& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = std::move(value); }
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline void SetExportName(const char* value) { m_exportNameHasBeenSet = true; m_exportName.assign(value); }
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline ListImportsRequest& WithExportName(const Aws::String& value) { SetExportName(value); return *this;}
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline ListImportsRequest& WithExportName(Aws::String&& value) { SetExportName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the exported output value. AWS CloudFormation returns the stack
-     * names that are importing this value. </p>
+     * <p>The name of the exported output value. CloudFormation returns the stack names
+     * that are importing this value. </p>
      */
     inline ListImportsRequest& WithExportName(const char* value) { SetExportName(value); return *this;}
 

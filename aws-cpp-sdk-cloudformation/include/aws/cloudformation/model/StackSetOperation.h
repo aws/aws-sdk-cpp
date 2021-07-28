@@ -190,18 +190,18 @@ namespace Model
      * and update operations. If the number of failed stacks within a Region exceeds
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
-     * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
-     * permissions] For automatic deployments that require a sequence of operations,
-     * the operation is queued to be performed. For more information, see the <a
+     * <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
+     * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
+     * For automatic deployments that require a sequence of operations, the operation
+     * is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * completed creating or updating all the specified stacks without exceeding the
+     * failure tolerance for the operation.</p> </li> </ul>
      */
     inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
 
@@ -212,18 +212,18 @@ namespace Model
      * and update operations. If the number of failed stacks within a Region exceeds
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
-     * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
-     * permissions] For automatic deployments that require a sequence of operations,
-     * the operation is queued to be performed. For more information, see the <a
+     * <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
+     * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
+     * For automatic deployments that require a sequence of operations, the operation
+     * is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * completed creating or updating all the specified stacks without exceeding the
+     * failure tolerance for the operation.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -234,18 +234,18 @@ namespace Model
      * and update operations. If the number of failed stacks within a Region exceeds
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
-     * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
-     * permissions] For automatic deployments that require a sequence of operations,
-     * the operation is queued to be performed. For more information, see the <a
+     * <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
+     * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
+     * For automatic deployments that require a sequence of operations, the operation
+     * is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * completed creating or updating all the specified stacks without exceeding the
+     * failure tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(const StackSetOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -256,18 +256,18 @@ namespace Model
      * and update operations. If the number of failed stacks within a Region exceeds
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
-     * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
-     * permissions] For automatic deployments that require a sequence of operations,
-     * the operation is queued to be performed. For more information, see the <a
+     * <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
+     * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
+     * For automatic deployments that require a sequence of operations, the operation
+     * is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * completed creating or updating all the specified stacks without exceeding the
+     * failure tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(StackSetOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -278,18 +278,18 @@ namespace Model
      * and update operations. If the number of failed stacks within a Region exceeds
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
-     * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
-     * permissions] For automatic deployments that require a sequence of operations,
-     * the operation is queued to be performed. For more information, see the <a
+     * <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
+     * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
+     * For automatic deployments that require a sequence of operations, the operation
+     * is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * completed creating or updating all the specified stacks without exceeding the
+     * failure tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperation& WithStatus(const StackSetOperationStatus& value) { SetStatus(value); return *this;}
 
@@ -300,55 +300,49 @@ namespace Model
      * and update operations. If the number of failed stacks within a Region exceeds
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
-     * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
-     * permissions] For automatic deployments that require a sequence of operations,
-     * the operation is queued to be performed. For more information, see the <a
+     * <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
+     * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
+     * For automatic deployments that require a sequence of operations, the operation
+     * is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
-     * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
-     * </li> <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p>
-     * </li> <li> <p> <code>STOPPING</code>: The operation is in the process of
-     * stopping, at user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The
-     * operation completed creating or updating all the specified stacks without
-     * exceeding the failure tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
+     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
+     * <li> <p> <code>STOPPED</code>: The user has cancelled the operation.</p> </li>
+     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
+     * user request. </p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * completed creating or updating all the specified stacks without exceeding the
+     * failure tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperation& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The preferences for how AWS CloudFormation performs this stack set
-     * operation.</p>
+     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
 
     /**
-     * <p>The preferences for how AWS CloudFormation performs this stack set
-     * operation.</p>
+     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
 
     /**
-     * <p>The preferences for how AWS CloudFormation performs this stack set
-     * operation.</p>
+     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
 
     /**
-     * <p>The preferences for how AWS CloudFormation performs this stack set
-     * operation.</p>
+     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
 
     /**
-     * <p>The preferences for how AWS CloudFormation performs this stack set
-     * operation.</p>
+     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline StackSetOperation& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
 
     /**
-     * <p>The preferences for how AWS CloudFormation performs this stack set
-     * operation.</p>
+     * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline StackSetOperation& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
 
@@ -392,7 +386,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
@@ -403,7 +397,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
@@ -414,7 +408,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
@@ -425,7 +419,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
@@ -436,7 +430,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
@@ -447,7 +441,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline StackSetOperation& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
@@ -458,7 +452,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline StackSetOperation& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
@@ -469,7 +463,7 @@ namespace Model
      * or groups can manage specific stack sets within the same administrator account.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     * Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User
+     * Permissions for Multiple Administrators</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline StackSetOperation& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
@@ -535,8 +529,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
@@ -544,8 +538,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
@@ -553,8 +547,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
@@ -562,8 +556,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
@@ -571,8 +565,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline StackSetOperation& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
@@ -580,8 +574,8 @@ namespace Model
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
-     * individual stacks themselves. This is because AWS CloudFormation needs to
-     * perform preparatory work for the operation, such as dispatching the work to the
+     * individual stacks themselves. This is because CloudFormation needs to perform
+     * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
     inline StackSetOperation& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
@@ -631,37 +625,37 @@ namespace Model
 
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
     inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
     inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
     inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
     inline StackSetOperation& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
     inline StackSetOperation& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
@@ -674,7 +668,7 @@ namespace Model
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
 
@@ -685,7 +679,7 @@ namespace Model
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }
 
@@ -696,7 +690,7 @@ namespace Model
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline void SetStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = value; }
 
@@ -707,7 +701,7 @@ namespace Model
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline void SetStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = std::move(value); }
 
@@ -718,7 +712,7 @@ namespace Model
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline StackSetOperation& WithStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { SetStackSetDriftDetectionDetails(value); return *this;}
 
@@ -729,7 +723,7 @@ namespace Model
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     * Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
      */
     inline StackSetOperation& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
 

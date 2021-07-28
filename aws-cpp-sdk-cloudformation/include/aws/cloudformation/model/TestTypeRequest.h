@@ -255,8 +255,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline const Aws::String& GetLogDeliveryBucket() const{ return m_logDeliveryBucket; }
 
@@ -270,8 +270,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline bool LogDeliveryBucketHasBeenSet() const { return m_logDeliveryBucketHasBeenSet; }
 
@@ -285,8 +285,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline void SetLogDeliveryBucket(const Aws::String& value) { m_logDeliveryBucketHasBeenSet = true; m_logDeliveryBucket = value; }
 
@@ -300,8 +300,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline void SetLogDeliveryBucket(Aws::String&& value) { m_logDeliveryBucketHasBeenSet = true; m_logDeliveryBucket = std::move(value); }
 
@@ -315,8 +315,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline void SetLogDeliveryBucket(const char* value) { m_logDeliveryBucketHasBeenSet = true; m_logDeliveryBucket.assign(value); }
 
@@ -330,8 +330,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline TestTypeRequest& WithLogDeliveryBucket(const Aws::String& value) { SetLogDeliveryBucket(value); return *this;}
 
@@ -345,8 +345,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline TestTypeRequest& WithLogDeliveryBucket(Aws::String&& value) { SetLogDeliveryBucket(std::move(value)); return *this;}
 
@@ -360,8 +360,8 @@ namespace Model
      * <p>GetObject</p> </li> <li> <p>PutObject</p> </li> </ul> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
+     * Identity and Access Management User Guide</i>.</p>
      */
     inline TestTypeRequest& WithLogDeliveryBucket(const char* value) { SetLogDeliveryBucket(value); return *this;}
 

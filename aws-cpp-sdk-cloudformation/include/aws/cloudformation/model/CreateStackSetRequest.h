@@ -162,7 +162,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
@@ -171,7 +171,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -180,7 +180,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
@@ -189,7 +189,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
@@ -198,7 +198,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
@@ -207,7 +207,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
@@ -216,7 +216,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
@@ -225,7 +225,7 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
@@ -236,7 +236,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
@@ -246,7 +246,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
@@ -256,7 +256,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
@@ -266,7 +266,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
@@ -276,7 +276,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
@@ -286,7 +286,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
@@ -296,7 +296,7 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
@@ -306,10 +306,59 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline CreateStackSetRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline CreateStackSetRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
+
+    /**
+     * <p>The stack ID you are importing into a new stack set. Specify the Amazon
+     * Resource Number (ARN) of the stack.</p>
+     */
+    inline CreateStackSetRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
 
     /**
@@ -355,19 +404,18 @@ namespace Model
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -388,41 +436,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -443,41 +490,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -498,41 +544,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -553,41 +598,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -608,41 +652,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline CreateStackSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -663,41 +706,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline CreateStackSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -718,41 +760,40 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline CreateStackSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack set template
-     * contains certain capabilities in order for AWS CloudFormation to create the
-     * stack set and related stack instances.</p> <ul> <li> <p>
-     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
-     * stack templates might include resources that can affect permissions in your AWS
-     * account; for example, by creating new AWS Identity and Access Management (IAM)
-     * users. For those stack sets, you must explicitly acknowledge this by specifying
-     * one of these capabilities.</p> <p>The following IAM resources require you to
-     * specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability. </p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't specify
-     * either of these capabilities, AWS CloudFormation returns an
+     * contains certain capabilities in order for CloudFormation to create the stack
+     * set and related stack instances.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code>
+     * and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stack sets, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -773,120 +814,112 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must create the stack
      * set directly from the processed template, without first reviewing the resulting
      * changes in a change set. To create the stack set directly, you must acknowledge
      * this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      *  <p>Stack sets with service-managed permissions do not currently
      * support the use of macros in templates. (This includes the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you
-     * reference a macro in your template the stack set operation will fail.</p>
-     *  </li> </ul>
+     * transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     * capability for a stack set with service-managed permissions, if you reference a
+     * macro in your template the stack set operation will fail.</p>  </li>
+     * </ul>
      */
     inline CreateStackSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline CreateStackSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline CreateStackSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline CreateStackSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
-     * from it. AWS CloudFormation also propagates these tags to supported resources
-     * that are created in the stacks. A maximum number of 50 tags can be
-     * specified.</p> <p>If you specify tags as part of a <code>CreateStackSet</code>
-     * action, AWS CloudFormation checks to see if you have the required IAM permission
-     * to tag resources. If you don't, the entire <code>CreateStackSet</code> action
-     * fails with an <code>access denied</code> error, and the stack set is not
-     * created.</p>
+     * from it. CloudFormation also propagates these tags to supported resources that
+     * are created in the stacks. A maximum number of 50 tags can be specified.</p>
+     * <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+     * CloudFormation checks to see if you have the required IAM permission to tag
+     * resources. If you don't, the entire <code>CreateStackSet</code> action fails
+     * with an <code>access denied</code> error, and the stack set is not created.</p>
      */
     inline CreateStackSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -897,8 +930,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
@@ -908,8 +941,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
@@ -919,8 +952,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
@@ -930,8 +963,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
@@ -941,8 +974,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
@@ -952,8 +985,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline CreateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
@@ -963,8 +996,8 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline CreateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
@@ -974,15 +1007,15 @@ namespace Model
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline CreateStackSetRequest& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
 
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -992,7 +1025,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1002,7 +1035,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1012,7 +1045,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1022,7 +1055,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1032,7 +1065,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1042,7 +1075,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1052,7 +1085,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM execution role to use to create the stack set. If you do
-     * not specify an execution role, AWS CloudFormation uses the
+     * not specify an execution role, CloudFormation uses the
      * <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set
      * operation.</p> <p>Specify an IAM role only if you are using customized execution
      * roles to control which stack resources users and groups can include in their
@@ -1070,7 +1103,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -1086,7 +1119,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -1102,7 +1135,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -1118,7 +1151,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -1134,7 +1167,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -1150,7 +1183,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -1159,50 +1192,44 @@ namespace Model
 
 
     /**
-     * <p>Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to the target organization or organizational unit (OU).
-     * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to the target organization or organizational unit (OU). Specify
+     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
 
     /**
-     * <p>Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to the target organization or organizational unit (OU).
-     * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to the target organization or organizational unit (OU). Specify
+     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
 
     /**
-     * <p>Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to the target organization or organizational unit (OU).
-     * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to the target organization or organizational unit (OU). Specify
+     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
 
     /**
-     * <p>Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to the target organization or organizational unit (OU).
-     * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to the target organization or organizational unit (OU). Specify
+     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
 
     /**
-     * <p>Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to the target organization or organizational unit (OU).
-     * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to the target organization or organizational unit (OU). Specify
+     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline CreateStackSetRequest& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
 
     /**
-     * <p>Describes whether StackSets automatically deploys to AWS Organizations
-     * accounts that are added to the target organization or organizational unit (OU).
-     * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <p>Describes whether StackSets automatically deploys to Organizations accounts
+     * that are added to the target organization or organizational unit (OU). Specify
+     * only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
      */
     inline CreateStackSetRequest& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
 
@@ -1216,11 +1243,11 @@ namespace Model
      * permissions while signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
      * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your account must be registered as a
      * delegated admin in the management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
@@ -1235,11 +1262,11 @@ namespace Model
      * permissions while signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
      * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your account must be registered as a
      * delegated admin in the management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
@@ -1254,11 +1281,11 @@ namespace Model
      * permissions while signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
      * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your account must be registered as a
      * delegated admin in the management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
@@ -1273,11 +1300,11 @@ namespace Model
      * permissions while signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
      * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your account must be registered as a
      * delegated admin in the management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
@@ -1292,11 +1319,11 @@ namespace Model
      * permissions while signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
      * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your account must be registered as a
      * delegated admin in the management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
@@ -1311,11 +1338,11 @@ namespace Model
      * permissions while signed in to the management account, specify
      * <code>SELF</code>.</p> </li> <li> <p>To create a stack set with service-managed
      * permissions while signed in to a delegated administrator account, specify
-     * <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS account must be registered as a
+     * <code>DELEGATED_ADMIN</code>.</p> <p>Your account must be registered as a
      * delegated admin in the management account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul> <p>Stack sets with service-managed permissions are created in the
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul> <p>Stack sets with service-managed permissions are created in the
      * management account, including stack sets that are created by delegated
      * administrators.</p>
      */
@@ -1324,9 +1351,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1334,9 +1361,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1344,9 +1371,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1354,9 +1381,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1364,9 +1391,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1374,9 +1401,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1384,9 +1411,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1394,9 +1421,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
-     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * this token if you plan to retry requests so that CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
-     * retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation
+     * retry <code>CreateStackSet</code> requests to ensure that CloudFormation
      * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
      * generates one automatically. </p>
      */
@@ -1415,6 +1442,9 @@ namespace Model
 
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
+    Aws::String m_stackId;
+    bool m_stackIdHasBeenSet;
 
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;

@@ -32,9 +32,8 @@ namespace Model
   /**
    * <p>Contains the drift information for a resource that has been checked for
    * drift. This includes actual and expected property values for resources in which
-   * AWS CloudFormation has detected drift. Only resource properties explicitly
-   * defined in the stack template are checked for drift. For more information, see
-   * <a
+   * CloudFormation has detected drift. Only resource properties explicitly defined
+   * in the stack template are checked for drift. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
    * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources
    * that do not currently support drift detection cannot be checked. For a list of
@@ -142,56 +141,56 @@ namespace Model
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline StackResourceDrift& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline StackResourceDrift& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation. </p>
+     * resource supported by CloudFormation. </p>
      */
     inline StackResourceDrift& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -199,8 +198,8 @@ namespace Model
     inline const Aws::Vector<PhysicalResourceIdContextKeyValuePair>& GetPhysicalResourceIdContext() const{ return m_physicalResourceIdContext; }
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -208,8 +207,8 @@ namespace Model
     inline bool PhysicalResourceIdContextHasBeenSet() const { return m_physicalResourceIdContextHasBeenSet; }
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -217,8 +216,8 @@ namespace Model
     inline void SetPhysicalResourceIdContext(const Aws::Vector<PhysicalResourceIdContextKeyValuePair>& value) { m_physicalResourceIdContextHasBeenSet = true; m_physicalResourceIdContext = value; }
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -226,8 +225,8 @@ namespace Model
     inline void SetPhysicalResourceIdContext(Aws::Vector<PhysicalResourceIdContextKeyValuePair>&& value) { m_physicalResourceIdContextHasBeenSet = true; m_physicalResourceIdContext = std::move(value); }
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -235,8 +234,8 @@ namespace Model
     inline StackResourceDrift& WithPhysicalResourceIdContext(const Aws::Vector<PhysicalResourceIdContextKeyValuePair>& value) { SetPhysicalResourceIdContext(value); return *this;}
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -244,8 +243,8 @@ namespace Model
     inline StackResourceDrift& WithPhysicalResourceIdContext(Aws::Vector<PhysicalResourceIdContextKeyValuePair>&& value) { SetPhysicalResourceIdContext(std::move(value)); return *this;}
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -253,8 +252,8 @@ namespace Model
     inline StackResourceDrift& AddPhysicalResourceIdContext(const PhysicalResourceIdContextKeyValuePair& value) { m_physicalResourceIdContextHasBeenSet = true; m_physicalResourceIdContext.push_back(value); return *this; }
 
     /**
-     * <p>Context information that enables AWS CloudFormation to uniquely identify a
-     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * <p>Context information that enables CloudFormation to uniquely identify a
+     * resource. CloudFormation uses context key-value pairs in cases where a
      * resource's logical and physical IDs are not enough to uniquely identify that
      * resource. Each context key-value pair specifies a unique resource that contains
      * the targeted resource.</p>
@@ -490,8 +489,8 @@ namespace Model
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
-     * does not currently return this value.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
+     * not currently return this value.</p> </li> </ul>
      */
     inline const StackResourceDriftStatus& GetStackResourceDriftStatus() const{ return m_stackResourceDriftStatus; }
 
@@ -503,8 +502,8 @@ namespace Model
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
-     * does not currently return this value.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
+     * not currently return this value.</p> </li> </ul>
      */
     inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
 
@@ -516,8 +515,8 @@ namespace Model
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
-     * does not currently return this value.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
+     * not currently return this value.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatus(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
 
@@ -529,8 +528,8 @@ namespace Model
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
-     * does not currently return this value.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
+     * not currently return this value.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatus(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = std::move(value); }
 
@@ -542,8 +541,8 @@ namespace Model
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
-     * does not currently return this value.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
+     * not currently return this value.</p> </li> </ul>
      */
     inline StackResourceDrift& WithStackResourceDriftStatus(const StackResourceDriftStatus& value) { SetStackResourceDriftStatus(value); return *this;}
 
@@ -555,44 +554,44 @@ namespace Model
      * from their expected values (as defined in the stack template and any values
      * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
      * resources's actual configuration matches its expected template
-     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
-     * does not currently return this value.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation does
+     * not currently return this value.</p> </li> </ul>
      */
     inline StackResourceDrift& WithStackResourceDriftStatus(StackResourceDriftStatus&& value) { SetStackResourceDriftStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * <p>Time at which CloudFormation performed drift detection on the stack
      * resource.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * <p>Time at which CloudFormation performed drift detection on the stack
      * resource.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * <p>Time at which CloudFormation performed drift detection on the stack
      * resource.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * <p>Time at which CloudFormation performed drift detection on the stack
      * resource.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * <p>Time at which CloudFormation performed drift detection on the stack
      * resource.</p>
      */
     inline StackResourceDrift& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * <p>Time at which CloudFormation performed drift detection on the stack
      * resource.</p>
      */
     inline StackResourceDrift& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}

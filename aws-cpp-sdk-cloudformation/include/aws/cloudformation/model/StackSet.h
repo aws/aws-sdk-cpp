@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * <p>A structure that contains information about a stack set. A stack set enables
-   * you to provision stacks into AWS accounts and across Regions by using a single
+   * you to provision stacks into accounts and across Regions by using a single
    * CloudFormation template. In the stack set, you specify the template to use, as
    * well as any parameters and capabilities that the template requires.
    * </p><p><h3>See Also:</h3>   <a
@@ -305,81 +305,81 @@ namespace Model
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline StackSet& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline StackSet& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline StackSet& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
-     * might include resources that can affect permissions in your AWS account—for
-     * example, by creating new AWS Identity and Access Management (IAM) users. For
-     * more information, see <a
+     * might include resources that can affect permissions in your account—for example,
+     * by creating new Identity and Access Management (IAM) users. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     * IAM Resources in CloudFormation Templates.</a> </p>
      */
     inline StackSet& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -480,8 +480,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
@@ -491,8 +491,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
@@ -502,8 +502,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
@@ -513,8 +513,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
@@ -524,8 +524,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
@@ -535,8 +535,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline StackSet& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
@@ -546,8 +546,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline StackSet& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
@@ -557,8 +557,8 @@ namespace Model
      * groups can manage specific stack sets within the same administrator account. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
-     * User Guide</i>.</p>
+     * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline StackSet& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
 
@@ -671,42 +671,42 @@ namespace Model
 
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to AWS Organizations accounts that are added to a target organization or
+     * deploys to Organizations accounts that are added to a target organization or
      * organizational unit (OU).</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
 
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to AWS Organizations accounts that are added to a target organization or
+     * deploys to Organizations accounts that are added to a target organization or
      * organizational unit (OU).</p>
      */
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
 
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to AWS Organizations accounts that are added to a target organization or
+     * deploys to Organizations accounts that are added to a target organization or
      * organizational unit (OU).</p>
      */
     inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
 
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to AWS Organizations accounts that are added to a target organization or
+     * deploys to Organizations accounts that are added to a target organization or
      * organizational unit (OU).</p>
      */
     inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
 
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to AWS Organizations accounts that are added to a target organization or
+     * deploys to Organizations accounts that are added to a target organization or
      * organizational unit (OU).</p>
      */
     inline StackSet& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
 
     /**
      * <p>[Service-managed permissions] Describes whether StackSets automatically
-     * deploys to AWS Organizations accounts that are added to a target organization or
+     * deploys to Organizations accounts that are added to a target organization or
      * organizational unit (OU).</p>
      */
     inline StackSet& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
@@ -720,7 +720,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -735,7 +735,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -750,7 +750,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -765,7 +765,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -780,7 +780,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
@@ -795,7 +795,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
      * <code>service-managed</code> permissions, StackSets automatically creates the
-     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * IAM roles required to deploy to accounts managed by Organizations. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
      * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>

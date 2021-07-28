@@ -353,38 +353,38 @@ namespace Model
 
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline bool RollbackConfigurationHasBeenSet() const { return m_rollbackConfigurationHasBeenSet; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline Stack& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline Stack& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
@@ -640,58 +640,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline Stack& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline Stack& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that is associated with the stack. During a stack operation, AWS
-     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, CloudFormation
+     * uses this role's credentials to make calls on your behalf.</p>
      */
     inline Stack& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -743,7 +743,7 @@ namespace Model
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-     * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool GetEnableTerminationProtection() const{ return m_enableTerminationProtection; }
 
@@ -753,7 +753,7 @@ namespace Model
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-     * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
 
@@ -763,7 +763,7 @@ namespace Model
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-     * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetEnableTerminationProtection(bool value) { m_enableTerminationProtectionHasBeenSet = true; m_enableTerminationProtection = value; }
 
@@ -773,7 +773,7 @@ namespace Model
      * stacks</a>, termination protection is set on the root stack and cannot be
      * changed directly on the nested stack. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-     * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithEnableTerminationProtection(bool value) { SetEnableTerminationProtection(value); return *this;}
 
@@ -783,7 +783,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
 
@@ -792,7 +792,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
@@ -801,7 +801,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
@@ -810,7 +810,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
 
@@ -819,7 +819,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
 
@@ -828,7 +828,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
 
@@ -837,7 +837,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
 
@@ -846,7 +846,7 @@ namespace Model
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithParentId(const char* value) { SetParentId(value); return *this;}
 
@@ -856,7 +856,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetRootId() const{ return m_rootId; }
 
@@ -865,7 +865,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
 
@@ -874,7 +874,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
 
@@ -883,7 +883,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
 
@@ -892,7 +892,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetRootId(const char* value) { m_rootIdHasBeenSet = true; m_rootId.assign(value); }
 
@@ -901,7 +901,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithRootId(const Aws::String& value) { SetRootId(value); return *this;}
 
@@ -910,7 +910,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
 
@@ -919,7 +919,7 @@ namespace Model
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithRootId(const char* value) { SetRootId(value); return *this;}
 

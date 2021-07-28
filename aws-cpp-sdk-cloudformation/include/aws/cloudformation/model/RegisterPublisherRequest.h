@@ -37,34 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>Whether you accept the terms and conditions for publishing extensions in the
-     * CloudFormation registry. You must accept the terms and conditions in order to
-     * register to publish public extensions to the CloudFormation registry.</p> <p>The
-     * default is <code>false</code>.</p>
+     * <p>Whether you accept the <a
+     * href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms
+     * and Conditions</a> for publishing extensions in the CloudFormation registry. You
+     * must accept the terms and conditions in order to register to publish public
+     * extensions to the CloudFormation registry.</p> <p>The default is
+     * <code>false</code>.</p>
      */
     inline bool GetAcceptTermsAndConditions() const{ return m_acceptTermsAndConditions; }
 
     /**
-     * <p>Whether you accept the terms and conditions for publishing extensions in the
-     * CloudFormation registry. You must accept the terms and conditions in order to
-     * register to publish public extensions to the CloudFormation registry.</p> <p>The
-     * default is <code>false</code>.</p>
+     * <p>Whether you accept the <a
+     * href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms
+     * and Conditions</a> for publishing extensions in the CloudFormation registry. You
+     * must accept the terms and conditions in order to register to publish public
+     * extensions to the CloudFormation registry.</p> <p>The default is
+     * <code>false</code>.</p>
      */
     inline bool AcceptTermsAndConditionsHasBeenSet() const { return m_acceptTermsAndConditionsHasBeenSet; }
 
     /**
-     * <p>Whether you accept the terms and conditions for publishing extensions in the
-     * CloudFormation registry. You must accept the terms and conditions in order to
-     * register to publish public extensions to the CloudFormation registry.</p> <p>The
-     * default is <code>false</code>.</p>
+     * <p>Whether you accept the <a
+     * href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms
+     * and Conditions</a> for publishing extensions in the CloudFormation registry. You
+     * must accept the terms and conditions in order to register to publish public
+     * extensions to the CloudFormation registry.</p> <p>The default is
+     * <code>false</code>.</p>
      */
     inline void SetAcceptTermsAndConditions(bool value) { m_acceptTermsAndConditionsHasBeenSet = true; m_acceptTermsAndConditions = value; }
 
     /**
-     * <p>Whether you accept the terms and conditions for publishing extensions in the
-     * CloudFormation registry. You must accept the terms and conditions in order to
-     * register to publish public extensions to the CloudFormation registry.</p> <p>The
-     * default is <code>false</code>.</p>
+     * <p>Whether you accept the <a
+     * href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms
+     * and Conditions</a> for publishing extensions in the CloudFormation registry. You
+     * must accept the terms and conditions in order to register to publish public
+     * extensions to the CloudFormation registry.</p> <p>The default is
+     * <code>false</code>.</p>
      */
     inline RegisterPublisherRequest& WithAcceptTermsAndConditions(bool value) { SetAcceptTermsAndConditions(value); return *this;}
 

@@ -172,105 +172,97 @@ namespace Model
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline DescribeStackResourcesRequest& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline DescribeStackResourcesRequest& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
-     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
-     * corresponds to the <code>InstanceId</code>. You can pass the EC2
-     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
-     * stack the instance belongs to and what other resources are part of the
-     * stack.</p> <p>Required: Conditional. If you do not specify
-     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
-     * <p>Default: There is no default value.</p>
+     * resource supported by CloudFormation.</p> <p>For example, for an Amazon Elastic
+     * Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the
+     * <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to
+     * <code>DescribeStackResources</code> to find which stack the instance belongs to
+     * and what other resources are part of the stack.</p> <p>Required: Conditional. If
+     * you do not specify <code>PhysicalResourceId</code>, you must specify
+     * <code>StackName</code>.</p> <p>Default: There is no default value.</p>
      */
     inline DescribeStackResourcesRequest& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 

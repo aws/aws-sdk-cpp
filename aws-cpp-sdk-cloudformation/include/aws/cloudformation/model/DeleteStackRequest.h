@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -111,7 +111,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
      * logical IDs that are associated with the resources you want to retain. During
-     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * deletion, CloudFormation deletes the stack but does not delete the retained
      * resources.</p> <p>Retaining resources is useful when you cannot delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
@@ -164,91 +164,91 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline DeleteStackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline DeleteStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf.</p> <p>If you don't
-     * specify a value, AWS CloudFormation uses the role that was previously associated
-     * with the stack. If no role is available, AWS CloudFormation uses a temporary
-     * session that is generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that is
+     * generated from your user credentials.</p>
      */
     inline DeleteStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -266,9 +266,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -286,9 +286,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -306,9 +306,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -326,9 +326,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -346,9 +346,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -366,9 +366,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -386,9 +386,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to delete a stack with the same name. You might retry
-     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token

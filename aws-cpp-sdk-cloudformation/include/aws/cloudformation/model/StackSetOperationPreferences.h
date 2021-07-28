@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The user-specified preferences for how AWS CloudFormation performs a stack
-   * set operation. </p> <p>For more information on maximum concurrent accounts and
+   * <p>The user-specified preferences for how CloudFormation performs a stack set
+   * operation. </p> <p>For more information on maximum concurrent accounts and
    * failure tolerance, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
    * set operation options</a>.</p><p><h3>See Also:</h3>   <a
@@ -46,38 +46,38 @@ namespace Model
 
 
     /**
-     * <p>The concurrency type of deploying StackSets operations in regions, could be
-     * in parallel or one region at a time.</p>
+     * <p>The concurrency type of deploying StackSets operations in Regions, could be
+     * in parallel or one Region at a time.</p>
      */
     inline const RegionConcurrencyType& GetRegionConcurrencyType() const{ return m_regionConcurrencyType; }
 
     /**
-     * <p>The concurrency type of deploying StackSets operations in regions, could be
-     * in parallel or one region at a time.</p>
+     * <p>The concurrency type of deploying StackSets operations in Regions, could be
+     * in parallel or one Region at a time.</p>
      */
     inline bool RegionConcurrencyTypeHasBeenSet() const { return m_regionConcurrencyTypeHasBeenSet; }
 
     /**
-     * <p>The concurrency type of deploying StackSets operations in regions, could be
-     * in parallel or one region at a time.</p>
+     * <p>The concurrency type of deploying StackSets operations in Regions, could be
+     * in parallel or one Region at a time.</p>
      */
     inline void SetRegionConcurrencyType(const RegionConcurrencyType& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = value; }
 
     /**
-     * <p>The concurrency type of deploying StackSets operations in regions, could be
-     * in parallel or one region at a time.</p>
+     * <p>The concurrency type of deploying StackSets operations in Regions, could be
+     * in parallel or one Region at a time.</p>
      */
     inline void SetRegionConcurrencyType(RegionConcurrencyType&& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = std::move(value); }
 
     /**
-     * <p>The concurrency type of deploying StackSets operations in regions, could be
-     * in parallel or one region at a time.</p>
+     * <p>The concurrency type of deploying StackSets operations in Regions, could be
+     * in parallel or one Region at a time.</p>
      */
     inline StackSetOperationPreferences& WithRegionConcurrencyType(const RegionConcurrencyType& value) { SetRegionConcurrencyType(value); return *this;}
 
     /**
-     * <p>The concurrency type of deploying StackSets operations in regions, could be
-     * in parallel or one region at a time.</p>
+     * <p>The concurrency type of deploying StackSets operations in Regions, could be
+     * in parallel or one Region at a time.</p>
      */
     inline StackSetOperationPreferences& WithRegionConcurrencyType(RegionConcurrencyType&& value) { SetRegionConcurrencyType(std::move(value)); return *this;}
 
@@ -139,9 +139,9 @@ namespace Model
 
     /**
      * <p>The number of accounts, per Region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that Region. If the operation is
-     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>Conditional: You must specify either
+     * CloudFormation stops the operation in that Region. If the operation is stopped
+     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
@@ -149,9 +149,9 @@ namespace Model
 
     /**
      * <p>The number of accounts, per Region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that Region. If the operation is
-     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>Conditional: You must specify either
+     * CloudFormation stops the operation in that Region. If the operation is stopped
+     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
@@ -159,9 +159,9 @@ namespace Model
 
     /**
      * <p>The number of accounts, per Region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that Region. If the operation is
-     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>Conditional: You must specify either
+     * CloudFormation stops the operation in that Region. If the operation is stopped
+     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
@@ -169,9 +169,9 @@ namespace Model
 
     /**
      * <p>The number of accounts, per Region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that Region. If the operation is
-     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent Regions.</p> <p>Conditional: You must specify either
+     * CloudFormation stops the operation in that Region. If the operation is stopped
+     * in a Region, CloudFormation doesn't attempt the operation in any subsequent
+     * Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
@@ -180,53 +180,49 @@ namespace Model
 
     /**
      * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that Region. If the
-     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent Regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS CloudFormation rounds
-     * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
-     * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
-     * <code>0</code> is specified.</p>
+     * fail before CloudFormation stops the operation in that Region. If the operation
+     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
+     * number.</p> <p>Conditional: You must specify either
+     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
+     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline int GetFailureTolerancePercentage() const{ return m_failureTolerancePercentage; }
 
     /**
      * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that Region. If the
-     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent Regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS CloudFormation rounds
-     * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
-     * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
-     * <code>0</code> is specified.</p>
+     * fail before CloudFormation stops the operation in that Region. If the operation
+     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
+     * number.</p> <p>Conditional: You must specify either
+     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
+     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
 
     /**
      * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that Region. If the
-     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent Regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS CloudFormation rounds
-     * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
-     * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
-     * <code>0</code> is specified.</p>
+     * fail before CloudFormation stops the operation in that Region. If the operation
+     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
+     * number.</p> <p>Conditional: You must specify either
+     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
+     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline void SetFailureTolerancePercentage(int value) { m_failureTolerancePercentageHasBeenSet = true; m_failureTolerancePercentage = value; }
 
     /**
      * <p>The percentage of accounts, per Region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that Region. If the
-     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent Regions.</p> <p>When calculating the number of
-     * accounts based on the specified percentage, AWS CloudFormation rounds
-     * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
-     * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
-     * <code>0</code> is specified.</p>
+     * fail before CloudFormation stops the operation in that Region. If the operation
+     * is stopped in a Region, CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>When calculating the number of accounts based on the
+     * specified percentage, CloudFormation rounds <i>down</i> to the next whole
+     * number.</p> <p>Conditional: You must specify either
+     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>,
+     * but not both.</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline StackSetOperationPreferences& WithFailureTolerancePercentage(int value) { SetFailureTolerancePercentage(value); return *this;}
 
@@ -287,8 +283,8 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS CloudFormation rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case,
+     * percentage, CloudFormation rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case,
      * CloudFormation sets the number as one instead.</p> <p>Note that this setting
      * lets you specify the <i>maximum</i> for operations. For large deployments, under
      * certain circumstances the actual number of accounts acted upon concurrently may
@@ -301,8 +297,8 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS CloudFormation rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case,
+     * percentage, CloudFormation rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case,
      * CloudFormation sets the number as one instead.</p> <p>Note that this setting
      * lets you specify the <i>maximum</i> for operations. For large deployments, under
      * certain circumstances the actual number of accounts acted upon concurrently may
@@ -315,8 +311,8 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS CloudFormation rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case,
+     * percentage, CloudFormation rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case,
      * CloudFormation sets the number as one instead.</p> <p>Note that this setting
      * lets you specify the <i>maximum</i> for operations. For large deployments, under
      * certain circumstances the actual number of accounts acted upon concurrently may
@@ -329,8 +325,8 @@ namespace Model
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one
      * time.</p> <p>When calculating the number of accounts based on the specified
-     * percentage, AWS CloudFormation rounds down to the next whole number. This is
-     * true except in cases where rounding down would result is zero. In this case,
+     * percentage, CloudFormation rounds down to the next whole number. This is true
+     * except in cases where rounding down would result is zero. In this case,
      * CloudFormation sets the number as one instead.</p> <p>Note that this setting
      * lets you specify the <i>maximum</i> for operations. For large deployments, under
      * certain circumstances the actual number of accounts acted upon concurrently may

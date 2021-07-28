@@ -40,47 +40,56 @@ namespace Model
 
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSource() const{ return m_source; }
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline void SetSource(const Aws::Vector<Aws::String>& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline void SetSource(Aws::Vector<Aws::String>&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline AccessControlAttributeValue& WithSource(const Aws::Vector<Aws::String>& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline AccessControlAttributeValue& WithSource(Aws::Vector<Aws::String>&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline AccessControlAttributeValue& AddSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source.push_back(value); return *this; }
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline AccessControlAttributeValue& AddSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identity source to use when mapping a specified attribute to AWS SSO.</p>
+     * <p>The identity source to use when mapping a specified attribute to Amazon Web
+     * Services SSO.</p>
      */
     inline AccessControlAttributeValue& AddSource(const char* value) { m_sourceHasBeenSet = true; m_source.push_back(value); return *this; }
 

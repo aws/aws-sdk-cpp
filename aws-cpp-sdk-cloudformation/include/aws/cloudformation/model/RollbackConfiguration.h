@@ -25,12 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Structure containing the rollback triggers for AWS CloudFormation to monitor
+   * <p>Structure containing the rollback triggers for CloudFormation to monitor
    * during stack creation and updating operations, and for the specified monitoring
-   * period afterwards.</p> <p>Rollback triggers enable you to have AWS
-   * CloudFormation monitor the state of your application during stack creation and
-   * updating, and to roll back that operation if the application breaches the
-   * threshold of any of the alarms you've specified. For more information, see <a
+   * period afterwards.</p> <p>Rollback triggers enable you to have CloudFormation
+   * monitor the state of your application during stack creation and updating, and to
+   * roll back that operation if the application breaches the threshold of any of the
+   * alarms you've specified. For more information, see <a
    * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor
    * and Roll Back Stack Operations</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">AWS
@@ -49,8 +49,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -67,8 +67,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -85,8 +85,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -103,8 +103,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -121,8 +121,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -139,8 +139,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -157,8 +157,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for
@@ -175,8 +175,8 @@ namespace Model
 
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
-     * default, AWS CloudFormation saves the rollback triggers specified for a stack
-     * and applies them to any subsequent update operations for the stack, unless you
+     * default, CloudFormation saves the rollback triggers specified for a stack and
+     * applies them to any subsequent update operations for the stack, unless you
      * specify otherwise. If you do specify rollback triggers for this parameter, those
      * triggers replace any list of triggers previously specified for the stack. This
      * means:</p> <ul> <li> <p>To use the rollback triggers previously specified for

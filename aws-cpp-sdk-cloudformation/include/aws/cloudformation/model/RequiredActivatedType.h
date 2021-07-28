@@ -29,7 +29,7 @@ namespace Model
    * activated in your account in order for the module itself to be activated.</p>
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating
-   * public modules for use in your account</a> in the <i>AWS CloudFormation User
+   * public modules for use in your account</a> in the <i>CloudFormation User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RequiredActivatedType">AWS
    * API Reference</a></p>

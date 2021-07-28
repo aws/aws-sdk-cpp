@@ -165,25 +165,25 @@ namespace Model
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Management Console.</p>
      */
     inline bool GetNoEcho() const{ return m_noEcho; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Management Console.</p>
      */
     inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Management Console.</p>
      */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
 
     /**
      * <p>Flag that indicates whether the parameter value is shown as plain text in
-     * logs and in the AWS Management Console.</p>
+     * logs and in the Management Console.</p>
      */
     inline ParameterDeclaration& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
 
@@ -230,32 +230,32 @@ namespace Model
 
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline const ParameterConstraints& GetParameterConstraints() const{ return m_parameterConstraints; }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline bool ParameterConstraintsHasBeenSet() const { return m_parameterConstraintsHasBeenSet; }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline void SetParameterConstraints(const ParameterConstraints& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = value; }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline void SetParameterConstraints(ParameterConstraints&& value) { m_parameterConstraintsHasBeenSet = true; m_parameterConstraints = std::move(value); }
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline ParameterDeclaration& WithParameterConstraints(const ParameterConstraints& value) { SetParameterConstraints(value); return *this;}
 
     /**
-     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     * <p>The criteria that CloudFormation uses to validate parameter values.</p>
      */
     inline ParameterDeclaration& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(std::move(value)); return *this;}
 

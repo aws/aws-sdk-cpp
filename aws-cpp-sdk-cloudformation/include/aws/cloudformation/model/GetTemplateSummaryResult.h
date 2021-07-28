@@ -136,7 +136,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -147,7 +147,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
 
@@ -158,7 +158,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
 
@@ -169,7 +169,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -180,7 +180,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -191,7 +191,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
 
@@ -202,7 +202,7 @@ namespace Model
      * with your template; otherwise, those actions return an InsufficientCapabilities
      * error.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -308,44 +308,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
