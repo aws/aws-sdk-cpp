@@ -23,6 +23,7 @@ namespace Aws
         static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
         static const int OUT_OF_SYNC_HASH = HashingUtils::HashString("OUT_OF_SYNC");
         static const int SYNC_FAILED_HASH = HashingUtils::HashString("SYNC_FAILED");
+        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 
 
         CapabilitySyncStatus GetCapabilitySyncStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == SYNC_FAILED_HASH)
           {
             return CapabilitySyncStatus::SYNC_FAILED;
+          }
+          else if (hashCode == UNKNOWN_HASH)
+          {
+            return CapabilitySyncStatus::UNKNOWN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "OUT_OF_SYNC";
           case CapabilitySyncStatus::SYNC_FAILED:
             return "SYNC_FAILED";
+          case CapabilitySyncStatus::UNKNOWN:
+            return "UNKNOWN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

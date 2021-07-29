@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotsitewise/model/TransformProcessingConfig.h>
 #include <aws/iotsitewise/model/ExpressionVariable.h>
 #include <utility>
 
@@ -160,6 +161,55 @@ namespace Model
      */
     inline Transform& AddVariables(ExpressionVariable&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The processing configuration for the given transform property. You can
+     * configure transforms to be kept at the edge or forwarded to the Amazon Web
+     * Services Cloud. You can also configure transforms to be computed at the edge or
+     * in the cloud.</p>
+     */
+    inline const TransformProcessingConfig& GetProcessingConfig() const{ return m_processingConfig; }
+
+    /**
+     * <p>The processing configuration for the given transform property. You can
+     * configure transforms to be kept at the edge or forwarded to the Amazon Web
+     * Services Cloud. You can also configure transforms to be computed at the edge or
+     * in the cloud.</p>
+     */
+    inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
+
+    /**
+     * <p>The processing configuration for the given transform property. You can
+     * configure transforms to be kept at the edge or forwarded to the Amazon Web
+     * Services Cloud. You can also configure transforms to be computed at the edge or
+     * in the cloud.</p>
+     */
+    inline void SetProcessingConfig(const TransformProcessingConfig& value) { m_processingConfigHasBeenSet = true; m_processingConfig = value; }
+
+    /**
+     * <p>The processing configuration for the given transform property. You can
+     * configure transforms to be kept at the edge or forwarded to the Amazon Web
+     * Services Cloud. You can also configure transforms to be computed at the edge or
+     * in the cloud.</p>
+     */
+    inline void SetProcessingConfig(TransformProcessingConfig&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::move(value); }
+
+    /**
+     * <p>The processing configuration for the given transform property. You can
+     * configure transforms to be kept at the edge or forwarded to the Amazon Web
+     * Services Cloud. You can also configure transforms to be computed at the edge or
+     * in the cloud.</p>
+     */
+    inline Transform& WithProcessingConfig(const TransformProcessingConfig& value) { SetProcessingConfig(value); return *this;}
+
+    /**
+     * <p>The processing configuration for the given transform property. You can
+     * configure transforms to be kept at the edge or forwarded to the Amazon Web
+     * Services Cloud. You can also configure transforms to be computed at the edge or
+     * in the cloud.</p>
+     */
+    inline Transform& WithProcessingConfig(TransformProcessingConfig&& value) { SetProcessingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_expression;
@@ -167,6 +217,9 @@ namespace Model
 
     Aws::Vector<ExpressionVariable> m_variables;
     bool m_variablesHasBeenSet;
+
+    TransformProcessingConfig m_processingConfig;
+    bool m_processingConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -144,6 +144,8 @@
 #include <aws/chime/model/RestorePhoneNumberResult.h>
 #include <aws/chime/model/SearchAvailablePhoneNumbersResult.h>
 #include <aws/chime/model/SendChannelMessageResult.h>
+#include <aws/chime/model/StartMeetingTranscriptionResult.h>
+#include <aws/chime/model/StopMeetingTranscriptionResult.h>
 #include <aws/chime/model/UpdateAccountResult.h>
 #include <aws/chime/model/UpdateAccountSettingsResult.h>
 #include <aws/chime/model/UpdateAppInstanceResult.h>
@@ -361,6 +363,8 @@ namespace Model
         class RestorePhoneNumberRequest;
         class SearchAvailablePhoneNumbersRequest;
         class SendChannelMessageRequest;
+        class StartMeetingTranscriptionRequest;
+        class StopMeetingTranscriptionRequest;
         class TagAttendeeRequest;
         class TagMeetingRequest;
         class TagResourceRequest;
@@ -550,6 +554,8 @@ namespace Model
         typedef Aws::Utils::Outcome<RestorePhoneNumberResult, ChimeError> RestorePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ChimeError> SearchAvailablePhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<SendChannelMessageResult, ChimeError> SendChannelMessageOutcome;
+        typedef Aws::Utils::Outcome<StartMeetingTranscriptionResult, ChimeError> StartMeetingTranscriptionOutcome;
+        typedef Aws::Utils::Outcome<StopMeetingTranscriptionResult, ChimeError> StopMeetingTranscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> TagAttendeeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> TagMeetingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> TagResourceOutcome;
@@ -739,6 +745,8 @@ namespace Model
         typedef std::future<RestorePhoneNumberOutcome> RestorePhoneNumberOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
         typedef std::future<SendChannelMessageOutcome> SendChannelMessageOutcomeCallable;
+        typedef std::future<StartMeetingTranscriptionOutcome> StartMeetingTranscriptionOutcomeCallable;
+        typedef std::future<StopMeetingTranscriptionOutcome> StopMeetingTranscriptionOutcomeCallable;
         typedef std::future<TagAttendeeOutcome> TagAttendeeOutcomeCallable;
         typedef std::future<TagMeetingOutcome> TagMeetingOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -931,6 +939,8 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::RestorePhoneNumberRequest&, const Model::RestorePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestorePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::SendChannelMessageRequest&, const Model::SendChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChannelMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::StartMeetingTranscriptionRequest&, const Model::StartMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMeetingTranscriptionResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::StopMeetingTranscriptionRequest&, const Model::StopMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMeetingTranscriptionResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::TagAttendeeRequest&, const Model::TagAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::TagMeetingRequest&, const Model::TagMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -6266,6 +6276,62 @@ namespace Model
         virtual void SendChannelMessageAsync(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMeetingTranscriptionOutcome StartMeetingTranscription(const Model::StartMeetingTranscriptionRequest& request) const;
+
+        /**
+         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMeetingTranscriptionOutcomeCallable StartMeetingTranscriptionCallable(const Model::StartMeetingTranscriptionRequest& request) const;
+
+        /**
+         * <p>Start transcription for the specified <code>meetingId</code>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMeetingTranscriptionAsync(const Model::StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops transcription for the specified <code>meetingId</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopMeetingTranscriptionOutcome StopMeetingTranscription(const Model::StopMeetingTranscriptionRequest& request) const;
+
+        /**
+         * <p>Stops transcription for the specified <code>meetingId</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopMeetingTranscriptionOutcomeCallable StopMeetingTranscriptionCallable(const Model::StopMeetingTranscriptionRequest& request) const;
+
+        /**
+         * <p>Stops transcription for the specified <code>meetingId</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StopMeetingTranscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopMeetingTranscriptionAsync(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Applies the specified tags to the specified Amazon Chime SDK
          * attendee.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee">AWS
@@ -7261,6 +7327,8 @@ namespace Model
         void RestorePhoneNumberAsyncHelper(const Model::RestorePhoneNumberRequest& request, const RestorePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendChannelMessageAsyncHelper(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMeetingTranscriptionAsyncHelper(const Model::StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopMeetingTranscriptionAsyncHelper(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagAttendeeAsyncHelper(const Model::TagAttendeeRequest& request, const TagAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagMeetingAsyncHelper(const Model::TagMeetingRequest& request, const TagMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

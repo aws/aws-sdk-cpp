@@ -125,42 +125,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline const Aws::String& GetGroupOwnerId() const{ return m_groupOwnerId; }
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline bool GroupOwnerIdHasBeenSet() const { return m_groupOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline void SetGroupOwnerId(const Aws::String& value) { m_groupOwnerIdHasBeenSet = true; m_groupOwnerId = value; }
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline void SetGroupOwnerId(Aws::String&& value) { m_groupOwnerIdHasBeenSet = true; m_groupOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline void SetGroupOwnerId(const char* value) { m_groupOwnerIdHasBeenSet = true; m_groupOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline SecurityGroupRule& WithGroupOwnerId(const Aws::String& value) { SetGroupOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline SecurityGroupRule& WithGroupOwnerId(Aws::String&& value) { SetGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account that owns the security group. </p>
+     * <p>The ID of the Amazon Web Services account that owns the security group. </p>
      */
     inline SecurityGroupRule& WithGroupOwnerId(const char* value) { SetGroupOwnerId(value); return *this;}
 

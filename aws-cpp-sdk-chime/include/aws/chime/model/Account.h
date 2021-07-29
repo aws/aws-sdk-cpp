@@ -326,32 +326,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the account, <code>Suspended</code> or <code>Active</code>.</p>
+     * <p>The status of the account.</p>
      */
     inline const AccountStatus& GetAccountStatus() const{ return m_accountStatus; }
 
     /**
-     * <p>The status of the account, <code>Suspended</code> or <code>Active</code>.</p>
+     * <p>The status of the account.</p>
      */
     inline bool AccountStatusHasBeenSet() const { return m_accountStatusHasBeenSet; }
 
     /**
-     * <p>The status of the account, <code>Suspended</code> or <code>Active</code>.</p>
+     * <p>The status of the account.</p>
      */
     inline void SetAccountStatus(const AccountStatus& value) { m_accountStatusHasBeenSet = true; m_accountStatus = value; }
 
     /**
-     * <p>The status of the account, <code>Suspended</code> or <code>Active</code>.</p>
+     * <p>The status of the account.</p>
      */
     inline void SetAccountStatus(AccountStatus&& value) { m_accountStatusHasBeenSet = true; m_accountStatus = std::move(value); }
 
     /**
-     * <p>The status of the account, <code>Suspended</code> or <code>Active</code>.</p>
+     * <p>The status of the account.</p>
      */
     inline Account& WithAccountStatus(const AccountStatus& value) { SetAccountStatus(value); return *this;}
 
     /**
-     * <p>The status of the account, <code>Suspended</code> or <code>Active</code>.</p>
+     * <p>The status of the account.</p>
      */
     inline Account& WithAccountStatus(AccountStatus&& value) { SetAccountStatus(std::move(value)); return *this;}
 

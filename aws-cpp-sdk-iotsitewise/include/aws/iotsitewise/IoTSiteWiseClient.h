@@ -1384,16 +1384,20 @@ namespace Model
         virtual void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the storage configuration for IoT
-         * SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the storage configuration for IoT SiteWise.</p>
+         *  <p>Exporting data to Amazon S3 is currently in preview release and is
+         * subject to change. We recommend that you use this feature only with test data,
+         * and not in production environments.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeStorageConfigurationOutcome DescribeStorageConfiguration(const Model::DescribeStorageConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves information about the storage configuration for IoT
-         * SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the storage configuration for IoT SiteWise.</p>
+         *  <p>Exporting data to Amazon S3 is currently in preview release and is
+         * subject to change. We recommend that you use this feature only with test data,
+         * and not in production environments.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1402,8 +1406,10 @@ namespace Model
         virtual Model::DescribeStorageConfigurationOutcomeCallable DescribeStorageConfigurationCallable(const Model::DescribeStorageConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves information about the storage configuration for IoT
-         * SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the storage configuration for IoT SiteWise.</p>
+         *  <p>Exporting data to Amazon S3 is currently in preview release and is
+         * subject to change. We recommend that you use this feature only with test data,
+         * and not in production environments.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2048,14 +2054,20 @@ namespace Model
         virtual void PutLoggingOptionsAsync(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Configures storage settings for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Configures storage settings for IoT SiteWise.</p>  <p>Exporting data to
+         * Amazon S3 is currently in preview release and is subject to change. We recommend
+         * that you use this feature only with test data, and not in production
+         * environments.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutStorageConfigurationOutcome PutStorageConfiguration(const Model::PutStorageConfigurationRequest& request) const;
 
         /**
-         * <p>Configures storage settings for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Configures storage settings for IoT SiteWise.</p>  <p>Exporting data to
+         * Amazon S3 is currently in preview release and is subject to change. We recommend
+         * that you use this feature only with test data, and not in production
+         * environments.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2064,7 +2076,10 @@ namespace Model
         virtual Model::PutStorageConfigurationOutcomeCallable PutStorageConfigurationCallable(const Model::PutStorageConfigurationRequest& request) const;
 
         /**
-         * <p>Configures storage settings for IoT SiteWise.</p><p><h3>See Also:</h3>   <a
+         * <p>Configures storage settings for IoT SiteWise.</p>  <p>Exporting data to
+         * Amazon S3 is currently in preview release and is subject to change. We recommend
+         * that you use this feature only with test data, and not in production
+         * environments.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">AWS
          * API Reference</a></p>
          *

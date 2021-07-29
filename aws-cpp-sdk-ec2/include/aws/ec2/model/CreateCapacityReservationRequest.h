@@ -290,9 +290,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline const CapacityReservationTenancy& GetTenancy() const{ return m_tenancy; }
 
@@ -300,9 +301,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
@@ -310,9 +312,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetTenancy(const CapacityReservationTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
@@ -320,9 +323,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetTenancy(CapacityReservationTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
@@ -330,9 +334,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline CreateCapacityReservationRequest& WithTenancy(const CapacityReservationTenancy& value) { SetTenancy(value); return *this;}
 
@@ -340,9 +345,10 @@ namespace Model
      * <p>Indicates the tenancy of the Capacity Reservation. A Capacity Reservation can
      * have one of the following tenancy settings:</p> <ul> <li> <p>
      * <code>default</code> - The Capacity Reservation is created on hardware that is
-     * shared with other accounts.</p> </li> <li> <p> <code>dedicated</code> - The
-     * Capacity Reservation is created on single-tenant hardware that is dedicated to a
-     * single account.</p> </li> </ul>
+     * shared with other Amazon Web Services accounts.</p> </li> <li> <p>
+     * <code>dedicated</code> - The Capacity Reservation is created on single-tenant
+     * hardware that is dedicated to a single Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline CreateCapacityReservationRequest& WithTenancy(CapacityReservationTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A set of endpoints used by clients to connect to the media service group for
-   * a Amazon Chime SDK meeting.</p><p><h3>See Also:</h3>   <a
+   * an Amazon Chime SDK meeting.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MediaPlacement">AWS
    * API Reference</a></p>
    */
@@ -326,42 +326,42 @@ namespace Model
 
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline const Aws::String& GetEventIngestionUrl() const{ return m_eventIngestionUrl; }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline bool EventIngestionUrlHasBeenSet() const { return m_eventIngestionUrlHasBeenSet; }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline void SetEventIngestionUrl(const Aws::String& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = value; }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline void SetEventIngestionUrl(Aws::String&& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = std::move(value); }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline void SetEventIngestionUrl(const char* value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl.assign(value); }
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(const Aws::String& value) { SetEventIngestionUrl(value); return *this;}
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(Aws::String&& value) { SetEventIngestionUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The event ingestion URL.</p>
+     * <p>The URL of the S3 bucket used to store the captured media.</p>
      */
     inline MediaPlacement& WithEventIngestionUrl(const char* value) { SetEventIngestionUrl(value); return *this;}
 

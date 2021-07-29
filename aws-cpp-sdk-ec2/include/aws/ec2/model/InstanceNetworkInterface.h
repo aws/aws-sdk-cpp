@@ -322,42 +322,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account that created the network interface.</p>
+     * <p>The ID of the Amazon Web Services account that created the network
+     * interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

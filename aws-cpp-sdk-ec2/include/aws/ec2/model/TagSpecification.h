@@ -68,10 +68,10 @@ namespace Model
      * <code>transit-gateway-multicast-domain</code> |
      * <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
      * | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for
-     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for
-     * PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>.</p> <p>To tag a resource after it has been created,
-     * see <a
+     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon
+     * Web Services PrivateLink) | <code>vpc-flow-log</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>To tag a resource
+     * after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
@@ -102,10 +102,10 @@ namespace Model
      * <code>transit-gateway-multicast-domain</code> |
      * <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
      * | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for
-     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for
-     * PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>.</p> <p>To tag a resource after it has been created,
-     * see <a
+     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon
+     * Web Services PrivateLink) | <code>vpc-flow-log</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>To tag a resource
+     * after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -136,10 +136,10 @@ namespace Model
      * <code>transit-gateway-multicast-domain</code> |
      * <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
      * | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for
-     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for
-     * PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>.</p> <p>To tag a resource after it has been created,
-     * see <a
+     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon
+     * Web Services PrivateLink) | <code>vpc-flow-log</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>To tag a resource
+     * after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
@@ -170,10 +170,10 @@ namespace Model
      * <code>transit-gateway-multicast-domain</code> |
      * <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
      * | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for
-     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for
-     * PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>.</p> <p>To tag a resource after it has been created,
-     * see <a
+     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon
+     * Web Services PrivateLink) | <code>vpc-flow-log</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>To tag a resource
+     * after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
@@ -204,10 +204,10 @@ namespace Model
      * <code>transit-gateway-multicast-domain</code> |
      * <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
      * | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for
-     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for
-     * PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>.</p> <p>To tag a resource after it has been created,
-     * see <a
+     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon
+     * Web Services PrivateLink) | <code>vpc-flow-log</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>To tag a resource
+     * after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline TagSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
@@ -238,10 +238,10 @@ namespace Model
      * <code>transit-gateway-multicast-domain</code> |
      * <code>transit-gateway-route-table</code> | <code>volume</code> |<code>vpc</code>
      * | <code> vpc-peering-connection</code> | <code>vpc-endpoint</code> (for
-     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for
-     * PrivateLink) | <code>vpc-flow-log</code> | <code>vpn-connection</code> |
-     * <code>vpn-gateway</code>.</p> <p>To tag a resource after it has been created,
-     * see <a
+     * interface and gateway endpoints) | <code>vpc-endpoint-service</code> (for Amazon
+     * Web Services PrivateLink) | <code>vpc-flow-log</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>To tag a resource
+     * after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline TagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}

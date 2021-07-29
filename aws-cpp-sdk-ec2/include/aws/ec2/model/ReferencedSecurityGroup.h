@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline ReferencedSecurityGroup& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline ReferencedSecurityGroup& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline ReferencedSecurityGroup& WithUserId(const char* value) { SetUserId(value); return *this;}
 

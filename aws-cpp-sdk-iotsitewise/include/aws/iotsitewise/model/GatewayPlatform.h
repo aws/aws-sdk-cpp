@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/Greengrass.h>
+#include <aws/iotsitewise/model/GreengrassV2.h>
 #include <utility>
 
 namespace Aws
@@ -67,10 +68,44 @@ namespace Model
      */
     inline GatewayPlatform& WithGreengrass(Greengrass&& value) { SetGreengrass(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A gateway that runs on IoT Greengrass V2.</p>
+     */
+    inline const GreengrassV2& GetGreengrassV2() const{ return m_greengrassV2; }
+
+    /**
+     * <p>A gateway that runs on IoT Greengrass V2.</p>
+     */
+    inline bool GreengrassV2HasBeenSet() const { return m_greengrassV2HasBeenSet; }
+
+    /**
+     * <p>A gateway that runs on IoT Greengrass V2.</p>
+     */
+    inline void SetGreengrassV2(const GreengrassV2& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = value; }
+
+    /**
+     * <p>A gateway that runs on IoT Greengrass V2.</p>
+     */
+    inline void SetGreengrassV2(GreengrassV2&& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = std::move(value); }
+
+    /**
+     * <p>A gateway that runs on IoT Greengrass V2.</p>
+     */
+    inline GatewayPlatform& WithGreengrassV2(const GreengrassV2& value) { SetGreengrassV2(value); return *this;}
+
+    /**
+     * <p>A gateway that runs on IoT Greengrass V2.</p>
+     */
+    inline GatewayPlatform& WithGreengrassV2(GreengrassV2&& value) { SetGreengrassV2(std::move(value)); return *this;}
+
   private:
 
     Greengrass m_greengrass;
     bool m_greengrassHasBeenSet;
+
+    GreengrassV2 m_greengrassV2;
+    bool m_greengrassV2HasBeenSet;
   };
 
 } // namespace Model

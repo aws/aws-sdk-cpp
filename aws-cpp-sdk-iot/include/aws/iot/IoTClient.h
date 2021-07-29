@@ -1321,14 +1321,16 @@ namespace Model
         virtual void AssociateTargetsWithJobAsync(const Model::AssociateTargetsWithJobRequest& request, const AssociateTargetsWithJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches a policy to the specified target.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches the specified policy to the specified principal (certificate or
+         * other credential).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachPolicyOutcome AttachPolicy(const Model::AttachPolicyRequest& request) const;
 
         /**
-         * <p>Attaches a policy to the specified target.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches the specified policy to the specified principal (certificate or
+         * other credential).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -1337,7 +1339,8 @@ namespace Model
         virtual Model::AttachPolicyOutcomeCallable AttachPolicyCallable(const Model::AttachPolicyRequest& request) const;
 
         /**
-         * <p>Attaches a policy to the specified target.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches the specified policy to the specified principal (certificate or
+         * other credential).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
