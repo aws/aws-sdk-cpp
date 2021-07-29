@@ -92,143 +92,143 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts for which
-     * you want to update parameter values for stack instances. The overridden
-     * parameter values will be applied to all stack instances in the specified
-     * accounts and Regions.</p> <p>You can specify <code>Accounts</code> or
+     * <p>[Self-managed permissions] The names of one or more accounts for which you
+     * want to update parameter values for stack instances. The overridden parameter
+     * values will be applied to all stack instances in the specified accounts and
+     * Regions.</p> <p>You can specify <code>Accounts</code> or
      * <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
-     * want to update parameter values for stack instances. If your update targets OUs,
-     * the overridden parameter values only apply to the accounts that are currently in
-     * the target OUs and their child OUs. Accounts added to the target OUs and their
-     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <p>[Service-managed permissions] The Organizations accounts for which you want
+     * to update parameter values for stack instances. If your update targets OUs, the
+     * overridden parameter values only apply to the accounts that are currently in the
+     * target OUs and their child OUs. Accounts added to the target OUs and their child
+     * OUs in the future won't use the overridden values.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
-     * want to update parameter values for stack instances. If your update targets OUs,
-     * the overridden parameter values only apply to the accounts that are currently in
-     * the target OUs and their child OUs. Accounts added to the target OUs and their
-     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <p>[Service-managed permissions] The Organizations accounts for which you want
+     * to update parameter values for stack instances. If your update targets OUs, the
+     * overridden parameter values only apply to the accounts that are currently in the
+     * target OUs and their child OUs. Accounts added to the target OUs and their child
+     * OUs in the future won't use the overridden values.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
-     * want to update parameter values for stack instances. If your update targets OUs,
-     * the overridden parameter values only apply to the accounts that are currently in
-     * the target OUs and their child OUs. Accounts added to the target OUs and their
-     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <p>[Service-managed permissions] The Organizations accounts for which you want
+     * to update parameter values for stack instances. If your update targets OUs, the
+     * overridden parameter values only apply to the accounts that are currently in the
+     * target OUs and their child OUs. Accounts added to the target OUs and their child
+     * OUs in the future won't use the overridden values.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
-     * want to update parameter values for stack instances. If your update targets OUs,
-     * the overridden parameter values only apply to the accounts that are currently in
-     * the target OUs and their child OUs. Accounts added to the target OUs and their
-     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <p>[Service-managed permissions] The Organizations accounts for which you want
+     * to update parameter values for stack instances. If your update targets OUs, the
+     * overridden parameter values only apply to the accounts that are currently in the
+     * target OUs and their child OUs. Accounts added to the target OUs and their child
+     * OUs in the future won't use the overridden values.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
-     * want to update parameter values for stack instances. If your update targets OUs,
-     * the overridden parameter values only apply to the accounts that are currently in
-     * the target OUs and their child OUs. Accounts added to the target OUs and their
-     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <p>[Service-managed permissions] The Organizations accounts for which you want
+     * to update parameter values for stack instances. If your update targets OUs, the
+     * overridden parameter values only apply to the accounts that are currently in the
+     * target OUs and their child OUs. Accounts added to the target OUs and their child
+     * OUs in the future won't use the overridden values.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
 
     /**
-     * <p>[Service-managed permissions] The AWS Organizations accounts for which you
-     * want to update parameter values for stack instances. If your update targets OUs,
-     * the overridden parameter values only apply to the accounts that are currently in
-     * the target OUs and their child OUs. Accounts added to the target OUs and their
-     * child OUs in the future won't use the overridden values.</p> <p>You can specify
+     * <p>[Service-managed permissions] The Organizations accounts for which you want
+     * to update parameter values for stack instances. If your update targets OUs, the
+     * overridden parameter values only apply to the accounts that are currently in the
+     * target OUs and their child OUs. Accounts added to the target OUs and their child
+     * OUs in the future won't use the overridden values.</p> <p>You can specify
      * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline UpdateStackInstancesRequest& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
@@ -302,24 +302,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -332,24 +330,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -362,24 +358,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -392,24 +386,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -422,24 +414,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -452,24 +442,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -482,24 +470,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -512,24 +498,22 @@ namespace Model
      * <p> A list of input parameters whose values you want to update for the specified
      * stack instances. </p> <p>Any overridden parameter values will be applied to all
      * stack instances in the specified accounts and Regions. When specifying
-     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * parameters and their values, be aware of how CloudFormation sets parameter
      * values during stack instance update operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
-     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
-     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
-     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
-     * <code>true</code>. (You cannot specify both a value and set
-     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
-     * <p>To set all overridden parameter back to the values specified in the stack
-     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
-     * <p>To leave all parameters set to their present values, do not specify this
-     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
-     * values overridden for a stack instance are not updated, but retain their
-     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
-     * are specified in the stack set; to add or delete a parameter itself, use
-     * <code>UpdateStackSet</code> to update the stack set template. If you add a
-     * parameter to a template, before you can override the parameter value specified
-     * in the stack set you must first use <a
+     * </li> <li> <p>To leave an overridden parameter set to its present value, include
+     * the parameter and specify <code>UsePreviousValue</code> as <code>true</code>.
+     * (You cannot specify both a value and set <code>UsePreviousValue</code> to
+     * <code>true</code>.)</p> </li> <li> <p>To set an overridden parameter back to the
+     * value specified in the stack set, specify a parameter list but do not include
+     * the parameter in the list.</p> </li> <li> <p>To leave all parameters set to
+     * their present values, do not specify this property at all.</p> </li> </ul>
+     * <p>During stack set updates, any parameter values overridden for a stack
+     * instance are not updated, but retain their overridden value.</p> <p>You can only
+     * override the parameter <i>values</i> that are specified in the stack set; to add
+     * or delete a parameter itself, use <code>UpdateStackSet</code> to update the
+     * stack set template. If you add a parameter to a template, before you can
+     * override the parameter value specified in the stack set you must first use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
      * to update all stack instances with the updated template and parameter value
      * specified in the stack set. Once a stack instance has been updated with the new
@@ -540,113 +524,113 @@ namespace Model
 
 
     /**
-     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
 
     /**
-     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
 
     /**
-     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
 
     /**
-     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
 
     /**
-     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline UpdateStackInstancesRequest& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
 
     /**
-     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
     inline UpdateStackInstancesRequest& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
 
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline UpdateStackInstancesRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline UpdateStackInstancesRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
-     * also functions as an idempotency token, to ensure that AWS CloudFormation
-     * performs the stack set operation only once, even if you retry the request
-     * multiple times. You might retry stack set operation requests to ensure that AWS
-     * CloudFormation successfully received them.</p> <p>If you don't specify an
-     * operation ID, the SDK generates one automatically. </p>
+     * also functions as an idempotency token, to ensure that CloudFormation performs
+     * the stack set operation only once, even if you retry the request multiple times.
+     * You might retry stack set operation requests to ensure that CloudFormation
+     * successfully received them.</p> <p>If you don't specify an operation ID, the SDK
+     * generates one automatically. </p>
      */
     inline UpdateStackInstancesRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
@@ -658,12 +642,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline const CallAs& GetCallAs() const{ return m_callAs; }
 
@@ -674,12 +658,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
 
@@ -690,12 +674,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
 
@@ -706,12 +690,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
 
@@ -722,12 +706,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateStackInstancesRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
 
@@ -738,12 +722,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateStackInstancesRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 

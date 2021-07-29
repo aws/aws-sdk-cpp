@@ -101,161 +101,145 @@ namespace Model
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline const Aws::String& GetKmsArn() const{ return m_kmsArn; }
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline bool KmsArnHasBeenSet() const { return m_kmsArnHasBeenSet; }
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline void SetKmsArn(const Aws::String& value) { m_kmsArnHasBeenSet = true; m_kmsArn = value; }
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline void SetKmsArn(Aws::String&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::move(value); }
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline void SetKmsArn(const char* value) { m_kmsArnHasBeenSet = true; m_kmsArn.assign(value); }
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline KeySigningKey& WithKmsArn(const Aws::String& value) { SetKmsArn(value); return *this;}
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline KeySigningKey& WithKmsArn(Aws::String&& value) { SetKmsArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon resource name (ARN) used to identify the customer managed customer
-     * master key (CMK) in AWS Key Management Service (AWS KMS). The
-     * <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single
-     * hosted zone.</p> <p>You must configure the CMK as follows:</p> <dl>
-     * <dt>Status</dt> <dd> <p>Enabled</p> </dd> <dt>Key spec</dt> <dd>
-     * <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd> <p>Sign and verify</p> </dd>
-     * <dt>Key policy</dt> <dd> <p>The key policy must give permission for the
-     * following actions:</p> <ul> <li> <p>DescribeKey</p> </li> <li>
-     * <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key policy must
-     * also include the Amazon Route 53 service in the principal for your account.
-     * Specify the following:</p> <ul> <li> <p> <code>"Service":
-     * "api-service.dnssec.route53.aws.internal"</code> </p> </li> </ul> </dd> </dl>
-     * <p>For more information about working with the customer managed CMK in AWS KMS,
-     * see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-     * Key Management Service concepts</a>.</p>
+     * master key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must
+     * be unique for each key-signing key (KSK) in a single hosted zone.</p> <p>You
+     * must configure the CMK as follows:</p> <dl> <dt>Status</dt> <dd> <p>Enabled</p>
+     * </dd> <dt>Key spec</dt> <dd> <p>ECC_NIST_P256</p> </dd> <dt>Key usage</dt> <dd>
+     * <p>Sign and verify</p> </dd> <dt>Key policy</dt> <dd> <p>The key policy must
+     * give permission for the following actions:</p> <ul> <li> <p>DescribeKey</p>
+     * </li> <li> <p>GetPublicKey</p> </li> <li> <p>Sign</p> </li> </ul> <p>The key
+     * policy must also include the Amazon Route 53 service in the principal for your
+     * account. Specify the following:</p> <ul> <li> <p> <code>"Service":
+     * "dnssec-route53.amazonaws.com"</code> </p> </li> </ul> </dd> </dl> <p>For more
+     * information about working with the customer managed CMK in KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+     * Management Service concepts</a>.</p>
      */
     inline KeySigningKey& WithKmsArn(const char* value) { SetKmsArn(value); return *this;}
 

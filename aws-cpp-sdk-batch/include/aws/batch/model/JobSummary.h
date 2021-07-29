@@ -405,39 +405,86 @@ namespace Model
 
     /**
      * <p>The node properties for a single node in a job summary list.</p> 
-     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline const NodePropertiesSummary& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
      * <p>The node properties for a single node in a job summary list.</p> 
-     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
      * <p>The node properties for a single node in a job summary list.</p> 
-     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline void SetNodeProperties(const NodePropertiesSummary& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
      * <p>The node properties for a single node in a job summary list.</p> 
-     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline void SetNodeProperties(NodePropertiesSummary&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
      * <p>The node properties for a single node in a job summary list.</p> 
-     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline JobSummary& WithNodeProperties(const NodePropertiesSummary& value) { SetNodeProperties(value); return *this;}
 
     /**
      * <p>The node properties for a single node in a job summary list.</p> 
-     * <p>This isn't applicable to jobs running on Fargate resources.</p> 
+     * <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+     * 
      */
     inline JobSummary& WithNodeProperties(NodePropertiesSummary&& value) { SetNodeProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline JobSummary& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline JobSummary& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
+     */
+    inline JobSummary& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
 
   private:
 
@@ -473,6 +520,9 @@ namespace Model
 
     NodePropertiesSummary m_nodeProperties;
     bool m_nodePropertiesHasBeenSet;
+
+    Aws::String m_jobDefinition;
+    bool m_jobDefinitionHasBeenSet;
   };
 
 } // namespace Model

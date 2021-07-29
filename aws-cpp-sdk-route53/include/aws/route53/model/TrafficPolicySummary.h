@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the latest version of one
-   * traffic policy that is associated with the current AWS account.</p><p><h3>See
+   * traffic policy that is associated with the current account.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TrafficPolicySummary">AWS
    * API Reference</a></p>
@@ -189,25 +189,25 @@ namespace Model
 
 
     /**
-     * <p>The number of traffic policies that are associated with the current AWS
+     * <p>The number of traffic policies that are associated with the current
      * account.</p>
      */
     inline int GetTrafficPolicyCount() const{ return m_trafficPolicyCount; }
 
     /**
-     * <p>The number of traffic policies that are associated with the current AWS
+     * <p>The number of traffic policies that are associated with the current
      * account.</p>
      */
     inline bool TrafficPolicyCountHasBeenSet() const { return m_trafficPolicyCountHasBeenSet; }
 
     /**
-     * <p>The number of traffic policies that are associated with the current AWS
+     * <p>The number of traffic policies that are associated with the current
      * account.</p>
      */
     inline void SetTrafficPolicyCount(int value) { m_trafficPolicyCountHasBeenSet = true; m_trafficPolicyCount = value; }
 
     /**
-     * <p>The number of traffic policies that are associated with the current AWS
+     * <p>The number of traffic policies that are associated with the current
      * account.</p>
      */
     inline TrafficPolicySummary& WithTrafficPolicyCount(int value) { SetTrafficPolicyCount(value); return *this;}

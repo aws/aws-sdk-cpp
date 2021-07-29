@@ -239,18 +239,19 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
-   * <p>Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
-   * applications you run on AWS in real time. You can use CloudWatch to collect and
-   * track metrics, which are the variables you want to measure for your resources
-   * and applications.</p> <p>CloudWatch alarms send notifications or automatically
-   * change the resources you are monitoring based on rules that you define. For
-   * example, you can monitor the CPU usage and disk reads and writes of your Amazon
-   * EC2 instances. Then, use this data to determine whether you should launch
-   * additional instances to handle increased load. You can also use this data to
-   * stop under-used instances to save money.</p> <p>In addition to monitoring the
-   * built-in metrics that come with AWS, you can monitor your own custom metrics.
-   * With CloudWatch, you gain system-wide visibility into resource utilization,
-   * application performance, and operational health.</p>
+   * <p>Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services)
+   * resources and the applications you run on Amazon Web Services in real time. You
+   * can use CloudWatch to collect and track metrics, which are the variables you
+   * want to measure for your resources and applications.</p> <p>CloudWatch alarms
+   * send notifications or automatically change the resources you are monitoring
+   * based on rules that you define. For example, you can monitor the CPU usage and
+   * disk reads and writes of your Amazon EC2 instances. Then, use this data to
+   * determine whether you should launch additional instances to handle increased
+   * load. You can also use this data to stop under-used instances to save money.</p>
+   * <p>In addition to monitoring the built-in metrics that come with Amazon Web
+   * Services, you can monitor your own custom metrics. With CloudWatch, you gain
+   * system-wide visibility into resource utilization, application performance, and
+   * operational health.</p>
    */
   class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSXMLClient
   {
@@ -1046,7 +1047,7 @@ namespace Model
          * minutes. After 63 days, the data is further aggregated and is available with a
          * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
          * metric data as of July 9, 2016.</p> <p>For information about metrics and
-         * dimensions supported by AWS services, see the <a
+         * dimensions supported by Amazon Web Services services, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1088,7 +1089,7 @@ namespace Model
          * minutes. After 63 days, the data is further aggregated and is available with a
          * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
          * metric data as of July 9, 2016.</p> <p>For information about metrics and
-         * dimensions supported by AWS services, see the <a
+         * dimensions supported by Amazon Web Services services, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1132,7 +1133,7 @@ namespace Model
          * minutes. After 63 days, the data is further aggregated and is available with a
          * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
          * metric data as of July 9, 2016.</p> <p>For information about metrics and
-         * dimensions supported by AWS services, see the <a
+         * dimensions supported by Amazon Web Services services, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1683,13 +1684,31 @@ namespace Model
          * all alarms with EC2 actions</p> </li> <li> <p>The
          * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
          * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
-         * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+         * Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
          * creates the necessary service-linked role for you. The service-linked roles are
          * called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
-         * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
+         * Web Services service-linked role</a>.</p> <p> <b>Cross-account alarms</b> </p>
+         * <p>You can set an alarm on metrics in the current account, or in another
+         * account. To create a cross-account alarm that watches a metric in a different
+         * account, you must have completed the following pre-requisites:</p> <ul> <li>
+         * <p>The account where the metrics are located (the <i>sharing account</i>) must
+         * already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If
+         * it does not already have this role, you must create it using the instructions in
+         * <b>Set up a sharing account</b> in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+         * Cross-account cross-Region CloudWatch console</a>. The policy for that role must
+         * grant access to the ID of the account where you are creating the alarm. </p>
+         * </li> <li> <p>The account where you are creating the alarm (the <i>monitoring
+         * account</i>) must already have a service-linked role named
+         * <b>AWSServiceRoleForCloudWatchCrossAccount</b> to allow CloudWatch to assume the
+         * sharing role in the sharing account. If it does not, you must create it
+         * following the directions in <b>Set up a monitoring account</b> in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+         * Cross-account cross-Region CloudWatch console</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
          */
@@ -1709,13 +1728,31 @@ namespace Model
          * all alarms with EC2 actions</p> </li> <li> <p>The
          * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
          * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
-         * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+         * Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
          * creates the necessary service-linked role for you. The service-linked roles are
          * called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
-         * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
+         * Web Services service-linked role</a>.</p> <p> <b>Cross-account alarms</b> </p>
+         * <p>You can set an alarm on metrics in the current account, or in another
+         * account. To create a cross-account alarm that watches a metric in a different
+         * account, you must have completed the following pre-requisites:</p> <ul> <li>
+         * <p>The account where the metrics are located (the <i>sharing account</i>) must
+         * already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If
+         * it does not already have this role, you must create it using the instructions in
+         * <b>Set up a sharing account</b> in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+         * Cross-account cross-Region CloudWatch console</a>. The policy for that role must
+         * grant access to the ID of the account where you are creating the alarm. </p>
+         * </li> <li> <p>The account where you are creating the alarm (the <i>monitoring
+         * account</i>) must already have a service-linked role named
+         * <b>AWSServiceRoleForCloudWatchCrossAccount</b> to allow CloudWatch to assume the
+         * sharing role in the sharing account. If it does not, you must create it
+         * following the directions in <b>Set up a monitoring account</b> in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+         * Cross-account cross-Region CloudWatch console</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
          *
@@ -1737,13 +1774,31 @@ namespace Model
          * all alarms with EC2 actions</p> </li> <li> <p>The
          * <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
          * OpsItem actions.</p> </li> </ul> <p>The first time you create an alarm in the
-         * AWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
+         * Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch
          * creates the necessary service-linked role for you. The service-linked roles are
          * called <code>AWSServiceRoleForCloudWatchEvents</code> and
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
-         * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
+         * Web Services service-linked role</a>.</p> <p> <b>Cross-account alarms</b> </p>
+         * <p>You can set an alarm on metrics in the current account, or in another
+         * account. To create a cross-account alarm that watches a metric in a different
+         * account, you must have completed the following pre-requisites:</p> <ul> <li>
+         * <p>The account where the metrics are located (the <i>sharing account</i>) must
+         * already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If
+         * it does not already have this role, you must create it using the instructions in
+         * <b>Set up a sharing account</b> in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+         * Cross-account cross-Region CloudWatch console</a>. The policy for that role must
+         * grant access to the ID of the account where you are creating the alarm. </p>
+         * </li> <li> <p>The account where you are creating the alarm (the <i>monitoring
+         * account</i>) must already have a service-linked role named
+         * <b>AWSServiceRoleForCloudWatchCrossAccount</b> to allow CloudWatch to assume the
+         * sharing role in the sharing account. If it does not, you must create it
+         * following the directions in <b>Set up a monitoring account</b> in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
+         * Cross-account cross-Region CloudWatch console</a>.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
          *
@@ -1904,8 +1959,8 @@ namespace Model
 
         /**
          * <p>Creates or updates a metric stream. Metric streams can automatically stream
-         * CloudWatch metrics to AWS destinations including Amazon S3 and to many
-         * third-party solutions.</p> <p>For more information, see <a
+         * CloudWatch metrics to Amazon Web Services destinations including Amazon S3 and
+         * to many third-party solutions.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
          * Using Metric Streams</a>.</p> <p>To create a metric stream, you must be logged
          * on to an account that has the <code>iam:PassRole</code> permission and either
@@ -1927,8 +1982,8 @@ namespace Model
 
         /**
          * <p>Creates or updates a metric stream. Metric streams can automatically stream
-         * CloudWatch metrics to AWS destinations including Amazon S3 and to many
-         * third-party solutions.</p> <p>For more information, see <a
+         * CloudWatch metrics to Amazon Web Services destinations including Amazon S3 and
+         * to many third-party solutions.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
          * Using Metric Streams</a>.</p> <p>To create a metric stream, you must be logged
          * on to an account that has the <code>iam:PassRole</code> permission and either
@@ -1952,8 +2007,8 @@ namespace Model
 
         /**
          * <p>Creates or updates a metric stream. Metric streams can automatically stream
-         * CloudWatch metrics to AWS destinations including Amazon S3 and to many
-         * third-party solutions.</p> <p>For more information, see <a
+         * CloudWatch metrics to Amazon Web Services destinations including Amazon S3 and
+         * to many third-party solutions.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
          * Using Metric Streams</a>.</p> <p>To create a metric stream, you must be logged
          * on to an account that has the <code>iam:PassRole</code> permission and either
@@ -2107,14 +2162,14 @@ namespace Model
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
          * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
-         * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
-         * strings of characters.</p> <p>You can use the <code>TagResource</code> action
-         * with an alarm that already has tags. If you specify a new tag key for the alarm,
-         * this tag is appended to the list of tags associated with the alarm. If you
-         * specify a tag key that is already associated with the alarm, the new tag value
-         * that you specify replaces the previous value for that tag.</p> <p>You can
-         * associate as many as 50 tags with a CloudWatch resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Tags don't have any semantic meaning to Amazon Web Services and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with an alarm that already has tags. If you
+         * specify a new tag key for the alarm, this tag is appended to the list of tags
+         * associated with the alarm. If you specify a tag key that is already associated
+         * with the alarm, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a CloudWatch
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -2126,14 +2181,14 @@ namespace Model
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
          * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
-         * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
-         * strings of characters.</p> <p>You can use the <code>TagResource</code> action
-         * with an alarm that already has tags. If you specify a new tag key for the alarm,
-         * this tag is appended to the list of tags associated with the alarm. If you
-         * specify a tag key that is already associated with the alarm, the new tag value
-         * that you specify replaces the previous value for that tag.</p> <p>You can
-         * associate as many as 50 tags with a CloudWatch resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Tags don't have any semantic meaning to Amazon Web Services and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with an alarm that already has tags. If you
+         * specify a new tag key for the alarm, this tag is appended to the list of tags
+         * associated with the alarm. If you specify a tag key that is already associated
+         * with the alarm, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a CloudWatch
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -2147,14 +2202,14 @@ namespace Model
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
          * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
-         * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
-         * strings of characters.</p> <p>You can use the <code>TagResource</code> action
-         * with an alarm that already has tags. If you specify a new tag key for the alarm,
-         * this tag is appended to the list of tags associated with the alarm. If you
-         * specify a tag key that is already associated with the alarm, the new tag value
-         * that you specify replaces the previous value for that tag.</p> <p>You can
-         * associate as many as 50 tags with a CloudWatch resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Tags don't have any semantic meaning to Amazon Web Services and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with an alarm that already has tags. If you
+         * specify a new tag key for the alarm, this tag is appended to the list of tags
+         * associated with the alarm. If you specify a tag key that is already associated
+         * with the alarm, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a CloudWatch
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">AWS
          * API Reference</a></p>
          *

@@ -44,58 +44,50 @@ namespace Model
 
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline CanaryCodeInput& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline CanaryCodeInput& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>If your canary script is located in S3, specify the full bucket name here.
-     * The bucket must already exist. Specify the full bucket name, including
-     * <code>s3://</code> as the start of the bucket name.</p>
+     * <p>If your canary script is located in S3, specify the bucket name here. Do not
+     * include <code>s3://</code> as the start of the bucket name.</p>
      */
     inline CanaryCodeInput& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
@@ -200,92 +192,100 @@ namespace Model
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the .zip file that contains
-     * the script. It can be up to 5 MB.</p>
+     * to an S3 location, the value of this parameter is the base64-encoded contents of
+     * the .zip file that contains the script. It can be up to 5 MB.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the .zip file that contains
-     * the script. It can be up to 5 MB.</p>
+     * to an S3 location, the value of this parameter is the base64-encoded contents of
+     * the .zip file that contains the script. It can be up to 5 MB.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the .zip file that contains
-     * the script. It can be up to 5 MB.</p>
+     * to an S3 location, the value of this parameter is the base64-encoded contents of
+     * the .zip file that contains the script. It can be up to 5 MB.</p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the .zip file that contains
-     * the script. It can be up to 5 MB.</p>
+     * to an S3 location, the value of this parameter is the base64-encoded contents of
+     * the .zip file that contains the script. It can be up to 5 MB.</p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the .zip file that contains
-     * the script. It can be up to 5 MB.</p>
+     * to an S3 location, the value of this parameter is the base64-encoded contents of
+     * the .zip file that contains the script. It can be up to 5 MB.</p>
      */
     inline CanaryCodeInput& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
-     * to an S3 location, the value of this parameter is the .zip file that contains
-     * the script. It can be up to 5 MB.</p>
+     * to an S3 location, the value of this parameter is the base64-encoded contents of
+     * the .zip file that contains the script. It can be up to 5 MB.</p>
      */
     inline CanaryCodeInput& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline const Aws::String& GetHandler() const{ return m_handler; }
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline bool HandlerHasBeenSet() const { return m_handlerHasBeenSet; }
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = std::move(value); }
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline void SetHandler(const char* value) { m_handlerHasBeenSet = true; m_handler.assign(value); }
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline CanaryCodeInput& WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline CanaryCodeInput& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
 
     /**
      * <p>The entry point to use for the source code when running the canary. This
-     * value must end with the string <code>.handler</code>.</p>
+     * value must end with the string <code>.handler</code>. The string is limited to
+     * 29 characters or fewer.</p>
      */
     inline CanaryCodeInput& WithHandler(const char* value) { SetHandler(value); return *this;}
 

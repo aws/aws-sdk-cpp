@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an AWS Batch job.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing an Batch job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDetail">AWS API
    * Reference</a></p>
    */
@@ -225,8 +225,8 @@ namespace Model
      * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> 
+     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User
+     * Guide</i>.</p> 
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
 
@@ -234,8 +234,8 @@ namespace Model
      * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> 
+     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User
+     * Guide</i>.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -243,8 +243,8 @@ namespace Model
      * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> 
+     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User
+     * Guide</i>.</p> 
      */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -252,8 +252,8 @@ namespace Model
      * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> 
+     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User
+     * Guide</i>.</p> 
      */
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -261,8 +261,8 @@ namespace Model
      * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> 
+     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User
+     * Guide</i>.</p> 
      */
     inline JobDetail& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
@@ -270,8 +270,8 @@ namespace Model
      * <p>The current status for the job.</p>  <p>If your jobs don't progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
-     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> 
+     * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>Batch User
+     * Guide</i>.</p> 
      */
     inline JobDetail& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -746,43 +746,43 @@ namespace Model
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
-     * 
+     *  <p>This isn't applicable to jobs that are running on Fargate
+     * resources.</p> 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
-     * 
+     *  <p>This isn't applicable to jobs that are running on Fargate
+     * resources.</p> 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
-     * 
+     *  <p>This isn't applicable to jobs that are running on Fargate
+     * resources.</p> 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
-     * 
+     *  <p>This isn't applicable to jobs that are running on Fargate
+     * resources.</p> 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
-     * 
+     *  <p>This isn't applicable to jobs that are running on Fargate
+     * resources.</p> 
      */
     inline JobDetail& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs running on Fargate resources.</p>
-     * 
+     *  <p>This isn't applicable to jobs that are running on Fargate
+     * resources.</p> 
      */
     inline JobDetail& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 

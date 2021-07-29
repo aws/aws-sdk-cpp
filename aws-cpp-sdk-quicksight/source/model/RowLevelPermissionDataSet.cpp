@@ -24,7 +24,9 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet() :
     m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
     m_permissionPolicyHasBeenSet(false),
     m_formatVersion(RowLevelPermissionFormatVersion::NOT_SET),
-    m_formatVersionHasBeenSet(false)
+    m_formatVersionHasBeenSet(false),
+    m_status(Status::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue) :
     m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
     m_permissionPolicyHasBeenSet(false),
     m_formatVersion(RowLevelPermissionFormatVersion::NOT_SET),
-    m_formatVersionHasBeenSet(false)
+    m_formatVersionHasBeenSet(false),
+    m_status(Status::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ RowLevelPermissionDataSet& RowLevelPermissionDataSet::operator =(JsonView jsonVa
     m_formatVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +107,11 @@ JsonValue RowLevelPermissionDataSet::Jsonize() const
   if(m_formatVersionHasBeenSet)
   {
    payload.WithString("FormatVersion", RowLevelPermissionFormatVersionMapper::GetNameForRowLevelPermissionFormatVersion(m_formatVersion));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;

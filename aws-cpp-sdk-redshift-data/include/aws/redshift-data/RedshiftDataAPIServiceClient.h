@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-data/model/BatchExecuteStatementResult.h>
 #include <aws/redshift-data/model/CancelStatementResult.h>
 #include <aws/redshift-data/model/DescribeStatementResult.h>
 #include <aws/redshift-data/model/DescribeTableResult.h>
@@ -59,6 +60,7 @@ namespace RedshiftDataAPIService
 
 namespace Model
 {
+        class BatchExecuteStatementRequest;
         class CancelStatementRequest;
         class DescribeStatementRequest;
         class DescribeTableRequest;
@@ -69,6 +71,7 @@ namespace Model
         class ListStatementsRequest;
         class ListTablesRequest;
 
+        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, RedshiftDataAPIServiceError> BatchExecuteStatementOutcome;
         typedef Aws::Utils::Outcome<CancelStatementResult, RedshiftDataAPIServiceError> CancelStatementOutcome;
         typedef Aws::Utils::Outcome<DescribeStatementResult, RedshiftDataAPIServiceError> DescribeStatementOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, RedshiftDataAPIServiceError> DescribeTableOutcome;
@@ -79,6 +82,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListStatementsResult, RedshiftDataAPIServiceError> ListStatementsOutcome;
         typedef Aws::Utils::Outcome<ListTablesResult, RedshiftDataAPIServiceError> ListTablesOutcome;
 
+        typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
         typedef std::future<CancelStatementOutcome> CancelStatementOutcomeCallable;
         typedef std::future<DescribeStatementOutcome> DescribeStatementOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
@@ -92,6 +96,7 @@ namespace Model
 
   class RedshiftDataAPIServiceClient;
 
+    typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::BatchExecuteStatementRequest&, const Model::BatchExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchExecuteStatementResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::CancelStatementRequest&, const Model::CancelStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelStatementResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::DescribeStatementRequest&, const Model::DescribeStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStatementResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
@@ -104,11 +109,10 @@ namespace Model
 
   /**
    * <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift
-   * tables. You can run individual SQL statements, which are committed if the
-   * statement succeeds. </p> <p>For more information about the Amazon Redshift Data
-   * API, see <a
-   * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
-   * Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management
+   * tables. You can run SQL statements, which are committed if the statement
+   * succeeds. </p> <p>For more information about the Amazon Redshift Data API, see
+   * <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using
+   * the Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management
    * Guide</i>. </p>
    */
   class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient : public Aws::Client::AWSJsonClient
@@ -137,6 +141,55 @@ namespace Model
 
         virtual ~RedshiftDataAPIServiceClient();
 
+
+        /**
+         * <p>Runs one or more SQL statements, which can be data manipulation language
+         * (DML) or data definition language (DDL). Depending on the authorization method,
+         * use one of the following combinations of request parameters: </p> <ul> <li>
+         * <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the
+         * database name, and the cluster identifier that matches the cluster in the
+         * secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
+         * identifier, the database name, and the database user name. Permission to call
+         * the <code>redshift:GetClusterCredentials</code> operation is required to use
+         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchExecuteStatementOutcome BatchExecuteStatement(const Model::BatchExecuteStatementRequest& request) const;
+
+        /**
+         * <p>Runs one or more SQL statements, which can be data manipulation language
+         * (DML) or data definition language (DDL). Depending on the authorization method,
+         * use one of the following combinations of request parameters: </p> <ul> <li>
+         * <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the
+         * database name, and the cluster identifier that matches the cluster in the
+         * secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
+         * identifier, the database name, and the database user name. Permission to call
+         * the <code>redshift:GetClusterCredentials</code> operation is required to use
+         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchExecuteStatementOutcomeCallable BatchExecuteStatementCallable(const Model::BatchExecuteStatementRequest& request) const;
+
+        /**
+         * <p>Runs one or more SQL statements, which can be data manipulation language
+         * (DML) or data definition language (DDL). Depending on the authorization method,
+         * use one of the following combinations of request parameters: </p> <ul> <li>
+         * <p>Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the
+         * database name, and the cluster identifier that matches the cluster in the
+         * secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
+         * identifier, the database name, and the database user name. Permission to call
+         * the <code>redshift:GetClusterCredentials</code> operation is required to use
+         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a running query. To be canceled, a query must be running.
@@ -204,11 +257,11 @@ namespace Model
          * <p>Describes the detailed information about a table from metadata in the
          * cluster. The information includes its columns. A token is returned to page
          * through the column list. Depending on the authorization method, use one of the
-         * following combinations of request parameters: </p> <ul> <li> <p>AWS Secrets
-         * Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
+         * following combinations of request parameters: </p> <ul> <li> <p>Secrets Manager
+         * - specify the Amazon Resource Name (ARN) of the secret, the database name, and
+         * the cluster identifier that matches the cluster in the secret. </p> </li> <li>
+         * <p>Temporary credentials - specify the cluster identifier, the database name,
+         * and the database user name. Permission to call the
          * <code>redshift:GetClusterCredentials</code> operation is required to use this
          * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
@@ -220,11 +273,11 @@ namespace Model
          * <p>Describes the detailed information about a table from metadata in the
          * cluster. The information includes its columns. A token is returned to page
          * through the column list. Depending on the authorization method, use one of the
-         * following combinations of request parameters: </p> <ul> <li> <p>AWS Secrets
-         * Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
+         * following combinations of request parameters: </p> <ul> <li> <p>Secrets Manager
+         * - specify the Amazon Resource Name (ARN) of the secret, the database name, and
+         * the cluster identifier that matches the cluster in the secret. </p> </li> <li>
+         * <p>Temporary credentials - specify the cluster identifier, the database name,
+         * and the database user name. Permission to call the
          * <code>redshift:GetClusterCredentials</code> operation is required to use this
          * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
@@ -238,11 +291,11 @@ namespace Model
          * <p>Describes the detailed information about a table from metadata in the
          * cluster. The information includes its columns. A token is returned to page
          * through the column list. Depending on the authorization method, use one of the
-         * following combinations of request parameters: </p> <ul> <li> <p>AWS Secrets
-         * Manager - specify the Amazon Resource Name (ARN) of the secret and the cluster
-         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
-         * credentials - specify the cluster identifier, the database name, and the
-         * database user name. Permission to call the
+         * following combinations of request parameters: </p> <ul> <li> <p>Secrets Manager
+         * - specify the Amazon Resource Name (ARN) of the secret, the database name, and
+         * the cluster identifier that matches the cluster in the secret. </p> </li> <li>
+         * <p>Temporary credentials - specify the cluster identifier, the database name,
+         * and the database user name. Permission to call the
          * <code>redshift:GetClusterCredentials</code> operation is required to use this
          * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
@@ -256,12 +309,12 @@ namespace Model
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
          * definition language (DDL). This statement must be a single SQL statement.
          * Depending on the authorization method, use one of the following combinations of
-         * request parameters: </p> <ul> <li> <p>AWS Secrets Manager - specify the Amazon
-         * Resource Name (ARN) of the secret and the cluster identifier that matches the
-         * cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify the
-         * cluster identifier, the database name, and the database user name. Permission to
-         * call the <code>redshift:GetClusterCredentials</code> operation is required to
-         * use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * request parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon
+         * Resource Name (ARN) of the secret, the database name, and the cluster identifier
+         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
+         * - specify the cluster identifier, the database name, and the database user name.
+         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -271,12 +324,12 @@ namespace Model
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
          * definition language (DDL). This statement must be a single SQL statement.
          * Depending on the authorization method, use one of the following combinations of
-         * request parameters: </p> <ul> <li> <p>AWS Secrets Manager - specify the Amazon
-         * Resource Name (ARN) of the secret and the cluster identifier that matches the
-         * cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify the
-         * cluster identifier, the database name, and the database user name. Permission to
-         * call the <code>redshift:GetClusterCredentials</code> operation is required to
-         * use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * request parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon
+         * Resource Name (ARN) of the secret, the database name, and the cluster identifier
+         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
+         * - specify the cluster identifier, the database name, and the database user name.
+         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -288,12 +341,12 @@ namespace Model
          * <p>Runs an SQL statement, which can be data manipulation language (DML) or data
          * definition language (DDL). This statement must be a single SQL statement.
          * Depending on the authorization method, use one of the following combinations of
-         * request parameters: </p> <ul> <li> <p>AWS Secrets Manager - specify the Amazon
-         * Resource Name (ARN) of the secret and the cluster identifier that matches the
-         * cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify the
-         * cluster identifier, the database name, and the database user name. Permission to
-         * call the <code>redshift:GetClusterCredentials</code> operation is required to
-         * use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * request parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon
+         * Resource Name (ARN) of the secret, the database name, and the cluster identifier
+         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
+         * - specify the cluster identifier, the database name, and the database user name.
+         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -332,12 +385,13 @@ namespace Model
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
          * database list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>AWS Secrets Manager -
-         * specify the Amazon Resource Name (ARN) of the secret and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
+         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
+         * credentials - specify the cluster identifier, the database name, and the
+         * database user name. Permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required to use this
+         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          */
@@ -346,12 +400,13 @@ namespace Model
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
          * database list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>AWS Secrets Manager -
-         * specify the Amazon Resource Name (ARN) of the secret and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
+         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
+         * credentials - specify the cluster identifier, the database name, and the
+         * database user name. Permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required to use this
+         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          *
@@ -362,12 +417,13 @@ namespace Model
         /**
          * <p>List the databases in a cluster. A token is returned to page through the
          * database list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>AWS Secrets Manager -
-         * specify the Amazon Resource Name (ARN) of the secret and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
+         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
+         * credentials - specify the cluster identifier, the database name, and the
+         * database user name. Permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required to use this
+         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          *
@@ -378,12 +434,13 @@ namespace Model
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
          * schema list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>AWS Secrets Manager -
-         * specify the Amazon Resource Name (ARN) of the secret and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
+         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
+         * credentials - specify the cluster identifier, the database name, and the
+         * database user name. Permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required to use this
+         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          */
@@ -392,12 +449,13 @@ namespace Model
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
          * schema list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>AWS Secrets Manager -
-         * specify the Amazon Resource Name (ARN) of the secret and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
+         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
+         * credentials - specify the cluster identifier, the database name, and the
+         * database user name. Permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required to use this
+         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          *
@@ -408,12 +466,13 @@ namespace Model
         /**
          * <p>Lists the schemas in a database. A token is returned to page through the
          * schema list. Depending on the authorization method, use one of the following
-         * combinations of request parameters: </p> <ul> <li> <p>AWS Secrets Manager -
-         * specify the Amazon Resource Name (ARN) of the secret and the cluster identifier
-         * that matches the cluster in the secret. </p> </li> <li> <p>Temporary credentials
-         * - specify the cluster identifier, the database name, and the database user name.
-         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
-         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * combinations of request parameters: </p> <ul> <li> <p>Secrets Manager - specify
+         * the Amazon Resource Name (ARN) of the secret, the database name, and the cluster
+         * identifier that matches the cluster in the secret. </p> </li> <li> <p>Temporary
+         * credentials - specify the cluster identifier, the database name, and the
+         * database user name. Permission to call the
+         * <code>redshift:GetClusterCredentials</code> operation is required to use this
+         * method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          *
@@ -457,12 +516,12 @@ namespace Model
          * <code>TablePattern</code> are specified, then all tables in the database are
          * returned. A token is returned to page through the table list. Depending on the
          * authorization method, use one of the following combinations of request
-         * parameters: </p> <ul> <li> <p>AWS Secrets Manager - specify the Amazon Resource
-         * Name (ARN) of the secret and the cluster identifier that matches the cluster in
-         * the secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
-         * identifier, the database name, and the database user name. Permission to call
-         * the <code>redshift:GetClusterCredentials</code> operation is required to use
-         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon Resource Name
+         * (ARN) of the secret, the database name, and the cluster identifier that matches
+         * the cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify
+         * the cluster identifier, the database name, and the database user name.
+         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          */
@@ -473,12 +532,12 @@ namespace Model
          * <code>TablePattern</code> are specified, then all tables in the database are
          * returned. A token is returned to page through the table list. Depending on the
          * authorization method, use one of the following combinations of request
-         * parameters: </p> <ul> <li> <p>AWS Secrets Manager - specify the Amazon Resource
-         * Name (ARN) of the secret and the cluster identifier that matches the cluster in
-         * the secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
-         * identifier, the database name, and the database user name. Permission to call
-         * the <code>redshift:GetClusterCredentials</code> operation is required to use
-         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon Resource Name
+         * (ARN) of the secret, the database name, and the cluster identifier that matches
+         * the cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify
+         * the cluster identifier, the database name, and the database user name.
+         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          *
@@ -491,12 +550,12 @@ namespace Model
          * <code>TablePattern</code> are specified, then all tables in the database are
          * returned. A token is returned to page through the table list. Depending on the
          * authorization method, use one of the following combinations of request
-         * parameters: </p> <ul> <li> <p>AWS Secrets Manager - specify the Amazon Resource
-         * Name (ARN) of the secret and the cluster identifier that matches the cluster in
-         * the secret. </p> </li> <li> <p>Temporary credentials - specify the cluster
-         * identifier, the database name, and the database user name. Permission to call
-         * the <code>redshift:GetClusterCredentials</code> operation is required to use
-         * this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * parameters: </p> <ul> <li> <p>Secrets Manager - specify the Amazon Resource Name
+         * (ARN) of the secret, the database name, and the cluster identifier that matches
+         * the cluster in the secret. </p> </li> <li> <p>Temporary credentials - specify
+         * the cluster identifier, the database name, and the database user name.
+         * Permission to call the <code>redshift:GetClusterCredentials</code> operation is
+         * required to use this method. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          *
@@ -508,6 +567,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchExecuteStatementAsyncHelper(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelStatementAsyncHelper(const Model::CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStatementAsyncHelper(const Model::DescribeStatementRequest& request, const DescribeStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

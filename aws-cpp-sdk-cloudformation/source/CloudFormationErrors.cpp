@@ -32,6 +32,7 @@ static const int STALE_REQUEST_HASH = HashingUtils::HashString("StaleRequestExce
 static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFoundException");
 static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TypeNotFoundException");
 static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
+static const int STACK_NOT_FOUND_HASH = HashingUtils::HashString("StackNotFoundException");
 static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
 static const int CREATED_BUT_MODIFIED_HASH = HashingUtils::HashString("CreatedButModifiedException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
@@ -100,6 +101,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_CHANGE_SET_STATUS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_CHANGE_SET_STATUS), false);
+  }
+  else if (hashCode == STACK_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_NOT_FOUND), false);
   }
   else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
   {

@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the AWS Shield Advanced subscription for an
+   * <p>Information about the Shield Advanced subscription for an
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Subscription">AWS
    * API Reference</a></p>
@@ -119,25 +119,25 @@ namespace Model
 
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline long long GetTimeCommitmentInSeconds() const{ return m_timeCommitmentInSeconds; }
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline bool TimeCommitmentInSecondsHasBeenSet() const { return m_timeCommitmentInSecondsHasBeenSet; }
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline void SetTimeCommitmentInSeconds(long long value) { m_timeCommitmentInSecondsHasBeenSet = true; m_timeCommitmentInSeconds = value; }
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline Subscription& WithTimeCommitmentInSeconds(long long value) { SetTimeCommitmentInSeconds(value); return *this;}
@@ -252,67 +252,67 @@ namespace Model
 
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline const ProactiveEngagementStatus& GetProactiveEngagementStatus() const{ return m_proactiveEngagementStatus; }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline bool ProactiveEngagementStatusHasBeenSet() const { return m_proactiveEngagementStatusHasBeenSet; }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline void SetProactiveEngagementStatus(const ProactiveEngagementStatus& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = value; }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline void SetProactiveEngagementStatus(ProactiveEngagementStatus&& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = std::move(value); }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline Subscription& WithProactiveEngagementStatus(const ProactiveEngagementStatus& value) { SetProactiveEngagementStatus(value); return *this;}
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline Subscription& WithProactiveEngagementStatus(ProactiveEngagementStatus&& value) { SetProactiveEngagementStatus(std::move(value)); return *this;}

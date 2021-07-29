@@ -28,11 +28,11 @@ namespace Model
    * instances in the compute environment. If <code>Ec2Configuration</code> isn't
    * specified, the default is currently <code>ECS_AL1</code> (<a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-   * Linux</a>) for non-GPU, non-Graviton instances. Starting on March 31, 2021, this
-   * default will be changing to <code>ECS_AL2</code> (<a
+   * Linux</a>) for non-GPU, non AWSGraviton instances. Starting on March 31, 2021,
+   * this default will be changing to <code>ECS_AL2</code> (<a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-   * Linux 2</a>).</p>  <p>This object isn't applicable to jobs running on
-   * Fargate resources.</p> <p><h3>See Also:</h3>   <a
+   * Linux 2</a>).</p>  <p>This object isn't applicable to jobs that are
+   * running on Fargate resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ec2Configuration">AWS
    * API Reference</a></p>
    */
@@ -54,19 +54,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline const Aws::String& GetImageType() const{ return m_imageType; }
 
@@ -79,19 +79,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
 
@@ -104,19 +104,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline void SetImageType(const Aws::String& value) { m_imageTypeHasBeenSet = true; m_imageType = value; }
 
@@ -129,19 +129,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline void SetImageType(Aws::String&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::move(value); }
 
@@ -154,19 +154,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline void SetImageType(const char* value) { m_imageTypeHasBeenSet = true; m_imageType.assign(value); }
 
@@ -179,19 +179,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline Ec2Configuration& WithImageType(const Aws::String& value) { SetImageType(value); return *this;}
 
@@ -204,19 +204,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline Ec2Configuration& WithImageType(Aws::String&& value) { SetImageType(std::move(value)); return *this;}
 
@@ -229,19 +229,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-     * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
-     * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
-     * can be used for all non-GPU instance types.</p> </dd> <dt>ECS_AL2_NVIDIA</dt>
-     * <dd> <p> <a
+     * Linux 2</a>− Default for all Amazon Web Services Graviton-based instance
+     * families (for example, <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and
+     * <code>T4g</code>) and can be used for all non-GPU instance types.</p> </dd>
+     * <dt>ECS_AL2_NVIDIA</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
      * Linux 2 (GPU)</a>−Default for all GPU instance families (for example
-     * <code>P4</code> and <code>G4</code>) and can be used for all non-AWS
-     * Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
+     * <code>P4</code> and <code>G4</code>) and can be used for all non Amazon Web
+     * Services Graviton-based instance types.</p> </dd> <dt>ECS_AL1</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-     * Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon
-     * Linux is reaching the end-of-life of standard support. For more information, see
-     * <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux AMI</a>.</p>
-     * </dd> </dl>
+     * Linux</a>−Default for all non-GPU, non Amazon Web Services Graviton instance
+     * families. Amazon Linux is reaching the end-of-life of standard support. For more
+     * information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon Linux
+     * AMI</a>.</p> </dd> </dl>
      */
     inline Ec2Configuration& WithImageType(const char* value) { SetImageType(value); return *this;}
 

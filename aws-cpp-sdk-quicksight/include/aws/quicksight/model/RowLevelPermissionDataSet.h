@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/RowLevelPermissionPolicy.h>
 #include <aws/quicksight/model/RowLevelPermissionFormatVersion.h>
+#include <aws/quicksight/model/Status.h>
 #include <utility>
 
 namespace Aws
@@ -247,6 +248,49 @@ namespace Model
      */
     inline RowLevelPermissionDataSet& WithFormatVersion(RowLevelPermissionFormatVersion&& value) { SetFormatVersion(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of the row-level security permission dataset. If enabled, the
+     * status is <code>ENABLED</code>. If disabled, the status is
+     * <code>DISABLED</code>.</p>
+     */
+    inline const Status& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the row-level security permission dataset. If enabled, the
+     * status is <code>ENABLED</code>. If disabled, the status is
+     * <code>DISABLED</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the row-level security permission dataset. If enabled, the
+     * status is <code>ENABLED</code>. If disabled, the status is
+     * <code>DISABLED</code>.</p>
+     */
+    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the row-level security permission dataset. If enabled, the
+     * status is <code>ENABLED</code>. If disabled, the status is
+     * <code>DISABLED</code>.</p>
+     */
+    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the row-level security permission dataset. If enabled, the
+     * status is <code>ENABLED</code>. If disabled, the status is
+     * <code>DISABLED</code>.</p>
+     */
+    inline RowLevelPermissionDataSet& WithStatus(const Status& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the row-level security permission dataset. If enabled, the
+     * status is <code>ENABLED</code>. If disabled, the status is
+     * <code>DISABLED</code>.</p>
+     */
+    inline RowLevelPermissionDataSet& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_namespace;
@@ -260,6 +304,9 @@ namespace Model
 
     RowLevelPermissionFormatVersion m_formatVersion;
     bool m_formatVersionHasBeenSet;
+
+    Status m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

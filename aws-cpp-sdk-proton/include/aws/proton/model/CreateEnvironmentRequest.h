@@ -83,7 +83,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline const Aws::String& GetEnvironmentAccountConnectionId() const{ return m_environmentAccountConnectionId; }
@@ -94,7 +94,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline bool EnvironmentAccountConnectionIdHasBeenSet() const { return m_environmentAccountConnectionIdHasBeenSet; }
@@ -105,7 +105,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const Aws::String& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = value; }
@@ -116,7 +116,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(Aws::String&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::move(value); }
@@ -127,7 +127,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline void SetEnvironmentAccountConnectionId(const char* value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId.assign(value); }
@@ -138,7 +138,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const Aws::String& value) { SetEnvironmentAccountConnectionId(value); return *this;}
@@ -149,7 +149,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(Aws::String&& value) { SetEnvironmentAccountConnectionId(std::move(value)); return *this;}
@@ -160,7 +160,7 @@ namespace Model
      * account. You must include either the <code>environmentAccountConnectionId</code>
      * or <code>protonServiceRoleArn</code> parameter and value. For more information,
      * see <a
-     * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
      * account connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentAccountConnectionId(const char* value) { SetEnvironmentAccountConnectionId(value); return *this;}

@@ -86,7 +86,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline const Aws::Vector<StackResourceDriftStatus>& GetStackResourceDriftStatusFilters() const{ return m_stackResourceDriftStatusFilters; }
@@ -98,7 +98,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline bool StackResourceDriftStatusFiltersHasBeenSet() const { return m_stackResourceDriftStatusFiltersHasBeenSet; }
@@ -110,7 +110,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatusFilters(const Aws::Vector<StackResourceDriftStatus>& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters = value; }
@@ -122,7 +122,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline void SetStackResourceDriftStatusFilters(Aws::Vector<StackResourceDriftStatus>&& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters = std::move(value); }
@@ -134,7 +134,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline DescribeStackResourceDriftsRequest& WithStackResourceDriftStatusFilters(const Aws::Vector<StackResourceDriftStatus>& value) { SetStackResourceDriftStatusFilters(value); return *this;}
@@ -146,7 +146,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline DescribeStackResourceDriftsRequest& WithStackResourceDriftStatusFilters(Aws::Vector<StackResourceDriftStatus>&& value) { SetStackResourceDriftStatusFilters(std::move(value)); return *this;}
@@ -158,7 +158,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline DescribeStackResourceDriftsRequest& AddStackResourceDriftStatusFilters(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters.push_back(value); return *this; }
@@ -170,7 +170,7 @@ namespace Model
      * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
      * properties differ from their expected template values.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline DescribeStackResourceDriftsRequest& AddStackResourceDriftStatusFilters(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters.push_back(std::move(value)); return *this; }

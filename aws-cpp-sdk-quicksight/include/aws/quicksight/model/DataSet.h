@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
+#include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/OutputColumn.h>
@@ -626,6 +627,37 @@ namespace Model
 
 
     /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline const RowLevelPermissionTagConfiguration& GetRowLevelPermissionTagConfiguration() const{ return m_rowLevelPermissionTagConfiguration; }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline bool RowLevelPermissionTagConfigurationHasBeenSet() const { return m_rowLevelPermissionTagConfigurationHasBeenSet; }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline void SetRowLevelPermissionTagConfiguration(const RowLevelPermissionTagConfiguration& value) { m_rowLevelPermissionTagConfigurationHasBeenSet = true; m_rowLevelPermissionTagConfiguration = value; }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline void SetRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration&& value) { m_rowLevelPermissionTagConfigurationHasBeenSet = true; m_rowLevelPermissionTagConfiguration = std::move(value); }
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline DataSet& WithRowLevelPermissionTagConfiguration(const RowLevelPermissionTagConfiguration& value) { SetRowLevelPermissionTagConfiguration(value); return *this;}
+
+    /**
+     * <p>The element you can use to define tags for row-level security.</p>
+     */
+    inline DataSet& WithRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration&& value) { SetRowLevelPermissionTagConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
@@ -713,6 +745,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
+    bool m_rowLevelPermissionTagConfigurationHasBeenSet;
 
     Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
     bool m_columnLevelPermissionRulesHasBeenSet;

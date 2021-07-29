@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contact information that the DRT can use to contact you if you have proactive
-   * engagement enabled, for escalations to the DRT and to initiate proactive
+   * <p>Contact information that the SRT can use to contact you if you have proactive
+   * engagement enabled, for escalations to the SRT and to initiate proactive
    * customer support.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EmergencyContact">AWS
    * API Reference</a></p>

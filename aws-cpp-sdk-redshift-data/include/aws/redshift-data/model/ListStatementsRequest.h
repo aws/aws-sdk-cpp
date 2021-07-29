@@ -172,89 +172,89 @@ namespace Model
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline const Aws::String& GetStatementName() const{ return m_statementName; }
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline bool StatementNameHasBeenSet() const { return m_statementNameHasBeenSet; }
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline void SetStatementName(const Aws::String& value) { m_statementNameHasBeenSet = true; m_statementName = value; }
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline void SetStatementName(Aws::String&& value) { m_statementNameHasBeenSet = true; m_statementName = std::move(value); }
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline void SetStatementName(const char* value) { m_statementNameHasBeenSet = true; m_statementName.assign(value); }
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline ListStatementsRequest& WithStatementName(const Aws::String& value) { SetStatementName(value); return *this;}
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline ListStatementsRequest& WithStatementName(Aws::String&& value) { SetStatementName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SQL statement specified as input to
-     * <code>ExecuteStatement</code> to identify the query. You can list multiple
-     * statements by providing a prefix that matches the beginning of the statement
-     * name. For example, to list myStatement1, myStatement2, myStatement3, and so on,
-     * then provide the a value of <code>myStatement</code>. Data API does a
-     * case-sensitive match of SQL statement names to the prefix value you provide.
-     * </p>
+     * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify
+     * the query. You can list multiple statements by providing a prefix that matches
+     * the beginning of the statement name. For example, to list myStatement1,
+     * myStatement2, myStatement3, and so on, then provide the a value of
+     * <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+     * names to the prefix value you provide. </p>
      */
     inline ListStatementsRequest& WithStatementName(const char* value) { SetStatementName(value); return *this;}
 

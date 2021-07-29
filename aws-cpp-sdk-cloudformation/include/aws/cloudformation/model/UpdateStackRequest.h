@@ -89,7 +89,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -100,7 +100,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -111,7 +111,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -122,7 +122,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -133,7 +133,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -144,7 +144,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -155,7 +155,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -166,7 +166,7 @@ namespace Model
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.)</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -179,7 +179,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -191,7 +191,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -203,7 +203,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -215,7 +215,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -227,7 +227,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -239,7 +239,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -251,7 +251,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -263,7 +263,7 @@ namespace Model
      * template that is located in an Amazon S3 bucket or a Systems Manager document.
      * For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code>,
      * <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to
      * <code>true</code>.</p>
@@ -549,18 +549,18 @@ namespace Model
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -581,7 +581,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -594,35 +594,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -643,7 +643,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -656,35 +656,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -705,7 +705,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -718,35 +718,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -767,7 +767,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -780,35 +780,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -829,7 +829,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -842,35 +842,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline UpdateStackRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -891,7 +891,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -904,35 +904,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline UpdateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -953,7 +953,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -966,35 +966,35 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline UpdateStackRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
      * <p>In some cases, you must explicitly acknowledge that your stack template
-     * contains certain capabilities in order for AWS CloudFormation to update the
+     * contains certain capabilities in order for CloudFormation to update the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
-     * resources that can affect permissions in your AWS account; for example, by
-     * creating new AWS Identity and Access Management (IAM) users. For those stacks,
-     * you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability. </p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you
-     * don't specify either of these capabilities, AWS CloudFormation returns an
+     * resources that can affect permissions in your account; for example, by creating
+     * new Identity and Access Management (IAM) users. For those stacks, you must
+     * explicitly acknowledge this by specifying one of these capabilities.</p> <p>The
+     * following IAM resources require you to specify either the
+     * <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> capability.</p>
+     * <ul> <li> <p>If you have IAM resources, you can specify either capability. </p>
+     * </li> <li> <p>If you have IAM resources with custom names, you <i>must</i>
+     * specify <code>CAPABILITY_NAMED_IAM</code>. </p> </li> <li> <p>If you don't
+     * specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
@@ -1015,7 +1015,7 @@ namespace Model
      * AWS::IAM::UserToGroupAddition</a> </p> </li> </ul> <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p> </li> <li> <p>
+     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -1028,18 +1028,18 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <p>If you want to
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * update a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must update the stack directly from the template using this
      * capability.</p>  <p>You should only update stacks directly from a
      * stack template that contains macros if you know what processing the macro
      * performs.</p> <p>Each macro relies on an underlying Lambda service function for
      * processing stack templates. Be aware that the Lambda function owner can update
-     * the function operation without AWS CloudFormation being notified.</p>
-     *  <p>For more information, see <a
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
-     * </li> </ul>
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
+     * </ul>
      */
     inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -1049,12 +1049,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -1063,12 +1063,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
@@ -1077,12 +1077,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -1091,12 +1091,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -1105,12 +1105,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline UpdateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -1119,12 +1119,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline UpdateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -1133,12 +1133,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline UpdateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1147,12 +1147,12 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline UpdateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -1161,162 +1161,154 @@ namespace Model
      * update stack action, such as <code>AWS::EC2::Instance</code>,
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource that you're updating, the
-     * stack update fails. By default, AWS CloudFormation grants permissions to all
-     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
-     * AWS CloudFormation-specific condition keys in IAM policies. For more
-     * information, see <a
+     * stack update fails. By default, CloudFormation grants permissions to all
+     * resource types. Identity and Access Management (IAM) uses this parameter for
+     * CloudFormation-specific condition keys in IAM policies. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with AWS Identity and Access Management</a>.</p>
+     * Access with Identity and Access Management</a>.</p>
      */
     inline UpdateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline UpdateStackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline UpdateStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
-     * uses the role's credentials to make calls on your behalf. AWS CloudFormation
-     * always uses this role for all future operations on the stack. As long as users
-     * have permission to operate on the stack, AWS CloudFormation uses this role even
-     * if the users don't have permission to pass it. Ensure that the role grants least
-     * privilege.</p> <p>If you don't specify a value, AWS CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available, AWS
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
+     * role that CloudFormation assumes to update the stack. CloudFormation uses the
+     * role's credentials to make calls on your behalf. CloudFormation always uses this
+     * role for all future operations on the stack. As long as users have permission to
+     * operate on the stack, CloudFormation uses this role even if the users don't have
+     * permission to pass it. Ensure that the role grants least privilege.</p> <p>If
+     * you don't specify a value, CloudFormation uses the role that was previously
+     * associated with the stack. If no role is available, CloudFormation uses a
+     * temporary session that is generated from your user credentials.</p>
      */
     inline UpdateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline bool RollbackConfigurationHasBeenSet() const { return m_rollbackConfigurationHasBeenSet; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline UpdateStackRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline UpdateStackRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
@@ -1493,146 +1485,146 @@ namespace Model
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline bool NotificationARNsHasBeenSet() const { return m_notificationARNsHasBeenSet; }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline UpdateStackRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline UpdateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
-     * AWS CloudFormation associates with the stack. Specify an empty list to remove
-     * all notification topics.</p>
+     * CloudFormation associates with the stack. Specify an empty list to remove all
+     * notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline UpdateStackRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline UpdateStackRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline UpdateStackRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
-     * propagates these tags to supported resources in the stack. You can specify a
-     * maximum number of 50 tags.</p> <p>If you don't specify this parameter, AWS
-     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
-     * AWS CloudFormation removes all associated tags.</p>
+     * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+     * these tags to supported resources in the stack. You can specify a maximum number
+     * of 50 tags.</p> <p>If you don't specify this parameter, CloudFormation doesn't
+     * modify the stack's tags. If you specify an empty value, CloudFormation removes
+     * all associated tags.</p>
      */
     inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1650,9 +1642,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1670,9 +1662,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1690,9 +1682,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1710,9 +1702,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1730,9 +1722,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1750,9 +1742,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token
@@ -1770,9 +1762,9 @@ namespace Model
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
-     * token if you plan to retry requests so that AWS CloudFormation knows that you're
-     * not attempting to update a stack with the same name. You might retry
-     * <code>UpdateStack</code> requests to ensure that AWS CloudFormation successfully
+     * token if you plan to retry requests so that CloudFormation knows that you're not
+     * attempting to update a stack with the same name. You might retry
+     * <code>UpdateStack</code> requests to ensure that CloudFormation successfully
      * received them.</p> <p>All events triggered by a given stack operation are
      * assigned the same client request token, which you can use to track operations.
      * For example, if you execute a <code>CreateStack</code> operation with the token

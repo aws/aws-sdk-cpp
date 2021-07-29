@@ -153,21 +153,21 @@ namespace Model
     typedef std::function<void(const BatchClient*, const Model::UpdateJobQueueRequest&, const Model::UpdateJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobQueueResponseReceivedHandler;
 
   /**
-   * <p>Using AWS Batch, you can run batch computing workloads on the AWS Cloud.
-   * Batch computing is a common means for developers, scientists, and engineers to
-   * access large amounts of compute resources. AWS Batch uses the advantages of this
-   * computing workload to remove the undifferentiated heavy lifting of configuring
-   * and managing required infrastructure. At the same time, it also adopts a
-   * familiar batch computing software approach. Given these advantages, AWS Batch
-   * can help you to efficiently provision resources in response to jobs submitted,
-   * thus effectively helping you to eliminate capacity constraints, reduce compute
-   * costs, and deliver your results more quickly.</p> <p>As a fully managed service,
-   * AWS Batch can run batch computing workloads of any scale. AWS Batch
+   * <fullname>Batch</fullname> <p>Using Batch, you can run batch computing workloads
+   * on the Cloud. Batch computing is a common means for developers, scientists, and
+   * engineers to access large amounts of compute resources. Batch uses the
+   * advantages of this computing workload to remove the undifferentiated heavy
+   * lifting of configuring and managing required infrastructure. At the same time,
+   * it also adopts a familiar batch computing software approach. Given these
+   * advantages, Batch can help you to efficiently provision resources in response to
+   * jobs submitted, thus effectively helping you to eliminate capacity constraints,
+   * reduce compute costs, and deliver your results more quickly.</p> <p>As a fully
+   * managed service, Batch can run batch computing workloads of any scale. Batch
    * automatically provisions compute resources and optimizes workload distribution
-   * based on the quantity and scale of your specific workloads. With AWS Batch,
-   * there's no need to install or manage batch computing software. This means that
-   * you can focus your time and energy on analyzing results and solving your
-   * specific problems.</p>
+   * based on the quantity and scale of your specific workloads. With Batch, there's
+   * no need to install or manage batch computing software. This means that you can
+   * focus your time and energy on analyzing results and solving your specific
+   * problems. </p>
    */
   class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient
   {
@@ -197,7 +197,7 @@ namespace Model
 
 
         /**
-         * <p>Cancels a job in an AWS Batch job queue. Jobs that are in the
+         * <p>Cancels a job in an Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
          * canceled. Jobs that have progressed to <code>STARTING</code> or
          * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even
@@ -209,7 +209,7 @@ namespace Model
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>Cancels a job in an AWS Batch job queue. Jobs that are in the
+         * <p>Cancels a job in an Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
          * canceled. Jobs that have progressed to <code>STARTING</code> or
          * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even
@@ -223,7 +223,7 @@ namespace Model
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>Cancels a job in an AWS Batch job queue. Jobs that are in the
+         * <p>Cancels a job in an Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
          * canceled. Jobs that have progressed to <code>STARTING</code> or
          * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even
@@ -237,11 +237,11 @@ namespace Model
         virtual void CancelJobAsync(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
-         * or <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute
-         * environments can use Amazon EC2 or AWS Fargate resources. <code>UNMANAGED</code>
+         * <p>Creates an Batch compute environment. You can create <code>MANAGED</code> or
+         * <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute
+         * environments can use Amazon EC2 or Fargate resources. <code>UNMANAGED</code>
          * compute environments can only use EC2 resources.</p> <p>In a managed compute
-         * environment, AWS Batch manages the capacity and instance types of the compute
+         * environment, Batch manages the capacity and instance types of the compute
          * resources within the environment. This is based on the compute resource
          * specification that you define or the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
@@ -264,28 +264,28 @@ namespace Model
          * Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p>  <p>AWS Batch doesn't upgrade the AMIs in a
-         * compute environment after the environment is created. For example, it doesn't
-         * update the AMIs when a newer version of the Amazon ECS optimized AMI is
-         * available. Therefore, you're responsible for managing the guest operating system
-         * (including its updates and security patches) and any additional application
-         * software or utilities that you install on the compute resources. To use a new
-         * AMI for your AWS Batch jobs, complete these steps:</p> <ol> <li> <p>Create a new
-         * compute environment with the new AMI.</p> </li> <li> <p>Add the compute
-         * environment to an existing job queue.</p> </li> <li> <p>Remove the earlier
-         * compute environment from your job queue.</p> </li> <li> <p>Delete the earlier
-         * compute environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>Batch doesn't upgrade the AMIs in a compute
+         * environment after the environment is created. For example, it doesn't update the
+         * AMIs when a newer version of the Amazon ECS optimized AMI is available.
+         * Therefore, you're responsible for managing the guest operating system (including
+         * its updates and security patches) and any additional application software or
+         * utilities that you install on the compute resources. To use a new AMI for your
+         * Batch jobs, complete these steps:</p> <ol> <li> <p>Create a new compute
+         * environment with the new AMI.</p> </li> <li> <p>Add the compute environment to
+         * an existing job queue.</p> </li> <li> <p>Remove the earlier compute environment
+         * from your job queue.</p> </li> <li> <p>Delete the earlier compute
+         * environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateComputeEnvironmentOutcome CreateComputeEnvironment(const Model::CreateComputeEnvironmentRequest& request) const;
 
         /**
-         * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
-         * or <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute
-         * environments can use Amazon EC2 or AWS Fargate resources. <code>UNMANAGED</code>
+         * <p>Creates an Batch compute environment. You can create <code>MANAGED</code> or
+         * <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute
+         * environments can use Amazon EC2 or Fargate resources. <code>UNMANAGED</code>
          * compute environments can only use EC2 resources.</p> <p>In a managed compute
-         * environment, AWS Batch manages the capacity and instance types of the compute
+         * environment, Batch manages the capacity and instance types of the compute
          * resources within the environment. This is based on the compute resource
          * specification that you define or the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
@@ -308,17 +308,17 @@ namespace Model
          * Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p>  <p>AWS Batch doesn't upgrade the AMIs in a
-         * compute environment after the environment is created. For example, it doesn't
-         * update the AMIs when a newer version of the Amazon ECS optimized AMI is
-         * available. Therefore, you're responsible for managing the guest operating system
-         * (including its updates and security patches) and any additional application
-         * software or utilities that you install on the compute resources. To use a new
-         * AMI for your AWS Batch jobs, complete these steps:</p> <ol> <li> <p>Create a new
-         * compute environment with the new AMI.</p> </li> <li> <p>Add the compute
-         * environment to an existing job queue.</p> </li> <li> <p>Remove the earlier
-         * compute environment from your job queue.</p> </li> <li> <p>Delete the earlier
-         * compute environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>Batch doesn't upgrade the AMIs in a compute
+         * environment after the environment is created. For example, it doesn't update the
+         * AMIs when a newer version of the Amazon ECS optimized AMI is available.
+         * Therefore, you're responsible for managing the guest operating system (including
+         * its updates and security patches) and any additional application software or
+         * utilities that you install on the compute resources. To use a new AMI for your
+         * Batch jobs, complete these steps:</p> <ol> <li> <p>Create a new compute
+         * environment with the new AMI.</p> </li> <li> <p>Add the compute environment to
+         * an existing job queue.</p> </li> <li> <p>Remove the earlier compute environment
+         * from your job queue.</p> </li> <li> <p>Delete the earlier compute
+         * environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
          *
@@ -327,11 +327,11 @@ namespace Model
         virtual Model::CreateComputeEnvironmentOutcomeCallable CreateComputeEnvironmentCallable(const Model::CreateComputeEnvironmentRequest& request) const;
 
         /**
-         * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
-         * or <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute
-         * environments can use Amazon EC2 or AWS Fargate resources. <code>UNMANAGED</code>
+         * <p>Creates an Batch compute environment. You can create <code>MANAGED</code> or
+         * <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute
+         * environments can use Amazon EC2 or Fargate resources. <code>UNMANAGED</code>
          * compute environments can only use EC2 resources.</p> <p>In a managed compute
-         * environment, AWS Batch manages the capacity and instance types of the compute
+         * environment, Batch manages the capacity and instance types of the compute
          * resources within the environment. This is based on the compute resource
          * specification that you define or the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
@@ -354,17 +354,17 @@ namespace Model
          * Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p>  <p>AWS Batch doesn't upgrade the AMIs in a
-         * compute environment after the environment is created. For example, it doesn't
-         * update the AMIs when a newer version of the Amazon ECS optimized AMI is
-         * available. Therefore, you're responsible for managing the guest operating system
-         * (including its updates and security patches) and any additional application
-         * software or utilities that you install on the compute resources. To use a new
-         * AMI for your AWS Batch jobs, complete these steps:</p> <ol> <li> <p>Create a new
-         * compute environment with the new AMI.</p> </li> <li> <p>Add the compute
-         * environment to an existing job queue.</p> </li> <li> <p>Remove the earlier
-         * compute environment from your job queue.</p> </li> <li> <p>Delete the earlier
-         * compute environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>Batch doesn't upgrade the AMIs in a compute
+         * environment after the environment is created. For example, it doesn't update the
+         * AMIs when a newer version of the Amazon ECS optimized AMI is available.
+         * Therefore, you're responsible for managing the guest operating system (including
+         * its updates and security patches) and any additional application software or
+         * utilities that you install on the compute resources. To use a new AMI for your
+         * Batch jobs, complete these steps:</p> <ol> <li> <p>Create a new compute
+         * environment with the new AMI.</p> </li> <li> <p>Add the compute environment to
+         * an existing job queue.</p> </li> <li> <p>Remove the earlier compute environment
+         * from your job queue.</p> </li> <li> <p>Delete the earlier compute
+         * environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
          *
@@ -373,13 +373,13 @@ namespace Model
         virtual void CreateComputeEnvironmentAsync(const Model::CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Batch job queue. When you create a job queue, you associate
-         * one or more compute environments to the queue and assign an order of preference
-         * for the compute environments.</p> <p>You also set a priority to the job queue
-         * that determines the order that the AWS Batch scheduler places jobs onto its
-         * associated compute environments. For example, if a compute environment is
-         * associated with more than one job queue, the job queue with a higher priority is
-         * given preference for scheduling jobs to that compute environment.</p><p><h3>See
+         * <p>Creates an Batch job queue. When you create a job queue, you associate one or
+         * more compute environments to the queue and assign an order of preference for the
+         * compute environments.</p> <p>You also set a priority to the job queue that
+         * determines the order that the Batch scheduler places jobs onto its associated
+         * compute environments. For example, if a compute environment is associated with
+         * more than one job queue, the job queue with a higher priority is given
+         * preference for scheduling jobs to that compute environment.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">AWS
          * API Reference</a></p>
@@ -387,13 +387,13 @@ namespace Model
         virtual Model::CreateJobQueueOutcome CreateJobQueue(const Model::CreateJobQueueRequest& request) const;
 
         /**
-         * <p>Creates an AWS Batch job queue. When you create a job queue, you associate
-         * one or more compute environments to the queue and assign an order of preference
-         * for the compute environments.</p> <p>You also set a priority to the job queue
-         * that determines the order that the AWS Batch scheduler places jobs onto its
-         * associated compute environments. For example, if a compute environment is
-         * associated with more than one job queue, the job queue with a higher priority is
-         * given preference for scheduling jobs to that compute environment.</p><p><h3>See
+         * <p>Creates an Batch job queue. When you create a job queue, you associate one or
+         * more compute environments to the queue and assign an order of preference for the
+         * compute environments.</p> <p>You also set a priority to the job queue that
+         * determines the order that the Batch scheduler places jobs onto its associated
+         * compute environments. For example, if a compute environment is associated with
+         * more than one job queue, the job queue with a higher priority is given
+         * preference for scheduling jobs to that compute environment.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">AWS
          * API Reference</a></p>
@@ -403,13 +403,13 @@ namespace Model
         virtual Model::CreateJobQueueOutcomeCallable CreateJobQueueCallable(const Model::CreateJobQueueRequest& request) const;
 
         /**
-         * <p>Creates an AWS Batch job queue. When you create a job queue, you associate
-         * one or more compute environments to the queue and assign an order of preference
-         * for the compute environments.</p> <p>You also set a priority to the job queue
-         * that determines the order that the AWS Batch scheduler places jobs onto its
-         * associated compute environments. For example, if a compute environment is
-         * associated with more than one job queue, the job queue with a higher priority is
-         * given preference for scheduling jobs to that compute environment.</p><p><h3>See
+         * <p>Creates an Batch job queue. When you create a job queue, you associate one or
+         * more compute environments to the queue and assign an order of preference for the
+         * compute environments.</p> <p>You also set a priority to the job queue that
+         * determines the order that the Batch scheduler places jobs onto its associated
+         * compute environments. For example, if a compute environment is associated with
+         * more than one job queue, the job queue with a higher priority is given
+         * preference for scheduling jobs to that compute environment.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">AWS
          * API Reference</a></p>
@@ -419,26 +419,26 @@ namespace Model
         virtual void CreateJobQueueAsync(const Model::CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Batch compute environment.</p> <p>Before you can delete a
-         * compute environment, you must set its state to <code>DISABLED</code> with the
+         * <p>Deletes an Batch compute environment.</p> <p>Before you can delete a compute
+         * environment, you must set its state to <code>DISABLED</code> with the
          * <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job
          * queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
-         * use AWS Fargate resources must terminate all active jobs on that compute
-         * environment before deleting the compute environment. If this isn't done, the
-         * compute environment enters an invalid state.</p><p><h3>See Also:</h3>   <a
+         * use Fargate resources must terminate all active jobs on that compute environment
+         * before deleting the compute environment. If this isn't done, the compute
+         * environment enters an invalid state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteComputeEnvironmentOutcome DeleteComputeEnvironment(const Model::DeleteComputeEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Batch compute environment.</p> <p>Before you can delete a
-         * compute environment, you must set its state to <code>DISABLED</code> with the
+         * <p>Deletes an Batch compute environment.</p> <p>Before you can delete a compute
+         * environment, you must set its state to <code>DISABLED</code> with the
          * <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job
          * queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
-         * use AWS Fargate resources must terminate all active jobs on that compute
-         * environment before deleting the compute environment. If this isn't done, the
-         * compute environment enters an invalid state.</p><p><h3>See Also:</h3>   <a
+         * use Fargate resources must terminate all active jobs on that compute environment
+         * before deleting the compute environment. If this isn't done, the compute
+         * environment enters an invalid state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">AWS
          * API Reference</a></p>
          *
@@ -447,13 +447,13 @@ namespace Model
         virtual Model::DeleteComputeEnvironmentOutcomeCallable DeleteComputeEnvironmentCallable(const Model::DeleteComputeEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Batch compute environment.</p> <p>Before you can delete a
-         * compute environment, you must set its state to <code>DISABLED</code> with the
+         * <p>Deletes an Batch compute environment.</p> <p>Before you can delete a compute
+         * environment, you must set its state to <code>DISABLED</code> with the
          * <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job
          * queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
-         * use AWS Fargate resources must terminate all active jobs on that compute
-         * environment before deleting the compute environment. If this isn't done, the
-         * compute environment enters an invalid state.</p><p><h3>See Also:</h3>   <a
+         * use Fargate resources must terminate all active jobs on that compute environment
+         * before deleting the compute environment. If this isn't done, the compute
+         * environment enters an invalid state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">AWS
          * API Reference</a></p>
          *
@@ -502,16 +502,16 @@ namespace Model
         virtual void DeleteJobQueueAsync(const Model::DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deregisters an AWS Batch job definition. Job definitions are permanently
-         * deleted after 180 days.</p><p><h3>See Also:</h3>   <a
+         * <p>Deregisters an Batch job definition. Job definitions are permanently deleted
+         * after 180 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterJobDefinitionOutcome DeregisterJobDefinition(const Model::DeregisterJobDefinitionRequest& request) const;
 
         /**
-         * <p>Deregisters an AWS Batch job definition. Job definitions are permanently
-         * deleted after 180 days.</p><p><h3>See Also:</h3>   <a
+         * <p>Deregisters an Batch job definition. Job definitions are permanently deleted
+         * after 180 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">AWS
          * API Reference</a></p>
          *
@@ -520,8 +520,8 @@ namespace Model
         virtual Model::DeregisterJobDefinitionOutcomeCallable DeregisterJobDefinitionCallable(const Model::DeregisterJobDefinitionRequest& request) const;
 
         /**
-         * <p>Deregisters an AWS Batch job definition. Job definitions are permanently
-         * deleted after 180 days.</p><p><h3>See Also:</h3>   <a
+         * <p>Deregisters an Batch job definition. Job definitions are permanently deleted
+         * after 180 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">AWS
          * API Reference</a></p>
          *
@@ -623,14 +623,14 @@ namespace Model
         virtual void DescribeJobQueuesAsync(const Model::DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a list of AWS Batch jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a list of Batch jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeJobsOutcome DescribeJobs(const Model::DescribeJobsRequest& request) const;
 
         /**
-         * <p>Describes a list of AWS Batch jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a list of Batch jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">AWS
          * API Reference</a></p>
          *
@@ -639,7 +639,7 @@ namespace Model
         virtual Model::DescribeJobsOutcomeCallable DescribeJobsCallable(const Model::DescribeJobsRequest& request) const;
 
         /**
-         * <p>Describes a list of AWS Batch jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a list of Batch jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">AWS
          * API Reference</a></p>
          *
@@ -648,7 +648,7 @@ namespace Model
         virtual void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS Batch jobs.</p> <p>You must specify only one of the
+         * <p>Returns a list of Batch jobs.</p> <p>You must specify only one of the
          * following items:</p> <ul> <li> <p>A job queue ID to return a list of jobs in
          * that job queue</p> </li> <li> <p>A multi-node parallel job ID to return a list
          * of nodes for that job</p> </li> <li> <p>An array job ID to return a list of the
@@ -661,7 +661,7 @@ namespace Model
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS Batch jobs.</p> <p>You must specify only one of the
+         * <p>Returns a list of Batch jobs.</p> <p>You must specify only one of the
          * following items:</p> <ul> <li> <p>A job queue ID to return a list of jobs in
          * that job queue</p> </li> <li> <p>A multi-node parallel job ID to return a list
          * of nodes for that job</p> </li> <li> <p>An array job ID to return a list of the
@@ -676,7 +676,7 @@ namespace Model
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS Batch jobs.</p> <p>You must specify only one of the
+         * <p>Returns a list of Batch jobs.</p> <p>You must specify only one of the
          * following items:</p> <ul> <li> <p>A job queue ID to return a list of jobs in
          * that job queue</p> </li> <li> <p>A multi-node parallel job ID to return a list
          * of nodes for that job</p> </li> <li> <p>An array job ID to return a list of the
@@ -691,20 +691,20 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for an AWS Batch resource. AWS Batch resources that support
-         * tags are compute environments, jobs, job definitions, and job queues. ARNs for
-         * child jobs of array and multi-node parallel (MNP) jobs are not
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for an Batch resource. Batch resources that support tags are
+         * compute environments, jobs, job definitions, and job queues. ARNs for child jobs
+         * of array and multi-node parallel (MNP) jobs are not supported.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for an AWS Batch resource. AWS Batch resources that support
-         * tags are compute environments, jobs, job definitions, and job queues. ARNs for
-         * child jobs of array and multi-node parallel (MNP) jobs are not
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for an Batch resource. Batch resources that support tags are
+         * compute environments, jobs, job definitions, and job queues. ARNs for child jobs
+         * of array and multi-node parallel (MNP) jobs are not supported.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -713,10 +713,10 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for an AWS Batch resource. AWS Batch resources that support
-         * tags are compute environments, jobs, job definitions, and job queues. ARNs for
-         * child jobs of array and multi-node parallel (MNP) jobs are not
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for an Batch resource. Batch resources that support tags are
+         * compute environments, jobs, job definitions, and job queues. ARNs for child jobs
+         * of array and multi-node parallel (MNP) jobs are not supported.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -725,14 +725,14 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an Batch job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterJobDefinitionOutcome RegisterJobDefinition(const Model::RegisterJobDefinitionRequest& request) const;
 
         /**
-         * <p>Registers an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an Batch job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">AWS
          * API Reference</a></p>
          *
@@ -741,7 +741,7 @@ namespace Model
         virtual Model::RegisterJobDefinitionOutcomeCallable RegisterJobDefinitionCallable(const Model::RegisterJobDefinitionRequest& request) const;
 
         /**
-         * <p>Registers an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Registers an Batch job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">AWS
          * API Reference</a></p>
          *
@@ -750,7 +750,7 @@ namespace Model
         virtual void RegisterJobDefinitionAsync(const Model::RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Submits an AWS Batch job from a job definition. Parameters that are specified
+         * <p>Submits an Batch job from a job definition. Parameters that are specified
          * during <a>SubmitJob</a> override parameters defined in the job definition. vCPU
          * and memory requirements that are specified in the
          * <code>ResourceRequirements</code> objects in the job definition are the
@@ -767,7 +767,7 @@ namespace Model
         virtual Model::SubmitJobOutcome SubmitJob(const Model::SubmitJobRequest& request) const;
 
         /**
-         * <p>Submits an AWS Batch job from a job definition. Parameters that are specified
+         * <p>Submits an Batch job from a job definition. Parameters that are specified
          * during <a>SubmitJob</a> override parameters defined in the job definition. vCPU
          * and memory requirements that are specified in the
          * <code>ResourceRequirements</code> objects in the job definition are the
@@ -786,7 +786,7 @@ namespace Model
         virtual Model::SubmitJobOutcomeCallable SubmitJobCallable(const Model::SubmitJobRequest& request) const;
 
         /**
-         * <p>Submits an AWS Batch job from a job definition. Parameters that are specified
+         * <p>Submits an Batch job from a job definition. Parameters that are specified
          * during <a>SubmitJob</a> override parameters defined in the job definition. vCPU
          * and memory requirements that are specified in the
          * <code>ResourceRequirements</code> objects in the job definition are the
@@ -808,7 +808,7 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
          * request parameters, they aren't changed. When a resource is deleted, the tags
-         * associated with that resource are deleted as well. AWS Batch resources that
+         * that are associated with that resource are deleted as well. Batch resources that
          * support tags are compute environments, jobs, job definitions, and job queues.
          * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
          * supported.</p><p><h3>See Also:</h3>   <a
@@ -821,7 +821,7 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
          * request parameters, they aren't changed. When a resource is deleted, the tags
-         * associated with that resource are deleted as well. AWS Batch resources that
+         * that are associated with that resource are deleted as well. Batch resources that
          * support tags are compute environments, jobs, job definitions, and job queues.
          * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
          * supported.</p><p><h3>See Also:</h3>   <a
@@ -836,7 +836,7 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource aren't specified in the
          * request parameters, they aren't changed. When a resource is deleted, the tags
-         * associated with that resource are deleted as well. AWS Batch resources that
+         * that are associated with that resource are deleted as well. Batch resources that
          * support tags are compute environments, jobs, job definitions, and job queues.
          * ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
          * supported.</p><p><h3>See Also:</h3>   <a
@@ -882,16 +882,14 @@ namespace Model
         virtual void TerminateJobAsync(const Model::TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes specified tags from an AWS Batch resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes specified tags from an Batch resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Deletes specified tags from an AWS Batch resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes specified tags from an Batch resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -900,8 +898,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Deletes specified tags from an AWS Batch resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes specified tags from an Batch resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -910,14 +907,14 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an AWS Batch compute environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Batch compute environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateComputeEnvironmentOutcome UpdateComputeEnvironment(const Model::UpdateComputeEnvironmentRequest& request) const;
 
         /**
-         * <p>Updates an AWS Batch compute environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Batch compute environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">AWS
          * API Reference</a></p>
          *
@@ -926,7 +923,7 @@ namespace Model
         virtual Model::UpdateComputeEnvironmentOutcomeCallable UpdateComputeEnvironmentCallable(const Model::UpdateComputeEnvironmentRequest& request) const;
 
         /**
-         * <p>Updates an AWS Batch compute environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Batch compute environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">AWS
          * API Reference</a></p>
          *

@@ -234,87 +234,87 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for coordination with AWS Glue, a fully managed
+     * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
     inline const GlueConfiguration& GetGlueConfiguration() const{ return m_glueConfiguration; }
 
     /**
-     * <p>Configuration information for coordination with AWS Glue, a fully managed
+     * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
     inline bool GlueConfigurationHasBeenSet() const { return m_glueConfigurationHasBeenSet; }
 
     /**
-     * <p>Configuration information for coordination with AWS Glue, a fully managed
+     * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
     inline void SetGlueConfiguration(const GlueConfiguration& value) { m_glueConfigurationHasBeenSet = true; m_glueConfiguration = value; }
 
     /**
-     * <p>Configuration information for coordination with AWS Glue, a fully managed
+     * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
     inline void SetGlueConfiguration(GlueConfiguration&& value) { m_glueConfigurationHasBeenSet = true; m_glueConfiguration = std::move(value); }
 
     /**
-     * <p>Configuration information for coordination with AWS Glue, a fully managed
+     * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
     inline S3DestinationConfiguration& WithGlueConfiguration(const GlueConfiguration& value) { SetGlueConfiguration(value); return *this;}
 
     /**
-     * <p>Configuration information for coordination with AWS Glue, a fully managed
+     * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
     inline S3DestinationConfiguration& WithGlueConfiguration(GlueConfiguration&& value) { SetGlueConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline S3DestinationConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline S3DestinationConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role that grants AWS IoT Analytics permission to interact with
-     * your Amazon S3 and AWS Glue resources.</p>
+     * <p>The ARN of the role that grants IoT Analytics permission to interact with
+     * your Amazon S3 and Glue resources.</p>
      */
     inline S3DestinationConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

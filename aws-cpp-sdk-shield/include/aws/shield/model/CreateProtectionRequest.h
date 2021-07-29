@@ -84,9 +84,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -103,9 +103,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -122,9 +122,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -141,9 +141,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -160,9 +160,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -179,9 +179,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -198,9 +198,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -217,9 +217,9 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
      * </code> </p> </li> <li> <p>For an Elastic Load Balancer (Classic Load Balancer):
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-     * </code> </p> </li> <li> <p>For an AWS CloudFront distribution:
+     * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an AWS Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>

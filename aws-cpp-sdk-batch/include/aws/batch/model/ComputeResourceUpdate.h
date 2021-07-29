@@ -28,8 +28,7 @@ namespace Model
    * <p>An object representing the attributes of a compute environment that can be
    * updated. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-   * Environments</a> in the <i>AWS Batch User Guide</i>.</p><p><h3>See Also:</h3>  
-   * <a
+   * Environments</a> in the <i>Batch User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate">AWS
    * API Reference</a></p>
    */
@@ -44,29 +43,29 @@ namespace Model
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
-     * Fargate resources, and shouldn't be specified.</p> 
+     * maintain.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
-     * Fargate resources, and shouldn't be specified.</p> 
+     * maintain.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
-     * Fargate resources, and shouldn't be specified.</p> 
+     * maintain.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
      * <p>The minimum number of Amazon EC2 vCPUs that an environment should
-     * maintain.</p>  <p>This parameter isn't applicable to jobs running on
-     * Fargate resources, and shouldn't be specified.</p> 
+     * maintain.</p>  <p>This parameter isn't applicable to jobs that are running
+     * on Fargate resources, and shouldn't be specified.</p> 
      */
     inline ComputeResourceUpdate& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
 
@@ -74,79 +73,79 @@ namespace Model
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance. That is, no more than a single instance from among those specified in
-     * your compute environment.</p> 
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to
+     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event,
+     * Batch never exceeds <code>maxvCpus</code> by more than a single instance. That
+     * is, no more than a single instance from among those specified in your compute
+     * environment.</p> 
      */
     inline int GetMaxvCpus() const{ return m_maxvCpus; }
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance. That is, no more than a single instance from among those specified in
-     * your compute environment.</p> 
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to
+     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event,
+     * Batch never exceeds <code>maxvCpus</code> by more than a single instance. That
+     * is, no more than a single instance from among those specified in your compute
+     * environment.</p> 
      */
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance. That is, no more than a single instance from among those specified in
-     * your compute environment.</p> 
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to
+     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event,
+     * Batch never exceeds <code>maxvCpus</code> by more than a single instance. That
+     * is, no more than a single instance from among those specified in your compute
+     * environment.</p> 
      */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
      * <p>The maximum number of Amazon EC2 vCPUs that an environment can reach.</p>
      *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, AWS Batch might need
-     * to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     * event, AWS Batch never exceeds <code>maxvCpus</code> by more than a single
-     * instance. That is, no more than a single instance from among those specified in
-     * your compute environment.</p> 
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies, Batch might need to
+     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event,
+     * Batch never exceeds <code>maxvCpus</code> by more than a single instance. That
+     * is, no more than a single instance from among those specified in your compute
+     * environment.</p> 
      */
     inline ComputeResourceUpdate& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
 
 
     /**
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
-     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
-     * shouldn't be specified.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
     /**
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
-     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
-     * shouldn't be specified.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
-     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
-     * shouldn't be specified.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
     /**
      * <p>The desired number of Amazon EC2 vCPUS in the compute environment.</p> 
-     * <p>This parameter isn't applicable to jobs running on Fargate resources, and
-     * shouldn't be specified.</p> 
+     * <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources, and shouldn't be specified.</p> 
      */
     inline ComputeResourceUpdate& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -156,7 +155,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -166,7 +165,7 @@ namespace Model
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -176,7 +175,7 @@ namespace Model
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -186,7 +185,7 @@ namespace Model
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -196,7 +195,7 @@ namespace Model
     inline ComputeResourceUpdate& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -206,7 +205,7 @@ namespace Model
     inline ComputeResourceUpdate& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -216,7 +215,7 @@ namespace Model
     inline ComputeResourceUpdate& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a
@@ -226,7 +225,7 @@ namespace Model
     inline ComputeResourceUpdate& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The VPC subnets that the compute resources are launched into. Fargate compute
+     * <p>The VPC subnets where the compute resources are launched. Fargate compute
      * resources can contain up to 16 subnets. Providing an empty list will be handled
      * as if this parameter wasn't specified and no change is made. This can't be
      * specified for EC2 compute resources. For more information, see <a

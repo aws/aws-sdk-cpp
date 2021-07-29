@@ -24,6 +24,7 @@ CreateDataSetRequest::CreateDataSetRequest() :
     m_fieldFoldersHasBeenSet(false),
     m_permissionsHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -108,6 +109,12 @@ Aws::String CreateDataSetRequest::SerializePayload() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_rowLevelPermissionTagConfigurationHasBeenSet)
+  {
+   payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
 
   }
 

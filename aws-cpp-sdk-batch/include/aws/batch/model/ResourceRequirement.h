@@ -46,11 +46,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -69,7 +69,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -93,19 +93,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -115,11 +115,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -138,7 +138,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -162,19 +162,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -184,11 +184,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -207,7 +207,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -231,19 +231,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -253,11 +253,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -276,7 +276,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -300,19 +300,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -322,11 +322,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -345,7 +345,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -369,19 +369,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -391,11 +391,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -414,7 +414,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -438,19 +438,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline ResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -460,11 +460,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -483,7 +483,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -507,19 +507,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline ResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -529,11 +529,11 @@ namespace Model
      * <dt>type="GPU"</dt> <dd> <p>The number of physical GPUs to reserve for the
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
-     * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
-     * limit (in MiB) present to the container. This parameter is supported for jobs
-     * running on EC2 resources. If your container attempts to exceed the memory
-     * specified, the container is terminated. This parameter maps to
+     * launched on.</p>  <p>GPUs are not available for jobs that are running on
+     * Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory
+     * hard limit (in MiB) present to the container. This parameter is supported for
+     * jobs that are running on EC2 resources. If your container attempts to exceed the
+     * memory specified, the container is terminated. This parameter maps to
      * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -552,7 +552,7 @@ namespace Model
      * <p>If you're trying to maximize your resource utilization by providing your jobs
      * as much memory as possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p>  <p>For jobs
+     * Management</a> in the <i>Batch User Guide</i>.</p>  <p>For jobs that are
      * running on Fargate resources, then <code>value</code> is the hard limit (in
      * MiB), and must match one of the supported values and the <code>VCPU</code>
      * values must be one of the values supported for that memory value.</p> <dl>
@@ -576,19 +576,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
      * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>For jobs running on Fargate
-     * resources, then <code>value</code> must match one of the supported values and
-     * the <code>MEMORY</code> values must be one of the values supported for that VCPU
-     * value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl> <dt>value =
-     * 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p> </dd> <dt>value
-     * = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> </dd>
-     * <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144,
-     * 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p> <code>MEMORY</code> = 4096,
-     * 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or
-     * 16384</p> </dd> <dt>value = 4</dt> <dd> <p> <code>MEMORY</code> = 8192, 9216,
-     * 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
-     * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-     * </dd> </dl> </dd> </dl>
+     * specified for each node at least once.</p> <p>For jobs that are running on
+     * Fargate resources, then <code>value</code> must match one of the supported
+     * values and the <code>MEMORY</code> values must be one of the values supported
+     * for that VCPU value. The supported values are 0.25, 0.5, 1, 2, and 4</p> <dl>
+     * <dt>value = 0.25</dt> <dd> <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
+     * </dd> <dt>value = 0.5</dt> <dd> <p> <code>MEMORY</code> = 1024, 2048, 3072, or
+     * 4096</p> </dd> <dt>value = 1</dt> <dd> <p> <code>MEMORY</code> = 2048, 3072,
+     * 4096, 5120, 6144, 7168, or 8192</p> </dd> <dt>value = 2</dt> <dd> <p>
+     * <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288,
+     * 13312, 14336, 15360, or 16384</p> </dd> <dt>value = 4</dt> <dd> <p>
+     * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360,
+     * 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624,
+     * 27648, 28672, 29696, or 30720</p> </dd> </dl> </dd> </dl>
      */
     inline ResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
 

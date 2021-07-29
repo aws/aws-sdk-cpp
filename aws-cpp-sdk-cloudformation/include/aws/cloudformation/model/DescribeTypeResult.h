@@ -529,8 +529,8 @@ namespace Model
 
     /**
      * <p>For resource type extensions, the provisioning behavior of the resource type.
-     * AWS CloudFormation determines the provisioning type during registration, based
-     * on the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
      * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
@@ -545,8 +545,8 @@ namespace Model
 
     /**
      * <p>For resource type extensions, the provisioning behavior of the resource type.
-     * AWS CloudFormation determines the provisioning type during registration, based
-     * on the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
      * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
@@ -561,8 +561,8 @@ namespace Model
 
     /**
      * <p>For resource type extensions, the provisioning behavior of the resource type.
-     * AWS CloudFormation determines the provisioning type during registration, based
-     * on the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
      * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
@@ -577,8 +577,8 @@ namespace Model
 
     /**
      * <p>For resource type extensions, the provisioning behavior of the resource type.
-     * AWS CloudFormation determines the provisioning type during registration, based
-     * on the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
      * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
@@ -593,8 +593,8 @@ namespace Model
 
     /**
      * <p>For resource type extensions, the provisioning behavior of the resource type.
-     * AWS CloudFormation determines the provisioning type during registration, based
-     * on the types of handlers in the schema handler package submitted.</p> <p>Valid
+     * CloudFormation determines the provisioning type during registration, based on
+     * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
      * includes an update handler to process updates to the type during stack update
      * operations.</p> </li> <li> <p> <code>IMMUTABLE</code>: The resource type does
@@ -758,12 +758,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
@@ -772,12 +773,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArn = value; }
 
@@ -786,12 +788,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArn = std::move(value); }
 
@@ -800,12 +803,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArn.assign(value); }
 
@@ -814,12 +818,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline DescribeTypeResult& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
@@ -828,12 +833,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline DescribeTypeResult& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
@@ -842,12 +848,13 @@ namespace Model
      * extension. This applies only to private extensions you have registered in your
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p/> <p>If the registered extension calls any AWS APIs, you must create an <i>
-     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+     * <p/> <p>If the registered extension calls any Amazon Web Services APIs, you must
+     * create an <i> <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. CloudFormation then
-     * assumes that execution role to provide your extension with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * CloudFormation then assumes that execution role to provide your extension with
+     * the appropriate credentials.</p>
      */
     inline DescribeTypeResult& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
@@ -856,7 +863,7 @@ namespace Model
      * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
      * The extension is only visible and usable within the account in which it is
-     * registered. AWS CloudFormation marks any extensions you register as
+     * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul>
      */
@@ -866,7 +873,7 @@ namespace Model
      * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
      * The extension is only visible and usable within the account in which it is
-     * registered. AWS CloudFormation marks any extensions you register as
+     * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul>
      */
@@ -876,7 +883,7 @@ namespace Model
      * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
      * The extension is only visible and usable within the account in which it is
-     * registered. AWS CloudFormation marks any extensions you register as
+     * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul>
      */
@@ -886,7 +893,7 @@ namespace Model
      * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
      * The extension is only visible and usable within the account in which it is
-     * registered. AWS CloudFormation marks any extensions you register as
+     * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul>
      */
@@ -896,7 +903,7 @@ namespace Model
      * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
      * The extension is only visible and usable within the account in which it is
-     * registered. AWS CloudFormation marks any extensions you register as
+     * registered. CloudFormation marks any extensions you register as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul>
      */
@@ -1465,7 +1472,7 @@ namespace Model
      * publisher. Major versions released by the publisher must be manually updated.
      * For more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
-     * public extensions for use in your account</a> in the <i>AWS CloudFormation User
+     * public extensions for use in your account</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline bool GetAutoUpdate() const{ return m_autoUpdate; }
@@ -1476,7 +1483,7 @@ namespace Model
      * publisher. Major versions released by the publisher must be manually updated.
      * For more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
-     * public extensions for use in your account</a> in the <i>AWS CloudFormation User
+     * public extensions for use in your account</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline void SetAutoUpdate(bool value) { m_autoUpdate = value; }
@@ -1487,7 +1494,7 @@ namespace Model
      * publisher. Major versions released by the publisher must be manually updated.
      * For more information, see <a
      * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
-     * public extensions for use in your account</a> in the <i>AWS CloudFormation User
+     * public extensions for use in your account</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
     inline DescribeTypeResult& WithAutoUpdate(bool value) { SetAutoUpdate(value); return *this;}

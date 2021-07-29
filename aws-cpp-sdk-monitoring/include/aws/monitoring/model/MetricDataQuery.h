@@ -495,6 +495,63 @@ namespace Model
      */
     inline MetricDataQuery& WithPeriod(int value) { SetPeriod(value); return *this;}
 
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline MetricDataQuery& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline MetricDataQuery& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the account where the metrics are located, if this is a
+     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
+     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     */
+    inline MetricDataQuery& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -514,6 +571,9 @@ namespace Model
 
     int m_period;
     bool m_periodHasBeenSet;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
   };
 
 } // namespace Model

@@ -56,6 +56,7 @@
 #include <aws/cloudformation/model/GetStackPolicyRequest.h>
 #include <aws/cloudformation/model/GetTemplateRequest.h>
 #include <aws/cloudformation/model/GetTemplateSummaryRequest.h>
+#include <aws/cloudformation/model/ImportStacksToStackSetRequest.h>
 #include <aws/cloudformation/model/ListChangeSetsRequest.h>
 #include <aws/cloudformation/model/ListExportsRequest.h>
 #include <aws/cloudformation/model/ListImportsRequest.h>
@@ -1030,6 +1031,30 @@ void CloudFormationClient::GetTemplateSummaryAsync(const GetTemplateSummaryReque
 void CloudFormationClient::GetTemplateSummaryAsyncHelper(const GetTemplateSummaryRequest& request, const GetTemplateSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTemplateSummary(request), context);
+}
+
+ImportStacksToStackSetOutcome CloudFormationClient::ImportStacksToStackSet(const ImportStacksToStackSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ImportStacksToStackSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ImportStacksToStackSetOutcomeCallable CloudFormationClient::ImportStacksToStackSetCallable(const ImportStacksToStackSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportStacksToStackSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportStacksToStackSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::ImportStacksToStackSetAsync(const ImportStacksToStackSetRequest& request, const ImportStacksToStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportStacksToStackSetAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::ImportStacksToStackSetAsyncHelper(const ImportStacksToStackSetRequest& request, const ImportStacksToStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportStacksToStackSet(request), context);
 }
 
 ListChangeSetsOutcome CloudFormationClient::ListChangeSets(const ListChangeSetsRequest& request) const

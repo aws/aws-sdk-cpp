@@ -15,6 +15,7 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_descriptionHasBeenSet(false),
     m_templateBodyHasBeenSet(false),
     m_templateURLHasBeenSet(false),
+    m_stackIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -52,6 +53,11 @@ Aws::String CreateStackSetRequest::SerializePayload() const
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
+  }
+
+  if(m_stackIdHasBeenSet)
+  {
+    ss << "StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
   }
 
   if(m_parametersHasBeenSet)

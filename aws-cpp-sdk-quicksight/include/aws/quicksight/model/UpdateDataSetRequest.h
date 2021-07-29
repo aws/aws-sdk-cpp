@@ -11,6 +11,7 @@
 #include <aws/quicksight/model/DataSetImportMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
+#include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/ColumnGroup.h>
@@ -42,91 +43,91 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline UpdateDataSetRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline UpdateDataSetRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account; ID.</p>
      */
     inline UpdateDataSetRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline UpdateDataSetRequest& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline UpdateDataSetRequest& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dataset that you want to update. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to update. This ID is unique per Region;
+     * for each Amazon Web Services account;.</p>
      */
     inline UpdateDataSetRequest& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
@@ -491,6 +492,43 @@ namespace Model
 
 
     /**
+     * <p>The configuration of tags on a dataset to set row-level security. Row-level
+     * security tags are currently supported for anonymous embedding only.</p>
+     */
+    inline const RowLevelPermissionTagConfiguration& GetRowLevelPermissionTagConfiguration() const{ return m_rowLevelPermissionTagConfiguration; }
+
+    /**
+     * <p>The configuration of tags on a dataset to set row-level security. Row-level
+     * security tags are currently supported for anonymous embedding only.</p>
+     */
+    inline bool RowLevelPermissionTagConfigurationHasBeenSet() const { return m_rowLevelPermissionTagConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of tags on a dataset to set row-level security. Row-level
+     * security tags are currently supported for anonymous embedding only.</p>
+     */
+    inline void SetRowLevelPermissionTagConfiguration(const RowLevelPermissionTagConfiguration& value) { m_rowLevelPermissionTagConfigurationHasBeenSet = true; m_rowLevelPermissionTagConfiguration = value; }
+
+    /**
+     * <p>The configuration of tags on a dataset to set row-level security. Row-level
+     * security tags are currently supported for anonymous embedding only.</p>
+     */
+    inline void SetRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration&& value) { m_rowLevelPermissionTagConfigurationHasBeenSet = true; m_rowLevelPermissionTagConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of tags on a dataset to set row-level security. Row-level
+     * security tags are currently supported for anonymous embedding only.</p>
+     */
+    inline UpdateDataSetRequest& WithRowLevelPermissionTagConfiguration(const RowLevelPermissionTagConfiguration& value) { SetRowLevelPermissionTagConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of tags on a dataset to set row-level security. Row-level
+     * security tags are currently supported for anonymous embedding only.</p>
+     */
+    inline UpdateDataSetRequest& WithRowLevelPermissionTagConfiguration(RowLevelPermissionTagConfiguration&& value) { SetRowLevelPermissionTagConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a>
      * </code>.</p>
      */
@@ -566,6 +604,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
+    bool m_rowLevelPermissionTagConfigurationHasBeenSet;
 
     Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
     bool m_columnLevelPermissionRulesHasBeenSet;

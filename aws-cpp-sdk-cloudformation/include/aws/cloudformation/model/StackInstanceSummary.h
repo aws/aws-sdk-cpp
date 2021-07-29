@@ -94,91 +94,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Region that the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline StackInstanceSummary& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline StackInstanceSummary& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the account that the stack instance is
+     * associated with.</p>
      */
     inline StackInstanceSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
@@ -482,7 +482,7 @@ namespace Model
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation has not checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
@@ -497,7 +497,7 @@ namespace Model
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation has not checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
@@ -512,7 +512,7 @@ namespace Model
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation has not checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
@@ -527,7 +527,7 @@ namespace Model
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation has not checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
@@ -542,7 +542,7 @@ namespace Model
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation has not checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
@@ -557,7 +557,7 @@ namespace Model
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
      * CloudFormation has not checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set

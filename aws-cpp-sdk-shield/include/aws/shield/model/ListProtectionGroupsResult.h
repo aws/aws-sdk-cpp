@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */
@@ -104,7 +104,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * protection groups than the value of MaxResults, AWS Shield Advanced returns this
+     * protection groups than the value of MaxResults, Shield Advanced returns this
      * token that you can use in your next request, to get the next batch of objects.
      * </p>
      */

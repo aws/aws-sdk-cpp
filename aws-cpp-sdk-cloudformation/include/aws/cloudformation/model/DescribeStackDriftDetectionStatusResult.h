@@ -73,58 +73,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline const Aws::String& GetStackDriftDetectionId() const{ return m_stackDriftDetectionId; }
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline void SetStackDriftDetectionId(const Aws::String& value) { m_stackDriftDetectionId = value; }
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline void SetStackDriftDetectionId(Aws::String&& value) { m_stackDriftDetectionId = std::move(value); }
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline void SetStackDriftDetectionId(const char* value) { m_stackDriftDetectionId.assign(value); }
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline DescribeStackDriftDetectionStatusResult& WithStackDriftDetectionId(const Aws::String& value) { SetStackDriftDetectionId(value); return *this;}
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline DescribeStackDriftDetectionStatusResult& WithStackDriftDetectionId(Aws::String&& value) { SetStackDriftDetectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the drift detection results of this operation. </p> <p>AWS
-     * CloudFormation generates new results, with a new drift detection ID, each time
-     * this operation is run. However, the number of reports AWS CloudFormation retains
-     * for any given stack, and for how long, may vary.</p>
+     * <p>The ID of the drift detection results of this operation. </p>
+     * <p>CloudFormation generates new results, with a new drift detection ID, each
+     * time this operation is run. However, the number of reports CloudFormation
+     * retains for any given stack, and for how long, may vary.</p>
      */
     inline DescribeStackDriftDetectionStatusResult& WithStackDriftDetectionId(const char* value) { SetStackDriftDetectionId(value); return *this;}
 
@@ -134,8 +134,8 @@ namespace Model
      * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack
-     * differs from its expected template configuration.</p> </li> <li> <p>
+     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
      * reserved for future use.</p> </li> </ul>
@@ -147,8 +147,8 @@ namespace Model
      * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack
-     * differs from its expected template configuration.</p> </li> <li> <p>
+     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
      * reserved for future use.</p> </li> </ul>
@@ -160,8 +160,8 @@ namespace Model
      * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack
-     * differs from its expected template configuration.</p> </li> <li> <p>
+     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
      * reserved for future use.</p> </li> </ul>
@@ -173,8 +173,8 @@ namespace Model
      * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack
-     * differs from its expected template configuration.</p> </li> <li> <p>
+     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
      * reserved for future use.</p> </li> </ul>
@@ -186,8 +186,8 @@ namespace Model
      * configuration. </p> <ul> <li> <p> <code>DRIFTED</code>: The stack differs from
      * its expected template configuration. A stack is considered to have drifted if
      * one or more of its resources have drifted.</p> </li> <li> <p>
-     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack
-     * differs from its expected template configuration.</p> </li> <li> <p>
+     * <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs
+     * from its expected template configuration.</p> </li> <li> <p>
      * <code>IN_SYNC</code>: The stack's actual configuration matches its expected
      * template configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is
      * reserved for future use.</p> </li> </ul>
@@ -200,14 +200,14 @@ namespace Model
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
      * detection. (Resources that do not currently support stack detection remain
-     * unchecked.)</p> <p>If you specified logical resource IDs for AWS CloudFormation
-     * to use as a filter for the stack drift detection operation, only the resources
-     * with those logical IDs are checked for drift.</p> </li> <li> <p>
+     * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
+     * use as a filter for the stack drift detection operation, only the resources with
+     * those logical IDs are checked for drift.</p> </li> <li> <p>
      * <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
      * for at least one resource in the stack. Results will be available for resources
-     * on which AWS CloudFormation successfully completed drift detection.</p> </li>
-     * <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation
-     * is currently in progress.</p> </li> </ul>
+     * on which CloudFormation successfully completed drift detection.</p> </li> <li>
+     * <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+     * currently in progress.</p> </li> </ul>
      */
     inline const StackDriftDetectionStatus& GetDetectionStatus() const{ return m_detectionStatus; }
 
@@ -216,14 +216,14 @@ namespace Model
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
      * detection. (Resources that do not currently support stack detection remain
-     * unchecked.)</p> <p>If you specified logical resource IDs for AWS CloudFormation
-     * to use as a filter for the stack drift detection operation, only the resources
-     * with those logical IDs are checked for drift.</p> </li> <li> <p>
+     * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
+     * use as a filter for the stack drift detection operation, only the resources with
+     * those logical IDs are checked for drift.</p> </li> <li> <p>
      * <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
      * for at least one resource in the stack. Results will be available for resources
-     * on which AWS CloudFormation successfully completed drift detection.</p> </li>
-     * <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation
-     * is currently in progress.</p> </li> </ul>
+     * on which CloudFormation successfully completed drift detection.</p> </li> <li>
+     * <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+     * currently in progress.</p> </li> </ul>
      */
     inline void SetDetectionStatus(const StackDriftDetectionStatus& value) { m_detectionStatus = value; }
 
@@ -232,14 +232,14 @@ namespace Model
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
      * detection. (Resources that do not currently support stack detection remain
-     * unchecked.)</p> <p>If you specified logical resource IDs for AWS CloudFormation
-     * to use as a filter for the stack drift detection operation, only the resources
-     * with those logical IDs are checked for drift.</p> </li> <li> <p>
+     * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
+     * use as a filter for the stack drift detection operation, only the resources with
+     * those logical IDs are checked for drift.</p> </li> <li> <p>
      * <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
      * for at least one resource in the stack. Results will be available for resources
-     * on which AWS CloudFormation successfully completed drift detection.</p> </li>
-     * <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation
-     * is currently in progress.</p> </li> </ul>
+     * on which CloudFormation successfully completed drift detection.</p> </li> <li>
+     * <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+     * currently in progress.</p> </li> </ul>
      */
     inline void SetDetectionStatus(StackDriftDetectionStatus&& value) { m_detectionStatus = std::move(value); }
 
@@ -248,14 +248,14 @@ namespace Model
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
      * detection. (Resources that do not currently support stack detection remain
-     * unchecked.)</p> <p>If you specified logical resource IDs for AWS CloudFormation
-     * to use as a filter for the stack drift detection operation, only the resources
-     * with those logical IDs are checked for drift.</p> </li> <li> <p>
+     * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
+     * use as a filter for the stack drift detection operation, only the resources with
+     * those logical IDs are checked for drift.</p> </li> <li> <p>
      * <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
      * for at least one resource in the stack. Results will be available for resources
-     * on which AWS CloudFormation successfully completed drift detection.</p> </li>
-     * <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation
-     * is currently in progress.</p> </li> </ul>
+     * on which CloudFormation successfully completed drift detection.</p> </li> <li>
+     * <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+     * currently in progress.</p> </li> </ul>
      */
     inline DescribeStackDriftDetectionStatusResult& WithDetectionStatus(const StackDriftDetectionStatus& value) { SetDetectionStatus(value); return *this;}
 
@@ -264,14 +264,14 @@ namespace Model
      * <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
      * successfully completed for all resources in the stack that support drift
      * detection. (Resources that do not currently support stack detection remain
-     * unchecked.)</p> <p>If you specified logical resource IDs for AWS CloudFormation
-     * to use as a filter for the stack drift detection operation, only the resources
-     * with those logical IDs are checked for drift.</p> </li> <li> <p>
+     * unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to
+     * use as a filter for the stack drift detection operation, only the resources with
+     * those logical IDs are checked for drift.</p> </li> <li> <p>
      * <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
      * for at least one resource in the stack. Results will be available for resources
-     * on which AWS CloudFormation successfully completed drift detection.</p> </li>
-     * <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation
-     * is currently in progress.</p> </li> </ul>
+     * on which CloudFormation successfully completed drift detection.</p> </li> <li>
+     * <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+     * currently in progress.</p> </li> </ul>
      */
     inline DescribeStackDriftDetectionStatusResult& WithDetectionStatus(StackDriftDetectionStatus&& value) { SetDetectionStatus(std::move(value)); return *this;}
 

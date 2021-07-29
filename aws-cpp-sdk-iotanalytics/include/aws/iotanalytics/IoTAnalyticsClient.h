@@ -219,9 +219,9 @@ namespace Model
     typedef std::function<void(const IoTAnalyticsClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
 
   /**
-   * <p>AWS IoT Analytics allows you to collect large amounts of device data, process
+   * <p>IoT Analytics allows you to collect large amounts of device data, process
    * messages, and store them. You can then query the data and run sophisticated
-   * analytics on it. AWS IoT Analytics enables advanced data exploration through
+   * analytics on it. IoT Analytics enables advanced data exploration through
    * integration with Jupyter Notebooks and data visualization through integration
    * with Amazon QuickSight.</p> <p>Traditional analytics and business intelligence
    * tools are designed to process structured data. IoT data often comes from devices
@@ -229,17 +229,17 @@ namespace Model
    * the data from these devices can have significant gaps, corrupted messages, and
    * false readings that must be cleaned up before analysis can occur. Also, IoT data
    * is often only meaningful in the context of other data from external sources.
-   * </p> <p>AWS IoT Analytics automates the steps required to analyze data from IoT
-   * devices. AWS IoT Analytics filters, transforms, and enriches IoT data before
-   * storing it in a time-series data store for analysis. You can set up the service
-   * to collect only the data you need from your devices, apply mathematical
-   * transforms to process the data, and enrich the data with device-specific
-   * metadata such as device type and location before storing it. Then, you can
-   * analyze your data by running queries using the built-in SQL query engine, or
-   * perform more complex analytics and machine learning inference. AWS IoT Analytics
-   * includes pre-built models for common IoT use cases so you can answer questions
-   * like which devices are about to fail or which customers are at risk of
-   * abandoning their wearable devices.</p>
+   * </p> <p>IoT Analytics automates the steps required to analyze data from IoT
+   * devices. IoT Analytics filters, transforms, and enriches IoT data before storing
+   * it in a time-series data store for analysis. You can set up the service to
+   * collect only the data you need from your devices, apply mathematical transforms
+   * to process the data, and enrich the data with device-specific metadata such as
+   * device type and location before storing it. Then, you can analyze your data by
+   * running queries using the built-in SQL query engine, or perform more complex
+   * analytics and machine learning inference. IoT Analytics includes pre-built
+   * models for common IoT use cases so you can answer questions like which devices
+   * are about to fail or which customers are at risk of abandoning their wearable
+   * devices.</p>
    */
   class AWS_IOTANALYTICS_API IoTAnalyticsClient : public Aws::Client::AWSJsonClient
   {
@@ -322,8 +322,8 @@ namespace Model
         virtual void CancelPipelineReprocessingAsync(const Model::CancelPipelineReprocessingRequest& request, const CancelPipelineReprocessingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a channel. A channel collects data from an MQTT topic and archives
-         * the raw, unprocessed messages before publishing the data to a
+         * <p>Used to create a channel. A channel collects data from an MQTT topic and
+         * archives the raw, unprocessed messages before publishing the data to a
          * pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateChannel">AWS
          * API Reference</a></p>
@@ -331,8 +331,8 @@ namespace Model
         virtual Model::CreateChannelOutcome CreateChannel(const Model::CreateChannelRequest& request) const;
 
         /**
-         * <p>Creates a channel. A channel collects data from an MQTT topic and archives
-         * the raw, unprocessed messages before publishing the data to a
+         * <p>Used to create a channel. A channel collects data from an MQTT topic and
+         * archives the raw, unprocessed messages before publishing the data to a
          * pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateChannel">AWS
          * API Reference</a></p>
@@ -342,8 +342,8 @@ namespace Model
         virtual Model::CreateChannelOutcomeCallable CreateChannelCallable(const Model::CreateChannelRequest& request) const;
 
         /**
-         * <p>Creates a channel. A channel collects data from an MQTT topic and archives
-         * the raw, unprocessed messages before publishing the data to a
+         * <p>Used to create a channel. A channel collects data from an MQTT topic and
+         * archives the raw, unprocessed messages before publishing the data to a
          * pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateChannel">AWS
          * API Reference</a></p>
@@ -353,8 +353,8 @@ namespace Model
         virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a dataset. A dataset stores data retrieved from a data store by
-         * applying a <code>queryAction</code> (a SQL query) or a
+         * <p>Used to create a dataset. A dataset stores data retrieved from a data store
+         * by applying a <code>queryAction</code> (a SQL query) or a
          * <code>containerAction</code> (executing a containerized application). This
          * operation creates the skeleton of a dataset. The dataset can be populated
          * manually by calling <code>CreateDatasetContent</code> or automatically according
@@ -365,8 +365,8 @@ namespace Model
         virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a dataset. A dataset stores data retrieved from a data store by
-         * applying a <code>queryAction</code> (a SQL query) or a
+         * <p>Used to create a dataset. A dataset stores data retrieved from a data store
+         * by applying a <code>queryAction</code> (a SQL query) or a
          * <code>containerAction</code> (executing a containerized application). This
          * operation creates the skeleton of a dataset. The dataset can be populated
          * manually by calling <code>CreateDatasetContent</code> or automatically according
@@ -379,8 +379,8 @@ namespace Model
         virtual Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request) const;
 
         /**
-         * <p>Creates a dataset. A dataset stores data retrieved from a data store by
-         * applying a <code>queryAction</code> (a SQL query) or a
+         * <p>Used to create a dataset. A dataset stores data retrieved from a data store
+         * by applying a <code>queryAction</code> (a SQL query) or a
          * <code>containerAction</code> (executing a containerized application). This
          * operation creates the skeleton of a dataset. The dataset can be populated
          * manually by calling <code>CreateDatasetContent</code> or automatically according
@@ -393,7 +393,7 @@ namespace Model
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the content of a data set by applying a <code>queryAction</code> (a
+         * <p>Creates the content of a dataset by applying a <code>queryAction</code> (a
          * SQL query) or a <code>containerAction</code> (executing a containerized
          * application).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
@@ -402,7 +402,7 @@ namespace Model
         virtual Model::CreateDatasetContentOutcome CreateDatasetContent(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying a <code>queryAction</code> (a
+         * <p>Creates the content of a dataset by applying a <code>queryAction</code> (a
          * SQL query) or a <code>containerAction</code> (executing a containerized
          * application).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
@@ -413,7 +413,7 @@ namespace Model
         virtual Model::CreateDatasetContentOutcomeCallable CreateDatasetContentCallable(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying a <code>queryAction</code> (a
+         * <p>Creates the content of a dataset by applying a <code>queryAction</code> (a
          * SQL query) or a <code>containerAction</code> (executing a containerized
          * application).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
@@ -424,18 +424,16 @@ namespace Model
         virtual void CreateDatasetContentAsync(const Model::CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a data store, which is a repository for messages. Only data stores
-         * that are used to save pipeline data can be configured with
-         * <code>ParquetConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDatastoreOutcome CreateDatastore(const Model::CreateDatastoreRequest& request) const;
 
         /**
-         * <p>Creates a data store, which is a repository for messages. Only data stores
-         * that are used to save pipeline data can be configured with
-         * <code>ParquetConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">AWS
          * API Reference</a></p>
          *
@@ -444,9 +442,8 @@ namespace Model
         virtual Model::CreateDatastoreOutcomeCallable CreateDatastoreCallable(const Model::CreateDatastoreRequest& request) const;
 
         /**
-         * <p>Creates a data store, which is a repository for messages. Only data stores
-         * that are used to save pipeline data can be configured with
-         * <code>ParquetConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">AWS
          * API Reference</a></p>
          *
@@ -695,7 +692,7 @@ namespace Model
         virtual void DescribeDatastoreAsync(const Model::DescribeDatastoreRequest& request, const DescribeDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current settings of the AWS IoT Analytics logging
+         * <p>Retrieves the current settings of the IoT Analytics logging
          * options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeLoggingOptions">AWS
          * API Reference</a></p>
@@ -703,7 +700,7 @@ namespace Model
         virtual Model::DescribeLoggingOptionsOutcome DescribeLoggingOptions(const Model::DescribeLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Retrieves the current settings of the AWS IoT Analytics logging
+         * <p>Retrieves the current settings of the IoT Analytics logging
          * options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeLoggingOptions">AWS
          * API Reference</a></p>
@@ -713,7 +710,7 @@ namespace Model
         virtual Model::DescribeLoggingOptionsOutcomeCallable DescribeLoggingOptionsCallable(const Model::DescribeLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Retrieves the current settings of the AWS IoT Analytics logging
+         * <p>Retrieves the current settings of the IoT Analytics logging
          * options.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeLoggingOptions">AWS
          * API Reference</a></p>
@@ -748,7 +745,7 @@ namespace Model
         virtual void DescribePipelineAsync(const Model::DescribePipelineRequest& request, const DescribePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the contents of a data set as presigned URIs.</p><p><h3>See
+         * <p>Retrieves the contents of a dataset as presigned URIs.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">AWS
          * API Reference</a></p>
@@ -756,7 +753,7 @@ namespace Model
         virtual Model::GetDatasetContentOutcome GetDatasetContent(const Model::GetDatasetContentRequest& request) const;
 
         /**
-         * <p>Retrieves the contents of a data set as presigned URIs.</p><p><h3>See
+         * <p>Retrieves the contents of a dataset as presigned URIs.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">AWS
          * API Reference</a></p>
@@ -766,7 +763,7 @@ namespace Model
         virtual Model::GetDatasetContentOutcomeCallable GetDatasetContentCallable(const Model::GetDatasetContentRequest& request) const;
 
         /**
-         * <p>Retrieves the contents of a data set as presigned URIs.</p><p><h3>See
+         * <p>Retrieves the contents of a dataset as presigned URIs.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/GetDatasetContent">AWS
          * API Reference</a></p>
@@ -801,7 +798,7 @@ namespace Model
         virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists information about data set contents that have been
+         * <p>Lists information about dataset contents that have been
          * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">AWS
          * API Reference</a></p>
@@ -809,7 +806,7 @@ namespace Model
         virtual Model::ListDatasetContentsOutcome ListDatasetContents(const Model::ListDatasetContentsRequest& request) const;
 
         /**
-         * <p>Lists information about data set contents that have been
+         * <p>Lists information about dataset contents that have been
          * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">AWS
          * API Reference</a></p>
@@ -819,7 +816,7 @@ namespace Model
         virtual Model::ListDatasetContentsOutcomeCallable ListDatasetContentsCallable(const Model::ListDatasetContentsRequest& request) const;
 
         /**
-         * <p>Lists information about data set contents that have been
+         * <p>Lists information about dataset contents that have been
          * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">AWS
          * API Reference</a></p>
@@ -829,14 +826,14 @@ namespace Model
         virtual void ListDatasetContentsAsync(const Model::ListDatasetContentsRequest& request, const ListDatasetContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about data sets.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about datasets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Retrieves information about data sets.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about datasets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasets">AWS
          * API Reference</a></p>
          *
@@ -845,7 +842,7 @@ namespace Model
         virtual Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const Model::ListDatasetsRequest& request) const;
 
         /**
-         * <p>Retrieves information about data sets.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about datasets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasets">AWS
          * API Reference</a></p>
          *
@@ -932,10 +929,10 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>If you update
-         * the value of any <code>loggingOptions</code> field, it takes up to one minute
-         * for the change to take effect. Also, if you change the policy attached to the
-         * role you specified in the <code>roleArn</code> field (for example, to correct an
+         * <p>Sets or updates the IoT Analytics logging options.</p> <p>If you update the
+         * value of any <code>loggingOptions</code> field, it takes up to one minute for
+         * the change to take effect. Also, if you change the policy attached to the role
+         * you specified in the <code>roleArn</code> field (for example, to correct an
          * invalid policy), it takes up to five minutes for that change to take effect.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
@@ -944,10 +941,10 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>If you update
-         * the value of any <code>loggingOptions</code> field, it takes up to one minute
-         * for the change to take effect. Also, if you change the policy attached to the
-         * role you specified in the <code>roleArn</code> field (for example, to correct an
+         * <p>Sets or updates the IoT Analytics logging options.</p> <p>If you update the
+         * value of any <code>loggingOptions</code> field, it takes up to one minute for
+         * the change to take effect. Also, if you change the policy attached to the role
+         * you specified in the <code>roleArn</code> field (for example, to correct an
          * invalid policy), it takes up to five minutes for that change to take effect.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
@@ -958,10 +955,10 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Analytics logging options.</p> <p>If you update
-         * the value of any <code>loggingOptions</code> field, it takes up to one minute
-         * for the change to take effect. Also, if you change the policy attached to the
-         * role you specified in the <code>roleArn</code> field (for example, to correct an
+         * <p>Sets or updates the IoT Analytics logging options.</p> <p>If you update the
+         * value of any <code>loggingOptions</code> field, it takes up to one minute for
+         * the change to take effect. Also, if you change the policy attached to the role
+         * you specified in the <code>roleArn</code> field (for example, to correct an
          * invalid policy), it takes up to five minutes for that change to take effect.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PutLoggingOptions">AWS
@@ -1115,14 +1112,14 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the settings of a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to update the settings of a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateChannel">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateChannelOutcome UpdateChannel(const Model::UpdateChannelRequest& request) const;
 
         /**
-         * <p>Updates the settings of a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to update the settings of a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateChannel">AWS
          * API Reference</a></p>
          *
@@ -1131,7 +1128,7 @@ namespace Model
         virtual Model::UpdateChannelOutcomeCallable UpdateChannelCallable(const Model::UpdateChannelRequest& request) const;
 
         /**
-         * <p>Updates the settings of a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to update the settings of a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateChannel">AWS
          * API Reference</a></p>
          *
@@ -1140,14 +1137,14 @@ namespace Model
         virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the settings of a data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDataset">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
 
         /**
-         * <p>Updates the settings of a data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDataset">AWS
          * API Reference</a></p>
          *
@@ -1156,7 +1153,7 @@ namespace Model
         virtual Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const Model::UpdateDatasetRequest& request) const;
 
         /**
-         * <p>Updates the settings of a data set.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a dataset.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDataset">AWS
          * API Reference</a></p>
          *
@@ -1165,14 +1162,14 @@ namespace Model
         virtual void UpdateDatasetAsync(const Model::UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the settings of a data store.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to update the settings of a data store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDatastore">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDatastoreOutcome UpdateDatastore(const Model::UpdateDatastoreRequest& request) const;
 
         /**
-         * <p>Updates the settings of a data store.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to update the settings of a data store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDatastore">AWS
          * API Reference</a></p>
          *
@@ -1181,7 +1178,7 @@ namespace Model
         virtual Model::UpdateDatastoreOutcomeCallable UpdateDatastoreCallable(const Model::UpdateDatastoreRequest& request) const;
 
         /**
-         * <p>Updates the settings of a data store.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to update the settings of a data store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdateDatastore">AWS
          * API Reference</a></p>
          *

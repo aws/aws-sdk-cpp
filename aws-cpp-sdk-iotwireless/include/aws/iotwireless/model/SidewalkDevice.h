@@ -39,6 +39,31 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    
+    inline const Aws::String& GetAmazonId() const{ return m_amazonId; }
+
+    
+    inline bool AmazonIdHasBeenSet() const { return m_amazonIdHasBeenSet; }
+
+    
+    inline void SetAmazonId(const Aws::String& value) { m_amazonIdHasBeenSet = true; m_amazonId = value; }
+
+    
+    inline void SetAmazonId(Aws::String&& value) { m_amazonIdHasBeenSet = true; m_amazonId = std::move(value); }
+
+    
+    inline void SetAmazonId(const char* value) { m_amazonIdHasBeenSet = true; m_amazonId.assign(value); }
+
+    
+    inline SidewalkDevice& WithAmazonId(const Aws::String& value) { SetAmazonId(value); return *this;}
+
+    
+    inline SidewalkDevice& WithAmazonId(Aws::String&& value) { SetAmazonId(std::move(value)); return *this;}
+
+    
+    inline SidewalkDevice& WithAmazonId(const char* value) { SetAmazonId(value); return *this;}
+
+
     /**
      * <p>The sidewalk device identification.</p>
      */
@@ -162,6 +187,9 @@ namespace Model
     inline SidewalkDevice& AddDeviceCertificates(CertificateList&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates.push_back(std::move(value)); return *this; }
 
   private:
+
+    Aws::String m_amazonId;
+    bool m_amazonIdHasBeenSet;
 
     Aws::String m_sidewalkId;
     bool m_sidewalkIdHasBeenSet;

@@ -36,99 +36,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you want to assign an IAM policy to
-     * QuickSight users or groups.</p>
+     * <p>The ID of the Amazon Web Services account; where you want to assign an IAM
+     * policy to QuickSight users or groups.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the assignment, also called a rule. It must be unique within an
-     * AWS account.</p>
+     * Amazon Web Services account;.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
 

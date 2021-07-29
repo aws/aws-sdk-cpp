@@ -244,42 +244,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline const Aws::String& GetStackInstanceAccount() const{ return m_stackInstanceAccount; }
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline bool StackInstanceAccountHasBeenSet() const { return m_stackInstanceAccountHasBeenSet; }
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline void SetStackInstanceAccount(const Aws::String& value) { m_stackInstanceAccountHasBeenSet = true; m_stackInstanceAccount = value; }
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline void SetStackInstanceAccount(Aws::String&& value) { m_stackInstanceAccountHasBeenSet = true; m_stackInstanceAccount = std::move(value); }
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline void SetStackInstanceAccount(const char* value) { m_stackInstanceAccountHasBeenSet = true; m_stackInstanceAccount.assign(value); }
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline ListStackInstancesRequest& WithStackInstanceAccount(const Aws::String& value) { SetStackInstanceAccount(value); return *this;}
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline ListStackInstancesRequest& WithStackInstanceAccount(Aws::String&& value) { SetStackInstanceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     * <p>The name of the account that you want to list stack instances for.</p>
      */
     inline ListStackInstancesRequest& WithStackInstanceAccount(const char* value) { SetStackInstanceAccount(value); return *this;}
 
@@ -332,12 +332,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline const CallAs& GetCallAs() const{ return m_callAs; }
 
@@ -348,12 +348,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
 
@@ -364,12 +364,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
 
@@ -380,12 +380,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
 
@@ -396,12 +396,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline ListStackInstancesRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
 
@@ -412,12 +412,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline ListStackInstancesRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 

@@ -137,78 +137,78 @@ namespace Model
 
 
     /**
-     * <p>Whether or not to use the AWS Batch execution IAM role defined in a job
-     * definition when mounting the Amazon EFS file system. If enabled, transit
-     * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
-     * parameter is omitted, the default value of <code>DISABLED</code> is used. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM
+     * <p>Whether or not to use the Batch job IAM role defined in a job definition when
+     * mounting the Amazon EFS file system. If enabled, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+     * Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */
     inline const EFSAuthorizationConfigIAM& GetIam() const{ return m_iam; }
 
     /**
-     * <p>Whether or not to use the AWS Batch execution IAM role defined in a job
-     * definition when mounting the Amazon EFS file system. If enabled, transit
-     * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
-     * parameter is omitted, the default value of <code>DISABLED</code> is used. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM
+     * <p>Whether or not to use the Batch job IAM role defined in a job definition when
+     * mounting the Amazon EFS file system. If enabled, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+     * Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
 
     /**
-     * <p>Whether or not to use the AWS Batch execution IAM role defined in a job
-     * definition when mounting the Amazon EFS file system. If enabled, transit
-     * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
-     * parameter is omitted, the default value of <code>DISABLED</code> is used. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM
+     * <p>Whether or not to use the Batch job IAM role defined in a job definition when
+     * mounting the Amazon EFS file system. If enabled, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+     * Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */
     inline void SetIam(const EFSAuthorizationConfigIAM& value) { m_iamHasBeenSet = true; m_iam = value; }
 
     /**
-     * <p>Whether or not to use the AWS Batch execution IAM role defined in a job
-     * definition when mounting the Amazon EFS file system. If enabled, transit
-     * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
-     * parameter is omitted, the default value of <code>DISABLED</code> is used. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM
+     * <p>Whether or not to use the Batch job IAM role defined in a job definition when
+     * mounting the Amazon EFS file system. If enabled, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+     * Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */
     inline void SetIam(EFSAuthorizationConfigIAM&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
 
     /**
-     * <p>Whether or not to use the AWS Batch execution IAM role defined in a job
-     * definition when mounting the Amazon EFS file system. If enabled, transit
-     * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
-     * parameter is omitted, the default value of <code>DISABLED</code> is used. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM
+     * <p>Whether or not to use the Batch job IAM role defined in a job definition when
+     * mounting the Amazon EFS file system. If enabled, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+     * Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */
     inline EFSAuthorizationConfig& WithIam(const EFSAuthorizationConfigIAM& value) { SetIam(value); return *this;}
 
     /**
-     * <p>Whether or not to use the AWS Batch execution IAM role defined in a job
-     * definition when mounting the Amazon EFS file system. If enabled, transit
-     * encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
-     * parameter is omitted, the default value of <code>DISABLED</code> is used. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>AWS Batch User Guide</i>. EFS IAM
+     * <p>Whether or not to use the Batch job IAM role defined in a job definition when
+     * mounting the Amazon EFS file system. If enabled, transit encryption must be
+     * enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is
+     * omitted, the default value of <code>DISABLED</code> is used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+     * Amazon EFS Access Points</a> in the <i>Batch User Guide</i>. EFS IAM
      * authorization requires that <code>TransitEncryption</code> be
      * <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
      */

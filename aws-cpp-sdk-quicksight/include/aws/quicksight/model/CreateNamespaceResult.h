@@ -107,43 +107,43 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline const Aws::String& GetCapacityRegion() const{ return m_capacityRegion; }
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline void SetCapacityRegion(const Aws::String& value) { m_capacityRegion = value; }
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline void SetCapacityRegion(Aws::String&& value) { m_capacityRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline void SetCapacityRegion(const char* value) { m_capacityRegion.assign(value); }
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline CreateNamespaceResult& WithCapacityRegion(const Aws::String& value) { SetCapacityRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline CreateNamespaceResult& WithCapacityRegion(Aws::String&& value) { SetCapacityRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that you want to use for the free SPICE capacity for the new
+     * <p>The Region; that you want to use for the free SPICE capacity for the new
      * namespace. This is set to the region that you run CreateNamespace in. </p>
      */
     inline CreateNamespaceResult& WithCapacityRegion(const char* value) { SetCapacityRegion(value); return *this;}
@@ -227,37 +227,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline CreateNamespaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline CreateNamespaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline CreateNamespaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

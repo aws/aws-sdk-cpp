@@ -425,7 +425,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -434,7 +440,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -443,7 +455,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -452,7 +470,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -461,7 +485,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricStreamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -470,7 +500,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricStreamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -479,7 +515,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricStreamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -488,7 +530,13 @@ namespace Model
      * associate as many as 50 tags with a metric stream.</p> <p>Tags can help you
      * organize and categorize your resources. You can also use them to scope user
      * permissions by granting a user permission to access or change only resources
-     * with certain tag values.</p>
+     * with certain tag values.</p> <p>You can use this parameter only when you are
+     * creating a new metric stream. If you are using this operation to update an
+     * existing metric stream, any tags you specify in this parameter are ignored. To
+     * change the tags of an existing metric stream, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutMetricStreamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

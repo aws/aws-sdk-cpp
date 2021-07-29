@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>[Service-managed permissions] The AWS Organizations accounts to which
-   * StackSets deploys. StackSets does not deploy stack instances to the organization
+   * <p>[Service-managed permissions] The Organizations accounts to which StackSets
+   * deploys. StackSets does not deploy stack instances to the organization
    * management account, even if the organization management account is in your
    * organization or in an OU in your organization.</p> <p>For update operations, you
    * can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>.
@@ -47,97 +47,97 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline DeploymentTargets& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline DeploymentTargets& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline DeploymentTargets& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline DeploymentTargets& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more AWS accounts for which you want to deploy stack set
+     * <p>The names of one or more accounts for which you want to deploy stack set
      * updates.</p>
      */
     inline DeploymentTargets& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline const Aws::String& GetAccountsUrl() const{ return m_accountsUrl; }
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline void SetAccountsUrl(const Aws::String& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = value; }
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline void SetAccountsUrl(Aws::String&& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = std::move(value); }
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline void SetAccountsUrl(const char* value) { m_accountsUrlHasBeenSet = true; m_accountsUrl.assign(value); }
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline DeploymentTargets& WithAccountsUrl(const Aws::String& value) { SetAccountsUrl(value); return *this;}
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline DeploymentTargets& WithAccountsUrl(Aws::String&& value) { SetAccountsUrl(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the value of the AccountsUrl property.</p>
+     * <p>Returns the value of the <code>AccountsUrl</code> property.</p>
      */
     inline DeploymentTargets& WithAccountsUrl(const char* value) { SetAccountsUrl(value); return *this;}
 

@@ -416,7 +416,7 @@ namespace Model
          * Proton can use the associated IAM role to provision environment infrastructure
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
@@ -430,7 +430,7 @@ namespace Model
          * Proton can use the associated IAM role to provision environment infrastructure
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
@@ -446,7 +446,7 @@ namespace Model
          * Proton can use the associated IAM role to provision environment infrastructure
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
@@ -692,7 +692,7 @@ namespace Model
          * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
@@ -707,7 +707,7 @@ namespace Model
          * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
@@ -724,7 +724,7 @@ namespace Model
          * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
@@ -997,7 +997,7 @@ namespace Model
          * for the environment account and associated environment. You're responsible for
          * cleaning up provisioned resources that remain without an environment
          * connection.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
@@ -1013,7 +1013,7 @@ namespace Model
          * for the environment account and associated environment. You're responsible for
          * cleaning up provisioned resources that remain without an environment
          * connection.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
@@ -1031,7 +1031,7 @@ namespace Model
          * for the environment account and associated environment. You're responsible for
          * cleaning up provisioned resources that remain without an environment
          * connection.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
@@ -1285,7 +1285,7 @@ namespace Model
         /**
          * <p>In an environment account, view the detail data for an environment account
          * connection.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
@@ -1296,7 +1296,7 @@ namespace Model
         /**
          * <p>In an environment account, view the detail data for an environment account
          * connection.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
@@ -1309,7 +1309,7 @@ namespace Model
         /**
          * <p>In an environment account, view the detail data for an environment account
          * connection.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
@@ -1484,7 +1484,7 @@ namespace Model
         /**
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
@@ -1495,7 +1495,7 @@ namespace Model
         /**
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
@@ -1508,7 +1508,7 @@ namespace Model
         /**
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
@@ -1749,7 +1749,7 @@ namespace Model
          * environment account connection.</p> <p>You <i>can’t</i> reject an environment
          * account connection that is connected to an environment.</p> <p>For more
          * information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
@@ -1764,7 +1764,7 @@ namespace Model
          * environment account connection.</p> <p>You <i>can’t</i> reject an environment
          * account connection that is connected to an environment.</p> <p>For more
          * information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
@@ -1781,7 +1781,7 @@ namespace Model
          * environment account connection.</p> <p>You <i>can’t</i> reject an environment
          * account connection that is connected to an environment.</p> <p>For more
          * information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
@@ -2011,7 +2011,7 @@ namespace Model
         /**
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS
@@ -2022,7 +2022,7 @@ namespace Model
         /**
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS
@@ -2035,7 +2035,7 @@ namespace Model
         /**
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
-         * href="proton/latest/adminguide/ag-env-account-connections.html">Environment
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>AWS Proton Administrator
          * guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS

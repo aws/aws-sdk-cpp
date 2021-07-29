@@ -26,7 +26,8 @@ AccessPoint::AccessPoint() :
     m_networkOriginHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_bucketHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false)
+    m_accessPointArnHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ AccessPoint::AccessPoint(const XmlNode& xmlNode) :
     m_networkOriginHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_bucketHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false)
+    m_accessPointArnHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +79,12 @@ AccessPoint& AccessPoint::operator =(const XmlNode& xmlNode)
       m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
       m_accessPointArnHasBeenSet = true;
     }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
+      m_aliasHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -113,6 +121,12 @@ void AccessPoint::AddToNode(XmlNode& parentNode) const
   {
    XmlNode accessPointArnNode = parentNode.CreateChildElement("AccessPointArn");
    accessPointArnNode.SetText(m_accessPointArn);
+  }
+
+  if(m_aliasHasBeenSet)
+  {
+   XmlNode aliasNode = parentNode.CreateChildElement("Alias");
+   aliasNode.SetText(m_alias);
   }
 
 }

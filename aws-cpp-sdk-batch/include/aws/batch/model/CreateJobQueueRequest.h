@@ -140,7 +140,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -153,7 +153,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -166,7 +166,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -179,7 +179,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline CreateJobQueueRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -194,9 +194,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
 
@@ -209,9 +209,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
 
@@ -224,9 +224,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
 
@@ -239,9 +239,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
@@ -254,9 +254,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline CreateJobQueueRequest& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
 
@@ -269,9 +269,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline CreateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
@@ -284,9 +284,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
 
@@ -299,9 +299,9 @@ namespace Model
      * compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>)
      * or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
      * compute environments can't be mixed.</p>  <p>All compute environments that
-     * are associated with a job queue must share the same architecture. AWS Batch
-     * doesn't support mixing compute environment architecture types in a single job
-     * queue.</p> 
+     * are associated with a job queue must share the same architecture. Batch doesn't
+     * support mixing compute environment architecture types in a single job queue.</p>
+     * 
      */
     inline CreateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
@@ -311,7 +311,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -320,7 +320,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -329,7 +329,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -338,7 +338,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -347,7 +347,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -356,7 +356,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -365,7 +365,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -374,7 +374,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -383,7 +383,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -392,7 +392,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -401,7 +401,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -410,7 +410,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -419,7 +419,7 @@ namespace Model
      * your resources. Each tag consists of a key and an optional value. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline CreateJobQueueRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

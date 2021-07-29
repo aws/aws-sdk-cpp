@@ -186,7 +186,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline const Aws::String& GetPublicVersionNumber() const{ return m_publicVersionNumber; }
 
@@ -196,7 +198,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline bool PublicVersionNumberHasBeenSet() const { return m_publicVersionNumberHasBeenSet; }
 
@@ -206,7 +210,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline void SetPublicVersionNumber(const Aws::String& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = value; }
 
@@ -216,7 +222,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline void SetPublicVersionNumber(Aws::String&& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = std::move(value); }
 
@@ -226,7 +234,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline void SetPublicVersionNumber(const char* value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber.assign(value); }
 
@@ -236,7 +246,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline PublishTypeRequest& WithPublicVersionNumber(const Aws::String& value) { SetPublicVersionNumber(value); return *this;}
 
@@ -246,7 +258,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline PublishTypeRequest& WithPublicVersionNumber(Aws::String&& value) { SetPublicVersionNumber(std::move(value)); return *this;}
 
@@ -256,7 +270,9 @@ namespace Model
      * number to your extension: </p> <p> <code>MAJOR.MINOR.PATCH</code> </p> <p>For
      * more information, see <a href="https://semver.org/">Semantic Versioning
      * 2.0.0</a>.</p> <p>If you do not specify a version number, CloudFormation
-     * increments the version number by one minor version release.</p>
+     * increments the version number by one minor version release.</p> <p>The first
+     * time you publish a type, CloudFormation sets the version number to
+     * <code>1.0.0</code>, regardless of the value you specify.</p>
      */
     inline PublishTypeRequest& WithPublicVersionNumber(const char* value) { SetPublicVersionNumber(value); return *this;}
 

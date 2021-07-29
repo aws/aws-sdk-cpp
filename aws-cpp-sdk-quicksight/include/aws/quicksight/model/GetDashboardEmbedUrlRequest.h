@@ -41,99 +41,99 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that contains the dashboard that you're
-     * embedding.</p>
+     * <p>The ID for the Amazon Web Services account; that contains the dashboard that
+     * you're embedding.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to the AWS Identity and Access
-     * Management (IAM) policy.</p>
+     * <p>The ID for the dashboard, also added to the Identity and Access Management
+     * (IAM) policy.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
 
@@ -387,50 +387,58 @@ namespace Model
 
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The QuickSight namespace that contains the dashboard IDs in this request. If
-     * you're not using a custom namespace, set this to "<code>default</code>".</p>
+     * <p>The Amazon QuickSight namespace that the user virtually belongs to. If you
+     * are not using an Amazon QuickSight custom namespace, set this to
+     * <code>default</code>.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

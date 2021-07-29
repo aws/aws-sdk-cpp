@@ -33,7 +33,7 @@ namespace Model
    * operations currently being performed on the stack set.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-   * Unmanaged Changes in Stack Sets</a> in the <i>AWS CloudFormation User
+   * Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetDriftDetectionDetails">AWS
    * API Reference</a></p>
@@ -57,7 +57,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -72,7 +72,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -87,7 +87,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -102,7 +102,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -117,7 +117,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
@@ -132,7 +132,7 @@ namespace Model
      * of the stack instances belonging to the stack set stack differs from the
      * expected template and parameter configuration. A stack instance is considered to
      * have drifted if one or more of the resources in the associated stack have
-     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation has not
+     * drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: CloudFormation has not
      * checked the stack set for drift.</p> </li> <li> <p> <code>IN_SYNC</code>: All of
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>

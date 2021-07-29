@@ -121,7 +121,7 @@ namespace Model
 
 
     /**
-     * <p>For resource types, the provisioning behavior of the resource type. AWS
+     * <p>For resource types, the provisioning behavior of the resource type.
      * CloudFormation determines the provisioning type during registration, based on
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
@@ -136,7 +136,7 @@ namespace Model
     inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
 
     /**
-     * <p>For resource types, the provisioning behavior of the resource type. AWS
+     * <p>For resource types, the provisioning behavior of the resource type.
      * CloudFormation determines the provisioning type during registration, based on
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
@@ -151,7 +151,7 @@ namespace Model
     inline bool ProvisioningTypeHasBeenSet() const { return m_provisioningTypeHasBeenSet; }
 
     /**
-     * <p>For resource types, the provisioning behavior of the resource type. AWS
+     * <p>For resource types, the provisioning behavior of the resource type.
      * CloudFormation determines the provisioning type during registration, based on
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
@@ -166,7 +166,7 @@ namespace Model
     inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
 
     /**
-     * <p>For resource types, the provisioning behavior of the resource type. AWS
+     * <p>For resource types, the provisioning behavior of the resource type.
      * CloudFormation determines the provisioning type during registration, based on
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
@@ -181,7 +181,7 @@ namespace Model
     inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = std::move(value); }
 
     /**
-     * <p>For resource types, the provisioning behavior of the resource type. AWS
+     * <p>For resource types, the provisioning behavior of the resource type.
      * CloudFormation determines the provisioning type during registration, based on
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type
@@ -196,7 +196,7 @@ namespace Model
     inline ListTypesRequest& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
 
     /**
-     * <p>For resource types, the provisioning behavior of the resource type. AWS
+     * <p>For resource types, the provisioning behavior of the resource type.
      * CloudFormation determines the provisioning type during registration, based on
      * the types of handlers in the schema handler package submitted.</p> <p>Valid
      * values include:</p> <ul> <li> <p> <code>FULLY_MUTABLE</code>: The resource type

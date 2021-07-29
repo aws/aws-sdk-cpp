@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A <code>DatasetAction</code> object that specifies how data set contents are
+   * <p>A <code>DatasetAction</code> object that specifies how dataset contents are
    * automatically created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction">AWS
    * API Reference</a></p>
@@ -41,49 +41,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline DatasetAction& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline DatasetAction& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set action by which data set contents are automatically
+     * <p>The name of the dataset action by which dataset contents are automatically
      * created.</p>
      */
     inline DatasetAction& WithActionName(const char* value) { SetActionName(value); return *this;}
@@ -91,37 +91,37 @@ namespace Model
 
     /**
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
-     * automatically create data set contents.</p>
+     * automatically create dataset contents.</p>
      */
     inline const SqlQueryDatasetAction& GetQueryAction() const{ return m_queryAction; }
 
     /**
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
-     * automatically create data set contents.</p>
+     * automatically create dataset contents.</p>
      */
     inline bool QueryActionHasBeenSet() const { return m_queryActionHasBeenSet; }
 
     /**
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
-     * automatically create data set contents.</p>
+     * automatically create dataset contents.</p>
      */
     inline void SetQueryAction(const SqlQueryDatasetAction& value) { m_queryActionHasBeenSet = true; m_queryAction = value; }
 
     /**
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
-     * automatically create data set contents.</p>
+     * automatically create dataset contents.</p>
      */
     inline void SetQueryAction(SqlQueryDatasetAction&& value) { m_queryActionHasBeenSet = true; m_queryAction = std::move(value); }
 
     /**
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
-     * automatically create data set contents.</p>
+     * automatically create dataset contents.</p>
      */
     inline DatasetAction& WithQueryAction(const SqlQueryDatasetAction& value) { SetQueryAction(value); return *this;}
 
     /**
      * <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to
-     * automatically create data set contents.</p>
+     * automatically create dataset contents.</p>
      */
     inline DatasetAction& WithQueryAction(SqlQueryDatasetAction&& value) { SetQueryAction(std::move(value)); return *this;}
 

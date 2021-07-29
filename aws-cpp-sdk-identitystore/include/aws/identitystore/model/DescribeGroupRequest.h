@@ -35,66 +35,74 @@ namespace Model
 
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline DescribeGroupRequest& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline DescribeGroupRequest& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The globally unique identifier for the identity store, such as d-1234567890.
-     * In this example, d- is a fixed prefix, and 1234567890 is a randomly generated
-     * string which contains number and lower case letters. This value is generated at
-     * the time that a new identity store is created.</p>
+     * <p>The globally unique identifier for the identity store, such as
+     * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
+     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and lower case letters. This value is generated at the time that a new identity
+     * store is created.</p>
      */
     inline DescribeGroupRequest& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
 

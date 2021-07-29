@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A rollback trigger AWS CloudFormation monitors during creation and updating
-   * of stacks. If any of the alarms you specify goes to ALARM state during the stack
+   * <p>A rollback trigger CloudFormation monitors during creation and updating of
+   * stacks. If any of the alarms you specify goes to ALARM state during the stack
    * operation or within the specified monitoring period afterwards, CloudFormation
    * rolls back the entire stack operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">AWS

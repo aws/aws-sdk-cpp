@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> A single partition. </p><p><h3>See Also:</h3>   <a
+   * <p> A partition dimension defined by an attribute. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Partition">AWS
    * API Reference</a></p>
    */
@@ -38,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline Partition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline Partition& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p> The attribute name of the partition. </p>
+     * <p> The name of the attribute that defines a partition dimension. </p>
      */
     inline Partition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

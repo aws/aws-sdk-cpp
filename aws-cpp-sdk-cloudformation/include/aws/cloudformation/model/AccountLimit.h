@@ -29,9 +29,9 @@ namespace Model
    * <p>Number of stacks</p> </li> <li> <p>Number of stack outputs</p> </li> </ul>
    * <p>For more information about these account limits, and other CloudFormation
    * limits, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
-   * CloudFormation Limits</a> in the <i>AWS CloudFormation User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+   * Limits</a> in the <i>CloudFormation User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AccountLimit">AWS
    * API Reference</a></p>
    */

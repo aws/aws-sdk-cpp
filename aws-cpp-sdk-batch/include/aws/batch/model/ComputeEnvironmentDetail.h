@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an AWS Batch compute environment.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object representing an Batch compute environment.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentDetail">AWS
    * API Reference</a></p>
    */
@@ -252,7 +252,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const CEType& GetType() const{ return m_type; }
 
@@ -260,7 +260,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -268,7 +268,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -276,7 +276,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -284,7 +284,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithType(const CEType& value) { SetType(value); return *this;}
 
@@ -292,7 +292,7 @@ namespace Model
      * <p>The type of the compute environment: <code>MANAGED</code> or
      * <code>UNMANAGED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
 
@@ -300,90 +300,90 @@ namespace Model
     /**
      * <p>The state of the compute environment. The valid values are
      * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
-     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
-     * from an associated job queue on the compute resources within the environment. If
-     * the compute environment is managed, then it can scale its instances out or in
+     * <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
+     * associated job queue on the compute resources within the environment. If the
+     * compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
-     * jobs within the environment. Jobs in a <code>STARTING</code> or
-     * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state don't scale out. However, they
-     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
+     * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+     * state continue to progress normally. Managed compute environments in the
+     * <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.</p>
      */
     inline const CEState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the compute environment. The valid values are
      * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
-     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
-     * from an associated job queue on the compute resources within the environment. If
-     * the compute environment is managed, then it can scale its instances out or in
+     * <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
+     * associated job queue on the compute resources within the environment. If the
+     * compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
-     * jobs within the environment. Jobs in a <code>STARTING</code> or
-     * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state don't scale out. However, they
-     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
+     * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+     * state continue to progress normally. Managed compute environments in the
+     * <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the compute environment. The valid values are
      * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
-     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
-     * from an associated job queue on the compute resources within the environment. If
-     * the compute environment is managed, then it can scale its instances out or in
+     * <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
+     * associated job queue on the compute resources within the environment. If the
+     * compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
-     * jobs within the environment. Jobs in a <code>STARTING</code> or
-     * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state don't scale out. However, they
-     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
+     * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+     * state continue to progress normally. Managed compute environments in the
+     * <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.</p>
      */
     inline void SetState(const CEState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the compute environment. The valid values are
      * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
-     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
-     * from an associated job queue on the compute resources within the environment. If
-     * the compute environment is managed, then it can scale its instances out or in
+     * <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
+     * associated job queue on the compute resources within the environment. If the
+     * compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
-     * jobs within the environment. Jobs in a <code>STARTING</code> or
-     * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state don't scale out. However, they
-     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
+     * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+     * state continue to progress normally. Managed compute environments in the
+     * <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.</p>
      */
     inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the compute environment. The valid values are
      * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
-     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
-     * from an associated job queue on the compute resources within the environment. If
-     * the compute environment is managed, then it can scale its instances out or in
+     * <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
+     * associated job queue on the compute resources within the environment. If the
+     * compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
-     * jobs within the environment. Jobs in a <code>STARTING</code> or
-     * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state don't scale out. However, they
-     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
+     * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+     * state continue to progress normally. Managed compute environments in the
+     * <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.</p>
      */
     inline ComputeEnvironmentDetail& WithState(const CEState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the compute environment. The valid values are
      * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
-     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
-     * from an associated job queue on the compute resources within the environment. If
-     * the compute environment is managed, then it can scale its instances out or in
+     * <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an
+     * associated job queue on the compute resources within the environment. If the
+     * compute environment is managed, then it can scale its instances out or in
      * automatically, based on the job queue demand.</p> <p>If the state is
-     * <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt to place
-     * jobs within the environment. Jobs in a <code>STARTING</code> or
-     * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state don't scale out. However, they
-     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     * <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs
+     * within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+     * state continue to progress normally. Managed compute environments in the
+     * <code>DISABLED</code> state don't scale out. However, they scale in to
+     * <code>minvCpus</code> value after instances become idle.</p>
      */
     inline ComputeEnvironmentDetail& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
@@ -478,7 +478,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const ComputeResource& GetComputeResources() const{ return m_computeResources; }
 
@@ -486,7 +486,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
 
@@ -494,7 +494,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
 
@@ -502,7 +502,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
@@ -510,7 +510,7 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(const ComputeResource& value) { SetComputeResources(value); return *this;}
 
@@ -518,80 +518,80 @@ namespace Model
      * <p>The compute resources defined for the compute environment. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
+     * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
 
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The service role associated with the compute environment that allows AWS
-     * Batch to make calls to AWS API operations on your behalf. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
-     * Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.</p>
+     * <p>The service role associated with the compute environment that allows Batch to
+     * make calls to Amazon Web Services API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+     * service IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
     inline ComputeEnvironmentDetail& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 

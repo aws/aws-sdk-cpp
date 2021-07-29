@@ -85,12 +85,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline const CallAs& GetCallAs() const{ return m_callAs; }
 
@@ -101,12 +101,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
 
@@ -117,12 +117,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
 
@@ -133,12 +133,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
 
@@ -149,12 +149,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline DescribeStackSetRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
 
@@ -165,12 +165,12 @@ namespace Model
      * specified. Use <code>SELF</code> for stack sets with self-managed
      * permissions.</p> <ul> <li> <p>If you are signed in to the management account,
      * specify <code>SELF</code>.</p> </li> <li> <p>If you are signed in to a delegated
-     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your AWS
-     * account must be registered as a delegated administrator in the management
-     * account. For more information, see <a
+     * administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your account
+     * must be registered as a delegated administrator in the management account. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register
-     * a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-     * </li> </ul>
+     * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+     * </ul>
      */
     inline DescribeStackSetRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 

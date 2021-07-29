@@ -43,91 +43,91 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
+     * <p>[Self-managed permissions] The name of the account for this operation
      * result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Region for this operation result.</p>
+     * <p>The name of the Region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -277,38 +277,38 @@ namespace Model
 
 
     /**
-     * <p>The results of the account gate function AWS CloudFormation invokes, if
-     * present, before proceeding with stack set operations in an account</p>
+     * <p>The results of the account gate function CloudFormation invokes, if present,
+     * before proceeding with stack set operations in an account</p>
      */
     inline const AccountGateResult& GetAccountGateResult() const{ return m_accountGateResult; }
 
     /**
-     * <p>The results of the account gate function AWS CloudFormation invokes, if
-     * present, before proceeding with stack set operations in an account</p>
+     * <p>The results of the account gate function CloudFormation invokes, if present,
+     * before proceeding with stack set operations in an account</p>
      */
     inline bool AccountGateResultHasBeenSet() const { return m_accountGateResultHasBeenSet; }
 
     /**
-     * <p>The results of the account gate function AWS CloudFormation invokes, if
-     * present, before proceeding with stack set operations in an account</p>
+     * <p>The results of the account gate function CloudFormation invokes, if present,
+     * before proceeding with stack set operations in an account</p>
      */
     inline void SetAccountGateResult(const AccountGateResult& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = value; }
 
     /**
-     * <p>The results of the account gate function AWS CloudFormation invokes, if
-     * present, before proceeding with stack set operations in an account</p>
+     * <p>The results of the account gate function CloudFormation invokes, if present,
+     * before proceeding with stack set operations in an account</p>
      */
     inline void SetAccountGateResult(AccountGateResult&& value) { m_accountGateResultHasBeenSet = true; m_accountGateResult = std::move(value); }
 
     /**
-     * <p>The results of the account gate function AWS CloudFormation invokes, if
-     * present, before proceeding with stack set operations in an account</p>
+     * <p>The results of the account gate function CloudFormation invokes, if present,
+     * before proceeding with stack set operations in an account</p>
      */
     inline StackSetOperationResultSummary& WithAccountGateResult(const AccountGateResult& value) { SetAccountGateResult(value); return *this;}
 
     /**
-     * <p>The results of the account gate function AWS CloudFormation invokes, if
-     * present, before proceeding with stack set operations in an account</p>
+     * <p>The results of the account gate function CloudFormation invokes, if present,
+     * before proceeding with stack set operations in an account</p>
      */
     inline StackSetOperationResultSummary& WithAccountGateResult(AccountGateResult&& value) { SetAccountGateResult(std::move(value)); return *this;}
 

@@ -84,57 +84,57 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline ListResourcesInProtectionGroupResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline ListResourcesInProtectionGroupResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
-     * resources in the protection group than the value of MaxResults, AWS Shield
-     * Advanced returns this token that you can use in your next request, to get the
-     * next batch of objects. </p>
+     * resources in the protection group than the value of MaxResults, Shield Advanced
+     * returns this token that you can use in your next request, to get the next batch
+     * of objects. </p>
      */
     inline ListResourcesInProtectionGroupResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

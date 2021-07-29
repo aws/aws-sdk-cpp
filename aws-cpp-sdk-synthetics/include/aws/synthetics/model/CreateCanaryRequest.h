@@ -171,57 +171,57 @@ namespace Model
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline const Aws::String& GetArtifactS3Location() const{ return m_artifactS3Location; }
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline bool ArtifactS3LocationHasBeenSet() const { return m_artifactS3LocationHasBeenSet; }
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline void SetArtifactS3Location(const Aws::String& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = value; }
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline void SetArtifactS3Location(Aws::String&& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = std::move(value); }
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline void SetArtifactS3Location(const char* value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location.assign(value); }
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline CreateCanaryRequest& WithArtifactS3Location(const Aws::String& value) { SetArtifactS3Location(value); return *this;}
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline CreateCanaryRequest& WithArtifactS3Location(Aws::String&& value) { SetArtifactS3Location(std::move(value)); return *this;}
 
     /**
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the test
-     * runs of this canary. Artifacts include the log file, screenshots, and HAR
-     * files.</p>
+     * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
+     * The name of the S3 bucket can't include a period (.).</p>
      */
     inline CreateCanaryRequest& WithArtifactS3Location(const char* value) { SetArtifactS3Location(value); return *this;}
 

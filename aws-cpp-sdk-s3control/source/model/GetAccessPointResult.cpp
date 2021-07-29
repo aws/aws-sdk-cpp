@@ -63,6 +63,31 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
+    XmlNode aliasNode = resultNode.FirstChild("Alias");
+    if(!aliasNode.IsNull())
+    {
+      m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
+    }
+    XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
+    if(!accessPointArnNode.IsNull())
+    {
+      m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
+    }
+    XmlNode endpointsNode = resultNode.FirstChild("Endpoints");
+
+    if(!endpointsNode.IsNull())
+    {
+      XmlNode endpointsEntry = endpointsNode.FirstChild("entry");
+      while(!endpointsEntry.IsNull())
+      {
+        XmlNode keyNode = endpointsEntry.FirstChild("key");
+        XmlNode valueNode = endpointsEntry.FirstChild("value");
+        m_endpoints[keyNode.GetText()] =
+            valueNode.GetText();
+        endpointsEntry = endpointsEntry.NextNode("entry");
+      }
+
+    }
   }
 
   return *this;

@@ -41,56 +41,56 @@ namespace Model
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline Parameter& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline Parameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
 
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
-     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * for a particular parameter, CloudFormation uses the default value that is
      * specified in your template.</p>
      */
     inline Parameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}

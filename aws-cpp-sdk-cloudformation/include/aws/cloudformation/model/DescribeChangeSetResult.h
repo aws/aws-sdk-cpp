@@ -322,8 +322,8 @@ namespace Model
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
      * the change set. If you can’t execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
 
@@ -331,8 +331,8 @@ namespace Model
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
      * the change set. If you can’t execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatus = value; }
 
@@ -340,8 +340,8 @@ namespace Model
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
      * the change set. If you can’t execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatus = std::move(value); }
 
@@ -349,8 +349,8 @@ namespace Model
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
      * the change set. If you can’t execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline DescribeChangeSetResult& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
 
@@ -358,8 +358,8 @@ namespace Model
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
      * the change set. If you can’t execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline DescribeChangeSetResult& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
 
@@ -402,43 +402,43 @@ namespace Model
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline DescribeChangeSetResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline DescribeChangeSetResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
-     * create a change set failed, AWS CloudFormation shows the error message.</p>
+     * create a change set failed, CloudFormation shows the error message.</p>
      */
     inline DescribeChangeSetResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -493,32 +493,32 @@ namespace Model
 
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfiguration = value; }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfiguration = std::move(value); }
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline DescribeChangeSetResult& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
 
     /**
-     * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
-     * and updating operations, and for the specified monitoring period afterwards.</p>
+     * <p>The rollback triggers for CloudFormation to monitor during stack creation and
+     * updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline DescribeChangeSetResult& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
@@ -610,43 +610,43 @@ namespace Model
 
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline const Aws::Vector<Change>& GetChanges() const{ return m_changes; }
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline void SetChanges(const Aws::Vector<Change>& value) { m_changes = value; }
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline void SetChanges(Aws::Vector<Change>&& value) { m_changes = std::move(value); }
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline DescribeChangeSetResult& WithChanges(const Aws::Vector<Change>& value) { SetChanges(value); return *this;}
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline DescribeChangeSetResult& WithChanges(Aws::Vector<Change>&& value) { SetChanges(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline DescribeChangeSetResult& AddChanges(const Change& value) { m_changes.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Change</code> structures that describes the resources AWS
+     * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
     inline DescribeChangeSetResult& AddChanges(Change&& value) { m_changes.push_back(std::move(value)); return *this; }

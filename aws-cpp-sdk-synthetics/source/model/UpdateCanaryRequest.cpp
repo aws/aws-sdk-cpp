@@ -23,7 +23,8 @@ UpdateCanaryRequest::UpdateCanaryRequest() :
     m_successRetentionPeriodInDaysHasBeenSet(false),
     m_failureRetentionPeriodInDays(0),
     m_failureRetentionPeriodInDaysHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_visualReferenceHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,12 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_visualReferenceHasBeenSet)
+  {
+   payload.WithObject("VisualReference", m_visualReference.Jsonize());
 
   }
 

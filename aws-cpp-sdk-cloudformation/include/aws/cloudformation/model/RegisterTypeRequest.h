@@ -194,8 +194,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline const Aws::String& GetSchemaHandlerPackage() const{ return m_schemaHandlerPackage; }
 
@@ -211,8 +211,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline bool SchemaHandlerPackageHasBeenSet() const { return m_schemaHandlerPackageHasBeenSet; }
 
@@ -228,8 +228,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline void SetSchemaHandlerPackage(const Aws::String& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = value; }
 
@@ -245,8 +245,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline void SetSchemaHandlerPackage(Aws::String&& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = std::move(value); }
 
@@ -262,8 +262,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline void SetSchemaHandlerPackage(const char* value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage.assign(value); }
 
@@ -279,8 +279,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const Aws::String& value) { SetSchemaHandlerPackage(value); return *this;}
 
@@ -296,8 +296,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(Aws::String&& value) { SetSchemaHandlerPackage(std::move(value)); return *this;}
 
@@ -313,8 +313,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
      * permissions for the schema handler package. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> 
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p> 
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const char* value) { SetSchemaHandlerPackage(value); return *this;}
 
@@ -358,16 +358,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
@@ -379,16 +379,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
@@ -400,16 +400,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
@@ -421,16 +421,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
@@ -442,16 +442,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
@@ -463,16 +463,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
@@ -484,16 +484,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
@@ -505,16 +505,16 @@ namespace Model
      * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
      * adding trust relationships, see <a
      * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
-     * a role trust policy</a> in the <i>AWS Identity and Access Management User
-     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
-     * must create an <i> <a
+     * a role trust policy</a> in the <i>Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls Amazon Web Services APIs in any of its
+     * handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
-     * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the resource type handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the resource
-     * type handler, thereby supplying your resource type with the appropriate
-     * credentials.</p>
+     * Amazon Web Services APIs, and provision that execution role in your account.
+     * When CloudFormation needs to invoke the resource type handler, CloudFormation
+     * assumes this execution role to create a temporary session token, which it then
+     * passes to the resource type handler, thereby supplying your resource type with
+     * the appropriate credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

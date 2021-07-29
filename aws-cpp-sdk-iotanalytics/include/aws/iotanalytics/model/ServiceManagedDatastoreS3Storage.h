@@ -22,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Use this to store data store data in an S3 bucket managed by AWS IoT
-   * Analytics. You cannot change the choice of service-managed or customer-managed
-   * S3 storage after the data store is created.</p><p><h3>See Also:</h3>   <a
+   * <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't
+   * change the choice of Amazon S3 storage after your data store is created.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ServiceManagedDatastoreS3Storage">AWS
    * API Reference</a></p>
    */

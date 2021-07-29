@@ -122,6 +122,27 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether the statement is a batch query request.</p>
+     */
+    inline bool GetIsBatchStatement() const{ return m_isBatchStatement; }
+
+    /**
+     * <p>A value that indicates whether the statement is a batch query request.</p>
+     */
+    inline bool IsBatchStatementHasBeenSet() const { return m_isBatchStatementHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the statement is a batch query request.</p>
+     */
+    inline void SetIsBatchStatement(bool value) { m_isBatchStatementHasBeenSet = true; m_isBatchStatement = value; }
+
+    /**
+     * <p>A value that indicates whether the statement is a batch query request.</p>
+     */
+    inline StatementData& WithIsBatchStatement(bool value) { SetIsBatchStatement(value); return *this;}
+
+
+    /**
      * <p>The parameters used in a SQL statement.</p>
      */
     inline const Aws::Vector<SqlParameter>& GetQueryParameters() const{ return m_queryParameters; }
@@ -201,6 +222,61 @@ namespace Model
      * <p>The SQL statement.</p>
      */
     inline StatementData& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetQueryStrings() const{ return m_queryStrings; }
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline bool QueryStringsHasBeenSet() const { return m_queryStringsHasBeenSet; }
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline void SetQueryStrings(const Aws::Vector<Aws::String>& value) { m_queryStringsHasBeenSet = true; m_queryStrings = value; }
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline void SetQueryStrings(Aws::Vector<Aws::String>&& value) { m_queryStringsHasBeenSet = true; m_queryStrings = std::move(value); }
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline StatementData& WithQueryStrings(const Aws::Vector<Aws::String>& value) { SetQueryStrings(value); return *this;}
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline StatementData& WithQueryStrings(Aws::Vector<Aws::String>&& value) { SetQueryStrings(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline StatementData& AddQueryStrings(const Aws::String& value) { m_queryStringsHasBeenSet = true; m_queryStrings.push_back(value); return *this; }
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline StatementData& AddQueryStrings(Aws::String&& value) { m_queryStringsHasBeenSet = true; m_queryStrings.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more SQL statements. Each query string in the array corresponds to one
+     * of the queries in a batch query request.</p>
+     */
+    inline StatementData& AddQueryStrings(const char* value) { m_queryStringsHasBeenSet = true; m_queryStrings.push_back(value); return *this; }
 
 
     /**
@@ -368,11 +444,17 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet;
 
+    bool m_isBatchStatement;
+    bool m_isBatchStatementHasBeenSet;
+
     Aws::Vector<SqlParameter> m_queryParameters;
     bool m_queryParametersHasBeenSet;
 
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet;
+
+    Aws::Vector<Aws::String> m_queryStrings;
+    bool m_queryStringsHasBeenSet;
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet;
