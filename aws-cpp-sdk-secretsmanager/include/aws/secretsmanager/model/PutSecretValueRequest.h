@@ -216,15 +216,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -243,15 +244,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -270,15 +272,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -297,15 +300,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -324,15 +328,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -351,15 +356,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -378,15 +384,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -405,15 +412,16 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies a unique identifier for the new version of the secret.
-     * </p>  <p>If you use the AWS CLI or one of the AWS SDK to call this
-     * operation, then you can leave this parameter empty. The CLI or SDK generates a
-     * random UUID for you and includes that in the request. If you don't use the SDK
-     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
-     * then you must generate a <code>ClientRequestToken</code> yourself for new
-     * versions and include that value in the request. </p>  <p>This value helps
-     * ensure idempotency. Secrets Manager uses this value to prevent the accidental
-     * creation of duplicate versions if there are failures and retries during the
-     * Lambda rotation function's processing. We recommend that you generate a <a
+     * </p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web
+     * Services SDK to call this operation, then you can leave this parameter empty.
+     * The CLI or SDK generates a random UUID for you and includes that in the request.
+     * If you don't use the SDK and instead generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value
+     * in the request. </p>  <p>This value helps ensure idempotency. Secrets
+     * Manager uses this value to prevent the accidental creation of duplicate versions
+     * if there are failures and retries during the Lambda rotation function's
+     * processing. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <ul> <li> <p>If the
      * <code>ClientRequestToken</code> value isn't already associated with a version of
@@ -511,11 +519,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline const Aws::String& GetSecretString() const{ return m_secretString; }
 
@@ -532,11 +540,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }
 
@@ -553,11 +561,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
 
@@ -574,11 +582,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
 
@@ -595,11 +603,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
 
@@ -616,11 +624,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline PutSecretValueRequest& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
 
@@ -637,11 +645,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline PutSecretValueRequest& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
 
@@ -658,11 +666,11 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
-     * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
-     * </p> <p>If your command-line tool or SDK requires quotation marks around the
-     * parameter, you should use single quotes to avoid confusion with the double
-     * quotes required in the JSON text.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p> <p> For example:</p>
+     * <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If
+     * your command-line tool or SDK requires quotation marks around the parameter, you
+     * should use single quotes to avoid confusion with the double quotes required in
+     * the JSON text.</p>
      */
     inline PutSecretValueRequest& WithSecretString(const char* value) { SetSecretString(value); return *this;}
 

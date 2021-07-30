@@ -8,6 +8,7 @@
 #include <aws/appsync/model/AuthenticationType.h>
 #include <aws/appsync/model/OpenIDConnectConfig.h>
 #include <aws/appsync/model/CognitoUserPoolConfig.h>
+#include <aws/appsync/model/LambdaAuthorizerConfig.h>
 #include <utility>
 
 namespace Aws
@@ -41,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management, OIDC, or
+     * Amazon Cognito user pools.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management, OIDC, or
+     * Amazon Cognito user pools.</p>
      */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management, OIDC, or
+     * Amazon Cognito user pools.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management, OIDC, or
+     * Amazon Cognito user pools.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management, OIDC, or
+     * Amazon Cognito user pools.</p>
      */
     inline AdditionalAuthenticationProvider& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user
-     * pools.</p>
+     * <p>The authentication type: API key, Identity and Access Management, OIDC, or
+     * Amazon Cognito user pools.</p>
      */
     inline AdditionalAuthenticationProvider& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
@@ -138,6 +139,37 @@ namespace Model
      */
     inline AdditionalAuthenticationProvider& WithUserPoolConfig(CognitoUserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration for AWS Lambda function authorization.</p>
+     */
+    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
+
+    /**
+     * <p>Configuration for AWS Lambda function authorization.</p>
+     */
+    inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for AWS Lambda function authorization.</p>
+     */
+    inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
+
+    /**
+     * <p>Configuration for AWS Lambda function authorization.</p>
+     */
+    inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for AWS Lambda function authorization.</p>
+     */
+    inline AdditionalAuthenticationProvider& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for AWS Lambda function authorization.</p>
+     */
+    inline AdditionalAuthenticationProvider& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
+
   private:
 
     AuthenticationType m_authenticationType;
@@ -148,6 +180,9 @@ namespace Model
 
     CognitoUserPoolConfig m_userPoolConfig;
     bool m_userPoolConfigHasBeenSet;
+
+    LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
+    bool m_lambdaAuthorizerConfigHasBeenSet;
   };
 
 } // namespace Model

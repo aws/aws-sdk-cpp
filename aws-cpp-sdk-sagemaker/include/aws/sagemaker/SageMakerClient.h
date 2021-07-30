@@ -2033,10 +2033,9 @@ namespace Model
          * models. You create the endpoint configuration with the
          * <a>CreateEndpointConfig</a> API. </p> <p> Use this API to deploy models using
          * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
-         * when deploying a model to Amazon SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p>  <p> You must not delete an
+         * when deploying a model to Amazon SageMaker hosting services, see the <a
+         * href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
+         * Endpoint example notebook.</a> </p>  <p> You must not delete an
          * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
          * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
          * being performed on the endpoint. To update an endpoint, you must create a new
@@ -2098,10 +2097,9 @@ namespace Model
          * models. You create the endpoint configuration with the
          * <a>CreateEndpointConfig</a> API. </p> <p> Use this API to deploy models using
          * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
-         * when deploying a model to Amazon SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p>  <p> You must not delete an
+         * when deploying a model to Amazon SageMaker hosting services, see the <a
+         * href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
+         * Endpoint example notebook.</a> </p>  <p> You must not delete an
          * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
          * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
          * being performed on the endpoint. To update an endpoint, you must create a new
@@ -2165,10 +2163,9 @@ namespace Model
          * models. You create the endpoint configuration with the
          * <a>CreateEndpointConfig</a> API. </p> <p> Use this API to deploy models using
          * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
-         * when deploying a model to Amazon SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p>  <p> You must not delete an
+         * when deploying a model to Amazon SageMaker hosting services, see the <a
+         * href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
+         * Endpoint example notebook.</a> </p>  <p> You must not delete an
          * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
          * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
          * being performed on the endpoint. To update an endpoint, you must create a new

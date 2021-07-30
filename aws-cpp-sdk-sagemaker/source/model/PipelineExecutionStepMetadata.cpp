@@ -26,7 +26,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_modelHasBeenSet(false),
     m_registerModelHasBeenSet(false),
     m_conditionHasBeenSet(false),
-    m_callbackHasBeenSet(false)
+    m_callbackHasBeenSet(false),
+    m_lambdaHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_modelHasBeenSet(false),
     m_registerModelHasBeenSet(false),
     m_conditionHasBeenSet(false),
-    m_callbackHasBeenSet(false)
+    m_callbackHasBeenSet(false),
+    m_lambdaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_callbackHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Lambda"))
+  {
+    m_lambda = jsonValue.GetObject("Lambda");
+
+    m_lambdaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_callbackHasBeenSet)
   {
    payload.WithObject("Callback", m_callback.Jsonize());
+
+  }
+
+  if(m_lambdaHasBeenSet)
+  {
+   payload.WithObject("Lambda", m_lambda.Jsonize());
 
   }
 

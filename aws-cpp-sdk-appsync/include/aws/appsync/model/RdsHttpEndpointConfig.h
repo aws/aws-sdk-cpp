@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>AWS Region for RDS HTTP endpoint.</p>
+     * <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
@@ -202,42 +202,42 @@ namespace Model
 
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline const Aws::String& GetAwsSecretStoreArn() const{ return m_awsSecretStoreArn; }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline bool AwsSecretStoreArnHasBeenSet() const { return m_awsSecretStoreArnHasBeenSet; }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline void SetAwsSecretStoreArn(const Aws::String& value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn = value; }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline void SetAwsSecretStoreArn(Aws::String&& value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn = std::move(value); }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline void SetAwsSecretStoreArn(const char* value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn.assign(value); }
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsSecretStoreArn(const Aws::String& value) { SetAwsSecretStoreArn(value); return *this;}
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsSecretStoreArn(Aws::String&& value) { SetAwsSecretStoreArn(std::move(value)); return *this;}
 
     /**
-     * <p>AWS secret store ARN for database credentials.</p>
+     * <p>Amazon Web Services secret store ARN for database credentials.</p>
      */
     inline RdsHttpEndpointConfig& WithAwsSecretStoreArn(const char* value) { SetAwsSecretStoreArn(value); return *this;}
 

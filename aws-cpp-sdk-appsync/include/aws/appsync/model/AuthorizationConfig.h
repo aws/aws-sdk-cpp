@@ -77,32 +77,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management settings.</p>
      */
     inline const AwsIamConfig& GetAwsIamConfig() const{ return m_awsIamConfig; }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management settings.</p>
      */
     inline bool AwsIamConfigHasBeenSet() const { return m_awsIamConfigHasBeenSet; }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management settings.</p>
      */
     inline void SetAwsIamConfig(const AwsIamConfig& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = value; }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management settings.</p>
      */
     inline void SetAwsIamConfig(AwsIamConfig&& value) { m_awsIamConfigHasBeenSet = true; m_awsIamConfig = std::move(value); }
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management settings.</p>
      */
     inline AuthorizationConfig& WithAwsIamConfig(const AwsIamConfig& value) { SetAwsIamConfig(value); return *this;}
 
     /**
-     * <p>The AWS IAM settings.</p>
+     * <p>The Identity and Access Management settings.</p>
      */
     inline AuthorizationConfig& WithAwsIamConfig(AwsIamConfig&& value) { SetAwsIamConfig(std::move(value)); return *this;}
 

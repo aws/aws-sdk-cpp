@@ -265,32 +265,32 @@ namespace Model
 
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Amazon Web Services Lambda configuration.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Amazon Web Services Lambda configuration.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Amazon Web Services Lambda configuration.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Amazon Web Services Lambda configuration.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Amazon Web Services Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The new AWS Lambda configuration.</p>
+     * <p>The new Amazon Web Services Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 

@@ -118,8 +118,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
@@ -130,8 +130,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicy = value; }
 
@@ -142,8 +142,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicy = std::move(value); }
 
@@ -154,8 +154,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicy.assign(value); }
 
@@ -166,8 +166,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline GetResourcePolicyResult& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
@@ -178,8 +178,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline GetResourcePolicyResult& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
@@ -190,8 +190,8 @@ namespace Model
      * The combined permissions specify who can access the secret and what actions they
      * can perform. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon
+     * Web Services Secrets Manager User Guide</i>.</p>
      */
     inline GetResourcePolicyResult& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 

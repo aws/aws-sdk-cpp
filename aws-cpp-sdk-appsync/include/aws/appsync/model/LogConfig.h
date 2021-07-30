@@ -124,49 +124,49 @@ namespace Model
 
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::move(value); }
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline void SetCloudWatchLogsRoleArn(const char* value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn.assign(value); }
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline LogConfig& WithCloudWatchLogsRoleArn(const Aws::String& value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline LogConfig& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * <p>The service role that AppSync will assume to publish to Amazon CloudWatch
      * logs in your account. </p>
      */
     inline LogConfig& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}

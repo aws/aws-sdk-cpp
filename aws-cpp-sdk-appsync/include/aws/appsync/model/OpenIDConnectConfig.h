@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline OpenIDConnectConfig& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline OpenIDConnectConfig& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
      * This identifier is typically obtained when the Relying party is registered with
-     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * the OpenID identity provider. You can specify a regular expression so the
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline OpenIDConnectConfig& WithClientId(const char* value) { SetClientId(value); return *this;}
