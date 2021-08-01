@@ -209,37 +209,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline CreateSnapshotResponse& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline CreateSnapshotResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account that owns the EBS snapshot.</p>
+     * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
     inline CreateSnapshotResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -507,50 +507,50 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAlias = value; }
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline void SetOwnerAlias(Aws::String&& value) { m_ownerAlias = std::move(value); }
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline void SetOwnerAlias(const char* value) { m_ownerAlias.assign(value); }
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline CreateSnapshotResponse& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline CreateSnapshotResponse& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured account alias set using
-     * the IAM console.</p>
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console.</p>
      */
     inline CreateSnapshotResponse& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 

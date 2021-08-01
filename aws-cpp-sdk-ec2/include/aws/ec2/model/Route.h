@@ -288,42 +288,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline const Aws::String& GetInstanceOwnerId() const{ return m_instanceOwnerId; }
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline void SetInstanceOwnerId(const char* value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId.assign(value); }
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const Aws::String& value) { SetInstanceOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of account that owns the instance.</p>
+     * <p>The ID of Amazon Web Services account that owns the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
 

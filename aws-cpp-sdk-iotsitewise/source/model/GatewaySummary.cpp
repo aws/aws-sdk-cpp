@@ -21,6 +21,7 @@ namespace Model
 GatewaySummary::GatewaySummary() : 
     m_gatewayIdHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
+    m_gatewayPlatformHasBeenSet(false),
     m_gatewayCapabilitySummariesHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false)
@@ -30,6 +31,7 @@ GatewaySummary::GatewaySummary() :
 GatewaySummary::GatewaySummary(JsonView jsonValue) : 
     m_gatewayIdHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
+    m_gatewayPlatformHasBeenSet(false),
     m_gatewayCapabilitySummariesHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false)
@@ -51,6 +53,13 @@ GatewaySummary& GatewaySummary::operator =(JsonView jsonValue)
     m_gatewayName = jsonValue.GetString("gatewayName");
 
     m_gatewayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("gatewayPlatform"))
+  {
+    m_gatewayPlatform = jsonValue.GetObject("gatewayPlatform");
+
+    m_gatewayPlatformHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("gatewayCapabilitySummaries"))
@@ -93,6 +102,12 @@ JsonValue GatewaySummary::Jsonize() const
   if(m_gatewayNameHasBeenSet)
   {
    payload.WithString("gatewayName", m_gatewayName);
+
+  }
+
+  if(m_gatewayPlatformHasBeenSet)
+  {
+   payload.WithObject("gatewayPlatform", m_gatewayPlatform.Jsonize());
 
   }
 

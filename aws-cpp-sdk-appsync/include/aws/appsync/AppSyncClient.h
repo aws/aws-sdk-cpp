@@ -263,8 +263,8 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::UpdateTypeRequest&, const Model::UpdateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTypeResponseReceivedHandler;
 
   /**
-   * <p>AWS AppSync provides API actions for creating and interacting with data
-   * sources using GraphQL from your application.</p>
+   * <p>AppSync provides API actions for creating and interacting with data sources
+   * using GraphQL from your application.</p>
    */
   class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient
   {

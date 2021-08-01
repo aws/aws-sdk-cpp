@@ -251,6 +251,8 @@ namespace Model
     g3_8xlarge,
     g3_16xlarge,
     g3s_xlarge,
+    g4ad_xlarge,
+    g4ad_2xlarge,
     g4ad_4xlarge,
     g4ad_8xlarge,
     g4ad_16xlarge,

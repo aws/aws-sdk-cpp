@@ -205,81 +205,89 @@ namespace Model
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
     /**
      * <p>A JSON-formatted string constructed according to the grammar and syntax for
-     * an AWS resource-based policy. The policy in the string identifies who can access
-     * or manage this secret and its versions. For information on how to format a JSON
-     * parameter for the various command line tool environments, see <a
+     * an Amazon Web Services resource-based policy. The policy in the string
+     * identifies who can access or manage this secret and its versions. For
+     * information on how to format a JSON parameter for the various command line tool
+     * environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 

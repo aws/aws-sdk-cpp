@@ -22,7 +22,8 @@ SecretVersionsListEntry::SecretVersionsListEntry() :
     m_versionIdHasBeenSet(false),
     m_versionStagesHasBeenSet(false),
     m_lastAccessedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_kmsKeyIdsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ SecretVersionsListEntry::SecretVersionsListEntry(JsonView jsonValue) :
     m_versionIdHasBeenSet(false),
     m_versionStagesHasBeenSet(false),
     m_lastAccessedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_kmsKeyIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,16 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyIds"))
+  {
+    Array<JsonView> kmsKeyIdsJsonList = jsonValue.GetArray("KmsKeyIds");
+    for(unsigned kmsKeyIdsIndex = 0; kmsKeyIdsIndex < kmsKeyIdsJsonList.GetLength(); ++kmsKeyIdsIndex)
+    {
+      m_kmsKeyIds.push_back(kmsKeyIdsJsonList[kmsKeyIdsIndex].AsString());
+    }
+    m_kmsKeyIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -100,6 +112,17 @@ JsonValue SecretVersionsListEntry::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_kmsKeyIdsHasBeenSet)
+  {
+   Array<JsonValue> kmsKeyIdsJsonList(m_kmsKeyIds.size());
+   for(unsigned kmsKeyIdsIndex = 0; kmsKeyIdsIndex < kmsKeyIdsJsonList.GetLength(); ++kmsKeyIdsIndex)
+   {
+     kmsKeyIdsJsonList[kmsKeyIdsIndex].AsString(m_kmsKeyIds[kmsKeyIdsIndex]);
+   }
+   payload.WithArray("KmsKeyIds", std::move(kmsKeyIdsJsonList));
+
   }
 
   return payload;

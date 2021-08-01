@@ -179,6 +179,8 @@
 #include <aws/chime/model/RestorePhoneNumberRequest.h>
 #include <aws/chime/model/SearchAvailablePhoneNumbersRequest.h>
 #include <aws/chime/model/SendChannelMessageRequest.h>
+#include <aws/chime/model/StartMeetingTranscriptionRequest.h>
+#include <aws/chime/model/StopMeetingTranscriptionRequest.h>
 #include <aws/chime/model/TagAttendeeRequest.h>
 #include <aws/chime/model/TagMeetingRequest.h>
 #include <aws/chime/model/TagResourceRequest.h>
@@ -5903,6 +5905,76 @@ void ChimeClient::SendChannelMessageAsync(const SendChannelMessageRequest& reque
 void ChimeClient::SendChannelMessageAsyncHelper(const SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendChannelMessage(request), context);
+}
+
+StartMeetingTranscriptionOutcome ChimeClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartMeetingTranscription", "Required field: MeetingId, is not set");
+    return StartMeetingTranscriptionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/transcription");
+  ss.str("?operation=start");
+  uri.SetQueryString(ss.str());
+  return StartMeetingTranscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartMeetingTranscriptionOutcomeCallable ChimeClient::StartMeetingTranscriptionCallable(const StartMeetingTranscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMeetingTranscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMeetingTranscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::StartMeetingTranscriptionAsync(const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMeetingTranscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::StartMeetingTranscriptionAsyncHelper(const StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMeetingTranscription(request), context);
+}
+
+StopMeetingTranscriptionOutcome ChimeClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopMeetingTranscription", "Required field: MeetingId, is not set");
+    return StopMeetingTranscriptionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/transcription");
+  ss.str("?operation=stop");
+  uri.SetQueryString(ss.str());
+  return StopMeetingTranscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopMeetingTranscriptionOutcomeCallable ChimeClient::StopMeetingTranscriptionCallable(const StopMeetingTranscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopMeetingTranscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopMeetingTranscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::StopMeetingTranscriptionAsync(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopMeetingTranscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::StopMeetingTranscriptionAsyncHelper(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopMeetingTranscription(request), context);
 }
 
 TagAttendeeOutcome ChimeClient::TagAttendee(const TagAttendeeRequest& request) const

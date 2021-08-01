@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/model/MetricWindow.h>
+#include <aws/iotsitewise/model/MetricProcessingConfig.h>
 #include <aws/iotsitewise/model/ExpressionVariable.h>
 #include <utility>
 
@@ -206,6 +207,49 @@ namespace Model
      */
     inline Metric& WithWindow(MetricWindow&& value) { SetWindow(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The processing configuration for the given metric property. You can configure
+     * metrics to be computed at the edge or in the Amazon Web Services Cloud. By
+     * default, metrics are forwarded to the cloud.</p>
+     */
+    inline const MetricProcessingConfig& GetProcessingConfig() const{ return m_processingConfig; }
+
+    /**
+     * <p>The processing configuration for the given metric property. You can configure
+     * metrics to be computed at the edge or in the Amazon Web Services Cloud. By
+     * default, metrics are forwarded to the cloud.</p>
+     */
+    inline bool ProcessingConfigHasBeenSet() const { return m_processingConfigHasBeenSet; }
+
+    /**
+     * <p>The processing configuration for the given metric property. You can configure
+     * metrics to be computed at the edge or in the Amazon Web Services Cloud. By
+     * default, metrics are forwarded to the cloud.</p>
+     */
+    inline void SetProcessingConfig(const MetricProcessingConfig& value) { m_processingConfigHasBeenSet = true; m_processingConfig = value; }
+
+    /**
+     * <p>The processing configuration for the given metric property. You can configure
+     * metrics to be computed at the edge or in the Amazon Web Services Cloud. By
+     * default, metrics are forwarded to the cloud.</p>
+     */
+    inline void SetProcessingConfig(MetricProcessingConfig&& value) { m_processingConfigHasBeenSet = true; m_processingConfig = std::move(value); }
+
+    /**
+     * <p>The processing configuration for the given metric property. You can configure
+     * metrics to be computed at the edge or in the Amazon Web Services Cloud. By
+     * default, metrics are forwarded to the cloud.</p>
+     */
+    inline Metric& WithProcessingConfig(const MetricProcessingConfig& value) { SetProcessingConfig(value); return *this;}
+
+    /**
+     * <p>The processing configuration for the given metric property. You can configure
+     * metrics to be computed at the edge or in the Amazon Web Services Cloud. By
+     * default, metrics are forwarded to the cloud.</p>
+     */
+    inline Metric& WithProcessingConfig(MetricProcessingConfig&& value) { SetProcessingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_expression;
@@ -216,6 +260,9 @@ namespace Model
 
     MetricWindow m_window;
     bool m_windowHasBeenSet;
+
+    MetricProcessingConfig m_processingConfig;
+    bool m_processingConfigHasBeenSet;
   };
 
 } // namespace Model

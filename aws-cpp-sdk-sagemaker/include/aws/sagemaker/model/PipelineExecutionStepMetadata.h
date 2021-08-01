@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/RegisterModelStepMetadata.h>
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
 #include <aws/sagemaker/model/CallbackStepMetadata.h>
+#include <aws/sagemaker/model/LambdaStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -193,115 +194,188 @@ namespace Model
 
 
     /**
-     * <p>Metadata for the Model step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model that was created by this step
+     * execution.</p>
      */
     inline const ModelStepMetadata& GetModel() const{ return m_model; }
 
     /**
-     * <p>Metadata for the Model step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model that was created by this step
+     * execution.</p>
      */
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
 
     /**
-     * <p>Metadata for the Model step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model that was created by this step
+     * execution.</p>
      */
     inline void SetModel(const ModelStepMetadata& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
-     * <p>Metadata for the Model step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model that was created by this step
+     * execution.</p>
      */
     inline void SetModel(ModelStepMetadata&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
 
     /**
-     * <p>Metadata for the Model step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model that was created by this step
+     * execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithModel(const ModelStepMetadata& value) { SetModel(value); return *this;}
 
     /**
-     * <p>Metadata for the Model step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model that was created by this step
+     * execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithModel(ModelStepMetadata&& value) { SetModel(std::move(value)); return *this;}
 
 
     /**
-     * <p>Metadata for the RegisterModel step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
+     * to by this step execution.</p>
      */
     inline const RegisterModelStepMetadata& GetRegisterModel() const{ return m_registerModel; }
 
     /**
-     * <p>Metadata for the RegisterModel step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
+     * to by this step execution.</p>
      */
     inline bool RegisterModelHasBeenSet() const { return m_registerModelHasBeenSet; }
 
     /**
-     * <p>Metadata for the RegisterModel step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
+     * to by this step execution.</p>
      */
     inline void SetRegisterModel(const RegisterModelStepMetadata& value) { m_registerModelHasBeenSet = true; m_registerModel = value; }
 
     /**
-     * <p>Metadata for the RegisterModel step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
+     * to by this step execution.</p>
      */
     inline void SetRegisterModel(RegisterModelStepMetadata&& value) { m_registerModelHasBeenSet = true; m_registerModel = std::move(value); }
 
     /**
-     * <p>Metadata for the RegisterModel step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
+     * to by this step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithRegisterModel(const RegisterModelStepMetadata& value) { SetRegisterModel(value); return *this;}
 
     /**
-     * <p>Metadata for the RegisterModel step.</p>
+     * <p>The Amazon Resource Name (ARN) of the model package the model was registered
+     * to by this step execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithRegisterModel(RegisterModelStepMetadata&& value) { SetRegisterModel(std::move(value)); return *this;}
 
 
     /**
-     * <p>If this is a Condition step metadata object, details on the condition.</p>
+     * <p>The outcome of the condition evaluation that was run by this step
+     * execution.</p>
      */
     inline const ConditionStepMetadata& GetCondition() const{ return m_condition; }
 
     /**
-     * <p>If this is a Condition step metadata object, details on the condition.</p>
+     * <p>The outcome of the condition evaluation that was run by this step
+     * execution.</p>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
-     * <p>If this is a Condition step metadata object, details on the condition.</p>
+     * <p>The outcome of the condition evaluation that was run by this step
+     * execution.</p>
      */
     inline void SetCondition(const ConditionStepMetadata& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
-     * <p>If this is a Condition step metadata object, details on the condition.</p>
+     * <p>The outcome of the condition evaluation that was run by this step
+     * execution.</p>
      */
     inline void SetCondition(ConditionStepMetadata&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
-     * <p>If this is a Condition step metadata object, details on the condition.</p>
+     * <p>The outcome of the condition evaluation that was run by this step
+     * execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithCondition(const ConditionStepMetadata& value) { SetCondition(value); return *this;}
 
     /**
-     * <p>If this is a Condition step metadata object, details on the condition.</p>
+     * <p>The outcome of the condition evaluation that was run by this step
+     * execution.</p>
      */
     inline PipelineExecutionStepMetadata& WithCondition(ConditionStepMetadata&& value) { SetCondition(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The URL of the Amazon SQS queue used by this step execution, the pipeline
+     * generated token, and a list of output parameters.</p>
+     */
     inline const CallbackStepMetadata& GetCallback() const{ return m_callback; }
 
-    
+    /**
+     * <p>The URL of the Amazon SQS queue used by this step execution, the pipeline
+     * generated token, and a list of output parameters.</p>
+     */
     inline bool CallbackHasBeenSet() const { return m_callbackHasBeenSet; }
 
-    
+    /**
+     * <p>The URL of the Amazon SQS queue used by this step execution, the pipeline
+     * generated token, and a list of output parameters.</p>
+     */
     inline void SetCallback(const CallbackStepMetadata& value) { m_callbackHasBeenSet = true; m_callback = value; }
 
-    
+    /**
+     * <p>The URL of the Amazon SQS queue used by this step execution, the pipeline
+     * generated token, and a list of output parameters.</p>
+     */
     inline void SetCallback(CallbackStepMetadata&& value) { m_callbackHasBeenSet = true; m_callback = std::move(value); }
 
-    
+    /**
+     * <p>The URL of the Amazon SQS queue used by this step execution, the pipeline
+     * generated token, and a list of output parameters.</p>
+     */
     inline PipelineExecutionStepMetadata& WithCallback(const CallbackStepMetadata& value) { SetCallback(value); return *this;}
 
-    
+    /**
+     * <p>The URL of the Amazon SQS queue used by this step execution, the pipeline
+     * generated token, and a list of output parameters.</p>
+     */
     inline PipelineExecutionStepMetadata& WithCallback(CallbackStepMetadata&& value) { SetCallback(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
+     * step execution and a list of output parameters.</p>
+     */
+    inline const LambdaStepMetadata& GetLambda() const{ return m_lambda; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
+     * step execution and a list of output parameters.</p>
+     */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
+     * step execution and a list of output parameters.</p>
+     */
+    inline void SetLambda(const LambdaStepMetadata& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
+     * step execution and a list of output parameters.</p>
+     */
+    inline void SetLambda(LambdaStepMetadata&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
+     * step execution and a list of output parameters.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithLambda(const LambdaStepMetadata& value) { SetLambda(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
+     * step execution and a list of output parameters.</p>
+     */
+    inline PipelineExecutionStepMetadata& WithLambda(LambdaStepMetadata&& value) { SetLambda(std::move(value)); return *this;}
 
   private:
 
@@ -328,6 +402,9 @@ namespace Model
 
     CallbackStepMetadata m_callback;
     bool m_callbackHasBeenSet;
+
+    LambdaStepMetadata m_lambda;
+    bool m_lambdaHasBeenSet;
   };
 
 } // namespace Model

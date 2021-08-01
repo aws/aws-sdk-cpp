@@ -42,23 +42,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -73,23 +73,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -104,23 +104,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -135,23 +135,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -166,23 +166,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -197,23 +197,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -228,23 +228,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
@@ -259,23 +259,23 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
      * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * account that owns the accepter VPC.</p> </li> <li> <p>
+     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
      * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
      * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
-     * The ID of the account that owns the requester VPC.</p> </li> <li> <p>
-     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
-     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
-     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
-     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - A message that provides more information about the
-     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
+     * The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+     * <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester
+     * VPC.</p> </li> <li> <p> <code>status-code</code> - The status of the VPC peering
+     * connection (<code>pending-acceptance</code> | <code>failed</code> |
+     * <code>expired</code> | <code>provisioning</code> | <code>active</code> |
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+     * <li> <p> <code>status-message</code> - A message that provides more information
+     * about the status of the VPC peering connection, if applicable.</p> </li> <li>
+     * <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned
+     * to the resource. Use the tag key in the filter name and the tag value as the
+     * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to

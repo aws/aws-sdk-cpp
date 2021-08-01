@@ -165,9 +165,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -181,16 +181,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -346,9 +346,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -362,16 +362,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -527,9 +527,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -543,16 +543,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -708,9 +708,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -724,16 +724,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -889,9 +889,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -905,16 +905,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -1070,9 +1070,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -1086,16 +1086,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -1251,9 +1251,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -1267,16 +1267,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs
@@ -1432,9 +1432,9 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> -
      * The ID of the VPC for the network interface.</p> </li> <li> <p>
      * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The account ID of the instance owner.</p>
-     * </li> <li> <p> <code>placement-group-name</code> - The name of the placement
-     * group for the instance.</p> </li> <li> <p>
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * instance owner.</p> </li> <li> <p> <code>placement-group-name</code> - The name
+     * of the placement group for the instance.</p> </li> <li> <p>
      * <code>placement-partition-number</code> - The partition in which the instance is
      * located.</p> </li> <li> <p> <code>platform</code> - The platform. To list only
      * Windows instances, use <code>windows</code>.</p> </li> <li> <p>
@@ -1448,16 +1448,16 @@ namespace Model
      * state of the instance (for example, shows "User Initiated [date]" when you stop
      * or terminate the instance). Similar to the state-reason-code filter.</p> </li>
      * <li> <p> <code>requester-id</code> - The ID of the entity that launched the
-     * instance on your behalf (for example, Management Console, Auto Scaling, and so
-     * on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the instance's
-     * reservation. A reservation ID is created any time you launch an instance. A
-     * reservation ID has a one-to-one relationship with an instance launch request,
-     * but can be associated with more than one instance if you launch multiple
-     * instances using the same launch request. For example, if you launch one
-     * instance, you get one reservation ID. If you launch ten instances using the same
-     * launch request, you also get one reservation ID.</p> </li> <li> <p>
-     * <code>root-device-name</code> - The device name of the root device volume (for
-     * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+     * instance on your behalf (for example, Amazon Web Services Management Console,
+     * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
+     * ID of the instance's reservation. A reservation ID is created any time you
+     * launch an instance. A reservation ID has a one-to-one relationship with an
+     * instance launch request, but can be associated with more than one instance if
+     * you launch multiple instances using the same launch request. For example, if you
+     * launch one instance, you get one reservation ID. If you launch ten instances
+     * using the same launch request, you also get one reservation ID.</p> </li> <li>
+     * <p> <code>root-device-name</code> - The device name of the root device volume
+     * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
      * <code>source-dest-check</code> - Indicates whether the instance performs

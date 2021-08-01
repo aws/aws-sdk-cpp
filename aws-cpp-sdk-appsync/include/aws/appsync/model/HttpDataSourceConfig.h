@@ -41,64 +41,64 @@ namespace Model
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline HttpDataSourceConfig& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline HttpDataSourceConfig& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
      * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
-     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
-     * 443 for HTTPS endpoints.</p>
+     * specified, AppSync uses the default port 80 for the HTTP endpoint and port 443
+     * for HTTPS endpoints.</p>
      */
     inline HttpDataSourceConfig& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 

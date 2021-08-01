@@ -216,14 +216,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -244,14 +245,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -272,14 +274,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -300,14 +303,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -328,14 +332,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -356,14 +361,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -384,14 +390,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -412,14 +419,15 @@ namespace Model
     /**
      * <p>(Optional) If you want to add a new version to the secret, this parameter
      * specifies a unique identifier for the new version that helps ensure idempotency.
-     * </p> <p>If you use the AWS CLI or one of the AWS SDK to call this operation,
-     * then you can leave this parameter empty. The CLI or SDK generates a random UUID
-     * for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for new versions and
-     * include that value in the request.</p> <p>You typically only need to interact
-     * with this value if you implement your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * </p> <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services
+     * SDK to call this operation, then you can leave this parameter empty. The CLI or
+     * SDK generates a random UUID for you and includes that in the request. If you
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     * service endpoint, then you must generate a <code>ClientRequestToken</code>
+     * yourself for new versions and include that value in the request.</p> <p>You
+     * typically only need to interact with this value if you implement your own retry
+     * logic and want to ensure that a given secret is not created twice. We recommend
+     * that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness within the specified secret. </p> <p>Secrets Manager
      * uses this value to prevent the accidental creation of duplicate versions if
@@ -480,98 +488,98 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
-     * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p>  <p>You can only use the account's default CMK to encrypt
-     * and decrypt if you call this operation using credentials from the same account
-     * that owns the secret. If the secret is in a different account, then you must
-     * create a custom CMK and provide the ARN of that CMK in this field. The user
-     * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> 
+     * <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS
+     * customer master key (CMK) to be used to encrypt the protected text in new
+     * versions of this secret.</p>  <p>You can only use the account's
+     * default CMK to encrypt and decrypt if you call this operation using credentials
+     * from the same account that owns the secret. If the secret is in a different
+     * account, then you must create a custom CMK and provide the ARN of that CMK in
+     * this field. The user making the call must have permissions to both the secret
+     * and the CMK in their respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -656,7 +664,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -681,7 +689,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -706,7 +714,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -731,7 +739,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -756,7 +764,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -781,7 +789,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -806,7 +814,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in
@@ -831,7 +839,7 @@ namespace Model
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-     * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p> <p>
+     * JSON for Parameters</a> in the <i>CLI User Guide</i>. For example:</p> <p>
      * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> </p> <p>If your
      * command-line tool or SDK requires quotation marks around the parameter, you
      * should use single quotes to avoid confusion with the double quotes required in

@@ -170,13 +170,14 @@ namespace Model
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
-     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
-     * used when you wish to invoke a GraphQL operation without connecting to a data
-     * source, such as performing data transformation with resolvers or triggering a
-     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
+     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. This type is used when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with
+     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
+     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
@@ -184,13 +185,14 @@ namespace Model
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
-     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
-     * used when you wish to invoke a GraphQL operation without connecting to a data
-     * source, such as performing data transformation with resolvers or triggering a
-     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
+     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. This type is used when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with
+     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
+     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -198,13 +200,14 @@ namespace Model
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
-     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
-     * used when you wish to invoke a GraphQL operation without connecting to a data
-     * source, such as performing data transformation with resolvers or triggering a
-     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
+     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. This type is used when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with
+     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
+     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -212,13 +215,14 @@ namespace Model
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
-     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
-     * used when you wish to invoke a GraphQL operation without connecting to a data
-     * source, such as performing data transformation with resolvers or triggering a
-     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
+     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. This type is used when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with
+     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
+     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -226,13 +230,14 @@ namespace Model
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
-     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
-     * used when you wish to invoke a GraphQL operation without connecting to a data
-     * source, such as performing data transformation with resolvers or triggering a
-     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
+     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. This type is used when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with
+     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
+     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline DataSource& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
@@ -240,62 +245,63 @@ namespace Model
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
      * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
      * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
-     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
-     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
-     * used when you wish to invoke a GraphQL operation without connecting to a data
-     * source, such as performing data transformation with resolvers or triggering a
-     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an Amazon Web
+     * Services Lambda function.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. This type is used when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with
+     * resolvers or triggering a subscription to be invoked from a mutation.</p> </li>
+     * <li> <p> <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline DataSource& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline DataSource& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline DataSource& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IAM service role ARN for the data source. The system assumes this
-     * role when accessing the data source.</p>
+     * <p>The Identity and Access Management service role ARN for the data source. The
+     * system assumes this role when accessing the data source.</p>
      */
     inline DataSource& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -332,32 +338,32 @@ namespace Model
 
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Amazon Web Services Lambda settings.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Amazon Web Services Lambda settings.</p>
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Amazon Web Services Lambda settings.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Amazon Web Services Lambda settings.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Amazon Web Services Lambda settings.</p>
      */
     inline DataSource& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>AWS Lambda settings.</p>
+     * <p>Amazon Web Services Lambda settings.</p>
      */
     inline DataSource& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 

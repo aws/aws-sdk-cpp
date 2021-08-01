@@ -24,6 +24,7 @@ namespace Aws
         static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
         static const int AMAZON_COGNITO_USER_POOLS_HASH = HashingUtils::HashString("AMAZON_COGNITO_USER_POOLS");
         static const int OPENID_CONNECT_HASH = HashingUtils::HashString("OPENID_CONNECT");
+        static const int AWS_LAMBDA_HASH = HashingUtils::HashString("AWS_LAMBDA");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == OPENID_CONNECT_HASH)
           {
             return AuthenticationType::OPENID_CONNECT;
+          }
+          else if (hashCode == AWS_LAMBDA_HASH)
+          {
+            return AuthenticationType::AWS_LAMBDA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "AMAZON_COGNITO_USER_POOLS";
           case AuthenticationType::OPENID_CONNECT:
             return "OPENID_CONNECT";
+          case AuthenticationType::AWS_LAMBDA:
+            return "AWS_LAMBDA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
