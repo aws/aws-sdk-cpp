@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline const Aws::String& GetCoreDeviceThingName() const{ return m_coreDeviceThingName; }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline bool CoreDeviceThingNameHasBeenSet() const { return m_coreDeviceThingNameHasBeenSet; }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline void SetCoreDeviceThingName(const Aws::String& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = value; }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline void SetCoreDeviceThingName(Aws::String&& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = std::move(value); }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline void SetCoreDeviceThingName(const char* value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName.assign(value); }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline GetCoreDeviceRequest& WithCoreDeviceThingName(const Aws::String& value) { SetCoreDeviceThingName(value); return *this;}
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline GetCoreDeviceRequest& WithCoreDeviceThingName(Aws::String&& value) { SetCoreDeviceThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline GetCoreDeviceRequest& WithCoreDeviceThingName(const char* value) { SetCoreDeviceThingName(value); return *this;}
 

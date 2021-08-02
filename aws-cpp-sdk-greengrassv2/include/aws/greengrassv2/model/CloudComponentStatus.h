@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the status of a component in the AWS IoT Greengrass
+   * <p>Contains the status of a component in the IoT Greengrass
    * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CloudComponentStatus">AWS
    * API Reference</a></p>
@@ -122,7 +122,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -130,7 +130,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -146,7 +146,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -154,7 +154,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -162,7 +162,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -186,7 +186,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -210,7 +210,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */
@@ -218,7 +218,7 @@ namespace Model
 
     /**
      * <p>A dictionary of errors that communicate why the component is in an error
-     * state. For example, if AWS IoT Greengrass can't access an artifact for the
+     * state. For example, if IoT Greengrass can't access an artifact for the
      * component, then <code>errors</code> contains the artifact's URI as a key, and
      * the error message as the value for that key.</p>
      */

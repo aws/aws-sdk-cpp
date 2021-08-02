@@ -172,21 +172,20 @@ namespace Model
     typedef std::function<void(const GreengrassV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
-   * <p>AWS IoT Greengrass brings local compute, messaging, data management, sync,
-   * and ML inference capabilities to edge devices. This enables devices to collect
-   * and analyze data closer to the source of information, react autonomously to
-   * local events, and communicate securely with each other on local networks. Local
-   * devices can also communicate securely with AWS IoT Core and export IoT data to
-   * the AWS Cloud. AWS IoT Greengrass developers can use AWS Lambda functions and
-   * components to create and deploy applications to fleets of edge devices for local
-   * operation.</p> <p>AWS IoT Greengrass Version 2 provides a new major version of
-   * the AWS IoT Greengrass Core software, new APIs, and a new console. Use this API
-   * reference to learn how to use the AWS IoT Greengrass V2 API operations to manage
-   * components, manage deployments, and core devices.</p> <p>For more information,
-   * see <a
+   * <p>IoT Greengrass brings local compute, messaging, data management, sync, and ML
+   * inference capabilities to edge devices. This enables devices to collect and
+   * analyze data closer to the source of information, react autonomously to local
+   * events, and communicate securely with each other on local networks. Local
+   * devices can also communicate securely with Amazon Web Services IoT Core and
+   * export IoT data to the Amazon Web Services Cloud. IoT Greengrass developers can
+   * use Lambda functions and components to create and deploy applications to fleets
+   * of edge devices for local operation.</p> <p>IoT Greengrass Version 2 provides a
+   * new major version of the IoT Greengrass Core software, new APIs, and a new
+   * console. Use this API reference to learn how to use the IoT Greengrass V2 API
+   * operations to manage components, manage deployments, and core devices.</p>
+   * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html">What
-   * is AWS IoT Greengrass?</a> in the <i>AWS IoT Greengrass V2 Developer
-   * Guide</i>.</p>
+   * is IoT Greengrass?</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
    */
   class AWS_GREENGRASSV2_API GreengrassV2Client : public Aws::Client::AWSJsonClient
   {
@@ -218,19 +217,19 @@ namespace Model
         /**
          * <p>Associate a list of client devices with a core device. Use this API operation
          * to specify which client devices can discover a core device through cloud
-         * discovery. With cloud discovery, client devices connect to AWS IoT Greengrass to
+         * discovery. With cloud discovery, client devices connect to IoT Greengrass to
          * retrieve associated core devices' connectivity information and certificates. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
-         * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
-         *  <p>Client devices are local IoT devices that connect to and communicate
-         * with an AWS IoT Greengrass core device over MQTT. You can connect client devices
-         * to a core device to sync MQTT messages and data to AWS IoT Core and interact
-         * with client devices in AWS IoT Greengrass components. For more information, see
+         * cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> 
+         * <p>Client devices are local IoT devices that connect to and communicate with an
+         * IoT Greengrass core device over MQTT. You can connect client devices to a core
+         * device to sync MQTT messages and data to Amazon Web Services IoT Core and
+         * interact with client devices in Greengrass components. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
-         * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">AWS
          * API Reference</a></p>
          */
@@ -239,19 +238,19 @@ namespace Model
         /**
          * <p>Associate a list of client devices with a core device. Use this API operation
          * to specify which client devices can discover a core device through cloud
-         * discovery. With cloud discovery, client devices connect to AWS IoT Greengrass to
+         * discovery. With cloud discovery, client devices connect to IoT Greengrass to
          * retrieve associated core devices' connectivity information and certificates. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
-         * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
-         *  <p>Client devices are local IoT devices that connect to and communicate
-         * with an AWS IoT Greengrass core device over MQTT. You can connect client devices
-         * to a core device to sync MQTT messages and data to AWS IoT Core and interact
-         * with client devices in AWS IoT Greengrass components. For more information, see
+         * cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> 
+         * <p>Client devices are local IoT devices that connect to and communicate with an
+         * IoT Greengrass core device over MQTT. You can connect client devices to a core
+         * device to sync MQTT messages and data to Amazon Web Services IoT Core and
+         * interact with client devices in Greengrass components. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
-         * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">AWS
          * API Reference</a></p>
          *
@@ -262,19 +261,19 @@ namespace Model
         /**
          * <p>Associate a list of client devices with a core device. Use this API operation
          * to specify which client devices can discover a core device through cloud
-         * discovery. With cloud discovery, client devices connect to AWS IoT Greengrass to
+         * discovery. With cloud discovery, client devices connect to IoT Greengrass to
          * retrieve associated core devices' connectivity information and certificates. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
-         * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
-         *  <p>Client devices are local IoT devices that connect to and communicate
-         * with an AWS IoT Greengrass core device over MQTT. You can connect client devices
-         * to a core device to sync MQTT messages and data to AWS IoT Core and interact
-         * with client devices in AWS IoT Greengrass components. For more information, see
+         * cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> 
+         * <p>Client devices are local IoT devices that connect to and communicate with an
+         * IoT Greengrass core device over MQTT. You can connect client devices to a core
+         * device to sync MQTT messages and data to Amazon Web Services IoT Core and
+         * interact with client devices in Greengrass components. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
-         * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">AWS
          * API Reference</a></p>
          *
@@ -348,60 +347,60 @@ namespace Model
         virtual void CancelDeploymentAsync(const Model::CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a component. Components are software that run on AWS IoT Greengrass
-         * core devices. After you develop and test a component on your core device, you
-         * can use this operation to upload your component to AWS IoT Greengrass. Then, you
-         * can deploy the component to other core devices.</p> <p>You can use this
-         * operation to do the following:</p> <ul> <li> <p> <b>Create components from
-         * recipes</b> </p> <p>Create a component from a recipe, which is a file that
-         * defines the component's metadata, parameters, dependencies, lifecycle,
-         * artifacts, and platform capability. For more information, see <a
-         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">AWS
-         * IoT Greengrass component recipe reference</a> in the <i>AWS IoT Greengrass V2
-         * Developer Guide</i>.</p> <p>To create a component from a recipe, specify
+         * <p>Creates a component. Components are software that run on Greengrass core
+         * devices. After you develop and test a component on your core device, you can use
+         * this operation to upload your component to IoT Greengrass. Then, you can deploy
+         * the component to other core devices.</p> <p>You can use this operation to do the
+         * following:</p> <ul> <li> <p> <b>Create components from recipes</b> </p>
+         * <p>Create a component from a recipe, which is a file that defines the
+         * component's metadata, parameters, dependencies, lifecycle, artifacts, and
+         * platform capability. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT
+         * Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer
+         * Guide</i>.</p> <p>To create a component from a recipe, specify
          * <code>inlineRecipe</code> when you call this operation.</p> </li> <li> <p>
          * <b>Create components from Lambda functions</b> </p> <p>Create a component from
-         * an AWS Lambda function that runs on AWS IoT Greengrass. This creates a recipe
-         * and artifacts from the Lambda function's deployment package. You can use this
-         * operation to migrate Lambda functions from AWS IoT Greengrass V1 to AWS IoT
-         * Greengrass V2.</p> <p>This function only accepts Lambda functions that use the
-         * following runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p>
-         * </li> <li> <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8
-         * – <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p>
-         * </li> <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12
-         * – <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a
-         * Lambda function, specify <code>lambdaFunction</code> when you call this
-         * operation.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * an Lambda function that runs on IoT Greengrass. This creates a recipe and
+         * artifacts from the Lambda function's deployment package. You can use this
+         * operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass
+         * V2.</p> <p>This function only accepts Lambda functions that use the following
+         * runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p> </li> <li>
+         * <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8 –
+         * <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p> </li>
+         * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
+         * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
+         * function, specify <code>lambdaFunction</code> when you call this operation.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateComponentVersionOutcome CreateComponentVersion(const Model::CreateComponentVersionRequest& request) const;
 
         /**
-         * <p>Creates a component. Components are software that run on AWS IoT Greengrass
-         * core devices. After you develop and test a component on your core device, you
-         * can use this operation to upload your component to AWS IoT Greengrass. Then, you
-         * can deploy the component to other core devices.</p> <p>You can use this
-         * operation to do the following:</p> <ul> <li> <p> <b>Create components from
-         * recipes</b> </p> <p>Create a component from a recipe, which is a file that
-         * defines the component's metadata, parameters, dependencies, lifecycle,
-         * artifacts, and platform capability. For more information, see <a
-         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">AWS
-         * IoT Greengrass component recipe reference</a> in the <i>AWS IoT Greengrass V2
-         * Developer Guide</i>.</p> <p>To create a component from a recipe, specify
+         * <p>Creates a component. Components are software that run on Greengrass core
+         * devices. After you develop and test a component on your core device, you can use
+         * this operation to upload your component to IoT Greengrass. Then, you can deploy
+         * the component to other core devices.</p> <p>You can use this operation to do the
+         * following:</p> <ul> <li> <p> <b>Create components from recipes</b> </p>
+         * <p>Create a component from a recipe, which is a file that defines the
+         * component's metadata, parameters, dependencies, lifecycle, artifacts, and
+         * platform capability. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT
+         * Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer
+         * Guide</i>.</p> <p>To create a component from a recipe, specify
          * <code>inlineRecipe</code> when you call this operation.</p> </li> <li> <p>
          * <b>Create components from Lambda functions</b> </p> <p>Create a component from
-         * an AWS Lambda function that runs on AWS IoT Greengrass. This creates a recipe
-         * and artifacts from the Lambda function's deployment package. You can use this
-         * operation to migrate Lambda functions from AWS IoT Greengrass V1 to AWS IoT
-         * Greengrass V2.</p> <p>This function only accepts Lambda functions that use the
-         * following runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p>
-         * </li> <li> <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8
-         * – <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p>
-         * </li> <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12
-         * – <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a
-         * Lambda function, specify <code>lambdaFunction</code> when you call this
-         * operation.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * an Lambda function that runs on IoT Greengrass. This creates a recipe and
+         * artifacts from the Lambda function's deployment package. You can use this
+         * operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass
+         * V2.</p> <p>This function only accepts Lambda functions that use the following
+         * runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p> </li> <li>
+         * <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8 –
+         * <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p> </li>
+         * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
+         * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
+         * function, specify <code>lambdaFunction</code> when you call this operation.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          *
@@ -410,30 +409,30 @@ namespace Model
         virtual Model::CreateComponentVersionOutcomeCallable CreateComponentVersionCallable(const Model::CreateComponentVersionRequest& request) const;
 
         /**
-         * <p>Creates a component. Components are software that run on AWS IoT Greengrass
-         * core devices. After you develop and test a component on your core device, you
-         * can use this operation to upload your component to AWS IoT Greengrass. Then, you
-         * can deploy the component to other core devices.</p> <p>You can use this
-         * operation to do the following:</p> <ul> <li> <p> <b>Create components from
-         * recipes</b> </p> <p>Create a component from a recipe, which is a file that
-         * defines the component's metadata, parameters, dependencies, lifecycle,
-         * artifacts, and platform capability. For more information, see <a
-         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">AWS
-         * IoT Greengrass component recipe reference</a> in the <i>AWS IoT Greengrass V2
-         * Developer Guide</i>.</p> <p>To create a component from a recipe, specify
+         * <p>Creates a component. Components are software that run on Greengrass core
+         * devices. After you develop and test a component on your core device, you can use
+         * this operation to upload your component to IoT Greengrass. Then, you can deploy
+         * the component to other core devices.</p> <p>You can use this operation to do the
+         * following:</p> <ul> <li> <p> <b>Create components from recipes</b> </p>
+         * <p>Create a component from a recipe, which is a file that defines the
+         * component's metadata, parameters, dependencies, lifecycle, artifacts, and
+         * platform capability. For more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT
+         * Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer
+         * Guide</i>.</p> <p>To create a component from a recipe, specify
          * <code>inlineRecipe</code> when you call this operation.</p> </li> <li> <p>
          * <b>Create components from Lambda functions</b> </p> <p>Create a component from
-         * an AWS Lambda function that runs on AWS IoT Greengrass. This creates a recipe
-         * and artifacts from the Lambda function's deployment package. You can use this
-         * operation to migrate Lambda functions from AWS IoT Greengrass V1 to AWS IoT
-         * Greengrass V2.</p> <p>This function only accepts Lambda functions that use the
-         * following runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p>
-         * </li> <li> <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8
-         * – <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p>
-         * </li> <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12
-         * – <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a
-         * Lambda function, specify <code>lambdaFunction</code> when you call this
-         * operation.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * an Lambda function that runs on IoT Greengrass. This creates a recipe and
+         * artifacts from the Lambda function's deployment package. You can use this
+         * operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass
+         * V2.</p> <p>This function only accepts Lambda functions that use the following
+         * runtimes:</p> <ul> <li> <p>Python 2.7 – <code>python2.7</code> </p> </li> <li>
+         * <p>Python 3.7 – <code>python3.7</code> </p> </li> <li> <p>Python 3.8 –
+         * <code>python3.8</code> </p> </li> <li> <p>Java 8 – <code>java8</code> </p> </li>
+         * <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li> <li> <p>Node.js 12 –
+         * <code>nodejs12.x</code> </p> </li> </ul> <p>To create a component from a Lambda
+         * function, specify <code>lambdaFunction</code> when you call this operation.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateComponentVersion">AWS
          * API Reference</a></p>
          *
@@ -442,40 +441,40 @@ namespace Model
         virtual void CreateComponentVersionAsync(const Model::CreateComponentVersionRequest& request, const CreateComponentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a continuous deployment for a target, which is a AWS IoT Greengrass
-         * core device or group of core devices. When you add a new core device to a group
-         * of core devices that has a deployment, AWS IoT Greengrass deploys that group's
+         * <p>Creates a continuous deployment for a target, which is a Greengrass core
+         * device or group of core devices. When you add a new core device to a group of
+         * core devices that has a deployment, IoT Greengrass deploys that group's
          * deployment to the new device.</p> <p>You can define one deployment for each
          * target. When you create a new deployment for a target that has an existing
-         * deployment, you replace the previous deployment. AWS IoT Greengrass applies the
-         * new deployment to the target devices.</p> <p>Every deployment has a revision
-         * number that indicates how many deployment revisions you define for a target. Use
-         * this operation to create a new revision of an existing deployment. This
-         * operation returns the revision number of the new deployment when you create
-         * it.</p> <p>For more information, see the <a
+         * deployment, you replace the previous deployment. IoT Greengrass applies the new
+         * deployment to the target devices.</p> <p>Every deployment has a revision number
+         * that indicates how many deployment revisions you define for a target. Use this
+         * operation to create a new revision of an existing deployment. This operation
+         * returns the revision number of the new deployment when you create it.</p> <p>For
+         * more information, see the <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
-         * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
         /**
-         * <p>Creates a continuous deployment for a target, which is a AWS IoT Greengrass
-         * core device or group of core devices. When you add a new core device to a group
-         * of core devices that has a deployment, AWS IoT Greengrass deploys that group's
+         * <p>Creates a continuous deployment for a target, which is a Greengrass core
+         * device or group of core devices. When you add a new core device to a group of
+         * core devices that has a deployment, IoT Greengrass deploys that group's
          * deployment to the new device.</p> <p>You can define one deployment for each
          * target. When you create a new deployment for a target that has an existing
-         * deployment, you replace the previous deployment. AWS IoT Greengrass applies the
-         * new deployment to the target devices.</p> <p>Every deployment has a revision
-         * number that indicates how many deployment revisions you define for a target. Use
-         * this operation to create a new revision of an existing deployment. This
-         * operation returns the revision number of the new deployment when you create
-         * it.</p> <p>For more information, see the <a
+         * deployment, you replace the previous deployment. IoT Greengrass applies the new
+         * deployment to the target devices.</p> <p>Every deployment has a revision number
+         * that indicates how many deployment revisions you define for a target. Use this
+         * operation to create a new revision of an existing deployment. This operation
+         * returns the revision number of the new deployment when you create it.</p> <p>For
+         * more information, see the <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
-         * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateDeployment">AWS
          * API Reference</a></p>
          *
@@ -484,20 +483,20 @@ namespace Model
         virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
 
         /**
-         * <p>Creates a continuous deployment for a target, which is a AWS IoT Greengrass
-         * core device or group of core devices. When you add a new core device to a group
-         * of core devices that has a deployment, AWS IoT Greengrass deploys that group's
+         * <p>Creates a continuous deployment for a target, which is a Greengrass core
+         * device or group of core devices. When you add a new core device to a group of
+         * core devices that has a deployment, IoT Greengrass deploys that group's
          * deployment to the new device.</p> <p>You can define one deployment for each
          * target. When you create a new deployment for a target that has an existing
-         * deployment, you replace the previous deployment. AWS IoT Greengrass applies the
-         * new deployment to the target devices.</p> <p>Every deployment has a revision
-         * number that indicates how many deployment revisions you define for a target. Use
-         * this operation to create a new revision of an existing deployment. This
-         * operation returns the revision number of the new deployment when you create
-         * it.</p> <p>For more information, see the <a
+         * deployment, you replace the previous deployment. IoT Greengrass applies the new
+         * deployment to the target devices.</p> <p>Every deployment has a revision number
+         * that indicates how many deployment revisions you define for a target. Use this
+         * operation to create a new revision of an existing deployment. This operation
+         * returns the revision number of the new deployment when you create it.</p> <p>For
+         * more information, see the <a
          * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
-         * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateDeployment">AWS
          * API Reference</a></p>
          *
@@ -506,7 +505,7 @@ namespace Model
         virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a version of a component from AWS IoT Greengrass.</p>  <p>This
+         * <p>Deletes a version of a component from IoT Greengrass.</p>  <p>This
          * operation deletes the component's recipe and artifacts. As a result, deployments
          * that refer to this component version will fail. If you have deployments that use
          * this component version, you can remove the component from the deployment or
@@ -518,7 +517,7 @@ namespace Model
         virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
 
         /**
-         * <p>Deletes a version of a component from AWS IoT Greengrass.</p>  <p>This
+         * <p>Deletes a version of a component from IoT Greengrass.</p>  <p>This
          * operation deletes the component's recipe and artifacts. As a result, deployments
          * that refer to this component version will fail. If you have deployments that use
          * this component version, you can remove the component from the deployment or
@@ -532,7 +531,7 @@ namespace Model
         virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
 
         /**
-         * <p>Deletes a version of a component from AWS IoT Greengrass.</p>  <p>This
+         * <p>Deletes a version of a component from IoT Greengrass.</p>  <p>This
          * operation deletes the component's recipe and artifacts. As a result, deployments
          * that refer to this component version will fail. If you have deployments that use
          * this component version, you can remove the component from the deployment or
@@ -546,24 +545,24 @@ namespace Model
         virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a AWS IoT Greengrass core device, which is an AWS IoT thing. This
-         * operation removes the core device from the list of core devices. This operation
-         * doesn't delete the AWS IoT thing. For more information about how to delete the
-         * AWS IoT thing, see <a
+         * <p>Deletes a Greengrass core device, which is an IoT thing. This operation
+         * removes the core device from the list of core devices. This operation doesn't
+         * delete the IoT thing. For more information about how to delete the IoT thing,
+         * see <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a>
-         * in the <i>AWS IoT API Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * in the <i>IoT API Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteCoreDevice">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCoreDeviceOutcome DeleteCoreDevice(const Model::DeleteCoreDeviceRequest& request) const;
 
         /**
-         * <p>Deletes a AWS IoT Greengrass core device, which is an AWS IoT thing. This
-         * operation removes the core device from the list of core devices. This operation
-         * doesn't delete the AWS IoT thing. For more information about how to delete the
-         * AWS IoT thing, see <a
+         * <p>Deletes a Greengrass core device, which is an IoT thing. This operation
+         * removes the core device from the list of core devices. This operation doesn't
+         * delete the IoT thing. For more information about how to delete the IoT thing,
+         * see <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a>
-         * in the <i>AWS IoT API Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * in the <i>IoT API Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteCoreDevice">AWS
          * API Reference</a></p>
          *
@@ -572,12 +571,12 @@ namespace Model
         virtual Model::DeleteCoreDeviceOutcomeCallable DeleteCoreDeviceCallable(const Model::DeleteCoreDeviceRequest& request) const;
 
         /**
-         * <p>Deletes a AWS IoT Greengrass core device, which is an AWS IoT thing. This
-         * operation removes the core device from the list of core devices. This operation
-         * doesn't delete the AWS IoT thing. For more information about how to delete the
-         * AWS IoT thing, see <a
+         * <p>Deletes a Greengrass core device, which is an IoT thing. This operation
+         * removes the core device from the list of core devices. This operation doesn't
+         * delete the IoT thing. For more information about how to delete the IoT thing,
+         * see <a
          * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a>
-         * in the <i>AWS IoT API Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * in the <i>IoT API Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeleteCoreDevice">AWS
          * API Reference</a></p>
          *
@@ -676,16 +675,16 @@ namespace Model
         virtual void GetComponentVersionArtifactAsync(const Model::GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves metadata for a AWS IoT Greengrass core device.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for a Greengrass core device.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetCoreDevice">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCoreDeviceOutcome GetCoreDevice(const Model::GetCoreDeviceRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for a AWS IoT Greengrass core device.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for a Greengrass core device.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetCoreDevice">AWS
          * API Reference</a></p>
          *
@@ -694,8 +693,8 @@ namespace Model
         virtual Model::GetCoreDeviceOutcomeCallable GetCoreDeviceCallable(const Model::GetCoreDeviceRequest& request) const;
 
         /**
-         * <p>Retrieves metadata for a AWS IoT Greengrass core device.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for a Greengrass core device.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetCoreDevice">AWS
          * API Reference</a></p>
          *
@@ -704,16 +703,16 @@ namespace Model
         virtual void GetCoreDeviceAsync(const Model::GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a deployment. Deployments define the components that run on AWS IoT
-         * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a deployment. Deployments define the components that run on Greengrass
+         * core devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets a deployment. Deployments define the components that run on AWS IoT
-         * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a deployment. Deployments define the components that run on Greengrass
+         * core devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -722,8 +721,8 @@ namespace Model
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets a deployment. Deployments define the components that run on AWS IoT
-         * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a deployment. Deployments define the components that run on Greengrass
+         * core devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -816,7 +815,7 @@ namespace Model
         virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of AWS IoT Greengrass core devices.</p><p><h3>See
+         * <p>Retrieves a paginated list of Greengrass core devices.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListCoreDevices">AWS
          * API Reference</a></p>
@@ -824,7 +823,7 @@ namespace Model
         virtual Model::ListCoreDevicesOutcome ListCoreDevices(const Model::ListCoreDevicesRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of AWS IoT Greengrass core devices.</p><p><h3>See
+         * <p>Retrieves a paginated list of Greengrass core devices.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListCoreDevices">AWS
          * API Reference</a></p>
@@ -834,7 +833,7 @@ namespace Model
         virtual Model::ListCoreDevicesOutcomeCallable ListCoreDevicesCallable(const Model::ListCoreDevicesRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of AWS IoT Greengrass core devices.</p><p><h3>See
+         * <p>Retrieves a paginated list of Greengrass core devices.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListCoreDevices">AWS
          * API Reference</a></p>
@@ -869,16 +868,16 @@ namespace Model
         virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of deployment jobs that AWS IoT Greengrass sends
-         * to AWS IoT Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to
+         * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListEffectiveDeployments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListEffectiveDeploymentsOutcome ListEffectiveDeployments(const Model::ListEffectiveDeploymentsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of deployment jobs that AWS IoT Greengrass sends
-         * to AWS IoT Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to
+         * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListEffectiveDeployments">AWS
          * API Reference</a></p>
          *
@@ -887,8 +886,8 @@ namespace Model
         virtual Model::ListEffectiveDeploymentsOutcomeCallable ListEffectiveDeploymentsCallable(const Model::ListEffectiveDeploymentsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of deployment jobs that AWS IoT Greengrass sends
-         * to AWS IoT Greengrass core devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to
+         * Greengrass core devices.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListEffectiveDeployments">AWS
          * API Reference</a></p>
          *
@@ -897,16 +896,16 @@ namespace Model
         virtual void ListEffectiveDeploymentsAsync(const Model::ListEffectiveDeploymentsRequest& request, const ListEffectiveDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of the components that a AWS IoT Greengrass core
-         * device runs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of the components that a Greengrass core device
+         * runs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListInstalledComponents">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInstalledComponentsOutcome ListInstalledComponents(const Model::ListInstalledComponentsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of the components that a AWS IoT Greengrass core
-         * device runs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of the components that a Greengrass core device
+         * runs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListInstalledComponents">AWS
          * API Reference</a></p>
          *
@@ -915,8 +914,8 @@ namespace Model
         virtual Model::ListInstalledComponentsOutcomeCallable ListInstalledComponentsCallable(const Model::ListInstalledComponentsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of the components that a AWS IoT Greengrass core
-         * device runs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of the components that a Greengrass core device
+         * runs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListInstalledComponents">AWS
          * API Reference</a></p>
          *
@@ -925,7 +924,7 @@ namespace Model
         virtual void ListInstalledComponentsAsync(const Model::ListInstalledComponentsRequest& request, const ListInstalledComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the list of tags for an AWS IoT Greengrass resource.</p><p><h3>See
+         * <p>Retrieves the list of tags for an IoT Greengrass resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -933,7 +932,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of tags for an AWS IoT Greengrass resource.</p><p><h3>See
+         * <p>Retrieves the list of tags for an IoT Greengrass resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -943,7 +942,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of tags for an AWS IoT Greengrass resource.</p><p><h3>See
+         * <p>Retrieves the list of tags for an IoT Greengrass resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -954,20 +953,20 @@ namespace Model
 
         /**
          * <p>Retrieves a list of components that meet the component, version, and platform
-         * requirements of a deployment. AWS IoT Greengrass core devices call this
-         * operation when they receive a deployment to identify the components to
-         * install.</p> <p>This operation identifies components that meet all dependency
-         * requirements for a deployment. If the requirements conflict, then this operation
-         * returns an error and the deployment fails. For example, this occurs if component
-         * <code>A</code> requires version <code>&gt;2.0.0</code> and component
-         * <code>B</code> requires version <code>&lt;2.0.0</code> of a component
-         * dependency.</p> <p>When you specify the component candidates to resolve, AWS IoT
-         * Greengrass compares each component's digest from the core device with the
-         * component's digest in the AWS Cloud. If the digests don't match, then AWS IoT
-         * Greengrass specifies to use the version from the AWS Cloud.</p> 
+         * requirements of a deployment. Greengrass core devices call this operation when
+         * they receive a deployment to identify the components to install.</p> <p>This
+         * operation identifies components that meet all dependency requirements for a
+         * deployment. If the requirements conflict, then this operation returns an error
+         * and the deployment fails. For example, this occurs if component <code>A</code>
+         * requires version <code>&gt;2.0.0</code> and component <code>B</code> requires
+         * version <code>&lt;2.0.0</code> of a component dependency.</p> <p>When you
+         * specify the component candidates to resolve, IoT Greengrass compares each
+         * component's digest from the core device with the component's digest in the
+         * Amazon Web Services Cloud. If the digests don't match, then IoT Greengrass
+         * specifies to use the version from the Amazon Web Services Cloud.</p> 
          * <p>To use this operation, you must use the data plane API endpoint and
-         * authenticate with an AWS IoT device certificate. For more information, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
+         * authenticate with an IoT device certificate. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT
          * Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolveComponentCandidates">AWS
          * API Reference</a></p>
@@ -976,20 +975,20 @@ namespace Model
 
         /**
          * <p>Retrieves a list of components that meet the component, version, and platform
-         * requirements of a deployment. AWS IoT Greengrass core devices call this
-         * operation when they receive a deployment to identify the components to
-         * install.</p> <p>This operation identifies components that meet all dependency
-         * requirements for a deployment. If the requirements conflict, then this operation
-         * returns an error and the deployment fails. For example, this occurs if component
-         * <code>A</code> requires version <code>&gt;2.0.0</code> and component
-         * <code>B</code> requires version <code>&lt;2.0.0</code> of a component
-         * dependency.</p> <p>When you specify the component candidates to resolve, AWS IoT
-         * Greengrass compares each component's digest from the core device with the
-         * component's digest in the AWS Cloud. If the digests don't match, then AWS IoT
-         * Greengrass specifies to use the version from the AWS Cloud.</p> 
+         * requirements of a deployment. Greengrass core devices call this operation when
+         * they receive a deployment to identify the components to install.</p> <p>This
+         * operation identifies components that meet all dependency requirements for a
+         * deployment. If the requirements conflict, then this operation returns an error
+         * and the deployment fails. For example, this occurs if component <code>A</code>
+         * requires version <code>&gt;2.0.0</code> and component <code>B</code> requires
+         * version <code>&lt;2.0.0</code> of a component dependency.</p> <p>When you
+         * specify the component candidates to resolve, IoT Greengrass compares each
+         * component's digest from the core device with the component's digest in the
+         * Amazon Web Services Cloud. If the digests don't match, then IoT Greengrass
+         * specifies to use the version from the Amazon Web Services Cloud.</p> 
          * <p>To use this operation, you must use the data plane API endpoint and
-         * authenticate with an AWS IoT device certificate. For more information, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
+         * authenticate with an IoT device certificate. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT
          * Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolveComponentCandidates">AWS
          * API Reference</a></p>
@@ -1000,20 +999,20 @@ namespace Model
 
         /**
          * <p>Retrieves a list of components that meet the component, version, and platform
-         * requirements of a deployment. AWS IoT Greengrass core devices call this
-         * operation when they receive a deployment to identify the components to
-         * install.</p> <p>This operation identifies components that meet all dependency
-         * requirements for a deployment. If the requirements conflict, then this operation
-         * returns an error and the deployment fails. For example, this occurs if component
-         * <code>A</code> requires version <code>&gt;2.0.0</code> and component
-         * <code>B</code> requires version <code>&lt;2.0.0</code> of a component
-         * dependency.</p> <p>When you specify the component candidates to resolve, AWS IoT
-         * Greengrass compares each component's digest from the core device with the
-         * component's digest in the AWS Cloud. If the digests don't match, then AWS IoT
-         * Greengrass specifies to use the version from the AWS Cloud.</p> 
+         * requirements of a deployment. Greengrass core devices call this operation when
+         * they receive a deployment to identify the components to install.</p> <p>This
+         * operation identifies components that meet all dependency requirements for a
+         * deployment. If the requirements conflict, then this operation returns an error
+         * and the deployment fails. For example, this occurs if component <code>A</code>
+         * requires version <code>&gt;2.0.0</code> and component <code>B</code> requires
+         * version <code>&lt;2.0.0</code> of a component dependency.</p> <p>When you
+         * specify the component candidates to resolve, IoT Greengrass compares each
+         * component's digest from the core device with the component's digest in the
+         * Amazon Web Services Cloud. If the digests don't match, then IoT Greengrass
+         * specifies to use the version from the Amazon Web Services Cloud.</p> 
          * <p>To use this operation, you must use the data plane API endpoint and
-         * authenticate with an AWS IoT device certificate. For more information, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
+         * authenticate with an IoT device certificate. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT
          * Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolveComponentCandidates">AWS
          * API Reference</a></p>
@@ -1023,7 +1022,7 @@ namespace Model
         virtual void ResolveComponentCandidatesAsync(const Model::ResolveComponentCandidatesRequest& request, const ResolveComponentCandidatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to an AWS IoT Greengrass resource. If a tag already exists for the
+         * <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the
          * resource, this operation updates the tag's value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/TagResource">AWS
          * API Reference</a></p>
@@ -1031,7 +1030,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS IoT Greengrass resource. If a tag already exists for the
+         * <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the
          * resource, this operation updates the tag's value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/TagResource">AWS
          * API Reference</a></p>
@@ -1041,7 +1040,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS IoT Greengrass resource. If a tag already exists for the
+         * <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the
          * resource, this operation updates the tag's value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/TagResource">AWS
          * API Reference</a></p>
@@ -1051,16 +1050,14 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a tag from an AWS IoT Greengrass resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a tag from an IoT Greengrass resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from an AWS IoT Greengrass resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a tag from an IoT Greengrass resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1069,8 +1066,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from an AWS IoT Greengrass resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes a tag from an IoT Greengrass resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/UntagResource">AWS
          * API Reference</a></p>
          *

@@ -16,7 +16,9 @@ using namespace Aws::Utils;
 CreateComponentVersionRequest::CreateComponentVersionRequest() : 
     m_inlineRecipeHasBeenSet(false),
     m_lambdaFunctionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -43,6 +45,12 @@ Aws::String CreateComponentVersionRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
