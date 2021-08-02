@@ -40,22 +40,26 @@ namespace Model
 
 
     /**
-     * <p>The time to wait until beginning the next stage.</p>
+     * <p>The time to wait until beginning the next stage. The duration can only be set
+     * to 0 if a target is specified.</p>
      */
     inline int GetDurationInMinutes() const{ return m_durationInMinutes; }
 
     /**
-     * <p>The time to wait until beginning the next stage.</p>
+     * <p>The time to wait until beginning the next stage. The duration can only be set
+     * to 0 if a target is specified.</p>
      */
     inline bool DurationInMinutesHasBeenSet() const { return m_durationInMinutesHasBeenSet; }
 
     /**
-     * <p>The time to wait until beginning the next stage.</p>
+     * <p>The time to wait until beginning the next stage. The duration can only be set
+     * to 0 if a target is specified.</p>
      */
     inline void SetDurationInMinutes(int value) { m_durationInMinutesHasBeenSet = true; m_durationInMinutes = value; }
 
     /**
-     * <p>The time to wait until beginning the next stage.</p>
+     * <p>The time to wait until beginning the next stage. The duration can only be set
+     * to 0 if a target is specified.</p>
      */
     inline Stage& WithDurationInMinutes(int value) { SetDurationInMinutes(value); return *this;}
 

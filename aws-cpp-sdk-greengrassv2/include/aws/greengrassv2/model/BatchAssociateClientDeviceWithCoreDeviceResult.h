@@ -35,43 +35,43 @@ namespace Model
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline void SetErrorEntries(const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& value) { m_errorEntries = value; }
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline void SetErrorEntries(Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>&& value) { m_errorEntries = std::move(value); }
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline BatchAssociateClientDeviceWithCoreDeviceResult& WithErrorEntries(const Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>& value) { SetErrorEntries(value); return *this;}
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline BatchAssociateClientDeviceWithCoreDeviceResult& WithErrorEntries(Aws::Vector<AssociateClientDeviceWithCoreDeviceErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline BatchAssociateClientDeviceWithCoreDeviceResult& AddErrorEntries(const AssociateClientDeviceWithCoreDeviceErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
 
     /**
      * <p>The list of any errors for the entries in the request. Each error entry
-     * contains the name of the AWS IoT thing that failed to associate.</p>
+     * contains the name of the IoT thing that failed to associate.</p>
      */
     inline BatchAssociateClientDeviceWithCoreDeviceResult& AddErrorEntries(AssociateClientDeviceWithCoreDeviceErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
 

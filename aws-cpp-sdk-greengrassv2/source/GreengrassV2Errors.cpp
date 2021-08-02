@@ -64,6 +64,7 @@ namespace GreengrassV2ErrorMapper
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int REQUEST_ALREADY_IN_PROGRESS_HASH = HashingUtils::HashString("RequestAlreadyInProgressException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -81,6 +82,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GreengrassV2Errors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == REQUEST_ALREADY_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GreengrassV2Errors::REQUEST_ALREADY_IN_PROGRESS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

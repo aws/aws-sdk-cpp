@@ -40,58 +40,58 @@ namespace Model
 
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline const Aws::String& GetVersionRequirement() const{ return m_versionRequirement; }
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline bool VersionRequirementHasBeenSet() const { return m_versionRequirementHasBeenSet; }
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline void SetVersionRequirement(const Aws::String& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = value; }
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline void SetVersionRequirement(Aws::String&& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = std::move(value); }
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline void SetVersionRequirement(const char* value) { m_versionRequirementHasBeenSet = true; m_versionRequirement.assign(value); }
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentDependencyRequirement& WithVersionRequirement(const Aws::String& value) { SetVersionRequirement(value); return *this;}
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentDependencyRequirement& WithVersionRequirement(Aws::String&& value) { SetVersionRequirement(std::move(value)); return *this;}
 
     /**
-     * <p>The component version requirement for the component dependency.</p> <p>AWS
-     * IoT Greengrass V2 uses semantic version constraints. For more information, see
-     * <a href="https://semver.org/">Semantic Versioning</a>.</p>
+     * <p>The component version requirement for the component dependency.</p> <p>IoT
+     * Greengrass V2 uses semantic version constraints. For more information, see <a
+     * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
     inline ComponentDependencyRequirement& WithVersionRequirement(const char* value) { SetVersionRequirement(value); return *this;}
 

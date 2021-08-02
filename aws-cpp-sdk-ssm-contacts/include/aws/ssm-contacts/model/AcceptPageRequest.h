@@ -8,6 +8,7 @@
 #include <aws/ssm-contacts/SSMContactsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-contacts/model/AcceptType.h>
+#include <aws/ssm-contacts/model/AcceptCodeValidation.h>
 #include <utility>
 
 namespace Aws
@@ -235,6 +236,79 @@ namespace Model
      */
     inline AcceptPageRequest& WithAcceptCode(const char* value) { SetAcceptCode(value); return *this;}
 
+
+    /**
+     * <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+     * <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement
+     * can occur by replying to a page, or when entering the AcceptCode in the console.
+     * Enforcing AcceptCode validation causes Incident Manager to verify that the code
+     * entered by the user matches the code sent by Incident Manager with the page.</p>
+     * <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code>
+     * validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager
+     * to accept any value entered for the <code>AcceptCode</code>.</p>
+     */
+    inline const AcceptCodeValidation& GetAcceptCodeValidation() const{ return m_acceptCodeValidation; }
+
+    /**
+     * <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+     * <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement
+     * can occur by replying to a page, or when entering the AcceptCode in the console.
+     * Enforcing AcceptCode validation causes Incident Manager to verify that the code
+     * entered by the user matches the code sent by Incident Manager with the page.</p>
+     * <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code>
+     * validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager
+     * to accept any value entered for the <code>AcceptCode</code>.</p>
+     */
+    inline bool AcceptCodeValidationHasBeenSet() const { return m_acceptCodeValidationHasBeenSet; }
+
+    /**
+     * <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+     * <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement
+     * can occur by replying to a page, or when entering the AcceptCode in the console.
+     * Enforcing AcceptCode validation causes Incident Manager to verify that the code
+     * entered by the user matches the code sent by Incident Manager with the page.</p>
+     * <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code>
+     * validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager
+     * to accept any value entered for the <code>AcceptCode</code>.</p>
+     */
+    inline void SetAcceptCodeValidation(const AcceptCodeValidation& value) { m_acceptCodeValidationHasBeenSet = true; m_acceptCodeValidation = value; }
+
+    /**
+     * <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+     * <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement
+     * can occur by replying to a page, or when entering the AcceptCode in the console.
+     * Enforcing AcceptCode validation causes Incident Manager to verify that the code
+     * entered by the user matches the code sent by Incident Manager with the page.</p>
+     * <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code>
+     * validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager
+     * to accept any value entered for the <code>AcceptCode</code>.</p>
+     */
+    inline void SetAcceptCodeValidation(AcceptCodeValidation&& value) { m_acceptCodeValidationHasBeenSet = true; m_acceptCodeValidation = std::move(value); }
+
+    /**
+     * <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+     * <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement
+     * can occur by replying to a page, or when entering the AcceptCode in the console.
+     * Enforcing AcceptCode validation causes Incident Manager to verify that the code
+     * entered by the user matches the code sent by Incident Manager with the page.</p>
+     * <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code>
+     * validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager
+     * to accept any value entered for the <code>AcceptCode</code>.</p>
+     */
+    inline AcceptPageRequest& WithAcceptCodeValidation(const AcceptCodeValidation& value) { SetAcceptCodeValidation(value); return *this;}
+
+    /**
+     * <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
+     * <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement
+     * can occur by replying to a page, or when entering the AcceptCode in the console.
+     * Enforcing AcceptCode validation causes Incident Manager to verify that the code
+     * entered by the user matches the code sent by Incident Manager with the page.</p>
+     * <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code>
+     * validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager
+     * to accept any value entered for the <code>AcceptCode</code>.</p>
+     */
+    inline AcceptPageRequest& WithAcceptCodeValidation(AcceptCodeValidation&& value) { SetAcceptCodeValidation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pageId;
@@ -251,6 +325,9 @@ namespace Model
 
     Aws::String m_acceptCode;
     bool m_acceptCodeHasBeenSet;
+
+    AcceptCodeValidation m_acceptCodeValidation;
+    bool m_acceptCodeValidationHasBeenSet;
   };
 
 } // namespace Model

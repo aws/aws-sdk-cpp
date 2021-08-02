@@ -263,31 +263,31 @@ namespace Model
 
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline const CloudComponentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline void SetStatus(const CloudComponentStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline void SetStatus(CloudComponentStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline DescribeComponentResult& WithStatus(const CloudComponentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline DescribeComponentResult& WithStatus(CloudComponentStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -333,7 +333,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -341,7 +341,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
@@ -349,7 +349,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
@@ -357,7 +357,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -365,7 +365,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -373,7 +373,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
@@ -381,7 +381,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
@@ -389,7 +389,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -397,7 +397,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -405,7 +405,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -413,7 +413,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
@@ -421,7 +421,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
-     * your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+     * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
     inline DescribeComponentResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

@@ -40,50 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline AssociatedClientDevice& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline AssociatedClientDevice& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS IoT thing that represents the associated client
-     * device.</p>
+     * <p>The name of the IoT thing that represents the associated client device.</p>
      */
     inline AssociatedClientDevice& WithThingName(const char* value) { SetThingName(value); return *this;}
 

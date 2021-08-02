@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a AWS IoT Greengrass core device, which is an AWS
-   * IoT thing that runs the AWS IoT Greengrass Core software.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about a Greengrass core device, which is an IoT thing
+   * that runs the IoT Greengrass Core software.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CoreDevice">AWS
    * API Reference</a></p>
    */
@@ -42,97 +41,97 @@ namespace Model
 
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline const Aws::String& GetCoreDeviceThingName() const{ return m_coreDeviceThingName; }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline bool CoreDeviceThingNameHasBeenSet() const { return m_coreDeviceThingNameHasBeenSet; }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline void SetCoreDeviceThingName(const Aws::String& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = value; }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline void SetCoreDeviceThingName(Aws::String&& value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName = std::move(value); }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline void SetCoreDeviceThingName(const char* value) { m_coreDeviceThingNameHasBeenSet = true; m_coreDeviceThingName.assign(value); }
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline CoreDevice& WithCoreDeviceThingName(const Aws::String& value) { SetCoreDeviceThingName(value); return *this;}
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline CoreDevice& WithCoreDeviceThingName(Aws::String&& value) { SetCoreDeviceThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+     * <p>The name of the core device. This is also the name of the IoT thing.</p>
      */
     inline CoreDevice& WithCoreDeviceThingName(const char* value) { SetCoreDeviceThingName(value); return *this;}
 
 
     /**
      * <p>The status of the core device. Core devices can have the following
-     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT Greengrass Core
+     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core
      * software and all components run on the core device without issue.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component
-     * is in a failed state on the core device.</p> </li> </ul>
+     * <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is
+     * in a failed state on the core device.</p> </li> </ul>
      */
     inline const CoreDeviceStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the core device. Core devices can have the following
-     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT Greengrass Core
+     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core
      * software and all components run on the core device without issue.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component
-     * is in a failed state on the core device.</p> </li> </ul>
+     * <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is
+     * in a failed state on the core device.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the core device. Core devices can have the following
-     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT Greengrass Core
+     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core
      * software and all components run on the core device without issue.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component
-     * is in a failed state on the core device.</p> </li> </ul>
+     * <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is
+     * in a failed state on the core device.</p> </li> </ul>
      */
     inline void SetStatus(const CoreDeviceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the core device. Core devices can have the following
-     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT Greengrass Core
+     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core
      * software and all components run on the core device without issue.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component
-     * is in a failed state on the core device.</p> </li> </ul>
+     * <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is
+     * in a failed state on the core device.</p> </li> </ul>
      */
     inline void SetStatus(CoreDeviceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the core device. Core devices can have the following
-     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT Greengrass Core
+     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core
      * software and all components run on the core device without issue.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component
-     * is in a failed state on the core device.</p> </li> </ul>
+     * <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is
+     * in a failed state on the core device.</p> </li> </ul>
      */
     inline CoreDevice& WithStatus(const CoreDeviceStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the core device. Core devices can have the following
-     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The AWS IoT Greengrass Core
+     * statuses:</p> <ul> <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core
      * software and all components run on the core device without issue.</p> </li> <li>
-     * <p> <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component
-     * is in a failed state on the core device.</p> </li> </ul>
+     * <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is
+     * in a failed state on the core device.</p> </li> </ul>
      */
     inline CoreDevice& WithStatus(CoreDeviceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

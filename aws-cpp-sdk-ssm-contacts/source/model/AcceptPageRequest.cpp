@@ -18,7 +18,9 @@ AcceptPageRequest::AcceptPageRequest() :
     m_acceptType(AcceptType::NOT_SET),
     m_acceptTypeHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_acceptCodeHasBeenSet(false)
+    m_acceptCodeHasBeenSet(false),
+    m_acceptCodeValidation(AcceptCodeValidation::NOT_SET),
+    m_acceptCodeValidationHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,11 @@ Aws::String AcceptPageRequest::SerializePayload() const
   {
    payload.WithString("AcceptCode", m_acceptCode);
 
+  }
+
+  if(m_acceptCodeValidationHasBeenSet)
+  {
+   payload.WithString("AcceptCodeValidation", AcceptCodeValidationMapper::GetNameForAcceptCodeValidation(m_acceptCodeValidation));
   }
 
   return payload.View().WriteReadable();

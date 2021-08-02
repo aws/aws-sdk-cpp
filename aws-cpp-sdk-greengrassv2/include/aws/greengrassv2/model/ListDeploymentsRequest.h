@@ -42,56 +42,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline ListDeploymentsRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline ListDeploymentsRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline ListDeploymentsRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
