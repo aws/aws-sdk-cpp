@@ -29,7 +29,8 @@ namespace Model
 
   /**
    * <p>Describes an endpoint authorization for authorizing Redshift-managed VPC
-   * endpoint access to a cluster across accounts.</p><p><h3>See Also:</h3>   <a
+   * endpoint access to a cluster across Amazon Web Services accounts.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EndpointAuthorization">AWS
    * API Reference</a></p>
    */
@@ -45,83 +46,83 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline const Aws::String& GetGrantor() const{ return m_grantor; }
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline bool GrantorHasBeenSet() const { return m_grantorHasBeenSet; }
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline void SetGrantor(const Aws::String& value) { m_grantorHasBeenSet = true; m_grantor = value; }
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline void SetGrantor(Aws::String&& value) { m_grantorHasBeenSet = true; m_grantor = std::move(value); }
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline void SetGrantor(const char* value) { m_grantorHasBeenSet = true; m_grantor.assign(value); }
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline EndpointAuthorization& WithGrantor(const Aws::String& value) { SetGrantor(value); return *this;}
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline EndpointAuthorization& WithGrantor(Aws::String&& value) { SetGrantor(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the cluster owner.</p>
+     * <p>The Amazon Web Services account ID of the cluster owner.</p>
      */
     inline EndpointAuthorization& WithGrantor(const char* value) { SetGrantor(value); return *this;}
 
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline const Aws::String& GetGrantee() const{ return m_grantee; }
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline void SetGrantee(const Aws::String& value) { m_granteeHasBeenSet = true; m_grantee = value; }
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline void SetGrantee(Aws::String&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline void SetGrantee(const char* value) { m_granteeHasBeenSet = true; m_grantee.assign(value); }
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline EndpointAuthorization& WithGrantee(const Aws::String& value) { SetGrantee(value); return *this;}
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline EndpointAuthorization& WithGrantee(Aws::String&& value) { SetGrantee(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the grantee of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
      */
     inline EndpointAuthorization& WithGrantee(const char* value) { SetGrantee(value); return *this;}
 

@@ -79,50 +79,50 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline CreateEndpointAccessRequest& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline CreateEndpointAccessRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the owner of the cluster. This is only required if the
-     * cluster is in another account.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster. This is only
+     * required if the cluster is in another Amazon Web Services account.</p>
      */
     inline CreateEndpointAccessRequest& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
 

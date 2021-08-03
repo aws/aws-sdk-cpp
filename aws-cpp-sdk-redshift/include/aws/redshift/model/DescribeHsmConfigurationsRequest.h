@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM
-     * configurations owned by your account.</p>
+     * configurations owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmConfigurationsRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 

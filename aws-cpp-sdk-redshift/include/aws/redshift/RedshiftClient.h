@@ -14,7 +14,9 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeResult.h>
 #include <aws/redshift/model/AddPartnerResult.h>
+#include <aws/redshift/model/AssociateDataShareConsumerResult.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressResult.h>
+#include <aws/redshift/model/AuthorizeDataShareResult.h>
 #include <aws/redshift/model/AuthorizeEndpointAccessResult.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessResult.h>
 #include <aws/redshift/model/BatchDeleteClusterSnapshotsResult.h>
@@ -35,6 +37,7 @@
 #include <aws/redshift/model/CreateSnapshotCopyGrantResult.h>
 #include <aws/redshift/model/CreateSnapshotScheduleResult.h>
 #include <aws/redshift/model/CreateUsageLimitResult.h>
+#include <aws/redshift/model/DeauthorizeDataShareResult.h>
 #include <aws/redshift/model/DeleteAuthenticationProfileResult.h>
 #include <aws/redshift/model/DeleteClusterResult.h>
 #include <aws/redshift/model/DeleteClusterSnapshotResult.h>
@@ -51,6 +54,9 @@
 #include <aws/redshift/model/DescribeClusterTracksResult.h>
 #include <aws/redshift/model/DescribeClusterVersionsResult.h>
 #include <aws/redshift/model/DescribeClustersResult.h>
+#include <aws/redshift/model/DescribeDataSharesResult.h>
+#include <aws/redshift/model/DescribeDataSharesForConsumerResult.h>
+#include <aws/redshift/model/DescribeDataSharesForProducerResult.h>
 #include <aws/redshift/model/DescribeDefaultClusterParametersResult.h>
 #include <aws/redshift/model/DescribeEndpointAccessResult.h>
 #include <aws/redshift/model/DescribeEndpointAuthorizationResult.h>
@@ -75,6 +81,7 @@
 #include <aws/redshift/model/DescribeUsageLimitsResult.h>
 #include <aws/redshift/model/DisableLoggingResult.h>
 #include <aws/redshift/model/DisableSnapshotCopyResult.h>
+#include <aws/redshift/model/DisassociateDataShareConsumerResult.h>
 #include <aws/redshift/model/EnableLoggingResult.h>
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
@@ -97,6 +104,7 @@
 #include <aws/redshift/model/PauseClusterResult.h>
 #include <aws/redshift/model/PurchaseReservedNodeOfferingResult.h>
 #include <aws/redshift/model/RebootClusterResult.h>
+#include <aws/redshift/model/RejectDataShareResult.h>
 #include <aws/redshift/model/ResetClusterParameterGroupResult.h>
 #include <aws/redshift/model/ResizeClusterResult.h>
 #include <aws/redshift/model/RestoreFromClusterSnapshotResult.h>
@@ -155,7 +163,9 @@ namespace Model
 {
         class AcceptReservedNodeExchangeRequest;
         class AddPartnerRequest;
+        class AssociateDataShareConsumerRequest;
         class AuthorizeClusterSecurityGroupIngressRequest;
+        class AuthorizeDataShareRequest;
         class AuthorizeEndpointAccessRequest;
         class AuthorizeSnapshotAccessRequest;
         class BatchDeleteClusterSnapshotsRequest;
@@ -177,6 +187,7 @@ namespace Model
         class CreateSnapshotScheduleRequest;
         class CreateTagsRequest;
         class CreateUsageLimitRequest;
+        class DeauthorizeDataShareRequest;
         class DeleteAuthenticationProfileRequest;
         class DeleteClusterRequest;
         class DeleteClusterParameterGroupRequest;
@@ -204,6 +215,9 @@ namespace Model
         class DescribeClusterTracksRequest;
         class DescribeClusterVersionsRequest;
         class DescribeClustersRequest;
+        class DescribeDataSharesRequest;
+        class DescribeDataSharesForConsumerRequest;
+        class DescribeDataSharesForProducerRequest;
         class DescribeDefaultClusterParametersRequest;
         class DescribeEndpointAccessRequest;
         class DescribeEndpointAuthorizationRequest;
@@ -228,6 +242,7 @@ namespace Model
         class DescribeUsageLimitsRequest;
         class DisableLoggingRequest;
         class DisableSnapshotCopyRequest;
+        class DisassociateDataShareConsumerRequest;
         class EnableLoggingRequest;
         class EnableSnapshotCopyRequest;
         class GetClusterCredentialsRequest;
@@ -251,6 +266,7 @@ namespace Model
         class PauseClusterRequest;
         class PurchaseReservedNodeOfferingRequest;
         class RebootClusterRequest;
+        class RejectDataShareRequest;
         class ResetClusterParameterGroupRequest;
         class ResizeClusterRequest;
         class RestoreFromClusterSnapshotRequest;
@@ -264,7 +280,9 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AcceptReservedNodeExchangeResult, RedshiftError> AcceptReservedNodeExchangeOutcome;
         typedef Aws::Utils::Outcome<AddPartnerResult, RedshiftError> AddPartnerOutcome;
+        typedef Aws::Utils::Outcome<AssociateDataShareConsumerResult, RedshiftError> AssociateDataShareConsumerOutcome;
         typedef Aws::Utils::Outcome<AuthorizeClusterSecurityGroupIngressResult, RedshiftError> AuthorizeClusterSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<AuthorizeDataShareResult, RedshiftError> AuthorizeDataShareOutcome;
         typedef Aws::Utils::Outcome<AuthorizeEndpointAccessResult, RedshiftError> AuthorizeEndpointAccessOutcome;
         typedef Aws::Utils::Outcome<AuthorizeSnapshotAccessResult, RedshiftError> AuthorizeSnapshotAccessOutcome;
         typedef Aws::Utils::Outcome<BatchDeleteClusterSnapshotsResult, RedshiftError> BatchDeleteClusterSnapshotsOutcome;
@@ -286,6 +304,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSnapshotScheduleResult, RedshiftError> CreateSnapshotScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<CreateUsageLimitResult, RedshiftError> CreateUsageLimitOutcome;
+        typedef Aws::Utils::Outcome<DeauthorizeDataShareResult, RedshiftError> DeauthorizeDataShareOutcome;
         typedef Aws::Utils::Outcome<DeleteAuthenticationProfileResult, RedshiftError> DeleteAuthenticationProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, RedshiftError> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteClusterParameterGroupOutcome;
@@ -313,6 +332,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeClusterTracksResult, RedshiftError> DescribeClusterTracksOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterVersionsResult, RedshiftError> DescribeClusterVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeClustersResult, RedshiftError> DescribeClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataSharesResult, RedshiftError> DescribeDataSharesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataSharesForConsumerResult, RedshiftError> DescribeDataSharesForConsumerOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataSharesForProducerResult, RedshiftError> DescribeDataSharesForProducerOutcome;
         typedef Aws::Utils::Outcome<DescribeDefaultClusterParametersResult, RedshiftError> DescribeDefaultClusterParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointAccessResult, RedshiftError> DescribeEndpointAccessOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointAuthorizationResult, RedshiftError> DescribeEndpointAuthorizationOutcome;
@@ -337,6 +359,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUsageLimitsResult, RedshiftError> DescribeUsageLimitsOutcome;
         typedef Aws::Utils::Outcome<DisableLoggingResult, RedshiftError> DisableLoggingOutcome;
         typedef Aws::Utils::Outcome<DisableSnapshotCopyResult, RedshiftError> DisableSnapshotCopyOutcome;
+        typedef Aws::Utils::Outcome<DisassociateDataShareConsumerResult, RedshiftError> DisassociateDataShareConsumerOutcome;
         typedef Aws::Utils::Outcome<EnableLoggingResult, RedshiftError> EnableLoggingOutcome;
         typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, RedshiftError> EnableSnapshotCopyOutcome;
         typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
@@ -360,6 +383,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PauseClusterResult, RedshiftError> PauseClusterOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedNodeOfferingResult, RedshiftError> PurchaseReservedNodeOfferingOutcome;
         typedef Aws::Utils::Outcome<RebootClusterResult, RedshiftError> RebootClusterOutcome;
+        typedef Aws::Utils::Outcome<RejectDataShareResult, RedshiftError> RejectDataShareOutcome;
         typedef Aws::Utils::Outcome<ResetClusterParameterGroupResult, RedshiftError> ResetClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<ResizeClusterResult, RedshiftError> ResizeClusterOutcome;
         typedef Aws::Utils::Outcome<RestoreFromClusterSnapshotResult, RedshiftError> RestoreFromClusterSnapshotOutcome;
@@ -373,7 +397,9 @@ namespace Model
 
         typedef std::future<AcceptReservedNodeExchangeOutcome> AcceptReservedNodeExchangeOutcomeCallable;
         typedef std::future<AddPartnerOutcome> AddPartnerOutcomeCallable;
+        typedef std::future<AssociateDataShareConsumerOutcome> AssociateDataShareConsumerOutcomeCallable;
         typedef std::future<AuthorizeClusterSecurityGroupIngressOutcome> AuthorizeClusterSecurityGroupIngressOutcomeCallable;
+        typedef std::future<AuthorizeDataShareOutcome> AuthorizeDataShareOutcomeCallable;
         typedef std::future<AuthorizeEndpointAccessOutcome> AuthorizeEndpointAccessOutcomeCallable;
         typedef std::future<AuthorizeSnapshotAccessOutcome> AuthorizeSnapshotAccessOutcomeCallable;
         typedef std::future<BatchDeleteClusterSnapshotsOutcome> BatchDeleteClusterSnapshotsOutcomeCallable;
@@ -395,6 +421,7 @@ namespace Model
         typedef std::future<CreateSnapshotScheduleOutcome> CreateSnapshotScheduleOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<CreateUsageLimitOutcome> CreateUsageLimitOutcomeCallable;
+        typedef std::future<DeauthorizeDataShareOutcome> DeauthorizeDataShareOutcomeCallable;
         typedef std::future<DeleteAuthenticationProfileOutcome> DeleteAuthenticationProfileOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteClusterParameterGroupOutcome> DeleteClusterParameterGroupOutcomeCallable;
@@ -422,6 +449,9 @@ namespace Model
         typedef std::future<DescribeClusterTracksOutcome> DescribeClusterTracksOutcomeCallable;
         typedef std::future<DescribeClusterVersionsOutcome> DescribeClusterVersionsOutcomeCallable;
         typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
+        typedef std::future<DescribeDataSharesOutcome> DescribeDataSharesOutcomeCallable;
+        typedef std::future<DescribeDataSharesForConsumerOutcome> DescribeDataSharesForConsumerOutcomeCallable;
+        typedef std::future<DescribeDataSharesForProducerOutcome> DescribeDataSharesForProducerOutcomeCallable;
         typedef std::future<DescribeDefaultClusterParametersOutcome> DescribeDefaultClusterParametersOutcomeCallable;
         typedef std::future<DescribeEndpointAccessOutcome> DescribeEndpointAccessOutcomeCallable;
         typedef std::future<DescribeEndpointAuthorizationOutcome> DescribeEndpointAuthorizationOutcomeCallable;
@@ -446,6 +476,7 @@ namespace Model
         typedef std::future<DescribeUsageLimitsOutcome> DescribeUsageLimitsOutcomeCallable;
         typedef std::future<DisableLoggingOutcome> DisableLoggingOutcomeCallable;
         typedef std::future<DisableSnapshotCopyOutcome> DisableSnapshotCopyOutcomeCallable;
+        typedef std::future<DisassociateDataShareConsumerOutcome> DisassociateDataShareConsumerOutcomeCallable;
         typedef std::future<EnableLoggingOutcome> EnableLoggingOutcomeCallable;
         typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
         typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
@@ -469,6 +500,7 @@ namespace Model
         typedef std::future<PauseClusterOutcome> PauseClusterOutcomeCallable;
         typedef std::future<PurchaseReservedNodeOfferingOutcome> PurchaseReservedNodeOfferingOutcomeCallable;
         typedef std::future<RebootClusterOutcome> RebootClusterOutcomeCallable;
+        typedef std::future<RejectDataShareOutcome> RejectDataShareOutcomeCallable;
         typedef std::future<ResetClusterParameterGroupOutcome> ResetClusterParameterGroupOutcomeCallable;
         typedef std::future<ResizeClusterOutcome> ResizeClusterOutcomeCallable;
         typedef std::future<RestoreFromClusterSnapshotOutcome> RestoreFromClusterSnapshotOutcomeCallable;
@@ -485,7 +517,9 @@ namespace Model
 
     typedef std::function<void(const RedshiftClient*, const Model::AcceptReservedNodeExchangeRequest&, const Model::AcceptReservedNodeExchangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedNodeExchangeResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AddPartnerRequest&, const Model::AddPartnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPartnerResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::AssociateDataShareConsumerRequest&, const Model::AssociateDataShareConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDataShareConsumerResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeClusterSecurityGroupIngressRequest&, const Model::AuthorizeClusterSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeClusterSecurityGroupIngressResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::AuthorizeDataShareRequest&, const Model::AuthorizeDataShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeDataShareResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeEndpointAccessRequest&, const Model::AuthorizeEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeSnapshotAccessRequest&, const Model::AuthorizeSnapshotAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeSnapshotAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::BatchDeleteClusterSnapshotsRequest&, const Model::BatchDeleteClusterSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteClusterSnapshotsResponseReceivedHandler;
@@ -507,6 +541,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::CreateSnapshotScheduleRequest&, const Model::CreateSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::CreateUsageLimitRequest&, const Model::CreateUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUsageLimitResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DeauthorizeDataShareRequest&, const Model::DeauthorizeDataShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeauthorizeDataShareResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteAuthenticationProfileRequest&, const Model::DeleteAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAuthenticationProfileResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteClusterParameterGroupRequest&, const Model::DeleteClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterParameterGroupResponseReceivedHandler;
@@ -534,6 +569,9 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterTracksRequest&, const Model::DescribeClusterTracksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterTracksResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterVersionsRequest&, const Model::DescribeClusterVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterVersionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribeDataSharesRequest&, const Model::DescribeDataSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSharesResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribeDataSharesForConsumerRequest&, const Model::DescribeDataSharesForConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSharesForConsumerResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribeDataSharesForProducerRequest&, const Model::DescribeDataSharesForProducerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSharesForProducerResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeDefaultClusterParametersRequest&, const Model::DescribeDefaultClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDefaultClusterParametersResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeEndpointAccessRequest&, const Model::DescribeEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeEndpointAuthorizationRequest&, const Model::DescribeEndpointAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointAuthorizationResponseReceivedHandler;
@@ -558,6 +596,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DescribeUsageLimitsRequest&, const Model::DescribeUsageLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsageLimitsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DisableLoggingRequest&, const Model::DisableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DisableSnapshotCopyRequest&, const Model::DisableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSnapshotCopyResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DisassociateDataShareConsumerRequest&, const Model::DisassociateDataShareConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDataShareConsumerResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableLoggingRequest&, const Model::EnableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
@@ -581,6 +620,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::PauseClusterRequest&, const Model::PauseClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::PurchaseReservedNodeOfferingRequest&, const Model::PurchaseReservedNodeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedNodeOfferingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RebootClusterRequest&, const Model::RebootClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootClusterResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::RejectDataShareRequest&, const Model::RejectDataShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectDataShareResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ResetClusterParameterGroupRequest&, const Model::ResetClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ResizeClusterRequest&, const Model::ResizeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResizeClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RestoreFromClusterSnapshotRequest&, const Model::RestoreFromClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromClusterSnapshotResponseReceivedHandler;
@@ -715,6 +755,40 @@ namespace Model
         virtual void AddPartnerAsync(const Model::AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>From a datashare consumer account, associates a datashare with the account
+         * (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make
+         * this association, the consumer can consume the datashare.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AssociateDataShareConsumer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDataShareConsumerOutcome AssociateDataShareConsumer(const Model::AssociateDataShareConsumerRequest& request) const;
+
+        /**
+         * <p>From a datashare consumer account, associates a datashare with the account
+         * (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make
+         * this association, the consumer can consume the datashare.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AssociateDataShareConsumer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateDataShareConsumerOutcomeCallable AssociateDataShareConsumerCallable(const Model::AssociateDataShareConsumerRequest& request) const;
+
+        /**
+         * <p>From a datashare consumer account, associates a datashare with the account
+         * (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make
+         * this association, the consumer can consume the datashare.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AssociateDataShareConsumer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateDataShareConsumerAsync(const Model::AssociateDataShareConsumerRequest& request, const AssociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds an inbound (ingress) rule to an Amazon Redshift security group.
          * Depending on whether the application accessing your cluster is running on the
          * Internet or an Amazon EC2 instance, you can authorize inbound access to either a
@@ -723,9 +797,9 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same Region. </p> <p>If you authorize access to
-         * a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks,
-         * see the Wikipedia article on <a
+         * Redshift cluster must be in the same Amazon Web Services Region. </p> <p>If you
+         * authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an
+         * overview of CIDR blocks, see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p>You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -748,9 +822,9 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same Region. </p> <p>If you authorize access to
-         * a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks,
-         * see the Wikipedia article on <a
+         * Redshift cluster must be in the same Amazon Web Services Region. </p> <p>If you
+         * authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an
+         * overview of CIDR blocks, see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p>You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -775,9 +849,9 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same Region. </p> <p>If you authorize access to
-         * a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks,
-         * see the Wikipedia article on <a
+         * Redshift cluster must be in the same Amazon Web Services Region. </p> <p>If you
+         * authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an
+         * overview of CIDR blocks, see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p>You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -792,6 +866,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AuthorizeClusterSecurityGroupIngressAsync(const Model::AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>From a data producer account, authorizes the sharing of a datashare with one
+         * or more consumer accounts. To authorize a datashare for a data consumer, the
+         * producer account must have the correct access privileges.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AuthorizeDataShareOutcome AuthorizeDataShare(const Model::AuthorizeDataShareRequest& request) const;
+
+        /**
+         * <p>From a data producer account, authorizes the sharing of a datashare with one
+         * or more consumer accounts. To authorize a datashare for a data consumer, the
+         * producer account must have the correct access privileges.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AuthorizeDataShareOutcomeCallable AuthorizeDataShareCallable(const Model::AuthorizeDataShareRequest& request) const;
+
+        /**
+         * <p>From a data producer account, authorizes the sharing of a datashare with one
+         * or more consumer accounts. To authorize a datashare for a data consumer, the
+         * producer account must have the correct access privileges.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeDataShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AuthorizeDataShareAsync(const Model::AuthorizeDataShareRequest& request, const AuthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Grants access to a cluster.</p><p><h3>See Also:</h3>   <a
@@ -819,8 +927,8 @@ namespace Model
         virtual void AuthorizeEndpointAccessAsync(const Model::AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Authorizes the specified account to restore the specified snapshot.</p> <p>
-         * For more information about working with snapshots, go to <a
+         * <p>Authorizes the specified Amazon Web Services account to restore the specified
+         * snapshot.</p> <p> For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -830,8 +938,8 @@ namespace Model
         virtual Model::AuthorizeSnapshotAccessOutcome AuthorizeSnapshotAccess(const Model::AuthorizeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Authorizes the specified account to restore the specified snapshot.</p> <p>
-         * For more information about working with snapshots, go to <a
+         * <p>Authorizes the specified Amazon Web Services account to restore the specified
+         * snapshot.</p> <p> For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -843,8 +951,8 @@ namespace Model
         virtual Model::AuthorizeSnapshotAccessOutcomeCallable AuthorizeSnapshotAccessCallable(const Model::AuthorizeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Authorizes the specified account to restore the specified snapshot.</p> <p>
-         * For more information about working with snapshots, go to <a
+         * <p>Authorizes the specified Amazon Web Services account to restore the specified
+         * snapshot.</p> <p> For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1278,11 +1386,11 @@ namespace Model
          * source IDs, such as source type = cluster and source identifier = my-cluster-1,
          * notifications will be sent for all the cluster events for my-cluster-1. If you
          * specify a source type but do not specify a source identifier, you will receive
-         * notice of the events for the objects of that type in your account. If you do not
-         * specify either the SourceType nor the SourceIdentifier, you will be notified of
-         * events generated from all Amazon Redshift sources belonging to your account. You
-         * must specify a source type if you specify a source ID.</p><p><h3>See Also:</h3> 
-         * <a
+         * notice of the events for the objects of that type in your Amazon Web Services
+         * account. If you do not specify either the SourceType nor the SourceIdentifier,
+         * you will be notified of events generated from all Amazon Redshift sources
+         * belonging to your Amazon Web Services account. You must specify a source type if
+         * you specify a source ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          */
@@ -1304,11 +1412,11 @@ namespace Model
          * source IDs, such as source type = cluster and source identifier = my-cluster-1,
          * notifications will be sent for all the cluster events for my-cluster-1. If you
          * specify a source type but do not specify a source identifier, you will receive
-         * notice of the events for the objects of that type in your account. If you do not
-         * specify either the SourceType nor the SourceIdentifier, you will be notified of
-         * events generated from all Amazon Redshift sources belonging to your account. You
-         * must specify a source type if you specify a source ID.</p><p><h3>See Also:</h3> 
-         * <a
+         * notice of the events for the objects of that type in your Amazon Web Services
+         * account. If you do not specify either the SourceType nor the SourceIdentifier,
+         * you will be notified of events generated from all Amazon Redshift sources
+         * belonging to your Amazon Web Services account. You must specify a source type if
+         * you specify a source ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -1332,11 +1440,11 @@ namespace Model
          * source IDs, such as source type = cluster and source identifier = my-cluster-1,
          * notifications will be sent for all the cluster events for my-cluster-1. If you
          * specify a source type but do not specify a source identifier, you will receive
-         * notice of the events for the objects of that type in your account. If you do not
-         * specify either the SourceType nor the SourceIdentifier, you will be notified of
-         * events generated from all Amazon Redshift sources belonging to your account. You
-         * must specify a source type if you specify a source ID.</p><p><h3>See Also:</h3> 
-         * <a
+         * notice of the events for the objects of that type in your Amazon Web Services
+         * account. If you do not specify either the SourceType nor the SourceIdentifier,
+         * you will be notified of events generated from all Amazon Redshift sources
+         * belonging to your Amazon Web Services account. You must specify a source type if
+         * you specify a source ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -1614,6 +1722,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateUsageLimitAsync(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>From the producer account, removes authorization from the specified
+         * datashare. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeauthorizeDataShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeauthorizeDataShareOutcome DeauthorizeDataShare(const Model::DeauthorizeDataShareRequest& request) const;
+
+        /**
+         * <p>From the producer account, removes authorization from the specified
+         * datashare. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeauthorizeDataShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeauthorizeDataShareOutcomeCallable DeauthorizeDataShareCallable(const Model::DeauthorizeDataShareRequest& request) const;
+
+        /**
+         * <p>From the producer account, removes authorization from the specified
+         * datashare. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeauthorizeDataShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeauthorizeDataShareAsync(const Model::DeauthorizeDataShareRequest& request, const DeauthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an authentication profile.</p><p><h3>See Also:</h3>   <a
@@ -2402,17 +2538,18 @@ namespace Model
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
          * cluster snapshots. By default, this operation returns information about all
-         * snapshots of all clusters that are owned by your account. No information is
-         * returned for snapshots owned by inactive accounts.</p> <p>If you specify both
-         * tag keys and tag values in the same request, Amazon Redshift returns all
-         * snapshots that match any combination of the specified keys and values. For
-         * example, if you have <code>owner</code> and <code>environment</code> for tag
-         * keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots
-         * that have any combination of those values are returned. Only snapshots that you
-         * own are returned in the response; shared snapshots are not returned with the tag
-         * key and tag value request parameters.</p> <p>If both tag keys and values are
-         * omitted from the request, snapshots are returned regardless of whether they have
-         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
+         * snapshots of all clusters that are owned by your Amazon Web Services account. No
+         * information is returned for snapshots owned by inactive Amazon Web Services
+         * accounts.</p> <p>If you specify both tag keys and tag values in the same
+         * request, Amazon Redshift returns all snapshots that match any combination of the
+         * specified keys and values. For example, if you have <code>owner</code> and
+         * <code>environment</code> for tag keys, and <code>admin</code> and
+         * <code>test</code> for tag values, all snapshots that have any combination of
+         * those values are returned. Only snapshots that you own are returned in the
+         * response; shared snapshots are not returned with the tag key and tag value
+         * request parameters.</p> <p>If both tag keys and values are omitted from the
+         * request, snapshots are returned regardless of whether they have tag keys or
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
          * API Reference</a></p>
          */
@@ -2421,17 +2558,18 @@ namespace Model
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
          * cluster snapshots. By default, this operation returns information about all
-         * snapshots of all clusters that are owned by your account. No information is
-         * returned for snapshots owned by inactive accounts.</p> <p>If you specify both
-         * tag keys and tag values in the same request, Amazon Redshift returns all
-         * snapshots that match any combination of the specified keys and values. For
-         * example, if you have <code>owner</code> and <code>environment</code> for tag
-         * keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots
-         * that have any combination of those values are returned. Only snapshots that you
-         * own are returned in the response; shared snapshots are not returned with the tag
-         * key and tag value request parameters.</p> <p>If both tag keys and values are
-         * omitted from the request, snapshots are returned regardless of whether they have
-         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
+         * snapshots of all clusters that are owned by your Amazon Web Services account. No
+         * information is returned for snapshots owned by inactive Amazon Web Services
+         * accounts.</p> <p>If you specify both tag keys and tag values in the same
+         * request, Amazon Redshift returns all snapshots that match any combination of the
+         * specified keys and values. For example, if you have <code>owner</code> and
+         * <code>environment</code> for tag keys, and <code>admin</code> and
+         * <code>test</code> for tag values, all snapshots that have any combination of
+         * those values are returned. Only snapshots that you own are returned in the
+         * response; shared snapshots are not returned with the tag key and tag value
+         * request parameters.</p> <p>If both tag keys and values are omitted from the
+         * request, snapshots are returned regardless of whether they have tag keys or
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2442,17 +2580,18 @@ namespace Model
         /**
          * <p>Returns one or more snapshot objects, which contain metadata about your
          * cluster snapshots. By default, this operation returns information about all
-         * snapshots of all clusters that are owned by your account. No information is
-         * returned for snapshots owned by inactive accounts.</p> <p>If you specify both
-         * tag keys and tag values in the same request, Amazon Redshift returns all
-         * snapshots that match any combination of the specified keys and values. For
-         * example, if you have <code>owner</code> and <code>environment</code> for tag
-         * keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots
-         * that have any combination of those values are returned. Only snapshots that you
-         * own are returned in the response; shared snapshots are not returned with the tag
-         * key and tag value request parameters.</p> <p>If both tag keys and values are
-         * omitted from the request, snapshots are returned regardless of whether they have
-         * tag keys or values associated with them.</p><p><h3>See Also:</h3>   <a
+         * snapshots of all clusters that are owned by your Amazon Web Services account. No
+         * information is returned for snapshots owned by inactive Amazon Web Services
+         * accounts.</p> <p>If you specify both tag keys and tag values in the same
+         * request, Amazon Redshift returns all snapshots that match any combination of the
+         * specified keys and values. For example, if you have <code>owner</code> and
+         * <code>environment</code> for tag keys, and <code>admin</code> and
+         * <code>test</code> for tag values, all snapshots that have any combination of
+         * those values are returned. Only snapshots that you own are returned in the
+         * response; shared snapshots are not returned with the tag key and tag value
+         * request parameters.</p> <p>If both tag keys and values are omitted from the
+         * request, snapshots are returned regardless of whether they have tag keys or
+         * values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2463,15 +2602,15 @@ namespace Model
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
          * about your cluster subnet groups. By default, this operation returns information
-         * about all cluster subnet groups that are defined in your account.</p> <p>If you
-         * specify both tag keys and tag values in the same request, Amazon Redshift
-         * returns all subnet groups that match any combination of the specified keys and
-         * values. For example, if you have <code>owner</code> and <code>environment</code>
-         * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
-         * subnet groups that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, subnet groups are
-         * returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * about all cluster subnet groups that are defined in your Amazon Web Services
+         * account.</p> <p>If you specify both tag keys and tag values in the same request,
+         * Amazon Redshift returns all subnet groups that match any combination of the
+         * specified keys and values. For example, if you have <code>owner</code> and
+         * <code>environment</code> for tag keys, and <code>admin</code> and
+         * <code>test</code> for tag values, all subnet groups that have any combination of
+         * those values are returned.</p> <p>If both tag keys and values are omitted from
+         * the request, subnet groups are returned regardless of whether they have tag keys
+         * or values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">AWS
          * API Reference</a></p>
          */
@@ -2480,15 +2619,15 @@ namespace Model
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
          * about your cluster subnet groups. By default, this operation returns information
-         * about all cluster subnet groups that are defined in your account.</p> <p>If you
-         * specify both tag keys and tag values in the same request, Amazon Redshift
-         * returns all subnet groups that match any combination of the specified keys and
-         * values. For example, if you have <code>owner</code> and <code>environment</code>
-         * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
-         * subnet groups that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, subnet groups are
-         * returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * about all cluster subnet groups that are defined in your Amazon Web Services
+         * account.</p> <p>If you specify both tag keys and tag values in the same request,
+         * Amazon Redshift returns all subnet groups that match any combination of the
+         * specified keys and values. For example, if you have <code>owner</code> and
+         * <code>environment</code> for tag keys, and <code>admin</code> and
+         * <code>test</code> for tag values, all subnet groups that have any combination of
+         * those values are returned.</p> <p>If both tag keys and values are omitted from
+         * the request, subnet groups are returned regardless of whether they have tag keys
+         * or values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">AWS
          * API Reference</a></p>
          *
@@ -2499,15 +2638,15 @@ namespace Model
         /**
          * <p>Returns one or more cluster subnet group objects, which contain metadata
          * about your cluster subnet groups. By default, this operation returns information
-         * about all cluster subnet groups that are defined in your account.</p> <p>If you
-         * specify both tag keys and tag values in the same request, Amazon Redshift
-         * returns all subnet groups that match any combination of the specified keys and
-         * values. For example, if you have <code>owner</code> and <code>environment</code>
-         * for tag keys, and <code>admin</code> and <code>test</code> for tag values, all
-         * subnet groups that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, subnet groups are
-         * returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * about all cluster subnet groups that are defined in your Amazon Web Services
+         * account.</p> <p>If you specify both tag keys and tag values in the same request,
+         * Amazon Redshift returns all subnet groups that match any combination of the
+         * specified keys and values. For example, if you have <code>owner</code> and
+         * <code>environment</code> for tag keys, and <code>admin</code> and
+         * <code>test</code> for tag values, all subnet groups that have any combination of
+         * those values are returned.</p> <p>If both tag keys and values are omitted from
+         * the request, subnet groups are returned regardless of whether they have tag keys
+         * or values associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">AWS
          * API Reference</a></p>
          *
@@ -2649,6 +2788,90 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Shows the status of any inbound or outbound datashares available in the
+         * specified account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataShares">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataSharesOutcome DescribeDataShares(const Model::DescribeDataSharesRequest& request) const;
+
+        /**
+         * <p>Shows the status of any inbound or outbound datashares available in the
+         * specified account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataShares">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDataSharesOutcomeCallable DescribeDataSharesCallable(const Model::DescribeDataSharesRequest& request) const;
+
+        /**
+         * <p>Shows the status of any inbound or outbound datashares available in the
+         * specified account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataShares">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDataSharesAsync(const Model::DescribeDataSharesRequest& request, const DescribeDataSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of datashares where the account identifier being called is a
+         * consumer account identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataSharesForConsumer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataSharesForConsumerOutcome DescribeDataSharesForConsumer(const Model::DescribeDataSharesForConsumerRequest& request) const;
+
+        /**
+         * <p>Returns a list of datashares where the account identifier being called is a
+         * consumer account identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataSharesForConsumer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDataSharesForConsumerOutcomeCallable DescribeDataSharesForConsumerCallable(const Model::DescribeDataSharesForConsumerRequest& request) const;
+
+        /**
+         * <p>Returns a list of datashares where the account identifier being called is a
+         * consumer account identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataSharesForConsumer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDataSharesForConsumerAsync(const Model::DescribeDataSharesForConsumerRequest& request, const DescribeDataSharesForConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of datashares when the account identifier being called is a
+         * producer account identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataSharesForProducer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataSharesForProducerOutcome DescribeDataSharesForProducer(const Model::DescribeDataSharesForProducerRequest& request) const;
+
+        /**
+         * <p>Returns a list of datashares when the account identifier being called is a
+         * producer account identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataSharesForProducer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDataSharesForProducerOutcomeCallable DescribeDataSharesForProducerCallable(const Model::DescribeDataSharesForProducerRequest& request) const;
+
+        /**
+         * <p>Returns a list of datashares when the account identifier being called is a
+         * producer account identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDataSharesForProducer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDataSharesForProducerAsync(const Model::DescribeDataSharesForProducerRequest& request, const DescribeDataSharesForProducerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of parameter settings for the specified parameter group
@@ -2872,15 +3095,15 @@ namespace Model
         /**
          * <p>Returns information about the specified HSM client certificate. If no
          * certificate ID is specified, returns information about all the HSM certificates
-         * owned by your account.</p> <p>If you specify both tag keys and tag values in the
-         * same request, Amazon Redshift returns all HSM client certificates that match any
-         * combination of the specified keys and values. For example, if you have
-         * <code>owner</code> and <code>environment</code> for tag keys, and
-         * <code>admin</code> and <code>test</code> for tag values, all HSM client
-         * certificates that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, HSM client certificates
-         * are returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * owned by your Amazon Web Services account.</p> <p>If you specify both tag keys
+         * and tag values in the same request, Amazon Redshift returns all HSM client
+         * certificates that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
+         * client certificates that have any combination of those values are returned.</p>
+         * <p>If both tag keys and values are omitted from the request, HSM client
+         * certificates are returned regardless of whether they have tag keys or values
+         * associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">AWS
          * API Reference</a></p>
          */
@@ -2889,15 +3112,15 @@ namespace Model
         /**
          * <p>Returns information about the specified HSM client certificate. If no
          * certificate ID is specified, returns information about all the HSM certificates
-         * owned by your account.</p> <p>If you specify both tag keys and tag values in the
-         * same request, Amazon Redshift returns all HSM client certificates that match any
-         * combination of the specified keys and values. For example, if you have
-         * <code>owner</code> and <code>environment</code> for tag keys, and
-         * <code>admin</code> and <code>test</code> for tag values, all HSM client
-         * certificates that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, HSM client certificates
-         * are returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * owned by your Amazon Web Services account.</p> <p>If you specify both tag keys
+         * and tag values in the same request, Amazon Redshift returns all HSM client
+         * certificates that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
+         * client certificates that have any combination of those values are returned.</p>
+         * <p>If both tag keys and values are omitted from the request, HSM client
+         * certificates are returned regardless of whether they have tag keys or values
+         * associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">AWS
          * API Reference</a></p>
          *
@@ -2908,15 +3131,15 @@ namespace Model
         /**
          * <p>Returns information about the specified HSM client certificate. If no
          * certificate ID is specified, returns information about all the HSM certificates
-         * owned by your account.</p> <p>If you specify both tag keys and tag values in the
-         * same request, Amazon Redshift returns all HSM client certificates that match any
-         * combination of the specified keys and values. For example, if you have
-         * <code>owner</code> and <code>environment</code> for tag keys, and
-         * <code>admin</code> and <code>test</code> for tag values, all HSM client
-         * certificates that have any combination of those values are returned.</p> <p>If
-         * both tag keys and values are omitted from the request, HSM client certificates
-         * are returned regardless of whether they have tag keys or values associated with
-         * them.</p><p><h3>See Also:</h3>   <a
+         * owned by your Amazon Web Services account.</p> <p>If you specify both tag keys
+         * and tag values in the same request, Amazon Redshift returns all HSM client
+         * certificates that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
+         * client certificates that have any combination of those values are returned.</p>
+         * <p>If both tag keys and values are omitted from the request, HSM client
+         * certificates are returned regardless of whether they have tag keys or values
+         * associated with them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">AWS
          * API Reference</a></p>
          *
@@ -2927,15 +3150,15 @@ namespace Model
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
          * no configuration ID is specified, returns information about all the HSM
-         * configurations owned by your account.</p> <p>If you specify both tag keys and
-         * tag values in the same request, Amazon Redshift returns all HSM connections that
-         * match any combination of the specified keys and values. For example, if you have
-         * <code>owner</code> and <code>environment</code> for tag keys, and
-         * <code>admin</code> and <code>test</code> for tag values, all HSM connections
-         * that have any combination of those values are returned.</p> <p>If both tag keys
-         * and values are omitted from the request, HSM connections are returned regardless
-         * of whether they have tag keys or values associated with them.</p><p><h3>See
-         * Also:</h3>   <a
+         * configurations owned by your Amazon Web Services account.</p> <p>If you specify
+         * both tag keys and tag values in the same request, Amazon Redshift returns all
+         * HSM connections that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
+         * connections that have any combination of those values are returned.</p> <p>If
+         * both tag keys and values are omitted from the request, HSM connections are
+         * returned regardless of whether they have tag keys or values associated with
+         * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
          * API Reference</a></p>
          */
@@ -2944,15 +3167,15 @@ namespace Model
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
          * no configuration ID is specified, returns information about all the HSM
-         * configurations owned by your account.</p> <p>If you specify both tag keys and
-         * tag values in the same request, Amazon Redshift returns all HSM connections that
-         * match any combination of the specified keys and values. For example, if you have
-         * <code>owner</code> and <code>environment</code> for tag keys, and
-         * <code>admin</code> and <code>test</code> for tag values, all HSM connections
-         * that have any combination of those values are returned.</p> <p>If both tag keys
-         * and values are omitted from the request, HSM connections are returned regardless
-         * of whether they have tag keys or values associated with them.</p><p><h3>See
-         * Also:</h3>   <a
+         * configurations owned by your Amazon Web Services account.</p> <p>If you specify
+         * both tag keys and tag values in the same request, Amazon Redshift returns all
+         * HSM connections that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
+         * connections that have any combination of those values are returned.</p> <p>If
+         * both tag keys and values are omitted from the request, HSM connections are
+         * returned regardless of whether they have tag keys or values associated with
+         * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
          * API Reference</a></p>
          *
@@ -2963,15 +3186,15 @@ namespace Model
         /**
          * <p>Returns information about the specified Amazon Redshift HSM configuration. If
          * no configuration ID is specified, returns information about all the HSM
-         * configurations owned by your account.</p> <p>If you specify both tag keys and
-         * tag values in the same request, Amazon Redshift returns all HSM connections that
-         * match any combination of the specified keys and values. For example, if you have
-         * <code>owner</code> and <code>environment</code> for tag keys, and
-         * <code>admin</code> and <code>test</code> for tag values, all HSM connections
-         * that have any combination of those values are returned.</p> <p>If both tag keys
-         * and values are omitted from the request, HSM connections are returned regardless
-         * of whether they have tag keys or values associated with them.</p><p><h3>See
-         * Also:</h3>   <a
+         * configurations owned by your Amazon Web Services account.</p> <p>If you specify
+         * both tag keys and tag values in the same request, Amazon Redshift returns all
+         * HSM connections that match any combination of the specified keys and values. For
+         * example, if you have <code>owner</code> and <code>environment</code> for tag
+         * keys, and <code>admin</code> and <code>test</code> for tag values, all HSM
+         * connections that have any combination of those values are returned.</p> <p>If
+         * both tag keys and values are omitted from the request, HSM connections are
+         * returned regardless of whether they have tag keys or values associated with
+         * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3044,11 +3267,11 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific Region that you can specify, and the
-         * node types you can request. The node types differ by available storage, memory,
-         * CPU and price. With the cost involved you might want to obtain a list of cluster
-         * options in the specific region and specify values when creating a cluster. For
-         * more information about managing clusters, go to <a
+         * Availability Zones (AZ) in the specific Amazon Web Services Region that you can
+         * specify, and the node types you can request. The node types differ by available
+         * storage, memory, CPU and price. With the cost involved you might want to obtain
+         * a list of cluster options in the specific region and specify values when
+         * creating a cluster. For more information about managing clusters, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3060,11 +3283,11 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific Region that you can specify, and the
-         * node types you can request. The node types differ by available storage, memory,
-         * CPU and price. With the cost involved you might want to obtain a list of cluster
-         * options in the specific region and specify values when creating a cluster. For
-         * more information about managing clusters, go to <a
+         * Availability Zones (AZ) in the specific Amazon Web Services Region that you can
+         * specify, and the node types you can request. The node types differ by available
+         * storage, memory, CPU and price. With the cost involved you might want to obtain
+         * a list of cluster options in the specific region and specify values when
+         * creating a cluster. For more information about managing clusters, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3078,11 +3301,11 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific Region that you can specify, and the
-         * node types you can request. The node types differ by available storage, memory,
-         * CPU and price. With the cost involved you might want to obtain a list of cluster
-         * options in the specific region and specify values when creating a cluster. For
-         * more information about managing clusters, go to <a
+         * Availability Zones (AZ) in the specific Amazon Web Services Region that you can
+         * specify, and the node types you can request. The node types differ by available
+         * storage, memory, CPU and price. With the cost involved you might want to obtain
+         * a list of cluster options in the specific region and specify values when
+         * creating a cluster. For more information about managing clusters, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3270,9 +3493,9 @@ namespace Model
         virtual void DescribeScheduledActionsAsync(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of snapshot copy grants owned by the account in the
-         * destination region.</p> <p> For more information about managing snapshot copy
-         * grants, go to <a
+         * <p>Returns a list of snapshot copy grants owned by the Amazon Web Services
+         * account in the destination region.</p> <p> For more information about managing
+         * snapshot copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -3282,9 +3505,9 @@ namespace Model
         virtual Model::DescribeSnapshotCopyGrantsOutcome DescribeSnapshotCopyGrants(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
 
         /**
-         * <p>Returns a list of snapshot copy grants owned by the account in the
-         * destination region.</p> <p> For more information about managing snapshot copy
-         * grants, go to <a
+         * <p>Returns a list of snapshot copy grants owned by the Amazon Web Services
+         * account in the destination region.</p> <p> For more information about managing
+         * snapshot copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -3296,9 +3519,9 @@ namespace Model
         virtual Model::DescribeSnapshotCopyGrantsOutcomeCallable DescribeSnapshotCopyGrantsCallable(const Model::DescribeSnapshotCopyGrantsRequest& request) const;
 
         /**
-         * <p>Returns a list of snapshot copy grants owned by the account in the
-         * destination region.</p> <p> For more information about managing snapshot copy
-         * grants, go to <a
+         * <p>Returns a list of snapshot copy grants owned by the Amazon Web Services
+         * account in the destination region.</p> <p> For more information about managing
+         * snapshot copy grants, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon
          * Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -3597,6 +3820,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableSnapshotCopyAsync(const Model::DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>From a consumer account, remove association for the specified datashare.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisassociateDataShareConsumer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateDataShareConsumerOutcome DisassociateDataShareConsumer(const Model::DisassociateDataShareConsumerRequest& request) const;
+
+        /**
+         * <p>From a consumer account, remove association for the specified datashare.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisassociateDataShareConsumer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateDataShareConsumerOutcomeCallable DisassociateDataShareConsumerCallable(const Model::DisassociateDataShareConsumerRequest& request) const;
+
+        /**
+         * <p>From a consumer account, remove association for the specified datashare.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisassociateDataShareConsumer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateDataShareConsumerAsync(const Model::DisassociateDataShareConsumerRequest& request, const DisassociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts logging information, such as queries and connection attempts, for the
@@ -3978,8 +4229,9 @@ namespace Model
         virtual void ModifyClusterMaintenanceAsync(const Model::ModifyClusterMaintenanceRequest& request, const ModifyClusterMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the parameters of a parameter group.</p> <p> For more information
-         * about parameters and parameter groups, go to <a
+         * <p>Modifies the parameters of a parameter group. For the parameters parameter,
+         * it can't contain ASCII characters.</p> <p> For more information about parameters
+         * and parameter groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3989,8 +4241,9 @@ namespace Model
         virtual Model::ModifyClusterParameterGroupOutcome ModifyClusterParameterGroup(const Model::ModifyClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Modifies the parameters of a parameter group.</p> <p> For more information
-         * about parameters and parameter groups, go to <a
+         * <p>Modifies the parameters of a parameter group. For the parameters parameter,
+         * it can't contain ASCII characters.</p> <p> For more information about parameters
+         * and parameter groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4002,8 +4255,9 @@ namespace Model
         virtual Model::ModifyClusterParameterGroupOutcomeCallable ModifyClusterParameterGroupCallable(const Model::ModifyClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Modifies the parameters of a parameter group.</p> <p> For more information
-         * about parameters and parameter groups, go to <a
+         * <p>Modifies the parameters of a parameter group. For the parameters parameter,
+         * it can't contain ASCII characters.</p> <p> For more information about parameters
+         * and parameter groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
          * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4180,28 +4434,28 @@ namespace Model
         virtual void ModifyScheduledActionAsync(const Model::ModifyScheduledActionRequest& request, const ModifyScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination Region
-         * after they are copied from the source Region. By default, this operation only
-         * changes the retention period of copied automated snapshots. The retention
-         * periods for both new and existing copied automated snapshots are updated with
-         * the new retention period. You can set the manual option to change only the
-         * retention periods of copied manual snapshots. If you set this option, only newly
-         * copied manual snapshots have the new retention period. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Modifies the number of days to retain snapshots in the destination Amazon Web
+         * Services Region after they are copied from the source Amazon Web Services
+         * Region. By default, this operation only changes the retention period of copied
+         * automated snapshots. The retention periods for both new and existing copied
+         * automated snapshots are updated with the new retention period. You can set the
+         * manual option to change only the retention periods of copied manual snapshots.
+         * If you set this option, only newly copied manual snapshots have the new
+         * retention period. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcome ModifySnapshotCopyRetentionPeriod(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination Region
-         * after they are copied from the source Region. By default, this operation only
-         * changes the retention period of copied automated snapshots. The retention
-         * periods for both new and existing copied automated snapshots are updated with
-         * the new retention period. You can set the manual option to change only the
-         * retention periods of copied manual snapshots. If you set this option, only newly
-         * copied manual snapshots have the new retention period. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Modifies the number of days to retain snapshots in the destination Amazon Web
+         * Services Region after they are copied from the source Amazon Web Services
+         * Region. By default, this operation only changes the retention period of copied
+         * automated snapshots. The retention periods for both new and existing copied
+         * automated snapshots are updated with the new retention period. You can set the
+         * manual option to change only the retention periods of copied manual snapshots.
+         * If you set this option, only newly copied manual snapshots have the new
+         * retention period. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
          * API Reference</a></p>
          *
@@ -4210,14 +4464,14 @@ namespace Model
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcomeCallable ModifySnapshotCopyRetentionPeriodCallable(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination Region
-         * after they are copied from the source Region. By default, this operation only
-         * changes the retention period of copied automated snapshots. The retention
-         * periods for both new and existing copied automated snapshots are updated with
-         * the new retention period. You can set the manual option to change only the
-         * retention periods of copied manual snapshots. If you set this option, only newly
-         * copied manual snapshots have the new retention period. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Modifies the number of days to retain snapshots in the destination Amazon Web
+         * Services Region after they are copied from the source Amazon Web Services
+         * Region. By default, this operation only changes the retention period of copied
+         * automated snapshots. The retention periods for both new and existing copied
+         * automated snapshots are updated with the new retention period. You can set the
+         * manual option to change only the retention periods of copied manual snapshots.
+         * If you set this option, only newly copied manual snapshots have the new
+         * retention period. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
          * API Reference</a></p>
          *
@@ -4400,6 +4654,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebootClusterAsync(const Model::RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>From the consumer account, rejects the specified datashare.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectDataShareOutcome RejectDataShare(const Model::RejectDataShareRequest& request) const;
+
+        /**
+         * <p>From the consumer account, rejects the specified datashare.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RejectDataShareOutcomeCallable RejectDataShareCallable(const Model::RejectDataShareRequest& request) const;
+
+        /**
+         * <p>From the consumer account, rejects the specified datashare.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RejectDataShareAsync(const Model::RejectDataShareRequest& request, const RejectDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets one or more parameters of the specified parameter group to their default
@@ -4712,10 +4994,10 @@ namespace Model
         virtual void RevokeEndpointAccessAsync(const Model::RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the ability of the specified account to restore the specified
-         * snapshot. If the account is currently restoring the snapshot, the restore will
-         * run to completion.</p> <p> For more information about working with snapshots, go
-         * to <a
+         * <p>Removes the ability of the specified Amazon Web Services account to restore
+         * the specified snapshot. If the account is currently restoring the snapshot, the
+         * restore will run to completion.</p> <p> For more information about working with
+         * snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4725,10 +5007,10 @@ namespace Model
         virtual Model::RevokeSnapshotAccessOutcome RevokeSnapshotAccess(const Model::RevokeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Removes the ability of the specified account to restore the specified
-         * snapshot. If the account is currently restoring the snapshot, the restore will
-         * run to completion.</p> <p> For more information about working with snapshots, go
-         * to <a
+         * <p>Removes the ability of the specified Amazon Web Services account to restore
+         * the specified snapshot. If the account is currently restoring the snapshot, the
+         * restore will run to completion.</p> <p> For more information about working with
+         * snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4740,10 +5022,10 @@ namespace Model
         virtual Model::RevokeSnapshotAccessOutcomeCallable RevokeSnapshotAccessCallable(const Model::RevokeSnapshotAccessRequest& request) const;
 
         /**
-         * <p>Removes the ability of the specified account to restore the specified
-         * snapshot. If the account is currently restoring the snapshot, the restore will
-         * run to completion.</p> <p> For more information about working with snapshots, go
-         * to <a
+         * <p>Removes the ability of the specified Amazon Web Services account to restore
+         * the specified snapshot. If the account is currently restoring the snapshot, the
+         * restore will run to completion.</p> <p> For more information about working with
+         * snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4810,7 +5092,9 @@ namespace Model
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptReservedNodeExchangeAsyncHelper(const Model::AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddPartnerAsyncHelper(const Model::AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateDataShareConsumerAsyncHelper(const Model::AssociateDataShareConsumerRequest& request, const AssociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeClusterSecurityGroupIngressAsyncHelper(const Model::AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AuthorizeDataShareAsyncHelper(const Model::AuthorizeDataShareRequest& request, const AuthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeEndpointAccessAsyncHelper(const Model::AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeSnapshotAccessAsyncHelper(const Model::AuthorizeSnapshotAccessRequest& request, const AuthorizeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDeleteClusterSnapshotsAsyncHelper(const Model::BatchDeleteClusterSnapshotsRequest& request, const BatchDeleteClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4832,6 +5116,7 @@ namespace Model
         void CreateSnapshotScheduleAsyncHelper(const Model::CreateSnapshotScheduleRequest& request, const CreateSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUsageLimitAsyncHelper(const Model::CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeauthorizeDataShareAsyncHelper(const Model::DeauthorizeDataShareRequest& request, const DeauthorizeDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAuthenticationProfileAsyncHelper(const Model::DeleteAuthenticationProfileRequest& request, const DeleteAuthenticationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterParameterGroupAsyncHelper(const Model::DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4859,6 +5144,9 @@ namespace Model
         void DescribeClusterTracksAsyncHelper(const Model::DescribeClusterTracksRequest& request, const DescribeClusterTracksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterVersionsAsyncHelper(const Model::DescribeClusterVersionsRequest& request, const DescribeClusterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDataSharesAsyncHelper(const Model::DescribeDataSharesRequest& request, const DescribeDataSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDataSharesForConsumerAsyncHelper(const Model::DescribeDataSharesForConsumerRequest& request, const DescribeDataSharesForConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDataSharesForProducerAsyncHelper(const Model::DescribeDataSharesForProducerRequest& request, const DescribeDataSharesForProducerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDefaultClusterParametersAsyncHelper(const Model::DescribeDefaultClusterParametersRequest& request, const DescribeDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAccessAsyncHelper(const Model::DescribeEndpointAccessRequest& request, const DescribeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAuthorizationAsyncHelper(const Model::DescribeEndpointAuthorizationRequest& request, const DescribeEndpointAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4883,6 +5171,7 @@ namespace Model
         void DescribeUsageLimitsAsyncHelper(const Model::DescribeUsageLimitsRequest& request, const DescribeUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableLoggingAsyncHelper(const Model::DisableLoggingRequest& request, const DisableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSnapshotCopyAsyncHelper(const Model::DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateDataShareConsumerAsyncHelper(const Model::DisassociateDataShareConsumerRequest& request, const DisassociateDataShareConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableLoggingAsyncHelper(const Model::EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSnapshotCopyAsyncHelper(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClusterCredentialsAsyncHelper(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4906,6 +5195,7 @@ namespace Model
         void PauseClusterAsyncHelper(const Model::PauseClusterRequest& request, const PauseClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedNodeOfferingAsyncHelper(const Model::PurchaseReservedNodeOfferingRequest& request, const PurchaseReservedNodeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootClusterAsyncHelper(const Model::RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RejectDataShareAsyncHelper(const Model::RejectDataShareRequest& request, const RejectDataShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetClusterParameterGroupAsyncHelper(const Model::ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResizeClusterAsyncHelper(const Model::ResizeClusterRequest& request, const ResizeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromClusterSnapshotAsyncHelper(const Model::RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

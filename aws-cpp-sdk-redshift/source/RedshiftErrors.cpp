@@ -24,6 +24,7 @@ static const int INVALID_S3_KEY_PREFIX_FAULT_HASH = HashingUtils::HashString("In
 static const int SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ScheduledActionAlreadyExists");
 static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionCategoryNotFound");
 static const int HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateNotFoundFault");
+static const int INVALID_DATA_SHARE_FAULT_HASH = HashingUtils::HashString("InvalidDataShareFault");
 static const int CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterNotFound");
 static const int INVALID_TAG_FAULT_HASH = HashingUtils::HashString("InvalidTagFault");
 static const int CLUSTER_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotQuotaExceeded");
@@ -88,6 +89,7 @@ static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("Unsup
 static const int SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantQuotaExceededFault");
 static const int INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyFault");
 static const int RESIZE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResizeNotFound");
+static const int INVALID_NAMESPACE_FAULT_HASH = HashingUtils::HashString("InvalidNamespaceFault");
 static const int INVALID_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidEndpointState");
 static const int INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmConfigurationStateFault");
 static const int INVALID_RETENTION_PERIOD_FAULT_HASH = HashingUtils::HashString("InvalidRetentionPeriodFault");
@@ -179,6 +181,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT), false);
+    return true;
+  }
+  else if (hashCode == INVALID_DATA_SHARE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_DATA_SHARE_FAULT), false);
     return true;
   }
   else if (hashCode == CLUSTER_NOT_FOUND_FAULT_HASH)
@@ -501,6 +508,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESIZE_NOT_FOUND_FAULT), false);
     return true;
   }
+  else if (hashCode == INVALID_NAMESPACE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_NAMESPACE_FAULT), false);
+    return true;
+  }
   else if (hashCode == INVALID_ENDPOINT_STATE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_ENDPOINT_STATE_FAULT), false);
@@ -751,7 +763,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT), false);
     return true;
   }
-  else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SOURCE_NOT_FOUND_FAULT), false);
     return true;
@@ -761,12 +778,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == RESERVED_NODE_NOT_FOUND_FAULT_HASH)
+  else if (hashCode == RESERVED_NODE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_NOT_FOUND_FAULT), false);
     return true;

@@ -1114,7 +1114,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline const Aws::String& GetNewClusterIdentifier() const{ return m_newClusterIdentifier; }
 
@@ -1124,7 +1125,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline bool NewClusterIdentifierHasBeenSet() const { return m_newClusterIdentifierHasBeenSet; }
 
@@ -1134,7 +1136,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(const Aws::String& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = value; }
 
@@ -1144,7 +1147,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(Aws::String&& value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier = std::move(value); }
 
@@ -1154,7 +1158,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline void SetNewClusterIdentifier(const char* value) { m_newClusterIdentifierHasBeenSet = true; m_newClusterIdentifier.assign(value); }
 
@@ -1164,7 +1169,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const Aws::String& value) { SetNewClusterIdentifier(value); return *this;}
 
@@ -1174,7 +1180,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(Aws::String&& value) { SetNewClusterIdentifier(std::move(value)); return *this;}
 
@@ -1184,7 +1191,8 @@ namespace Model
      * <p>Alphabetic characters must be lowercase.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for all clusters within an
-     * account.</p> </li> </ul> <p>Example: <code>examplecluster</code> </p>
+     * Amazon Web Services account.</p> </li> </ul> <p>Example:
+     * <code>examplecluster</code> </p>
      */
     inline ModifyClusterRequest& WithNewClusterIdentifier(const char* value) { SetNewClusterIdentifier(value); return *this;}
 

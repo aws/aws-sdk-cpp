@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an account authorized to restore a snapshot.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes an Amazon Web Services account authorized to restore a
+   * snapshot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AccountWithRestoreAccess">AWS
    * API Reference</a></p>
    */
@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline AccountWithRestoreAccess& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline AccountWithRestoreAccess& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of an account authorized to restore a snapshot.</p>
+     * <p>The identifier of an Amazon Web Services account authorized to restore a
+     * snapshot.</p>
      */
     inline AccountWithRestoreAccess& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

@@ -47,7 +47,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
@@ -57,7 +58,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
@@ -67,7 +69,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
@@ -77,7 +80,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
@@ -87,7 +91,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
@@ -97,7 +102,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
@@ -107,7 +113,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
@@ -117,7 +124,8 @@ namespace Model
      * alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters must
      * be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
-     * <p>Must be unique for all clusters within an account.</p> </li> </ul>
+     * <p>Must be unique for all clusters within an Amazon Web Services account.</p>
+     * </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
@@ -422,50 +430,58 @@ namespace Model
 
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -1551,9 +1567,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) after the cluster is restored. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
-     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
-     * AQUA.</p> </li> </ul>
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
 
@@ -1561,9 +1577,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) after the cluster is restored. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
-     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
-     * AQUA.</p> </li> </ul>
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
      */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
 
@@ -1571,9 +1587,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) after the cluster is restored. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
-     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
-     * AQUA.</p> </li> </ul>
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
      */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
 
@@ -1581,9 +1597,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) after the cluster is restored. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
-     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
-     * AQUA.</p> </li> </ul>
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
      */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
 
@@ -1591,9 +1607,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) after the cluster is restored. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
-     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
-     * AQUA.</p> </li> </ul>
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
 
@@ -1601,9 +1617,9 @@ namespace Model
      * <p>The value represents how the cluster is configured to use AQUA (Advanced
      * Query Accelerator) after the cluster is restored. Possible values include the
      * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't
-     * use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use
-     * AQUA.</p> </li> </ul>
+     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
+     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
+     * determines whether to use AQUA.</p> </li> </ul>
      */
     inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 

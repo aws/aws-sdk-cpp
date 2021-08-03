@@ -776,115 +776,115 @@ namespace Model
 
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline const Aws::Vector<AccountWithRestoreAccess>& GetAccountsWithRestoreAccess() const{ return m_accountsWithRestoreAccess; }
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline bool AccountsWithRestoreAccessHasBeenSet() const { return m_accountsWithRestoreAccessHasBeenSet; }
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline void SetAccountsWithRestoreAccess(const Aws::Vector<AccountWithRestoreAccess>& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess = value; }
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline void SetAccountsWithRestoreAccess(Aws::Vector<AccountWithRestoreAccess>&& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess = std::move(value); }
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& WithAccountsWithRestoreAccess(const Aws::Vector<AccountWithRestoreAccess>& value) { SetAccountsWithRestoreAccess(value); return *this;}
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& WithAccountsWithRestoreAccess(Aws::Vector<AccountWithRestoreAccess>&& value) { SetAccountsWithRestoreAccess(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& AddAccountsWithRestoreAccess(const AccountWithRestoreAccess& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess.push_back(value); return *this; }
 
     /**
-     * <p>A list of the accounts authorized to restore the snapshot. Returns
-     * <code>null</code> if no accounts are authorized. Visible only to the snapshot
-     * owner. </p>
+     * <p>A list of the Amazon Web Services accounts authorized to restore the
+     * snapshot. Returns <code>null</code> if no accounts are authorized. Visible only
+     * to the snapshot owner. </p>
      */
     inline Snapshot& AddAccountsWithRestoreAccess(AccountWithRestoreAccess&& value) { m_accountsWithRestoreAccessHasBeenSet = true; m_accountsWithRestoreAccess.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline Snapshot& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline Snapshot& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>For manual snapshots, the account used to create or copy the snapshot. For
-     * automatic snapshots, the owner of the cluster. The owner can perform all
-     * snapshot actions, such as sharing a manual snapshot.</p>
+     * <p>For manual snapshots, the Amazon Web Services account used to create or copy
+     * the snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
     inline Snapshot& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 

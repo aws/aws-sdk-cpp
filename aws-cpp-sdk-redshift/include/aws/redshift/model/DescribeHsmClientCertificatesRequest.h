@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 

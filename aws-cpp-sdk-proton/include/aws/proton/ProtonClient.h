@@ -365,13 +365,23 @@ namespace Model
    * you retry the request, a new resource is created.</p> <p>Idempotent create APIs
    * with a client token:</p> <ul> <li> <p>CreateEnvironmentTemplateVersion</p> </li>
    * <li> <p>CreateServiceTemplateVersion</p> </li> <li>
-   * <p>CreateEnvironmentAccountConnection</p> </li> </ul> <p> <b>Idempotent delete
-   * APIs</b> </p> <p>Given a request action that has succeeded:</p> <p>When you
-   * retry the request with an API from this group and the resource was deleted, its
-   * metadata is returned in the response.</p> <p>If you retry and the resource
-   * doesn't exist, the response is empty.</p> <p>In both cases, the retry
-   * succeeds.</p> <p>Idempotent delete APIs:</p> <ul> <li>
-   * <p>DeleteEnvironmentTemplate</p> </li> <li>
+   * <p>CreateEnvironmentAccountConnection</p> </li> </ul> <p> <b>Idempotent create
+   * APIs</b> </p> <p>Given a request action that has succeeded:</p> <p>If you retry
+   * the request with an API from this group, and the original resource <i>hasn't</i>
+   * been modified, the retry succeeds without performing any further actions other
+   * than returning the original resource detail data in the response.</p> <p>If the
+   * original resource has been modified, the retry throws a
+   * <code>ConflictException</code>.</p> <p>If you retry with different input
+   * parameters, the retry throws a <code>ValidationException</code> with an
+   * <code>IdempotentParameterMismatch</code> error.</p> <p>Idempotent create
+   * APIs:</p> <ul> <li> <p>CreateEnvironmentTemplate</p> </li> <li>
+   * <p>CreateServiceTemplate</p> </li> <li> <p>CreateEnvironment</p> </li> <li>
+   * <p>CreateService</p> </li> </ul> <p> <b>Idempotent delete APIs</b> </p> <p>Given
+   * a request action that has succeeded:</p> <p>When you retry the request with an
+   * API from this group and the resource was deleted, its metadata is returned in
+   * the response.</p> <p>If you retry and the resource doesn't exist, the response
+   * is empty.</p> <p>In both cases, the retry succeeds.</p> <p>Idempotent delete
+   * APIs:</p> <ul> <li> <p>DeleteEnvironmentTemplate</p> </li> <li>
    * <p>DeleteEnvironmentTemplateVersion</p> </li> <li> <p>DeleteServiceTemplate</p>
    * </li> <li> <p>DeleteServiceTemplateVersion</p> </li> <li>
    * <p>DeleteEnvironmentAccountConnection</p> </li> </ul> <p> <b>Asynchronous

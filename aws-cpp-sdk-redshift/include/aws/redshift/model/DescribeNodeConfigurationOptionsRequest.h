@@ -193,50 +193,58 @@ namespace Model
 
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The account used to create or copy the snapshot. Required if you are
-     * restoring a snapshot you do not own, optional if you own the snapshot.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Required
+     * if you are restoring a snapshot you do not own, optional if you own the
+     * snapshot.</p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
