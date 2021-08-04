@@ -236,10 +236,10 @@ namespace Model
      * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
      * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
      * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
-     * <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
-     * </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the
-     * Management Console to grant cross-account access, otherwise the call fails.
-     * Default is 'FALSE'.</p>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline const EnableHybridValues& GetEnableHybrid() const{ return m_enableHybrid; }
 
@@ -247,10 +247,10 @@ namespace Model
      * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
      * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
      * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
-     * <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
-     * </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the
-     * Management Console to grant cross-account access, otherwise the call fails.
-     * Default is 'FALSE'.</p>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline bool EnableHybridHasBeenSet() const { return m_enableHybridHasBeenSet; }
 
@@ -258,10 +258,10 @@ namespace Model
      * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
      * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
      * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
-     * <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
-     * </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the
-     * Management Console to grant cross-account access, otherwise the call fails.
-     * Default is 'FALSE'.</p>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline void SetEnableHybrid(const EnableHybridValues& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = value; }
 
@@ -269,10 +269,10 @@ namespace Model
      * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
      * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
      * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
-     * <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
-     * </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the
-     * Management Console to grant cross-account access, otherwise the call fails.
-     * Default is 'FALSE'.</p>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline void SetEnableHybrid(EnableHybridValues&& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = std::move(value); }
 
@@ -280,10 +280,10 @@ namespace Model
      * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
      * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
      * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
-     * <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
-     * </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the
-     * Management Console to grant cross-account access, otherwise the call fails.
-     * Default is 'FALSE'.</p>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline PutResourcePolicyRequest& WithEnableHybrid(const EnableHybridValues& value) { SetEnableHybrid(value); return *this;}
 
@@ -291,10 +291,10 @@ namespace Model
      * <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant
      * cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly
      * updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li>
-     * <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
-     * </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the
-     * Management Console to grant cross-account access, otherwise the call fails.
-     * Default is 'FALSE'.</p>
+     * <p>By using the <b>Grant permissions</b> command on the Amazon Web Services
+     * Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you
+     * have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.</p>
      */
     inline PutResourcePolicyRequest& WithEnableHybrid(EnableHybridValues&& value) { SetEnableHybrid(std::move(value)); return *this;}
 

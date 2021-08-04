@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline EndpointAccess& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline EndpointAccess& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the owner of the cluster.</p>
+     * <p>The Amazon Web Services account ID of the owner of the cluster.</p>
      */
     inline EndpointAccess& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
 

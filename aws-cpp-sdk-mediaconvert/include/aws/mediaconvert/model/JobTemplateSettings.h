@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AvailBlanking.h>
 #include <aws/mediaconvert/model/EsamSettings.h>
+#include <aws/mediaconvert/model/ExtendedDataServices.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/KantarWatermarkSettings.h>
 #include <aws/mediaconvert/model/MotionImageInserter.h>
@@ -145,6 +146,43 @@ namespace Model
      * you can ignore these settings.
      */
     inline JobTemplateSettings& WithEsam(EsamSettings&& value) { SetEsam(std::move(value)); return *this;}
+
+
+    /**
+     * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+     * Content Advisory.
+     */
+    inline const ExtendedDataServices& GetExtendedDataServices() const{ return m_extendedDataServices; }
+
+    /**
+     * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+     * Content Advisory.
+     */
+    inline bool ExtendedDataServicesHasBeenSet() const { return m_extendedDataServicesHasBeenSet; }
+
+    /**
+     * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+     * Content Advisory.
+     */
+    inline void SetExtendedDataServices(const ExtendedDataServices& value) { m_extendedDataServicesHasBeenSet = true; m_extendedDataServices = value; }
+
+    /**
+     * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+     * Content Advisory.
+     */
+    inline void SetExtendedDataServices(ExtendedDataServices&& value) { m_extendedDataServicesHasBeenSet = true; m_extendedDataServices = std::move(value); }
+
+    /**
+     * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+     * Content Advisory.
+     */
+    inline JobTemplateSettings& WithExtendedDataServices(const ExtendedDataServices& value) { SetExtendedDataServices(value); return *this;}
+
+    /**
+     * Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h
+     * Content Advisory.
+     */
+    inline JobTemplateSettings& WithExtendedDataServices(ExtendedDataServices&& value) { SetExtendedDataServices(std::move(value)); return *this;}
 
 
     /**
@@ -656,6 +694,9 @@ namespace Model
 
     EsamSettings m_esam;
     bool m_esamHasBeenSet;
+
+    ExtendedDataServices m_extendedDataServices;
+    bool m_extendedDataServicesHasBeenSet;
 
     Aws::Vector<InputTemplate> m_inputs;
     bool m_inputsHasBeenSet;

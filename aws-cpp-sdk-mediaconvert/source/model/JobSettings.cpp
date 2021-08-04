@@ -23,6 +23,7 @@ JobSettings::JobSettings() :
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
+    m_extendedDataServicesHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
@@ -39,6 +40,7 @@ JobSettings::JobSettings(JsonView jsonValue) :
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
+    m_extendedDataServicesHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
@@ -72,6 +74,13 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
     m_esam = jsonValue.GetObject("esam");
 
     m_esamHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("extendedDataServices"))
+  {
+    m_extendedDataServices = jsonValue.GetObject("extendedDataServices");
+
+    m_extendedDataServicesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputs"))
@@ -158,6 +167,12 @@ JsonValue JobSettings::Jsonize() const
   if(m_esamHasBeenSet)
   {
    payload.WithObject("esam", m_esam.Jsonize());
+
+  }
+
+  if(m_extendedDataServicesHasBeenSet)
+  {
+   payload.WithObject("extendedDataServices", m_extendedDataServices.Jsonize());
 
   }
 

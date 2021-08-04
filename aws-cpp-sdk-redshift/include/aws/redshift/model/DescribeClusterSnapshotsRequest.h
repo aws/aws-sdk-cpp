@@ -410,58 +410,66 @@ namespace Model
 
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The account used to create or copy the snapshot. Use this field to filter the
-     * results to snapshots owned by a particular account. To describe snapshots you
-     * own, either specify your account, or do not specify the parameter.</p>
+     * <p>The Amazon Web Services account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular account. To
+     * describe snapshots you own, either specify your Amazon Web Services account, or
+     * do not specify the parameter.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
