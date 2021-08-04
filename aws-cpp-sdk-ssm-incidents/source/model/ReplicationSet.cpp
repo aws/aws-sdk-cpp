@@ -19,6 +19,7 @@ namespace Model
 {
 
 ReplicationSet::ReplicationSet() : 
+    m_arnHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_deletionProtected(false),
@@ -32,6 +33,7 @@ ReplicationSet::ReplicationSet() :
 }
 
 ReplicationSet::ReplicationSet(JsonView jsonValue) : 
+    m_arnHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_deletionProtected(false),
@@ -47,6 +49,13 @@ ReplicationSet::ReplicationSet(JsonView jsonValue) :
 
 ReplicationSet& ReplicationSet::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
@@ -105,6 +114,12 @@ ReplicationSet& ReplicationSet::operator =(JsonView jsonValue)
 JsonValue ReplicationSet::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
 
   if(m_createdByHasBeenSet)
   {

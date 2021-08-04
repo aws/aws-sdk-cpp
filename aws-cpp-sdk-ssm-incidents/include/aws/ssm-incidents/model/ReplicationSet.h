@@ -43,6 +43,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline ReplicationSet& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline ReplicationSet& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication set.</p>
+     */
+    inline ReplicationSet& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>Details about who created the replication set.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
@@ -325,6 +366,9 @@ namespace Model
     inline ReplicationSet& WithStatus(ReplicationSetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet;

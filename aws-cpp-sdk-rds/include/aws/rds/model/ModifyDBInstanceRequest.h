@@ -101,7 +101,7 @@ namespace Model
 
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
      * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
      * at least 10% greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10% greater than
@@ -111,7 +111,7 @@ namespace Model
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
      * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
      * at least 10% greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10% greater than
@@ -121,7 +121,7 @@ namespace Model
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
      * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
      * at least 10% greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10% greater than
@@ -131,7 +131,7 @@ namespace Model
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+     * <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
      * </p> <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
      * at least 10% greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10% greater than
@@ -3028,9 +3028,9 @@ namespace Model
 
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>
@@ -3038,9 +3038,9 @@ namespace Model
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>
@@ -3048,9 +3048,9 @@ namespace Model
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>
@@ -3058,9 +3058,9 @@ namespace Model
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>

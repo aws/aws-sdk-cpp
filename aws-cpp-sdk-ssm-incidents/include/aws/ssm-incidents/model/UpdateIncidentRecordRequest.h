@@ -216,66 +216,58 @@ namespace Model
 
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline const Aws::Vector<NotificationTargetItem>& GetNotificationTargets() const{ return m_notificationTargets; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline bool NotificationTargetsHasBeenSet() const { return m_notificationTargetsHasBeenSet; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline void SetNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = value; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline void SetNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets = std::move(value); }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetNotificationTargets(value); return *this;}
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& WithNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetNotificationTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& AddNotificationTargets(const NotificationTargetItem& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(value); return *this; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates
-     * to an incident. You can also make updates to the incident through the chat
-     * channel using the SNS topics. </p> <p>Using multiple SNS topics creates
-     * redundancy in the case that a Region is down during the incident.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
+     * <p>Using multiple SNS topics creates redundancy in the case that a Region is
+     * down during the incident.</p>
      */
     inline UpdateIncidentRecordRequest& AddNotificationTargets(NotificationTargetItem&& value) { m_notificationTargetsHasBeenSet = true; m_notificationTargets.push_back(std::move(value)); return *this; }
 

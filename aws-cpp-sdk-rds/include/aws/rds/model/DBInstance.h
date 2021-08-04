@@ -7,8 +7,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/Endpoint.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/PendingModifiedValues.h>
@@ -264,6 +264,37 @@ namespace Model
 
 
     /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const{ return m_automaticRestartTime; }
+
+    /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
+
+    /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline void SetAutomaticRestartTime(const Aws::Utils::DateTime& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = value; }
+
+    /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline void SetAutomaticRestartTime(Aws::Utils::DateTime&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::move(value); }
+
+    /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline DBInstance& WithAutomaticRestartTime(const Aws::Utils::DateTime& value) { SetAutomaticRestartTime(value); return *this;}
+
+    /**
+     * <p>The time when a stopped DB instance is restarted automatically.</p>
+     */
+    inline DBInstance& WithAutomaticRestartTime(Aws::Utils::DateTime&& value) { SetAutomaticRestartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Contains the master username for the DB instance.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
@@ -402,53 +433,59 @@ namespace Model
 
 
     /**
-     * <p>Specifies the connection endpoint.</p>
+     * <p>Specifies the connection endpoint.</p>  <p>The endpoint might not be
+     * shown for instances whose status is <code>creating</code>.</p> 
      */
     inline const Endpoint& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * <p>Specifies the connection endpoint.</p>
+     * <p>Specifies the connection endpoint.</p>  <p>The endpoint might not be
+     * shown for instances whose status is <code>creating</code>.</p> 
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
-     * <p>Specifies the connection endpoint.</p>
+     * <p>Specifies the connection endpoint.</p>  <p>The endpoint might not be
+     * shown for instances whose status is <code>creating</code>.</p> 
      */
     inline void SetEndpoint(const Endpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * <p>Specifies the connection endpoint.</p>
+     * <p>Specifies the connection endpoint.</p>  <p>The endpoint might not be
+     * shown for instances whose status is <code>creating</code>.</p> 
      */
     inline void SetEndpoint(Endpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * <p>Specifies the connection endpoint.</p>
+     * <p>Specifies the connection endpoint.</p>  <p>The endpoint might not be
+     * shown for instances whose status is <code>creating</code>.</p> 
      */
     inline DBInstance& WithEndpoint(const Endpoint& value) { SetEndpoint(value); return *this;}
 
     /**
-     * <p>Specifies the connection endpoint.</p>
+     * <p>Specifies the connection endpoint.</p>  <p>The endpoint might not be
+     * shown for instances whose status is <code>creating</code>.</p> 
      */
     inline DBInstance& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes (GiB).</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes (GiB).</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes (GiB).</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Specifies the allocated storage size specified in gibibytes (GiB).</p>
      */
     inline DBInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -2744,26 +2781,26 @@ namespace Model
 
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p>
      */
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p>
      */
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p>
      */
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p>
      */
     inline DBInstance& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 
@@ -3169,6 +3206,9 @@ namespace Model
 
     Aws::String m_dBInstanceStatus;
     bool m_dBInstanceStatusHasBeenSet;
+
+    Aws::Utils::DateTime m_automaticRestartTime;
+    bool m_automaticRestartTimeHasBeenSet;
 
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;

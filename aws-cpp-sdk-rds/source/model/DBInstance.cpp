@@ -25,6 +25,7 @@ DBInstance::DBInstance() :
     m_dBInstanceClassHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_dBInstanceStatusHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -119,6 +120,7 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_dBInstanceClassHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_dBInstanceStatusHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -238,6 +240,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_dBInstanceStatus = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceStatusNode.GetText());
       m_dBInstanceStatusHasBeenSet = true;
+    }
+    XmlNode automaticRestartTimeNode = resultNode.FirstChild("AutomaticRestartTime");
+    if(!automaticRestartTimeNode.IsNull())
+    {
+      m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_automaticRestartTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
     if(!masterUsernameNode.IsNull())
@@ -734,6 +742,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DBInstanceStatus=" << StringUtils::URLEncode(m_dBInstanceStatus.c_str()) << "&";
   }
 
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_masterUsernameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
@@ -1158,6 +1171,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_dBInstanceStatusHasBeenSet)
   {
       oStream << location << ".DBInstanceStatus=" << StringUtils::URLEncode(m_dBInstanceStatus.c_str()) << "&";
+  }
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {

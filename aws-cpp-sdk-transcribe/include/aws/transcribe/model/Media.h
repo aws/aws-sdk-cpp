@@ -42,7 +42,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetMediaFileUri() const{ return m_mediaFileUri; }
@@ -51,7 +51,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline bool MediaFileUriHasBeenSet() const { return m_mediaFileUriHasBeenSet; }
@@ -60,7 +60,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetMediaFileUri(const Aws::String& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = value; }
@@ -69,7 +69,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetMediaFileUri(Aws::String&& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = std::move(value); }
@@ -78,7 +78,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetMediaFileUri(const char* value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri.assign(value); }
@@ -87,7 +87,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline Media& WithMediaFileUri(const Aws::String& value) { SetMediaFileUri(value); return *this;}
@@ -96,7 +96,7 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline Media& WithMediaFileUri(Aws::String&& value) { SetMediaFileUri(std::move(value)); return *this;}
@@ -105,15 +105,67 @@ namespace Model
      * <p>The S3 object location of the input media file. The URI must be in the same
      * region as the API endpoint that you are calling. The general form is:</p> <p>For
      * example:</p> <p>For more information about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline Media& WithMediaFileUri(const char* value) { SetMediaFileUri(value); return *this;}
+
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline const Aws::String& GetRedactedMediaFileUri() const{ return m_redactedMediaFileUri; }
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline bool RedactedMediaFileUriHasBeenSet() const { return m_redactedMediaFileUriHasBeenSet; }
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline void SetRedactedMediaFileUri(const Aws::String& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = value; }
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline void SetRedactedMediaFileUri(Aws::String&& value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri = std::move(value); }
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline void SetRedactedMediaFileUri(const char* value) { m_redactedMediaFileUriHasBeenSet = true; m_redactedMediaFileUri.assign(value); }
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline Media& WithRedactedMediaFileUri(const Aws::String& value) { SetRedactedMediaFileUri(value); return *this;}
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline Media& WithRedactedMediaFileUri(Aws::String&& value) { SetRedactedMediaFileUri(std::move(value)); return *this;}
+
+    /**
+     * <p> The S3 object location for your redacted output media file. This is only
+     * supported for call analytics jobs.</p>
+     */
+    inline Media& WithRedactedMediaFileUri(const char* value) { SetRedactedMediaFileUri(value); return *this;}
 
   private:
 
     Aws::String m_mediaFileUri;
     bool m_mediaFileUriHasBeenSet;
+
+    Aws::String m_redactedMediaFileUri;
+    bool m_redactedMediaFileUriHasBeenSet;
   };
 
 } // namespace Model

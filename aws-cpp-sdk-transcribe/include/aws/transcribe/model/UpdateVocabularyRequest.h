@@ -181,10 +181,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
@@ -194,10 +194,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
@@ -207,10 +207,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
@@ -220,10 +220,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
@@ -233,10 +233,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
@@ -246,10 +246,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
@@ -259,10 +259,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
@@ -272,10 +272,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For example:</p> <p>For more information
      * about S3 object names, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline UpdateVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}

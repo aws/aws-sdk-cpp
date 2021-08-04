@@ -35,50 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline ListDistributionConfigurationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline ListDistributionConfigurationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline ListDistributionConfigurationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>name</code> - The name of this
-     * distribution configuration.</p> </li> </ul>
+     * <p>You can filter on <code>name</code> to streamline results.</p>
      */
     inline ListDistributionConfigurationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -20,10 +20,13 @@
 #include <aws/transcribe/TranscribeServiceClient.h>
 #include <aws/transcribe/TranscribeServiceEndpoint.h>
 #include <aws/transcribe/TranscribeServiceErrorMarshaller.h>
+#include <aws/transcribe/model/CreateCallAnalyticsCategoryRequest.h>
 #include <aws/transcribe/model/CreateLanguageModelRequest.h>
 #include <aws/transcribe/model/CreateMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/CreateVocabularyRequest.h>
 #include <aws/transcribe/model/CreateVocabularyFilterRequest.h>
+#include <aws/transcribe/model/DeleteCallAnalyticsCategoryRequest.h>
+#include <aws/transcribe/model/DeleteCallAnalyticsJobRequest.h>
 #include <aws/transcribe/model/DeleteLanguageModelRequest.h>
 #include <aws/transcribe/model/DeleteMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/DeleteMedicalVocabularyRequest.h>
@@ -31,19 +34,25 @@
 #include <aws/transcribe/model/DeleteVocabularyRequest.h>
 #include <aws/transcribe/model/DeleteVocabularyFilterRequest.h>
 #include <aws/transcribe/model/DescribeLanguageModelRequest.h>
+#include <aws/transcribe/model/GetCallAnalyticsCategoryRequest.h>
+#include <aws/transcribe/model/GetCallAnalyticsJobRequest.h>
 #include <aws/transcribe/model/GetMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/GetTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetVocabularyRequest.h>
 #include <aws/transcribe/model/GetVocabularyFilterRequest.h>
+#include <aws/transcribe/model/ListCallAnalyticsCategoriesRequest.h>
+#include <aws/transcribe/model/ListCallAnalyticsJobsRequest.h>
 #include <aws/transcribe/model/ListLanguageModelsRequest.h>
 #include <aws/transcribe/model/ListMedicalTranscriptionJobsRequest.h>
 #include <aws/transcribe/model/ListMedicalVocabulariesRequest.h>
 #include <aws/transcribe/model/ListTranscriptionJobsRequest.h>
 #include <aws/transcribe/model/ListVocabulariesRequest.h>
 #include <aws/transcribe/model/ListVocabularyFiltersRequest.h>
+#include <aws/transcribe/model/StartCallAnalyticsJobRequest.h>
 #include <aws/transcribe/model/StartMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/StartTranscriptionJobRequest.h>
+#include <aws/transcribe/model/UpdateCallAnalyticsCategoryRequest.h>
 #include <aws/transcribe/model/UpdateMedicalVocabularyRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterRequest.h>
@@ -119,6 +128,30 @@ void TranscribeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+CreateCallAnalyticsCategoryOutcome TranscribeServiceClient::CreateCallAnalyticsCategory(const CreateCallAnalyticsCategoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateCallAnalyticsCategoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::CreateCallAnalyticsCategoryCallable(const CreateCallAnalyticsCategoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCallAnalyticsCategoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCallAnalyticsCategory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::CreateCallAnalyticsCategoryAsync(const CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::CreateCallAnalyticsCategoryAsyncHelper(const CreateCallAnalyticsCategoryRequest& request, const CreateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCallAnalyticsCategory(request), context);
 }
 
 CreateLanguageModelOutcome TranscribeServiceClient::CreateLanguageModel(const CreateLanguageModelRequest& request) const
@@ -215,6 +248,54 @@ void TranscribeServiceClient::CreateVocabularyFilterAsync(const CreateVocabulary
 void TranscribeServiceClient::CreateVocabularyFilterAsyncHelper(const CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateVocabularyFilter(request), context);
+}
+
+DeleteCallAnalyticsCategoryOutcome TranscribeServiceClient::DeleteCallAnalyticsCategory(const DeleteCallAnalyticsCategoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCallAnalyticsCategoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::DeleteCallAnalyticsCategoryCallable(const DeleteCallAnalyticsCategoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCallAnalyticsCategoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCallAnalyticsCategory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::DeleteCallAnalyticsCategoryAsync(const DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::DeleteCallAnalyticsCategoryAsyncHelper(const DeleteCallAnalyticsCategoryRequest& request, const DeleteCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCallAnalyticsCategory(request), context);
+}
+
+DeleteCallAnalyticsJobOutcome TranscribeServiceClient::DeleteCallAnalyticsJob(const DeleteCallAnalyticsJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCallAnalyticsJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCallAnalyticsJobOutcomeCallable TranscribeServiceClient::DeleteCallAnalyticsJobCallable(const DeleteCallAnalyticsJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCallAnalyticsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCallAnalyticsJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::DeleteCallAnalyticsJobAsync(const DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCallAnalyticsJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::DeleteCallAnalyticsJobAsyncHelper(const DeleteCallAnalyticsJobRequest& request, const DeleteCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCallAnalyticsJob(request), context);
 }
 
 DeleteLanguageModelOutcome TranscribeServiceClient::DeleteLanguageModel(const DeleteLanguageModelRequest& request) const
@@ -385,6 +466,54 @@ void TranscribeServiceClient::DescribeLanguageModelAsyncHelper(const DescribeLan
   handler(this, request, DescribeLanguageModel(request), context);
 }
 
+GetCallAnalyticsCategoryOutcome TranscribeServiceClient::GetCallAnalyticsCategory(const GetCallAnalyticsCategoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetCallAnalyticsCategoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::GetCallAnalyticsCategoryCallable(const GetCallAnalyticsCategoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCallAnalyticsCategoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCallAnalyticsCategory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::GetCallAnalyticsCategoryAsync(const GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::GetCallAnalyticsCategoryAsyncHelper(const GetCallAnalyticsCategoryRequest& request, const GetCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCallAnalyticsCategory(request), context);
+}
+
+GetCallAnalyticsJobOutcome TranscribeServiceClient::GetCallAnalyticsJob(const GetCallAnalyticsJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetCallAnalyticsJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCallAnalyticsJobOutcomeCallable TranscribeServiceClient::GetCallAnalyticsJobCallable(const GetCallAnalyticsJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCallAnalyticsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCallAnalyticsJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::GetCallAnalyticsJobAsync(const GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCallAnalyticsJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::GetCallAnalyticsJobAsyncHelper(const GetCallAnalyticsJobRequest& request, const GetCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCallAnalyticsJob(request), context);
+}
+
 GetMedicalTranscriptionJobOutcome TranscribeServiceClient::GetMedicalTranscriptionJob(const GetMedicalTranscriptionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -503,6 +632,54 @@ void TranscribeServiceClient::GetVocabularyFilterAsync(const GetVocabularyFilter
 void TranscribeServiceClient::GetVocabularyFilterAsyncHelper(const GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetVocabularyFilter(request), context);
+}
+
+ListCallAnalyticsCategoriesOutcome TranscribeServiceClient::ListCallAnalyticsCategories(const ListCallAnalyticsCategoriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCallAnalyticsCategoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCallAnalyticsCategoriesOutcomeCallable TranscribeServiceClient::ListCallAnalyticsCategoriesCallable(const ListCallAnalyticsCategoriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCallAnalyticsCategoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCallAnalyticsCategories(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::ListCallAnalyticsCategoriesAsync(const ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCallAnalyticsCategoriesAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::ListCallAnalyticsCategoriesAsyncHelper(const ListCallAnalyticsCategoriesRequest& request, const ListCallAnalyticsCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCallAnalyticsCategories(request), context);
+}
+
+ListCallAnalyticsJobsOutcome TranscribeServiceClient::ListCallAnalyticsJobs(const ListCallAnalyticsJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCallAnalyticsJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCallAnalyticsJobsOutcomeCallable TranscribeServiceClient::ListCallAnalyticsJobsCallable(const ListCallAnalyticsJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCallAnalyticsJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCallAnalyticsJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::ListCallAnalyticsJobsAsync(const ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCallAnalyticsJobsAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::ListCallAnalyticsJobsAsyncHelper(const ListCallAnalyticsJobsRequest& request, const ListCallAnalyticsJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCallAnalyticsJobs(request), context);
 }
 
 ListLanguageModelsOutcome TranscribeServiceClient::ListLanguageModels(const ListLanguageModelsRequest& request) const
@@ -649,6 +826,30 @@ void TranscribeServiceClient::ListVocabularyFiltersAsyncHelper(const ListVocabul
   handler(this, request, ListVocabularyFilters(request), context);
 }
 
+StartCallAnalyticsJobOutcome TranscribeServiceClient::StartCallAnalyticsJob(const StartCallAnalyticsJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartCallAnalyticsJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartCallAnalyticsJobOutcomeCallable TranscribeServiceClient::StartCallAnalyticsJobCallable(const StartCallAnalyticsJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartCallAnalyticsJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCallAnalyticsJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::StartCallAnalyticsJobAsync(const StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartCallAnalyticsJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::StartCallAnalyticsJobAsyncHelper(const StartCallAnalyticsJobRequest& request, const StartCallAnalyticsJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartCallAnalyticsJob(request), context);
+}
+
 StartMedicalTranscriptionJobOutcome TranscribeServiceClient::StartMedicalTranscriptionJob(const StartMedicalTranscriptionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -695,6 +896,30 @@ void TranscribeServiceClient::StartTranscriptionJobAsync(const StartTranscriptio
 void TranscribeServiceClient::StartTranscriptionJobAsyncHelper(const StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartTranscriptionJob(request), context);
+}
+
+UpdateCallAnalyticsCategoryOutcome TranscribeServiceClient::UpdateCallAnalyticsCategory(const UpdateCallAnalyticsCategoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateCallAnalyticsCategoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateCallAnalyticsCategoryOutcomeCallable TranscribeServiceClient::UpdateCallAnalyticsCategoryCallable(const UpdateCallAnalyticsCategoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCallAnalyticsCategoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCallAnalyticsCategory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::UpdateCallAnalyticsCategoryAsync(const UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateCallAnalyticsCategoryAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::UpdateCallAnalyticsCategoryAsyncHelper(const UpdateCallAnalyticsCategoryRequest& request, const UpdateCallAnalyticsCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCallAnalyticsCategory(request), context);
 }
 
 UpdateMedicalVocabularyOutcome TranscribeServiceClient::UpdateMedicalVocabulary(const UpdateMedicalVocabularyRequest& request) const

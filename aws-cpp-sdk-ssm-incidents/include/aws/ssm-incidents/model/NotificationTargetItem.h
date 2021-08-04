@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The SNS topic that's used by AWS Chatbot to notify the incidents chat
-   * channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The SNS targets that are notified when updates are made to an
+   * incident.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/NotificationTargetItem">AWS
    * API Reference</a></p>
    */
