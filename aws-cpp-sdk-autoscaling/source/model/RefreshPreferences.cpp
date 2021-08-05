@@ -27,7 +27,9 @@ RefreshPreferences::RefreshPreferences() :
     m_instanceWarmupHasBeenSet(false),
     m_checkpointPercentagesHasBeenSet(false),
     m_checkpointDelay(0),
-    m_checkpointDelayHasBeenSet(false)
+    m_checkpointDelayHasBeenSet(false),
+    m_skipMatching(false),
+    m_skipMatchingHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode) :
     m_instanceWarmupHasBeenSet(false),
     m_checkpointPercentagesHasBeenSet(false),
     m_checkpointDelay(0),
-    m_checkpointDelayHasBeenSet(false)
+    m_checkpointDelayHasBeenSet(false),
+    m_skipMatching(false),
+    m_skipMatchingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +83,12 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
       m_checkpointDelay = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checkpointDelayNode.GetText()).c_str()).c_str());
       m_checkpointDelayHasBeenSet = true;
     }
+    XmlNode skipMatchingNode = resultNode.FirstChild("SkipMatching");
+    if(!skipMatchingNode.IsNull())
+    {
+      m_skipMatching = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(skipMatchingNode.GetText()).c_str()).c_str());
+      m_skipMatchingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -110,6 +120,11 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".CheckpointDelay=" << m_checkpointDelay << "&";
   }
 
+  if(m_skipMatchingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SkipMatching=" << std::boolalpha << m_skipMatching << "&";
+  }
+
 }
 
 void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -133,6 +148,10 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_checkpointDelayHasBeenSet)
   {
       oStream << location << ".CheckpointDelay=" << m_checkpointDelay << "&";
+  }
+  if(m_skipMatchingHasBeenSet)
+  {
+      oStream << location << ".SkipMatching=" << std::boolalpha << m_skipMatching << "&";
   }
 }
 

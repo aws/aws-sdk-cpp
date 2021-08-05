@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provided the identity of a the bot that was exported.</p><p><h3>See
+   * <p>Provides the identity of a the bot that was exported.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotExportSpecification">AWS
    * API Reference</a></p>

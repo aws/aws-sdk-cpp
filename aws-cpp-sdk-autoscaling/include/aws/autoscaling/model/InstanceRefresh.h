@@ -10,6 +10,8 @@
 #include <aws/autoscaling/model/InstanceRefreshStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/autoscaling/model/InstanceRefreshProgressDetails.h>
+#include <aws/autoscaling/model/RefreshPreferences.h>
+#include <aws/autoscaling/model/DesiredConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -417,6 +419,56 @@ namespace Model
      */
     inline InstanceRefresh& WithProgressDetails(InstanceRefreshProgressDetails&& value) { SetProgressDetails(std::move(value)); return *this;}
 
+
+    
+    inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
+
+    
+    inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
+
+    
+    inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
+
+    
+    inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
+
+    
+    inline InstanceRefresh& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
+
+    
+    inline InstanceRefresh& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the specific update you want to deploy.</p>
+     */
+    inline const DesiredConfiguration& GetDesiredConfiguration() const{ return m_desiredConfiguration; }
+
+    /**
+     * <p>Describes the specific update you want to deploy.</p>
+     */
+    inline bool DesiredConfigurationHasBeenSet() const { return m_desiredConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes the specific update you want to deploy.</p>
+     */
+    inline void SetDesiredConfiguration(const DesiredConfiguration& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = value; }
+
+    /**
+     * <p>Describes the specific update you want to deploy.</p>
+     */
+    inline void SetDesiredConfiguration(DesiredConfiguration&& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = std::move(value); }
+
+    /**
+     * <p>Describes the specific update you want to deploy.</p>
+     */
+    inline InstanceRefresh& WithDesiredConfiguration(const DesiredConfiguration& value) { SetDesiredConfiguration(value); return *this;}
+
+    /**
+     * <p>Describes the specific update you want to deploy.</p>
+     */
+    inline InstanceRefresh& WithDesiredConfiguration(DesiredConfiguration&& value) { SetDesiredConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceRefreshId;
@@ -445,6 +497,12 @@ namespace Model
 
     InstanceRefreshProgressDetails m_progressDetails;
     bool m_progressDetailsHasBeenSet;
+
+    RefreshPreferences m_preferences;
+    bool m_preferencesHasBeenSet;
+
+    DesiredConfiguration m_desiredConfiguration;
+    bool m_desiredConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -20,13 +20,17 @@ namespace Model
 
 IntentConfirmationSetting::IntentConfirmationSetting() : 
     m_promptSpecificationHasBeenSet(false),
-    m_declinationResponseHasBeenSet(false)
+    m_declinationResponseHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
 }
 
 IntentConfirmationSetting::IntentConfirmationSetting(JsonView jsonValue) : 
     m_promptSpecificationHasBeenSet(false),
-    m_declinationResponseHasBeenSet(false)
+    m_declinationResponseHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ IntentConfirmationSetting& IntentConfirmationSetting::operator =(JsonView jsonVa
     m_declinationResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("active"))
+  {
+    m_active = jsonValue.GetBool("active");
+
+    m_activeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue IntentConfirmationSetting::Jsonize() const
   if(m_declinationResponseHasBeenSet)
   {
    payload.WithObject("declinationResponse", m_declinationResponse.Jsonize());
+
+  }
+
+  if(m_activeHasBeenSet)
+  {
+   payload.WithBool("active", m_active);
 
   }
 
