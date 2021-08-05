@@ -32,6 +32,7 @@ DBCluster::DBCluster() :
     m_dBClusterParameterGroupHasBeenSet(false),
     m_dBSubnetGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -109,6 +110,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_dBClusterParameterGroupHasBeenSet(false),
     m_dBSubnetGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_automaticRestartTimeHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -240,6 +242,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+    }
+    XmlNode automaticRestartTimeNode = resultNode.FirstChild("AutomaticRestartTime");
+    if(!automaticRestartTimeNode.IsNull())
+    {
+      m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_automaticRestartTimeHasBeenSet = true;
     }
     XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
     if(!percentProgressNode.IsNull())
@@ -633,6 +641,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_percentProgressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
@@ -963,6 +976,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_automaticRestartTimeHasBeenSet)
+  {
+      oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_percentProgressHasBeenSet)
   {

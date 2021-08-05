@@ -1702,9 +1702,9 @@ namespace Model
 
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>
@@ -1712,9 +1712,9 @@ namespace Model
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>
@@ -1722,9 +1722,9 @@ namespace Model
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>
@@ -1732,9 +1732,9 @@ namespace Model
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
     /**
-     * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p> <p>For more information about this setting, including
-     * limitations that apply to it, see <a
+     * <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
+     * scale the storage of the DB instance.</p> <p>For more information about this
+     * setting, including limitations that apply to it, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p>

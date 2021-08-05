@@ -36,44 +36,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account and
-     * is case sensitive.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account and is case sensitive.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 

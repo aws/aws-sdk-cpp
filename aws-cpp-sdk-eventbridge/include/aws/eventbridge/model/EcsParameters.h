@@ -124,9 +124,9 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+     * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
@@ -135,9 +135,9 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+     * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
@@ -146,9 +146,9 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+     * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
@@ -157,9 +157,9 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+     * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
@@ -168,9 +168,9 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+     * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline EcsParameters& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
@@ -179,77 +179,77 @@ namespace Model
      * <p>Specifies the launch type on which your task is running. The launch type that
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
-     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
-     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * where Fargate witt Amazon ECS is supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+     * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline EcsParameters& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
-     * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
-     * if <code>LaunchType</code> is <code>FARGATE</code> because the
-     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
-     * <code>awsvpc</code> network mode, the task fails.</p>
+     * <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code>
+     * network mode. This structure specifies the VPC subnets and security groups
+     * associated with the task, and whether a public IP address is to be used. This
+     * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because
+     * the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you
+     * specify <code>NetworkConfiguration</code> when the target ECS task does not use
+     * the <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
-     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
-     * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
-     * if <code>LaunchType</code> is <code>FARGATE</code> because the
-     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
-     * <code>awsvpc</code> network mode, the task fails.</p>
+     * <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code>
+     * network mode. This structure specifies the VPC subnets and security groups
+     * associated with the task, and whether a public IP address is to be used. This
+     * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because
+     * the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you
+     * specify <code>NetworkConfiguration</code> when the target ECS task does not use
+     * the <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
     /**
-     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
-     * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
-     * if <code>LaunchType</code> is <code>FARGATE</code> because the
-     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
-     * <code>awsvpc</code> network mode, the task fails.</p>
+     * <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code>
+     * network mode. This structure specifies the VPC subnets and security groups
+     * associated with the task, and whether a public IP address is to be used. This
+     * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because
+     * the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you
+     * specify <code>NetworkConfiguration</code> when the target ECS task does not use
+     * the <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
-     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
-     * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
-     * if <code>LaunchType</code> is <code>FARGATE</code> because the
-     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
-     * <code>awsvpc</code> network mode, the task fails.</p>
+     * <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code>
+     * network mode. This structure specifies the VPC subnets and security groups
+     * associated with the task, and whether a public IP address is to be used. This
+     * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because
+     * the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you
+     * specify <code>NetworkConfiguration</code> when the target ECS task does not use
+     * the <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
-     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
-     * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
-     * if <code>LaunchType</code> is <code>FARGATE</code> because the
-     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
-     * <code>awsvpc</code> network mode, the task fails.</p>
+     * <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code>
+     * network mode. This structure specifies the VPC subnets and security groups
+     * associated with the task, and whether a public IP address is to be used. This
+     * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because
+     * the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you
+     * specify <code>NetworkConfiguration</code> when the target ECS task does not use
+     * the <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline EcsParameters& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
-     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
-     * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
-     * if <code>LaunchType</code> is <code>FARGATE</code> because the
-     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
-     * <code>awsvpc</code> network mode, the task fails.</p>
+     * <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code>
+     * network mode. This structure specifies the VPC subnets and security groups
+     * associated with the task, and whether a public IP address is to be used. This
+     * structure is required if <code>LaunchType</code> is <code>FARGATE</code> because
+     * the <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you
+     * specify <code>NetworkConfiguration</code> when the target ECS task does not use
+     * the <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline EcsParameters& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
@@ -259,9 +259,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
@@ -270,9 +270,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
@@ -281,9 +281,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
@@ -292,9 +292,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
@@ -303,9 +303,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
@@ -314,9 +314,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline EcsParameters& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
@@ -325,9 +325,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline EcsParameters& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
@@ -336,9 +336,9 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline EcsParameters& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

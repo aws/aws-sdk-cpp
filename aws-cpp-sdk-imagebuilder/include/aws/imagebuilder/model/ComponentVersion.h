@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The defining characteristics of a specific version of an TOE
-   * component.</p><p><h3>See Also:</h3>   <a
+   * <p>The defining characteristics of a specific version of an Amazon Web Services
+   * TOE component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentVersion">AWS
    * API Reference</a></p>
    */

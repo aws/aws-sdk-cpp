@@ -129,31 +129,43 @@ namespace Model
 
     /**
      * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>Use the empty structure to remove the chat channel from the response
+     * plan.</p>
      */
     inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
 
     /**
      * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>Use the empty structure to remove the chat channel from the response
+     * plan.</p>
      */
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
 
     /**
      * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>Use the empty structure to remove the chat channel from the response
+     * plan.</p>
      */
     inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
 
     /**
      * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>Use the empty structure to remove the chat channel from the response
+     * plan.</p>
      */
     inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
 
     /**
      * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>Use the empty structure to remove the chat channel from the response
+     * plan.</p>
      */
     inline UpdateResponsePlanRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
 
     /**
      * <p>The AWS Chatbot chat channel used for collaboration during an incident.</p>
+     * <p>Use the empty structure to remove the chat channel from the response
+     * plan.</p>
      */
     inline UpdateResponsePlanRequest& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
 
@@ -386,50 +398,42 @@ namespace Model
 
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline const Aws::Vector<NotificationTargetItem>& GetIncidentTemplateNotificationTargets() const{ return m_incidentTemplateNotificationTargets; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline bool IncidentTemplateNotificationTargetsHasBeenSet() const { return m_incidentTemplateNotificationTargetsHasBeenSet; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline void SetIncidentTemplateNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = value; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline void SetIncidentTemplateNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = std::move(value); }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetIncidentTemplateNotificationTargets(value); return *this;}
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetIncidentTemplateNotificationTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(const NotificationTargetItem& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.push_back(value); return *this; }
 
     /**
-     * <p>The SNS targets that AWS Chatbot uses to notify the chat channels and perform
-     * actions on the incident record.</p>
+     * <p>The SNS targets that are notified when updates are made to an incident.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(NotificationTargetItem&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.push_back(std::move(value)); return *this; }
 

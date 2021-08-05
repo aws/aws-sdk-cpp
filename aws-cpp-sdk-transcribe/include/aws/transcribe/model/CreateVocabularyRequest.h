@@ -37,66 +37,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case sensitive. If you try to create a vocabulary with the same name
-     * as a previous vocabulary you will receive a <code>ConflictException</code>
-     * error.</p>
+     * <p>The name of the vocabulary. The name must be unique within an Amazon Web
+     * Services account. The name is case sensitive. If you try to create a vocabulary
+     * with the same name as a previous vocabulary you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
@@ -189,10 +189,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
@@ -202,10 +202,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
@@ -215,10 +215,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
@@ -228,10 +228,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
@@ -241,10 +241,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
@@ -254,10 +254,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
@@ -267,10 +267,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
@@ -280,10 +280,10 @@ namespace Model
      * vocabulary. The URI must be in the same region as the API endpoint that you are
      * calling. The general form is </p> <p>For more information about S3 object names,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}

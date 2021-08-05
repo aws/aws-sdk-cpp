@@ -174,8 +174,8 @@ namespace Model
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
      * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
+     * Medical determine the sample rate.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
@@ -184,8 +184,8 @@ namespace Model
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
      * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
+     * Medical determine the sample rate.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
@@ -194,8 +194,8 @@ namespace Model
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
      * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
+     * Medical determine the sample rate.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
@@ -204,8 +204,8 @@ namespace Model
      * information.</p> <p>If you don't specify the sample rate, Amazon Transcribe
      * Medical determines it for you. If you choose to specify the sample rate, it must
      * match the rate detected by Amazon Transcribe Medical. In most cases, you should
-     * leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical
-     * determine the sample rate.</p>
+     * leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe
+     * Medical determine the sample rate.</p>
      */
     inline MedicalTranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -780,7 +780,9 @@ namespace Model
      * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
      * generally used for patient-physician dialogues. <code>DICTATION</code> is the
      * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+     * is Amazon Transcribe Medical?</a>.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
@@ -788,7 +790,9 @@ namespace Model
      * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
      * generally used for patient-physician dialogues. <code>DICTATION</code> is the
      * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+     * is Amazon Transcribe Medical?</a>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -796,7 +800,9 @@ namespace Model
      * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
      * generally used for patient-physician dialogues. <code>DICTATION</code> is the
      * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+     * is Amazon Transcribe Medical?</a>.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -804,7 +810,9 @@ namespace Model
      * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
      * generally used for patient-physician dialogues. <code>DICTATION</code> is the
      * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+     * is Amazon Transcribe Medical?</a>.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -812,7 +820,9 @@ namespace Model
      * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
      * generally used for patient-physician dialogues. <code>DICTATION</code> is the
      * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+     * is Amazon Transcribe Medical?</a>.</p>
      */
     inline MedicalTranscriptionJob& WithType(const Type& value) { SetType(value); return *this;}
 
@@ -820,7 +830,9 @@ namespace Model
      * <p>The type of speech in the transcription job. <code>CONVERSATION</code> is
      * generally used for patient-physician dialogues. <code>DICTATION</code> is the
      * setting for physicians speaking their notes after seeing a patient. For more
-     * information, see <a>how-it-works-med</a> </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What
+     * is Amazon Transcribe Medical?</a>.</p>
      */
     inline MedicalTranscriptionJob& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

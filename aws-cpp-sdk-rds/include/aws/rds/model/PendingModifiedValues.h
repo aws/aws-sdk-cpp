@@ -86,22 +86,26 @@ namespace Model
 
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+     * <p>The allocated storage size for the DB instance specified in gibibytes
+     * (GiB).</p>
      */
     inline PendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 

@@ -455,6 +455,37 @@ namespace Model
 
 
     /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAutomaticRestartTime() const{ return m_automaticRestartTime; }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline bool AutomaticRestartTimeHasBeenSet() const { return m_automaticRestartTimeHasBeenSet; }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline void SetAutomaticRestartTime(const Aws::Utils::DateTime& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = value; }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline void SetAutomaticRestartTime(Aws::Utils::DateTime&& value) { m_automaticRestartTimeHasBeenSet = true; m_automaticRestartTime = std::move(value); }
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline DBCluster& WithAutomaticRestartTime(const Aws::Utils::DateTime& value) { SetAutomaticRestartTime(value); return *this;}
+
+    /**
+     * <p>The time when a stopped DB cluster is restarted automatically.</p>
+     */
+    inline DBCluster& WithAutomaticRestartTime(Aws::Utils::DateTime&& value) { SetAutomaticRestartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the progress of the operation as a percentage.</p>
      */
     inline const Aws::String& GetPercentProgress() const{ return m_percentProgress; }
@@ -2494,6 +2525,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Utils::DateTime m_automaticRestartTime;
+    bool m_automaticRestartTimeHasBeenSet;
 
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet;

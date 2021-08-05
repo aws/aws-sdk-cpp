@@ -44,72 +44,72 @@ namespace Model
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings
      * "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name
-     * must also be unique within an AWS account. If you try to create a medical
-     * transcription job with the same name as a previous medical transcription job,
-     * you get a <code>ConflictException</code> error.</p>
+     * must also be unique within an Amazon Web Services account. If you try to create
+     * a medical transcription job with the same name as a previous medical
+     * transcription job, you get a <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 
@@ -257,11 +257,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
 
@@ -274,11 +274,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
 
@@ -291,11 +291,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
 
@@ -308,11 +308,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
 
@@ -325,11 +325,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
 
@@ -342,11 +342,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
 
@@ -359,11 +359,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
 
@@ -376,11 +376,11 @@ namespace Model
      * permissions that allow Amazon Transcribe Medical to put files in the bucket. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
-     * Service (KMS) key to encrypt the output of your transcription using the
-     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
-     * Amazon Transcribe Medical uses the default Amazon S3 key for server-side
-     * encryption of transcripts that are placed in your S3 bucket.</p>
+     * Required for IAM User Roles</a>.</p> <p>You can specify an Amazon Web Services
+     * Key Management Service (KMS) key to encrypt the output of your transcription
+     * using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify
+     * a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for
+     * server-side encryption of transcripts that are placed in your S3 bucket.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
 
@@ -531,11 +531,11 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -551,11 +551,11 @@ namespace Model
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -571,11 +571,11 @@ namespace Model
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -591,11 +591,11 @@ namespace Model
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -611,11 +611,11 @@ namespace Model
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -631,11 +631,11 @@ namespace Model
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -651,11 +651,11 @@ namespace Model
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>
@@ -671,11 +671,11 @@ namespace Model
     inline StartMedicalTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
-     * used to encrypt the output of the transcription job. The user calling the
-     * <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
-     * specified KMS key.</p> <p>You use either of the following to identify a KMS key
-     * in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service (KMS) key used to encrypt the output of the transcription job. The user
+     * calling the <a>StartMedicalTranscriptionJob</a> operation must have permission
+     * to use the specified KMS key.</p> <p>You use either of the following to identify
+     * a KMS key in the current account:</p> <ul> <li> <p>KMS Key ID:
      * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
      * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
      * identify a KMS key in the current account or another account:</p> <ul> <li>

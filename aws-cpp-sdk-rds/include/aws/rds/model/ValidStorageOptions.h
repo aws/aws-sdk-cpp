@@ -87,42 +87,50 @@ namespace Model
 
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline const Aws::Vector<Range>& GetStorageSize() const{ return m_storageSize; }
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline void SetStorageSize(const Aws::Vector<Range>& value) { m_storageSizeHasBeenSet = true; m_storageSize = value; }
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline void SetStorageSize(Aws::Vector<Range>&& value) { m_storageSizeHasBeenSet = true; m_storageSize = std::move(value); }
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline ValidStorageOptions& WithStorageSize(const Aws::Vector<Range>& value) { SetStorageSize(value); return *this;}
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline ValidStorageOptions& WithStorageSize(Aws::Vector<Range>&& value) { SetStorageSize(std::move(value)); return *this;}
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline ValidStorageOptions& AddStorageSize(const Range& value) { m_storageSizeHasBeenSet = true; m_storageSize.push_back(value); return *this; }
 
     /**
-     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     * <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+     * </p>
      */
     inline ValidStorageOptions& AddStorageSize(Range&& value) { m_storageSizeHasBeenSet = true; m_storageSize.push_back(std::move(value)); return *this; }
 
