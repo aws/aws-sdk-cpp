@@ -148,6 +148,39 @@ namespace Model
      */
     inline IntentConfirmationSetting& WithDeclinationResponse(ResponseSpecification&& value) { SetDeclinationResponse(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether the intent's confirmation is sent to the user. When this
+     * field is false, confirmation and declination responses aren't sent and
+     * processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.</p>
+     */
+    inline bool GetActive() const{ return m_active; }
+
+    /**
+     * <p>Specifies whether the intent's confirmation is sent to the user. When this
+     * field is false, confirmation and declination responses aren't sent and
+     * processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.</p>
+     */
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the intent's confirmation is sent to the user. When this
+     * field is false, confirmation and declination responses aren't sent and
+     * processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.</p>
+     */
+    inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
+
+    /**
+     * <p>Specifies whether the intent's confirmation is sent to the user. When this
+     * field is false, confirmation and declination responses aren't sent and
+     * processing continues as if the responses aren't present. If the
+     * <code>active</code> field isn't specified, the default is true.</p>
+     */
+    inline IntentConfirmationSetting& WithActive(bool value) { SetActive(value); return *this;}
+
   private:
 
     PromptSpecification m_promptSpecification;
@@ -155,6 +188,9 @@ namespace Model
 
     ResponseSpecification m_declinationResponse;
     bool m_declinationResponseHasBeenSet;
+
+    bool m_active;
+    bool m_activeHasBeenSet;
   };
 
 } // namespace Model

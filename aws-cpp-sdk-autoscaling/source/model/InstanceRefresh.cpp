@@ -32,7 +32,9 @@ InstanceRefresh::InstanceRefresh() :
     m_percentageCompleteHasBeenSet(false),
     m_instancesToUpdate(0),
     m_instancesToUpdateHasBeenSet(false),
-    m_progressDetailsHasBeenSet(false)
+    m_progressDetailsHasBeenSet(false),
+    m_preferencesHasBeenSet(false),
+    m_desiredConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ InstanceRefresh::InstanceRefresh(const XmlNode& xmlNode) :
     m_percentageCompleteHasBeenSet(false),
     m_instancesToUpdate(0),
     m_instancesToUpdateHasBeenSet(false),
-    m_progressDetailsHasBeenSet(false)
+    m_progressDetailsHasBeenSet(false),
+    m_preferencesHasBeenSet(false),
+    m_desiredConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -113,6 +117,18 @@ InstanceRefresh& InstanceRefresh::operator =(const XmlNode& xmlNode)
       m_progressDetails = progressDetailsNode;
       m_progressDetailsHasBeenSet = true;
     }
+    XmlNode preferencesNode = resultNode.FirstChild("Preferences");
+    if(!preferencesNode.IsNull())
+    {
+      m_preferences = preferencesNode;
+      m_preferencesHasBeenSet = true;
+    }
+    XmlNode desiredConfigurationNode = resultNode.FirstChild("DesiredConfiguration");
+    if(!desiredConfigurationNode.IsNull())
+    {
+      m_desiredConfiguration = desiredConfigurationNode;
+      m_desiredConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -167,6 +183,20 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
       m_progressDetails.OutputToStream(oStream, progressDetailsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_preferencesHasBeenSet)
+  {
+      Aws::StringStream preferencesLocationAndMemberSs;
+      preferencesLocationAndMemberSs << location << index << locationValue << ".Preferences";
+      m_preferences.OutputToStream(oStream, preferencesLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_desiredConfigurationHasBeenSet)
+  {
+      Aws::StringStream desiredConfigurationLocationAndMemberSs;
+      desiredConfigurationLocationAndMemberSs << location << index << locationValue << ".DesiredConfiguration";
+      m_desiredConfiguration.OutputToStream(oStream, desiredConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -208,6 +238,18 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
       Aws::String progressDetailsLocationAndMember(location);
       progressDetailsLocationAndMember += ".ProgressDetails";
       m_progressDetails.OutputToStream(oStream, progressDetailsLocationAndMember.c_str());
+  }
+  if(m_preferencesHasBeenSet)
+  {
+      Aws::String preferencesLocationAndMember(location);
+      preferencesLocationAndMember += ".Preferences";
+      m_preferences.OutputToStream(oStream, preferencesLocationAndMember.c_str());
+  }
+  if(m_desiredConfigurationHasBeenSet)
+  {
+      Aws::String desiredConfigurationLocationAndMember(location);
+      desiredConfigurationLocationAndMember += ".DesiredConfiguration";
+      m_desiredConfiguration.OutputToStream(oStream, desiredConfigurationLocationAndMember.c_str());
   }
 }
 

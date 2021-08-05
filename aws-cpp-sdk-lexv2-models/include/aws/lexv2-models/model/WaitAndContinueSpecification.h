@@ -149,6 +149,39 @@ namespace Model
      */
     inline WaitAndContinueSpecification& WithStillWaitingResponse(StillWaitingResponseSpecification&& value) { SetStillWaitingResponse(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether the bot will wait for a user to respond. When this field is
+     * false, wait and continue responses for a slot aren't used and the bot expects an
+     * appropriate response within the configured timeout. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
+     */
+    inline bool GetActive() const{ return m_active; }
+
+    /**
+     * <p>Specifies whether the bot will wait for a user to respond. When this field is
+     * false, wait and continue responses for a slot aren't used and the bot expects an
+     * appropriate response within the configured timeout. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
+     */
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the bot will wait for a user to respond. When this field is
+     * false, wait and continue responses for a slot aren't used and the bot expects an
+     * appropriate response within the configured timeout. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
+     */
+    inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
+
+    /**
+     * <p>Specifies whether the bot will wait for a user to respond. When this field is
+     * false, wait and continue responses for a slot aren't used and the bot expects an
+     * appropriate response within the configured timeout. If the <code>active</code>
+     * field isn't specified, the default is true.</p>
+     */
+    inline WaitAndContinueSpecification& WithActive(bool value) { SetActive(value); return *this;}
+
   private:
 
     ResponseSpecification m_waitingResponse;
@@ -159,6 +192,9 @@ namespace Model
 
     StillWaitingResponseSpecification m_stillWaitingResponse;
     bool m_stillWaitingResponseHasBeenSet;
+
+    bool m_active;
+    bool m_activeHasBeenSet;
   };
 
 } // namespace Model

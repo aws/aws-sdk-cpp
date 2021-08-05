@@ -19,12 +19,16 @@ namespace Model
 {
 
 IntentClosingSetting::IntentClosingSetting() : 
-    m_closingResponseHasBeenSet(false)
+    m_closingResponseHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
 }
 
 IntentClosingSetting::IntentClosingSetting(JsonView jsonValue) : 
-    m_closingResponseHasBeenSet(false)
+    m_closingResponseHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ IntentClosingSetting& IntentClosingSetting::operator =(JsonView jsonValue)
     m_closingResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("active"))
+  {
+    m_active = jsonValue.GetBool("active");
+
+    m_activeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +59,12 @@ JsonValue IntentClosingSetting::Jsonize() const
   if(m_closingResponseHasBeenSet)
   {
    payload.WithObject("closingResponse", m_closingResponse.Jsonize());
+
+  }
+
+  if(m_activeHasBeenSet)
+  {
+   payload.WithBool("active", m_active);
 
   }
 

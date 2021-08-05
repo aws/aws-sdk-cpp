@@ -21,14 +21,18 @@ namespace Model
 WaitAndContinueSpecification::WaitAndContinueSpecification() : 
     m_waitingResponseHasBeenSet(false),
     m_continueResponseHasBeenSet(false),
-    m_stillWaitingResponseHasBeenSet(false)
+    m_stillWaitingResponseHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
 }
 
 WaitAndContinueSpecification::WaitAndContinueSpecification(JsonView jsonValue) : 
     m_waitingResponseHasBeenSet(false),
     m_continueResponseHasBeenSet(false),
-    m_stillWaitingResponseHasBeenSet(false)
+    m_stillWaitingResponseHasBeenSet(false),
+    m_active(false),
+    m_activeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ WaitAndContinueSpecification& WaitAndContinueSpecification::operator =(JsonView 
     m_stillWaitingResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("active"))
+  {
+    m_active = jsonValue.GetBool("active");
+
+    m_activeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,12 @@ JsonValue WaitAndContinueSpecification::Jsonize() const
   if(m_stillWaitingResponseHasBeenSet)
   {
    payload.WithObject("stillWaitingResponse", m_stillWaitingResponse.Jsonize());
+
+  }
+
+  if(m_activeHasBeenSet)
+  {
+   payload.WithBool("active", m_active);
 
   }
 

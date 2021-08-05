@@ -24,10 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes information used to start an instance refresh. </p> <p>All
-   * properties are optional. However, if you specify a value for
-   * <code>CheckpointDelay</code>, you must also provide a value for
-   * <code>CheckpointPercentages</code>. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the preferences for an instance refresh.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RefreshPreferences">AWS
    * API Reference</a></p>
    */
@@ -44,33 +42,45 @@ namespace Model
 
     /**
      * <p>The amount of capacity in the Auto Scaling group that must remain healthy
-     * during an instance refresh to allow the operation to continue, as a percentage
-     * of the desired capacity of the Auto Scaling group (rounded up to the nearest
-     * integer). The default is <code>90</code>. </p>
+     * during an instance refresh to allow the operation to continue. The value is
+     * expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     * <p>Setting the minimum healthy percentage to 100 percent limits the rate of
+     * replacement to one instance at a time. In contrast, setting it to 0 percent has
+     * the effect of replacing all instances at the same time. </p>
      */
     inline int GetMinHealthyPercentage() const{ return m_minHealthyPercentage; }
 
     /**
      * <p>The amount of capacity in the Auto Scaling group that must remain healthy
-     * during an instance refresh to allow the operation to continue, as a percentage
-     * of the desired capacity of the Auto Scaling group (rounded up to the nearest
-     * integer). The default is <code>90</code>. </p>
+     * during an instance refresh to allow the operation to continue. The value is
+     * expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     * <p>Setting the minimum healthy percentage to 100 percent limits the rate of
+     * replacement to one instance at a time. In contrast, setting it to 0 percent has
+     * the effect of replacing all instances at the same time. </p>
      */
     inline bool MinHealthyPercentageHasBeenSet() const { return m_minHealthyPercentageHasBeenSet; }
 
     /**
      * <p>The amount of capacity in the Auto Scaling group that must remain healthy
-     * during an instance refresh to allow the operation to continue, as a percentage
-     * of the desired capacity of the Auto Scaling group (rounded up to the nearest
-     * integer). The default is <code>90</code>. </p>
+     * during an instance refresh to allow the operation to continue. The value is
+     * expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     * <p>Setting the minimum healthy percentage to 100 percent limits the rate of
+     * replacement to one instance at a time. In contrast, setting it to 0 percent has
+     * the effect of replacing all instances at the same time. </p>
      */
     inline void SetMinHealthyPercentage(int value) { m_minHealthyPercentageHasBeenSet = true; m_minHealthyPercentage = value; }
 
     /**
      * <p>The amount of capacity in the Auto Scaling group that must remain healthy
-     * during an instance refresh to allow the operation to continue, as a percentage
-     * of the desired capacity of the Auto Scaling group (rounded up to the nearest
-     * integer). The default is <code>90</code>. </p>
+     * during an instance refresh to allow the operation to continue. The value is
+     * expressed as a percentage of the desired capacity of the Auto Scaling group
+     * (rounded up to the nearest integer). The default is <code>90</code>.</p>
+     * <p>Setting the minimum healthy percentage to 100 percent limits the rate of
+     * replacement to one instance at a time. In contrast, setting it to 0 percent has
+     * the effect of replacing all instances at the same time. </p>
      */
     inline RefreshPreferences& WithMinHealthyPercentage(int value) { SetMinHealthyPercentage(value); return *this;}
 
@@ -215,6 +225,43 @@ namespace Model
      */
     inline RefreshPreferences& WithCheckpointDelay(int value) { SetCheckpointDelay(value); return *this;}
 
+
+    /**
+     * <p>A boolean value that indicates whether skip matching is enabled. If true,
+     * then Amazon EC2 Auto Scaling skips replacing instances that match the desired
+     * configuration. If no desired configuration is specified, then it skips replacing
+     * instances that have the same configuration that is already set on the group. The
+     * default is <code>false</code>.</p>
+     */
+    inline bool GetSkipMatching() const{ return m_skipMatching; }
+
+    /**
+     * <p>A boolean value that indicates whether skip matching is enabled. If true,
+     * then Amazon EC2 Auto Scaling skips replacing instances that match the desired
+     * configuration. If no desired configuration is specified, then it skips replacing
+     * instances that have the same configuration that is already set on the group. The
+     * default is <code>false</code>.</p>
+     */
+    inline bool SkipMatchingHasBeenSet() const { return m_skipMatchingHasBeenSet; }
+
+    /**
+     * <p>A boolean value that indicates whether skip matching is enabled. If true,
+     * then Amazon EC2 Auto Scaling skips replacing instances that match the desired
+     * configuration. If no desired configuration is specified, then it skips replacing
+     * instances that have the same configuration that is already set on the group. The
+     * default is <code>false</code>.</p>
+     */
+    inline void SetSkipMatching(bool value) { m_skipMatchingHasBeenSet = true; m_skipMatching = value; }
+
+    /**
+     * <p>A boolean value that indicates whether skip matching is enabled. If true,
+     * then Amazon EC2 Auto Scaling skips replacing instances that match the desired
+     * configuration. If no desired configuration is specified, then it skips replacing
+     * instances that have the same configuration that is already set on the group. The
+     * default is <code>false</code>.</p>
+     */
+    inline RefreshPreferences& WithSkipMatching(bool value) { SetSkipMatching(value); return *this;}
+
   private:
 
     int m_minHealthyPercentage;
@@ -228,6 +275,9 @@ namespace Model
 
     int m_checkpointDelay;
     bool m_checkpointDelayHasBeenSet;
+
+    bool m_skipMatching;
+    bool m_skipMatchingHasBeenSet;
   };
 
 } // namespace Model
