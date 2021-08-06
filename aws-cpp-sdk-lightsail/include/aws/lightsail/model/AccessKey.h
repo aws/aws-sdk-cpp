@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/StatusType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lightsail/model/AccessKeyLastUsed.h>
 #include <utility>
 
 namespace Aws
@@ -215,6 +216,61 @@ namespace Model
      */
     inline AccessKey& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that describes the last time the access key was used.</p> 
+     * <p>This object does not include data in the response of a
+     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     * and the <code>lastUsedDate</code> value is null.</p> 
+     */
+    inline const AccessKeyLastUsed& GetLastUsed() const{ return m_lastUsed; }
+
+    /**
+     * <p>An object that describes the last time the access key was used.</p> 
+     * <p>This object does not include data in the response of a
+     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     * and the <code>lastUsedDate</code> value is null.</p> 
+     */
+    inline bool LastUsedHasBeenSet() const { return m_lastUsedHasBeenSet; }
+
+    /**
+     * <p>An object that describes the last time the access key was used.</p> 
+     * <p>This object does not include data in the response of a
+     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     * and the <code>lastUsedDate</code> value is null.</p> 
+     */
+    inline void SetLastUsed(const AccessKeyLastUsed& value) { m_lastUsedHasBeenSet = true; m_lastUsed = value; }
+
+    /**
+     * <p>An object that describes the last time the access key was used.</p> 
+     * <p>This object does not include data in the response of a
+     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     * and the <code>lastUsedDate</code> value is null.</p> 
+     */
+    inline void SetLastUsed(AccessKeyLastUsed&& value) { m_lastUsedHasBeenSet = true; m_lastUsed = std::move(value); }
+
+    /**
+     * <p>An object that describes the last time the access key was used.</p> 
+     * <p>This object does not include data in the response of a
+     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     * and the <code>lastUsedDate</code> value is null.</p> 
+     */
+    inline AccessKey& WithLastUsed(const AccessKeyLastUsed& value) { SetLastUsed(value); return *this;}
+
+    /**
+     * <p>An object that describes the last time the access key was used.</p> 
+     * <p>This object does not include data in the response of a
+     * <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+     * <code>region</code> and <code>serviceName</code> values are <code>N/A</code>,
+     * and the <code>lastUsedDate</code> value is null.</p> 
+     */
+    inline AccessKey& WithLastUsed(AccessKeyLastUsed&& value) { SetLastUsed(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accessKeyId;
@@ -228,6 +284,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
+    AccessKeyLastUsed m_lastUsed;
+    bool m_lastUsedHasBeenSet;
   };
 
 } // namespace Model

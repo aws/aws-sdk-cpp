@@ -205,9 +205,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -217,9 +218,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -229,9 +231,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -241,9 +244,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -253,9 +257,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -265,9 +270,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline CreateNamedQueryRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -277,9 +283,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline CreateNamedQueryRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -289,9 +296,10 @@ namespace Model
      * request is received, the same response is returned and another query is not
      * created. If a parameter has changed, for example, the <code>QueryString</code>,
      * an error is returned.</p>  <p>This token is listed as not required
-     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
-     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
-     * token or the action will fail.</p> 
+     * because Amazon Web Services SDKs (for example the Amazon Web Services SDK for
+     * Java) auto-generate the token for users. If you are not using the Amazon Web
+     * Services SDK or the Amazon Web Services CLI, you must provide this token or the
+     * action will fail.</p> 
      */
     inline CreateNamedQueryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

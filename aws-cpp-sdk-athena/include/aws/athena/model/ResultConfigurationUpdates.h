@@ -47,7 +47,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
@@ -59,7 +60,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
@@ -71,7 +73,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
@@ -83,7 +86,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
@@ -95,7 +99,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
@@ -107,7 +112,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfigurationUpdates& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
@@ -119,7 +125,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfigurationUpdates& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
@@ -131,7 +138,8 @@ namespace Model
      * Results</a> If workgroup settings override client-side settings, then the query
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup. The "workgroup settings override" is specified
-     * in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfigurationUpdates& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
@@ -141,9 +149,10 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified query results
      * location (also known as a client-side setting) for queries in this workgroup
      * should be ignored and set to null. If set to "false" or not set, and a value is
-     * present in the OutputLocation in ResultConfigurationUpdates (the client-side
-     * setting), the OutputLocation in the workgroup's ResultConfiguration will be
-     * updated with the new value. For more information, see <a
+     * present in the <code>OutputLocation</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -153,9 +162,10 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified query results
      * location (also known as a client-side setting) for queries in this workgroup
      * should be ignored and set to null. If set to "false" or not set, and a value is
-     * present in the OutputLocation in ResultConfigurationUpdates (the client-side
-     * setting), the OutputLocation in the workgroup's ResultConfiguration will be
-     * updated with the new value. For more information, see <a
+     * present in the <code>OutputLocation</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -165,9 +175,10 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified query results
      * location (also known as a client-side setting) for queries in this workgroup
      * should be ignored and set to null. If set to "false" or not set, and a value is
-     * present in the OutputLocation in ResultConfigurationUpdates (the client-side
-     * setting), the OutputLocation in the workgroup's ResultConfiguration will be
-     * updated with the new value. For more information, see <a
+     * present in the <code>OutputLocation</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -177,9 +188,10 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified query results
      * location (also known as a client-side setting) for queries in this workgroup
      * should be ignored and set to null. If set to "false" or not set, and a value is
-     * present in the OutputLocation in ResultConfigurationUpdates (the client-side
-     * setting), the OutputLocation in the workgroup's ResultConfiguration will be
-     * updated with the new value. For more information, see <a
+     * present in the <code>OutputLocation</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code>
+     * will be updated with the new value. For more information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -221,10 +233,11 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified encryption
      * configuration (also known as the client-side setting) for queries in this
      * workgroup should be ignored and set to null. If set to "false" or not set, and a
-     * value is present in the EncryptionConfiguration in ResultConfigurationUpdates
-     * (the client-side setting), the EncryptionConfiguration in the workgroup's
-     * ResultConfiguration will be updated with the new value. For more information,
-     * see <a
+     * value is present in the <code>EncryptionConfiguration</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>EncryptionConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -234,10 +247,11 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified encryption
      * configuration (also known as the client-side setting) for queries in this
      * workgroup should be ignored and set to null. If set to "false" or not set, and a
-     * value is present in the EncryptionConfiguration in ResultConfigurationUpdates
-     * (the client-side setting), the EncryptionConfiguration in the workgroup's
-     * ResultConfiguration will be updated with the new value. For more information,
-     * see <a
+     * value is present in the <code>EncryptionConfiguration</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>EncryptionConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -247,10 +261,11 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified encryption
      * configuration (also known as the client-side setting) for queries in this
      * workgroup should be ignored and set to null. If set to "false" or not set, and a
-     * value is present in the EncryptionConfiguration in ResultConfigurationUpdates
-     * (the client-side setting), the EncryptionConfiguration in the workgroup's
-     * ResultConfiguration will be updated with the new value. For more information,
-     * see <a
+     * value is present in the <code>EncryptionConfiguration</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>EncryptionConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
@@ -260,10 +275,11 @@ namespace Model
      * <p>If set to "true", indicates that the previously-specified encryption
      * configuration (also known as the client-side setting) for queries in this
      * workgroup should be ignored and set to null. If set to "false" or not set, and a
-     * value is present in the EncryptionConfiguration in ResultConfigurationUpdates
-     * (the client-side setting), the EncryptionConfiguration in the workgroup's
-     * ResultConfiguration will be updated with the new value. For more information,
-     * see <a
+     * value is present in the <code>EncryptionConfiguration</code> in
+     * <code>ResultConfigurationUpdates</code> (the client-side setting), the
+     * <code>EncryptionConfiguration</code> in the workgroup's
+     * <code>ResultConfiguration</code> will be updated with the new value. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */

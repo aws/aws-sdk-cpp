@@ -235,8 +235,8 @@ namespace Model
      * <p>A Boolean value that indicates whether to enable versioning of objects in the
      * bucket.</p> <p>For more information about versioning, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
-     * and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon
-     * Lightsail Developer Guide</i>.</p>
+     * and suspending object versioning in a bucket in Amazon Lightsail</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
      */
     inline bool GetEnableObjectVersioning() const{ return m_enableObjectVersioning; }
 
@@ -244,8 +244,8 @@ namespace Model
      * <p>A Boolean value that indicates whether to enable versioning of objects in the
      * bucket.</p> <p>For more information about versioning, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
-     * and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon
-     * Lightsail Developer Guide</i>.</p>
+     * and suspending object versioning in a bucket in Amazon Lightsail</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
      */
     inline bool EnableObjectVersioningHasBeenSet() const { return m_enableObjectVersioningHasBeenSet; }
 
@@ -253,8 +253,8 @@ namespace Model
      * <p>A Boolean value that indicates whether to enable versioning of objects in the
      * bucket.</p> <p>For more information about versioning, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
-     * and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon
-     * Lightsail Developer Guide</i>.</p>
+     * and suspending object versioning in a bucket in Amazon Lightsail</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
      */
     inline void SetEnableObjectVersioning(bool value) { m_enableObjectVersioningHasBeenSet = true; m_enableObjectVersioning = value; }
 
@@ -262,8 +262,8 @@ namespace Model
      * <p>A Boolean value that indicates whether to enable versioning of objects in the
      * bucket.</p> <p>For more information about versioning, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling
-     * and suspending bucket object versioning in Amazon Lightsail</a> in the <i>Amazon
-     * Lightsail Developer Guide</i>.</p>
+     * and suspending object versioning in a bucket in Amazon Lightsail</a> in the
+     * <i>Amazon Lightsail Developer Guide</i>.</p>
      */
     inline CreateBucketRequest& WithEnableObjectVersioning(bool value) { SetEnableObjectVersioning(value); return *this;}
 

@@ -193,42 +193,42 @@ namespace Model
     /**
      * <p>If you input your canary script directly into the canary instead of referring
      * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It can be up to 5 MB.</p>
+     * the .zip file that contains the script. It must be smaller than 256 Kb.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
      * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It can be up to 5 MB.</p>
+     * the .zip file that contains the script. It must be smaller than 256 Kb.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
      * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It can be up to 5 MB.</p>
+     * the .zip file that contains the script. It must be smaller than 256 Kb.</p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
      * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It can be up to 5 MB.</p>
+     * the .zip file that contains the script. It must be smaller than 256 Kb.</p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
      * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It can be up to 5 MB.</p>
+     * the .zip file that contains the script. It must be smaller than 256 Kb.</p>
      */
     inline CanaryCodeInput& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>If you input your canary script directly into the canary instead of referring
      * to an S3 location, the value of this parameter is the base64-encoded contents of
-     * the .zip file that contains the script. It can be up to 5 MB.</p>
+     * the .zip file that contains the script. It must be smaller than 256 Kb.</p>
      */
     inline CanaryCodeInput& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 

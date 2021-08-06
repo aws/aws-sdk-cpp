@@ -494,22 +494,82 @@ namespace Model
     inline UpdateCanaryRequest& WithVpcConfig(VpcConfigInput&& value) { SetVpcConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Defines the screenshots to use as the baseline for comparisons during visual
+     * monitoring comparisons during future runs of this canary. If you omit this
+     * parameter, no changes are made to any baseline screenshots that the canary might
+     * be using already.</p> <p>Visual monitoring is supported only on canaries running
+     * the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+     * Visual monitoring</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+     * Visual monitoring blueprint</a> </p>
+     */
     inline const VisualReferenceInput& GetVisualReference() const{ return m_visualReference; }
 
-    
+    /**
+     * <p>Defines the screenshots to use as the baseline for comparisons during visual
+     * monitoring comparisons during future runs of this canary. If you omit this
+     * parameter, no changes are made to any baseline screenshots that the canary might
+     * be using already.</p> <p>Visual monitoring is supported only on canaries running
+     * the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+     * Visual monitoring</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+     * Visual monitoring blueprint</a> </p>
+     */
     inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
 
-    
+    /**
+     * <p>Defines the screenshots to use as the baseline for comparisons during visual
+     * monitoring comparisons during future runs of this canary. If you omit this
+     * parameter, no changes are made to any baseline screenshots that the canary might
+     * be using already.</p> <p>Visual monitoring is supported only on canaries running
+     * the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+     * Visual monitoring</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+     * Visual monitoring blueprint</a> </p>
+     */
     inline void SetVisualReference(const VisualReferenceInput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
 
-    
+    /**
+     * <p>Defines the screenshots to use as the baseline for comparisons during visual
+     * monitoring comparisons during future runs of this canary. If you omit this
+     * parameter, no changes are made to any baseline screenshots that the canary might
+     * be using already.</p> <p>Visual monitoring is supported only on canaries running
+     * the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+     * Visual monitoring</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+     * Visual monitoring blueprint</a> </p>
+     */
     inline void SetVisualReference(VisualReferenceInput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
 
-    
+    /**
+     * <p>Defines the screenshots to use as the baseline for comparisons during visual
+     * monitoring comparisons during future runs of this canary. If you omit this
+     * parameter, no changes are made to any baseline screenshots that the canary might
+     * be using already.</p> <p>Visual monitoring is supported only on canaries running
+     * the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+     * Visual monitoring</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+     * Visual monitoring blueprint</a> </p>
+     */
     inline UpdateCanaryRequest& WithVisualReference(const VisualReferenceInput& value) { SetVisualReference(value); return *this;}
 
-    
+    /**
+     * <p>Defines the screenshots to use as the baseline for comparisons during visual
+     * monitoring comparisons during future runs of this canary. If you omit this
+     * parameter, no changes are made to any baseline screenshots that the canary might
+     * be using already.</p> <p>Visual monitoring is supported only on canaries running
+     * the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+     * Visual monitoring</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+     * Visual monitoring blueprint</a> </p>
+     */
     inline UpdateCanaryRequest& WithVisualReference(VisualReferenceInput&& value) { SetVisualReference(std::move(value)); return *this;}
 
   private:
