@@ -18,7 +18,11 @@ namespace Model
     NOT_SET,
     ColorBars,
     EndCredits,
-    BlackFrames
+    BlackFrames,
+    OpeningCredits,
+    StudioLogo,
+    Slate,
+    Content
   };
 
 namespace TechnicalCueTypeMapper

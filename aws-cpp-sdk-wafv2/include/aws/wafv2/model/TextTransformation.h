@@ -135,19 +135,15 @@ namespace Model
      * 0x20). However, a standalone termination of a comment (<code>* /</code>) is not
      * acted upon. </p> <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with
      * space characters (ASCII <code>0x20</code>). </p> <p> <b>SQL_HEX_DECODE</b> -
-     * Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>,
-     * <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-     * <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>,
-     * <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal).
-     * Encodings that aren't valid remain in the output.</p> <p> <b>URL_DECODE</b> -
-     * Decode a URL-encoded value. </p> <p> <b>URL_DECODE_UNI</b> - Like
-     * <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code>
-     * encoding. If the code is in the full-width ASCII code range of
-     * <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower
-     * byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
-     * <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode.
-     * This helps input normalization, and minimizing false-positives and
-     * false-negatives for non-English languages.</p>
+     * Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to
+     * (<code>ABC</code>).</p> <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+     * <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for
+     * Microsoft-specific <code>%u</code> encoding. If the code is in the full-width
+     * ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect
+     * and adjust the lower byte. Otherwise, only the lower byte is used and the higher
+     * byte is zeroed. </p> <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
+     * sequences to Unicode. This helps input normalization, and minimizing
+     * false-positives and false-negatives for non-English languages.</p>
      */
     inline const TextTransformationType& GetType() const{ return m_type; }
 
@@ -214,19 +210,15 @@ namespace Model
      * 0x20). However, a standalone termination of a comment (<code>* /</code>) is not
      * acted upon. </p> <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with
      * space characters (ASCII <code>0x20</code>). </p> <p> <b>SQL_HEX_DECODE</b> -
-     * Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>,
-     * <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-     * <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>,
-     * <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal).
-     * Encodings that aren't valid remain in the output.</p> <p> <b>URL_DECODE</b> -
-     * Decode a URL-encoded value. </p> <p> <b>URL_DECODE_UNI</b> - Like
-     * <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code>
-     * encoding. If the code is in the full-width ASCII code range of
-     * <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower
-     * byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
-     * <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode.
-     * This helps input normalization, and minimizing false-positives and
-     * false-negatives for non-English languages.</p>
+     * Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to
+     * (<code>ABC</code>).</p> <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+     * <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for
+     * Microsoft-specific <code>%u</code> encoding. If the code is in the full-width
+     * ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect
+     * and adjust the lower byte. Otherwise, only the lower byte is used and the higher
+     * byte is zeroed. </p> <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
+     * sequences to Unicode. This helps input normalization, and minimizing
+     * false-positives and false-negatives for non-English languages.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -293,19 +285,15 @@ namespace Model
      * 0x20). However, a standalone termination of a comment (<code>* /</code>) is not
      * acted upon. </p> <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with
      * space characters (ASCII <code>0x20</code>). </p> <p> <b>SQL_HEX_DECODE</b> -
-     * Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>,
-     * <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-     * <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>,
-     * <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal).
-     * Encodings that aren't valid remain in the output.</p> <p> <b>URL_DECODE</b> -
-     * Decode a URL-encoded value. </p> <p> <b>URL_DECODE_UNI</b> - Like
-     * <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code>
-     * encoding. If the code is in the full-width ASCII code range of
-     * <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower
-     * byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
-     * <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode.
-     * This helps input normalization, and minimizing false-positives and
-     * false-negatives for non-English languages.</p>
+     * Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to
+     * (<code>ABC</code>).</p> <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+     * <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for
+     * Microsoft-specific <code>%u</code> encoding. If the code is in the full-width
+     * ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect
+     * and adjust the lower byte. Otherwise, only the lower byte is used and the higher
+     * byte is zeroed. </p> <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
+     * sequences to Unicode. This helps input normalization, and minimizing
+     * false-positives and false-negatives for non-English languages.</p>
      */
     inline void SetType(const TextTransformationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -372,19 +360,15 @@ namespace Model
      * 0x20). However, a standalone termination of a comment (<code>* /</code>) is not
      * acted upon. </p> <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with
      * space characters (ASCII <code>0x20</code>). </p> <p> <b>SQL_HEX_DECODE</b> -
-     * Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>,
-     * <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-     * <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>,
-     * <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal).
-     * Encodings that aren't valid remain in the output.</p> <p> <b>URL_DECODE</b> -
-     * Decode a URL-encoded value. </p> <p> <b>URL_DECODE_UNI</b> - Like
-     * <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code>
-     * encoding. If the code is in the full-width ASCII code range of
-     * <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower
-     * byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
-     * <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode.
-     * This helps input normalization, and minimizing false-positives and
-     * false-negatives for non-English languages.</p>
+     * Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to
+     * (<code>ABC</code>).</p> <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+     * <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for
+     * Microsoft-specific <code>%u</code> encoding. If the code is in the full-width
+     * ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect
+     * and adjust the lower byte. Otherwise, only the lower byte is used and the higher
+     * byte is zeroed. </p> <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
+     * sequences to Unicode. This helps input normalization, and minimizing
+     * false-positives and false-negatives for non-English languages.</p>
      */
     inline void SetType(TextTransformationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -451,19 +435,15 @@ namespace Model
      * 0x20). However, a standalone termination of a comment (<code>* /</code>) is not
      * acted upon. </p> <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with
      * space characters (ASCII <code>0x20</code>). </p> <p> <b>SQL_HEX_DECODE</b> -
-     * Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>,
-     * <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-     * <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>,
-     * <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal).
-     * Encodings that aren't valid remain in the output.</p> <p> <b>URL_DECODE</b> -
-     * Decode a URL-encoded value. </p> <p> <b>URL_DECODE_UNI</b> - Like
-     * <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code>
-     * encoding. If the code is in the full-width ASCII code range of
-     * <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower
-     * byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
-     * <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode.
-     * This helps input normalization, and minimizing false-positives and
-     * false-negatives for non-English languages.</p>
+     * Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to
+     * (<code>ABC</code>).</p> <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+     * <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for
+     * Microsoft-specific <code>%u</code> encoding. If the code is in the full-width
+     * ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect
+     * and adjust the lower byte. Otherwise, only the lower byte is used and the higher
+     * byte is zeroed. </p> <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
+     * sequences to Unicode. This helps input normalization, and minimizing
+     * false-positives and false-negatives for non-English languages.</p>
      */
     inline TextTransformation& WithType(const TextTransformationType& value) { SetType(value); return *this;}
 
@@ -530,19 +510,15 @@ namespace Model
      * 0x20). However, a standalone termination of a comment (<code>* /</code>) is not
      * acted upon. </p> <p> <b>REPLACE_NULLS</b> - Replace NULL bytes in the input with
      * space characters (ASCII <code>0x20</code>). </p> <p> <b>SQL_HEX_DECODE</b> -
-     * Decode the following ANSI C escape sequences: <code>\a</code>, <code>\b</code>,
-     * <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>,
-     * <code>\v</code>, <code>\\</code>, <code>\?</code>, <code>\'</code>,
-     * <code>\"</code>, <code>\xHH</code> (hexadecimal), <code>\0OOO</code> (octal).
-     * Encodings that aren't valid remain in the output.</p> <p> <b>URL_DECODE</b> -
-     * Decode a URL-encoded value. </p> <p> <b>URL_DECODE_UNI</b> - Like
-     * <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code>
-     * encoding. If the code is in the full-width ASCII code range of
-     * <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower
-     * byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
-     * <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode.
-     * This helps input normalization, and minimizing false-positives and
-     * false-negatives for non-English languages.</p>
+     * Decode SQL hex data. Example (<code>0x414243</code>) will be decoded to
+     * (<code>ABC</code>).</p> <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
+     * <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for
+     * Microsoft-specific <code>%u</code> encoding. If the code is in the full-width
+     * ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect
+     * and adjust the lower byte. Otherwise, only the lower byte is used and the higher
+     * byte is zeroed. </p> <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character
+     * sequences to Unicode. This helps input normalization, and minimizing
+     * false-positives and false-negatives for non-English languages.</p>
      */
     inline TextTransformation& WithType(TextTransformationType&& value) { SetType(std::move(value)); return *this;}
 

@@ -205,6 +205,63 @@ namespace Model
      */
     inline DescribeManagedRuleGroupRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline DescribeManagedRuleGroupRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline DescribeManagedRuleGroupRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the rule group. You can only use a version that is not
+     * scheduled for expiration. If you don't provide this, WAF uses the vendor's
+     * default version. </p>
+     */
+    inline DescribeManagedRuleGroupRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
   private:
 
     Aws::String m_vendorName;
@@ -215,6 +272,9 @@ namespace Model
 
     Scope m_scope;
     bool m_scopeHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
   };
 
 } // namespace Model

@@ -235,32 +235,38 @@ namespace Model
 
 
     /**
-     * <p>Specify IPV4 or IPV6. </p>
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
      */
     inline const IPAddressVersion& GetIPAddressVersion() const{ return m_iPAddressVersion; }
 
     /**
-     * <p>Specify IPV4 or IPV6. </p>
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
      */
     inline bool IPAddressVersionHasBeenSet() const { return m_iPAddressVersionHasBeenSet; }
 
     /**
-     * <p>Specify IPV4 or IPV6. </p>
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
      */
     inline void SetIPAddressVersion(const IPAddressVersion& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
 
     /**
-     * <p>Specify IPV4 or IPV6. </p>
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
      */
     inline void SetIPAddressVersion(IPAddressVersion&& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = std::move(value); }
 
     /**
-     * <p>Specify IPV4 or IPV6. </p>
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
      */
     inline IPSet& WithIPAddressVersion(const IPAddressVersion& value) { SetIPAddressVersion(value); return *this;}
 
     /**
-     * <p>Specify IPV4 or IPV6. </p>
+     * <p>The version of the IP addresses, either <code>IPV4</code> or
+     * <code>IPV6</code>. </p>
      */
     inline IPSet& WithIPAddressVersion(IPAddressVersion&& value) { SetIPAddressVersion(std::move(value)); return *this;}
 

@@ -129,32 +129,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 location to store the results of training.</p>
+     * <p>The Amazon S3 bucket location to store the results of training. The S3 bucket
+     * can be in any AWS account as long as the caller has <code>s3:PutObject</code>
+     * permissions on the S3 bucket.</p>
      */
     inline const OutputConfig& GetOutputConfig() const{ return m_outputConfig; }
 
     /**
-     * <p>The Amazon S3 location to store the results of training.</p>
+     * <p>The Amazon S3 bucket location to store the results of training. The S3 bucket
+     * can be in any AWS account as long as the caller has <code>s3:PutObject</code>
+     * permissions on the S3 bucket.</p>
      */
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 location to store the results of training.</p>
+     * <p>The Amazon S3 bucket location to store the results of training. The S3 bucket
+     * can be in any AWS account as long as the caller has <code>s3:PutObject</code>
+     * permissions on the S3 bucket.</p>
      */
     inline void SetOutputConfig(const OutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
 
     /**
-     * <p>The Amazon S3 location to store the results of training.</p>
+     * <p>The Amazon S3 bucket location to store the results of training. The S3 bucket
+     * can be in any AWS account as long as the caller has <code>s3:PutObject</code>
+     * permissions on the S3 bucket.</p>
      */
     inline void SetOutputConfig(OutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
 
     /**
-     * <p>The Amazon S3 location to store the results of training.</p>
+     * <p>The Amazon S3 bucket location to store the results of training. The S3 bucket
+     * can be in any AWS account as long as the caller has <code>s3:PutObject</code>
+     * permissions on the S3 bucket.</p>
      */
     inline CreateProjectVersionRequest& WithOutputConfig(const OutputConfig& value) { SetOutputConfig(value); return *this;}
 
     /**
-     * <p>The Amazon S3 location to store the results of training.</p>
+     * <p>The Amazon S3 bucket location to store the results of training. The S3 bucket
+     * can be in any AWS account as long as the caller has <code>s3:PutObject</code>
+     * permissions on the S3 bucket.</p>
      */
     inline CreateProjectVersionRequest& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
@@ -290,96 +302,128 @@ namespace Model
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline CreateProjectVersionRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline CreateProjectVersionRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
      * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
-     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
-     * images copied into the service for model training. Your source images are
-     * unaffected. The key is also used to encrypt training results and manifest files
-     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
-     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
-     * service are encrypted using a key that AWS owns and manages.</p>
+     * your CMK, an alias for your CMK, or an alias ARN. The key is used to encrypt
+     * training and test images copied into the service for model training. Your source
+     * images are unaffected. The key is also used to encrypt training results and
+     * manifest files written to the output Amazon S3 bucket
+     * (<code>OutputConfig</code>).</p> <p>If you choose to use your own CMK, you need
+     * the following permissions on the CMK.</p> <ul> <li> <p>kms:CreateGrant</p> </li>
+     * <li> <p>kms:DescribeKey</p> </li> <li> <p>kms:GenerateDataKey</p> </li> <li>
+     * <p>kms:Decrypt</p> </li> </ul> <p>If you don't specify a value for
+     * <code>KmsKeyId</code>, images copied into the service are encrypted using a key
+     * that AWS owns and manages.</p>
      */
     inline CreateProjectVersionRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

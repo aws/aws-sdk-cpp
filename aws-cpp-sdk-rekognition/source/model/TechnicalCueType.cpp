@@ -23,6 +23,10 @@ namespace Aws
         static const int ColorBars_HASH = HashingUtils::HashString("ColorBars");
         static const int EndCredits_HASH = HashingUtils::HashString("EndCredits");
         static const int BlackFrames_HASH = HashingUtils::HashString("BlackFrames");
+        static const int OpeningCredits_HASH = HashingUtils::HashString("OpeningCredits");
+        static const int StudioLogo_HASH = HashingUtils::HashString("StudioLogo");
+        static const int Slate_HASH = HashingUtils::HashString("Slate");
+        static const int Content_HASH = HashingUtils::HashString("Content");
 
 
         TechnicalCueType GetTechnicalCueTypeForName(const Aws::String& name)
@@ -39,6 +43,22 @@ namespace Aws
           else if (hashCode == BlackFrames_HASH)
           {
             return TechnicalCueType::BlackFrames;
+          }
+          else if (hashCode == OpeningCredits_HASH)
+          {
+            return TechnicalCueType::OpeningCredits;
+          }
+          else if (hashCode == StudioLogo_HASH)
+          {
+            return TechnicalCueType::StudioLogo;
+          }
+          else if (hashCode == Slate_HASH)
+          {
+            return TechnicalCueType::Slate;
+          }
+          else if (hashCode == Content_HASH)
+          {
+            return TechnicalCueType::Content;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +80,14 @@ namespace Aws
             return "EndCredits";
           case TechnicalCueType::BlackFrames:
             return "BlackFrames";
+          case TechnicalCueType::OpeningCredits:
+            return "OpeningCredits";
+          case TechnicalCueType::StudioLogo:
+            return "StudioLogo";
+          case TechnicalCueType::Slate:
+            return "Slate";
+          case TechnicalCueType::Content:
+            return "Content";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/RuleSummary.h>
 #include <aws/wafv2/model/LabelSummary.h>
 #include <utility>
@@ -33,6 +33,120 @@ namespace Model
     DescribeManagedRuleGroupResult();
     DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeManagedRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionName = value; }
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionName = std::move(value); }
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline void SetVersionName(const char* value) { m_versionName.assign(value); }
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline DescribeManagedRuleGroupResult& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline DescribeManagedRuleGroupResult& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The managed rule group's version. </p>
+     */
+    inline DescribeManagedRuleGroupResult& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArn = value; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArn = std::move(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline void SetSnsTopicArn(const char* value) { m_snsTopicArn.assign(value); }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline DescribeManagedRuleGroupResult& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline DescribeManagedRuleGroupResult& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS
+     * topic that's used to record changes to the managed rule group. You can subscribe
+     * to the SNS topic to receive notifications when the managed rule group is
+     * modified, such as for new versions and for version expiration. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+     * Notification Service Developer Guide</a>.</p>
+     */
+    inline DescribeManagedRuleGroupResult& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
 
     /**
@@ -294,6 +408,10 @@ namespace Model
     inline DescribeManagedRuleGroupResult& AddConsumedLabels(LabelSummary&& value) { m_consumedLabels.push_back(std::move(value)); return *this; }
 
   private:
+
+    Aws::String m_versionName;
+
+    Aws::String m_snsTopicArn;
 
     long long m_capacity;
 

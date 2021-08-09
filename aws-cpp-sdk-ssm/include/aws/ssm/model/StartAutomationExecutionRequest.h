@@ -663,82 +663,98 @@ namespace Model
 
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>A location is a combination of Regions and/or accounts where you want to run
-     * the automation. Use this operation to start an automation in multiple Regions
-     * and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

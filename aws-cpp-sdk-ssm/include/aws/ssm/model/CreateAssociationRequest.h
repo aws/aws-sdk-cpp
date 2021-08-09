@@ -46,8 +46,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -62,8 +62,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -78,8 +78,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -94,8 +94,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -110,8 +110,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -126,8 +126,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -142,8 +142,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -158,8 +158,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager documents (SSM
-     * documents) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * documents) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -395,9 +395,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -406,9 +406,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -417,9 +417,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -428,9 +428,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -439,9 +439,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -450,9 +450,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -461,9 +461,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -472,9 +472,9 @@ namespace Model
 
     /**
      * <p>The targets for the association. You can target instances by using tags,
-     * Amazon Web Services resource groups, all instances in an account, or individual
-     * instance IDs. For more information about choosing targets for an association,
-     * see <a
+     * Amazon Web Services resource groups, all instances in an Amazon Web Services
+     * account, or individual instance IDs. For more information about choosing targets
+     * for an association, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
      * targets and rate controls with State Manager associations</a> in the <i>Amazon
      * Web Services Systems Manager User Guide</i>.</p>
@@ -1130,58 +1130,58 @@ namespace Model
 
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline CreateAssociationRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline CreateAssociationRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline CreateAssociationRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to create an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * create an association in multiple Regions and multiple accounts.</p>
      */
     inline CreateAssociationRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

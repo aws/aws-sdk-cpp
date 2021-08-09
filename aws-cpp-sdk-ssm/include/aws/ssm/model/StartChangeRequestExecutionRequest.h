@@ -426,10 +426,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -437,10 +437,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -448,10 +448,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -459,10 +459,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -470,10 +470,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline StartChangeRequestExecutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -481,10 +481,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline StartChangeRequestExecutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -492,10 +492,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline StartChangeRequestExecutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -503,10 +503,10 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can specify a maximum of
      * five tags for a change request. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
-     * might want to tag a change request to identify an environment or target Region.
-     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> <li> <p>
-     * <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
+     * might want to tag a change request to identify an environment or target Amazon
+     * Web Services Region. In this case, you could specify the following key-value
+     * pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p>
+     * </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>
      */
     inline StartChangeRequestExecutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

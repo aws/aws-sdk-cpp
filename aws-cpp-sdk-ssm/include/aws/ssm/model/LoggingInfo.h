@@ -129,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline const Aws::String& GetS3Region() const{ return m_s3Region; }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline bool S3RegionHasBeenSet() const { return m_s3RegionHasBeenSet; }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline void SetS3Region(const Aws::String& value) { m_s3RegionHasBeenSet = true; m_s3Region = value; }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline void SetS3Region(Aws::String&& value) { m_s3RegionHasBeenSet = true; m_s3Region = std::move(value); }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline void SetS3Region(const char* value) { m_s3RegionHasBeenSet = true; m_s3Region.assign(value); }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline LoggingInfo& WithS3Region(const Aws::String& value) { SetS3Region(value); return *this;}
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline LoggingInfo& WithS3Region(Aws::String&& value) { SetS3Region(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline LoggingInfo& WithS3Region(const char* value) { SetS3Region(value); return *this;}
 

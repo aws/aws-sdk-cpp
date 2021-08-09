@@ -30,6 +30,18 @@ DescribeManagedRuleGroupResult::DescribeManagedRuleGroupResult(const Aws::Amazon
 DescribeManagedRuleGroupResult& DescribeManagedRuleGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+  }
+
+  if(jsonValue.ValueExists("SnsTopicArn"))
+  {
+    m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
+
+  }
+
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");

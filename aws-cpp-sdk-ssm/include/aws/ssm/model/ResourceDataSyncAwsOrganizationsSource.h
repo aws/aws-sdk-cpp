@@ -28,8 +28,8 @@ namespace Model
   /**
    * <p>Information about the <code>AwsOrganizationsSource</code> resource data sync
    * source. A sync source of this type can synchronize data from Organizations or,
-   * if an Amazon Web Services organization isn't present, from multiple
-   * Regions.</p><p><h3>See Also:</h3>   <a
+   * if an Amazon Web Services organization isn't present, from multiple Amazon Web
+   * Services Regions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncAwsOrganizationsSource">AWS
    * API Reference</a></p>
    */

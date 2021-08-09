@@ -140,37 +140,49 @@ namespace Model
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
-     * completion status of the people detection operation to.</p>
+     * completion status of the people detection operation to. The Amazon SNS topic
+     * must have a topic name that begins with <i>AmazonRekognition</i> if you are
+     * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
-     * completion status of the people detection operation to.</p>
+     * completion status of the people detection operation to. The Amazon SNS topic
+     * must have a topic name that begins with <i>AmazonRekognition</i> if you are
+     * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
-     * completion status of the people detection operation to.</p>
+     * completion status of the people detection operation to. The Amazon SNS topic
+     * must have a topic name that begins with <i>AmazonRekognition</i> if you are
+     * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
-     * completion status of the people detection operation to.</p>
+     * completion status of the people detection operation to. The Amazon SNS topic
+     * must have a topic name that begins with <i>AmazonRekognition</i> if you are
+     * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
     inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
-     * completion status of the people detection operation to.</p>
+     * completion status of the people detection operation to. The Amazon SNS topic
+     * must have a topic name that begins with <i>AmazonRekognition</i> if you are
+     * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
     inline StartPersonTrackingRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
-     * completion status of the people detection operation to.</p>
+     * completion status of the people detection operation to. The Amazon SNS topic
+     * must have a topic name that begins with <i>AmazonRekognition</i> if you are
+     * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
     inline StartPersonTrackingRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 

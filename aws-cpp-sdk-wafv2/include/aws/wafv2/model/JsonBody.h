@@ -129,13 +129,12 @@ namespace Model
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
      * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as characters that aren't valid, duplicate keys,
-     * truncation, and any content whose root node isn't an object or an array. </p>
-     * <p>WAF parses the JSON in the following examples as two valid key, value pairs:
-     * </p> <ul> <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-     * </p> </li> <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-     * </p> </li> <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-     * </p> </li> </ul>
+     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
+     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
+     * in the following examples as two valid key, value pairs: </p> <ul> <li>
+     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
+     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
+     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline const BodyParsingFallbackBehavior& GetInvalidFallbackBehavior() const{ return m_invalidFallbackBehavior; }
 
@@ -150,13 +149,12 @@ namespace Model
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
      * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as characters that aren't valid, duplicate keys,
-     * truncation, and any content whose root node isn't an object or an array. </p>
-     * <p>WAF parses the JSON in the following examples as two valid key, value pairs:
-     * </p> <ul> <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-     * </p> </li> <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-     * </p> </li> <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-     * </p> </li> </ul>
+     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
+     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
+     * in the following examples as two valid key, value pairs: </p> <ul> <li>
+     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
+     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
+     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline bool InvalidFallbackBehaviorHasBeenSet() const { return m_invalidFallbackBehaviorHasBeenSet; }
 
@@ -171,13 +169,12 @@ namespace Model
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
      * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as characters that aren't valid, duplicate keys,
-     * truncation, and any content whose root node isn't an object or an array. </p>
-     * <p>WAF parses the JSON in the following examples as two valid key, value pairs:
-     * </p> <ul> <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-     * </p> </li> <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-     * </p> </li> <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-     * </p> </li> </ul>
+     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
+     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
+     * in the following examples as two valid key, value pairs: </p> <ul> <li>
+     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
+     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
+     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline void SetInvalidFallbackBehavior(const BodyParsingFallbackBehavior& value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = value; }
 
@@ -192,13 +189,12 @@ namespace Model
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
      * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as characters that aren't valid, duplicate keys,
-     * truncation, and any content whose root node isn't an object or an array. </p>
-     * <p>WAF parses the JSON in the following examples as two valid key, value pairs:
-     * </p> <ul> <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-     * </p> </li> <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-     * </p> </li> <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-     * </p> </li> </ul>
+     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
+     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
+     * in the following examples as two valid key, value pairs: </p> <ul> <li>
+     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
+     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
+     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline void SetInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { m_invalidFallbackBehaviorHasBeenSet = true; m_invalidFallbackBehavior = std::move(value); }
 
@@ -213,13 +209,12 @@ namespace Model
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
      * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as characters that aren't valid, duplicate keys,
-     * truncation, and any content whose root node isn't an object or an array. </p>
-     * <p>WAF parses the JSON in the following examples as two valid key, value pairs:
-     * </p> <ul> <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-     * </p> </li> <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-     * </p> </li> <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-     * </p> </li> </ul>
+     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
+     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
+     * in the following examples as two valid key, value pairs: </p> <ul> <li>
+     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
+     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
+     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline JsonBody& WithInvalidFallbackBehavior(const BodyParsingFallbackBehavior& value) { SetInvalidFallbackBehavior(value); return *this;}
 
@@ -234,13 +229,12 @@ namespace Model
      * statement.</p> </li> </ul> <p>If you don't provide this setting, WAF parses and
      * evaluates the content only up to the first parsing failure that it encounters.
      * </p> <p>WAF does its best to parse the entire JSON body, but might be forced to
-     * stop for reasons such as characters that aren't valid, duplicate keys,
-     * truncation, and any content whose root node isn't an object or an array. </p>
-     * <p>WAF parses the JSON in the following examples as two valid key, value pairs:
-     * </p> <ul> <li> <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
-     * </p> </li> <li> <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code>
-     * </p> </li> <li> <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
-     * </p> </li> </ul>
+     * stop for reasons such as invalid characters, duplicate keys, truncation, and any
+     * content whose root node isn't an object or an array. </p> <p>WAF parses the JSON
+     * in the following examples as two valid key, value pairs: </p> <ul> <li>
+     * <p>Missing comma: <code>{"key1":"value1""key2":"value2"}</code> </p> </li> <li>
+     * <p>Missing colon: <code>{"key1":"value1","key2""value2"}</code> </p> </li> <li>
+     * <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code> </p> </li> </ul>
      */
     inline JsonBody& WithInvalidFallbackBehavior(BodyParsingFallbackBehavior&& value) { SetInvalidFallbackBehavior(std::move(value)); return *this;}
 

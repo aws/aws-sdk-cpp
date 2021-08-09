@@ -160,9 +160,9 @@ namespace Model
 
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -171,9 +171,9 @@ namespace Model
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -182,9 +182,9 @@ namespace Model
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -193,9 +193,9 @@ namespace Model
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -204,9 +204,9 @@ namespace Model
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -215,9 +215,9 @@ namespace Model
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -226,9 +226,9 @@ namespace Model
     inline CreateActivationRequest& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services
@@ -237,9 +237,9 @@ namespace Model
     inline CreateActivationRequest& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Identity and Access Management (IAM) role that you want to assign to the
-     * managed instance. This IAMrole must provide AssumeRole permissions for the
-     * Amazon Web Services Systems Manager service principal
+     * <p>The name of the Identity and Access Management (IAM) role that you want to
+     * assign to the managed instance. This IAM role must provide AssumeRole
+     * permissions for the Amazon Web Services Systems Manager service principal
      * <code>ssm.amazonaws.com</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
      * an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services

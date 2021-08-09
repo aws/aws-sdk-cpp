@@ -911,60 +911,66 @@ namespace Model
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple
-     * Regions and accounts. For more information, see <a
+     * Amazon Web Services Regions and Amazon Web Services accounts. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple
-     * Regions and accounts. For more information, see <a
+     * Amazon Web Services Regions and Amazon Web Services accounts. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline bool AutomationTypeHasBeenSet() const { return m_automationTypeHasBeenSet; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple
-     * Regions and accounts. For more information, see <a
+     * Amazon Web Services Regions and Amazon Web Services accounts. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(const AutomationType& value) { m_automationTypeHasBeenSet = true; m_automationType = value; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple
-     * Regions and accounts. For more information, see <a
+     * Amazon Web Services Regions and Amazon Web Services accounts. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(AutomationType&& value) { m_automationTypeHasBeenSet = true; m_automationType = std::move(value); }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple
-     * Regions and accounts. For more information, see <a
+     * Amazon Web Services Regions and Amazon Web Services accounts. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(const AutomationType& value) { SetAutomationType(value); return *this;}
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple
-     * Regions and accounts. For more information, see <a
+     * Amazon Web Services Regions and Amazon Web Services accounts. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple Regions and accounts</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and accounts</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(AutomationType&& value) { SetAutomationType(std::move(value)); return *this;}
 

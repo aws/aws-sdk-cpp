@@ -146,6 +146,71 @@ namespace Model
 
 
     /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline ManagedRuleGroupStatement& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline ManagedRuleGroupStatement& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the managed rule group to use. If you specify this, the
+     * version setting is fixed until you change it. If you don't specify this, WAF
+     * uses the vendor's default version, and then keeps the version at the vendor's
+     * default when the vendor updates the managed rule group settings. </p>
+     */
+    inline ManagedRuleGroupStatement& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+
+    /**
      * <p>The rules whose actions are set to <code>COUNT</code> by the web ACL,
      * regardless of the action that is set on the rule. This effectively excludes the
      * rule from acting on web requests. </p>
@@ -263,6 +328,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
     bool m_excludedRulesHasBeenSet;

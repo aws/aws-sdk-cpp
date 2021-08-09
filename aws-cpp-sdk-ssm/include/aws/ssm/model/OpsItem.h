@@ -32,9 +32,21 @@ namespace Model
 
   /**
    * <p>Operations engineers and IT professionals use Amazon Web Services Systems
-   * Manager OpsCenter to view, investigate, and remediate operational issues
-   * impacting the performance and health of their Amazon Web Services resources. For
-   * more information, see <a
+   * Manager OpsCenter to view, investigate, and remediate operational work items
+   * (OpsItems) impacting the performance and health of their Amazon Web Services
+   * resources. OpsCenter is integrated with Amazon EventBridge and Amazon
+   * CloudWatch. This means you can configure these services to automatically create
+   * an OpsItem in OpsCenter when a CloudWatch alarm enters the ALARM state or when
+   * EventBridge processes an event from any Amazon Web Services service that
+   * publishes events. Configuring Amazon CloudWatch alarms and EventBridge events to
+   * automatically create OpsItems allows you to quickly diagnose and remediate
+   * issues with Amazon Web Services resources from a single console.</p> <p>To help
+   * you diagnose issues, each OpsItem includes contextually relevant information
+   * such as the name and ID of the Amazon Web Services resource that generated the
+   * OpsItem, alarm or event details, alarm history, and an alarm timeline graph. For
+   * the Amazon Web Services resource, OpsCenter aggregates information from Config,
+   * CloudTrail logs, and EventBridge, so you don't have to navigate across multiple
+   * console pages during your investigation. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
    * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
@@ -51,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline OpsItem& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline OpsItem& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline OpsItem& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -213,42 +225,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline OpsItem& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline OpsItem& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline OpsItem& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
