@@ -1184,14 +1184,14 @@ namespace Model
         virtual void BatchCreateAttendeeAsync(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds a specified number of users to a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchCreateChannelMembershipOutcome BatchCreateChannelMembership(const Model::BatchCreateChannelMembershipRequest& request) const;
 
         /**
-         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds a specified number of users to a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -1200,7 +1200,7 @@ namespace Model
         virtual Model::BatchCreateChannelMembershipOutcomeCallable BatchCreateChannelMembershipCallable(const Model::BatchCreateChannelMembershipRequest& request) const;
 
         /**
-         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds a specified number of users to a channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership">AWS
          * API Reference</a></p>
          *
@@ -3297,7 +3297,7 @@ namespace Model
         virtual void DescribeAppInstanceAdminAsync(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the full details of an <code>AppInstanceUser</code> . </p><p><h3>See
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
          * API Reference</a></p>
@@ -3305,7 +3305,7 @@ namespace Model
         virtual Model::DescribeAppInstanceUserOutcome DescribeAppInstanceUser(const Model::DescribeAppInstanceUserRequest& request) const;
 
         /**
-         * <p> Returns the full details of an <code>AppInstanceUser</code> . </p><p><h3>See
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
          * API Reference</a></p>
@@ -3315,7 +3315,7 @@ namespace Model
         virtual Model::DescribeAppInstanceUserOutcomeCallable DescribeAppInstanceUserCallable(const Model::DescribeAppInstanceUserRequest& request) const;
 
         /**
-         * <p> Returns the full details of an <code>AppInstanceUser</code> . </p><p><h3>See
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser">AWS
          * API Reference</a></p>
@@ -4709,7 +4709,7 @@ namespace Model
         virtual void ListAppInstanceAdminsAsync(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> List all <code>AppInstanceUsers</code> created under a single
+         * <p>List all <code>AppInstanceUsers</code> created under a single
          * <code>AppInstance</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
          * API Reference</a></p>
@@ -4717,7 +4717,7 @@ namespace Model
         virtual Model::ListAppInstanceUsersOutcome ListAppInstanceUsers(const Model::ListAppInstanceUsersRequest& request) const;
 
         /**
-         * <p> List all <code>AppInstanceUsers</code> created under a single
+         * <p>List all <code>AppInstanceUsers</code> created under a single
          * <code>AppInstance</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
          * API Reference</a></p>
@@ -4727,7 +4727,7 @@ namespace Model
         virtual Model::ListAppInstanceUsersOutcomeCallable ListAppInstanceUsersCallable(const Model::ListAppInstanceUsersRequest& request) const;
 
         /**
-         * <p> List all <code>AppInstanceUsers</code> created under a single
+         * <p>List all <code>AppInstanceUsers</code> created under a single
          * <code>AppInstance</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers">AWS
          * API Reference</a></p>

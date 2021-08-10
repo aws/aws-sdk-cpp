@@ -21,7 +21,8 @@ namespace Model
     us_west_2,
     ap_southeast_2,
     ca_central_1,
-    eu_west_1
+    eu_west_1,
+    auto_
   };
 
 namespace TranscribeMedicalRegionMapper
