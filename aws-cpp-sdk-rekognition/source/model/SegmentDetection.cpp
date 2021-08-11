@@ -31,7 +31,13 @@ SegmentDetection::SegmentDetection() :
     m_endTimecodeSMPTEHasBeenSet(false),
     m_durationSMPTEHasBeenSet(false),
     m_technicalCueSegmentHasBeenSet(false),
-    m_shotSegmentHasBeenSet(false)
+    m_shotSegmentHasBeenSet(false),
+    m_startFrameNumber(0),
+    m_startFrameNumberHasBeenSet(false),
+    m_endFrameNumber(0),
+    m_endFrameNumberHasBeenSet(false),
+    m_durationFrames(0),
+    m_durationFramesHasBeenSet(false)
 {
 }
 
@@ -48,7 +54,13 @@ SegmentDetection::SegmentDetection(JsonView jsonValue) :
     m_endTimecodeSMPTEHasBeenSet(false),
     m_durationSMPTEHasBeenSet(false),
     m_technicalCueSegmentHasBeenSet(false),
-    m_shotSegmentHasBeenSet(false)
+    m_shotSegmentHasBeenSet(false),
+    m_startFrameNumber(0),
+    m_startFrameNumberHasBeenSet(false),
+    m_endFrameNumber(0),
+    m_endFrameNumberHasBeenSet(false),
+    m_durationFrames(0),
+    m_durationFramesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +130,27 @@ SegmentDetection& SegmentDetection::operator =(JsonView jsonValue)
     m_shotSegmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StartFrameNumber"))
+  {
+    m_startFrameNumber = jsonValue.GetInt64("StartFrameNumber");
+
+    m_startFrameNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndFrameNumber"))
+  {
+    m_endFrameNumber = jsonValue.GetInt64("EndFrameNumber");
+
+    m_endFrameNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DurationFrames"))
+  {
+    m_durationFrames = jsonValue.GetInt64("DurationFrames");
+
+    m_durationFramesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +208,24 @@ JsonValue SegmentDetection::Jsonize() const
   if(m_shotSegmentHasBeenSet)
   {
    payload.WithObject("ShotSegment", m_shotSegment.Jsonize());
+
+  }
+
+  if(m_startFrameNumberHasBeenSet)
+  {
+   payload.WithInt64("StartFrameNumber", m_startFrameNumber);
+
+  }
+
+  if(m_endFrameNumberHasBeenSet)
+  {
+   payload.WithInt64("EndFrameNumber", m_endFrameNumber);
+
+  }
+
+  if(m_durationFramesHasBeenSet)
+  {
+   payload.WithInt64("DurationFrames", m_durationFrames);
 
   }
 

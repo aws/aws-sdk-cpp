@@ -34,142 +34,142 @@ namespace Model
 
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersion = value; }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline const Aws::String& GetAuthor() const{ return m_author; }
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline void SetAuthor(const Aws::String& value) { m_author = value; }
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline void SetAuthor(Aws::String&& value) { m_author = std::move(value); }
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline void SetAuthor(const char* value) { m_author.assign(value); }
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
 
     /**
-     * <p>The user ID of the person in the organization who requested the document
-     * review.</p>
+     * <p>The user ID of the person in the organization who requested the review of the
+     * change template.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithAuthor(const char* value) { SetAuthor(value); return *this;}
 
 
     /**
-     * <p>Information about the response to the document approval request.</p>
+     * <p>Information about the response to the change template approval request.</p>
      */
     inline const DocumentMetadataResponseInfo& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Information about the response to the document approval request.</p>
+     * <p>Information about the response to the change template approval request.</p>
      */
     inline void SetMetadata(const DocumentMetadataResponseInfo& value) { m_metadata = value; }
 
     /**
-     * <p>Information about the response to the document approval request.</p>
+     * <p>Information about the response to the change template approval request.</p>
      */
     inline void SetMetadata(DocumentMetadataResponseInfo&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>Information about the response to the document approval request.</p>
+     * <p>Information about the response to the change template approval request.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithMetadata(const DocumentMetadataResponseInfo& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Information about the response to the document approval request.</p>
+     * <p>Information about the response to the change template approval request.</p>
      */
     inline ListDocumentMetadataHistoryResult& WithMetadata(DocumentMetadataResponseInfo&& value) { SetMetadata(std::move(value)); return *this;}
 

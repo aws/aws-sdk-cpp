@@ -38,118 +38,100 @@ namespace Model
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline UpdateDataCatalogRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline UpdateDataCatalogRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the data catalog to update. The catalog name must be unique for
-     * the AWS account and can use a maximum of 128 alphanumeric, underscore, at sign,
-     * or hyphen characters.</p>
+     * the Amazon Web Services account and can use a maximum of 128 alphanumeric,
+     * underscore, at sign, or hyphen characters.</p>
      */
     inline UpdateDataCatalogRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for
-     * a federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-     *  <p>Do not use the <code>GLUE</code> type. This refers to the
-     * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.</p> 
+     * a federated catalog, <code>HIVE</code> for an external hive metastore, or
+     * <code>GLUE</code> for an Glue Data Catalog.</p>
      */
     inline const DataCatalogType& GetType() const{ return m_type; }
 
     /**
      * <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for
-     * a federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-     *  <p>Do not use the <code>GLUE</code> type. This refers to the
-     * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.</p> 
+     * a federated catalog, <code>HIVE</code> for an external hive metastore, or
+     * <code>GLUE</code> for an Glue Data Catalog.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for
-     * a federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-     *  <p>Do not use the <code>GLUE</code> type. This refers to the
-     * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.</p> 
+     * a federated catalog, <code>HIVE</code> for an external hive metastore, or
+     * <code>GLUE</code> for an Glue Data Catalog.</p>
      */
     inline void SetType(const DataCatalogType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for
-     * a federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-     *  <p>Do not use the <code>GLUE</code> type. This refers to the
-     * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.</p> 
+     * a federated catalog, <code>HIVE</code> for an external hive metastore, or
+     * <code>GLUE</code> for an Glue Data Catalog.</p>
      */
     inline void SetType(DataCatalogType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for
-     * a federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-     *  <p>Do not use the <code>GLUE</code> type. This refers to the
-     * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.</p> 
+     * a federated catalog, <code>HIVE</code> for an external hive metastore, or
+     * <code>GLUE</code> for an Glue Data Catalog.</p>
      */
     inline UpdateDataCatalogRequest& WithType(const DataCatalogType& value) { SetType(value); return *this;}
 
     /**
      * <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for
-     * a federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-     *  <p>Do not use the <code>GLUE</code> type. This refers to the
-     * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one. Specifying the <code>GLUE</code> type will result in an
-     * <code>INVALID_INPUT</code> error.</p> 
+     * a federated catalog, <code>HIVE</code> for an external hive metastore, or
+     * <code>GLUE</code> for an Glue Data Catalog.</p>
      */
     inline UpdateDataCatalogRequest& WithType(DataCatalogType&& value) { SetType(std::move(value)); return *this;}
 

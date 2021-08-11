@@ -1024,50 +1024,50 @@ namespace Model
 
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>The combination of Regions and/or accounts where you want to run the
-     * Automation.</p>
+     * <p>The combination of Amazon Web Services Regions and/or Amazon Web Services
+     * accounts where you want to run the Automation.</p>
      */
     inline AutomationExecution& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

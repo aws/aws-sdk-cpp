@@ -50,8 +50,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -66,8 +66,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -82,8 +82,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -98,8 +98,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -114,8 +114,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -130,8 +130,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -146,8 +146,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -162,8 +162,8 @@ namespace Model
      * the instance. You can specify Command or Automation runbooks.</p> <p>You can
      * specify Amazon Web Services-predefined documents, documents you created, or a
      * document that is shared with you from another account.</p> <p>For SSM documents
-     * that are shared with you from other accounts, you must specify the complete SSM
-     * document ARN, in the following format:</p> <p>
+     * that are shared with you from other Amazon Web Services accounts, you must
+     * specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -175,42 +175,114 @@ namespace Model
 
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationBatchRequestEntry& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationBatchRequestEntry& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance. </p>
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
+     * To specify an instance ID for an association, use the <code>Targets</code>
+     * parameter. Requests that include the parameter <code>InstanceID</code> with
+     * Systems Manager documents (SSM documents) that use schema version 2.0 or later
+     * will fail. In addition, if you use the parameter <code>InstanceId</code>, you
+     * can't use the parameters <code>AssociationName</code>,
+     * <code>DocumentVersion</code>, <code>MaxErrors</code>,
+     * <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
+     * <code>ScheduleExpression</code>. To use these parameters, you must use the
+     * <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationBatchRequestEntry& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

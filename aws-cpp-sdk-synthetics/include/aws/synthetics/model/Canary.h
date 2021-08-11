@@ -560,22 +560,52 @@ namespace Model
     inline Canary& WithVpcConfig(VpcConfigOutput&& value) { SetVpcConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
     inline const VisualReferenceOutput& GetVisualReference() const{ return m_visualReference; }
 
-    
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
     inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
 
-    
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
     inline void SetVisualReference(const VisualReferenceOutput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
 
-    
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
     inline void SetVisualReference(VisualReferenceOutput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
 
-    
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
     inline Canary& WithVisualReference(const VisualReferenceOutput& value) { SetVisualReference(value); return *this;}
 
-    
+    /**
+     * <p>If this canary performs visual monitoring by comparing screenshots, this
+     * structure contains the ID of the canary run to use as the baseline for
+     * screenshots, and the coordinates of any parts of the screen to ignore during the
+     * visual monitoring comparison.</p>
+     */
     inline Canary& WithVisualReference(VisualReferenceOutput&& value) { SetVisualReference(std::move(value)); return *this;}
 
 

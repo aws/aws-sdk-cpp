@@ -18,6 +18,7 @@ using namespace Aws::Http;
 ListStreamingSessionsRequest::ListStreamingSessionsRequest() : 
     m_createdByHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
+    m_ownedByHasBeenSet(false),
     m_sessionIdsHasBeenSet(false),
     m_studioIdHasBeenSet(false)
 {
@@ -42,6 +43,13 @@ void ListStreamingSessionsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_ownedByHasBeenSet)
+    {
+      ss << m_ownedBy;
+      uri.AddQueryStringParameter("ownedBy", ss.str());
       ss.str("");
     }
 

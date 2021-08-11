@@ -114,17 +114,17 @@ namespace Model
 
 
     /**
-     * <p>The size of the block.</p>
+     * <p>The size of the blocks in the snapshot, in bytes.</p>
      */
     inline int GetBlockSize() const{ return m_blockSize; }
 
     /**
-     * <p>The size of the block.</p>
+     * <p>The size of the blocks in the snapshot, in bytes.</p>
      */
     inline void SetBlockSize(int value) { m_blockSize = value; }
 
     /**
-     * <p>The size of the block.</p>
+     * <p>The size of the blocks in the snapshot, in bytes.</p>
      */
     inline ListChangedBlocksResult& WithBlockSize(int value) { SetBlockSize(value); return *this;}
 

@@ -1864,50 +1864,74 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline HealthCheckConfig& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline HealthCheckConfig& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller
-     * routing control.</p>
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
      */
     inline HealthCheckConfig& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
 

@@ -26,7 +26,8 @@ namespace Model
     eu_central_1,
     eu_west_1,
     eu_west_2,
-    sa_east_1
+    sa_east_1,
+    auto_
   };
 
 namespace TranscribeRegionMapper

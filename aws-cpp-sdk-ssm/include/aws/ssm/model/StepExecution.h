@@ -933,38 +933,38 @@ namespace Model
 
 
     /**
-     * <p>The combination of Regions and accounts targeted by the current Automation
-     * execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline const TargetLocation& GetTargetLocation() const{ return m_targetLocation; }
 
     /**
-     * <p>The combination of Regions and accounts targeted by the current Automation
-     * execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline bool TargetLocationHasBeenSet() const { return m_targetLocationHasBeenSet; }
 
     /**
-     * <p>The combination of Regions and accounts targeted by the current Automation
-     * execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline void SetTargetLocation(const TargetLocation& value) { m_targetLocationHasBeenSet = true; m_targetLocation = value; }
 
     /**
-     * <p>The combination of Regions and accounts targeted by the current Automation
-     * execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline void SetTargetLocation(TargetLocation&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::move(value); }
 
     /**
-     * <p>The combination of Regions and accounts targeted by the current Automation
-     * execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline StepExecution& WithTargetLocation(const TargetLocation& value) { SetTargetLocation(value); return *this;}
 
     /**
-     * <p>The combination of Regions and accounts targeted by the current Automation
-     * execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline StepExecution& WithTargetLocation(TargetLocation&& value) { SetTargetLocation(std::move(value)); return *this;}
 

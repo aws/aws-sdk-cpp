@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline QueryExecutionContext& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline QueryExecutionContext& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database used in the query execution.</p>
+     * <p>The name of the database used in the query execution. The database must exist
+     * in the catalog.</p>
      */
     inline QueryExecutionContext& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 

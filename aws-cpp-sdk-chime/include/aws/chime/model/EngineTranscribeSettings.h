@@ -187,37 +187,37 @@ namespace Model
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region,
-     * Amazon Chime uses the Region closest to the meeting's Region.</p>
+     * Amazon Chime uses the meeting's Region.</p>
      */
     inline const TranscribeRegion& GetRegion() const{ return m_region; }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region,
-     * Amazon Chime uses the Region closest to the meeting's Region.</p>
+     * Amazon Chime uses the meeting's Region.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region,
-     * Amazon Chime uses the Region closest to the meeting's Region.</p>
+     * Amazon Chime uses the meeting's Region.</p>
      */
     inline void SetRegion(const TranscribeRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region,
-     * Amazon Chime uses the Region closest to the meeting's Region.</p>
+     * Amazon Chime uses the meeting's Region.</p>
      */
     inline void SetRegion(TranscribeRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region,
-     * Amazon Chime uses the Region closest to the meeting's Region.</p>
+     * Amazon Chime uses the meeting's Region.</p>
      */
     inline EngineTranscribeSettings& WithRegion(const TranscribeRegion& value) { SetRegion(value); return *this;}
 
     /**
      * <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region,
-     * Amazon Chime uses the Region closest to the meeting's Region.</p>
+     * Amazon Chime uses the meeting's Region.</p>
      */
     inline EngineTranscribeSettings& WithRegion(TranscribeRegion&& value) { SetRegion(std::move(value)); return *this;}
 

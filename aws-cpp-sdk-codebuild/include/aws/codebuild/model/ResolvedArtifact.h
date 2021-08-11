@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a resolved build artifact. A resolve artifact is an artifact that
+   * <p>Represents a resolved build artifact. A resolved artifact is an artifact that
    * is built and deployed to the destination, such as Amazon S3.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ResolvedArtifact">AWS

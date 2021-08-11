@@ -310,73 +310,73 @@ namespace Model
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetResolvedSourceVersion() const{ return m_resolvedSourceVersion; }
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline bool ResolvedSourceVersionHasBeenSet() const { return m_resolvedSourceVersionHasBeenSet; }
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline void SetResolvedSourceVersion(const Aws::String& value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion = value; }
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline void SetResolvedSourceVersion(Aws::String&& value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion = std::move(value); }
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline void SetResolvedSourceVersion(const char* value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion.assign(value); }
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline BuildBatch& WithResolvedSourceVersion(const Aws::String& value) { SetResolvedSourceVersion(value); return *this;}
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline BuildBatch& WithResolvedSourceVersion(Aws::String&& value) { SetResolvedSourceVersion(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resolved version of this batch build's source code.</p>
-     * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
-     * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
-     * </li> </ul>
+     * <ul> <li> <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
+     * commit ID.</p> </li> <li> <p>For CodePipeline, the source revision provided by
+     * CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p> </li>
+     * </ul>
      */
     inline BuildBatch& WithResolvedSourceVersion(const char* value) { SetResolvedSourceVersion(value); return *this;}
 
@@ -541,7 +541,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -559,7 +559,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -577,7 +577,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -595,7 +595,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -613,7 +613,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -631,7 +631,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -649,7 +649,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -667,7 +667,7 @@ namespace Model
 
     /**
      * <p>An array of <code>ProjectSourceVersion</code> objects. Each
-     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For
      * CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li> <p>For
      * GitHub: the commit ID, pull request ID, branch name, or tag name that
      * corresponds to the version of the source code you want to build. If a pull
@@ -941,81 +941,81 @@ namespace Model
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetInitiator() const{ return m_initiator; }
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline bool InitiatorHasBeenSet() const { return m_initiatorHasBeenSet; }
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(const Aws::String& value) { m_initiatorHasBeenSet = true; m_initiator = value; }
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(Aws::String&& value) { m_initiatorHasBeenSet = true; m_initiator = std::move(value); }
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(const char* value) { m_initiatorHasBeenSet = true; m_initiator.assign(value); }
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline BuildBatch& WithInitiator(const Aws::String& value) { SetInitiator(value); return *this;}
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline BuildBatch& WithInitiator(Aws::String&& value) { SetInitiator(std::move(value)); return *this;}
 
     /**
      * <p>The entity that started the batch build. Valid values include:</p> <ul> <li>
-     * <p>If AWS CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
-     * Identity and Access Management (IAM) user started the build, the user's
-     * name.</p> </li> <li> <p>If the Jenkins plugin for AWS CodeBuild started the
-     * build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     * <p>If CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
+     * started the build, the user's name.</p> </li> <li> <p>If the Jenkins plugin for
+     * CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline BuildBatch& WithInitiator(const char* value) { SetInitiator(value); return *this;}
 
@@ -1040,8 +1040,8 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1050,8 +1050,8 @@ namespace Model
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1060,8 +1060,8 @@ namespace Model
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1070,8 +1070,8 @@ namespace Model
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1080,8 +1080,8 @@ namespace Model
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1090,8 +1090,8 @@ namespace Model
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1100,8 +1100,8 @@ namespace Model
     inline BuildBatch& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
@@ -1110,8 +1110,8 @@ namespace Model
     inline BuildBatch& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the batch build output artifacts.</p>  <p>You can use a
+     * <p>The Key Management Service customer master key (CMK) to be used for
+     * encrypting the batch build output artifacts.</p>  <p>You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
      * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the

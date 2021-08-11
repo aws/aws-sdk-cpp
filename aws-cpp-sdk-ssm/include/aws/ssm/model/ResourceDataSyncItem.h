@@ -88,7 +88,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline const Aws::String& GetSyncType() const{ return m_syncType; }
 
@@ -97,7 +97,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
 
@@ -106,7 +106,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
 
@@ -124,7 +124,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline ResourceDataSyncItem& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
 
@@ -142,7 +142,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline ResourceDataSyncItem& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
 
@@ -151,7 +151,7 @@ namespace Model
      * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
      * an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then
      * the resource data sync synchronizes data from Organizations or from multiple
-     * Regions.</p>
+     * Amazon Web Services Regions.</p>
      */
     inline ResourceDataSyncItem& WithSyncType(const char* value) { SetSyncType(value); return *this;}
 

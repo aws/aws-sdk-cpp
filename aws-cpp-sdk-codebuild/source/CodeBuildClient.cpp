@@ -62,6 +62,7 @@
 #include <aws/codebuild/model/StopBuildRequest.h>
 #include <aws/codebuild/model/StopBuildBatchRequest.h>
 #include <aws/codebuild/model/UpdateProjectRequest.h>
+#include <aws/codebuild/model/UpdateProjectVisibilityRequest.h>
 #include <aws/codebuild/model/UpdateReportGroupRequest.h>
 #include <aws/codebuild/model/UpdateWebhookRequest.h>
 
@@ -1144,6 +1145,30 @@ void CodeBuildClient::UpdateProjectAsync(const UpdateProjectRequest& request, co
 void CodeBuildClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateProject(request), context);
+}
+
+UpdateProjectVisibilityOutcome CodeBuildClient::UpdateProjectVisibility(const UpdateProjectVisibilityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateProjectVisibilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateProjectVisibilityOutcomeCallable CodeBuildClient::UpdateProjectVisibilityCallable(const UpdateProjectVisibilityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProjectVisibilityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProjectVisibility(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::UpdateProjectVisibilityAsync(const UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProjectVisibilityAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::UpdateProjectVisibilityAsyncHelper(const UpdateProjectVisibilityRequest& request, const UpdateProjectVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateProjectVisibility(request), context);
 }
 
 UpdateReportGroupOutcome CodeBuildClient::UpdateReportGroup(const UpdateReportGroupRequest& request) const

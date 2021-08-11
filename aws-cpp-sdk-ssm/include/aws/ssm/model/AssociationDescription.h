@@ -89,42 +89,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline AssociationDescription& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline AssociationDescription& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The instance ID.</p>
      */
     inline AssociationDescription& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -1186,50 +1186,50 @@ namespace Model
 
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline AssociationDescription& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline AssociationDescription& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline AssociationDescription& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>The combination of Regions and accounts where you want to run the
-     * association.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you want to run the association.</p>
      */
     inline AssociationDescription& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

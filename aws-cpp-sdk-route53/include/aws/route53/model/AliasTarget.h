@@ -74,10 +74,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -136,10 +136,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -198,10 +198,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -260,10 +260,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -322,10 +322,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -384,10 +384,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -446,10 +446,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -508,10 +508,10 @@ namespace Model
      * Reference</i>: Use the value that corresponds with the region that you created
      * your load balancer in. Note that there are separate columns for Application and
      * Classic Load Balancers and for Network Load Balancers.</p> </li> <li> <p>
-     * <b>Management Console</b>: Go to the Amazon EC2 page, choose <b>Load
-     * Balancers</b> in the navigation pane, select the load balancer, and get the
-     * value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
+     * <b>Load Balancers</b> in the navigation pane, select the load balancer, and get
+     * the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+     * </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
      * <code>DescribeLoadBalancers</code> to get the applicable value. For more
      * information, see the applicable guide:</p> <ul> <li> <p>Classic Load Balancers:
      * Use <a
@@ -592,8 +592,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -606,17 +606,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -704,8 +704,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -718,17 +718,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -816,8 +816,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -830,17 +830,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -928,8 +928,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -942,17 +942,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -1040,8 +1040,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -1054,17 +1054,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -1152,8 +1152,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -1166,17 +1166,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -1264,8 +1264,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -1278,17 +1278,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -1376,8 +1376,8 @@ namespace Model
      * Beanstalk environment.</p>  <p>For Elastic Beanstalk environments
      * that have regionalized subdomains, specify the <code>CNAME</code> attribute for
      * the environment. You can use the following methods to get the value of the CNAME
-     * attribute:</p> <ul> <li> <p> <i>Management Console</i>: For information about
-     * how to get the value by using the console, see <a
+     * attribute:</p> <ul> <li> <p> <i>Amazon Web Services Management Console</i>: For
+     * information about how to get the value by using the console, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
      * Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer
      * Guide</i>.</p> </li> <li> <p> <i>Elastic Beanstalk API</i>: Use the
@@ -1390,17 +1390,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
      * in the <i>CLI Command Reference</i>.</p> </li> </ul> </dd> <dt>ELB load
      * balancer</dt> <dd> <p>Specify the DNS name that is associated with the load
-     * balancer. Get the DNS name by using the Management Console, the ELB API, or the
-     * CLI. </p> <ul> <li> <p> <b>Management Console</b>: Go to the EC2 page, choose
-     * <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose
-     * the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p>
-     * <p>If you're routing traffic to a Classic Load Balancer, get the value that
-     * begins with <b>dualstack</b>. If you're routing traffic to another type of load
-     * balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-     * <li> <p> <b>Elastic Load Balancing API</b>: Use
-     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
-     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
-     * Balancers: <a
+     * balancer. Get the DNS name by using the Amazon Web Services Management Console,
+     * the ELB API, or the CLI. </p> <ul> <li> <p> <b>Amazon Web Services Management
+     * Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation
+     * pane, choose the load balancer, choose the <b>Description</b> tab, and get the
+     * value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a
+     * Classic Load Balancer, get the value that begins with <b>dualstack</b>. If
+     * you're routing traffic to another type of load balancer, get the value that
+     * applies to the record type, A or AAAA.</p> </li> <li> <p> <b>Elastic Load
+     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
+     * <li> <p>Classic Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>

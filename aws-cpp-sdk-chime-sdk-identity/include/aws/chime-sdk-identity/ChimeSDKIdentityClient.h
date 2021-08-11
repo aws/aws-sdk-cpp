@@ -1,0 +1,661 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityErrors.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/chime-sdk-identity/model/CreateAppInstanceResult.h>
+#include <aws/chime-sdk-identity/model/CreateAppInstanceAdminResult.h>
+#include <aws/chime-sdk-identity/model/CreateAppInstanceUserResult.h>
+#include <aws/chime-sdk-identity/model/DescribeAppInstanceResult.h>
+#include <aws/chime-sdk-identity/model/DescribeAppInstanceAdminResult.h>
+#include <aws/chime-sdk-identity/model/DescribeAppInstanceUserResult.h>
+#include <aws/chime-sdk-identity/model/GetAppInstanceRetentionSettingsResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceAdminsResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstanceUsersResult.h>
+#include <aws/chime-sdk-identity/model/ListAppInstancesResult.h>
+#include <aws/chime-sdk-identity/model/PutAppInstanceRetentionSettingsResult.h>
+#include <aws/chime-sdk-identity/model/UpdateAppInstanceResult.h>
+#include <aws/chime-sdk-identity/model/UpdateAppInstanceUserResult.h>
+#include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/http/HttpTypes.h>
+#include <future>
+#include <functional>
+
+namespace Aws
+{
+
+namespace Http
+{
+  class HttpClient;
+  class HttpClientFactory;
+} // namespace Http
+
+namespace Utils
+{
+  template< typename R, typename E> class Outcome;
+namespace Threading
+{
+  class Executor;
+} // namespace Threading
+} // namespace Utils
+
+namespace Auth
+{
+  class AWSCredentials;
+  class AWSCredentialsProvider;
+} // namespace Auth
+
+namespace Client
+{
+  class RetryStrategy;
+} // namespace Client
+
+namespace ChimeSDKIdentity
+{
+
+namespace Model
+{
+        class CreateAppInstanceRequest;
+        class CreateAppInstanceAdminRequest;
+        class CreateAppInstanceUserRequest;
+        class DeleteAppInstanceRequest;
+        class DeleteAppInstanceAdminRequest;
+        class DeleteAppInstanceUserRequest;
+        class DescribeAppInstanceRequest;
+        class DescribeAppInstanceAdminRequest;
+        class DescribeAppInstanceUserRequest;
+        class GetAppInstanceRetentionSettingsRequest;
+        class ListAppInstanceAdminsRequest;
+        class ListAppInstanceUsersRequest;
+        class ListAppInstancesRequest;
+        class PutAppInstanceRetentionSettingsRequest;
+        class UpdateAppInstanceRequest;
+        class UpdateAppInstanceUserRequest;
+
+        typedef Aws::Utils::Outcome<CreateAppInstanceResult, ChimeSDKIdentityError> CreateAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateAppInstanceAdminResult, ChimeSDKIdentityError> CreateAppInstanceAdminOutcome;
+        typedef Aws::Utils::Outcome<CreateAppInstanceUserResult, ChimeSDKIdentityError> CreateAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeleteAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeleteAppInstanceAdminOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeleteAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppInstanceResult, ChimeSDKIdentityError> DescribeAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppInstanceAdminResult, ChimeSDKIdentityError> DescribeAppInstanceAdminOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppInstanceUserResult, ChimeSDKIdentityError> DescribeAppInstanceUserOutcome;
+        typedef Aws::Utils::Outcome<GetAppInstanceRetentionSettingsResult, ChimeSDKIdentityError> GetAppInstanceRetentionSettingsOutcome;
+        typedef Aws::Utils::Outcome<ListAppInstanceAdminsResult, ChimeSDKIdentityError> ListAppInstanceAdminsOutcome;
+        typedef Aws::Utils::Outcome<ListAppInstanceUsersResult, ChimeSDKIdentityError> ListAppInstanceUsersOutcome;
+        typedef Aws::Utils::Outcome<ListAppInstancesResult, ChimeSDKIdentityError> ListAppInstancesOutcome;
+        typedef Aws::Utils::Outcome<PutAppInstanceRetentionSettingsResult, ChimeSDKIdentityError> PutAppInstanceRetentionSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateAppInstanceResult, ChimeSDKIdentityError> UpdateAppInstanceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAppInstanceUserResult, ChimeSDKIdentityError> UpdateAppInstanceUserOutcome;
+
+        typedef std::future<CreateAppInstanceOutcome> CreateAppInstanceOutcomeCallable;
+        typedef std::future<CreateAppInstanceAdminOutcome> CreateAppInstanceAdminOutcomeCallable;
+        typedef std::future<CreateAppInstanceUserOutcome> CreateAppInstanceUserOutcomeCallable;
+        typedef std::future<DeleteAppInstanceOutcome> DeleteAppInstanceOutcomeCallable;
+        typedef std::future<DeleteAppInstanceAdminOutcome> DeleteAppInstanceAdminOutcomeCallable;
+        typedef std::future<DeleteAppInstanceUserOutcome> DeleteAppInstanceUserOutcomeCallable;
+        typedef std::future<DescribeAppInstanceOutcome> DescribeAppInstanceOutcomeCallable;
+        typedef std::future<DescribeAppInstanceAdminOutcome> DescribeAppInstanceAdminOutcomeCallable;
+        typedef std::future<DescribeAppInstanceUserOutcome> DescribeAppInstanceUserOutcomeCallable;
+        typedef std::future<GetAppInstanceRetentionSettingsOutcome> GetAppInstanceRetentionSettingsOutcomeCallable;
+        typedef std::future<ListAppInstanceAdminsOutcome> ListAppInstanceAdminsOutcomeCallable;
+        typedef std::future<ListAppInstanceUsersOutcome> ListAppInstanceUsersOutcomeCallable;
+        typedef std::future<ListAppInstancesOutcome> ListAppInstancesOutcomeCallable;
+        typedef std::future<PutAppInstanceRetentionSettingsOutcome> PutAppInstanceRetentionSettingsOutcomeCallable;
+        typedef std::future<UpdateAppInstanceOutcome> UpdateAppInstanceOutcomeCallable;
+        typedef std::future<UpdateAppInstanceUserOutcome> UpdateAppInstanceUserOutcomeCallable;
+} // namespace Model
+
+  class ChimeSDKIdentityClient;
+
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::CreateAppInstanceRequest&, const Model::CreateAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::CreateAppInstanceAdminRequest&, const Model::CreateAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceAdminResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::CreateAppInstanceUserRequest&, const Model::CreateAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeleteAppInstanceRequest&, const Model::DeleteAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeleteAppInstanceAdminRequest&, const Model::DeleteAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceAdminResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeleteAppInstanceUserRequest&, const Model::DeleteAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceRequest&, const Model::DescribeAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceAdminRequest&, const Model::DescribeAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceAdminResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceUserRequest&, const Model::DescribeAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceUserResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::GetAppInstanceRetentionSettingsRequest&, const Model::GetAppInstanceRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppInstanceRetentionSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstanceAdminsRequest&, const Model::ListAppInstanceAdminsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceAdminsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstanceUsersRequest&, const Model::ListAppInstanceUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceUsersResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstancesRequest&, const Model::ListAppInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstancesResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::PutAppInstanceRetentionSettingsRequest&, const Model::PutAppInstanceRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppInstanceRetentionSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::UpdateAppInstanceRequest&, const Model::UpdateAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::UpdateAppInstanceUserRequest&, const Model::UpdateAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceUserResponseReceivedHandler;
+
+  /**
+   * <p>The Amazon Chime SDK Identity APIs in this section allow software developers
+   * to create and manage unique instances of their messaging applications. These
+   * APIs provide the overarching framework for creating and sending messages. For
+   * more information about the identity APIs, refer to .</p>
+   */
+  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient
+  {
+    public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
+
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ChimeSDKIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ChimeSDKIdentityClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ChimeSDKIdentityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+
+        virtual ~ChimeSDKIdentityClient();
+
+
+        /**
+         * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
+         * account. Only SDK messaging customers use this API.
+         * <code>CreateAppInstance</code> supports idempotency behavior as described in the
+         * AWS API Standard.</p> <p>identity</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceOutcome CreateAppInstance(const Model::CreateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
+         * account. Only SDK messaging customers use this API.
+         * <code>CreateAppInstance</code> supports idempotency behavior as described in the
+         * AWS API Standard.</p> <p>identity</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppInstanceOutcomeCallable CreateAppInstanceCallable(const Model::CreateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
+         * account. Only SDK messaging customers use this API.
+         * <code>CreateAppInstance</code> supports idempotency behavior as described in the
+         * AWS API Standard.</p> <p>identity</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppInstanceAsync(const Model::CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
+         * The promoted user can perform the following actions. </p> <ul> <li> <p>
+         * <code>ChannelModerator</code> actions across all channels in the
+         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
+         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
+         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceAdminOutcome CreateAppInstanceAdmin(const Model::CreateAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
+         * The promoted user can perform the following actions. </p> <ul> <li> <p>
+         * <code>ChannelModerator</code> actions across all channels in the
+         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
+         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
+         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppInstanceAdminOutcomeCallable CreateAppInstanceAdminCallable(const Model::CreateAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>.
+         * The promoted user can perform the following actions. </p> <ul> <li> <p>
+         * <code>ChannelModerator</code> actions across all channels in the
+         * <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code>
+         * actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> can be promoted
+         * to an <code>AppInstanceAdmin</code> role.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppInstanceAdminAsync(const Model::CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for
+         * that user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppInstanceUserOutcome CreateAppInstanceUser(const Model::CreateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for
+         * that user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppInstanceUserOutcomeCallable CreateAppInstanceUserCallable(const Model::CreateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request
+         * consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for
+         * that user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppInstanceUserAsync(const Model::CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an <code>AppInstance</code> and all associated data
+         * asynchronously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceOutcome DeleteAppInstance(const Model::DeleteAppInstanceRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstance</code> and all associated data
+         * asynchronously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceOutcomeCallable DeleteAppInstanceCallable(const Model::DeleteAppInstanceRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstance</code> and all associated data
+         * asynchronously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceAsync(const Model::DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
+         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceAdminOutcome DeleteAppInstanceAdmin(const Model::DeleteAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
+         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceAdminOutcomeCallable DeleteAppInstanceAdminCallable(const Model::DeleteAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>.
+         * This action does not delete the user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceAdminAsync(const Model::DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppInstanceUserOutcome DeleteAppInstanceUser(const Model::DeleteAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppInstanceUserOutcomeCallable DeleteAppInstanceUserCallable(const Model::DeleteAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>AppInstanceUser</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppInstanceUserAsync(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceOutcome DescribeAppInstance(const Model::DescribeAppInstanceRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppInstanceOutcomeCallable DescribeAppInstanceCallable(const Model::DescribeAppInstanceRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppInstanceAsync(const Model::DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceAdminOutcome DescribeAppInstanceAdmin(const Model::DescribeAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppInstanceAdminOutcomeCallable DescribeAppInstanceAdminCallable(const Model::DescribeAppInstanceAdminRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceAdmin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceAdmin">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppInstanceAdminAsync(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppInstanceUserOutcome DescribeAppInstanceUser(const Model::DescribeAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppInstanceUserOutcomeCallable DescribeAppInstanceUserCallable(const Model::DescribeAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Returns the full details of an <code>AppInstanceUser</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppInstanceUserAsync(const Model::DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the retention settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/GetAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAppInstanceRetentionSettingsOutcome GetAppInstanceRetentionSettings(const Model::GetAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Gets the retention settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/GetAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAppInstanceRetentionSettingsOutcomeCallable GetAppInstanceRetentionSettingsCallable(const Model::GetAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Gets the retention settings for an <code>AppInstance</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/GetAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAppInstanceRetentionSettingsAsync(const Model::GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the administrators in the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceAdmins">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstanceAdminsOutcome ListAppInstanceAdmins(const Model::ListAppInstanceAdminsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the administrators in the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceAdmins">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppInstanceAdminsOutcomeCallable ListAppInstanceAdminsCallable(const Model::ListAppInstanceAdminsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the administrators in the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceAdmins">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppInstanceAdminsAsync(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all <code>AppInstanceUsers</code> created under a single
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstanceUsersOutcome ListAppInstanceUsers(const Model::ListAppInstanceUsersRequest& request) const;
+
+        /**
+         * <p>List all <code>AppInstanceUsers</code> created under a single
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppInstanceUsersOutcomeCallable ListAppInstanceUsersCallable(const Model::ListAppInstanceUsersRequest& request) const;
+
+        /**
+         * <p>List all <code>AppInstanceUsers</code> created under a single
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppInstanceUsersAsync(const Model::ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppInstancesOutcome ListAppInstances(const Model::ListAppInstancesRequest& request) const;
+
+        /**
+         * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppInstancesOutcomeCallable ListAppInstancesCallable(const Model::ListAppInstancesRequest& request) const;
+
+        /**
+         * <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppInstancesAsync(const Model::ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAppInstanceRetentionSettingsOutcome PutAppInstanceRetentionSettings(const Model::PutAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAppInstanceRetentionSettingsOutcomeCallable PutAppInstanceRetentionSettingsCallable(const Model::PutAppInstanceRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
+         * data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAppInstanceRetentionSettingsAsync(const Model::PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates <code>AppInstance</code> metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppInstanceOutcome UpdateAppInstance(const Model::UpdateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Updates <code>AppInstance</code> metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAppInstanceOutcomeCallable UpdateAppInstanceCallable(const Model::UpdateAppInstanceRequest& request) const;
+
+        /**
+         * <p>Updates <code>AppInstance</code> metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstance">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAppInstanceAsync(const Model::UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names
+         * and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppInstanceUserOutcome UpdateAppInstanceUser(const Model::UpdateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names
+         * and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAppInstanceUserOutcomeCallable UpdateAppInstanceUserCallable(const Model::UpdateAppInstanceUserRequest& request) const;
+
+        /**
+         * <p>Updates the details of an <code>AppInstanceUser</code>. You can update names
+         * and metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUser">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAppInstanceUserAsync(const Model::UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+
+      void OverrideEndpoint(const Aws::String& endpoint);
+    private:
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateAppInstanceAsyncHelper(const Model::CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppInstanceAdminAsyncHelper(const Model::CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppInstanceUserAsyncHelper(const Model::CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceAsyncHelper(const Model::DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceAdminAsyncHelper(const Model::DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppInstanceUserAsyncHelper(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppInstanceAsyncHelper(const Model::DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppInstanceAdminAsyncHelper(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppInstanceUserAsyncHelper(const Model::DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAppInstanceRetentionSettingsAsyncHelper(const Model::GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppInstanceAdminsAsyncHelper(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppInstanceUsersAsyncHelper(const Model::ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppInstancesAsyncHelper(const Model::ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAppInstanceRetentionSettingsAsyncHelper(const Model::PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAppInstanceAsyncHelper(const Model::UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAppInstanceUserAsyncHelper(const Model::UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+
+      Aws::String m_uri;
+      Aws::String m_configScheme;
+      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+  };
+
+} // namespace ChimeSDKIdentity
+} // namespace Aws

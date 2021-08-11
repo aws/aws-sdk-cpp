@@ -57,8 +57,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
@@ -66,8 +66,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
@@ -75,8 +75,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
@@ -84,8 +84,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
@@ -93,8 +93,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
@@ -102,8 +102,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
@@ -111,8 +111,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
@@ -120,8 +120,8 @@ namespace Model
     /**
      * <p>The ARN that identifies the service. The ARN contains the
      * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * account ID of the service owner, the <code>service</code> namespace, and then
-     * the service name. For example,
+     * Amazon Web Services account ID of the service owner, the <code>service</code>
+     * namespace, and then the service name. For example,
      * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
      */
     inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}

@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>Lists all the private hosted zones that a specified VPC is associated with,
-   * regardless of which account created the hosted zones.</p><p><h3>See Also:</h3>  
-   * <a
+   * regardless of which Amazon Web Services account created the hosted
+   * zones.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPCRequest">AWS
    * API Reference</a></p>
    */

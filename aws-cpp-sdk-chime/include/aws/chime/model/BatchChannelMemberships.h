@@ -41,22 +41,34 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The identifier of the member who invited another member.</p>
+     */
     inline const Identity& GetInvitedBy() const{ return m_invitedBy; }
 
-    
+    /**
+     * <p>The identifier of the member who invited another member.</p>
+     */
     inline bool InvitedByHasBeenSet() const { return m_invitedByHasBeenSet; }
 
-    
+    /**
+     * <p>The identifier of the member who invited another member.</p>
+     */
     inline void SetInvitedBy(const Identity& value) { m_invitedByHasBeenSet = true; m_invitedBy = value; }
 
-    
+    /**
+     * <p>The identifier of the member who invited another member.</p>
+     */
     inline void SetInvitedBy(Identity&& value) { m_invitedByHasBeenSet = true; m_invitedBy = std::move(value); }
 
-    
+    /**
+     * <p>The identifier of the member who invited another member.</p>
+     */
     inline BatchChannelMemberships& WithInvitedBy(const Identity& value) { SetInvitedBy(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the member who invited another member.</p>
+     */
     inline BatchChannelMemberships& WithInvitedBy(Identity&& value) { SetInvitedBy(std::move(value)); return *this;}
 
 

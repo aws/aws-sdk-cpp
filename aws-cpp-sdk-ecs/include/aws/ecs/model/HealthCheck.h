@@ -75,10 +75,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -89,10 +94,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -103,10 +113,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -117,10 +132,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -131,10 +151,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -145,10 +170,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -159,10 +189,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -173,10 +208,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
@@ -187,10 +227,15 @@ namespace Model
      * <p>A string array representing the command that the container runs to determine
      * if it is healthy. The string array must start with <code>CMD</code> to execute
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
-     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
-     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and non-zero exit code indicates failure. For more
-     * information, see <code>HealthCheck</code> in the <a
+     * with the container's default shell. </p> <p> When you use the Amazon Web
+     * Services Management Console JSON panel, the Command Line Interface, or the APIs,
+     * you should enclose the list of commands in brackets, as shown below.</p> <p>
+     * <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code> </p> <p>You
+     * do not need to include the brackets when you use the Amazon Web Services
+     * Management Consoleas shown below.</p> <p> <code> "CMD-SHELL", "curl -f
+     * http://localhost/ || exit 1" </code> </p> <p>An exit code of 0 indicates
+     * success, and non-zero exit code indicates failure. For more information, see
+     * <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>

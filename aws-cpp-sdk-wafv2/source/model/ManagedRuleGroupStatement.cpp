@@ -22,6 +22,7 @@ namespace Model
 ManagedRuleGroupStatement::ManagedRuleGroupStatement() : 
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_excludedRulesHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false)
 {
@@ -30,6 +31,7 @@ ManagedRuleGroupStatement::ManagedRuleGroupStatement() :
 ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue) : 
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_excludedRulesHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false)
 {
@@ -57,6 +59,13 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ExcludedRules"))
@@ -92,6 +101,12 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
 
   }
 

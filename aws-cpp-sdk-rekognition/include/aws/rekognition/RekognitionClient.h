@@ -1531,7 +1531,7 @@ namespace Model
          * <code>TextDetection</code> element provides information about a single word or
          * line of text that was detected in the image. </p> <p>A word is one or more ISO
          * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 50 words in an image.</p> <p>A line is
+         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
          * a string of equally spaced words. A line isn't necessarily a complete sentence.
          * For example, a driver's license number is detected as a line. A line ends when
          * there is no aligned text after it. Also, a line ends when there is a large gap
@@ -1562,7 +1562,7 @@ namespace Model
          * <code>TextDetection</code> element provides information about a single word or
          * line of text that was detected in the image. </p> <p>A word is one or more ISO
          * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 50 words in an image.</p> <p>A line is
+         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
          * a string of equally spaced words. A line isn't necessarily a complete sentence.
          * For example, a driver's license number is detected as a line. A line ends when
          * there is no aligned text after it. Also, a line ends when there is a large gap
@@ -1595,7 +1595,7 @@ namespace Model
          * <code>TextDetection</code> element provides information about a single word or
          * line of text that was detected in the image. </p> <p>A word is one or more ISO
          * basic latin script characters that are not separated by spaces.
-         * <code>DetectText</code> can detect up to 50 words in an image.</p> <p>A line is
+         * <code>DetectText</code> can detect up to 100 words in an image.</p> <p>A line is
          * a string of equally spaced words. A line isn't necessarily a complete sentence.
          * For example, a driver's license number is detected as a line. A line ends when
          * there is no aligned text after it. Also, a line ends when there is a large gap
@@ -1799,35 +1799,39 @@ namespace Model
         virtual void GetCelebrityRecognitionAsync(const Model::GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the unsafe content analysis results for a Amazon Rekognition Video
-         * analysis started by <a>StartContentModeration</a>.</p> <p>Unsafe content
-         * analysis of a video is an asynchronous operation. You start analysis by calling
+         * <p>Gets the inappropriate, unwanted, or offensive content analysis results for a
+         * Amazon Rekognition Video analysis started by <a>StartContentModeration</a>. For
+         * a list of moderation labels in Amazon Rekognition, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+         * the image and video moderation APIs</a>.</p> <p>Amazon Rekognition Video
+         * inappropriate or offensive content detection in a stored video is an
+         * asynchronous operation. You start analysis by calling
          * <a>StartContentModeration</a> which returns a job identifier
          * (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes
          * a completion status to the Amazon Simple Notification Service topic registered
          * in the initial call to <code>StartContentModeration</code>. To get the results
-         * of the unsafe content analysis, first check that the status value published to
-         * the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * of the content analysis, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <code>GetContentModeration</code> and pass the job identifier
          * (<code>JobId</code>) from the initial call to
          * <code>StartContentModeration</code>. </p> <p>For more information, see Working
          * with Stored Videos in the Amazon Rekognition Devlopers Guide.</p> <p>
-         * <code>GetContentModeration</code> returns detected unsafe content labels, and
-         * the time they are detected, in an array, <code>ModerationLabels</code>, of
-         * <a>ContentModerationDetection</a> objects. </p> <p>By default, the moderated
-         * labels are returned sorted by time, in milliseconds from the start of the video.
-         * You can also sort them by moderated label by specifying <code>NAME</code> for
-         * the <code>SortBy</code> input parameter. </p> <p>Since video analysis can return
-         * a large number of results, use the <code>MaxResults</code> parameter to limit
-         * the number of labels returned in a single call to
-         * <code>GetContentModeration</code>. If there are more results than specified in
-         * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation
-         * response contains a pagination token for getting the next set of results. To get
-         * the next page of results, call <code>GetContentModeration</code> and populate
-         * the <code>NextToken</code> request parameter with the value of
-         * <code>NextToken</code> returned from the previous call to
-         * <code>GetContentModeration</code>.</p> <p>For more information, see Detecting
-         * Unsafe Content in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * <code>GetContentModeration</code> returns detected inappropriate, unwanted, or
+         * offensive content moderation labels, and the time they are detected, in an
+         * array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
+         * objects. </p> <p>By default, the moderated labels are returned sorted by time,
+         * in milliseconds from the start of the video. You can also sort them by moderated
+         * label by specifying <code>NAME</code> for the <code>SortBy</code> input
+         * parameter. </p> <p>Since video analysis can return a large number of results,
+         * use the <code>MaxResults</code> parameter to limit the number of labels returned
+         * in a single call to <code>GetContentModeration</code>. If there are more results
+         * than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+         * in the operation response contains a pagination token for getting the next set
+         * of results. To get the next page of results, call
+         * <code>GetContentModeration</code> and populate the <code>NextToken</code>
+         * request parameter with the value of <code>NextToken</code> returned from the
+         * previous call to <code>GetContentModeration</code>.</p> <p>For more information,
+         * see Content moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS
          * API Reference</a></p>
@@ -1835,35 +1839,39 @@ namespace Model
         virtual Model::GetContentModerationOutcome GetContentModeration(const Model::GetContentModerationRequest& request) const;
 
         /**
-         * <p>Gets the unsafe content analysis results for a Amazon Rekognition Video
-         * analysis started by <a>StartContentModeration</a>.</p> <p>Unsafe content
-         * analysis of a video is an asynchronous operation. You start analysis by calling
+         * <p>Gets the inappropriate, unwanted, or offensive content analysis results for a
+         * Amazon Rekognition Video analysis started by <a>StartContentModeration</a>. For
+         * a list of moderation labels in Amazon Rekognition, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+         * the image and video moderation APIs</a>.</p> <p>Amazon Rekognition Video
+         * inappropriate or offensive content detection in a stored video is an
+         * asynchronous operation. You start analysis by calling
          * <a>StartContentModeration</a> which returns a job identifier
          * (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes
          * a completion status to the Amazon Simple Notification Service topic registered
          * in the initial call to <code>StartContentModeration</code>. To get the results
-         * of the unsafe content analysis, first check that the status value published to
-         * the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * of the content analysis, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <code>GetContentModeration</code> and pass the job identifier
          * (<code>JobId</code>) from the initial call to
          * <code>StartContentModeration</code>. </p> <p>For more information, see Working
          * with Stored Videos in the Amazon Rekognition Devlopers Guide.</p> <p>
-         * <code>GetContentModeration</code> returns detected unsafe content labels, and
-         * the time they are detected, in an array, <code>ModerationLabels</code>, of
-         * <a>ContentModerationDetection</a> objects. </p> <p>By default, the moderated
-         * labels are returned sorted by time, in milliseconds from the start of the video.
-         * You can also sort them by moderated label by specifying <code>NAME</code> for
-         * the <code>SortBy</code> input parameter. </p> <p>Since video analysis can return
-         * a large number of results, use the <code>MaxResults</code> parameter to limit
-         * the number of labels returned in a single call to
-         * <code>GetContentModeration</code>. If there are more results than specified in
-         * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation
-         * response contains a pagination token for getting the next set of results. To get
-         * the next page of results, call <code>GetContentModeration</code> and populate
-         * the <code>NextToken</code> request parameter with the value of
-         * <code>NextToken</code> returned from the previous call to
-         * <code>GetContentModeration</code>.</p> <p>For more information, see Detecting
-         * Unsafe Content in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * <code>GetContentModeration</code> returns detected inappropriate, unwanted, or
+         * offensive content moderation labels, and the time they are detected, in an
+         * array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
+         * objects. </p> <p>By default, the moderated labels are returned sorted by time,
+         * in milliseconds from the start of the video. You can also sort them by moderated
+         * label by specifying <code>NAME</code> for the <code>SortBy</code> input
+         * parameter. </p> <p>Since video analysis can return a large number of results,
+         * use the <code>MaxResults</code> parameter to limit the number of labels returned
+         * in a single call to <code>GetContentModeration</code>. If there are more results
+         * than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+         * in the operation response contains a pagination token for getting the next set
+         * of results. To get the next page of results, call
+         * <code>GetContentModeration</code> and populate the <code>NextToken</code>
+         * request parameter with the value of <code>NextToken</code> returned from the
+         * previous call to <code>GetContentModeration</code>.</p> <p>For more information,
+         * see Content moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS
          * API Reference</a></p>
@@ -1873,35 +1881,39 @@ namespace Model
         virtual Model::GetContentModerationOutcomeCallable GetContentModerationCallable(const Model::GetContentModerationRequest& request) const;
 
         /**
-         * <p>Gets the unsafe content analysis results for a Amazon Rekognition Video
-         * analysis started by <a>StartContentModeration</a>.</p> <p>Unsafe content
-         * analysis of a video is an asynchronous operation. You start analysis by calling
+         * <p>Gets the inappropriate, unwanted, or offensive content analysis results for a
+         * Amazon Rekognition Video analysis started by <a>StartContentModeration</a>. For
+         * a list of moderation labels in Amazon Rekognition, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+         * the image and video moderation APIs</a>.</p> <p>Amazon Rekognition Video
+         * inappropriate or offensive content detection in a stored video is an
+         * asynchronous operation. You start analysis by calling
          * <a>StartContentModeration</a> which returns a job identifier
          * (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes
          * a completion status to the Amazon Simple Notification Service topic registered
          * in the initial call to <code>StartContentModeration</code>. To get the results
-         * of the unsafe content analysis, first check that the status value published to
-         * the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * of the content analysis, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <code>GetContentModeration</code> and pass the job identifier
          * (<code>JobId</code>) from the initial call to
          * <code>StartContentModeration</code>. </p> <p>For more information, see Working
          * with Stored Videos in the Amazon Rekognition Devlopers Guide.</p> <p>
-         * <code>GetContentModeration</code> returns detected unsafe content labels, and
-         * the time they are detected, in an array, <code>ModerationLabels</code>, of
-         * <a>ContentModerationDetection</a> objects. </p> <p>By default, the moderated
-         * labels are returned sorted by time, in milliseconds from the start of the video.
-         * You can also sort them by moderated label by specifying <code>NAME</code> for
-         * the <code>SortBy</code> input parameter. </p> <p>Since video analysis can return
-         * a large number of results, use the <code>MaxResults</code> parameter to limit
-         * the number of labels returned in a single call to
-         * <code>GetContentModeration</code>. If there are more results than specified in
-         * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation
-         * response contains a pagination token for getting the next set of results. To get
-         * the next page of results, call <code>GetContentModeration</code> and populate
-         * the <code>NextToken</code> request parameter with the value of
-         * <code>NextToken</code> returned from the previous call to
-         * <code>GetContentModeration</code>.</p> <p>For more information, see Detecting
-         * Unsafe Content in the Amazon Rekognition Developer Guide.</p><p><h3>See
+         * <code>GetContentModeration</code> returns detected inappropriate, unwanted, or
+         * offensive content moderation labels, and the time they are detected, in an
+         * array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a>
+         * objects. </p> <p>By default, the moderated labels are returned sorted by time,
+         * in milliseconds from the start of the video. You can also sort them by moderated
+         * label by specifying <code>NAME</code> for the <code>SortBy</code> input
+         * parameter. </p> <p>Since video analysis can return a large number of results,
+         * use the <code>MaxResults</code> parameter to limit the number of labels returned
+         * in a single call to <code>GetContentModeration</code>. If there are more results
+         * than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+         * in the operation response contains a pagination token for getting the next set
+         * of results. To get the next page of results, call
+         * <code>GetContentModeration</code> and populate the <code>NextToken</code>
+         * request parameter with the value of <code>NextToken</code> returned from the
+         * previous call to <code>GetContentModeration</code>.</p> <p>For more information,
+         * see Content moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS
          * API Reference</a></p>
@@ -3213,40 +3225,48 @@ namespace Model
         virtual void StartCelebrityRecognitionAsync(const Model::StartCelebrityRecognitionRequest& request, const StartCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Starts asynchronous detection of unsafe content in a stored video.</p>
-         * <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon
-         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
-         * video. <code>StartContentModeration</code> returns a job identifier
+         * <p> Starts asynchronous detection of inappropriate, unwanted, or offensive
+         * content in a stored video. For a list of moderation labels in Amazon
+         * Rekognition, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+         * the image and video moderation APIs</a>.</p> <p>Amazon Rekognition Video can
+         * moderate content in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+         * specify the bucket name and the filename of the video.
+         * <code>StartContentModeration</code> returns a job identifier
          * (<code>JobId</code>) which you use to get the results of the analysis. When
-         * unsafe content analysis is finished, Amazon Rekognition Video publishes a
-         * completion status to the Amazon Simple Notification Service topic that you
-         * specify in <code>NotificationChannel</code>.</p> <p>To get the results of the
-         * unsafe content analysis, first check that the status value published to the
-         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
-         * <a>GetContentModeration</a> and pass the job identifier (<code>JobId</code>)
-         * from the initial call to <code>StartContentModeration</code>. </p> <p>For more
-         * information, see Detecting Unsafe Content in the Amazon Rekognition Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * content analysis is finished, Amazon Rekognition Video publishes a completion
+         * status to the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>To get the results of the content
+         * analysis, first check that the status value published to the Amazon SNS topic is
+         * <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job
+         * identifier (<code>JobId</code>) from the initial call to
+         * <code>StartContentModeration</code>. </p> <p>For more information, see Content
+         * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">AWS
          * API Reference</a></p>
          */
         virtual Model::StartContentModerationOutcome StartContentModeration(const Model::StartContentModerationRequest& request) const;
 
         /**
-         * <p> Starts asynchronous detection of unsafe content in a stored video.</p>
-         * <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon
-         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
-         * video. <code>StartContentModeration</code> returns a job identifier
+         * <p> Starts asynchronous detection of inappropriate, unwanted, or offensive
+         * content in a stored video. For a list of moderation labels in Amazon
+         * Rekognition, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+         * the image and video moderation APIs</a>.</p> <p>Amazon Rekognition Video can
+         * moderate content in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+         * specify the bucket name and the filename of the video.
+         * <code>StartContentModeration</code> returns a job identifier
          * (<code>JobId</code>) which you use to get the results of the analysis. When
-         * unsafe content analysis is finished, Amazon Rekognition Video publishes a
-         * completion status to the Amazon Simple Notification Service topic that you
-         * specify in <code>NotificationChannel</code>.</p> <p>To get the results of the
-         * unsafe content analysis, first check that the status value published to the
-         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
-         * <a>GetContentModeration</a> and pass the job identifier (<code>JobId</code>)
-         * from the initial call to <code>StartContentModeration</code>. </p> <p>For more
-         * information, see Detecting Unsafe Content in the Amazon Rekognition Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * content analysis is finished, Amazon Rekognition Video publishes a completion
+         * status to the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>To get the results of the content
+         * analysis, first check that the status value published to the Amazon SNS topic is
+         * <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job
+         * identifier (<code>JobId</code>) from the initial call to
+         * <code>StartContentModeration</code>. </p> <p>For more information, see Content
+         * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">AWS
          * API Reference</a></p>
          *
@@ -3255,20 +3275,24 @@ namespace Model
         virtual Model::StartContentModerationOutcomeCallable StartContentModerationCallable(const Model::StartContentModerationRequest& request) const;
 
         /**
-         * <p> Starts asynchronous detection of unsafe content in a stored video.</p>
-         * <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon
-         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
-         * video. <code>StartContentModeration</code> returns a job identifier
+         * <p> Starts asynchronous detection of inappropriate, unwanted, or offensive
+         * content in a stored video. For a list of moderation labels in Amazon
+         * Rekognition, see <a
+         * href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using
+         * the image and video moderation APIs</a>.</p> <p>Amazon Rekognition Video can
+         * moderate content in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+         * specify the bucket name and the filename of the video.
+         * <code>StartContentModeration</code> returns a job identifier
          * (<code>JobId</code>) which you use to get the results of the analysis. When
-         * unsafe content analysis is finished, Amazon Rekognition Video publishes a
-         * completion status to the Amazon Simple Notification Service topic that you
-         * specify in <code>NotificationChannel</code>.</p> <p>To get the results of the
-         * unsafe content analysis, first check that the status value published to the
-         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
-         * <a>GetContentModeration</a> and pass the job identifier (<code>JobId</code>)
-         * from the initial call to <code>StartContentModeration</code>. </p> <p>For more
-         * information, see Detecting Unsafe Content in the Amazon Rekognition Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * content analysis is finished, Amazon Rekognition Video publishes a completion
+         * status to the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>To get the results of the content
+         * analysis, first check that the status value published to the Amazon SNS topic is
+         * <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job
+         * identifier (<code>JobId</code>) from the initial call to
+         * <code>StartContentModeration</code>. </p> <p>For more information, see Content
+         * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">AWS
          * API Reference</a></p>
          *

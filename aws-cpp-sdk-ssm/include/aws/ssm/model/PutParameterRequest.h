@@ -45,15 +45,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -73,15 +73,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -101,15 +101,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -129,15 +129,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -157,15 +157,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -185,15 +185,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -213,15 +213,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -241,15 +241,15 @@ namespace Model
      * slash character (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
-     * name must be unique within an Region</p> </li> <li> <p>A parameter name can't be
-     * prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p>
-     * </li> <li> <p>Parameter names can include only the following symbols and
-     * letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( /
-     * ) is used to delineate hierarchies in parameter names. For example:
-     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
+     * parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition,
+     * the slash character ( / ) is used to delineate hierarchies in parameter names.
+     * For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p>
+     * </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter
+     * hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul>
+     * <p>For additional information about valid values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
      * Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p>  <p>The maximum length constraint listed below
@@ -468,113 +468,121 @@ namespace Model
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-     * parameter. Either the default KMS key automatically assigned to your account or
-     * a custom key. Required for parameters that use the <code>SecureString</code>
-     * data type.</p> <p>If you don't specify a key ID, the system uses the default key
-     * associated with your account.</p> <ul> <li> <p>To use your default KMS key,
-     * choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically
-     * populates <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To
-     * use a custom KMS key, choose the <code>SecureString</code> data type with the
-     * <code>Key ID</code> parameter.</p> </li> </ul>
+     * parameter. Either the default KMS key automatically assigned to your Amazon Web
+     * Services account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your Amazon Web Services
+     * account.</p> <ul> <li> <p>To use your default KMS key, choose the
+     * <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key
+     * ID</code> when you create the parameter. The system automatically populates
+     * <code>Key ID</code> with your default KMS key.</p> </li> <li> <p>To use a custom
+     * KMS key, choose the <code>SecureString</code> data type with the <code>Key
+     * ID</code> parameter.</p> </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -783,11 +791,11 @@ namespace Model
      * standard tier and an advanced tier for parameters. Standard parameters have a
      * content size limit of 4 KB and can't be configured to use parameter policies.
      * You can create a maximum of 10,000 standard parameters for each Region in an
-     * account. Standard parameters are offered at no additional cost. </p> <p>Advanced
-     * parameters have a content size limit of 8 KB and can be configured to use
-     * parameter policies. You can create a maximum of 100,000 advanced parameters for
-     * each Region in an account. Advanced parameters incur a charge. For more
-     * information, see <a
+     * Amazon Web Services account. Standard parameters are offered at no additional
+     * cost. </p> <p>Advanced parameters have a content size limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters for each Region in an Amazon Web Services account. Advanced
+     * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
      * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
@@ -819,8 +827,9 @@ namespace Model
      * require an advanced parameter include the following:</p> <ul> <li> <p>The
      * content size of the parameter is more than 4 KB.</p> </li> <li> <p>The parameter
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
-     * exist in your account in the current Region.</p> </li> </ul> <p>For more
-     * information about configuring the default tier option, see <a
+     * exist in your Amazon Web Services account in the current Amazon Web Services
+     * Region.</p> </li> </ul> <p>For more information about configuring the default
+     * tier option, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -832,11 +841,11 @@ namespace Model
      * standard tier and an advanced tier for parameters. Standard parameters have a
      * content size limit of 4 KB and can't be configured to use parameter policies.
      * You can create a maximum of 10,000 standard parameters for each Region in an
-     * account. Standard parameters are offered at no additional cost. </p> <p>Advanced
-     * parameters have a content size limit of 8 KB and can be configured to use
-     * parameter policies. You can create a maximum of 100,000 advanced parameters for
-     * each Region in an account. Advanced parameters incur a charge. For more
-     * information, see <a
+     * Amazon Web Services account. Standard parameters are offered at no additional
+     * cost. </p> <p>Advanced parameters have a content size limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters for each Region in an Amazon Web Services account. Advanced
+     * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
      * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
@@ -868,8 +877,9 @@ namespace Model
      * require an advanced parameter include the following:</p> <ul> <li> <p>The
      * content size of the parameter is more than 4 KB.</p> </li> <li> <p>The parameter
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
-     * exist in your account in the current Region.</p> </li> </ul> <p>For more
-     * information about configuring the default tier option, see <a
+     * exist in your Amazon Web Services account in the current Amazon Web Services
+     * Region.</p> </li> </ul> <p>For more information about configuring the default
+     * tier option, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -881,11 +891,11 @@ namespace Model
      * standard tier and an advanced tier for parameters. Standard parameters have a
      * content size limit of 4 KB and can't be configured to use parameter policies.
      * You can create a maximum of 10,000 standard parameters for each Region in an
-     * account. Standard parameters are offered at no additional cost. </p> <p>Advanced
-     * parameters have a content size limit of 8 KB and can be configured to use
-     * parameter policies. You can create a maximum of 100,000 advanced parameters for
-     * each Region in an account. Advanced parameters incur a charge. For more
-     * information, see <a
+     * Amazon Web Services account. Standard parameters are offered at no additional
+     * cost. </p> <p>Advanced parameters have a content size limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters for each Region in an Amazon Web Services account. Advanced
+     * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
      * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
@@ -917,8 +927,9 @@ namespace Model
      * require an advanced parameter include the following:</p> <ul> <li> <p>The
      * content size of the parameter is more than 4 KB.</p> </li> <li> <p>The parameter
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
-     * exist in your account in the current Region.</p> </li> </ul> <p>For more
-     * information about configuring the default tier option, see <a
+     * exist in your Amazon Web Services account in the current Amazon Web Services
+     * Region.</p> </li> </ul> <p>For more information about configuring the default
+     * tier option, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -930,11 +941,11 @@ namespace Model
      * standard tier and an advanced tier for parameters. Standard parameters have a
      * content size limit of 4 KB and can't be configured to use parameter policies.
      * You can create a maximum of 10,000 standard parameters for each Region in an
-     * account. Standard parameters are offered at no additional cost. </p> <p>Advanced
-     * parameters have a content size limit of 8 KB and can be configured to use
-     * parameter policies. You can create a maximum of 100,000 advanced parameters for
-     * each Region in an account. Advanced parameters incur a charge. For more
-     * information, see <a
+     * Amazon Web Services account. Standard parameters are offered at no additional
+     * cost. </p> <p>Advanced parameters have a content size limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters for each Region in an Amazon Web Services account. Advanced
+     * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
      * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
@@ -966,8 +977,9 @@ namespace Model
      * require an advanced parameter include the following:</p> <ul> <li> <p>The
      * content size of the parameter is more than 4 KB.</p> </li> <li> <p>The parameter
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
-     * exist in your account in the current Region.</p> </li> </ul> <p>For more
-     * information about configuring the default tier option, see <a
+     * exist in your Amazon Web Services account in the current Amazon Web Services
+     * Region.</p> </li> </ul> <p>For more information about configuring the default
+     * tier option, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -979,11 +991,11 @@ namespace Model
      * standard tier and an advanced tier for parameters. Standard parameters have a
      * content size limit of 4 KB and can't be configured to use parameter policies.
      * You can create a maximum of 10,000 standard parameters for each Region in an
-     * account. Standard parameters are offered at no additional cost. </p> <p>Advanced
-     * parameters have a content size limit of 8 KB and can be configured to use
-     * parameter policies. You can create a maximum of 100,000 advanced parameters for
-     * each Region in an account. Advanced parameters incur a charge. For more
-     * information, see <a
+     * Amazon Web Services account. Standard parameters are offered at no additional
+     * cost. </p> <p>Advanced parameters have a content size limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters for each Region in an Amazon Web Services account. Advanced
+     * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
      * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
@@ -1015,8 +1027,9 @@ namespace Model
      * require an advanced parameter include the following:</p> <ul> <li> <p>The
      * content size of the parameter is more than 4 KB.</p> </li> <li> <p>The parameter
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
-     * exist in your account in the current Region.</p> </li> </ul> <p>For more
-     * information about configuring the default tier option, see <a
+     * exist in your Amazon Web Services account in the current Amazon Web Services
+     * Region.</p> </li> </ul> <p>For more information about configuring the default
+     * tier option, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -1028,11 +1041,11 @@ namespace Model
      * standard tier and an advanced tier for parameters. Standard parameters have a
      * content size limit of 4 KB and can't be configured to use parameter policies.
      * You can create a maximum of 10,000 standard parameters for each Region in an
-     * account. Standard parameters are offered at no additional cost. </p> <p>Advanced
-     * parameters have a content size limit of 8 KB and can be configured to use
-     * parameter policies. You can create a maximum of 100,000 advanced parameters for
-     * each Region in an account. Advanced parameters incur a charge. For more
-     * information, see <a
+     * Amazon Web Services account. Standard parameters are offered at no additional
+     * cost. </p> <p>Advanced parameters have a content size limit of 8 KB and can be
+     * configured to use parameter policies. You can create a maximum of 100,000
+     * advanced parameters for each Region in an Amazon Web Services account. Advanced
+     * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
      * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
@@ -1064,8 +1077,9 @@ namespace Model
      * require an advanced parameter include the following:</p> <ul> <li> <p>The
      * content size of the parameter is more than 4 KB.</p> </li> <li> <p>The parameter
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
-     * exist in your account in the current Region.</p> </li> </ul> <p>For more
-     * information about configuring the default tier option, see <a
+     * exist in your Amazon Web Services account in the current Amazon Web Services
+     * Region.</p> </li> </ul> <p>For more information about configuring the default
+     * tier option, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
@@ -1258,7 +1272,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1273,7 +1287,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1288,7 +1302,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1303,7 +1317,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1318,7 +1332,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1333,7 +1347,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1348,7 +1362,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
@@ -1363,7 +1377,7 @@ namespace Model
      * <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      * Services Systems Manager validates the parameter value is in the required
      * format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI
-     * is available in your account. For more information, see <a
+     * is available in your Amazon Web Services account. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>

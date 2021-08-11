@@ -305,8 +305,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -321,8 +321,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -337,8 +337,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -353,8 +353,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -369,8 +369,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -385,8 +385,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -401,8 +401,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -417,8 +417,8 @@ namespace Model
      * configuration information for the instance.</p> <p>You can specify Amazon Web
      * Services-predefined documents, documents you created, or a document that is
      * shared with you from another account.</p> <p>For Systems Manager document (SSM
-     * document) that are shared with you from other accounts, you must specify the
-     * complete SSM document ARN, in the following format:</p> <p>
+     * document) that are shared with you from other Amazon Web Services accounts, you
+     * must specify the complete SSM document ARN, in the following format:</p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
      * </code> </p> <p>For example:</p> <p>
      * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
@@ -1125,58 +1125,58 @@ namespace Model
 
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline UpdateAssociationRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline UpdateAssociationRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline UpdateAssociationRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>A location is a combination of Regions and accounts where you want to run the
-     * association. Use this action to update an association in multiple Regions and
-     * multiple accounts.</p>
+     * <p>A location is a combination of Amazon Web Services Regions and Amazon Web
+     * Services accounts where you want to run the association. Use this action to
+     * update an association in multiple Regions and multiple accounts.</p>
      */
     inline UpdateAssociationRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

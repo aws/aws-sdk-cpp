@@ -969,50 +969,58 @@ namespace Model
 
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>The combination of Regions and accounts where you wanted to run the
-     * association when this association version was created.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts where you wanted to run the association when this association version
+     * was created.</p>
      */
     inline AssociationVersionInfo& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

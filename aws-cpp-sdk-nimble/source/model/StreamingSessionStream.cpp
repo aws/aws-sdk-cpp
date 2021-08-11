@@ -22,6 +22,7 @@ StreamingSessionStream::StreamingSessionStream() :
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
+    m_ownedByHasBeenSet(false),
     m_state(StreamingSessionStreamState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StreamingSessionStreamStatusCode::NOT_SET),
@@ -35,6 +36,7 @@ StreamingSessionStream::StreamingSessionStream(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_expiresAtHasBeenSet(false),
+    m_ownedByHasBeenSet(false),
     m_state(StreamingSessionStreamState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StreamingSessionStreamStatusCode::NOT_SET),
@@ -66,6 +68,13 @@ StreamingSessionStream& StreamingSessionStream::operator =(JsonView jsonValue)
     m_expiresAt = jsonValue.GetString("expiresAt");
 
     m_expiresAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ownedBy"))
+  {
+    m_ownedBy = jsonValue.GetString("ownedBy");
+
+    m_ownedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -117,6 +126,12 @@ JsonValue StreamingSessionStream::Jsonize() const
   if(m_expiresAtHasBeenSet)
   {
    payload.WithString("expiresAt", m_expiresAt.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_ownedByHasBeenSet)
+  {
+   payload.WithString("ownedBy", m_ownedBy);
+
   }
 
   if(m_stateHasBeenSet)

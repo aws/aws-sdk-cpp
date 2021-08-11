@@ -50,7 +50,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
@@ -61,7 +62,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
@@ -72,7 +74,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
@@ -83,7 +86,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
@@ -94,7 +98,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline RunTaskRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
@@ -105,7 +110,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline RunTaskRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
@@ -116,7 +122,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline RunTaskRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
@@ -127,7 +134,8 @@ namespace Model
      * <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
-     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+     * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline RunTaskRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -282,49 +290,57 @@ namespace Model
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline RunTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline RunTaskRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
+     * the family name of the task definition (for example,
+     * <code>family:my-family-name</code>).</p>
      */
     inline RunTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
@@ -468,7 +484,7 @@ namespace Model
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
@@ -479,7 +495,7 @@ namespace Model
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -490,7 +506,7 @@ namespace Model
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
@@ -501,7 +517,7 @@ namespace Model
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
@@ -512,7 +528,7 @@ namespace Model
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline RunTaskRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
@@ -523,7 +539,7 @@ namespace Model
      * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline RunTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
@@ -536,9 +552,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>  <p>A total of 8192
-     * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> 
+     * it with an <code>environment</code> override.</p> <p>A total of 8192 characters
+     * are allowed for overrides. This limit includes the JSON formatting characters of
+     * the override structure.</p>
      */
     inline const TaskOverride& GetOverrides() const{ return m_overrides; }
 
@@ -549,9 +565,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>  <p>A total of 8192
-     * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> 
+     * it with an <code>environment</code> override.</p> <p>A total of 8192 characters
+     * are allowed for overrides. This limit includes the JSON formatting characters of
+     * the override structure.</p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
@@ -562,9 +578,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>  <p>A total of 8192
-     * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> 
+     * it with an <code>environment</code> override.</p> <p>A total of 8192 characters
+     * are allowed for overrides. This limit includes the JSON formatting characters of
+     * the override structure.</p>
      */
     inline void SetOverrides(const TaskOverride& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
@@ -575,9 +591,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>  <p>A total of 8192
-     * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> 
+     * it with an <code>environment</code> override.</p> <p>A total of 8192 characters
+     * are allowed for overrides. This limit includes the JSON formatting characters of
+     * the override structure.</p>
      */
     inline void SetOverrides(TaskOverride&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
@@ -588,9 +604,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>  <p>A total of 8192
-     * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> 
+     * it with an <code>environment</code> override.</p> <p>A total of 8192 characters
+     * are allowed for overrides. This limit includes the JSON formatting characters of
+     * the override structure.</p>
      */
     inline RunTaskRequest& WithOverrides(const TaskOverride& value) { SetOverrides(value); return *this;}
 
@@ -601,9 +617,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>  <p>A total of 8192
-     * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> 
+     * it with an <code>environment</code> override.</p> <p>A total of 8192 characters
+     * are allowed for overrides. This limit includes the JSON formatting characters of
+     * the override structure.</p>
      */
     inline RunTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
 
@@ -667,137 +683,137 @@ namespace Model
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline RunTaskRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline RunTaskRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline RunTaskRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
 
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
-     * of five strategy rules per task.</p>
+     * of 5 strategy rules per task.</p>
      */
     inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version the task should run. A platform version is only
-     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <p>The platform version the task should use. A platform version is only
+     * specified for tasks hosted on Fargate. If one is not specified, the
      * <code>LATEST</code> platform version is used by default. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-     * Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+     * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
@@ -865,42 +881,50 @@ namespace Model
 
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline RunTaskRequest& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline RunTaskRequest& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>The reference ID to use for the task.</p>
+     * <p>The reference ID to use for the task. The reference ID can have a maximum
+     * length of 1024 characters.</p>
      */
     inline RunTaskRequest& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 

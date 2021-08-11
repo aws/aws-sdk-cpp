@@ -37,38 +37,38 @@ namespace Model
 
 
     /**
-     * <p>The video in which you want to detect unsafe content. The video must be
-     * stored in an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect inappropriate, unwanted, or offensive
+     * content. The video must be stored in an Amazon S3 bucket.</p>
      */
     inline const Video& GetVideo() const{ return m_video; }
 
     /**
-     * <p>The video in which you want to detect unsafe content. The video must be
-     * stored in an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect inappropriate, unwanted, or offensive
+     * content. The video must be stored in an Amazon S3 bucket.</p>
      */
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
 
     /**
-     * <p>The video in which you want to detect unsafe content. The video must be
-     * stored in an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect inappropriate, unwanted, or offensive
+     * content. The video must be stored in an Amazon S3 bucket.</p>
      */
     inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
 
     /**
-     * <p>The video in which you want to detect unsafe content. The video must be
-     * stored in an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect inappropriate, unwanted, or offensive
+     * content. The video must be stored in an Amazon S3 bucket.</p>
      */
     inline void SetVideo(Video&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
 
     /**
-     * <p>The video in which you want to detect unsafe content. The video must be
-     * stored in an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect inappropriate, unwanted, or offensive
+     * content. The video must be stored in an Amazon S3 bucket.</p>
      */
     inline StartContentModerationRequest& WithVideo(const Video& value) { SetVideo(value); return *this;}
 
     /**
-     * <p>The video in which you want to detect unsafe content. The video must be
-     * stored in an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect inappropriate, unwanted, or offensive
+     * content. The video must be stored in an Amazon S3 bucket.</p>
      */
     inline StartContentModerationRequest& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
 
@@ -189,37 +189,49 @@ namespace Model
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the unsafe content analysis to.</p>
+     * the completion status of the content analysis to. The Amazon SNS topic must have
+     * a topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the unsafe content analysis to.</p>
+     * the completion status of the content analysis to. The Amazon SNS topic must have
+     * a topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the unsafe content analysis to.</p>
+     * the completion status of the content analysis to. The Amazon SNS topic must have
+     * a topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the unsafe content analysis to.</p>
+     * the completion status of the content analysis to. The Amazon SNS topic must have
+     * a topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the unsafe content analysis to.</p>
+     * the completion status of the content analysis to. The Amazon SNS topic must have
+     * a topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline StartContentModerationRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the unsafe content analysis to.</p>
+     * the completion status of the content analysis to. The Amazon SNS topic must have
+     * a topic name that begins with <i>AmazonRekognition</i> if you are using the
+     * AmazonRekognitionServiceRole permissions policy to access the topic.</p>
      */
     inline StartContentModerationRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 

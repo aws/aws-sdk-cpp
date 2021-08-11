@@ -412,50 +412,50 @@ namespace Model
 
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Regions and accounts targeted by the current Runbook
-     * operation.</p>
+     * <p>Information about the Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Runbook operation.</p>
      */
     inline Runbook& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 

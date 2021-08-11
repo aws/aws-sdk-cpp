@@ -28,6 +28,7 @@
 #include <aws/wafv2/model/DisassociateWebACLResult.h>
 #include <aws/wafv2/model/GetIPSetResult.h>
 #include <aws/wafv2/model/GetLoggingConfigurationResult.h>
+#include <aws/wafv2/model/GetManagedRuleSetResult.h>
 #include <aws/wafv2/model/GetPermissionPolicyResult.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysResult.h>
 #include <aws/wafv2/model/GetRegexPatternSetResult.h>
@@ -35,19 +36,23 @@
 #include <aws/wafv2/model/GetSampledRequestsResult.h>
 #include <aws/wafv2/model/GetWebACLResult.h>
 #include <aws/wafv2/model/GetWebACLForResourceResult.h>
+#include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsResult.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupsResult.h>
 #include <aws/wafv2/model/ListIPSetsResult.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsResult.h>
+#include <aws/wafv2/model/ListManagedRuleSetsResult.h>
 #include <aws/wafv2/model/ListRegexPatternSetsResult.h>
 #include <aws/wafv2/model/ListResourcesForWebACLResult.h>
 #include <aws/wafv2/model/ListRuleGroupsResult.h>
 #include <aws/wafv2/model/ListTagsForResourceResult.h>
 #include <aws/wafv2/model/ListWebACLsResult.h>
 #include <aws/wafv2/model/PutLoggingConfigurationResult.h>
+#include <aws/wafv2/model/PutManagedRuleSetVersionsResult.h>
 #include <aws/wafv2/model/PutPermissionPolicyResult.h>
 #include <aws/wafv2/model/TagResourceResult.h>
 #include <aws/wafv2/model/UntagResourceResult.h>
 #include <aws/wafv2/model/UpdateIPSetResult.h>
+#include <aws/wafv2/model/UpdateManagedRuleSetVersionExpiryDateResult.h>
 #include <aws/wafv2/model/UpdateRegexPatternSetResult.h>
 #include <aws/wafv2/model/UpdateRuleGroupResult.h>
 #include <aws/wafv2/model/UpdateWebACLResult.h>
@@ -107,6 +112,7 @@ namespace Model
         class DisassociateWebACLRequest;
         class GetIPSetRequest;
         class GetLoggingConfigurationRequest;
+        class GetManagedRuleSetRequest;
         class GetPermissionPolicyRequest;
         class GetRateBasedStatementManagedKeysRequest;
         class GetRegexPatternSetRequest;
@@ -114,19 +120,23 @@ namespace Model
         class GetSampledRequestsRequest;
         class GetWebACLRequest;
         class GetWebACLForResourceRequest;
+        class ListAvailableManagedRuleGroupVersionsRequest;
         class ListAvailableManagedRuleGroupsRequest;
         class ListIPSetsRequest;
         class ListLoggingConfigurationsRequest;
+        class ListManagedRuleSetsRequest;
         class ListRegexPatternSetsRequest;
         class ListResourcesForWebACLRequest;
         class ListRuleGroupsRequest;
         class ListTagsForResourceRequest;
         class ListWebACLsRequest;
         class PutLoggingConfigurationRequest;
+        class PutManagedRuleSetVersionsRequest;
         class PutPermissionPolicyRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateIPSetRequest;
+        class UpdateManagedRuleSetVersionExpiryDateRequest;
         class UpdateRegexPatternSetRequest;
         class UpdateRuleGroupRequest;
         class UpdateWebACLRequest;
@@ -148,6 +158,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateWebACLResult, WAFV2Error> DisassociateWebACLOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, WAFV2Error> GetIPSetOutcome;
         typedef Aws::Utils::Outcome<GetLoggingConfigurationResult, WAFV2Error> GetLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetManagedRuleSetResult, WAFV2Error> GetManagedRuleSetOutcome;
         typedef Aws::Utils::Outcome<GetPermissionPolicyResult, WAFV2Error> GetPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedStatementManagedKeysResult, WAFV2Error> GetRateBasedStatementManagedKeysOutcome;
         typedef Aws::Utils::Outcome<GetRegexPatternSetResult, WAFV2Error> GetRegexPatternSetOutcome;
@@ -155,19 +166,23 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSampledRequestsResult, WAFV2Error> GetSampledRequestsOutcome;
         typedef Aws::Utils::Outcome<GetWebACLResult, WAFV2Error> GetWebACLOutcome;
         typedef Aws::Utils::Outcome<GetWebACLForResourceResult, WAFV2Error> GetWebACLForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListAvailableManagedRuleGroupVersionsResult, WAFV2Error> ListAvailableManagedRuleGroupVersionsOutcome;
         typedef Aws::Utils::Outcome<ListAvailableManagedRuleGroupsResult, WAFV2Error> ListAvailableManagedRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<ListIPSetsResult, WAFV2Error> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListLoggingConfigurationsResult, WAFV2Error> ListLoggingConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListManagedRuleSetsResult, WAFV2Error> ListManagedRuleSetsOutcome;
         typedef Aws::Utils::Outcome<ListRegexPatternSetsResult, WAFV2Error> ListRegexPatternSetsOutcome;
         typedef Aws::Utils::Outcome<ListResourcesForWebACLResult, WAFV2Error> ListResourcesForWebACLOutcome;
         typedef Aws::Utils::Outcome<ListRuleGroupsResult, WAFV2Error> ListRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, WAFV2Error> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, WAFV2Error> ListWebACLsOutcome;
         typedef Aws::Utils::Outcome<PutLoggingConfigurationResult, WAFV2Error> PutLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutManagedRuleSetVersionsResult, WAFV2Error> PutManagedRuleSetVersionsOutcome;
         typedef Aws::Utils::Outcome<PutPermissionPolicyResult, WAFV2Error> PutPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, WAFV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, WAFV2Error> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, WAFV2Error> UpdateIPSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateManagedRuleSetVersionExpiryDateResult, WAFV2Error> UpdateManagedRuleSetVersionExpiryDateOutcome;
         typedef Aws::Utils::Outcome<UpdateRegexPatternSetResult, WAFV2Error> UpdateRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<UpdateRuleGroupResult, WAFV2Error> UpdateRuleGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateWebACLResult, WAFV2Error> UpdateWebACLOutcome;
@@ -189,6 +204,7 @@ namespace Model
         typedef std::future<DisassociateWebACLOutcome> DisassociateWebACLOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
         typedef std::future<GetLoggingConfigurationOutcome> GetLoggingConfigurationOutcomeCallable;
+        typedef std::future<GetManagedRuleSetOutcome> GetManagedRuleSetOutcomeCallable;
         typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
         typedef std::future<GetRateBasedStatementManagedKeysOutcome> GetRateBasedStatementManagedKeysOutcomeCallable;
         typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
@@ -196,19 +212,23 @@ namespace Model
         typedef std::future<GetSampledRequestsOutcome> GetSampledRequestsOutcomeCallable;
         typedef std::future<GetWebACLOutcome> GetWebACLOutcomeCallable;
         typedef std::future<GetWebACLForResourceOutcome> GetWebACLForResourceOutcomeCallable;
+        typedef std::future<ListAvailableManagedRuleGroupVersionsOutcome> ListAvailableManagedRuleGroupVersionsOutcomeCallable;
         typedef std::future<ListAvailableManagedRuleGroupsOutcome> ListAvailableManagedRuleGroupsOutcomeCallable;
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListLoggingConfigurationsOutcome> ListLoggingConfigurationsOutcomeCallable;
+        typedef std::future<ListManagedRuleSetsOutcome> ListManagedRuleSetsOutcomeCallable;
         typedef std::future<ListRegexPatternSetsOutcome> ListRegexPatternSetsOutcomeCallable;
         typedef std::future<ListResourcesForWebACLOutcome> ListResourcesForWebACLOutcomeCallable;
         typedef std::future<ListRuleGroupsOutcome> ListRuleGroupsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
         typedef std::future<PutLoggingConfigurationOutcome> PutLoggingConfigurationOutcomeCallable;
+        typedef std::future<PutManagedRuleSetVersionsOutcome> PutManagedRuleSetVersionsOutcomeCallable;
         typedef std::future<PutPermissionPolicyOutcome> PutPermissionPolicyOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
+        typedef std::future<UpdateManagedRuleSetVersionExpiryDateOutcome> UpdateManagedRuleSetVersionExpiryDateOutcomeCallable;
         typedef std::future<UpdateRegexPatternSetOutcome> UpdateRegexPatternSetOutcomeCallable;
         typedef std::future<UpdateRuleGroupOutcome> UpdateRuleGroupOutcomeCallable;
         typedef std::future<UpdateWebACLOutcome> UpdateWebACLOutcomeCallable;
@@ -233,6 +253,7 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::DisassociateWebACLRequest&, const Model::DisassociateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetLoggingConfigurationRequest&, const Model::GetLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::GetManagedRuleSetRequest&, const Model::GetManagedRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedRuleSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetPermissionPolicyRequest&, const Model::GetPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRateBasedStatementManagedKeysRequest&, const Model::GetRateBasedStatementManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedStatementManagedKeysResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRegexPatternSetRequest&, const Model::GetRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexPatternSetResponseReceivedHandler;
@@ -240,19 +261,23 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::GetSampledRequestsRequest&, const Model::GetSampledRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampledRequestsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetWebACLRequest&, const Model::GetWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetWebACLForResourceRequest&, const Model::GetWebACLForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebACLForResourceResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::ListAvailableManagedRuleGroupVersionsRequest&, const Model::ListAvailableManagedRuleGroupVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagedRuleGroupVersionsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListAvailableManagedRuleGroupsRequest&, const Model::ListAvailableManagedRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagedRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListLoggingConfigurationsRequest&, const Model::ListLoggingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggingConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::ListManagedRuleSetsRequest&, const Model::ListManagedRuleSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedRuleSetsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListRegexPatternSetsRequest&, const Model::ListRegexPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexPatternSetsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListResourcesForWebACLRequest&, const Model::ListResourcesForWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesForWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListRuleGroupsRequest&, const Model::ListRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::PutLoggingConfigurationRequest&, const Model::PutLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::PutManagedRuleSetVersionsRequest&, const Model::PutManagedRuleSetVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutManagedRuleSetVersionsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::PutPermissionPolicyRequest&, const Model::PutPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::UpdateManagedRuleSetVersionExpiryDateRequest&, const Model::UpdateManagedRuleSetVersionExpiryDateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UpdateRegexPatternSetRequest&, const Model::UpdateRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UpdateRuleGroupRequest&, const Model::UpdateRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleGroupResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UpdateWebACLRequest&, const Model::UpdateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebACLResponseReceivedHandler;
@@ -282,30 +307,29 @@ namespace Model
    * when a request is blocked.</p> <p>This API guide is for developers who need
    * detailed information about WAF API actions, data types, and errors. For detailed
    * information about WAF features and an overview of how to use WAF, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
-   * Guide</a>.</p> <p>You can make calls using the endpoints listed in <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">Amazon
-   * Web Services Service Endpoints for WAF</a>. </p> <ul> <li> <p>For regional
-   * applications, you can use any of the endpoints in the list. A regional
-   * application can be an Application Load Balancer (ALB), an Amazon API Gateway
-   * REST API, or an AppSync GraphQL API. </p> </li> <li> <p>For Amazon CloudFront
-   * applications, you must use the API endpoint listed for US East (N. Virginia):
-   * us-east-1.</p> </li> </ul> <p>Alternatively, you can use one of the Amazon Web
-   * Services SDKs to access an API that's tailored to the programming language or
-   * platform that you're using. For more information, see <a
-   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p> <p>We
-   * currently provide two versions of the WAF API: this API and the prior versions,
-   * the classic WAF APIs. This new API provides the same functionality as the older
-   * versions, with the following major improvements:</p> <ul> <li> <p>You use one
-   * API for both global and regional applications. Where you need to distinguish the
-   * scope, you specify a <code>Scope</code> parameter and set it to
-   * <code>CLOUDFRONT</code> or <code>REGIONAL</code>. </p> </li> <li> <p>You can
-   * define a web ACL or rule group with a single call, and update it with a single
-   * call. You define all rule specifications in JSON format, and pass them to your
-   * rule group or web ACL calls.</p> </li> <li> <p>The limits WAF places on the use
-   * of rules more closely reflects the cost of running each type of rule. Rule
-   * groups include capacity settings, so you know the maximum cost of a rule group
-   * when you use it.</p> </li> </ul>
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+   * Developer Guide</a>.</p> <p>You can make calls using the endpoints listed in <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF endpoints and
+   * quotas</a>. </p> <ul> <li> <p>For regional applications, you can use any of the
+   * endpoints in the list. A regional application can be an Application Load
+   * Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+   * </li> <li> <p>For Amazon CloudFront applications, you must use the API endpoint
+   * listed for US East (N. Virginia): us-east-1.</p> </li> </ul> <p>Alternatively,
+   * you can use one of the Amazon Web Services SDKs to access an API that's tailored
+   * to the programming language or platform that you're using. For more information,
+   * see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services
+   * SDKs</a>.</p> <p>We currently provide two versions of the WAF API: this API and
+   * the prior versions, the classic WAF APIs. This new API provides the same
+   * functionality as the older versions, with the following major improvements:</p>
+   * <ul> <li> <p>You use one API for both global and regional applications. Where
+   * you need to distinguish the scope, you specify a <code>Scope</code> parameter
+   * and set it to <code>CLOUDFRONT</code> or <code>REGIONAL</code>. </p> </li> <li>
+   * <p>You can define a web ACL or rule group with a single call, and update it with
+   * a single call. You define all rule specifications in JSON format, and pass them
+   * to your rule group or web ACL calls.</p> </li> <li> <p>The limits WAF places on
+   * the use of rules more closely reflects the cost of running each type of rule.
+   * Rule groups include capacity settings, so you know the maximum cost of a rule
+   * group when you use it.</p> </li> </ul>
    */
   class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient
   {
@@ -922,6 +946,52 @@ namespace Model
         virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
+         * use only by vendors of managed rule sets. Vendors are Amazon Web Services and
+         * Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to
+         * provide controlled rollout of your versioned managed rule group offerings for
+         * your customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedRuleSetOutcome GetManagedRuleSet(const Model::GetManagedRuleSetRequest& request) const;
+
+        /**
+         * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
+         * use only by vendors of managed rule sets. Vendors are Amazon Web Services and
+         * Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to
+         * provide controlled rollout of your versioned managed rule group offerings for
+         * your customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetManagedRuleSetOutcomeCallable GetManagedRuleSetCallable(const Model::GetManagedRuleSetRequest& request) const;
+
+        /**
+         * <p>Retrieves the specified managed rule set. </p>  <p>This is intended for
+         * use only by vendors of managed rule sets. Vendors are Amazon Web Services and
+         * Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to
+         * provide controlled rollout of your versioned managed rule group offerings for
+         * your customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetManagedRuleSetAsync(const Model::GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the IAM policy that is attached to the specified rule group.</p>
          * <p>You must be the owner of the rule group to perform this
          * operation.</p><p><h3>See Also:</h3>   <a
@@ -1145,9 +1215,37 @@ namespace Model
         virtual void GetWebACLForResourceAsync(const Model::GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the available versions for the specified managed rule
+         * group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAvailableManagedRuleGroupVersionsOutcome ListAvailableManagedRuleGroupVersions(const Model::ListAvailableManagedRuleGroupVersionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the available versions for the specified managed rule
+         * group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAvailableManagedRuleGroupVersionsOutcomeCallable ListAvailableManagedRuleGroupVersionsCallable(const Model::ListAvailableManagedRuleGroupVersionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the available versions for the specified managed rule
+         * group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAvailableManagedRuleGroupVersionsAsync(const Model::ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
-         * This list includes all Amazon Web Services Managed Rules rule groups and the
-         * Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
+         * This list includes all Amazon Web Services Managed Rules rule groups and all of
+         * the Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
@@ -1156,8 +1254,8 @@ namespace Model
 
         /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
-         * This list includes all Amazon Web Services Managed Rules rule groups and the
-         * Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
+         * This list includes all Amazon Web Services Managed Rules rule groups and all of
+         * the Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
@@ -1168,8 +1266,8 @@ namespace Model
 
         /**
          * <p>Retrieves an array of managed rule groups that are available for you to use.
-         * This list includes all Amazon Web Services Managed Rules rule groups and the
-         * Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
+         * This list includes all Amazon Web Services Managed Rules rule groups and all of
+         * the Marketplace managed rule groups that you're subscribed to.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
@@ -1233,6 +1331,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
+         * for use only by vendors of managed rule sets. Vendors are Amazon Web Services
+         * and Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs
+         * to provide controlled rollout of your versioned managed rule group offerings for
+         * your customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedRuleSetsOutcome ListManagedRuleSets(const Model::ListManagedRuleSetsRequest& request) const;
+
+        /**
+         * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
+         * for use only by vendors of managed rule sets. Vendors are Amazon Web Services
+         * and Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs
+         * to provide controlled rollout of your versioned managed rule group offerings for
+         * your customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListManagedRuleSetsOutcomeCallable ListManagedRuleSetsCallable(const Model::ListManagedRuleSetsRequest& request) const;
+
+        /**
+         * <p>Retrieves the managed rule sets that you own. </p>  <p>This is intended
+         * for use only by vendors of managed rule sets. Vendors are Amazon Web Services
+         * and Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs
+         * to provide controlled rollout of your versioned managed rule group offerings for
+         * your customers. The APIs are <code>ListManagedRuleSets</code>,
+         * <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListManagedRuleSetsAsync(const Model::ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex
@@ -1490,6 +1634,82 @@ namespace Model
         virtual void PutLoggingConfigurationAsync(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Defines the versions of your managed rule set that you are offering to the
+         * customers. Customers see your offerings as managed rule groups with
+         * versioning.</p>  <p>This is intended for use only by vendors of managed
+         * rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
+         * of your versioned managed rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>  <p>Customers
+         * retrieve their managed rule group list by calling
+         * <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
+         * managed rule set is the name the customer sees for the corresponding managed
+         * rule group. Customers can retrieve the available versions for a managed rule
+         * group by calling <a>ListAvailableManagedRuleGroupVersions</a>. You provide a
+         * rule group specification for each version. For each managed rule set, you must
+         * specify a version that you recommend using. </p> <p>To initiate the expiration
+         * of a managed rule group version, use
+         * <a>UpdateManagedRuleSetVersionExpiryDate</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutManagedRuleSetVersionsOutcome PutManagedRuleSetVersions(const Model::PutManagedRuleSetVersionsRequest& request) const;
+
+        /**
+         * <p>Defines the versions of your managed rule set that you are offering to the
+         * customers. Customers see your offerings as managed rule groups with
+         * versioning.</p>  <p>This is intended for use only by vendors of managed
+         * rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
+         * of your versioned managed rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>  <p>Customers
+         * retrieve their managed rule group list by calling
+         * <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
+         * managed rule set is the name the customer sees for the corresponding managed
+         * rule group. Customers can retrieve the available versions for a managed rule
+         * group by calling <a>ListAvailableManagedRuleGroupVersions</a>. You provide a
+         * rule group specification for each version. For each managed rule set, you must
+         * specify a version that you recommend using. </p> <p>To initiate the expiration
+         * of a managed rule group version, use
+         * <a>UpdateManagedRuleSetVersionExpiryDate</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutManagedRuleSetVersionsOutcomeCallable PutManagedRuleSetVersionsCallable(const Model::PutManagedRuleSetVersionsRequest& request) const;
+
+        /**
+         * <p>Defines the versions of your managed rule set that you are offering to the
+         * customers. Customers see your offerings as managed rule groups with
+         * versioning.</p>  <p>This is intended for use only by vendors of managed
+         * rule sets. Vendors are Amazon Web Services and Marketplace sellers. </p>
+         * <p>Vendors, you can use the managed rule set APIs to provide controlled rollout
+         * of your versioned managed rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>  <p>Customers
+         * retrieve their managed rule group list by calling
+         * <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your
+         * managed rule set is the name the customer sees for the corresponding managed
+         * rule group. Customers can retrieve the available versions for a managed rule
+         * group by calling <a>ListAvailableManagedRuleGroupVersions</a>. You provide a
+         * rule group specification for each version. For each managed rule set, you must
+         * specify a version that you recommend using. </p> <p>To initiate the expiration
+         * of a managed rule group version, use
+         * <a>UpdateManagedRuleSetVersionExpiryDate</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutManagedRuleSetVersionsAsync(const Model::PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
          * group across accounts.</p> <p>You must be the owner of the rule group to perform
          * this operation.</p> <p>This action is subject to the following restrictions:</p>
@@ -1657,6 +1877,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the expiration information for your managed rule set. Use this to
+         * initiate the expiration of a managed rule group version. After you initiate
+         * expiration for a version, WAF excludes it from the reponse to
+         * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
+         *  <p>This is intended for use only by vendors of managed rule sets. Vendors
+         * are Amazon Web Services and Marketplace sellers. </p> <p>Vendors, you can use
+         * the managed rule set APIs to provide controlled rollout of your versioned
+         * managed rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateManagedRuleSetVersionExpiryDateOutcome UpdateManagedRuleSetVersionExpiryDate(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request) const;
+
+        /**
+         * <p>Updates the expiration information for your managed rule set. Use this to
+         * initiate the expiration of a managed rule group version. After you initiate
+         * expiration for a version, WAF excludes it from the reponse to
+         * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
+         *  <p>This is intended for use only by vendors of managed rule sets. Vendors
+         * are Amazon Web Services and Marketplace sellers. </p> <p>Vendors, you can use
+         * the managed rule set APIs to provide controlled rollout of your versioned
+         * managed rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateManagedRuleSetVersionExpiryDateOutcomeCallable UpdateManagedRuleSetVersionExpiryDateCallable(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request) const;
+
+        /**
+         * <p>Updates the expiration information for your managed rule set. Use this to
+         * initiate the expiration of a managed rule group version. After you initiate
+         * expiration for a version, WAF excludes it from the reponse to
+         * <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p>
+         *  <p>This is intended for use only by vendors of managed rule sets. Vendors
+         * are Amazon Web Services and Marketplace sellers. </p> <p>Vendors, you can use
+         * the managed rule set APIs to provide controlled rollout of your versioned
+         * managed rule group offerings for your customers. The APIs are
+         * <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>,
+         * <code>PutManagedRuleSetVersions</code>, and
+         * <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateManagedRuleSetVersionExpiryDateAsync(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the specified <a>RegexPatternSet</a>.</p>  <p>This operation
@@ -1835,6 +2113,7 @@ namespace Model
         void DisassociateWebACLAsyncHelper(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoggingConfigurationAsyncHelper(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetManagedRuleSetAsyncHelper(const Model::GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPermissionPolicyAsyncHelper(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedStatementManagedKeysAsyncHelper(const Model::GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegexPatternSetAsyncHelper(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1842,19 +2121,23 @@ namespace Model
         void GetSampledRequestsAsyncHelper(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWebACLAsyncHelper(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWebACLForResourceAsyncHelper(const Model::GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAvailableManagedRuleGroupVersionsAsyncHelper(const Model::ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableManagedRuleGroupsAsyncHelper(const Model::ListAvailableManagedRuleGroupsRequest& request, const ListAvailableManagedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLoggingConfigurationsAsyncHelper(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListManagedRuleSetsAsyncHelper(const Model::ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRegexPatternSetsAsyncHelper(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourcesForWebACLAsyncHelper(const Model::ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRuleGroupsAsyncHelper(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingConfigurationAsyncHelper(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutManagedRuleSetVersionsAsyncHelper(const Model::PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPermissionPolicyAsyncHelper(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateManagedRuleSetVersionExpiryDateAsyncHelper(const Model::UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRegexPatternSetAsyncHelper(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRuleGroupAsyncHelper(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWebACLAsyncHelper(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

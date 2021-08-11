@@ -144,6 +144,47 @@ namespace Model
 
 
     /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline const Aws::String& GetOwnedBy() const{ return m_ownedBy; }
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline bool OwnedByHasBeenSet() const { return m_ownedByHasBeenSet; }
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline void SetOwnedBy(const Aws::String& value) { m_ownedByHasBeenSet = true; m_ownedBy = value; }
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline void SetOwnedBy(Aws::String&& value) { m_ownedByHasBeenSet = true; m_ownedBy = std::move(value); }
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline void SetOwnedBy(const char* value) { m_ownedByHasBeenSet = true; m_ownedBy.assign(value); }
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline StreamingSessionStream& WithOwnedBy(const Aws::String& value) { SetOwnedBy(value); return *this;}
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline StreamingSessionStream& WithOwnedBy(Aws::String&& value) { SetOwnedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The user ID of the user that owns the streaming session.</p>
+     */
+    inline StreamingSessionStream& WithOwnedBy(const char* value) { SetOwnedBy(value); return *this;}
+
+
+    /**
      * <p>The current state.</p>
      */
     inline const StreamingSessionStreamState& GetState() const{ return m_state; }
@@ -296,6 +337,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expiresAt;
     bool m_expiresAtHasBeenSet;
+
+    Aws::String m_ownedBy;
+    bool m_ownedByHasBeenSet;
 
     StreamingSessionStreamState m_state;
     bool m_stateHasBeenSet;

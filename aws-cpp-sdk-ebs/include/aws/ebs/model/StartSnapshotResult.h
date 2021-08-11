@@ -109,37 +109,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline StartSnapshotResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline StartSnapshotResult& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the snapshot owner.</p>
+     * <p>The Amazon Web Services account ID of the snapshot owner.</p>
      */
     inline StartSnapshotResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -329,44 +329,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline StartSnapshotResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline StartSnapshotResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) used to encrypt the snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+     * to encrypt the snapshot.</p>
      */
     inline StartSnapshotResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

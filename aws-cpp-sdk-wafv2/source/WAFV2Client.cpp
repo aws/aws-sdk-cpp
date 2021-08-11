@@ -37,6 +37,7 @@
 #include <aws/wafv2/model/DisassociateWebACLRequest.h>
 #include <aws/wafv2/model/GetIPSetRequest.h>
 #include <aws/wafv2/model/GetLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/GetManagedRuleSetRequest.h>
 #include <aws/wafv2/model/GetPermissionPolicyRequest.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysRequest.h>
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
@@ -44,19 +45,23 @@
 #include <aws/wafv2/model/GetSampledRequestsRequest.h>
 #include <aws/wafv2/model/GetWebACLRequest.h>
 #include <aws/wafv2/model/GetWebACLForResourceRequest.h>
+#include <aws/wafv2/model/ListAvailableManagedRuleGroupVersionsRequest.h>
 #include <aws/wafv2/model/ListAvailableManagedRuleGroupsRequest.h>
 #include <aws/wafv2/model/ListIPSetsRequest.h>
 #include <aws/wafv2/model/ListLoggingConfigurationsRequest.h>
+#include <aws/wafv2/model/ListManagedRuleSetsRequest.h>
 #include <aws/wafv2/model/ListRegexPatternSetsRequest.h>
 #include <aws/wafv2/model/ListResourcesForWebACLRequest.h>
 #include <aws/wafv2/model/ListRuleGroupsRequest.h>
 #include <aws/wafv2/model/ListTagsForResourceRequest.h>
 #include <aws/wafv2/model/ListWebACLsRequest.h>
 #include <aws/wafv2/model/PutLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/PutManagedRuleSetVersionsRequest.h>
 #include <aws/wafv2/model/PutPermissionPolicyRequest.h>
 #include <aws/wafv2/model/TagResourceRequest.h>
 #include <aws/wafv2/model/UntagResourceRequest.h>
 #include <aws/wafv2/model/UpdateIPSetRequest.h>
+#include <aws/wafv2/model/UpdateManagedRuleSetVersionExpiryDateRequest.h>
 #include <aws/wafv2/model/UpdateRegexPatternSetRequest.h>
 #include <aws/wafv2/model/UpdateRuleGroupRequest.h>
 #include <aws/wafv2/model/UpdateWebACLRequest.h>
@@ -542,6 +547,30 @@ void WAFV2Client::GetLoggingConfigurationAsyncHelper(const GetLoggingConfigurati
   handler(this, request, GetLoggingConfiguration(request), context);
 }
 
+GetManagedRuleSetOutcome WAFV2Client::GetManagedRuleSet(const GetManagedRuleSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetManagedRuleSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetManagedRuleSetOutcomeCallable WAFV2Client::GetManagedRuleSetCallable(const GetManagedRuleSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetManagedRuleSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetManagedRuleSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GetManagedRuleSetAsync(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetManagedRuleSetAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GetManagedRuleSetAsyncHelper(const GetManagedRuleSetRequest& request, const GetManagedRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetManagedRuleSet(request), context);
+}
+
 GetPermissionPolicyOutcome WAFV2Client::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -710,6 +739,30 @@ void WAFV2Client::GetWebACLForResourceAsyncHelper(const GetWebACLForResourceRequ
   handler(this, request, GetWebACLForResource(request), context);
 }
 
+ListAvailableManagedRuleGroupVersionsOutcome WAFV2Client::ListAvailableManagedRuleGroupVersions(const ListAvailableManagedRuleGroupVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListAvailableManagedRuleGroupVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAvailableManagedRuleGroupVersionsOutcomeCallable WAFV2Client::ListAvailableManagedRuleGroupVersionsCallable(const ListAvailableManagedRuleGroupVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAvailableManagedRuleGroupVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAvailableManagedRuleGroupVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsync(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableManagedRuleGroupVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::ListAvailableManagedRuleGroupVersionsAsyncHelper(const ListAvailableManagedRuleGroupVersionsRequest& request, const ListAvailableManagedRuleGroupVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAvailableManagedRuleGroupVersions(request), context);
+}
+
 ListAvailableManagedRuleGroupsOutcome WAFV2Client::ListAvailableManagedRuleGroups(const ListAvailableManagedRuleGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -780,6 +833,30 @@ void WAFV2Client::ListLoggingConfigurationsAsync(const ListLoggingConfigurations
 void WAFV2Client::ListLoggingConfigurationsAsyncHelper(const ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListLoggingConfigurations(request), context);
+}
+
+ListManagedRuleSetsOutcome WAFV2Client::ListManagedRuleSets(const ListManagedRuleSetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListManagedRuleSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListManagedRuleSetsOutcomeCallable WAFV2Client::ListManagedRuleSetsCallable(const ListManagedRuleSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListManagedRuleSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListManagedRuleSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::ListManagedRuleSetsAsync(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListManagedRuleSetsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::ListManagedRuleSetsAsyncHelper(const ListManagedRuleSetsRequest& request, const ListManagedRuleSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListManagedRuleSets(request), context);
 }
 
 ListRegexPatternSetsOutcome WAFV2Client::ListRegexPatternSets(const ListRegexPatternSetsRequest& request) const
@@ -926,6 +1003,30 @@ void WAFV2Client::PutLoggingConfigurationAsyncHelper(const PutLoggingConfigurati
   handler(this, request, PutLoggingConfiguration(request), context);
 }
 
+PutManagedRuleSetVersionsOutcome WAFV2Client::PutManagedRuleSetVersions(const PutManagedRuleSetVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutManagedRuleSetVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutManagedRuleSetVersionsOutcomeCallable WAFV2Client::PutManagedRuleSetVersionsCallable(const PutManagedRuleSetVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutManagedRuleSetVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutManagedRuleSetVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::PutManagedRuleSetVersionsAsync(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutManagedRuleSetVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::PutManagedRuleSetVersionsAsyncHelper(const PutManagedRuleSetVersionsRequest& request, const PutManagedRuleSetVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutManagedRuleSetVersions(request), context);
+}
+
 PutPermissionPolicyOutcome WAFV2Client::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1020,6 +1121,30 @@ void WAFV2Client::UpdateIPSetAsync(const UpdateIPSetRequest& request, const Upda
 void WAFV2Client::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIPSet(request), context);
+}
+
+UpdateManagedRuleSetVersionExpiryDateOutcome WAFV2Client::UpdateManagedRuleSetVersionExpiryDate(const UpdateManagedRuleSetVersionExpiryDateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateManagedRuleSetVersionExpiryDateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateManagedRuleSetVersionExpiryDateOutcomeCallable WAFV2Client::UpdateManagedRuleSetVersionExpiryDateCallable(const UpdateManagedRuleSetVersionExpiryDateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateManagedRuleSetVersionExpiryDateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateManagedRuleSetVersionExpiryDate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsync(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateManagedRuleSetVersionExpiryDateAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::UpdateManagedRuleSetVersionExpiryDateAsyncHelper(const UpdateManagedRuleSetVersionExpiryDateRequest& request, const UpdateManagedRuleSetVersionExpiryDateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateManagedRuleSetVersionExpiryDate(request), context);
 }
 
 UpdateRegexPatternSetOutcome WAFV2Client::UpdateRegexPatternSet(const UpdateRegexPatternSetRequest& request) const

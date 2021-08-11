@@ -50,8 +50,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
@@ -59,8 +59,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
@@ -68,8 +68,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
@@ -77,8 +77,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
@@ -86,8 +86,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
@@ -95,8 +95,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline Cluster& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
@@ -104,8 +104,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline Cluster& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
@@ -113,8 +113,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
-     * the account ID of the cluster owner, the <code>cluster</code> namespace, and
-     * then the cluster name. For example,
+     * the Amazon Web Services account ID of the cluster owner, the
+     * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
      */
     inline Cluster& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}

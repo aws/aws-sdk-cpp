@@ -692,57 +692,57 @@ namespace Model
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 

@@ -23,7 +23,8 @@ AccessKey::AccessKey() :
     m_secretAccessKeyHasBeenSet(false),
     m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_lastUsedHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AccessKey::AccessKey(JsonView jsonValue) :
     m_secretAccessKeyHasBeenSet(false),
     m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_lastUsedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ AccessKey& AccessKey::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastUsed"))
+  {
+    m_lastUsed = jsonValue.GetObject("lastUsed");
+
+    m_lastUsedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue AccessKey::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUsedHasBeenSet)
+  {
+   payload.WithObject("lastUsed", m_lastUsed.Jsonize());
+
   }
 
   return payload;

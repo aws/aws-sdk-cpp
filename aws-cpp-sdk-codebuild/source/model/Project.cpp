@@ -46,7 +46,11 @@ Project::Project() :
     m_fileSystemLocationsHasBeenSet(false),
     m_buildBatchConfigHasBeenSet(false),
     m_concurrentBuildLimit(0),
-    m_concurrentBuildLimitHasBeenSet(false)
+    m_concurrentBuildLimitHasBeenSet(false),
+    m_projectVisibility(ProjectVisibilityType::NOT_SET),
+    m_projectVisibilityHasBeenSet(false),
+    m_publicProjectAliasHasBeenSet(false),
+    m_resourceAccessRoleHasBeenSet(false)
 {
 }
 
@@ -78,7 +82,11 @@ Project::Project(JsonView jsonValue) :
     m_fileSystemLocationsHasBeenSet(false),
     m_buildBatchConfigHasBeenSet(false),
     m_concurrentBuildLimit(0),
-    m_concurrentBuildLimitHasBeenSet(false)
+    m_concurrentBuildLimitHasBeenSet(false),
+    m_projectVisibility(ProjectVisibilityType::NOT_SET),
+    m_projectVisibilityHasBeenSet(false),
+    m_publicProjectAliasHasBeenSet(false),
+    m_resourceAccessRoleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -275,6 +283,27 @@ Project& Project::operator =(JsonView jsonValue)
     m_concurrentBuildLimitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("projectVisibility"))
+  {
+    m_projectVisibility = ProjectVisibilityTypeMapper::GetProjectVisibilityTypeForName(jsonValue.GetString("projectVisibility"));
+
+    m_projectVisibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("publicProjectAlias"))
+  {
+    m_publicProjectAlias = jsonValue.GetString("publicProjectAlias");
+
+    m_publicProjectAliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceAccessRole"))
+  {
+    m_resourceAccessRole = jsonValue.GetString("resourceAccessRole");
+
+    m_resourceAccessRoleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -452,6 +481,23 @@ JsonValue Project::Jsonize() const
   if(m_concurrentBuildLimitHasBeenSet)
   {
    payload.WithInteger("concurrentBuildLimit", m_concurrentBuildLimit);
+
+  }
+
+  if(m_projectVisibilityHasBeenSet)
+  {
+   payload.WithString("projectVisibility", ProjectVisibilityTypeMapper::GetNameForProjectVisibilityType(m_projectVisibility));
+  }
+
+  if(m_publicProjectAliasHasBeenSet)
+  {
+   payload.WithString("publicProjectAlias", m_publicProjectAlias);
+
+  }
+
+  if(m_resourceAccessRoleHasBeenSet)
+  {
+   payload.WithString("resourceAccessRole", m_resourceAccessRole);
 
   }
 
