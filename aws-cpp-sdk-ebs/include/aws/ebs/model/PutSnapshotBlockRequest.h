@@ -116,29 +116,29 @@ namespace Model
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline int GetDataLength() const{ return m_dataLength; }
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline bool DataLengthHasBeenSet() const { return m_dataLengthHasBeenSet; }
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline void SetDataLength(int value) { m_dataLengthHasBeenSet = true; m_dataLength = value; }
 
     /**
      * <p>The size of the data to write to the block, in bytes. Currently, the only
-     * supported size is <code>524288</code>.</p> <p>Valid values: <code>524288</code>
-     * </p>
+     * supported size is <code>524288</code> bytes.</p> <p>Valid values:
+     * <code>524288</code> </p>
      */
     inline PutSnapshotBlockRequest& WithDataLength(int value) { SetDataLength(value); return *this;}
 

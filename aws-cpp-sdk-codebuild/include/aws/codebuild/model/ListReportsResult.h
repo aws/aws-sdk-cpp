@@ -112,42 +112,50 @@ namespace Model
 
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline const Aws::Vector<Aws::String>& GetReports() const{ return m_reports; }
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline void SetReports(const Aws::Vector<Aws::String>& value) { m_reports = value; }
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline void SetReports(Aws::Vector<Aws::String>&& value) { m_reports = std::move(value); }
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline ListReportsResult& WithReports(const Aws::Vector<Aws::String>& value) { SetReports(value); return *this;}
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline ListReportsResult& WithReports(Aws::Vector<Aws::String>&& value) { SetReports(std::move(value)); return *this;}
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline ListReportsResult& AddReports(const Aws::String& value) { m_reports.push_back(value); return *this; }
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline ListReportsResult& AddReports(Aws::String&& value) { m_reports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The list of returned ARNs for the reports in the current AWS account. </p>
+     * <p> The list of returned ARNs for the reports in the current Amazon Web Services
+     * account. </p>
      */
     inline ListReportsResult& AddReports(const char* value) { m_reports.push_back(value); return *this; }
 

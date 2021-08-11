@@ -19,6 +19,7 @@ CreateStreamingSessionRequest::CreateStreamingSessionRequest() :
     m_ec2InstanceType(StreamingInstanceType::NOT_SET),
     m_ec2InstanceTypeHasBeenSet(false),
     m_launchProfileIdHasBeenSet(false),
+    m_ownedByHasBeenSet(false),
     m_streamingImageIdHasBeenSet(false),
     m_studioIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -37,6 +38,12 @@ Aws::String CreateStreamingSessionRequest::SerializePayload() const
   if(m_launchProfileIdHasBeenSet)
   {
    payload.WithString("launchProfileId", m_launchProfileId);
+
+  }
+
+  if(m_ownedByHasBeenSet)
+  {
+   payload.WithString("ownedBy", m_ownedBy);
 
   }
 

@@ -914,7 +914,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
@@ -923,7 +924,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
@@ -932,7 +934,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
@@ -941,7 +944,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
@@ -950,7 +954,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline CreateServiceRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
@@ -959,7 +964,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline CreateServiceRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
@@ -968,7 +974,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline CreateServiceRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
@@ -977,7 +984,8 @@ namespace Model
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>A
+     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
      */
     inline CreateServiceRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -1320,105 +1328,105 @@ namespace Model
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline CreateServiceRequest& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline CreateServiceRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline CreateServiceRequest& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
      * You can specify a maximum of 10 constraints per task (this limit includes
-     * constraints in the task definition and those specified at runtime). </p>
+     * constraints in the task definition and those specified at runtime).</p>
      */
     inline CreateServiceRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline CreateServiceRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline CreateServiceRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline CreateServiceRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
 
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
-     * specify a maximum of five strategy rules per service.</p>
+     * specify a maximum of 5 strategy rules per service.</p>
      */
     inline CreateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 

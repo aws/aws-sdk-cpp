@@ -24,6 +24,7 @@ StreamingSession::StreamingSession() :
     m_createdByHasBeenSet(false),
     m_ec2InstanceTypeHasBeenSet(false),
     m_launchProfileIdHasBeenSet(false),
+    m_ownedByHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_state(StreamingSessionState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -44,6 +45,7 @@ StreamingSession::StreamingSession(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_ec2InstanceTypeHasBeenSet(false),
     m_launchProfileIdHasBeenSet(false),
+    m_ownedByHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_state(StreamingSessionState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -94,6 +96,13 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_launchProfileId = jsonValue.GetString("launchProfileId");
 
     m_launchProfileIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ownedBy"))
+  {
+    m_ownedBy = jsonValue.GetString("ownedBy");
+
+    m_ownedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sessionId"))
@@ -195,6 +204,12 @@ JsonValue StreamingSession::Jsonize() const
   if(m_launchProfileIdHasBeenSet)
   {
    payload.WithString("launchProfileId", m_launchProfileId);
+
+  }
+
+  if(m_ownedByHasBeenSet)
+  {
+   payload.WithString("ownedBy", m_ownedBy);
 
   }
 

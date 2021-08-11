@@ -213,91 +213,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline Studio& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline Studio& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region where the studio resource is located.</p>
+     * <p>The Amazon Web Services Region where the studio resource is located.</p>
      */
     inline Studio& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
 
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline const Aws::String& GetSsoClientId() const{ return m_ssoClientId; }
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline bool SsoClientIdHasBeenSet() const { return m_ssoClientIdHasBeenSet; }
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline void SetSsoClientId(const Aws::String& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = value; }
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline void SetSsoClientId(Aws::String&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::move(value); }
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline void SetSsoClientId(const char* value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId.assign(value); }
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline Studio& WithSsoClientId(const Aws::String& value) { SetSsoClientId(value); return *this;}
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline Studio& WithSsoClientId(Aws::String&& value) { SetSsoClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS SSO application client ID used to integrate with AWS SSO to enable
-     * AWS SSO users to log in to Nimble portal.</p>
+     * <p>The Amazon Web Services SSO application client ID used to integrate with
+     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
+     * Nimble portal.</p>
      */
     inline Studio& WithSsoClientId(const char* value) { SetSsoClientId(value); return *this;}
 

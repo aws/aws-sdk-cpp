@@ -41,74 +41,74 @@ namespace Model
 
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline const Aws::String& GetOwningAccount() const{ return m_owningAccount; }
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline bool OwningAccountHasBeenSet() const { return m_owningAccountHasBeenSet; }
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline void SetOwningAccount(const Aws::String& value) { m_owningAccountHasBeenSet = true; m_owningAccount = value; }
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline void SetOwningAccount(Aws::String&& value) { m_owningAccountHasBeenSet = true; m_owningAccount = std::move(value); }
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline void SetOwningAccount(const char* value) { m_owningAccountHasBeenSet = true; m_owningAccount.assign(value); }
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline HostedZoneOwner& WithOwningAccount(const Aws::String& value) { SetOwningAccount(value); return *this;}
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline HostedZoneOwner& WithOwningAccount(Aws::String&& value) { SetOwningAccount(std::move(value)); return *this;}
 
     /**
-     * <p>If the hosted zone was created by an account, or was created by an Amazon Web
-     * Services service that creates hosted zones using the current account,
-     * <code>OwningAccount</code> contains the account ID of that account. For example,
-     * when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted
-     * zone using the current account. </p>
+     * <p>If the hosted zone was created by an Amazon Web Services account, or was
+     * created by an Amazon Web Services service that creates hosted zones using the
+     * current account, <code>OwningAccount</code> contains the account ID of that
+     * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
+     * creates the hosted zone using the current Amazon Web Services account. </p>
      */
     inline HostedZoneOwner& WithOwningAccount(const char* value) { SetOwningAccount(value); return *this;}
 
