@@ -32,9 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>An Autopilot job returns recommendations, or candidates. Each candidate has
-   * futher details about the steps involved and the status.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Information about a candidate produced by an AutoML training job, including
+   * its status, steps, and other properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidate">AWS
    * API Reference</a></p>
    */
@@ -386,32 +385,32 @@ namespace Model
 
 
     /**
-     * <p>The AutoML candidate's properties.</p>
+     * <p>The properties of an AutoML candidate job.</p>
      */
     inline const CandidateProperties& GetCandidateProperties() const{ return m_candidateProperties; }
 
     /**
-     * <p>The AutoML candidate's properties.</p>
+     * <p>The properties of an AutoML candidate job.</p>
      */
     inline bool CandidatePropertiesHasBeenSet() const { return m_candidatePropertiesHasBeenSet; }
 
     /**
-     * <p>The AutoML candidate's properties.</p>
+     * <p>The properties of an AutoML candidate job.</p>
      */
     inline void SetCandidateProperties(const CandidateProperties& value) { m_candidatePropertiesHasBeenSet = true; m_candidateProperties = value; }
 
     /**
-     * <p>The AutoML candidate's properties.</p>
+     * <p>The properties of an AutoML candidate job.</p>
      */
     inline void SetCandidateProperties(CandidateProperties&& value) { m_candidatePropertiesHasBeenSet = true; m_candidateProperties = std::move(value); }
 
     /**
-     * <p>The AutoML candidate's properties.</p>
+     * <p>The properties of an AutoML candidate job.</p>
      */
     inline AutoMLCandidate& WithCandidateProperties(const CandidateProperties& value) { SetCandidateProperties(value); return *this;}
 
     /**
-     * <p>The AutoML candidate's properties.</p>
+     * <p>The properties of an AutoML candidate job.</p>
      */
     inline AutoMLCandidate& WithCandidateProperties(CandidateProperties&& value) { SetCandidateProperties(std::move(value)); return *this;}
 

@@ -1594,7 +1594,7 @@ namespace Model
         virtual void CreateArtifactAsync(const Model::CreateArtifactRequest& request, const CreateArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Autopilot job.</p> <p>Find the best performing model after you run
+         * <p>Creates an Autopilot job.</p> <p>Find the best-performing model after you run
          * an Autopilot job by calling .</p> <p>For information about how to use Autopilot,
          * see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
@@ -1606,7 +1606,7 @@ namespace Model
         virtual Model::CreateAutoMLJobOutcome CreateAutoMLJob(const Model::CreateAutoMLJobRequest& request) const;
 
         /**
-         * <p>Creates an Autopilot job.</p> <p>Find the best performing model after you run
+         * <p>Creates an Autopilot job.</p> <p>Find the best-performing model after you run
          * an Autopilot job by calling .</p> <p>For information about how to use Autopilot,
          * see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
@@ -1620,7 +1620,7 @@ namespace Model
         virtual Model::CreateAutoMLJobOutcomeCallable CreateAutoMLJobCallable(const Model::CreateAutoMLJobRequest& request) const;
 
         /**
-         * <p>Creates an Autopilot job.</p> <p>Find the best performing model after you run
+         * <p>Creates an Autopilot job.</p> <p>Find the best-performing model after you run
          * an Autopilot job by calling .</p> <p>For information about how to use Autopilot,
          * see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
@@ -8717,34 +8717,50 @@ namespace Model
         virtual void StopNotebookInstanceAsync(const Model::StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a pipeline execution.</p> <p>A pipeline execution won't stop while a
-         * callback step is running. When you call <code>StopPipelineExecution</code> on a
-         * pipeline execution with a running callback step, SageMaker Pipelines sends an
-         * additional Amazon SQS message to the specified SQS queue. The body of the SQS
-         * message contains a "Status" field which is set to "Stopping".</p> <p>You should
-         * add logic to your Amazon SQS message consumer to take any needed action (for
-         * example, resource cleanup) upon receipt of the message followed by a call to
+         * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
+         * execution won't stop while a callback step is running. When you call
+         * <code>StopPipelineExecution</code> on a pipeline execution with a running
+         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
+         * specified SQS queue. The body of the SQS message contains a "Status" field which
+         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
+         * consumer to take any needed action (for example, resource cleanup) upon receipt
+         * of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
          * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
-         * Pipelines receives one of these calls will it stop the pipeline
-         * execution.</p><p><h3>See Also:</h3>   <a
+         * Pipelines receives one of these calls will it stop the pipeline execution.</p>
+         * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
+         * lambda step is running because the Lambda function invoked by the lambda step
+         * can't be stopped. If you attempt to stop the execution while the Lambda function
+         * is running, the pipeline waits for the Lambda function to finish or until the
+         * timeout is hit, whichever occurs first, and then stops. If the Lambda function
+         * finishes, the pipeline execution status is <code>Stopped</code>. If the timeout
+         * is hit the pipeline execution status is <code>Failed</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StopPipelineExecutionOutcome StopPipelineExecution(const Model::StopPipelineExecutionRequest& request) const;
 
         /**
-         * <p>Stops a pipeline execution.</p> <p>A pipeline execution won't stop while a
-         * callback step is running. When you call <code>StopPipelineExecution</code> on a
-         * pipeline execution with a running callback step, SageMaker Pipelines sends an
-         * additional Amazon SQS message to the specified SQS queue. The body of the SQS
-         * message contains a "Status" field which is set to "Stopping".</p> <p>You should
-         * add logic to your Amazon SQS message consumer to take any needed action (for
-         * example, resource cleanup) upon receipt of the message followed by a call to
+         * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
+         * execution won't stop while a callback step is running. When you call
+         * <code>StopPipelineExecution</code> on a pipeline execution with a running
+         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
+         * specified SQS queue. The body of the SQS message contains a "Status" field which
+         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
+         * consumer to take any needed action (for example, resource cleanup) upon receipt
+         * of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
          * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
-         * Pipelines receives one of these calls will it stop the pipeline
-         * execution.</p><p><h3>See Also:</h3>   <a
+         * Pipelines receives one of these calls will it stop the pipeline execution.</p>
+         * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
+         * lambda step is running because the Lambda function invoked by the lambda step
+         * can't be stopped. If you attempt to stop the execution while the Lambda function
+         * is running, the pipeline waits for the Lambda function to finish or until the
+         * timeout is hit, whichever occurs first, and then stops. If the Lambda function
+         * finishes, the pipeline execution status is <code>Stopped</code>. If the timeout
+         * is hit the pipeline execution status is <code>Failed</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">AWS
          * API Reference</a></p>
          *
@@ -8753,17 +8769,25 @@ namespace Model
         virtual Model::StopPipelineExecutionOutcomeCallable StopPipelineExecutionCallable(const Model::StopPipelineExecutionRequest& request) const;
 
         /**
-         * <p>Stops a pipeline execution.</p> <p>A pipeline execution won't stop while a
-         * callback step is running. When you call <code>StopPipelineExecution</code> on a
-         * pipeline execution with a running callback step, SageMaker Pipelines sends an
-         * additional Amazon SQS message to the specified SQS queue. The body of the SQS
-         * message contains a "Status" field which is set to "Stopping".</p> <p>You should
-         * add logic to your Amazon SQS message consumer to take any needed action (for
-         * example, resource cleanup) upon receipt of the message followed by a call to
+         * <p>Stops a pipeline execution.</p> <p> <b>Callback Step</b> </p> <p>A pipeline
+         * execution won't stop while a callback step is running. When you call
+         * <code>StopPipelineExecution</code> on a pipeline execution with a running
+         * callback step, SageMaker Pipelines sends an additional Amazon SQS message to the
+         * specified SQS queue. The body of the SQS message contains a "Status" field which
+         * is set to "Stopping".</p> <p>You should add logic to your Amazon SQS message
+         * consumer to take any needed action (for example, resource cleanup) upon receipt
+         * of the message followed by a call to
          * <code>SendPipelineExecutionStepSuccess</code> or
          * <code>SendPipelineExecutionStepFailure</code>.</p> <p>Only when SageMaker
-         * Pipelines receives one of these calls will it stop the pipeline
-         * execution.</p><p><h3>See Also:</h3>   <a
+         * Pipelines receives one of these calls will it stop the pipeline execution.</p>
+         * <p> <b>Lambda Step</b> </p> <p>A pipeline execution can't be stopped while a
+         * lambda step is running because the Lambda function invoked by the lambda step
+         * can't be stopped. If you attempt to stop the execution while the Lambda function
+         * is running, the pipeline waits for the Lambda function to finish or until the
+         * timeout is hit, whichever occurs first, and then stops. If the Lambda function
+         * finishes, the pipeline execution status is <code>Stopped</code>. If the timeout
+         * is hit the pipeline execution status is <code>Failed</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">AWS
          * API Reference</a></p>
          *

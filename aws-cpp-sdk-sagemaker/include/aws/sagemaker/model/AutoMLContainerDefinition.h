@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline AutoMLContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline AutoMLContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The ECR path of the container. For more information, see .</p>
+     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
+     * more information, see .</p>
      */
     inline AutoMLContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
 

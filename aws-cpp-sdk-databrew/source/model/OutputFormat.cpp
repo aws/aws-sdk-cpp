@@ -27,6 +27,7 @@ namespace Aws
         static const int AVRO_HASH = HashingUtils::HashString("AVRO");
         static const int ORC_HASH = HashingUtils::HashString("ORC");
         static const int XML_HASH = HashingUtils::HashString("XML");
+        static const int TABLEAUHYPER_HASH = HashingUtils::HashString("TABLEAUHYPER");
 
 
         OutputFormat GetOutputFormatForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return OutputFormat::XML;
           }
+          else if (hashCode == TABLEAUHYPER_HASH)
+          {
+            return OutputFormat::TABLEAUHYPER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "ORC";
           case OutputFormat::XML:
             return "XML";
+          case OutputFormat::TABLEAUHYPER:
+            return "TABLEAUHYPER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

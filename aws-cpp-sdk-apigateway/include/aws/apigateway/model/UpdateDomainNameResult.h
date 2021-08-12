@@ -625,7 +625,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -634,7 +636,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -643,7 +647,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -652,7 +658,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -661,7 +669,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -856,6 +866,56 @@ namespace Model
      */
     inline UpdateDomainNameResult& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline const Aws::String& GetOwnershipVerificationCertificateArn() const{ return m_ownershipVerificationCertificateArn; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const Aws::String& value) { m_ownershipVerificationCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(Aws::String&& value) { m_ownershipVerificationCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const char* value) { m_ownershipVerificationCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline UpdateDomainNameResult& WithOwnershipVerificationCertificateArn(const Aws::String& value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline UpdateDomainNameResult& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline UpdateDomainNameResult& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -889,6 +949,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     MutualTlsAuthentication m_mutualTlsAuthentication;
+
+    Aws::String m_ownershipVerificationCertificateArn;
   };
 
 } // namespace Model

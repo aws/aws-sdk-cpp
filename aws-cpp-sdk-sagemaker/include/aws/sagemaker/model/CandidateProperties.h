@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/CandidateArtifactLocations.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/MetricDatum.h>
 #include <utility>
 
 namespace Aws
@@ -67,10 +69,54 @@ namespace Model
      */
     inline CandidateProperties& WithCandidateArtifactLocations(CandidateArtifactLocations&& value) { SetCandidateArtifactLocations(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline const Aws::Vector<MetricDatum>& GetCandidateMetrics() const{ return m_candidateMetrics; }
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline bool CandidateMetricsHasBeenSet() const { return m_candidateMetricsHasBeenSet; }
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline void SetCandidateMetrics(const Aws::Vector<MetricDatum>& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics = value; }
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline void SetCandidateMetrics(Aws::Vector<MetricDatum>&& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics = std::move(value); }
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline CandidateProperties& WithCandidateMetrics(const Aws::Vector<MetricDatum>& value) { SetCandidateMetrics(value); return *this;}
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline CandidateProperties& WithCandidateMetrics(Aws::Vector<MetricDatum>&& value) { SetCandidateMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline CandidateProperties& AddCandidateMetrics(const MetricDatum& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the candidate metrics for an AutoML job.</p>
+     */
+    inline CandidateProperties& AddCandidateMetrics(MetricDatum&& value) { m_candidateMetricsHasBeenSet = true; m_candidateMetrics.push_back(std::move(value)); return *this; }
+
   private:
 
     CandidateArtifactLocations m_candidateArtifactLocations;
     bool m_candidateArtifactLocationsHasBeenSet;
+
+    Aws::Vector<MetricDatum> m_candidateMetrics;
+    bool m_candidateMetricsHasBeenSet;
   };
 
 } // namespace Model
