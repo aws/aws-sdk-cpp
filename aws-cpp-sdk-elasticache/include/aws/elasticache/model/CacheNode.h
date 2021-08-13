@@ -102,56 +102,56 @@ namespace Model
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline const Aws::String& GetCacheNodeId() const{ return m_cacheNodeId; }
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline bool CacheNodeIdHasBeenSet() const { return m_cacheNodeIdHasBeenSet; }
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline void SetCacheNodeId(Aws::String&& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = std::move(value); }
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline void SetCacheNodeId(const char* value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId.assign(value); }
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline CacheNode& WithCacheNodeId(const Aws::String& value) { SetCacheNodeId(value); return *this;}
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline CacheNode& WithCacheNodeId(Aws::String&& value) { SetCacheNodeId(std::move(value)); return *this;}
 
     /**
      * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
-     * node used in a customer's AWS account.</p>
+     * node used in a customer's Amazon account.</p>
      */
     inline CacheNode& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
 

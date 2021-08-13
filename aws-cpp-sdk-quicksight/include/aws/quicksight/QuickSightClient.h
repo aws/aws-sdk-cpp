@@ -624,10 +624,10 @@ namespace Model
 
   /**
    * <fullname>Amazon QuickSight API Reference</fullname> <p>Amazon QuickSight is a
-   * fully managed, serverless business intelligence service for the Cloud that makes
-   * it easy to extend data and insights to every user in your organization. This API
-   * reference contains documentation for a programming interface that you can use to
-   * manage Amazon QuickSight. </p>
+   * fully managed, serverless business intelligence service for the Amazon Web
+   * Services Cloud that makes it easy to extend data and insights to every user in
+   * your organization. This API reference contains documentation for a programming
+   * interface that you can use to manage Amazon QuickSight. </p>
    */
   class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient
   {
@@ -685,8 +685,8 @@ namespace Model
         virtual void CancelIngestionAsync(const Model::CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates Amazon QuickSight customizations the current Region;. Currently, you
-         * can add a custom default theme by using the
+         * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
+         * Region;. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
          * QuickSight by removing QuickSight sample assets and videos for all new users,
@@ -712,8 +712,8 @@ namespace Model
         virtual Model::CreateAccountCustomizationOutcome CreateAccountCustomization(const Model::CreateAccountCustomizationRequest& request) const;
 
         /**
-         * <p>Creates Amazon QuickSight customizations the current Region;. Currently, you
-         * can add a custom default theme by using the
+         * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
+         * Region;. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
          * QuickSight by removing QuickSight sample assets and videos for all new users,
@@ -741,8 +741,8 @@ namespace Model
         virtual Model::CreateAccountCustomizationOutcomeCallable CreateAccountCustomizationCallable(const Model::CreateAccountCustomizationRequest& request) const;
 
         /**
-         * <p>Creates Amazon QuickSight customizations the current Region;. Currently, you
-         * can add a custom default theme by using the
+         * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
+         * Region;. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
          * QuickSight by removing QuickSight sample assets and videos for all new users,
@@ -1271,18 +1271,18 @@ namespace Model
         virtual void CreateThemeAliasAsync(const Model::CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes all Amazon QuickSight customizations in this Region; for the
-         * specified Amazon Web Services account; and QuickSight namespace.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
+         * Region; for the specified Amazon Web Services account; and QuickSight
+         * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAccountCustomizationOutcome DeleteAccountCustomization(const Model::DeleteAccountCustomizationRequest& request) const;
 
         /**
-         * <p>Deletes all Amazon QuickSight customizations in this Region; for the
-         * specified Amazon Web Services account; and QuickSight namespace.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
+         * Region; for the specified Amazon Web Services account; and QuickSight
+         * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -1291,9 +1291,9 @@ namespace Model
         virtual Model::DeleteAccountCustomizationOutcomeCallable DeleteAccountCustomizationCallable(const Model::DeleteAccountCustomizationRequest& request) const;
 
         /**
-         * <p>Deletes all Amazon QuickSight customizations in this Region; for the
-         * specified Amazon Web Services account; and QuickSight namespace.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services
+         * Region; for the specified Amazon Web Services account; and QuickSight
+         * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -1778,29 +1778,31 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account; and Amazon QuickSight namespace in an Region;. The QuickSight console
-         * evaluates which customizations to apply by running this API operation with the
-         * <code>Resolved</code> flag included. </p> <p>To determine what customizations
-         * display when you run this command, it can help to visualize the relationship of
-         * the entities involved. </p> <ul> <li> <p> <code>Amazon Web Services
-         * account;</code> - The Amazon Web Services account; exists at the top of the
-         * hierarchy. It has the potential to use all of the Regions; and AWS Services.
-         * When you subscribe to QuickSight, you choose one Region; to use as your home
-         * Region. That's where your free SPICE capacity is located. You can use QuickSight
-         * in any supported Region;. </p> </li> <li> <p> <code>Region;</code> - In each
-         * Region; where you sign in to QuickSight at least once, QuickSight acts as a
-         * separate instance of the same service. If you have a user directory, it resides
-         * in us-east-1, which is the US East (N. Virginia). Generally speaking, these
-         * users have access to QuickSight in any Region;, unless they are constrained to a
-         * namespace. </p> <p>To run the command in a different Region;, you change your
-         * Region settings. If you're using the AWS CLI, you can use one of the following
+         * account; and Amazon QuickSight namespace in an Amazon Web Services Region;. The
+         * QuickSight console evaluates which customizations to apply by running this API
+         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
+         * what customizations display when you run this command, it can help to visualize
+         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
+         * Services account;</code> - The Amazon Web Services account; exists at the top of
+         * the hierarchy. It has the potential to use all of the Amazon Web Services
+         * Regions; and AWS Services. When you subscribe to QuickSight, you choose one
+         * Amazon Web Services Region; to use as your home Region. That's where your free
+         * SPICE capacity is located. You can use QuickSight in any supported Amazon Web
+         * Services Region;. </p> </li> <li> <p> <code>Amazon Web Services Region;</code> -
+         * In each Amazon Web Services Region; where you sign in to QuickSight at least
+         * once, QuickSight acts as a separate instance of the same service. If you have a
+         * user directory, it resides in us-east-1, which is the US East (N. Virginia).
+         * Generally speaking, these users have access to QuickSight in any Amazon Web
+         * Services Region;, unless they are constrained to a namespace. </p> <p>To run the
+         * command in a different Amazon Web Services Region;, you change your Region
+         * settings. If you're using the AWS CLI, you can use one of the following
          * options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
          * profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your
-         * default Region;. Use Enter to key the same settings for your keys. For more
-         * information, see <a
+         * default Amazon Web Services Region;. Use Enter to key the same settings for your
+         * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
          * QuickSight namespace is a partition that contains users and assets (data
@@ -1808,13 +1810,15 @@ namespace Model
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account; and
-         * Region;.</p> </li> <li> <p> <code>Applied customizations</code> - Within an
-         * Region;, a set of QuickSight customizations can apply to an Amazon Web Services
-         * account; or to a namespace. Settings that you apply to a namespace override
-         * settings that you apply to an Amazon Web Services account;. All settings are
-         * isolated to a single Region;. To apply them in other Regions;, run the
-         * <code>CreateAccountCustomization</code> command in each Region; where you want
-         * to apply the same customizations. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
+         * customizations</code> - Within an Amazon Web Services Region;, a set of
+         * QuickSight customizations can apply to an Amazon Web Services account; or to a
+         * namespace. Settings that you apply to a namespace override settings that you
+         * apply to an Amazon Web Services account;. All settings are isolated to a single
+         * Amazon Web Services Region;. To apply them in other Amazon Web Services
+         * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
+         * Web Services Region; where you want to apply the same customizations. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">AWS
          * API Reference</a></p>
          */
@@ -1822,29 +1826,31 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account; and Amazon QuickSight namespace in an Region;. The QuickSight console
-         * evaluates which customizations to apply by running this API operation with the
-         * <code>Resolved</code> flag included. </p> <p>To determine what customizations
-         * display when you run this command, it can help to visualize the relationship of
-         * the entities involved. </p> <ul> <li> <p> <code>Amazon Web Services
-         * account;</code> - The Amazon Web Services account; exists at the top of the
-         * hierarchy. It has the potential to use all of the Regions; and AWS Services.
-         * When you subscribe to QuickSight, you choose one Region; to use as your home
-         * Region. That's where your free SPICE capacity is located. You can use QuickSight
-         * in any supported Region;. </p> </li> <li> <p> <code>Region;</code> - In each
-         * Region; where you sign in to QuickSight at least once, QuickSight acts as a
-         * separate instance of the same service. If you have a user directory, it resides
-         * in us-east-1, which is the US East (N. Virginia). Generally speaking, these
-         * users have access to QuickSight in any Region;, unless they are constrained to a
-         * namespace. </p> <p>To run the command in a different Region;, you change your
-         * Region settings. If you're using the AWS CLI, you can use one of the following
+         * account; and Amazon QuickSight namespace in an Amazon Web Services Region;. The
+         * QuickSight console evaluates which customizations to apply by running this API
+         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
+         * what customizations display when you run this command, it can help to visualize
+         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
+         * Services account;</code> - The Amazon Web Services account; exists at the top of
+         * the hierarchy. It has the potential to use all of the Amazon Web Services
+         * Regions; and AWS Services. When you subscribe to QuickSight, you choose one
+         * Amazon Web Services Region; to use as your home Region. That's where your free
+         * SPICE capacity is located. You can use QuickSight in any supported Amazon Web
+         * Services Region;. </p> </li> <li> <p> <code>Amazon Web Services Region;</code> -
+         * In each Amazon Web Services Region; where you sign in to QuickSight at least
+         * once, QuickSight acts as a separate instance of the same service. If you have a
+         * user directory, it resides in us-east-1, which is the US East (N. Virginia).
+         * Generally speaking, these users have access to QuickSight in any Amazon Web
+         * Services Region;, unless they are constrained to a namespace. </p> <p>To run the
+         * command in a different Amazon Web Services Region;, you change your Region
+         * settings. If you're using the AWS CLI, you can use one of the following
          * options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
          * profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your
-         * default Region;. Use Enter to key the same settings for your keys. For more
-         * information, see <a
+         * default Amazon Web Services Region;. Use Enter to key the same settings for your
+         * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
          * QuickSight namespace is a partition that contains users and assets (data
@@ -1852,13 +1858,15 @@ namespace Model
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account; and
-         * Region;.</p> </li> <li> <p> <code>Applied customizations</code> - Within an
-         * Region;, a set of QuickSight customizations can apply to an Amazon Web Services
-         * account; or to a namespace. Settings that you apply to a namespace override
-         * settings that you apply to an Amazon Web Services account;. All settings are
-         * isolated to a single Region;. To apply them in other Regions;, run the
-         * <code>CreateAccountCustomization</code> command in each Region; where you want
-         * to apply the same customizations. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
+         * customizations</code> - Within an Amazon Web Services Region;, a set of
+         * QuickSight customizations can apply to an Amazon Web Services account; or to a
+         * namespace. Settings that you apply to a namespace override settings that you
+         * apply to an Amazon Web Services account;. All settings are isolated to a single
+         * Amazon Web Services Region;. To apply them in other Amazon Web Services
+         * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
+         * Web Services Region; where you want to apply the same customizations. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -1868,29 +1876,31 @@ namespace Model
 
         /**
          * <p>Describes the customizations associated with the provided Amazon Web Services
-         * account; and Amazon QuickSight namespace in an Region;. The QuickSight console
-         * evaluates which customizations to apply by running this API operation with the
-         * <code>Resolved</code> flag included. </p> <p>To determine what customizations
-         * display when you run this command, it can help to visualize the relationship of
-         * the entities involved. </p> <ul> <li> <p> <code>Amazon Web Services
-         * account;</code> - The Amazon Web Services account; exists at the top of the
-         * hierarchy. It has the potential to use all of the Regions; and AWS Services.
-         * When you subscribe to QuickSight, you choose one Region; to use as your home
-         * Region. That's where your free SPICE capacity is located. You can use QuickSight
-         * in any supported Region;. </p> </li> <li> <p> <code>Region;</code> - In each
-         * Region; where you sign in to QuickSight at least once, QuickSight acts as a
-         * separate instance of the same service. If you have a user directory, it resides
-         * in us-east-1, which is the US East (N. Virginia). Generally speaking, these
-         * users have access to QuickSight in any Region;, unless they are constrained to a
-         * namespace. </p> <p>To run the command in a different Region;, you change your
-         * Region settings. If you're using the AWS CLI, you can use one of the following
+         * account; and Amazon QuickSight namespace in an Amazon Web Services Region;. The
+         * QuickSight console evaluates which customizations to apply by running this API
+         * operation with the <code>Resolved</code> flag included. </p> <p>To determine
+         * what customizations display when you run this command, it can help to visualize
+         * the relationship of the entities involved. </p> <ul> <li> <p> <code>Amazon Web
+         * Services account;</code> - The Amazon Web Services account; exists at the top of
+         * the hierarchy. It has the potential to use all of the Amazon Web Services
+         * Regions; and AWS Services. When you subscribe to QuickSight, you choose one
+         * Amazon Web Services Region; to use as your home Region. That's where your free
+         * SPICE capacity is located. You can use QuickSight in any supported Amazon Web
+         * Services Region;. </p> </li> <li> <p> <code>Amazon Web Services Region;</code> -
+         * In each Amazon Web Services Region; where you sign in to QuickSight at least
+         * once, QuickSight acts as a separate instance of the same service. If you have a
+         * user directory, it resides in us-east-1, which is the US East (N. Virginia).
+         * Generally speaking, these users have access to QuickSight in any Amazon Web
+         * Services Region;, unless they are constrained to a namespace. </p> <p>To run the
+         * command in a different Amazon Web Services Region;, you change your Region
+         * settings. If you're using the AWS CLI, you can use one of the following
          * options:</p> <ul> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
          * line options</a>. </p> </li> <li> <p>Use <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
          * profiles</a>. </p> </li> <li> <p>Run <code>aws configure</code> to change your
-         * default Region;. Use Enter to key the same settings for your keys. For more
-         * information, see <a
+         * default Amazon Web Services Region;. Use Enter to key the same settings for your
+         * keys. For more information, see <a
          * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
          * the AWS CLI</a>.</p> </li> </ul> </li> <li> <p> <code>Namespace</code> - A
          * QuickSight namespace is a partition that contains users and assets (data
@@ -1898,13 +1908,15 @@ namespace Model
          * specific namespace, users and groups must also be part of the same namespace.
          * People who share a namespace are completely isolated from users and assets in
          * other namespaces, even if they are in the same Amazon Web Services account; and
-         * Region;.</p> </li> <li> <p> <code>Applied customizations</code> - Within an
-         * Region;, a set of QuickSight customizations can apply to an Amazon Web Services
-         * account; or to a namespace. Settings that you apply to a namespace override
-         * settings that you apply to an Amazon Web Services account;. All settings are
-         * isolated to a single Region;. To apply them in other Regions;, run the
-         * <code>CreateAccountCustomization</code> command in each Region; where you want
-         * to apply the same customizations. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Amazon Web Services Region;.</p> </li> <li> <p> <code>Applied
+         * customizations</code> - Within an Amazon Web Services Region;, a set of
+         * QuickSight customizations can apply to an Amazon Web Services account; or to a
+         * namespace. Settings that you apply to a namespace override settings that you
+         * apply to an Amazon Web Services account;. All settings are isolated to a single
+         * Amazon Web Services Region;. To apply them in other Amazon Web Services
+         * Regions;, run the <code>CreateAccountCustomization</code> command in each Amazon
+         * Web Services Region; where you want to apply the same customizations. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -2704,10 +2716,11 @@ namespace Model
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-         * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
-         * information about the high-level steps for embedding and for an interactive demo
-         * of the ways you can customize embedding, visit the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
+         * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p> <p>For more information about the high-level steps for embedding
+         * and for an interactive demo of the ways you can customize embedding, visit the
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
          * QuickSight Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
@@ -2726,10 +2739,11 @@ namespace Model
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-         * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
-         * information about the high-level steps for embedding and for an interactive demo
-         * of the ways you can customize embedding, visit the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
+         * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p> <p>For more information about the high-level steps for embedding
+         * and for an interactive demo of the ways you can customize embedding, visit the
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
          * QuickSight Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
@@ -2750,10 +2764,11 @@ namespace Model
          * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
          * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-         * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
-         * information about the high-level steps for embedding and for an interactive demo
-         * of the ways you can customize embedding, visit the <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
+         * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p> <p>For more information about the high-level steps for embedding
+         * and for an interactive demo of the ways you can customize embedding, visit the
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
          * QuickSight Developer Portal</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
@@ -2775,8 +2790,9 @@ namespace Model
          * API operation to add a new user with a custom permission profile attached. For
          * more information, see the following sections in the <i>Amazon QuickSight User
          * Guide</i>:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding
-         * the Amazon QuickSight Console</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
+         * the Amazon QuickSight Console Using GetSessionEmbedUrl</a> </p> </li> <li> <p>
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
          * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -2797,8 +2813,9 @@ namespace Model
          * API operation to add a new user with a custom permission profile attached. For
          * more information, see the following sections in the <i>Amazon QuickSight User
          * Guide</i>:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding
-         * the Amazon QuickSight Console</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
+         * the Amazon QuickSight Console Using GetSessionEmbedUrl</a> </p> </li> <li> <p>
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
          * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -2821,8 +2838,9 @@ namespace Model
          * API operation to add a new user with a custom permission profile attached. For
          * more information, see the following sections in the <i>Amazon QuickSight User
          * Guide</i>:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding
-         * the Amazon QuickSight Console</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users-get.html">Embedding
+         * the Amazon QuickSight Console Using GetSessionEmbedUrl</a> </p> </li> <li> <p>
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
          * Access to the Amazon QuickSight Console</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -2919,7 +2937,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account; in an Region;.</p> <p>The permissions resource is
+         * account; in an Amazon Web Services Region;.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2929,7 +2947,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account; in an Region;.</p> <p>The permissions resource is
+         * account; in an Amazon Web Services Region;.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2941,7 +2959,7 @@ namespace Model
 
         /**
          * <p>Lists all of the datasets belonging to the current Amazon Web Services
-         * account; in an Region;.</p> <p>The permissions resource is
+         * account; in an Amazon Web Services Region;.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -2952,16 +2970,16 @@ namespace Model
         virtual void ListDataSetsAsync(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists data sources in current Region; that belong to this Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists data sources in current Amazon Web Services Region; that belong to this
+         * Amazon Web Services account;.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDataSourcesOutcome ListDataSources(const Model::ListDataSourcesRequest& request) const;
 
         /**
-         * <p>Lists data sources in current Region; that belong to this Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists data sources in current Amazon Web Services Region; that belong to this
+         * Amazon Web Services account;.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
          *
@@ -2970,8 +2988,8 @@ namespace Model
         virtual Model::ListDataSourcesOutcomeCallable ListDataSourcesCallable(const Model::ListDataSourcesRequest& request) const;
 
         /**
-         * <p>Lists data sources in current Region; that belong to this Amazon Web Services
-         * account;.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists data sources in current Amazon Web Services Region; that belong to this
+         * Amazon Web Services account;.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">AWS
          * API Reference</a></p>
          *
@@ -3682,26 +3700,28 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates Amazon QuickSight customizations the current Region;. Currently, the
-         * only customization you can use is a theme.</p> <p>You can use customizations for
-         * your Amazon Web Services account; or, if you specify a namespace, for a
-         * QuickSight namespace instead. Customizations that apply to a namespace override
-         * customizations that apply to an Amazon Web Services account;. To find out which
-         * customizations apply, use the <code>DescribeAccountCustomization</code> API
-         * operation. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
+         * Region;. Currently, the only customization you can use is a theme.</p> <p>You
+         * can use customizations for your Amazon Web Services account; or, if you specify
+         * a namespace, for a QuickSight namespace instead. Customizations that apply to a
+         * namespace override customizations that apply to an Amazon Web Services account;.
+         * To find out which customizations apply, use the
+         * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAccountCustomizationOutcome UpdateAccountCustomization(const Model::UpdateAccountCustomizationRequest& request) const;
 
         /**
-         * <p>Updates Amazon QuickSight customizations the current Region;. Currently, the
-         * only customization you can use is a theme.</p> <p>You can use customizations for
-         * your Amazon Web Services account; or, if you specify a namespace, for a
-         * QuickSight namespace instead. Customizations that apply to a namespace override
-         * customizations that apply to an Amazon Web Services account;. To find out which
-         * customizations apply, use the <code>DescribeAccountCustomization</code> API
-         * operation. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
+         * Region;. Currently, the only customization you can use is a theme.</p> <p>You
+         * can use customizations for your Amazon Web Services account; or, if you specify
+         * a namespace, for a QuickSight namespace instead. Customizations that apply to a
+         * namespace override customizations that apply to an Amazon Web Services account;.
+         * To find out which customizations apply, use the
+         * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
          * API Reference</a></p>
          *
@@ -3710,13 +3730,14 @@ namespace Model
         virtual Model::UpdateAccountCustomizationOutcomeCallable UpdateAccountCustomizationCallable(const Model::UpdateAccountCustomizationRequest& request) const;
 
         /**
-         * <p>Updates Amazon QuickSight customizations the current Region;. Currently, the
-         * only customization you can use is a theme.</p> <p>You can use customizations for
-         * your Amazon Web Services account; or, if you specify a namespace, for a
-         * QuickSight namespace instead. Customizations that apply to a namespace override
-         * customizations that apply to an Amazon Web Services account;. To find out which
-         * customizations apply, use the <code>DescribeAccountCustomization</code> API
-         * operation. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
+         * Region;. Currently, the only customization you can use is a theme.</p> <p>You
+         * can use customizations for your Amazon Web Services account; or, if you specify
+         * a namespace, for a QuickSight namespace instead. Customizations that apply to a
+         * namespace override customizations that apply to an Amazon Web Services account;.
+         * To find out which customizations apply, use the
+         * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
          * API Reference</a></p>
          *

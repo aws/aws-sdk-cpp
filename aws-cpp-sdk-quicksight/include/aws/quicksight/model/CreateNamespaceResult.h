@@ -107,44 +107,51 @@ namespace Model
 
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline const Aws::String& GetCapacityRegion() const{ return m_capacityRegion; }
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline void SetCapacityRegion(const Aws::String& value) { m_capacityRegion = value; }
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline void SetCapacityRegion(Aws::String&& value) { m_capacityRegion = std::move(value); }
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline void SetCapacityRegion(const char* value) { m_capacityRegion.assign(value); }
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline CreateNamespaceResult& WithCapacityRegion(const Aws::String& value) { SetCapacityRegion(value); return *this;}
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline CreateNamespaceResult& WithCapacityRegion(Aws::String&& value) { SetCapacityRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region; that you want to use for the free SPICE capacity for the new
-     * namespace. This is set to the region that you run CreateNamespace in. </p>
+     * <p>The Amazon Web Services Region; that you want to use for the free SPICE
+     * capacity for the new namespace. This is set to the region that you run
+     * CreateNamespace in. </p>
      */
     inline CreateNamespaceResult& WithCapacityRegion(const char* value) { SetCapacityRegion(value); return *this;}
 

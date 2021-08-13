@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A member of a Global datastore. It contains the Replication Group Id, the AWS
-   * region and the role of the replication group. </p><p><h3>See Also:</h3>   <a
+   * <p>A member of a Global datastore. It contains the Replication Group Id, the
+   * Amazon region and the role of the replication group. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalReplicationGroupMember">AWS
    * API Reference</a></p>
    */
@@ -83,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline const Aws::String& GetReplicationGroupRegion() const{ return m_replicationGroupRegion; }
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline bool ReplicationGroupRegionHasBeenSet() const { return m_replicationGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline void SetReplicationGroupRegion(const Aws::String& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = value; }
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline void SetReplicationGroupRegion(Aws::String&& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline void SetReplicationGroupRegion(const char* value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline GlobalReplicationGroupMember& WithReplicationGroupRegion(const Aws::String& value) { SetReplicationGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline GlobalReplicationGroupMember& WithReplicationGroupRegion(Aws::String&& value) { SetReplicationGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region of the Global datastore member.</p>
+     * <p>The Amazon region of the Global datastore member.</p>
      */
     inline GlobalReplicationGroupMember& WithReplicationGroupRegion(const char* value) { SetReplicationGroupRegion(value); return *this;}
 

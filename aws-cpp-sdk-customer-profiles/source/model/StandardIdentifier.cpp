@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
+        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+        static const int CASE_HASH = HashingUtils::HashString("CASE");
         static const int UNIQUE_HASH = HashingUtils::HashString("UNIQUE");
         static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
         static const int LOOKUP_ONLY_HASH = HashingUtils::HashString("LOOKUP_ONLY");
@@ -33,6 +35,14 @@ namespace Aws
           if (hashCode == PROFILE_HASH)
           {
             return StandardIdentifier::PROFILE;
+          }
+          else if (hashCode == ASSET_HASH)
+          {
+            return StandardIdentifier::ASSET;
+          }
+          else if (hashCode == CASE_HASH)
+          {
+            return StandardIdentifier::CASE;
           }
           else if (hashCode == UNIQUE_HASH)
           {
@@ -66,6 +76,10 @@ namespace Aws
           {
           case StandardIdentifier::PROFILE:
             return "PROFILE";
+          case StandardIdentifier::ASSET:
+            return "ASSET";
+          case StandardIdentifier::CASE:
+            return "CASE";
           case StandardIdentifier::UNIQUE:
             return "UNIQUE";
           case StandardIdentifier::SECONDARY:

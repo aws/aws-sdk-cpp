@@ -149,27 +149,32 @@ namespace Model
 
 
     /**
-     * <p>The QuickSight customizations that exist in the current Region;. </p>
+     * <p>The QuickSight customizations that exist in the current Amazon Web Services
+     * Region;. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The QuickSight customizations that exist in the current Region;. </p>
+     * <p>The QuickSight customizations that exist in the current Amazon Web Services
+     * Region;. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomization = value; }
 
     /**
-     * <p>The QuickSight customizations that exist in the current Region;. </p>
+     * <p>The QuickSight customizations that exist in the current Amazon Web Services
+     * Region;. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The QuickSight customizations that exist in the current Region;. </p>
+     * <p>The QuickSight customizations that exist in the current Amazon Web Services
+     * Region;. </p>
      */
     inline DescribeAccountCustomizationResult& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The QuickSight customizations that exist in the current Region;. </p>
+     * <p>The QuickSight customizations that exist in the current Amazon Web Services
+     * Region;. </p>
      */
     inline DescribeAccountCustomizationResult& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

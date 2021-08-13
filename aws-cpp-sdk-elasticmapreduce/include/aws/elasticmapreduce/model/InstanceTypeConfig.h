@@ -318,6 +318,47 @@ namespace Model
      */
     inline InstanceTypeConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -337,6 +378,9 @@ namespace Model
 
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
   };
 
 } // namespace Model

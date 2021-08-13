@@ -26,7 +26,8 @@ InstanceTypeConfig::InstanceTypeConfig() :
     m_bidPriceAsPercentageOfOnDemandPrice(0.0),
     m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
     m_ebsConfigurationHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue) :
     m_bidPriceAsPercentageOfOnDemandPrice(0.0),
     m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet(false),
     m_ebsConfigurationHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +92,13 @@ InstanceTypeConfig& InstanceTypeConfig::operator =(JsonView jsonValue)
     m_configurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomAmiId"))
+  {
+    m_customAmiId = jsonValue.GetString("CustomAmiId");
+
+    m_customAmiIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +144,12 @@ JsonValue InstanceTypeConfig::Jsonize() const
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
    }
    payload.WithArray("Configurations", std::move(configurationsJsonList));
+
+  }
+
+  if(m_customAmiIdHasBeenSet)
+  {
+   payload.WithString("CustomAmiId", m_customAmiId);
 
   }
 

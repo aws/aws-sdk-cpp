@@ -286,10 +286,10 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Region;. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
+     * the replacement datasets for the placeholders listed in the original. The schema
+     * in each dataset must match its placeholder. </p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
@@ -302,10 +302,10 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Region;. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
+     * the replacement datasets for the placeholders listed in the original. The schema
+     * in each dataset must match its placeholder. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
@@ -318,10 +318,10 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Region;. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
+     * the replacement datasets for the placeholders listed in the original. The schema
+     * in each dataset must match its placeholder. </p>
      */
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
@@ -334,10 +334,10 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Region;. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
+     * the replacement datasets for the placeholders listed in the original. The schema
+     * in each dataset must match its placeholder. </p>
      */
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
@@ -350,10 +350,10 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Region;. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
+     * the replacement datasets for the placeholders listed in the original. The schema
+     * in each dataset must match its placeholder. </p>
      */
     inline CreateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
@@ -366,10 +366,10 @@ namespace Model
      * <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
      * the Amazon Resource Name (ARN) of the source template. The
      * <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and
-     * any QuickSight-supported Region;. </p> <p>Use the <code>DataSetReferences</code>
-     * entity within <code>SourceTemplate</code> to list the replacement datasets for
-     * the placeholders listed in the original. The schema in each dataset must match
-     * its placeholder. </p>
+     * any QuickSight-supported Amazon Web Services Region;. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list
+     * the replacement datasets for the placeholders listed in the original. The schema
+     * in each dataset must match its placeholder. </p>
      */
     inline CreateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 

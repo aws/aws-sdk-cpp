@@ -907,7 +907,7 @@ namespace Model
     /**
      * <p>Set this value to <code>true</code> so that IAM principals in the account
      * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>false</code> for clusters
+     * IAM policies allow. This value defaults to <code>true</code> for clusters
      * created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
@@ -915,7 +915,7 @@ namespace Model
      * cluster, regardless of the IAM permissions policies attached to other IAM
      * principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
@@ -923,7 +923,7 @@ namespace Model
     /**
      * <p>Set this value to <code>true</code> so that IAM principals in the account
      * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>false</code> for clusters
+     * IAM policies allow. This value defaults to <code>true</code> for clusters
      * created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
@@ -931,7 +931,7 @@ namespace Model
      * cluster, regardless of the IAM permissions policies attached to other IAM
      * principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
@@ -939,7 +939,7 @@ namespace Model
     /**
      * <p>Set this value to <code>true</code> so that IAM principals in the account
      * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>false</code> for clusters
+     * IAM policies allow. This value defaults to <code>true</code> for clusters
      * created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
@@ -947,7 +947,7 @@ namespace Model
      * cluster, regardless of the IAM permissions policies attached to other IAM
      * principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
@@ -955,7 +955,7 @@ namespace Model
     /**
      * <p>Set this value to <code>true</code> so that IAM principals in the account
      * associated with the cluster can perform EMR actions on the cluster that their
-     * IAM policies allow. This value defaults to <code>false</code> for clusters
+     * IAM policies allow. This value defaults to <code>true</code> for clusters
      * created using the EMR API or the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command.</p> <p>When set to <code>false</code>, only the IAM principal that
@@ -963,7 +963,7 @@ namespace Model
      * cluster, regardless of the IAM permissions policies attached to other IAM
      * principals. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
      * Guide</i>.</p>
      */
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}

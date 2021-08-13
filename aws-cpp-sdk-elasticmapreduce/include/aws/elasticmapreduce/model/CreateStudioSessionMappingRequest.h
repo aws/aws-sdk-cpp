@@ -91,7 +91,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
@@ -102,7 +103,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
 
@@ -113,7 +115,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
@@ -124,7 +127,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
 
@@ -135,7 +139,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
@@ -146,7 +151,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
@@ -157,7 +163,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
@@ -168,7 +175,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
@@ -179,7 +187,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline const Aws::String& GetIdentityName() const{ return m_identityName; }
 
@@ -189,7 +198,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
 
@@ -199,7 +209,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
 
@@ -209,7 +220,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
 
@@ -219,7 +231,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
 
@@ -229,7 +242,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
 
@@ -239,7 +253,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
 
@@ -249,7 +264,8 @@ namespace Model
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
-     * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+     * <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not
+     * both.</p>
      */
     inline CreateStudioSessionMappingRequest& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}
 

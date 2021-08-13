@@ -130,32 +130,38 @@ namespace Model
 
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Region;. </p>
+     * <p>The QuickSight customizations you're updating in the current Amazon Web
+     * Services Region;. </p>
      */
     inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Region;. </p>
+     * <p>The QuickSight customizations you're updating in the current Amazon Web
+     * Services Region;. </p>
      */
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Region;. </p>
+     * <p>The QuickSight customizations you're updating in the current Amazon Web
+     * Services Region;. </p>
      */
     inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = value; }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Region;. </p>
+     * <p>The QuickSight customizations you're updating in the current Amazon Web
+     * Services Region;. </p>
      */
     inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = std::move(value); }
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Region;. </p>
+     * <p>The QuickSight customizations you're updating in the current Amazon Web
+     * Services Region;. </p>
      */
     inline UpdateAccountCustomizationRequest& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
 
     /**
-     * <p>The QuickSight customizations you're updating in the current Region;. </p>
+     * <p>The QuickSight customizations you're updating in the current Amazon Web
+     * Services Region;. </p>
      */
     inline UpdateAccountCustomizationRequest& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
 

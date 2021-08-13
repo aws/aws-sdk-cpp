@@ -127,49 +127,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline const Aws::String& GetReplicationGroupRegion() const{ return m_replicationGroupRegion; }
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline bool ReplicationGroupRegionHasBeenSet() const { return m_replicationGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline void SetReplicationGroupRegion(const Aws::String& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = value; }
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline void SetReplicationGroupRegion(Aws::String&& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline void SetReplicationGroupRegion(const char* value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline DisassociateGlobalReplicationGroupRequest& WithReplicationGroupRegion(const Aws::String& value) { SetReplicationGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline DisassociateGlobalReplicationGroupRequest& WithReplicationGroupRegion(Aws::String&& value) { SetReplicationGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region of secondary cluster you wish to remove from the Global
+     * <p>The Amazon region of secondary cluster you wish to remove from the Global
      * datastore</p>
      */
     inline DisassociateGlobalReplicationGroupRequest& WithReplicationGroupRegion(const char* value) { SetReplicationGroupRegion(value); return *this;}

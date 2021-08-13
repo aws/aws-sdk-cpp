@@ -50,7 +50,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
@@ -62,7 +62,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
@@ -74,7 +74,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
@@ -86,7 +86,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
@@ -98,7 +98,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
@@ -110,7 +110,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline AddTagsToResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
@@ -122,7 +122,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline AddTagsToResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
@@ -134,7 +134,7 @@ namespace Model
      * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
      * information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
      */
     inline AddTagsToResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 

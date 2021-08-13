@@ -534,6 +534,47 @@ namespace Model
      */
     inline InstanceGroupDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline InstanceGroupDetail& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline InstanceGroupDetail& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the provisioned instance group.</p>
+     */
+    inline InstanceGroupDetail& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
   private:
 
     Aws::String m_instanceGroupId;
@@ -577,6 +618,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
+
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
   };
 
 } // namespace Model

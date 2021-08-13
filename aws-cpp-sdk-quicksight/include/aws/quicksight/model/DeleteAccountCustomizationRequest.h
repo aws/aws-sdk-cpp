@@ -40,49 +40,49 @@ namespace Model
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline DeleteAccountCustomizationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline DeleteAccountCustomizationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the Amazon Web Services account; that you want to delete
-     * QuickSight customizations from in this Region;.</p>
+     * QuickSight customizations from in this Amazon Web Services Region;.</p>
      */
     inline DeleteAccountCustomizationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

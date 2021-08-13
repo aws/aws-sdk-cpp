@@ -712,7 +712,7 @@ namespace Model
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
-         * configuration, VPC settings, and so on. </p><p><h3>See Also:</h3>   <a
+         * configuration, VPC settings, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">AWS
          * API Reference</a></p>
          */
@@ -720,7 +720,7 @@ namespace Model
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
-         * configuration, VPC settings, and so on. </p><p><h3>See Also:</h3>   <a
+         * configuration, VPC settings, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">AWS
          * API Reference</a></p>
          *
@@ -730,7 +730,7 @@ namespace Model
 
         /**
          * <p>Provides cluster-level details including status, hardware and software
-         * configuration, VPC settings, and so on. </p><p><h3>See Also:</h3>   <a
+         * configuration, VPC settings, and so on.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">AWS
          * API Reference</a></p>
          *
@@ -1813,7 +1813,7 @@ namespace Model
          * cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
@@ -1830,7 +1830,7 @@ namespace Model
          * cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
@@ -1849,7 +1849,7 @@ namespace Model
          * cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>

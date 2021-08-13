@@ -439,7 +439,7 @@ namespace Model
          * replication group. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
          * permissions</a>.</p> <p> For example, you can use cost-allocation tags to your
-         * ElastiCache resources, AWS generates a cost allocation report as a
+         * ElastiCache resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
@@ -460,7 +460,7 @@ namespace Model
          * replication group. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
          * permissions</a>.</p> <p> For example, you can use cost-allocation tags to your
-         * ElastiCache resources, AWS generates a cost allocation report as a
+         * ElastiCache resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
@@ -483,7 +483,7 @@ namespace Model
          * replication group. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
          * permissions</a>.</p> <p> For example, you can use cost-allocation tags to your
-         * ElastiCache resources, AWS generates a cost allocation report as a
+         * ElastiCache resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
@@ -1046,7 +1046,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
          * a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.</p>
          * <p>To request a limit increase, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
          * Service Limits</a> and choose the limit type <b>Nodes per cluster per instance
          * type</b>. </p> <p>When a Redis (cluster mode disabled) replication group has
          * been successfully created, you can add one or more read replicas to it, up to a
@@ -1084,7 +1084,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
          * a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.</p>
          * <p>To request a limit increase, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
          * Service Limits</a> and choose the limit type <b>Nodes per cluster per instance
          * type</b>. </p> <p>When a Redis (cluster mode disabled) replication group has
          * been successfully created, you can add one or more read replicas to it, up to a
@@ -1124,7 +1124,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
          * a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.</p>
          * <p>To request a limit increase, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
          * Service Limits</a> and choose the limit type <b>Nodes per cluster per instance
          * type</b>. </p> <p>When a Redis (cluster mode disabled) replication group has
          * been successfully created, you can add one or more read replicas to it, up to a
@@ -2226,7 +2226,7 @@ namespace Model
         /**
          * <p>Remove a secondary cluster from the Global datastore using the Global
          * datastore name. The secondary cluster will no longer receive updates from the
-         * primary cluster, but will remain as a standalone cluster in that AWS
+         * primary cluster, but will remain as a standalone cluster in that Amazon
          * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -2236,7 +2236,7 @@ namespace Model
         /**
          * <p>Remove a secondary cluster from the Global datastore using the Global
          * datastore name. The secondary cluster will no longer receive updates from the
-         * primary cluster, but will remain as a standalone cluster in that AWS
+         * primary cluster, but will remain as a standalone cluster in that Amazon
          * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -2248,7 +2248,7 @@ namespace Model
         /**
          * <p>Remove a secondary cluster from the Global datastore using the Global
          * datastore name. The secondary cluster will no longer receive updates from the
-         * primary cluster, but will remain as a standalone cluster in that AWS
+         * primary cluster, but will remain as a standalone cluster in that Amazon
          * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -2952,24 +2952,25 @@ namespace Model
          * replication group (called cluster in the console).</p> <p class="title"> <b>Note
          * the following</b> </p> <ul> <li> <p>A customer can use this operation to test
          * automatic failover on up to 5 shards (called node groups in the ElastiCache API
-         * and AWS CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
+         * and Amazon CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
          * operation on shards in different clusters (called replication groups in the API
          * and CLI), the calls can be made concurrently.</p> <p> </p> </li> <li> <p>If
          * calling this operation multiple times on different shards in the same Redis
          * (cluster mode enabled) replication group, the first node replacement must
          * complete before a subsequent call can be made.</p> </li> <li> <p>To determine
          * whether the node replacement is complete you can check Events using the Amazon
-         * ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
-         * automatic failover related events, listed here in order of occurrance:</p> <ol>
-         * <li> <p>Replication group message: <code>Test Failover API called for node group
-         * &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
-         * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication group message:
-         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
-         * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
-         * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
-         * </p> </li> </ol> <p>For more information see:</p> <ul> <li> <p> <a
+         * ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the
+         * following automatic failover related events, listed here in order of
+         * occurrance:</p> <ol> <li> <p>Replication group message: <code>Test Failover API
+         * called for node group &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache
+         * cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
+         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication
+         * group message: <code>Failover from primary node &lt;primary-node-id&gt; to
+         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster
+         * message: <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li>
+         * <p>Cache cluster message: <code>Finished recovery for cache nodes
+         * &lt;node-id&gt;</code> </p> </li> </ol> <p>For more information see:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
@@ -2989,24 +2990,25 @@ namespace Model
          * replication group (called cluster in the console).</p> <p class="title"> <b>Note
          * the following</b> </p> <ul> <li> <p>A customer can use this operation to test
          * automatic failover on up to 5 shards (called node groups in the ElastiCache API
-         * and AWS CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
+         * and Amazon CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
          * operation on shards in different clusters (called replication groups in the API
          * and CLI), the calls can be made concurrently.</p> <p> </p> </li> <li> <p>If
          * calling this operation multiple times on different shards in the same Redis
          * (cluster mode enabled) replication group, the first node replacement must
          * complete before a subsequent call can be made.</p> </li> <li> <p>To determine
          * whether the node replacement is complete you can check Events using the Amazon
-         * ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
-         * automatic failover related events, listed here in order of occurrance:</p> <ol>
-         * <li> <p>Replication group message: <code>Test Failover API called for node group
-         * &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
-         * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication group message:
-         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
-         * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
-         * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
-         * </p> </li> </ol> <p>For more information see:</p> <ul> <li> <p> <a
+         * ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the
+         * following automatic failover related events, listed here in order of
+         * occurrance:</p> <ol> <li> <p>Replication group message: <code>Test Failover API
+         * called for node group &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache
+         * cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
+         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication
+         * group message: <code>Failover from primary node &lt;primary-node-id&gt; to
+         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster
+         * message: <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li>
+         * <p>Cache cluster message: <code>Finished recovery for cache nodes
+         * &lt;node-id&gt;</code> </p> </li> </ol> <p>For more information see:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
@@ -3028,24 +3030,25 @@ namespace Model
          * replication group (called cluster in the console).</p> <p class="title"> <b>Note
          * the following</b> </p> <ul> <li> <p>A customer can use this operation to test
          * automatic failover on up to 5 shards (called node groups in the ElastiCache API
-         * and AWS CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
+         * and Amazon CLI) in any rolling 24-hour period.</p> </li> <li> <p>If calling this
          * operation on shards in different clusters (called replication groups in the API
          * and CLI), the calls can be made concurrently.</p> <p> </p> </li> <li> <p>If
          * calling this operation multiple times on different shards in the same Redis
          * (cluster mode enabled) replication group, the first node replacement must
          * complete before a subsequent call can be made.</p> </li> <li> <p>To determine
          * whether the node replacement is complete you can check Events using the Amazon
-         * ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
-         * automatic failover related events, listed here in order of occurrance:</p> <ol>
-         * <li> <p>Replication group message: <code>Test Failover API called for node group
-         * &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
-         * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication group message:
-         * <code>Failover from primary node &lt;primary-node-id&gt; to replica node
-         * &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster message:
-         * <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li> <p>Cache
-         * cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
-         * </p> </li> </ol> <p>For more information see:</p> <ul> <li> <p> <a
+         * ElastiCache console, the Amazon CLI, or the ElastiCache API. Look for the
+         * following automatic failover related events, listed here in order of
+         * occurrance:</p> <ol> <li> <p>Replication group message: <code>Test Failover API
+         * called for node group &lt;node-group-id&gt;</code> </p> </li> <li> <p>Cache
+         * cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
+         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Replication
+         * group message: <code>Failover from primary node &lt;primary-node-id&gt; to
+         * replica node &lt;node-id&gt; completed</code> </p> </li> <li> <p>Cache cluster
+         * message: <code>Recovering cache nodes &lt;node-id&gt;</code> </p> </li> <li>
+         * <p>Cache cluster message: <code>Finished recovery for cache nodes
+         * &lt;node-id&gt;</code> </p> </li> </ol> <p>For more information see:</p> <ul>
+         * <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a

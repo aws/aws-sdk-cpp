@@ -51,7 +51,8 @@ ReplicationGroup::ReplicationGroup() :
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_replicationGroupCreateTimeHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
     m_userGroupIdsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_replicationGroupCreateTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -271,6 +273,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
 
       m_logDeliveryConfigurationsHasBeenSet = true;
     }
+    XmlNode replicationGroupCreateTimeNode = resultNode.FirstChild("ReplicationGroupCreateTime");
+    if(!replicationGroupCreateTimeNode.IsNull())
+    {
+      m_replicationGroupCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_replicationGroupCreateTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -428,6 +436,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_replicationGroupCreateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -557,6 +570,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
         item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
+  }
+  if(m_replicationGroupCreateTimeHasBeenSet)
+  {
+      oStream << location << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

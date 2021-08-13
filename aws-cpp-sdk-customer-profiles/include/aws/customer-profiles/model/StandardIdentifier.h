@@ -17,6 +17,8 @@ namespace Model
   {
     NOT_SET,
     PROFILE,
+    ASSET,
+    CASE,
     UNIQUE,
     SECONDARY,
     LOOKUP_ONLY,

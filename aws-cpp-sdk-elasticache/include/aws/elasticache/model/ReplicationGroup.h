@@ -1106,6 +1106,37 @@ namespace Model
      */
     inline ReplicationGroup& AddLogDeliveryConfigurations(LogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReplicationGroupCreateTime() const{ return m_replicationGroupCreateTime; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline bool ReplicationGroupCreateTimeHasBeenSet() const { return m_replicationGroupCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline void SetReplicationGroupCreateTime(const Aws::Utils::DateTime& value) { m_replicationGroupCreateTimeHasBeenSet = true; m_replicationGroupCreateTime = value; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline void SetReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { m_replicationGroupCreateTimeHasBeenSet = true; m_replicationGroupCreateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline ReplicationGroup& WithReplicationGroupCreateTime(const Aws::Utils::DateTime& value) { SetReplicationGroupCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline ReplicationGroup& WithReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { SetReplicationGroupCreateTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1179,6 +1210,9 @@ namespace Model
 
     Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
     bool m_logDeliveryConfigurationsHasBeenSet;
+
+    Aws::Utils::DateTime m_replicationGroupCreateTime;
+    bool m_replicationGroupCreateTimeHasBeenSet;
   };
 
 } // namespace Model
