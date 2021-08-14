@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     AVAILABLE,
     UPDATING,
-    PENDING
+    PENDING,
+    PENDING_CERTIFICATE_REIMPORT,
+    PENDING_OWNERSHIP_VERIFICATION
   };
 
 namespace DomainNameStatusMapper

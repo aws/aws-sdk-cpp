@@ -34,6 +34,7 @@ namespace Aws
         static const int python3_6_HASH = HashingUtils::HashString("python3.6");
         static const int python3_7_HASH = HashingUtils::HashString("python3.7");
         static const int python3_8_HASH = HashingUtils::HashString("python3.8");
+        static const int python3_9_HASH = HashingUtils::HashString("python3.9");
         static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
         static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
@@ -104,6 +105,10 @@ namespace Aws
           else if (hashCode == python3_8_HASH)
           {
             return Runtime::python3_8;
+          }
+          else if (hashCode == python3_9_HASH)
+          {
+            return Runtime::python3_9;
           }
           else if (hashCode == dotnetcore1_0_HASH)
           {
@@ -187,6 +192,8 @@ namespace Aws
             return "python3.7";
           case Runtime::python3_8:
             return "python3.8";
+          case Runtime::python3_9:
+            return "python3.9";
           case Runtime::dotnetcore1_0:
             return "dotnetcore1.0";
           case Runtime::dotnetcore2_0:

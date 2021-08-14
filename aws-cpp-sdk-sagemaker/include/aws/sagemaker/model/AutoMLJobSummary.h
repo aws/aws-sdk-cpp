@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline AutoMLJobSummary& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline AutoMLJobSummary& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AutoML you are requesting.</p>
+     * <p>The name of the AutoML job you are requesting.</p>
      */
     inline AutoMLJobSummary& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
 

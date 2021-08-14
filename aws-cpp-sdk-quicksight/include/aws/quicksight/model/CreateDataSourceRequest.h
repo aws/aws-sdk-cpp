@@ -82,50 +82,50 @@ namespace Model
 
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline CreateDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline CreateDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the data source. This ID is unique per Region; for each Amazon Web
-     * Services account;. </p>
+     * <p>An ID for the data source. This ID is unique per Amazon Web Services Region;
+     * for each Amazon Web Services account;. </p>
      */
     inline CreateDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 

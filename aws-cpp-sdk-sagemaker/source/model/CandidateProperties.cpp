@@ -19,12 +19,14 @@ namespace Model
 {
 
 CandidateProperties::CandidateProperties() : 
-    m_candidateArtifactLocationsHasBeenSet(false)
+    m_candidateArtifactLocationsHasBeenSet(false),
+    m_candidateMetricsHasBeenSet(false)
 {
 }
 
 CandidateProperties::CandidateProperties(JsonView jsonValue) : 
-    m_candidateArtifactLocationsHasBeenSet(false)
+    m_candidateArtifactLocationsHasBeenSet(false),
+    m_candidateMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,16 @@ CandidateProperties& CandidateProperties::operator =(JsonView jsonValue)
     m_candidateArtifactLocationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CandidateMetrics"))
+  {
+    Array<JsonView> candidateMetricsJsonList = jsonValue.GetArray("CandidateMetrics");
+    for(unsigned candidateMetricsIndex = 0; candidateMetricsIndex < candidateMetricsJsonList.GetLength(); ++candidateMetricsIndex)
+    {
+      m_candidateMetrics.push_back(candidateMetricsJsonList[candidateMetricsIndex].AsObject());
+    }
+    m_candidateMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +60,17 @@ JsonValue CandidateProperties::Jsonize() const
   if(m_candidateArtifactLocationsHasBeenSet)
   {
    payload.WithObject("CandidateArtifactLocations", m_candidateArtifactLocations.Jsonize());
+
+  }
+
+  if(m_candidateMetricsHasBeenSet)
+  {
+   Array<JsonValue> candidateMetricsJsonList(m_candidateMetrics.size());
+   for(unsigned candidateMetricsIndex = 0; candidateMetricsIndex < candidateMetricsJsonList.GetLength(); ++candidateMetricsIndex)
+   {
+     candidateMetricsJsonList[candidateMetricsIndex].AsObject(m_candidateMetrics[candidateMetricsIndex].Jsonize());
+   }
+   payload.WithArray("CandidateMetrics", std::move(candidateMetricsJsonList));
 
   }
 

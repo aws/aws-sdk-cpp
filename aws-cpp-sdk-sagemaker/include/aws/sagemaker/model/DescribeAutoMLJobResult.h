@@ -588,7 +588,7 @@ namespace Model
 
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -596,7 +596,7 @@ namespace Model
     inline const ResolvedAttributes& GetResolvedAttributes() const{ return m_resolvedAttributes; }
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -604,7 +604,7 @@ namespace Model
     inline void SetResolvedAttributes(const ResolvedAttributes& value) { m_resolvedAttributes = value; }
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -612,7 +612,7 @@ namespace Model
     inline void SetResolvedAttributes(ResolvedAttributes&& value) { m_resolvedAttributes = std::move(value); }
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>
@@ -620,7 +620,7 @@ namespace Model
     inline DescribeAutoMLJobResult& WithResolvedAttributes(const ResolvedAttributes& value) { SetResolvedAttributes(value); return *this;}
 
     /**
-     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
      * <code>CompletionCriteria</code>. If you do not provide these values, they are
      * auto-inferred. If you do provide them, the values used are the ones you
      * provide.</p>

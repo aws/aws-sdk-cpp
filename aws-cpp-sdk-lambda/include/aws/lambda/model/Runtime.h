@@ -30,6 +30,7 @@ namespace Model
     python3_6,
     python3_7,
     python3_8,
+    python3_9,
     dotnetcore1_0,
     dotnetcore2_0,
     dotnetcore2_1,

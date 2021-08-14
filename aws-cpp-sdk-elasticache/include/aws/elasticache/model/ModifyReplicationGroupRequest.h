@@ -285,26 +285,22 @@ namespace Model
 
 
     /**
-     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
-     * key must be accompanied by a tag value, although null is accepted.</p>
+     * <p>A flag to indicate MultiAZ is enabled.</p>
      */
     inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
 
     /**
-     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
-     * key must be accompanied by a tag value, although null is accepted.</p>
+     * <p>A flag to indicate MultiAZ is enabled.</p>
      */
     inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
 
     /**
-     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
-     * key must be accompanied by a tag value, although null is accepted.</p>
+     * <p>A flag to indicate MultiAZ is enabled.</p>
      */
     inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
 
     /**
-     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
-     * key must be accompanied by a tag value, although null is accepted.</p>
+     * <p>A flag to indicate MultiAZ is enabled.</p>
      */
     inline ModifyReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
 

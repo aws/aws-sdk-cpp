@@ -101,49 +101,49 @@ namespace Model
 
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline const Aws::Vector<RegionalConfiguration>& GetRegionalConfigurations() const{ return m_regionalConfigurations; }
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline bool RegionalConfigurationsHasBeenSet() const { return m_regionalConfigurationsHasBeenSet; }
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline void SetRegionalConfigurations(const Aws::Vector<RegionalConfiguration>& value) { m_regionalConfigurationsHasBeenSet = true; m_regionalConfigurations = value; }
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline void SetRegionalConfigurations(Aws::Vector<RegionalConfiguration>&& value) { m_regionalConfigurationsHasBeenSet = true; m_regionalConfigurations = std::move(value); }
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline IncreaseNodeGroupsInGlobalReplicationGroupRequest& WithRegionalConfigurations(const Aws::Vector<RegionalConfiguration>& value) { SetRegionalConfigurations(value); return *this;}
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline IncreaseNodeGroupsInGlobalReplicationGroupRequest& WithRegionalConfigurations(Aws::Vector<RegionalConfiguration>&& value) { SetRegionalConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline IncreaseNodeGroupsInGlobalReplicationGroupRequest& AddRegionalConfigurations(const RegionalConfiguration& value) { m_regionalConfigurationsHasBeenSet = true; m_regionalConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Describes the replication group IDs, the AWS regions where they are stored
+     * <p>Describes the replication group IDs, the Amazon regions where they are stored
      * and the shard configuration for each that comprise the Global datastore</p>
      */
     inline IncreaseNodeGroupsInGlobalReplicationGroupRequest& AddRegionalConfigurations(RegionalConfiguration&& value) { m_regionalConfigurationsHasBeenSet = true; m_regionalConfigurations.push_back(std::move(value)); return *this; }

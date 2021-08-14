@@ -83,7 +83,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -93,7 +93,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -103,7 +103,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -113,7 +113,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -123,7 +123,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -133,7 +133,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline ListReleaseLabelsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -143,7 +143,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline ListReleaseLabelsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -153,7 +153,7 @@ namespace Model
      * specified, which is usually the case for the first request of ListReleaseLabels,
      * the first page of results are determined by other filtering parameters or by the
      * latest version. The <code>ListReleaseLabels</code> request fails if the identity
-     * (AWS AccountID) and all filtering parameters are different from the original
+     * (account ID) and all filtering parameters are different from the original
      * request, or if the <code>NextToken</code> is expired or tampered with.</p>
      */
     inline ListReleaseLabelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

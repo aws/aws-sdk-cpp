@@ -41,7 +41,7 @@ namespace Model
      * sometimes referred to as a QuickSight "account" even though it's technically not
      * an account by itself. Instead, it's a subscription to the QuickSight service for
      * your Amazon Web Services account;. The edition that you subscribe to applies to
-     * QuickSight in every Region; where you use it.</p>
+     * QuickSight in every Amazon Web Services Region; where you use it.</p>
      */
     inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
 
@@ -53,7 +53,7 @@ namespace Model
      * sometimes referred to as a QuickSight "account" even though it's technically not
      * an account by itself. Instead, it's a subscription to the QuickSight service for
      * your Amazon Web Services account;. The edition that you subscribe to applies to
-     * QuickSight in every Region; where you use it.</p>
+     * QuickSight in every Amazon Web Services Region; where you use it.</p>
      */
     inline void SetAccountSettings(const AccountSettings& value) { m_accountSettings = value; }
 
@@ -65,7 +65,7 @@ namespace Model
      * sometimes referred to as a QuickSight "account" even though it's technically not
      * an account by itself. Instead, it's a subscription to the QuickSight service for
      * your Amazon Web Services account;. The edition that you subscribe to applies to
-     * QuickSight in every Region; where you use it.</p>
+     * QuickSight in every Amazon Web Services Region; where you use it.</p>
      */
     inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = std::move(value); }
 
@@ -77,7 +77,7 @@ namespace Model
      * sometimes referred to as a QuickSight "account" even though it's technically not
      * an account by itself. Instead, it's a subscription to the QuickSight service for
      * your Amazon Web Services account;. The edition that you subscribe to applies to
-     * QuickSight in every Region; where you use it.</p>
+     * QuickSight in every Amazon Web Services Region; where you use it.</p>
      */
     inline DescribeAccountSettingsResult& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
 
@@ -89,7 +89,7 @@ namespace Model
      * sometimes referred to as a QuickSight "account" even though it's technically not
      * an account by itself. Instead, it's a subscription to the QuickSight service for
      * your Amazon Web Services account;. The edition that you subscribe to applies to
-     * QuickSight in every Region; where you use it.</p>
+     * QuickSight in every Amazon Web Services Region; where you use it.</p>
      */
     inline DescribeAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
 

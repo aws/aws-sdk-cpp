@@ -181,32 +181,52 @@ namespace Model
 
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline const MatchingResponse& GetMatching() const{ return m_matching; }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline void SetMatching(const MatchingResponse& value) { m_matching = value; }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline void SetMatching(MatchingResponse&& value) { m_matching = std::move(value); }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline CreateDomainResult& WithMatching(const MatchingResponse& value) { SetMatching(value); return *this;}
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline CreateDomainResult& WithMatching(MatchingResponse&& value) { SetMatching(std::move(value)); return *this;}
 

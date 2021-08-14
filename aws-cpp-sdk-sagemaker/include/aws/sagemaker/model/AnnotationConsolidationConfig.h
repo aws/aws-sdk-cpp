@@ -155,7 +155,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -761,7 +761,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -1367,7 +1367,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -1973,7 +1973,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -2579,7 +2579,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -3185,7 +3185,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -3791,7 +3791,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
@@ -4397,7 +4397,7 @@ namespace Model
      * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <ul> <li> <p>
-     * <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
      * </p> </li> <li> <p>

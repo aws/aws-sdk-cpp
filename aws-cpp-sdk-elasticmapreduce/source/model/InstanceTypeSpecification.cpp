@@ -28,7 +28,8 @@ InstanceTypeSpecification::InstanceTypeSpecification() :
     m_configurationsHasBeenSet(false),
     m_ebsBlockDevicesHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ InstanceTypeSpecification::InstanceTypeSpecification(JsonView jsonValue) :
     m_configurationsHasBeenSet(false),
     m_ebsBlockDevicesHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ InstanceTypeSpecification& InstanceTypeSpecification::operator =(JsonView jsonVa
     m_ebsOptimizedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomAmiId"))
+  {
+    m_customAmiId = jsonValue.GetString("CustomAmiId");
+
+    m_customAmiIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -160,6 +169,12 @@ JsonValue InstanceTypeSpecification::Jsonize() const
   if(m_ebsOptimizedHasBeenSet)
   {
    payload.WithBool("EbsOptimized", m_ebsOptimized);
+
+  }
+
+  if(m_customAmiIdHasBeenSet)
+  {
+   payload.WithString("CustomAmiId", m_customAmiId);
 
   }
 

@@ -235,38 +235,62 @@ namespace Model
 
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline const MatchingRequest& GetMatching() const{ return m_matching; }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline void SetMatching(const MatchingRequest& value) { m_matchingHasBeenSet = true; m_matching = value; }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline void SetMatching(MatchingRequest&& value) { m_matchingHasBeenSet = true; m_matching = std::move(value); }
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline UpdateDomainRequest& WithMatching(const MatchingRequest& value) { SetMatching(value); return *this;}
 
     /**
-     * <p>The process of matching duplicate profiles. This process runs every Saturday
-     * at 12AM.</p>
+     * <p>The process of matching duplicate profiles. If Matching = true, Amazon
+     * Connect Customer Profiles starts a weekly batch process every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. After that batch process
+     * completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. </p>
      */
     inline UpdateDomainRequest& WithMatching(MatchingRequest&& value) { SetMatching(std::move(value)); return *this;}
 

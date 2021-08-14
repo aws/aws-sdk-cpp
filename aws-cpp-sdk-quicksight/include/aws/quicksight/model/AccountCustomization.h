@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>The Amazon QuickSight customizations associated with your Amazon Web Services
-   * account; or a QuickSight namespace in a specific Region;.</p><p><h3>See
-   * Also:</h3>   <a
+   * account; or a QuickSight namespace in a specific Amazon Web Services
+   * Region;.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountCustomization">AWS
    * API Reference</a></p>
    */
