@@ -48,17 +48,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -69,17 +69,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -90,17 +90,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -111,17 +111,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -132,17 +132,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -153,17 +153,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -174,17 +174,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -195,17 +195,17 @@ namespace Model
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -232,8 +232,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -268,8 +269,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -304,8 +306,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -340,8 +343,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -376,8 +380,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -412,8 +417,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -448,8 +454,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -484,8 +491,9 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region

@@ -40,57 +40,49 @@ namespace Model
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline CopyObjectResultDetails& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline CopyObjectResultDetails& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * <p>Returns the ETag of the new object. The ETag reflects only changes to the
-     * contents of an object, not its metadata. The source and destination ETag is
-     * identical for a successfully copied non-multipart object.</p>
+     * contents of an object, not its metadata.</p>
      */
     inline CopyObjectResultDetails& WithETag(const char* value) { SetETag(value); return *this;}
 

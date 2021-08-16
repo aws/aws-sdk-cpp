@@ -37,72 +37,72 @@ namespace Model
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline ListLogSubscriptionsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline ListLogSubscriptionsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
      * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-     * log subscriptions associated with your AWS account. If there are no log
-     * subscriptions for the AWS account or the directory, an empty list will be
-     * returned.</p>
+     * log subscriptions associated with your Amazon Web Services account. If there are
+     * no log subscriptions for the Amazon Web Services account or the directory, an
+     * empty list will be returned.</p>
      */
     inline ListLogSubscriptionsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

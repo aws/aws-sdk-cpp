@@ -95,17 +95,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -116,17 +116,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -137,17 +137,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -158,17 +158,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -179,17 +179,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -200,17 +200,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -221,17 +221,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -242,17 +242,17 @@ namespace Model
      * this action with an access point, you must direct requests to the access point
      * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -1389,162 +1389,162 @@ namespace Model
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
-     * was used for the object. If you specify
+     * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
+     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
+     * customer master key (CMK) that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
-     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
-     * managed CMK in AWS to protect the data. If the KMS key does not exist in the
-     * same account issuing the command, you must use the full ARN and not just the ID.
-     * </p>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
+     * Web Services managed CMK in Amazon Web Services to protect the data. If the KMS
+     * key does not exist in the same account issuing the command, you must use the
+     * full ARN and not just the ID. </p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS Encryption Context to use for object encryption. The
-     * value of this header is a base64-encoded UTF-8 string holding JSON with the
-     * encryption context key-value pairs.</p>
+     * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
+     * encryption. The value of this header is a base64-encoded UTF-8 string holding
+     * JSON with the encryption context key-value pairs.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 

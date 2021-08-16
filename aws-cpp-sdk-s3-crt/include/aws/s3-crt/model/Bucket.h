@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p> In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name
-   * is globally unique, and the namespace is shared by all AWS accounts.
-   * </p><p><h3>See Also:</h3>   <a
+   * is globally unique, and the namespace is shared by all Amazon Web Services
+   * accounts. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Bucket">AWS API
    * Reference</a></p>
    */

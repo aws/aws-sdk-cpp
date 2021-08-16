@@ -158,44 +158,44 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for this
      * bucket. Setting this element to <code>TRUE</code> restricts access to this
-     * bucket to only AWS service principals and authorized users within this account
-     * if the bucket has a public policy.</p> <p>Enabling this setting doesn't affect
-     * previously stored bucket policies, except that public and cross-account access
-     * within any public bucket policy, including non-public delegation to specific
-     * accounts, is blocked.</p>
+     * bucket to only Amazon Web Service principals and authorized users within this
+     * account if the bucket has a public policy.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p>
      */
     inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for this
      * bucket. Setting this element to <code>TRUE</code> restricts access to this
-     * bucket to only AWS service principals and authorized users within this account
-     * if the bucket has a public policy.</p> <p>Enabling this setting doesn't affect
-     * previously stored bucket policies, except that public and cross-account access
-     * within any public bucket policy, including non-public delegation to specific
-     * accounts, is blocked.</p>
+     * bucket to only Amazon Web Service principals and authorized users within this
+     * account if the bucket has a public policy.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p>
      */
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for this
      * bucket. Setting this element to <code>TRUE</code> restricts access to this
-     * bucket to only AWS service principals and authorized users within this account
-     * if the bucket has a public policy.</p> <p>Enabling this setting doesn't affect
-     * previously stored bucket policies, except that public and cross-account access
-     * within any public bucket policy, including non-public delegation to specific
-     * accounts, is blocked.</p>
+     * bucket to only Amazon Web Service principals and authorized users within this
+     * account if the bucket has a public policy.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p>
      */
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for this
      * bucket. Setting this element to <code>TRUE</code> restricts access to this
-     * bucket to only AWS service principals and authorized users within this account
-     * if the bucket has a public policy.</p> <p>Enabling this setting doesn't affect
-     * previously stored bucket policies, except that public and cross-account access
-     * within any public bucket policy, including non-public delegation to specific
-     * accounts, is blocked.</p>
+     * bucket to only Amazon Web Service principals and authorized users within this
+     * account if the bucket has a public policy.</p> <p>Enabling this setting doesn't
+     * affect previously stored bucket policies, except that public and cross-account
+     * access within any public bucket policy, including non-public delegation to
+     * specific accounts, is blocked.</p>
      */
     inline PublicAccessBlockConfiguration& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
 

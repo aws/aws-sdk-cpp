@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Exception encountered while trying to access your AWS
+   * <p>Exception encountered while trying to access your Amazon Web Services
    * organization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/OrganizationsException">AWS
    * API Reference</a></p>

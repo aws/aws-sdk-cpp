@@ -40,49 +40,49 @@ namespace Model
 
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline const Aws::String& GetPrimaryRegion() const{ return m_primaryRegion; }
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline bool PrimaryRegionHasBeenSet() const { return m_primaryRegionHasBeenSet; }
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline void SetPrimaryRegion(const Aws::String& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = value; }
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline void SetPrimaryRegion(Aws::String&& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = std::move(value); }
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline void SetPrimaryRegion(const char* value) { m_primaryRegionHasBeenSet = true; m_primaryRegion.assign(value); }
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline RegionsInfo& WithPrimaryRegion(const Aws::String& value) { SetPrimaryRegion(value); return *this;}
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline RegionsInfo& WithPrimaryRegion(Aws::String&& value) { SetPrimaryRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the AWS Managed Microsoft AD directory was originally
+     * <p>The Region where the Managed Microsoft AD directory was originally
      * created.</p>
      */
     inline RegionsInfo& WithPrimaryRegion(const char* value) { SetPrimaryRegion(value); return *this;}

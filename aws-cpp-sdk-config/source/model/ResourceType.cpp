@@ -117,6 +117,17 @@ namespace Aws
         static const int AWS_SecretsManager_Secret_HASH = HashingUtils::HashString("AWS::SecretsManager::Secret");
         static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
         static const int AWS_SSM_FileData_HASH = HashingUtils::HashString("AWS::SSM::FileData");
+        static const int AWS_Backup_BackupPlan_HASH = HashingUtils::HashString("AWS::Backup::BackupPlan");
+        static const int AWS_Backup_BackupSelection_HASH = HashingUtils::HashString("AWS::Backup::BackupSelection");
+        static const int AWS_Backup_BackupVault_HASH = HashingUtils::HashString("AWS::Backup::BackupVault");
+        static const int AWS_Backup_RecoveryPoint_HASH = HashingUtils::HashString("AWS::Backup::RecoveryPoint");
+        static const int AWS_ECR_Repository_HASH = HashingUtils::HashString("AWS::ECR::Repository");
+        static const int AWS_ECS_Cluster_HASH = HashingUtils::HashString("AWS::ECS::Cluster");
+        static const int AWS_ECS_Service_HASH = HashingUtils::HashString("AWS::ECS::Service");
+        static const int AWS_ECS_TaskDefinition_HASH = HashingUtils::HashString("AWS::ECS::TaskDefinition");
+        static const int AWS_EFS_AccessPoint_HASH = HashingUtils::HashString("AWS::EFS::AccessPoint");
+        static const int AWS_EFS_FileSystem_HASH = HashingUtils::HashString("AWS::EFS::FileSystem");
+        static const int AWS_EKS_Cluster_HASH = HashingUtils::HashString("AWS::EKS::Cluster");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -510,6 +521,50 @@ namespace Aws
           {
             return ResourceType::AWS_SSM_FileData;
           }
+          else if (hashCode == AWS_Backup_BackupPlan_HASH)
+          {
+            return ResourceType::AWS_Backup_BackupPlan;
+          }
+          else if (hashCode == AWS_Backup_BackupSelection_HASH)
+          {
+            return ResourceType::AWS_Backup_BackupSelection;
+          }
+          else if (hashCode == AWS_Backup_BackupVault_HASH)
+          {
+            return ResourceType::AWS_Backup_BackupVault;
+          }
+          else if (hashCode == AWS_Backup_RecoveryPoint_HASH)
+          {
+            return ResourceType::AWS_Backup_RecoveryPoint;
+          }
+          else if (hashCode == AWS_ECR_Repository_HASH)
+          {
+            return ResourceType::AWS_ECR_Repository;
+          }
+          else if (hashCode == AWS_ECS_Cluster_HASH)
+          {
+            return ResourceType::AWS_ECS_Cluster;
+          }
+          else if (hashCode == AWS_ECS_Service_HASH)
+          {
+            return ResourceType::AWS_ECS_Service;
+          }
+          else if (hashCode == AWS_ECS_TaskDefinition_HASH)
+          {
+            return ResourceType::AWS_ECS_TaskDefinition;
+          }
+          else if (hashCode == AWS_EFS_AccessPoint_HASH)
+          {
+            return ResourceType::AWS_EFS_AccessPoint;
+          }
+          else if (hashCode == AWS_EFS_FileSystem_HASH)
+          {
+            return ResourceType::AWS_EFS_FileSystem;
+          }
+          else if (hashCode == AWS_EKS_Cluster_HASH)
+          {
+            return ResourceType::AWS_EKS_Cluster;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -718,6 +773,28 @@ namespace Aws
             return "AWS::SNS::Topic";
           case ResourceType::AWS_SSM_FileData:
             return "AWS::SSM::FileData";
+          case ResourceType::AWS_Backup_BackupPlan:
+            return "AWS::Backup::BackupPlan";
+          case ResourceType::AWS_Backup_BackupSelection:
+            return "AWS::Backup::BackupSelection";
+          case ResourceType::AWS_Backup_BackupVault:
+            return "AWS::Backup::BackupVault";
+          case ResourceType::AWS_Backup_RecoveryPoint:
+            return "AWS::Backup::RecoveryPoint";
+          case ResourceType::AWS_ECR_Repository:
+            return "AWS::ECR::Repository";
+          case ResourceType::AWS_ECS_Cluster:
+            return "AWS::ECS::Cluster";
+          case ResourceType::AWS_ECS_Service:
+            return "AWS::ECS::Service";
+          case ResourceType::AWS_ECS_TaskDefinition:
+            return "AWS::ECS::TaskDefinition";
+          case ResourceType::AWS_EFS_AccessPoint:
+            return "AWS::EFS::AccessPoint";
+          case ResourceType::AWS_EFS_FileSystem:
+            return "AWS::EFS::FileSystem";
+          case ResourceType::AWS_EKS_Cluster:
+            return "AWS::EKS::Cluster";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
