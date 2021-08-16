@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An exception has occurred in AWS Directory Service.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>An exception has occurred in Directory Service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ServiceException">AWS
    * API Reference</a></p>
    */

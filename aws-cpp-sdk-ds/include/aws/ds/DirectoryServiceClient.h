@@ -33,6 +33,7 @@
 #include <aws/ds/model/DeregisterCertificateResult.h>
 #include <aws/ds/model/DeregisterEventTopicResult.h>
 #include <aws/ds/model/DescribeCertificateResult.h>
+#include <aws/ds/model/DescribeClientAuthenticationSettingsResult.h>
 #include <aws/ds/model/DescribeConditionalForwardersResult.h>
 #include <aws/ds/model/DescribeDirectoriesResult.h>
 #include <aws/ds/model/DescribeDomainControllersResult.h>
@@ -134,6 +135,7 @@ namespace Model
         class DeregisterCertificateRequest;
         class DeregisterEventTopicRequest;
         class DescribeCertificateRequest;
+        class DescribeClientAuthenticationSettingsRequest;
         class DescribeConditionalForwardersRequest;
         class DescribeDirectoriesRequest;
         class DescribeDomainControllersRequest;
@@ -197,6 +199,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeregisterCertificateResult, DirectoryServiceError> DeregisterCertificateOutcome;
         typedef Aws::Utils::Outcome<DeregisterEventTopicResult, DirectoryServiceError> DeregisterEventTopicOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateResult, DirectoryServiceError> DescribeCertificateOutcome;
+        typedef Aws::Utils::Outcome<DescribeClientAuthenticationSettingsResult, DirectoryServiceError> DescribeClientAuthenticationSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeConditionalForwardersResult, DirectoryServiceError> DescribeConditionalForwardersOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectoriesResult, DirectoryServiceError> DescribeDirectoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainControllersResult, DirectoryServiceError> DescribeDomainControllersOutcome;
@@ -260,6 +263,7 @@ namespace Model
         typedef std::future<DeregisterCertificateOutcome> DeregisterCertificateOutcomeCallable;
         typedef std::future<DeregisterEventTopicOutcome> DeregisterEventTopicOutcomeCallable;
         typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
+        typedef std::future<DescribeClientAuthenticationSettingsOutcome> DescribeClientAuthenticationSettingsOutcomeCallable;
         typedef std::future<DescribeConditionalForwardersOutcome> DescribeConditionalForwardersOutcomeCallable;
         typedef std::future<DescribeDirectoriesOutcome> DescribeDirectoriesOutcomeCallable;
         typedef std::future<DescribeDomainControllersOutcome> DescribeDomainControllersOutcomeCallable;
@@ -326,6 +330,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeregisterCertificateRequest&, const Model::DeregisterCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterCertificateResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeregisterEventTopicRequest&, const Model::DeregisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterEventTopicResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeClientAuthenticationSettingsRequest&, const Model::DescribeClientAuthenticationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientAuthenticationSettingsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeConditionalForwardersRequest&, const Model::DescribeConditionalForwardersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConditionalForwardersResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeDirectoriesRequest&, const Model::DescribeDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoriesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeDomainControllersRequest&, const Model::DescribeDomainControllersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainControllersResponseReceivedHandler;
@@ -368,22 +373,22 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::VerifyTrustRequest&, const Model::VerifyTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyTrustResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Directory Service</fullname> <p>AWS Directory Service is a web
-   * service that makes it easy for you to setup and run directories in the AWS
-   * cloud, or connect your AWS resources with an existing on-premises Microsoft
-   * Active Directory. This guide provides detailed information about AWS Directory
-   * Service operations, data types, parameters, and errors. For information about
-   * AWS Directory Services features, see <a
-   * href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and
-   * the <a
-   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
-   * Directory Service Administration Guide</a>.</p>  <p>AWS provides SDKs that
-   * consist of libraries and sample code for various programming languages and
-   * platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient
-   * way to create programmatic access to AWS Directory Service and other AWS
-   * services. For more information about the AWS SDKs, including how to download and
-   * install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
-   * Services</a>.</p> 
+   * <fullname>Directory Service</fullname> <p>Directory Service is a web service
+   * that makes it easy for you to setup and run directories in the Amazon Web
+   * Services cloud, or connect your Amazon Web Services resources with an existing
+   * self-managed Microsoft Active Directory. This guide provides detailed
+   * information about Directory Service operations, data types, parameters, and
+   * errors. For information about Directory Services features, see <a
+   * href="https://aws.amazon.com/directoryservice/">Directory Service</a> and the <a
+   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">Directory
+   * Service Administration Guide</a>.</p>  <p>Amazon Web Services provides
+   * SDKs that consist of libraries and sample code for various programming languages
+   * and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
+   * convenient way to create programmatic access to Directory Service and other
+   * Amazon Web Services services. For more information about the Amazon Web Services
+   * SDKs, including how to download and install them, see <a
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+   * 
    */
   class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -441,16 +446,17 @@ namespace Model
         virtual void AcceptSharedDirectoryAsync(const Model::AcceptSharedDirectoryRequest& request, const AcceptSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If the DNS server for your on-premises domain uses a publicly addressable IP
+         * <p>If the DNS server for your self-managed domain uses a publicly addressable IP
          * address, you must add a CIDR address block to correctly route traffic to and
          * from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this
          * address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic
-         * that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>
-         * <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required
-         * permissions have been explicitly granted through a policy. For details about
-         * what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * that uses public IP ranges from your Microsoft AD on Amazon Web Services to a
+         * peer VPC. </p> <p>Before you call <i>AddIpRoutes</i>, ensure that all of the
+         * required permissions have been explicitly granted through a policy. For details
+         * about what permissions are required to run the <i>AddIpRoutes</i> operation, see
+         * <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">AWS API
          * Reference</a></p>
@@ -458,16 +464,17 @@ namespace Model
         virtual Model::AddIpRoutesOutcome AddIpRoutes(const Model::AddIpRoutesRequest& request) const;
 
         /**
-         * <p>If the DNS server for your on-premises domain uses a publicly addressable IP
+         * <p>If the DNS server for your self-managed domain uses a publicly addressable IP
          * address, you must add a CIDR address block to correctly route traffic to and
          * from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this
          * address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic
-         * that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>
-         * <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required
-         * permissions have been explicitly granted through a policy. For details about
-         * what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * that uses public IP ranges from your Microsoft AD on Amazon Web Services to a
+         * peer VPC. </p> <p>Before you call <i>AddIpRoutes</i>, ensure that all of the
+         * required permissions have been explicitly granted through a policy. For details
+         * about what permissions are required to run the <i>AddIpRoutes</i> operation, see
+         * <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">AWS API
          * Reference</a></p>
@@ -477,16 +484,17 @@ namespace Model
         virtual Model::AddIpRoutesOutcomeCallable AddIpRoutesCallable(const Model::AddIpRoutesRequest& request) const;
 
         /**
-         * <p>If the DNS server for your on-premises domain uses a publicly addressable IP
+         * <p>If the DNS server for your self-managed domain uses a publicly addressable IP
          * address, you must add a CIDR address block to correctly route traffic to and
          * from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this
          * address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic
-         * that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>
-         * <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required
-         * permissions have been explicitly granted through a policy. For details about
-         * what permissions are required to run the <i>AddIpRoutes</i> operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * that uses public IP ranges from your Microsoft AD on Amazon Web Services to a
+         * peer VPC. </p> <p>Before you call <i>AddIpRoutes</i>, ensure that all of the
+         * required permissions have been explicitly granted through a policy. For details
+         * about what permissions are required to run the <i>AddIpRoutes</i> operation, see
+         * <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">AWS API
          * Reference</a></p>
@@ -592,13 +600,13 @@ namespace Model
         virtual void CancelSchemaExtensionAsync(const Model::CancelSchemaExtensionRequest& request, const CancelSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AD Connector to connect to an on-premises directory.</p> <p>Before
+         * <p>Creates an AD Connector to connect to a self-managed directory.</p> <p>Before
          * you call <code>ConnectDirectory</code>, ensure that all of the required
          * permissions have been explicitly granted through a policy. For details about
          * what permissions are required to run the <code>ConnectDirectory</code>
          * operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">AWS
          * API Reference</a></p>
@@ -606,13 +614,13 @@ namespace Model
         virtual Model::ConnectDirectoryOutcome ConnectDirectory(const Model::ConnectDirectoryRequest& request) const;
 
         /**
-         * <p>Creates an AD Connector to connect to an on-premises directory.</p> <p>Before
+         * <p>Creates an AD Connector to connect to a self-managed directory.</p> <p>Before
          * you call <code>ConnectDirectory</code>, ensure that all of the required
          * permissions have been explicitly granted through a policy. For details about
          * what permissions are required to run the <code>ConnectDirectory</code>
          * operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">AWS
          * API Reference</a></p>
@@ -622,13 +630,13 @@ namespace Model
         virtual Model::ConnectDirectoryOutcomeCallable ConnectDirectoryCallable(const Model::ConnectDirectoryRequest& request) const;
 
         /**
-         * <p>Creates an AD Connector to connect to an on-premises directory.</p> <p>Before
+         * <p>Creates an AD Connector to connect to a self-managed directory.</p> <p>Before
          * you call <code>ConnectDirectory</code>, ensure that all of the required
          * permissions have been explicitly granted through a policy. For details about
          * what permissions are required to run the <code>ConnectDirectory</code>
          * operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">AWS
          * API Reference</a></p>
@@ -703,20 +711,20 @@ namespace Model
         virtual void CreateComputerAsync(const Model::CreateComputerRequest& request, const CreateComputerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a conditional forwarder associated with your AWS directory.
-         * Conditional forwarders are required in order to set up a trust relationship with
-         * another domain. The conditional forwarder points to the trusted
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a conditional forwarder associated with your Amazon Web Services
+         * directory. Conditional forwarders are required in order to set up a trust
+         * relationship with another domain. The conditional forwarder points to the
+         * trusted domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConditionalForwarderOutcome CreateConditionalForwarder(const Model::CreateConditionalForwarderRequest& request) const;
 
         /**
-         * <p>Creates a conditional forwarder associated with your AWS directory.
-         * Conditional forwarders are required in order to set up a trust relationship with
-         * another domain. The conditional forwarder points to the trusted
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a conditional forwarder associated with your Amazon Web Services
+         * directory. Conditional forwarders are required in order to set up a trust
+         * relationship with another domain. The conditional forwarder points to the
+         * trusted domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">AWS
          * API Reference</a></p>
          *
@@ -725,10 +733,10 @@ namespace Model
         virtual Model::CreateConditionalForwarderOutcomeCallable CreateConditionalForwarderCallable(const Model::CreateConditionalForwarderRequest& request) const;
 
         /**
-         * <p>Creates a conditional forwarder associated with your AWS directory.
-         * Conditional forwarders are required in order to set up a trust relationship with
-         * another domain. The conditional forwarder points to the trusted
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a conditional forwarder associated with your Amazon Web Services
+         * directory. Conditional forwarders are required in order to set up a trust
+         * relationship with another domain. The conditional forwarder points to the
+         * trusted domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">AWS
          * API Reference</a></p>
          *
@@ -739,13 +747,13 @@ namespace Model
         /**
          * <p>Creates a Simple AD directory. For more information, see <a
          * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple
-         * Active Directory</a> in the <i>AWS Directory Service Admin Guide</i>.</p>
-         * <p>Before you call <code>CreateDirectory</code>, ensure that all of the required
+         * Active Directory</a> in the <i>Directory Service Admin Guide</i>.</p> <p>Before
+         * you call <code>CreateDirectory</code>, ensure that all of the required
          * permissions have been explicitly granted through a policy. For details about
          * what permissions are required to run the <code>CreateDirectory</code> operation,
          * see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">AWS
          * API Reference</a></p>
@@ -755,13 +763,13 @@ namespace Model
         /**
          * <p>Creates a Simple AD directory. For more information, see <a
          * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple
-         * Active Directory</a> in the <i>AWS Directory Service Admin Guide</i>.</p>
-         * <p>Before you call <code>CreateDirectory</code>, ensure that all of the required
+         * Active Directory</a> in the <i>Directory Service Admin Guide</i>.</p> <p>Before
+         * you call <code>CreateDirectory</code>, ensure that all of the required
          * permissions have been explicitly granted through a policy. For details about
          * what permissions are required to run the <code>CreateDirectory</code> operation,
          * see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">AWS
          * API Reference</a></p>
@@ -773,13 +781,13 @@ namespace Model
         /**
          * <p>Creates a Simple AD directory. For more information, see <a
          * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple
-         * Active Directory</a> in the <i>AWS Directory Service Admin Guide</i>.</p>
-         * <p>Before you call <code>CreateDirectory</code>, ensure that all of the required
+         * Active Directory</a> in the <i>Directory Service Admin Guide</i>.</p> <p>Before
+         * you call <code>CreateDirectory</code>, ensure that all of the required
          * permissions have been explicitly granted through a policy. For details about
          * what permissions are required to run the <code>CreateDirectory</code> operation,
          * see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">AWS
          * API Reference</a></p>
@@ -791,7 +799,7 @@ namespace Model
         /**
          * <p>Creates a subscription to forward real-time Directory Service domain
          * controller security logs to the specified Amazon CloudWatch log group in your
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">AWS
          * API Reference</a></p>
          */
@@ -800,7 +808,7 @@ namespace Model
         /**
          * <p>Creates a subscription to forward real-time Directory Service domain
          * controller security logs to the specified Amazon CloudWatch log group in your
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">AWS
          * API Reference</a></p>
          *
@@ -811,7 +819,7 @@ namespace Model
         /**
          * <p>Creates a subscription to forward real-time Directory Service domain
          * controller security logs to the specified Amazon CloudWatch log group in your
-         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">AWS
          * API Reference</a></p>
          *
@@ -820,16 +828,15 @@ namespace Model
         virtual void CreateLogSubscriptionAsync(const Model::CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Microsoft AD directory in the AWS Cloud. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-         * Managed Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.</p>
-         * <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required
-         * permissions have been explicitly granted through a policy. For details about
-         * what permissions are required to run the <i>CreateMicrosoftAD</i> operation, see
-         * <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * <p>Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Managed
+         * Microsoft AD</a> in the <i>Directory Service Admin Guide</i>.</p> <p>Before you
+         * call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have
+         * been explicitly granted through a policy. For details about what permissions are
+         * required to run the <i>CreateMicrosoftAD</i> operation, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">AWS
          * API Reference</a></p>
@@ -837,16 +844,15 @@ namespace Model
         virtual Model::CreateMicrosoftADOutcome CreateMicrosoftAD(const Model::CreateMicrosoftADRequest& request) const;
 
         /**
-         * <p>Creates a Microsoft AD directory in the AWS Cloud. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-         * Managed Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.</p>
-         * <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required
-         * permissions have been explicitly granted through a policy. For details about
-         * what permissions are required to run the <i>CreateMicrosoftAD</i> operation, see
-         * <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * <p>Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Managed
+         * Microsoft AD</a> in the <i>Directory Service Admin Guide</i>.</p> <p>Before you
+         * call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have
+         * been explicitly granted through a policy. For details about what permissions are
+         * required to run the <i>CreateMicrosoftAD</i> operation, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">AWS
          * API Reference</a></p>
@@ -856,16 +862,15 @@ namespace Model
         virtual Model::CreateMicrosoftADOutcomeCallable CreateMicrosoftADCallable(const Model::CreateMicrosoftADRequest& request) const;
 
         /**
-         * <p>Creates a Microsoft AD directory in the AWS Cloud. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS
-         * Managed Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.</p>
-         * <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required
-         * permissions have been explicitly granted through a policy. For details about
-         * what permissions are required to run the <i>CreateMicrosoftAD</i> operation, see
-         * <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * <p>Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Managed
+         * Microsoft AD</a> in the <i>Directory Service Admin Guide</i>.</p> <p>Before you
+         * call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have
+         * been explicitly granted through a policy. For details about what permissions are
+         * required to run the <i>CreateMicrosoftAD</i> operation, see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">AWS
          * API Reference</a></p>
@@ -875,18 +880,18 @@ namespace Model
         virtual void CreateMicrosoftADAsync(const Model::CreateMicrosoftADRequest& request, const CreateMicrosoftADResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
-         * cloud.</p>  <p>You cannot take snapshots of AD Connector directories.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web
+         * Services cloud.</p>  <p>You cannot take snapshots of AD Connector
+         * directories.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
-         * cloud.</p>  <p>You cannot take snapshots of AD Connector directories.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web
+         * Services cloud.</p>  <p>You cannot take snapshots of AD Connector
+         * directories.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -895,9 +900,9 @@ namespace Model
         virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
-         * cloud.</p>  <p>You cannot take snapshots of AD Connector directories.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web
+         * Services cloud.</p>  <p>You cannot take snapshots of AD Connector
+         * directories.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -906,28 +911,28 @@ namespace Model
         virtual void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * trust relationships. For example, you can establish a trust between your AWS
-         * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
+         * <p>Directory Service for Microsoft Active Directory allows you to configure
+         * trust relationships. For example, you can establish a trust between your Managed
+         * Microsoft AD directory, and your existing self-managed Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
-         * the creation of the AWS side of a trust relationship between an AWS Managed
-         * Microsoft AD directory and an external domain. You can create either a forest
-         * trust or an external trust.</p><p><h3>See Also:</h3>   <a
+         * the creation of the Amazon Web Services side of a trust relationship between an
+         * Managed Microsoft AD directory and an external domain. You can create either a
+         * forest trust or an external trust.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateTrustOutcome CreateTrust(const Model::CreateTrustRequest& request) const;
 
         /**
-         * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * trust relationships. For example, you can establish a trust between your AWS
-         * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
+         * <p>Directory Service for Microsoft Active Directory allows you to configure
+         * trust relationships. For example, you can establish a trust between your Managed
+         * Microsoft AD directory, and your existing self-managed Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
-         * the creation of the AWS side of a trust relationship between an AWS Managed
-         * Microsoft AD directory and an external domain. You can create either a forest
-         * trust or an external trust.</p><p><h3>See Also:</h3>   <a
+         * the creation of the Amazon Web Services side of a trust relationship between an
+         * Managed Microsoft AD directory and an external domain. You can create either a
+         * forest trust or an external trust.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
          * Reference</a></p>
          *
@@ -936,14 +941,14 @@ namespace Model
         virtual Model::CreateTrustOutcomeCallable CreateTrustCallable(const Model::CreateTrustRequest& request) const;
 
         /**
-         * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * trust relationships. For example, you can establish a trust between your AWS
-         * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
+         * <p>Directory Service for Microsoft Active Directory allows you to configure
+         * trust relationships. For example, you can establish a trust between your Managed
+         * Microsoft AD directory, and your existing self-managed Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
-         * the creation of the AWS side of a trust relationship between an AWS Managed
-         * Microsoft AD directory and an external domain. You can create either a forest
-         * trust or an external trust.</p><p><h3>See Also:</h3>   <a
+         * the creation of the Amazon Web Services side of a trust relationship between an
+         * Managed Microsoft AD directory and an external domain. You can create either a
+         * forest trust or an external trust.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
          * Reference</a></p>
          *
@@ -952,16 +957,16 @@ namespace Model
         virtual void CreateTrustAsync(const Model::CreateTrustRequest& request, const CreateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a conditional forwarder that has been set up for your AWS
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a conditional forwarder that has been set up for your Amazon Web
+         * Services directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConditionalForwarderOutcome DeleteConditionalForwarder(const Model::DeleteConditionalForwarderRequest& request) const;
 
         /**
-         * <p>Deletes a conditional forwarder that has been set up for your AWS
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a conditional forwarder that has been set up for your Amazon Web
+         * Services directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">AWS
          * API Reference</a></p>
          *
@@ -970,8 +975,8 @@ namespace Model
         virtual Model::DeleteConditionalForwarderOutcomeCallable DeleteConditionalForwarderCallable(const Model::DeleteConditionalForwarderRequest& request) const;
 
         /**
-         * <p>Deletes a conditional forwarder that has been set up for your AWS
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a conditional forwarder that has been set up for your Amazon Web
+         * Services directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">AWS
          * API Reference</a></p>
          *
@@ -980,12 +985,12 @@ namespace Model
         virtual void DeleteConditionalForwarderAsync(const Model::DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Directory Service directory.</p> <p>Before you call
+         * <p>Deletes an Directory Service directory.</p> <p>Before you call
          * <code>DeleteDirectory</code>, ensure that all of the required permissions have
          * been explicitly granted through a policy. For details about what permissions are
          * required to run the <code>DeleteDirectory</code> operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">AWS
          * API Reference</a></p>
@@ -993,12 +998,12 @@ namespace Model
         virtual Model::DeleteDirectoryOutcome DeleteDirectory(const Model::DeleteDirectoryRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Directory Service directory.</p> <p>Before you call
+         * <p>Deletes an Directory Service directory.</p> <p>Before you call
          * <code>DeleteDirectory</code>, ensure that all of the required permissions have
          * been explicitly granted through a policy. For details about what permissions are
          * required to run the <code>DeleteDirectory</code> operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">AWS
          * API Reference</a></p>
@@ -1008,12 +1013,12 @@ namespace Model
         virtual Model::DeleteDirectoryOutcomeCallable DeleteDirectoryCallable(const Model::DeleteDirectoryRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Directory Service directory.</p> <p>Before you call
+         * <p>Deletes an Directory Service directory.</p> <p>Before you call
          * <code>DeleteDirectory</code>, ensure that all of the required permissions have
          * been explicitly granted through a policy. For details about what permissions are
          * required to run the <code>DeleteDirectory</code> operation, see <a
-         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-         * Directory Service API Permissions: Actions, Resources, and Conditions
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+         * Service API Permissions: Actions, Resources, and Conditions
          * Reference</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">AWS
          * API Reference</a></p>
@@ -1073,7 +1078,7 @@ namespace Model
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD
+         * <p>Deletes an existing trust relationship between your Managed Microsoft AD
          * directory and an external domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
          * Reference</a></p>
@@ -1081,7 +1086,7 @@ namespace Model
         virtual Model::DeleteTrustOutcome DeleteTrust(const Model::DeleteTrustRequest& request) const;
 
         /**
-         * <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD
+         * <p>Deletes an existing trust relationship between your Managed Microsoft AD
          * directory and an external domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
          * Reference</a></p>
@@ -1091,7 +1096,7 @@ namespace Model
         virtual Model::DeleteTrustOutcomeCallable DeleteTrustCallable(const Model::DeleteTrustRequest& request) const;
 
         /**
-         * <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD
+         * <p>Deletes an existing trust relationship between your Managed Microsoft AD
          * directory and an external domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
          * Reference</a></p>
@@ -1129,7 +1134,7 @@ namespace Model
         virtual void DeregisterCertificateAsync(const Model::DeregisterCertificateRequest& request, const DeregisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified directory as a publisher to the specified SNS
+         * <p>Removes the specified directory as a publisher to the specified Amazon SNS
          * topic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">AWS
          * API Reference</a></p>
@@ -1137,7 +1142,7 @@ namespace Model
         virtual Model::DeregisterEventTopicOutcome DeregisterEventTopic(const Model::DeregisterEventTopicRequest& request) const;
 
         /**
-         * <p>Removes the specified directory as a publisher to the specified SNS
+         * <p>Removes the specified directory as a publisher to the specified Amazon SNS
          * topic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">AWS
          * API Reference</a></p>
@@ -1147,7 +1152,7 @@ namespace Model
         virtual Model::DeregisterEventTopicOutcomeCallable DeregisterEventTopicCallable(const Model::DeregisterEventTopicRequest& request) const;
 
         /**
-         * <p>Removes the specified directory as a publisher to the specified SNS
+         * <p>Removes the specified directory as a publisher to the specified Amazon SNS
          * topic.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">AWS
          * API Reference</a></p>
@@ -1183,6 +1188,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about the type of client authentication for the
+         * specified directory, if the type is specified. If no type is specified,
+         * information about all client authentication types that are supported for the
+         * specified directory is retrieved. Currently, only <code>SmartCard</code> is
+         * supported. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClientAuthenticationSettingsOutcome DescribeClientAuthenticationSettings(const Model::DescribeClientAuthenticationSettingsRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the type of client authentication for the
+         * specified directory, if the type is specified. If no type is specified,
+         * information about all client authentication types that are supported for the
+         * specified directory is retrieved. Currently, only <code>SmartCard</code> is
+         * supported. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeClientAuthenticationSettingsOutcomeCallable DescribeClientAuthenticationSettingsCallable(const Model::DescribeClientAuthenticationSettingsRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the type of client authentication for the
+         * specified directory, if the type is specified. If no type is specified,
+         * information about all client authentication types that are supported for the
+         * specified directory is retrieved. Currently, only <code>SmartCard</code> is
+         * supported. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeClientAuthenticationSettingsAsync(const Model::DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about the conditional forwarders for this account.</p>
@@ -1299,20 +1341,20 @@ namespace Model
         virtual void DescribeDomainControllersAsync(const Model::DescribeDomainControllersRequest& request, const DescribeDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Obtains information about which SNS topics receive status messages from the
-         * specified directory.</p> <p>If no input parameters are provided, such as
-         * DirectoryId or TopicName, this request describes all of the associations in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Obtains information about which Amazon SNS topics receive status messages
+         * from the specified directory.</p> <p>If no input parameters are provided, such
+         * as DirectoryId or TopicName, this request describes all of the associations in
+         * the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEventTopicsOutcome DescribeEventTopics(const Model::DescribeEventTopicsRequest& request) const;
 
         /**
-         * <p>Obtains information about which SNS topics receive status messages from the
-         * specified directory.</p> <p>If no input parameters are provided, such as
-         * DirectoryId or TopicName, this request describes all of the associations in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Obtains information about which Amazon SNS topics receive status messages
+         * from the specified directory.</p> <p>If no input parameters are provided, such
+         * as DirectoryId or TopicName, this request describes all of the associations in
+         * the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
          * API Reference</a></p>
          *
@@ -1321,10 +1363,10 @@ namespace Model
         virtual Model::DescribeEventTopicsOutcomeCallable DescribeEventTopicsCallable(const Model::DescribeEventTopicsRequest& request) const;
 
         /**
-         * <p>Obtains information about which SNS topics receive status messages from the
-         * specified directory.</p> <p>If no input parameters are provided, such as
-         * DirectoryId or TopicName, this request describes all of the associations in the
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Obtains information about which Amazon SNS topics receive status messages
+         * from the specified directory.</p> <p>If no input parameters are provided, such
+         * as DirectoryId or TopicName, this request describes all of the associations in
+         * the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">AWS
          * API Reference</a></p>
          *
@@ -1694,18 +1736,20 @@ namespace Model
 
         /**
          * <p>Enables single sign-on for a directory. Single sign-on allows users in your
-         * directory to access certain AWS services from a computer joined to the directory
-         * without having to enter their credentials separately.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
+         * directory to access certain Amazon Web Services services from a computer joined
+         * to the directory without having to enter their credentials
+         * separately.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
          * Reference</a></p>
          */
         virtual Model::EnableSsoOutcome EnableSso(const Model::EnableSsoRequest& request) const;
 
         /**
          * <p>Enables single sign-on for a directory. Single sign-on allows users in your
-         * directory to access certain AWS services from a computer joined to the directory
-         * without having to enter their credentials separately.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
+         * directory to access certain Amazon Web Services services from a computer joined
+         * to the directory without having to enter their credentials
+         * separately.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
          * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1714,9 +1758,10 @@ namespace Model
 
         /**
          * <p>Enables single sign-on for a directory. Single sign-on allows users in your
-         * directory to access certain AWS services from a computer joined to the directory
-         * without having to enter their credentials separately.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
+         * directory to access certain Amazon Web Services services from a computer joined
+         * to the directory without having to enter their credentials
+         * separately.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">AWS API
          * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1836,16 +1881,16 @@ namespace Model
         virtual void ListIpRoutesAsync(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the active log subscriptions for the AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the active log subscriptions for the Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLogSubscriptionsOutcome ListLogSubscriptions(const Model::ListLogSubscriptionsRequest& request) const;
 
         /**
-         * <p>Lists the active log subscriptions for the AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the active log subscriptions for the Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
          * API Reference</a></p>
          *
@@ -1854,8 +1899,8 @@ namespace Model
         virtual Model::ListLogSubscriptionsOutcomeCallable ListLogSubscriptionsCallable(const Model::ListLogSubscriptionsRequest& request) const;
 
         /**
-         * <p>Lists the active log subscriptions for the AWS account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the active log subscriptions for the Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
          * API Reference</a></p>
          *
@@ -1945,24 +1990,24 @@ namespace Model
         virtual void RegisterCertificateAsync(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a directory with an SNS topic. This establishes the directory as a
-         * publisher to the specified SNS topic. You can then receive email or text (SMS)
-         * messages when the status of your directory changes. You get notified if your
-         * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active
-         * status.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a directory with an Amazon SNS topic. This establishes the
+         * directory as a publisher to the specified Amazon SNS topic. You can then receive
+         * email or text (SMS) messages when the status of your directory changes. You get
+         * notified if your directory goes from an Active status to an Impaired or
+         * Inoperable status. You also receive a notification when the directory returns to
+         * an Active status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterEventTopicOutcome RegisterEventTopic(const Model::RegisterEventTopicRequest& request) const;
 
         /**
-         * <p>Associates a directory with an SNS topic. This establishes the directory as a
-         * publisher to the specified SNS topic. You can then receive email or text (SMS)
-         * messages when the status of your directory changes. You get notified if your
-         * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active
-         * status.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a directory with an Amazon SNS topic. This establishes the
+         * directory as a publisher to the specified Amazon SNS topic. You can then receive
+         * email or text (SMS) messages when the status of your directory changes. You get
+         * notified if your directory goes from an Active status to an Impaired or
+         * Inoperable status. You also receive a notification when the directory returns to
+         * an Active status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">AWS
          * API Reference</a></p>
          *
@@ -1971,12 +2016,12 @@ namespace Model
         virtual Model::RegisterEventTopicOutcomeCallable RegisterEventTopicCallable(const Model::RegisterEventTopicRequest& request) const;
 
         /**
-         * <p>Associates a directory with an SNS topic. This establishes the directory as a
-         * publisher to the specified SNS topic. You can then receive email or text (SMS)
-         * messages when the status of your directory changes. You get notified if your
-         * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active
-         * status.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a directory with an Amazon SNS topic. This establishes the
+         * directory as a publisher to the specified Amazon SNS topic. You can then receive
+         * email or text (SMS) messages when the status of your directory changes. You get
+         * notified if your directory goes from an Active status to an Impaired or
+         * Inoperable status. You also receive a notification when the directory returns to
+         * an Active status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">AWS
          * API Reference</a></p>
          *
@@ -2094,38 +2139,38 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets the password for any user in your AWS Managed Microsoft AD or Simple
-         * AD directory.</p> <p>You can reset the password for any user in your directory
-         * with the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset
-         * the password for any user that is a member of either the <b>Domain Admins</b> or
+         * <p>Resets the password for any user in your Managed Microsoft AD or Simple AD
+         * directory.</p> <p>You can reset the password for any user in your directory with
+         * the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset the
+         * password for any user that is a member of either the <b>Domain Admins</b> or
          * <b>Enterprise Admins</b> group except for the administrator user.</p> </li> <li>
-         * <p>For AWS Managed Microsoft AD, you can only reset the password for a user that
-         * is in an OU based off of the NetBIOS name that you typed when you created your
-         * directory. For example, you cannot reset the password for a user in the <b>AWS
-         * Reserved</b> OU. For more information about the OU structure for an AWS Managed
-         * Microsoft AD directory, see <a
+         * <p>For Managed Microsoft AD, you can only reset the password for a user that is
+         * in an OU based off of the NetBIOS name that you typed when you created your
+         * directory. For example, you cannot reset the password for a user in the
+         * <b>Amazon Web Services Reserved</b> OU. For more information about the OU
+         * structure for an Managed Microsoft AD directory, see <a
          * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What
-         * Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * Gets Created</a> in the <i>Directory Service Administration Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">AWS
          * API Reference</a></p>
          */
         virtual Model::ResetUserPasswordOutcome ResetUserPassword(const Model::ResetUserPasswordRequest& request) const;
 
         /**
-         * <p>Resets the password for any user in your AWS Managed Microsoft AD or Simple
-         * AD directory.</p> <p>You can reset the password for any user in your directory
-         * with the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset
-         * the password for any user that is a member of either the <b>Domain Admins</b> or
+         * <p>Resets the password for any user in your Managed Microsoft AD or Simple AD
+         * directory.</p> <p>You can reset the password for any user in your directory with
+         * the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset the
+         * password for any user that is a member of either the <b>Domain Admins</b> or
          * <b>Enterprise Admins</b> group except for the administrator user.</p> </li> <li>
-         * <p>For AWS Managed Microsoft AD, you can only reset the password for a user that
-         * is in an OU based off of the NetBIOS name that you typed when you created your
-         * directory. For example, you cannot reset the password for a user in the <b>AWS
-         * Reserved</b> OU. For more information about the OU structure for an AWS Managed
-         * Microsoft AD directory, see <a
+         * <p>For Managed Microsoft AD, you can only reset the password for a user that is
+         * in an OU based off of the NetBIOS name that you typed when you created your
+         * directory. For example, you cannot reset the password for a user in the
+         * <b>Amazon Web Services Reserved</b> OU. For more information about the OU
+         * structure for an Managed Microsoft AD directory, see <a
          * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What
-         * Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * Gets Created</a> in the <i>Directory Service Administration Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">AWS
          * API Reference</a></p>
          *
@@ -2134,19 +2179,19 @@ namespace Model
         virtual Model::ResetUserPasswordOutcomeCallable ResetUserPasswordCallable(const Model::ResetUserPasswordRequest& request) const;
 
         /**
-         * <p>Resets the password for any user in your AWS Managed Microsoft AD or Simple
-         * AD directory.</p> <p>You can reset the password for any user in your directory
-         * with the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset
-         * the password for any user that is a member of either the <b>Domain Admins</b> or
+         * <p>Resets the password for any user in your Managed Microsoft AD or Simple AD
+         * directory.</p> <p>You can reset the password for any user in your directory with
+         * the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset the
+         * password for any user that is a member of either the <b>Domain Admins</b> or
          * <b>Enterprise Admins</b> group except for the administrator user.</p> </li> <li>
-         * <p>For AWS Managed Microsoft AD, you can only reset the password for a user that
-         * is in an OU based off of the NetBIOS name that you typed when you created your
-         * directory. For example, you cannot reset the password for a user in the <b>AWS
-         * Reserved</b> OU. For more information about the OU structure for an AWS Managed
-         * Microsoft AD directory, see <a
+         * <p>For Managed Microsoft AD, you can only reset the password for a user that is
+         * in an OU based off of the NetBIOS name that you typed when you created your
+         * directory. For example, you cannot reset the password for a user in the
+         * <b>Amazon Web Services Reserved</b> OU. For more information about the OU
+         * structure for an Managed Microsoft AD directory, see <a
          * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What
-         * Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * Gets Created</a> in the <i>Directory Service Administration Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">AWS
          * API Reference</a></p>
          *
@@ -2198,19 +2243,20 @@ namespace Model
         virtual void RestoreFromSnapshotAsync(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Shares a specified directory (<code>DirectoryId</code>) in your AWS account
-         * (directory owner) with another AWS account (directory consumer). With this
-         * operation you can use your directory from any AWS account and from any Amazon
-         * VPC within an AWS Region.</p> <p>When you share your AWS Managed Microsoft AD
-         * directory, AWS Directory Service creates a shared directory in the directory
-         * consumer account. This shared directory contains the metadata to provide access
-         * to the directory within the directory owner account. The shared directory is
-         * visible in all VPCs in the directory consumer account.</p> <p>The
-         * <code>ShareMethod</code> parameter determines whether the specified directory
-         * can be shared between AWS accounts inside the same AWS organization
+         * <p>Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web
+         * Services account (directory owner) with another Amazon Web Services account
+         * (directory consumer). With this operation you can use your directory from any
+         * Amazon Web Services account and from any Amazon VPC within an Amazon Web
+         * Services Region.</p> <p>When you share your Managed Microsoft AD directory,
+         * Directory Service creates a shared directory in the directory consumer account.
+         * This shared directory contains the metadata to provide access to the directory
+         * within the directory owner account. The shared directory is visible in all VPCs
+         * in the directory consumer account.</p> <p>The <code>ShareMethod</code> parameter
+         * determines whether the specified directory can be shared between Amazon Web
+         * Services accounts inside the same Amazon Web Services organization
          * (<code>ORGANIZATIONS</code>). It also determines whether you can share the
-         * directory with any other AWS account either inside or outside of the
-         * organization (<code>HANDSHAKE</code>).</p> <p>The <code>ShareNotes</code>
+         * directory with any other Amazon Web Services account either inside or outside of
+         * the organization (<code>HANDSHAKE</code>).</p> <p>The <code>ShareNotes</code>
          * parameter is only used when <code>HANDSHAKE</code> is called, which sends a
          * directory sharing request to the directory consumer. </p><p><h3>See Also:</h3>  
          * <a
@@ -2220,19 +2266,20 @@ namespace Model
         virtual Model::ShareDirectoryOutcome ShareDirectory(const Model::ShareDirectoryRequest& request) const;
 
         /**
-         * <p>Shares a specified directory (<code>DirectoryId</code>) in your AWS account
-         * (directory owner) with another AWS account (directory consumer). With this
-         * operation you can use your directory from any AWS account and from any Amazon
-         * VPC within an AWS Region.</p> <p>When you share your AWS Managed Microsoft AD
-         * directory, AWS Directory Service creates a shared directory in the directory
-         * consumer account. This shared directory contains the metadata to provide access
-         * to the directory within the directory owner account. The shared directory is
-         * visible in all VPCs in the directory consumer account.</p> <p>The
-         * <code>ShareMethod</code> parameter determines whether the specified directory
-         * can be shared between AWS accounts inside the same AWS organization
+         * <p>Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web
+         * Services account (directory owner) with another Amazon Web Services account
+         * (directory consumer). With this operation you can use your directory from any
+         * Amazon Web Services account and from any Amazon VPC within an Amazon Web
+         * Services Region.</p> <p>When you share your Managed Microsoft AD directory,
+         * Directory Service creates a shared directory in the directory consumer account.
+         * This shared directory contains the metadata to provide access to the directory
+         * within the directory owner account. The shared directory is visible in all VPCs
+         * in the directory consumer account.</p> <p>The <code>ShareMethod</code> parameter
+         * determines whether the specified directory can be shared between Amazon Web
+         * Services accounts inside the same Amazon Web Services organization
          * (<code>ORGANIZATIONS</code>). It also determines whether you can share the
-         * directory with any other AWS account either inside or outside of the
-         * organization (<code>HANDSHAKE</code>).</p> <p>The <code>ShareNotes</code>
+         * directory with any other Amazon Web Services account either inside or outside of
+         * the organization (<code>HANDSHAKE</code>).</p> <p>The <code>ShareNotes</code>
          * parameter is only used when <code>HANDSHAKE</code> is called, which sends a
          * directory sharing request to the directory consumer. </p><p><h3>See Also:</h3>  
          * <a
@@ -2244,19 +2291,20 @@ namespace Model
         virtual Model::ShareDirectoryOutcomeCallable ShareDirectoryCallable(const Model::ShareDirectoryRequest& request) const;
 
         /**
-         * <p>Shares a specified directory (<code>DirectoryId</code>) in your AWS account
-         * (directory owner) with another AWS account (directory consumer). With this
-         * operation you can use your directory from any AWS account and from any Amazon
-         * VPC within an AWS Region.</p> <p>When you share your AWS Managed Microsoft AD
-         * directory, AWS Directory Service creates a shared directory in the directory
-         * consumer account. This shared directory contains the metadata to provide access
-         * to the directory within the directory owner account. The shared directory is
-         * visible in all VPCs in the directory consumer account.</p> <p>The
-         * <code>ShareMethod</code> parameter determines whether the specified directory
-         * can be shared between AWS accounts inside the same AWS organization
+         * <p>Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web
+         * Services account (directory owner) with another Amazon Web Services account
+         * (directory consumer). With this operation you can use your directory from any
+         * Amazon Web Services account and from any Amazon VPC within an Amazon Web
+         * Services Region.</p> <p>When you share your Managed Microsoft AD directory,
+         * Directory Service creates a shared directory in the directory consumer account.
+         * This shared directory contains the metadata to provide access to the directory
+         * within the directory owner account. The shared directory is visible in all VPCs
+         * in the directory consumer account.</p> <p>The <code>ShareMethod</code> parameter
+         * determines whether the specified directory can be shared between Amazon Web
+         * Services accounts inside the same Amazon Web Services organization
          * (<code>ORGANIZATIONS</code>). It also determines whether you can share the
-         * directory with any other AWS account either inside or outside of the
-         * organization (<code>HANDSHAKE</code>).</p> <p>The <code>ShareNotes</code>
+         * directory with any other Amazon Web Services account either inside or outside of
+         * the organization (<code>HANDSHAKE</code>).</p> <p>The <code>ShareNotes</code>
          * parameter is only used when <code>HANDSHAKE</code> is called, which sends a
          * directory sharing request to the directory consumer. </p><p><h3>See Also:</h3>  
          * <a
@@ -2324,16 +2372,16 @@ namespace Model
         virtual void UnshareDirectoryAsync(const Model::UnshareDirectoryRequest& request, const UnshareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a conditional forwarder that has been set up for your AWS
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a conditional forwarder that has been set up for your Amazon Web
+         * Services directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateConditionalForwarderOutcome UpdateConditionalForwarder(const Model::UpdateConditionalForwarderRequest& request) const;
 
         /**
-         * <p>Updates a conditional forwarder that has been set up for your AWS
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a conditional forwarder that has been set up for your Amazon Web
+         * Services directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">AWS
          * API Reference</a></p>
          *
@@ -2342,8 +2390,8 @@ namespace Model
         virtual Model::UpdateConditionalForwarderOutcomeCallable UpdateConditionalForwarderCallable(const Model::UpdateConditionalForwarderRequest& request) const;
 
         /**
-         * <p>Updates a conditional forwarder that has been set up for your AWS
-         * directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a conditional forwarder that has been set up for your Amazon Web
+         * Services directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">AWS
          * API Reference</a></p>
          *
@@ -2423,16 +2471,16 @@ namespace Model
         virtual void UpdateRadiusAsync(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the trust that has been set up between your AWS Managed Microsoft AD
-         * directory and an on-premises Active Directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the trust that has been set up between your Managed Microsoft AD
+         * directory and an self-managed Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
          * Reference</a></p>
          */
         virtual Model::UpdateTrustOutcome UpdateTrust(const Model::UpdateTrustRequest& request) const;
 
         /**
-         * <p>Updates the trust that has been set up between your AWS Managed Microsoft AD
-         * directory and an on-premises Active Directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the trust that has been set up between your Managed Microsoft AD
+         * directory and an self-managed Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
          * Reference</a></p>
          *
@@ -2441,8 +2489,8 @@ namespace Model
         virtual Model::UpdateTrustOutcomeCallable UpdateTrustCallable(const Model::UpdateTrustRequest& request) const;
 
         /**
-         * <p>Updates the trust that has been set up between your AWS Managed Microsoft AD
-         * directory and an on-premises Active Directory.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the trust that has been set up between your Managed Microsoft AD
+         * directory and an self-managed Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
          * Reference</a></p>
          *
@@ -2451,9 +2499,9 @@ namespace Model
         virtual void UpdateTrustAsync(const Model::UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your AWS Managed Microsoft AD directory and an external
+         * <p>Directory Service for Microsoft Active Directory allows you to configure and
+         * verify trust relationships.</p> <p>This action verifies a trust relationship
+         * between your Managed Microsoft AD directory and an external
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
          * Reference</a></p>
@@ -2461,9 +2509,9 @@ namespace Model
         virtual Model::VerifyTrustOutcome VerifyTrust(const Model::VerifyTrustRequest& request) const;
 
         /**
-         * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your AWS Managed Microsoft AD directory and an external
+         * <p>Directory Service for Microsoft Active Directory allows you to configure and
+         * verify trust relationships.</p> <p>This action verifies a trust relationship
+         * between your Managed Microsoft AD directory and an external
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
          * Reference</a></p>
@@ -2473,9 +2521,9 @@ namespace Model
         virtual Model::VerifyTrustOutcomeCallable VerifyTrustCallable(const Model::VerifyTrustRequest& request) const;
 
         /**
-         * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your AWS Managed Microsoft AD directory and an external
+         * <p>Directory Service for Microsoft Active Directory allows you to configure and
+         * verify trust relationships.</p> <p>This action verifies a trust relationship
+         * between your Managed Microsoft AD directory and an external
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
          * Reference</a></p>
@@ -2510,6 +2558,7 @@ namespace Model
         void DeregisterCertificateAsyncHelper(const Model::DeregisterCertificateRequest& request, const DeregisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterEventTopicAsyncHelper(const Model::DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeClientAuthenticationSettingsAsyncHelper(const Model::DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConditionalForwardersAsyncHelper(const Model::DescribeConditionalForwardersRequest& request, const DescribeConditionalForwardersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectoriesAsyncHelper(const Model::DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainControllersAsyncHelper(const Model::DescribeDomainControllersRequest& request, const DescribeDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

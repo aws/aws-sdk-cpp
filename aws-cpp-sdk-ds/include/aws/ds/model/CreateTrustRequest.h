@@ -21,13 +21,14 @@ namespace Model
 {
 
   /**
-   * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-   * trust relationships. For example, you can establish a trust between your AWS
-   * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
+   * <p>Directory Service for Microsoft Active Directory allows you to configure
+   * trust relationships. For example, you can establish a trust between your Managed
+   * Microsoft AD directory, and your existing self-managed Microsoft Active
    * Directory. This would allow you to provide users and groups access to resources
    * in either domain, with a single set of credentials.</p> <p>This action initiates
-   * the creation of the AWS side of a trust relationship between an AWS Managed
-   * Microsoft AD directory and an external domain.</p><p><h3>See Also:</h3>   <a
+   * the creation of the Amazon Web Services side of a trust relationship between an
+   * Managed Microsoft AD directory and an external domain.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrustRequest">AWS
    * API Reference</a></p>
    */
@@ -48,50 +49,50 @@ namespace Model
 
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
-     * establish the trust relationship.</p>
+     * <p>The Directory ID of the Managed Microsoft AD directory for which to establish
+     * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

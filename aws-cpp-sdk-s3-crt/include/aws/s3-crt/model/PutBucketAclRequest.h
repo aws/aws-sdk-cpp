@@ -159,8 +159,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
@@ -169,8 +169,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
@@ -179,8 +179,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
@@ -189,8 +189,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
@@ -199,8 +199,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
@@ -209,8 +209,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline PutBucketAclRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
@@ -219,8 +219,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline PutBucketAclRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
@@ -229,8 +229,8 @@ namespace Model
      * as a message integrity check to verify that the request body was not corrupted
      * in transit. For more information, go to <a
      * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p> <p>For requests
-     * made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is
-     * calculated automatically.</p>
+     * made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web
+     * Services SDKs, this field is calculated automatically.</p>
      */
     inline PutBucketAclRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 

@@ -17,9 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>Deletes the local side of an existing trust relationship between the AWS
-   * Managed Microsoft AD directory and the external domain.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Deletes the local side of an existing trust relationship between the Managed
+   * Microsoft AD directory and the external domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrustRequest">AWS
    * API Reference</a></p>
    */

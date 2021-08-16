@@ -42,6 +42,7 @@
 #include <aws/ds/model/DeregisterCertificateRequest.h>
 #include <aws/ds/model/DeregisterEventTopicRequest.h>
 #include <aws/ds/model/DescribeCertificateRequest.h>
+#include <aws/ds/model/DescribeClientAuthenticationSettingsRequest.h>
 #include <aws/ds/model/DescribeConditionalForwardersRequest.h>
 #include <aws/ds/model/DescribeDirectoriesRequest.h>
 #include <aws/ds/model/DescribeDomainControllersRequest.h>
@@ -682,6 +683,30 @@ void DirectoryServiceClient::DescribeCertificateAsync(const DescribeCertificateR
 void DirectoryServiceClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCertificate(request), context);
+}
+
+DescribeClientAuthenticationSettingsOutcome DirectoryServiceClient::DescribeClientAuthenticationSettings(const DescribeClientAuthenticationSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeClientAuthenticationSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeClientAuthenticationSettingsOutcomeCallable DirectoryServiceClient::DescribeClientAuthenticationSettingsCallable(const DescribeClientAuthenticationSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClientAuthenticationSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClientAuthenticationSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::DescribeClientAuthenticationSettingsAsync(const DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientAuthenticationSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::DescribeClientAuthenticationSettingsAsyncHelper(const DescribeClientAuthenticationSettingsRequest& request, const DescribeClientAuthenticationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClientAuthenticationSettings(request), context);
 }
 
 DescribeConditionalForwardersOutcome DirectoryServiceClient::DescribeConditionalForwarders(const DescribeConditionalForwardersRequest& request) const

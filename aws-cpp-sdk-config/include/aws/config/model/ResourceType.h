@@ -112,7 +112,18 @@ namespace Model
     AWS_QLDB_Ledger,
     AWS_SecretsManager_Secret,
     AWS_SNS_Topic,
-    AWS_SSM_FileData
+    AWS_SSM_FileData,
+    AWS_Backup_BackupPlan,
+    AWS_Backup_BackupSelection,
+    AWS_Backup_BackupVault,
+    AWS_Backup_RecoveryPoint,
+    AWS_ECR_Repository,
+    AWS_ECS_Cluster,
+    AWS_ECS_Service,
+    AWS_ECS_TaskDefinition,
+    AWS_EFS_AccessPoint,
+    AWS_EFS_FileSystem,
+    AWS_EKS_Cluster
   };
 
 namespace ResourceTypeMapper

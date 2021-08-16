@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The specified directory has already been shared with this AWS
+   * <p>The specified directory has already been shared with this Amazon Web Services
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryAlreadySharedException">AWS
    * API Reference</a></p>

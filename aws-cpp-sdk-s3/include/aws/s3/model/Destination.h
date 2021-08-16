@@ -95,10 +95,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -107,10 +107,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -119,10 +119,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -131,10 +131,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -143,10 +143,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -155,10 +155,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -167,10 +167,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -179,10 +179,10 @@ namespace Model
 
     /**
      * <p>Destination bucket owner account ID. In a cross-account scenario, if you
-     * direct Amazon S3 to change replica ownership to the AWS account that owns the
-     * destination bucket by specifying the <code>AccessControlTranslation</code>
-     * property, this is the account ID of the destination bucket owner. For more
-     * information, see <a
+     * direct Amazon S3 to change replica ownership to the Amazon Web Services account
+     * that owns the destination bucket by specifying the
+     * <code>AccessControlTranslation</code> property, this is the account ID of the
+     * destination bucket owner. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
      * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3
      * User Guide</i>.</p>
@@ -254,54 +254,54 @@ namespace Model
     /**
      * <p>Specify this only in a cross-account scenario (where source and destination
      * bucket owners are not the same), and you want to change replica ownership to the
-     * AWS account that owns the destination bucket. If this is not specified in the
-     * replication configuration, the replicas are owned by same AWS account that owns
-     * the source object.</p>
+     * Amazon Web Services account that owns the destination bucket. If this is not
+     * specified in the replication configuration, the replicas are owned by same
+     * Amazon Web Services account that owns the source object.</p>
      */
     inline const AccessControlTranslation& GetAccessControlTranslation() const{ return m_accessControlTranslation; }
 
     /**
      * <p>Specify this only in a cross-account scenario (where source and destination
      * bucket owners are not the same), and you want to change replica ownership to the
-     * AWS account that owns the destination bucket. If this is not specified in the
-     * replication configuration, the replicas are owned by same AWS account that owns
-     * the source object.</p>
+     * Amazon Web Services account that owns the destination bucket. If this is not
+     * specified in the replication configuration, the replicas are owned by same
+     * Amazon Web Services account that owns the source object.</p>
      */
     inline bool AccessControlTranslationHasBeenSet() const { return m_accessControlTranslationHasBeenSet; }
 
     /**
      * <p>Specify this only in a cross-account scenario (where source and destination
      * bucket owners are not the same), and you want to change replica ownership to the
-     * AWS account that owns the destination bucket. If this is not specified in the
-     * replication configuration, the replicas are owned by same AWS account that owns
-     * the source object.</p>
+     * Amazon Web Services account that owns the destination bucket. If this is not
+     * specified in the replication configuration, the replicas are owned by same
+     * Amazon Web Services account that owns the source object.</p>
      */
     inline void SetAccessControlTranslation(const AccessControlTranslation& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = value; }
 
     /**
      * <p>Specify this only in a cross-account scenario (where source and destination
      * bucket owners are not the same), and you want to change replica ownership to the
-     * AWS account that owns the destination bucket. If this is not specified in the
-     * replication configuration, the replicas are owned by same AWS account that owns
-     * the source object.</p>
+     * Amazon Web Services account that owns the destination bucket. If this is not
+     * specified in the replication configuration, the replicas are owned by same
+     * Amazon Web Services account that owns the source object.</p>
      */
     inline void SetAccessControlTranslation(AccessControlTranslation&& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = std::move(value); }
 
     /**
      * <p>Specify this only in a cross-account scenario (where source and destination
      * bucket owners are not the same), and you want to change replica ownership to the
-     * AWS account that owns the destination bucket. If this is not specified in the
-     * replication configuration, the replicas are owned by same AWS account that owns
-     * the source object.</p>
+     * Amazon Web Services account that owns the destination bucket. If this is not
+     * specified in the replication configuration, the replicas are owned by same
+     * Amazon Web Services account that owns the source object.</p>
      */
     inline Destination& WithAccessControlTranslation(const AccessControlTranslation& value) { SetAccessControlTranslation(value); return *this;}
 
     /**
      * <p>Specify this only in a cross-account scenario (where source and destination
      * bucket owners are not the same), and you want to change replica ownership to the
-     * AWS account that owns the destination bucket. If this is not specified in the
-     * replication configuration, the replicas are owned by same AWS account that owns
-     * the source object.</p>
+     * Amazon Web Services account that owns the destination bucket. If this is not
+     * specified in the replication configuration, the replicas are owned by same
+     * Amazon Web Services account that owns the source object.</p>
      */
     inline Destination& WithAccessControlTranslation(AccessControlTranslation&& value) { SetAccessControlTranslation(std::move(value)); return *this;}
 

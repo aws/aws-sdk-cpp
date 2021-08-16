@@ -129,44 +129,44 @@ namespace Model
 
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline void SetLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { m_lambdaFunctionConfigurations = value; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline void SetLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { m_lambdaFunctionConfigurations = std::move(value); }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { SetLambdaFunctionConfigurations(value); return *this;}
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { SetLambdaFunctionConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(const LambdaFunctionConfiguration& value) { m_lambdaFunctionConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Describes the AWS Lambda functions to invoke and the events for which to
-     * invoke them.</p>
+     * <p>Describes the Lambda functions to invoke and the events for which to invoke
+     * them.</p>
      */
     inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
 

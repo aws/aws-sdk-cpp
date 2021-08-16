@@ -50,17 +50,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -71,17 +71,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -92,17 +92,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -113,17 +113,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -134,17 +134,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -155,17 +155,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -176,17 +176,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -197,17 +197,17 @@ namespace Model
      * access point, you must direct requests to the access point hostname. The access
      * point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
      * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this action using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
+     * When using this action using S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -297,58 +297,58 @@ namespace Model
 
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline PutObjectTaggingRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline PutObjectTaggingRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p>The MD5 hash for the request body.</p> <p>For requests made using the AWS
-     * Command Line Interface (CLI) or AWS SDKs, this field is calculated
-     * automatically.</p>
+     * <p>The MD5 hash for the request body.</p> <p>For requests made using the Amazon
+     * Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this
+     * field is calculated automatically.</p>
      */
     inline PutObjectTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 

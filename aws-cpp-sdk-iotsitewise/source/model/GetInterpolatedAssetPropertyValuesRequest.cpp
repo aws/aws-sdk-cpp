@@ -34,7 +34,9 @@ GetInterpolatedAssetPropertyValuesRequest::GetInterpolatedAssetPropertyValuesReq
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_intervalWindowInSeconds(0),
+    m_intervalWindowInSecondsHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,13 @@ void GetInterpolatedAssetPropertyValuesRequest::AddQueryStringParameters(URI& ur
     {
       ss << m_type;
       uri.AddQueryStringParameter("type", ss.str());
+      ss.str("");
+    }
+
+    if(m_intervalWindowInSecondsHasBeenSet)
+    {
+      ss << m_intervalWindowInSeconds;
+      uri.AddQueryStringParameter("intervalWindowInSeconds", ss.str());
       ss.str("");
     }
 

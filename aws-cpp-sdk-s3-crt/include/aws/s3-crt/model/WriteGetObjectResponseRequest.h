@@ -1261,58 +1261,58 @@ namespace Model
 
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline WriteGetObjectResponseRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline WriteGetObjectResponseRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If present, specifies the ID of the AWS Key Management Service (AWS KMS)
-     * symmetric customer managed customer master key (CMK) that was used for stored in
-     * Amazon S3 object. </p>
+     * <p> If present, specifies the ID of the Amazon Web Services Key Management
+     * Service (Amazon Web Services KMS) symmetric customer managed customer master key
+     * (CMK) that was used for stored in Amazon S3 object. </p>
      */
     inline WriteGetObjectResponseRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1485,25 +1485,25 @@ namespace Model
 
     /**
      * <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for
-     * server-side encryption with AWS KMS (SSE-KMS).</p>
+     * server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for
-     * server-side encryption with AWS KMS (SSE-KMS).</p>
+     * server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
      */
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
 
     /**
      * <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for
-     * server-side encryption with AWS KMS (SSE-KMS).</p>
+     * server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
 
     /**
      * <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for
-     * server-side encryption with AWS KMS (SSE-KMS).</p>
+     * server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
      */
     inline WriteGetObjectResponseRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 
