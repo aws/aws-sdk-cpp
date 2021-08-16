@@ -64,6 +64,8 @@ private:
     bool m_verifySSL;
     Aws::String m_caPath;
     Aws::String m_caFile;
+    Aws::String m_proxyCaPath;
+    Aws::String m_proxyCaFile;
     bool m_disableExpectHeader;
     bool m_allowRedirects;
     static std::atomic<bool> isInit;
