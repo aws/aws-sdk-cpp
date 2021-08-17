@@ -85,125 +85,125 @@ namespace Model
 
 
     /**
-     * <p> Context regarding the current instance.</p>
+     * <p>Context regarding the current instance.</p>
      */
     inline const CurrentInstance& GetCurrentInstance() const{ return m_currentInstance; }
 
     /**
-     * <p> Context regarding the current instance.</p>
+     * <p>Context regarding the current instance.</p>
      */
     inline bool CurrentInstanceHasBeenSet() const { return m_currentInstanceHasBeenSet; }
 
     /**
-     * <p> Context regarding the current instance.</p>
+     * <p>Context regarding the current instance.</p>
      */
     inline void SetCurrentInstance(const CurrentInstance& value) { m_currentInstanceHasBeenSet = true; m_currentInstance = value; }
 
     /**
-     * <p> Context regarding the current instance.</p>
+     * <p>Context regarding the current instance.</p>
      */
     inline void SetCurrentInstance(CurrentInstance&& value) { m_currentInstanceHasBeenSet = true; m_currentInstance = std::move(value); }
 
     /**
-     * <p> Context regarding the current instance.</p>
+     * <p>Context regarding the current instance.</p>
      */
     inline RightsizingRecommendation& WithCurrentInstance(const CurrentInstance& value) { SetCurrentInstance(value); return *this;}
 
     /**
-     * <p> Context regarding the current instance.</p>
+     * <p>Context regarding the current instance.</p>
      */
     inline RightsizingRecommendation& WithCurrentInstance(CurrentInstance&& value) { SetCurrentInstance(std::move(value)); return *this;}
 
 
     /**
-     * <p>Recommendation to either terminate or modify the resource.</p>
+     * <p>A recommendation to either terminate or modify the resource.</p>
      */
     inline const RightsizingType& GetRightsizingType() const{ return m_rightsizingType; }
 
     /**
-     * <p>Recommendation to either terminate or modify the resource.</p>
+     * <p>A recommendation to either terminate or modify the resource.</p>
      */
     inline bool RightsizingTypeHasBeenSet() const { return m_rightsizingTypeHasBeenSet; }
 
     /**
-     * <p>Recommendation to either terminate or modify the resource.</p>
+     * <p>A recommendation to either terminate or modify the resource.</p>
      */
     inline void SetRightsizingType(const RightsizingType& value) { m_rightsizingTypeHasBeenSet = true; m_rightsizingType = value; }
 
     /**
-     * <p>Recommendation to either terminate or modify the resource.</p>
+     * <p>A recommendation to either terminate or modify the resource.</p>
      */
     inline void SetRightsizingType(RightsizingType&& value) { m_rightsizingTypeHasBeenSet = true; m_rightsizingType = std::move(value); }
 
     /**
-     * <p>Recommendation to either terminate or modify the resource.</p>
+     * <p>A recommendation to either terminate or modify the resource.</p>
      */
     inline RightsizingRecommendation& WithRightsizingType(const RightsizingType& value) { SetRightsizingType(value); return *this;}
 
     /**
-     * <p>Recommendation to either terminate or modify the resource.</p>
+     * <p>A recommendation to either terminate or modify the resource.</p>
      */
     inline RightsizingRecommendation& WithRightsizingType(RightsizingType&& value) { SetRightsizingType(std::move(value)); return *this;}
 
 
     /**
-     * <p> Details for modification recommendations. </p>
+     * <p>The details for the modification recommendations. </p>
      */
     inline const ModifyRecommendationDetail& GetModifyRecommendationDetail() const{ return m_modifyRecommendationDetail; }
 
     /**
-     * <p> Details for modification recommendations. </p>
+     * <p>The details for the modification recommendations. </p>
      */
     inline bool ModifyRecommendationDetailHasBeenSet() const { return m_modifyRecommendationDetailHasBeenSet; }
 
     /**
-     * <p> Details for modification recommendations. </p>
+     * <p>The details for the modification recommendations. </p>
      */
     inline void SetModifyRecommendationDetail(const ModifyRecommendationDetail& value) { m_modifyRecommendationDetailHasBeenSet = true; m_modifyRecommendationDetail = value; }
 
     /**
-     * <p> Details for modification recommendations. </p>
+     * <p>The details for the modification recommendations. </p>
      */
     inline void SetModifyRecommendationDetail(ModifyRecommendationDetail&& value) { m_modifyRecommendationDetailHasBeenSet = true; m_modifyRecommendationDetail = std::move(value); }
 
     /**
-     * <p> Details for modification recommendations. </p>
+     * <p>The details for the modification recommendations. </p>
      */
     inline RightsizingRecommendation& WithModifyRecommendationDetail(const ModifyRecommendationDetail& value) { SetModifyRecommendationDetail(value); return *this;}
 
     /**
-     * <p> Details for modification recommendations. </p>
+     * <p>The details for the modification recommendations. </p>
      */
     inline RightsizingRecommendation& WithModifyRecommendationDetail(ModifyRecommendationDetail&& value) { SetModifyRecommendationDetail(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details for termination recommendations.</p>
+     * <p>The details for termination recommendations.</p>
      */
     inline const TerminateRecommendationDetail& GetTerminateRecommendationDetail() const{ return m_terminateRecommendationDetail; }
 
     /**
-     * <p>Details for termination recommendations.</p>
+     * <p>The details for termination recommendations.</p>
      */
     inline bool TerminateRecommendationDetailHasBeenSet() const { return m_terminateRecommendationDetailHasBeenSet; }
 
     /**
-     * <p>Details for termination recommendations.</p>
+     * <p>The details for termination recommendations.</p>
      */
     inline void SetTerminateRecommendationDetail(const TerminateRecommendationDetail& value) { m_terminateRecommendationDetailHasBeenSet = true; m_terminateRecommendationDetail = value; }
 
     /**
-     * <p>Details for termination recommendations.</p>
+     * <p>The details for termination recommendations.</p>
      */
     inline void SetTerminateRecommendationDetail(TerminateRecommendationDetail&& value) { m_terminateRecommendationDetailHasBeenSet = true; m_terminateRecommendationDetail = std::move(value); }
 
     /**
-     * <p>Details for termination recommendations.</p>
+     * <p>The details for termination recommendations.</p>
      */
     inline RightsizingRecommendation& WithTerminateRecommendationDetail(const TerminateRecommendationDetail& value) { SetTerminateRecommendationDetail(value); return *this;}
 
     /**
-     * <p>Details for termination recommendations.</p>
+     * <p>The details for termination recommendations.</p>
      */
     inline RightsizingRecommendation& WithTerminateRecommendationDetail(TerminateRecommendationDetail&& value) { SetTerminateRecommendationDetail(std::move(value)); return *this;}
 

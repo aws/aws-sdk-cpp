@@ -434,87 +434,91 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationUtilizationRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationUtilizationRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationUtilizationRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline GetReservationUtilizationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

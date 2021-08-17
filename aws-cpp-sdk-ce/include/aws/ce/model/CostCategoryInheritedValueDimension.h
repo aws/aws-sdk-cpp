@@ -29,10 +29,10 @@ namespace Model
    * <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This
    * rule type adds the flexibility of defining a rule that dynamically inherits the
    * cost category value from the dimension value defined by
-   * <code>CostCategoryInheritedValueDimension</code>. For example, if you wanted to
-   * dynamically group costs based on the value of a specific tag key, you would
-   * first choose an inherited value rule type, then choose the tag dimension and
-   * specify the tag key to use.</p><p><h3>See Also:</h3>   <a
+   * <code>CostCategoryInheritedValueDimension</code>. For example, if you want to
+   * dynamically group costs that are based on the value of a specific tag key, first
+   * choose an inherited value rule type, then choose the tag dimension and specify
+   * the tag key to use.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryInheritedValueDimension">AWS
    * API Reference</a></p>
    */
@@ -46,50 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The name of dimension for which to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value will be based on
-     * account name. If you specify <code>TAG</code>, the cost category value will be
-     * based on the value of the specified tag key.</p>
+     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
+     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
+     * name. If you specify <code>TAG</code>, the cost category value will be based on
+     * the value of the specified tag key.</p>
      */
     inline const CostCategoryInheritedValueDimensionName& GetDimensionName() const{ return m_dimensionName; }
 
     /**
-     * <p>The name of dimension for which to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value will be based on
-     * account name. If you specify <code>TAG</code>, the cost category value will be
-     * based on the value of the specified tag key.</p>
+     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
+     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
+     * name. If you specify <code>TAG</code>, the cost category value will be based on
+     * the value of the specified tag key.</p>
      */
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
 
     /**
-     * <p>The name of dimension for which to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value will be based on
-     * account name. If you specify <code>TAG</code>, the cost category value will be
-     * based on the value of the specified tag key.</p>
+     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
+     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
+     * name. If you specify <code>TAG</code>, the cost category value will be based on
+     * the value of the specified tag key.</p>
      */
     inline void SetDimensionName(const CostCategoryInheritedValueDimensionName& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
 
     /**
-     * <p>The name of dimension for which to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value will be based on
-     * account name. If you specify <code>TAG</code>, the cost category value will be
-     * based on the value of the specified tag key.</p>
+     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
+     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
+     * name. If you specify <code>TAG</code>, the cost category value will be based on
+     * the value of the specified tag key.</p>
      */
     inline void SetDimensionName(CostCategoryInheritedValueDimensionName&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
 
     /**
-     * <p>The name of dimension for which to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value will be based on
-     * account name. If you specify <code>TAG</code>, the cost category value will be
-     * based on the value of the specified tag key.</p>
+     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
+     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
+     * name. If you specify <code>TAG</code>, the cost category value will be based on
+     * the value of the specified tag key.</p>
      */
     inline CostCategoryInheritedValueDimension& WithDimensionName(const CostCategoryInheritedValueDimensionName& value) { SetDimensionName(value); return *this;}
 
     /**
-     * <p>The name of dimension for which to group costs.</p> <p>If you specify
-     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value will be based on
-     * account name. If you specify <code>TAG</code>, the cost category value will be
-     * based on the value of the specified tag key.</p>
+     * <p>The name of the dimension that's used to group costs.</p> <p>If you specify
+     * <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account
+     * name. If you specify <code>TAG</code>, the cost category value will be based on
+     * the value of the specified tag key.</p>
      */
     inline CostCategoryInheritedValueDimension& WithDimensionName(CostCategoryInheritedValueDimensionName&& value) { SetDimensionName(std::move(value)); return *this;}
 

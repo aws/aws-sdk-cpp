@@ -194,8 +194,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
@@ -211,8 +211,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
@@ -228,8 +228,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
@@ -245,8 +245,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
@@ -262,8 +262,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
@@ -279,8 +279,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
@@ -296,8 +296,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
@@ -313,8 +313,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
      * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
-     * <p>An AWS Lambda function belonging to the same account as the subscription
-     * filter, for same-account delivery.</p> </li> </ul>
+     * <p>A Lambda function belonging to the same account as the subscription filter,
+     * for same-account delivery.</p> </li> </ul>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 

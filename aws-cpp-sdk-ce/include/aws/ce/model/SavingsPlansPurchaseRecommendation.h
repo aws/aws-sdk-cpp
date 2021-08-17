@@ -47,49 +47,55 @@ namespace Model
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
 
     /**
      * <p>The account scope that you want your recommendations for. Amazon Web Services
-     * calculates recommendations including the management account and member accounts
-     * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
-     * recommendations are calculated for individual member accounts only.</p>
+     * calculates recommendations that include the management account and member
+     * accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member
+     * accounts only.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}
 
@@ -126,37 +132,37 @@ namespace Model
 
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline const TermInYears& GetTermInYears() const{ return m_termInYears; }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline void SetTermInYears(const TermInYears& value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline void SetTermInYears(TermInYears&& value) { m_termInYearsHasBeenSet = true; m_termInYears = std::move(value); }
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithTermInYears(const TermInYears& value) { SetTermInYears(value); return *this;}
 
     /**
-     * <p>The Savings Plans recommendation term in years, used to generate the
+     * <p>The Savings Plans recommendation term in years. It's used to generate the
      * recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithTermInYears(TermInYears&& value) { SetTermInYears(std::move(value)); return *this;}

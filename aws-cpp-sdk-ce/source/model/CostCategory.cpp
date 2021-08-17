@@ -26,6 +26,7 @@ CostCategory::CostCategory() :
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
+    m_splitChargeRulesHasBeenSet(false),
     m_processingStatusHasBeenSet(false),
     m_defaultValueHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ CostCategory::CostCategory(JsonView jsonValue) :
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
+    m_splitChargeRulesHasBeenSet(false),
     m_processingStatusHasBeenSet(false),
     m_defaultValueHasBeenSet(false)
 {
@@ -90,6 +92,16 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
     m_rulesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SplitChargeRules"))
+  {
+    Array<JsonView> splitChargeRulesJsonList = jsonValue.GetArray("SplitChargeRules");
+    for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
+    {
+      m_splitChargeRules.push_back(splitChargeRulesJsonList[splitChargeRulesIndex].AsObject());
+    }
+    m_splitChargeRulesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ProcessingStatus"))
@@ -153,6 +165,17 @@ JsonValue CostCategory::Jsonize() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_splitChargeRulesHasBeenSet)
+  {
+   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
+   {
+     splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
+   }
+   payload.WithArray("SplitChargeRules", std::move(splitChargeRulesJsonList));
 
   }
 

@@ -24,6 +24,8 @@ KeyPairInfo::KeyPairInfo() :
     m_keyPairIdHasBeenSet(false),
     m_keyFingerprintHasBeenSet(false),
     m_keyNameHasBeenSet(false),
+    m_keyType(KeyType::NOT_SET),
+    m_keyTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -32,6 +34,8 @@ KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode) :
     m_keyPairIdHasBeenSet(false),
     m_keyFingerprintHasBeenSet(false),
     m_keyNameHasBeenSet(false),
+    m_keyType(KeyType::NOT_SET),
+    m_keyTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -60,6 +64,12 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
       m_keyNameHasBeenSet = true;
+    }
+    XmlNode keyTypeNode = resultNode.FirstChild("keyType");
+    if(!keyTypeNode.IsNull())
+    {
+      m_keyType = KeyTypeMapper::GetKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()).c_str());
+      m_keyTypeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -95,6 +105,11 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
 
+  if(m_keyTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -121,6 +136,10 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_keyNameHasBeenSet)
   {
       oStream << location << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
+  }
+  if(m_keyTypeHasBeenSet)
+  {
+      oStream << location << ".KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
   }
   if(m_tagsHasBeenSet)
   {

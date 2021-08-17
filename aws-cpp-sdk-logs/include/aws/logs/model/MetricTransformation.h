@@ -225,8 +225,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
 
@@ -243,8 +243,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
@@ -261,8 +261,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
@@ -279,8 +279,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline void SetDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
@@ -297,8 +297,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& WithDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensions(value); return *this;}
 
@@ -315,8 +315,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& WithDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
 
@@ -333,8 +333,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(const Aws::String& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
 
@@ -351,8 +351,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(Aws::String&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
 
@@ -369,8 +369,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(const Aws::String& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
 
@@ -387,8 +387,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(Aws::String&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -405,8 +405,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(const char* key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
 
@@ -423,8 +423,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(Aws::String&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
 
@@ -441,8 +441,8 @@ namespace Model
      * alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-     * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
-     * 
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
      */
     inline MetricTransformation& AddDimensions(const char* key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
 

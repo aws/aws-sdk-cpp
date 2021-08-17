@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The forecast created for your query.</p><p><h3>See Also:</h3>   <a
+   * <p>The forecast that's created for your query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ForecastResult">AWS
    * API Reference</a></p>
    */

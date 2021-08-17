@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> The field that contains a list of disk (local storage) metrics associated
-   * with the current instance. </p><p><h3>See Also:</h3>   <a
+   * <p> The field that contains a list of disk (local storage) metrics that are
+   * associated with the current instance. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DiskResourceUtilization">AWS
    * API Reference</a></p>
    */

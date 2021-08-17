@@ -225,49 +225,49 @@ namespace Model
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same AWS region.</p>
+     * same Amazon Web Services region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 

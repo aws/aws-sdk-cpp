@@ -74,13 +74,13 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root
-     * level <code>OR</code> is not supported. We recommend that you create a separate
+     * level <code>OR</code> isn't supported. We recommend that you create a separate
      * rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost
      * Explorer APIs, and is also supported for Cost Category expressions. This
      * dimension uses different terms, depending on whether you're using the console or
      * API/JSON editor. For a detailed comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-     * Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+     * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
     inline const Expression& GetRule() const{ return m_rule; }
 
@@ -91,13 +91,13 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root
-     * level <code>OR</code> is not supported. We recommend that you create a separate
+     * level <code>OR</code> isn't supported. We recommend that you create a separate
      * rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost
      * Explorer APIs, and is also supported for Cost Category expressions. This
      * dimension uses different terms, depending on whether you're using the console or
      * API/JSON editor. For a detailed comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-     * Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+     * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
 
@@ -108,13 +108,13 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root
-     * level <code>OR</code> is not supported. We recommend that you create a separate
+     * level <code>OR</code> isn't supported. We recommend that you create a separate
      * rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost
      * Explorer APIs, and is also supported for Cost Category expressions. This
      * dimension uses different terms, depending on whether you're using the console or
      * API/JSON editor. For a detailed comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-     * Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+     * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
     inline void SetRule(const Expression& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
@@ -125,13 +125,13 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root
-     * level <code>OR</code> is not supported. We recommend that you create a separate
+     * level <code>OR</code> isn't supported. We recommend that you create a separate
      * rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost
      * Explorer APIs, and is also supported for Cost Category expressions. This
      * dimension uses different terms, depending on whether you're using the console or
      * API/JSON editor. For a detailed comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-     * Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+     * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
     inline void SetRule(Expression&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
@@ -142,13 +142,13 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root
-     * level <code>OR</code> is not supported. We recommend that you create a separate
+     * level <code>OR</code> isn't supported. We recommend that you create a separate
      * rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost
      * Explorer APIs, and is also supported for Cost Category expressions. This
      * dimension uses different terms, depending on whether you're using the console or
      * API/JSON editor. For a detailed comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-     * Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+     * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
     inline CostCategoryRule& WithRule(const Expression& value) { SetRule(value); return *this;}
 
@@ -159,49 +159,49 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root
-     * level <code>OR</code> is not supported. We recommend that you create a separate
+     * level <code>OR</code> isn't supported. We recommend that you create a separate
      * rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost
      * Explorer APIs, and is also supported for Cost Category expressions. This
      * dimension uses different terms, depending on whether you're using the console or
      * API/JSON editor. For a detailed comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
-     * Comparisons</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+     * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */
     inline CostCategoryRule& WithRule(Expression&& value) { SetRule(std::move(value)); return *this;}
 
 
     /**
-     * <p>The value the line item will be categorized as, if the line item contains the
+     * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
     inline const CostCategoryInheritedValueDimension& GetInheritedValue() const{ return m_inheritedValue; }
 
     /**
-     * <p>The value the line item will be categorized as, if the line item contains the
+     * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
     inline bool InheritedValueHasBeenSet() const { return m_inheritedValueHasBeenSet; }
 
     /**
-     * <p>The value the line item will be categorized as, if the line item contains the
+     * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
     inline void SetInheritedValue(const CostCategoryInheritedValueDimension& value) { m_inheritedValueHasBeenSet = true; m_inheritedValue = value; }
 
     /**
-     * <p>The value the line item will be categorized as, if the line item contains the
+     * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
     inline void SetInheritedValue(CostCategoryInheritedValueDimension&& value) { m_inheritedValueHasBeenSet = true; m_inheritedValue = std::move(value); }
 
     /**
-     * <p>The value the line item will be categorized as, if the line item contains the
+     * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
     inline CostCategoryRule& WithInheritedValue(const CostCategoryInheritedValueDimension& value) { SetInheritedValue(value); return *this;}
 
     /**
-     * <p>The value the line item will be categorized as, if the line item contains the
+     * <p>The value the line item is categorized as if the line item contains the
      * matched dimension.</p>
      */
     inline CostCategoryRule& WithInheritedValue(CostCategoryInheritedValueDimension&& value) { SetInheritedValue(std::move(value)); return *this;}
@@ -213,9 +213,9 @@ namespace Model
      * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
      * that dynamically inherits the cost category value from the dimension value
      * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * wanted to dynamically group costs based on the value of a specific tag key, you
-     * would first choose an inherited value rule type, then choose the tag dimension
-     * and specify the tag key to use.</p>
+     * want to dynamically group costs based on the value of a specific tag key, first
+     * choose an inherited value rule type, then choose the tag dimension and specify
+     * the tag key to use.</p>
      */
     inline const CostCategoryRuleType& GetType() const{ return m_type; }
 
@@ -225,9 +225,9 @@ namespace Model
      * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
      * that dynamically inherits the cost category value from the dimension value
      * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * wanted to dynamically group costs based on the value of a specific tag key, you
-     * would first choose an inherited value rule type, then choose the tag dimension
-     * and specify the tag key to use.</p>
+     * want to dynamically group costs based on the value of a specific tag key, first
+     * choose an inherited value rule type, then choose the tag dimension and specify
+     * the tag key to use.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -237,9 +237,9 @@ namespace Model
      * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
      * that dynamically inherits the cost category value from the dimension value
      * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * wanted to dynamically group costs based on the value of a specific tag key, you
-     * would first choose an inherited value rule type, then choose the tag dimension
-     * and specify the tag key to use.</p>
+     * want to dynamically group costs based on the value of a specific tag key, first
+     * choose an inherited value rule type, then choose the tag dimension and specify
+     * the tag key to use.</p>
      */
     inline void SetType(const CostCategoryRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -249,9 +249,9 @@ namespace Model
      * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
      * that dynamically inherits the cost category value from the dimension value
      * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * wanted to dynamically group costs based on the value of a specific tag key, you
-     * would first choose an inherited value rule type, then choose the tag dimension
-     * and specify the tag key to use.</p>
+     * want to dynamically group costs based on the value of a specific tag key, first
+     * choose an inherited value rule type, then choose the tag dimension and specify
+     * the tag key to use.</p>
      */
     inline void SetType(CostCategoryRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -261,9 +261,9 @@ namespace Model
      * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
      * that dynamically inherits the cost category value from the dimension value
      * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * wanted to dynamically group costs based on the value of a specific tag key, you
-     * would first choose an inherited value rule type, then choose the tag dimension
-     * and specify the tag key to use.</p>
+     * want to dynamically group costs based on the value of a specific tag key, first
+     * choose an inherited value rule type, then choose the tag dimension and specify
+     * the tag key to use.</p>
      */
     inline CostCategoryRule& WithType(const CostCategoryRuleType& value) { SetType(value); return *this;}
 
@@ -273,9 +273,9 @@ namespace Model
      * <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule
      * that dynamically inherits the cost category value from the dimension value
      * defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you
-     * wanted to dynamically group costs based on the value of a specific tag key, you
-     * would first choose an inherited value rule type, then choose the tag dimension
-     * and specify the tag key to use.</p>
+     * want to dynamically group costs based on the value of a specific tag key, first
+     * choose an inherited value rule type, then choose the tag dimension and specify
+     * the tag key to use.</p>
      */
     inline CostCategoryRule& WithType(CostCategoryRuleType&& value) { SetType(std::move(value)); return *this;}
 

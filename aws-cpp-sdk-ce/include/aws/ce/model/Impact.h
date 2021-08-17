@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p> The anomaly's dollar value. </p><p><h3>See Also:</h3>   <a
+   * <p>The dollar value of the anomaly. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Impact">AWS API
    * Reference</a></p>
    */
@@ -36,43 +36,43 @@ namespace Model
 
 
     /**
-     * <p> The maximum dollar value observed for an anomaly. </p>
+     * <p>The maximum dollar value that's observed for an anomaly. </p>
      */
     inline double GetMaxImpact() const{ return m_maxImpact; }
 
     /**
-     * <p> The maximum dollar value observed for an anomaly. </p>
+     * <p>The maximum dollar value that's observed for an anomaly. </p>
      */
     inline bool MaxImpactHasBeenSet() const { return m_maxImpactHasBeenSet; }
 
     /**
-     * <p> The maximum dollar value observed for an anomaly. </p>
+     * <p>The maximum dollar value that's observed for an anomaly. </p>
      */
     inline void SetMaxImpact(double value) { m_maxImpactHasBeenSet = true; m_maxImpact = value; }
 
     /**
-     * <p> The maximum dollar value observed for an anomaly. </p>
+     * <p>The maximum dollar value that's observed for an anomaly. </p>
      */
     inline Impact& WithMaxImpact(double value) { SetMaxImpact(value); return *this;}
 
 
     /**
-     * <p> The cumulative dollar value observed for an anomaly. </p>
+     * <p>The cumulative dollar value that's observed for an anomaly. </p>
      */
     inline double GetTotalImpact() const{ return m_totalImpact; }
 
     /**
-     * <p> The cumulative dollar value observed for an anomaly. </p>
+     * <p>The cumulative dollar value that's observed for an anomaly. </p>
      */
     inline bool TotalImpactHasBeenSet() const { return m_totalImpactHasBeenSet; }
 
     /**
-     * <p> The cumulative dollar value observed for an anomaly. </p>
+     * <p>The cumulative dollar value that's observed for an anomaly. </p>
      */
     inline void SetTotalImpact(double value) { m_totalImpactHasBeenSet = true; m_totalImpact = value; }
 
     /**
-     * <p> The cumulative dollar value observed for an anomaly. </p>
+     * <p>The cumulative dollar value that's observed for an anomaly. </p>
      */
     inline Impact& WithTotalImpact(double value) { SetTotalImpact(value); return *this;}
 

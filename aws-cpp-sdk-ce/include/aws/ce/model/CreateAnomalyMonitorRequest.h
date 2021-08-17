@@ -35,32 +35,32 @@ namespace Model
 
 
     /**
-     * <p> The cost anomaly detection monitor object that you want to create.</p>
+     * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
     inline const AnomalyMonitor& GetAnomalyMonitor() const{ return m_anomalyMonitor; }
 
     /**
-     * <p> The cost anomaly detection monitor object that you want to create.</p>
+     * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
     inline bool AnomalyMonitorHasBeenSet() const { return m_anomalyMonitorHasBeenSet; }
 
     /**
-     * <p> The cost anomaly detection monitor object that you want to create.</p>
+     * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
     inline void SetAnomalyMonitor(const AnomalyMonitor& value) { m_anomalyMonitorHasBeenSet = true; m_anomalyMonitor = value; }
 
     /**
-     * <p> The cost anomaly detection monitor object that you want to create.</p>
+     * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
     inline void SetAnomalyMonitor(AnomalyMonitor&& value) { m_anomalyMonitorHasBeenSet = true; m_anomalyMonitor = std::move(value); }
 
     /**
-     * <p> The cost anomaly detection monitor object that you want to create.</p>
+     * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
     inline CreateAnomalyMonitorRequest& WithAnomalyMonitor(const AnomalyMonitor& value) { SetAnomalyMonitor(value); return *this;}
 
     /**
-     * <p> The cost anomaly detection monitor object that you want to create.</p>
+     * <p>The cost anomaly detection monitor object that you want to create.</p>
      */
     inline CreateAnomalyMonitorRequest& WithAnomalyMonitor(AnomalyMonitor&& value) { SetAnomalyMonitor(std::move(value)); return *this;}
 

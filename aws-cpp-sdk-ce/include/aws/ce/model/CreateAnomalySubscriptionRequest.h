@@ -35,32 +35,32 @@ namespace Model
 
 
     /**
-     * <p> The cost anomaly subscription object that you want to create. </p>
+     * <p>The cost anomaly subscription object that you want to create. </p>
      */
     inline const AnomalySubscription& GetAnomalySubscription() const{ return m_anomalySubscription; }
 
     /**
-     * <p> The cost anomaly subscription object that you want to create. </p>
+     * <p>The cost anomaly subscription object that you want to create. </p>
      */
     inline bool AnomalySubscriptionHasBeenSet() const { return m_anomalySubscriptionHasBeenSet; }
 
     /**
-     * <p> The cost anomaly subscription object that you want to create. </p>
+     * <p>The cost anomaly subscription object that you want to create. </p>
      */
     inline void SetAnomalySubscription(const AnomalySubscription& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = value; }
 
     /**
-     * <p> The cost anomaly subscription object that you want to create. </p>
+     * <p>The cost anomaly subscription object that you want to create. </p>
      */
     inline void SetAnomalySubscription(AnomalySubscription&& value) { m_anomalySubscriptionHasBeenSet = true; m_anomalySubscription = std::move(value); }
 
     /**
-     * <p> The cost anomaly subscription object that you want to create. </p>
+     * <p>The cost anomaly subscription object that you want to create. </p>
      */
     inline CreateAnomalySubscriptionRequest& WithAnomalySubscription(const AnomalySubscription& value) { SetAnomalySubscription(value); return *this;}
 
     /**
-     * <p> The cost anomaly subscription object that you want to create. </p>
+     * <p>The cost anomaly subscription object that you want to create. </p>
      */
     inline CreateAnomalySubscriptionRequest& WithAnomalySubscription(AnomalySubscription&& value) { SetAnomalySubscription(std::move(value)); return *this;}
 

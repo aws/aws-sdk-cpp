@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/KeyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -121,6 +122,49 @@ namespace Model
 
 
     /**
+     * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
+     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
+     * <code>rsa</code> </p>
+     */
+    inline const KeyType& GetKeyType() const{ return m_keyType; }
+
+    /**
+     * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
+     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
+     * <code>rsa</code> </p>
+     */
+    inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
+
+    /**
+     * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
+     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
+     * <code>rsa</code> </p>
+     */
+    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+
+    /**
+     * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
+     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
+     * <code>rsa</code> </p>
+     */
+    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
+
+    /**
+     * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
+     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
+     * <code>rsa</code> </p>
+     */
+    inline CreateKeyPairRequest& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
+
+    /**
+     * <p>The type of key pair. Note that ED25519 keys are not supported for Windows
+     * instances, EC2 Instance Connect, and EC2 Serial Console.</p> <p>Default:
+     * <code>rsa</code> </p>
+     */
+    inline CreateKeyPairRequest& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags to apply to the new key pair.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -167,6 +211,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    KeyType m_keyType;
+    bool m_keyTypeHasBeenSet;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;

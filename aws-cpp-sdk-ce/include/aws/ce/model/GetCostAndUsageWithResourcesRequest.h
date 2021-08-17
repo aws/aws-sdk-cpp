@@ -107,50 +107,50 @@ namespace Model
 
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
-     * <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or
-     * <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-     * doesn't include the <code>Granularity</code>, <code>MONTHLY</code>,
-     * <code>DAILY</code>, or <code>HOURLY</code>. </p>
+     * <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>,
+     * <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't
+     * set, the response object doesn't include the <code>Granularity</code>,
+     * <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -477,58 +477,58 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetCostAndUsageWithResourcesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

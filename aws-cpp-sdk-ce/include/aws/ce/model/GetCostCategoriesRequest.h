@@ -338,65 +338,65 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline GetCostCategoriesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline GetCostCategoriesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, AWS returns a NextPageToken value in the response. To retrieve the next
-     * batch of objects, provide the NextPageToken from the prior call in your next
-     * request.</p>
+     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * retrieve the next batch of objects, provide the NextPageToken from the prior
+     * call in your next request.</p>
      */
     inline GetCostCategoriesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

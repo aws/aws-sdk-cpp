@@ -185,68 +185,68 @@ namespace Model
 
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline GetReservationCoverageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
-     * <p>The granularity of the AWS cost data for the reservation. Valid values are
-     * <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is
-     * set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     * set, the response object doesn't include <code>Granularity</code>, either
-     * <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The
-     * <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * <p>The granularity of the Amazon Web Services cost data for the reservation.
+     * Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If
+     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If
+     * <code>Granularity</code> isn't set, the response object doesn't include
+     * <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+     * <p>The <code>GetReservationCoverage</code> operation supports only
+     * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline GetReservationCoverageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -419,58 +419,58 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationCoverageRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationCoverageRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetReservationCoverageRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
@@ -568,29 +568,33 @@ namespace Model
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of objects that you returned for this request. If more
-     * objects are available, in the response, AWS provides a NextPageToken value that
-     * you can use in a subsequent call to get the next batch of objects.</p>
+     * objects are available, in the response, Amazon Web Services provides a
+     * NextPageToken value that you can use in a subsequent call to get the next batch
+     * of objects.</p>
      */
     inline GetReservationCoverageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

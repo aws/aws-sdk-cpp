@@ -14,6 +14,8 @@ CreateKeyPairRequest::CreateKeyPairRequest() :
     m_keyNameHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_keyType(KeyType::NOT_SET),
+    m_keyTypeHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
 }
@@ -30,6 +32,11 @@ Aws::String CreateKeyPairRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_keyTypeHasBeenSet)
+  {
+    ss << "KeyType=" << KeyTypeMapper::GetNameForKeyType(m_keyType) << "&";
   }
 
   if(m_tagSpecificationsHasBeenSet)

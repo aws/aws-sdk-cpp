@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline const Aws::String& GetKeyMaterial() const{ return m_keyMaterial; }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline void SetKeyMaterial(const Aws::String& value) { m_keyMaterial = value; }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline void SetKeyMaterial(Aws::String&& value) { m_keyMaterial = std::move(value); }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline void SetKeyMaterial(const char* value) { m_keyMaterial.assign(value); }
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline CreateKeyPairResponse& WithKeyMaterial(const Aws::String& value) { SetKeyMaterial(value); return *this;}
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline CreateKeyPairResponse& WithKeyMaterial(Aws::String&& value) { SetKeyMaterial(std::move(value)); return *this;}
 
     /**
-     * <p>An unencrypted PEM encoded RSA private key.</p>
+     * <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
      */
     inline CreateKeyPairResponse& WithKeyMaterial(const char* value) { SetKeyMaterial(value); return *this;}
 

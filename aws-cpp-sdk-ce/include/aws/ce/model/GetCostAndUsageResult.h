@@ -37,51 +37,51 @@ namespace Model
 
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetCostAndUsageResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetCostAndUsageResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of retrievable results. AWS provides the token
-     * when the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token for the next set of retrievable results. Amazon Web Services
+     * provides the token when the response from a previous call has more results than
+     * the maximum page size.</p>
      */
     inline GetCostAndUsageResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
@@ -130,37 +130,37 @@ namespace Model
 
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline const Aws::Vector<ResultByTime>& GetResultsByTime() const{ return m_resultsByTime; }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline void SetResultsByTime(const Aws::Vector<ResultByTime>& value) { m_resultsByTime = value; }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline void SetResultsByTime(Aws::Vector<ResultByTime>&& value) { m_resultsByTime = std::move(value); }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageResult& WithResultsByTime(const Aws::Vector<ResultByTime>& value) { SetResultsByTime(value); return *this;}
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageResult& WithResultsByTime(Aws::Vector<ResultByTime>&& value) { SetResultsByTime(std::move(value)); return *this;}
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageResult& AddResultsByTime(const ResultByTime& value) { m_resultsByTime.push_back(value); return *this; }
 
     /**
-     * <p>The time period that is covered by the results in the response.</p>
+     * <p>The time period that's covered by the results in the response.</p>
      */
     inline GetCostAndUsageResult& AddResultsByTime(ResultByTime&& value) { m_resultsByTime.push_back(std::move(value)); return *this; }
 

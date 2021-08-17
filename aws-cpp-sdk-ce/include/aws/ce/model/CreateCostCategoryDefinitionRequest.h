@@ -10,6 +10,7 @@
 #include <aws/ce/model/CostCategoryRuleVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ce/model/CostCategoryRule.h>
+#include <aws/ce/model/CostCategorySplitChargeRule.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,55 @@ namespace Model
     
     inline CreateCostCategoryDefinitionRequest& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const{ return m_splitChargeRules; }
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline void SetSplitChargeRules(const Aws::Vector<CostCategorySplitChargeRule>& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = value; }
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline void SetSplitChargeRules(Aws::Vector<CostCategorySplitChargeRule>&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = std::move(value); }
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithSplitChargeRules(const Aws::Vector<CostCategorySplitChargeRule>& value) { SetSplitChargeRules(value); return *this;}
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithSplitChargeRules(Aws::Vector<CostCategorySplitChargeRule>&& value) { SetSplitChargeRules(std::move(value)); return *this;}
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline CreateCostCategoryDefinitionRequest& AddSplitChargeRules(const CostCategorySplitChargeRule& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.push_back(value); return *this; }
+
+    /**
+     * <p> The split charge rules used to allocate your charges between your Cost
+     * Category values. </p>
+     */
+    inline CreateCostCategoryDefinitionRequest& AddSplitChargeRules(CostCategorySplitChargeRule&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -175,6 +225,9 @@ namespace Model
 
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
+    Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
+    bool m_splitChargeRulesHasBeenSet;
   };
 
 } // namespace Model
