@@ -259,58 +259,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline FirewallRuleGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline FirewallRuleGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that created the rule group. When a rule
-     * group is shared with your account, this is the account that has shared the rule
-     * group with you. </p>
+     * <p>The Amazon Web Services account ID for the account that created the rule
+     * group. When a rule group is shared with your account, this is the account that
+     * has shared the rule group with you. </p>
      */
     inline FirewallRuleGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -373,44 +373,44 @@ namespace Model
 
 
     /**
-     * <p>Whether the rule group is shared with other AWS accounts, or was shared with
-     * the current account by another AWS account. Sharing is configured through AWS
-     * Resource Access Manager (AWS RAM).</p>
+     * <p>Whether the rule group is shared with other Amazon Web Services accounts, or
+     * was shared with the current account by another Amazon Web Services account.
+     * Sharing is configured through Resource Access Manager (RAM).</p>
      */
     inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
 
     /**
-     * <p>Whether the rule group is shared with other AWS accounts, or was shared with
-     * the current account by another AWS account. Sharing is configured through AWS
-     * Resource Access Manager (AWS RAM).</p>
+     * <p>Whether the rule group is shared with other Amazon Web Services accounts, or
+     * was shared with the current account by another Amazon Web Services account.
+     * Sharing is configured through Resource Access Manager (RAM).</p>
      */
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
 
     /**
-     * <p>Whether the rule group is shared with other AWS accounts, or was shared with
-     * the current account by another AWS account. Sharing is configured through AWS
-     * Resource Access Manager (AWS RAM).</p>
+     * <p>Whether the rule group is shared with other Amazon Web Services accounts, or
+     * was shared with the current account by another Amazon Web Services account.
+     * Sharing is configured through Resource Access Manager (RAM).</p>
      */
     inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
 
     /**
-     * <p>Whether the rule group is shared with other AWS accounts, or was shared with
-     * the current account by another AWS account. Sharing is configured through AWS
-     * Resource Access Manager (AWS RAM).</p>
+     * <p>Whether the rule group is shared with other Amazon Web Services accounts, or
+     * was shared with the current account by another Amazon Web Services account.
+     * Sharing is configured through Resource Access Manager (RAM).</p>
      */
     inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
 
     /**
-     * <p>Whether the rule group is shared with other AWS accounts, or was shared with
-     * the current account by another AWS account. Sharing is configured through AWS
-     * Resource Access Manager (AWS RAM).</p>
+     * <p>Whether the rule group is shared with other Amazon Web Services accounts, or
+     * was shared with the current account by another Amazon Web Services account.
+     * Sharing is configured through Resource Access Manager (RAM).</p>
      */
     inline FirewallRuleGroup& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
 
     /**
-     * <p>Whether the rule group is shared with other AWS accounts, or was shared with
-     * the current account by another AWS account. Sharing is configured through AWS
-     * Resource Access Manager (AWS RAM).</p>
+     * <p>Whether the rule group is shared with other Amazon Web Services accounts, or
+     * was shared with the current account by another Amazon Web Services account.
+     * Sharing is configured through Resource Access Manager (RAM).</p>
      */
     inline FirewallRuleGroup& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
 

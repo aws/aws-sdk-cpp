@@ -319,56 +319,56 @@ namespace Model
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline const Aws::String& GetManagedOwnerName() const{ return m_managedOwnerName; }
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline bool ManagedOwnerNameHasBeenSet() const { return m_managedOwnerNameHasBeenSet; }
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline void SetManagedOwnerName(const Aws::String& value) { m_managedOwnerNameHasBeenSet = true; m_managedOwnerName = value; }
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline void SetManagedOwnerName(Aws::String&& value) { m_managedOwnerNameHasBeenSet = true; m_managedOwnerName = std::move(value); }
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline void SetManagedOwnerName(const char* value) { m_managedOwnerNameHasBeenSet = true; m_managedOwnerName.assign(value); }
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline FirewallRuleGroupAssociation& WithManagedOwnerName(const Aws::String& value) { SetManagedOwnerName(value); return *this;}
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline FirewallRuleGroupAssociation& WithManagedOwnerName(Aws::String&& value) { SetManagedOwnerName(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the association, used only for associations that are not managed
-     * by you. If you use AWS Firewall Manager to manage your DNS Firewalls, then this
+     * by you. If you use Firewall Manager to manage your DNS Firewalls, then this
      * reports Firewall Manager as the managed owner.</p>
      */
     inline FirewallRuleGroupAssociation& WithManagedOwnerName(const char* value) { SetManagedOwnerName(value); return *this;}

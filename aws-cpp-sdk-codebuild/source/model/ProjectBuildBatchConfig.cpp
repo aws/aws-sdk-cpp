@@ -24,9 +24,7 @@ ProjectBuildBatchConfig::ProjectBuildBatchConfig() :
     m_combineArtifactsHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
     m_timeoutInMins(0),
-    m_timeoutInMinsHasBeenSet(false),
-    m_batchReportMode(BatchReportModeType::NOT_SET),
-    m_batchReportModeHasBeenSet(false)
+    m_timeoutInMinsHasBeenSet(false)
 {
 }
 
@@ -36,9 +34,7 @@ ProjectBuildBatchConfig::ProjectBuildBatchConfig(JsonView jsonValue) :
     m_combineArtifactsHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
     m_timeoutInMins(0),
-    m_timeoutInMinsHasBeenSet(false),
-    m_batchReportMode(BatchReportModeType::NOT_SET),
-    m_batchReportModeHasBeenSet(false)
+    m_timeoutInMinsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,13 +69,6 @@ ProjectBuildBatchConfig& ProjectBuildBatchConfig::operator =(JsonView jsonValue)
     m_timeoutInMinsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("batchReportMode"))
-  {
-    m_batchReportMode = BatchReportModeTypeMapper::GetBatchReportModeTypeForName(jsonValue.GetString("batchReportMode"));
-
-    m_batchReportModeHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -109,11 +98,6 @@ JsonValue ProjectBuildBatchConfig::Jsonize() const
   {
    payload.WithInteger("timeoutInMins", m_timeoutInMins);
 
-  }
-
-  if(m_batchReportModeHasBeenSet)
-  {
-   payload.WithString("batchReportMode", BatchReportModeTypeMapper::GetNameForBatchReportModeType(m_batchReportMode));
   }
 
   return payload;

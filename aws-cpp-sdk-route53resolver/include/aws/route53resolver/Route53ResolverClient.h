@@ -367,8 +367,8 @@ namespace Model
    * connection:</p> <p> <b>Forward DNS queries from resolvers on your network to
    * Route 53 Resolver</b> </p> <p>DNS resolvers on your network can forward DNS
    * queries to Resolver in a specified VPC. This allows your DNS resolvers to easily
-   * resolve domain names for AWS resources such as EC2 instances or records in a
-   * Route 53 private hosted zone. For more information, see <a
+   * resolve domain names for Amazon Web Services resources such as EC2 instances or
+   * records in a Route 53 private hosted zone. For more information, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How
    * DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver</a> in
    * the <i>Amazon Route 53 Developer Guide</i>.</p> <p> <b>Conditionally forward
@@ -715,11 +715,12 @@ namespace Model
          * configuration.</p> <p>To specify which VPCs you want to log queries for, you use
          * <code>AssociateResolverQueryLogConfig</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.
-         * </p> <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a
-         * query logging configuration with other AWS accounts. The other accounts can then
-         * associate VPCs with the configuration. The query logs that Resolver creates for
-         * a configuration include all DNS queries that originate in all VPCs that are
-         * associated with the configuration.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>You can optionally use Resource Access Manager (RAM) to share a query
+         * logging configuration with other Amazon Web Services accounts. The other
+         * accounts can then associate VPCs with the configuration. The query logs that
+         * Resolver creates for a configuration include all DNS queries that originate in
+         * all VPCs that are associated with the configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig">AWS
          * API Reference</a></p>
          */
@@ -732,11 +733,12 @@ namespace Model
          * configuration.</p> <p>To specify which VPCs you want to log queries for, you use
          * <code>AssociateResolverQueryLogConfig</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.
-         * </p> <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a
-         * query logging configuration with other AWS accounts. The other accounts can then
-         * associate VPCs with the configuration. The query logs that Resolver creates for
-         * a configuration include all DNS queries that originate in all VPCs that are
-         * associated with the configuration.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>You can optionally use Resource Access Manager (RAM) to share a query
+         * logging configuration with other Amazon Web Services accounts. The other
+         * accounts can then associate VPCs with the configuration. The query logs that
+         * Resolver creates for a configuration include all DNS queries that originate in
+         * all VPCs that are associated with the configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig">AWS
          * API Reference</a></p>
          *
@@ -751,11 +753,12 @@ namespace Model
          * configuration.</p> <p>To specify which VPCs you want to log queries for, you use
          * <code>AssociateResolverQueryLogConfig</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.
-         * </p> <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a
-         * query logging configuration with other AWS accounts. The other accounts can then
-         * associate VPCs with the configuration. The query logs that Resolver creates for
-         * a configuration include all DNS queries that originate in all VPCs that are
-         * associated with the configuration.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>You can optionally use Resource Access Manager (RAM) to share a query
+         * logging configuration with other Amazon Web Services accounts. The other
+         * accounts can then associate VPCs with the configuration. The query logs that
+         * Resolver creates for a configuration include all DNS queries that originate in
+         * all VPCs that are associated with the configuration.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig">AWS
          * API Reference</a></p>
          *
@@ -916,10 +919,10 @@ namespace Model
          * <p>Deletes a query logging configuration. When you delete a configuration,
          * Resolver stops logging DNS queries for all of the Amazon VPCs that are
          * associated with the configuration. This also applies if the query logging
-         * configuration is shared with other AWS accounts, and the other accounts have
-         * associated VPCs with the shared configuration.</p> <p>Before you can delete a
-         * query logging configuration, you must first disassociate all VPCs from the
-         * configuration. See <a
+         * configuration is shared with other Amazon Web Services accounts, and the other
+         * accounts have associated VPCs with the shared configuration.</p> <p>Before you
+         * can delete a query logging configuration, you must first disassociate all VPCs
+         * from the configuration. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
          * <p>If you used Resource Access Manager (RAM) to share a query logging
          * configuration with other accounts, you must stop sharing the configuration
@@ -937,10 +940,10 @@ namespace Model
          * <p>Deletes a query logging configuration. When you delete a configuration,
          * Resolver stops logging DNS queries for all of the Amazon VPCs that are
          * associated with the configuration. This also applies if the query logging
-         * configuration is shared with other AWS accounts, and the other accounts have
-         * associated VPCs with the shared configuration.</p> <p>Before you can delete a
-         * query logging configuration, you must first disassociate all VPCs from the
-         * configuration. See <a
+         * configuration is shared with other Amazon Web Services accounts, and the other
+         * accounts have associated VPCs with the shared configuration.</p> <p>Before you
+         * can delete a query logging configuration, you must first disassociate all VPCs
+         * from the configuration. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
          * <p>If you used Resource Access Manager (RAM) to share a query logging
          * configuration with other accounts, you must stop sharing the configuration
@@ -960,10 +963,10 @@ namespace Model
          * <p>Deletes a query logging configuration. When you delete a configuration,
          * Resolver stops logging DNS queries for all of the Amazon VPCs that are
          * associated with the configuration. This also applies if the query logging
-         * configuration is shared with other AWS accounts, and the other accounts have
-         * associated VPCs with the shared configuration.</p> <p>Before you can delete a
-         * query logging configuration, you must first disassociate all VPCs from the
-         * configuration. See <a
+         * configuration is shared with other Amazon Web Services accounts, and the other
+         * accounts have associated VPCs with the shared configuration.</p> <p>Before you
+         * can delete a query logging configuration, you must first disassociate all VPCs
+         * from the configuration. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
          * <p>If you used Resource Access Manager (RAM) to share a query logging
          * configuration with other accounts, you must stop sharing the configuration
@@ -1087,10 +1090,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
-         * to share a query logging configuration with other accounts, VPCs can be
-         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
-         * accounts that you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
+         * a query logging configuration with other accounts, VPCs can be disassociated
+         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
+         * you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1101,10 +1104,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
-         * to share a query logging configuration with other accounts, VPCs can be
-         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
-         * accounts that you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
+         * a query logging configuration with other accounts, VPCs can be disassociated
+         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
+         * you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1117,10 +1120,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
-         * to share a query logging configuration with other accounts, VPCs can be
-         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
-         * accounts that you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
+         * a query logging configuration with other accounts, VPCs can be disassociated
+         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
+         * you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1280,18 +1283,18 @@ namespace Model
         virtual void GetFirewallRuleGroupAssociationAsync(const Model::GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the specified rule group. You can use the policy to share the rule
+         * group using Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFirewallRuleGroupPolicyOutcome GetFirewallRuleGroupPolicy(const Model::GetFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the specified rule group. You can use the policy to share the rule
+         * group using Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1300,9 +1303,9 @@ namespace Model
         virtual Model::GetFirewallRuleGroupPolicyOutcomeCallable GetFirewallRuleGroupPolicyCallable(const Model::GetFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the specified rule group. You can use the policy to share the rule
+         * group using Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1437,7 +1440,8 @@ namespace Model
         /**
          * <p>Gets information about a query logging policy. A query logging policy
          * specifies the Resolver query logging operations and resources that you want to
-         * allow another AWS account to be able to use.</p><p><h3>See Also:</h3>   <a
+         * allow another Amazon Web Services account to be able to use.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
          */
@@ -1446,7 +1450,8 @@ namespace Model
         /**
          * <p>Gets information about a query logging policy. A query logging policy
          * specifies the Resolver query logging operations and resources that you want to
-         * allow another AWS account to be able to use.</p><p><h3>See Also:</h3>   <a
+         * allow another Amazon Web Services account to be able to use.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
          *
@@ -1457,7 +1462,8 @@ namespace Model
         /**
          * <p>Gets information about a query logging policy. A query logging policy
          * specifies the Resolver query logging operations and resources that you want to
-         * allow another AWS account to be able to use.</p><p><h3>See Also:</h3>   <a
+         * allow another Amazon Web Services account to be able to use.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
          *
@@ -1822,7 +1828,7 @@ namespace Model
 
         /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
          * API Reference</a></p>
          */
@@ -1830,7 +1836,7 @@ namespace Model
 
         /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
          * API Reference</a></p>
          *
@@ -1840,7 +1846,7 @@ namespace Model
 
         /**
          * <p>Lists the configurations for DNSSEC validation that are associated with the
-         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">AWS
          * API Reference</a></p>
          *
@@ -1877,16 +1883,16 @@ namespace Model
         virtual void ListResolverEndpointIpAddressesAsync(const Model::ListResolverEndpointIpAddressesRequest& request, const ListResolverEndpointIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the Resolver endpoints that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Resolver endpoints that were created using the current Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResolverEndpointsOutcome ListResolverEndpoints(const Model::ListResolverEndpointsRequest& request) const;
 
         /**
-         * <p>Lists all the Resolver endpoints that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Resolver endpoints that were created using the current Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1895,8 +1901,8 @@ namespace Model
         virtual Model::ListResolverEndpointsOutcomeCallable ListResolverEndpointsCallable(const Model::ListResolverEndpointsRequest& request) const;
 
         /**
-         * <p>Lists all the Resolver endpoints that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Resolver endpoints that were created using the current Amazon
+         * Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1968,7 +1974,7 @@ namespace Model
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
-         * using the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * using the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">AWS
          * API Reference</a></p>
          */
@@ -1976,7 +1982,7 @@ namespace Model
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
-         * using the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * using the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">AWS
          * API Reference</a></p>
          *
@@ -1986,7 +1992,7 @@ namespace Model
 
         /**
          * <p>Lists the associations that were created between Resolver rules and VPCs
-         * using the current AWS account.</p><p><h3>See Also:</h3>   <a
+         * using the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRuleAssociations">AWS
          * API Reference</a></p>
          *
@@ -1995,16 +2001,16 @@ namespace Model
         virtual void ListResolverRuleAssociationsAsync(const Model::ListResolverRuleAssociationsRequest& request, const ListResolverRuleAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Resolver rules that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Resolver rules that were created using the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResolverRulesOutcome ListResolverRules(const Model::ListResolverRulesRequest& request) const;
 
         /**
-         * <p>Lists the Resolver rules that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Resolver rules that were created using the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">AWS
          * API Reference</a></p>
          *
@@ -2013,8 +2019,8 @@ namespace Model
         virtual Model::ListResolverRulesOutcomeCallable ListResolverRulesCallable(const Model::ListResolverRulesRequest& request) const;
 
         /**
-         * <p>Lists the Resolver rules that were created using the current AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Resolver rules that were created using the current Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverRules">AWS
          * API Reference</a></p>
          *
@@ -2051,18 +2057,18 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the rule group. You can use the policy to share the rule group using
+         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutFirewallRuleGroupPolicyOutcome PutFirewallRuleGroupPolicy(const Model::PutFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the rule group. You can use the policy to share the rule group using
+         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2071,9 +2077,9 @@ namespace Model
         virtual Model::PutFirewallRuleGroupPolicyOutcomeCallable PutFirewallRuleGroupPolicyCallable(const Model::PutFirewallRuleGroupPolicyRequest& request) const;
 
         /**
-         * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
-         * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy
+         * for sharing the rule group. You can use the policy to share the rule group using
+         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2082,9 +2088,9 @@ namespace Model
         virtual void PutFirewallRuleGroupPolicyAsync(const Model::PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specifies an AWS account that you want to share a query logging configuration
-         * with, the query logging configuration that you want to share, and the operations
-         * that you want the account to be able to perform on the
+         * <p>Specifies an Amazon Web Services account that you want to share a query
+         * logging configuration with, the query logging configuration that you want to
+         * share, and the operations that you want the account to be able to perform on the
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
@@ -2092,9 +2098,9 @@ namespace Model
         virtual Model::PutResolverQueryLogConfigPolicyOutcome PutResolverQueryLogConfigPolicy(const Model::PutResolverQueryLogConfigPolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS account that you want to share a query logging configuration
-         * with, the query logging configuration that you want to share, and the operations
-         * that you want the account to be able to perform on the
+         * <p>Specifies an Amazon Web Services account that you want to share a query
+         * logging configuration with, the query logging configuration that you want to
+         * share, and the operations that you want the account to be able to perform on the
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
@@ -2104,9 +2110,9 @@ namespace Model
         virtual Model::PutResolverQueryLogConfigPolicyOutcomeCallable PutResolverQueryLogConfigPolicyCallable(const Model::PutResolverQueryLogConfigPolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS account that you want to share a query logging configuration
-         * with, the query logging configuration that you want to share, and the operations
-         * that you want the account to be able to perform on the
+         * <p>Specifies an Amazon Web Services account that you want to share a query
+         * logging configuration with, the query logging configuration that you want to
+         * share, and the operations that you want the account to be able to perform on the
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy">AWS
          * API Reference</a></p>
@@ -2116,18 +2122,20 @@ namespace Model
         virtual void PutResolverQueryLogConfigPolicyAsync(const Model::PutResolverQueryLogConfigPolicyRequest& request, const PutResolverQueryLogConfigPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specifies an AWS rule that you want to share with another account, the
-         * account that you want to share the rule with, and the operations that you want
-         * the account to be able to perform on the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies an Amazon Web Services rule that you want to share with another
+         * account, the account that you want to share the rule with, and the operations
+         * that you want the account to be able to perform on the rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutResolverRulePolicyOutcome PutResolverRulePolicy(const Model::PutResolverRulePolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS rule that you want to share with another account, the
-         * account that you want to share the rule with, and the operations that you want
-         * the account to be able to perform on the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies an Amazon Web Services rule that you want to share with another
+         * account, the account that you want to share the rule with, and the operations
+         * that you want the account to be able to perform on the rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">AWS
          * API Reference</a></p>
          *
@@ -2136,9 +2144,10 @@ namespace Model
         virtual Model::PutResolverRulePolicyOutcomeCallable PutResolverRulePolicyCallable(const Model::PutResolverRulePolicyRequest& request) const;
 
         /**
-         * <p>Specifies an AWS rule that you want to share with another account, the
-         * account that you want to share the rule with, and the operations that you want
-         * the account to be able to perform on the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Specifies an Amazon Web Services rule that you want to share with another
+         * account, the account that you want to share the rule with, and the operations
+         * that you want the account to be able to perform on the rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy">AWS
          * API Reference</a></p>
          *

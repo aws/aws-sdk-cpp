@@ -709,9 +709,10 @@ namespace Model
      * source provider must have write access to the repo. If the user does not have
      * write access, the build status cannot be updated. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
-     * status of a build triggered by a webhook is always reported to your source
-     * provider. </p> 
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * <p>If your project's builds are triggered by a webhook, you must push a new
+     * commit to the repo for a change to this property to take effect.</p>
      */
     inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
 
@@ -724,9 +725,10 @@ namespace Model
      * source provider must have write access to the repo. If the user does not have
      * write access, the build status cannot be updated. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
-     * status of a build triggered by a webhook is always reported to your source
-     * provider. </p> 
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * <p>If your project's builds are triggered by a webhook, you must push a new
+     * commit to the repo for a change to this property to take effect.</p>
      */
     inline bool ReportBuildStatusHasBeenSet() const { return m_reportBuildStatusHasBeenSet; }
 
@@ -739,9 +741,10 @@ namespace Model
      * source provider must have write access to the repo. If the user does not have
      * write access, the build status cannot be updated. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
-     * status of a build triggered by a webhook is always reported to your source
-     * provider. </p> 
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * <p>If your project's builds are triggered by a webhook, you must push a new
+     * commit to the repo for a change to this property to take effect.</p>
      */
     inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
 
@@ -754,9 +757,10 @@ namespace Model
      * source provider must have write access to the repo. If the user does not have
      * write access, the build status cannot be updated. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
-     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
-     * status of a build triggered by a webhook is always reported to your source
-     * provider. </p> 
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * <p>If your project's builds are triggered by a webhook, you must push a new
+     * commit to the repo for a change to this property to take effect.</p>
      */
     inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
 

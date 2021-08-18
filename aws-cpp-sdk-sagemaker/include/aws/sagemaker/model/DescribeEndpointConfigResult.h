@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <utility>
 
@@ -235,6 +236,42 @@ namespace Model
      */
     inline DescribeEndpointConfigResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline const AsyncInferenceConfig& GetAsyncInferenceConfig() const{ return m_asyncInferenceConfig; }
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline void SetAsyncInferenceConfig(const AsyncInferenceConfig& value) { m_asyncInferenceConfig = value; }
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline void SetAsyncInferenceConfig(AsyncInferenceConfig&& value) { m_asyncInferenceConfig = std::move(value); }
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline DescribeEndpointConfigResult& WithAsyncInferenceConfig(const AsyncInferenceConfig& value) { SetAsyncInferenceConfig(value); return *this;}
+
+    /**
+     * <p>Returns the description of an endpoint configuration created using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+     * <code>CreateEndpointConfig</code> </a> API.</p>
+     */
+    inline DescribeEndpointConfigResult& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -248,6 +285,8 @@ namespace Model
     Aws::String m_kmsKeyId;
 
     Aws::Utils::DateTime m_creationTime;
+
+    AsyncInferenceConfig m_asyncInferenceConfig;
   };
 
 } // namespace Model

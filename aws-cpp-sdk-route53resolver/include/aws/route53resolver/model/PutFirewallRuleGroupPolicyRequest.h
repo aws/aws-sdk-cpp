@@ -76,50 +76,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline const Aws::String& GetFirewallRuleGroupPolicy() const{ return m_firewallRuleGroupPolicy; }
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline bool FirewallRuleGroupPolicyHasBeenSet() const { return m_firewallRuleGroupPolicyHasBeenSet; }
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline void SetFirewallRuleGroupPolicy(const Aws::String& value) { m_firewallRuleGroupPolicyHasBeenSet = true; m_firewallRuleGroupPolicy = value; }
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline void SetFirewallRuleGroupPolicy(Aws::String&& value) { m_firewallRuleGroupPolicyHasBeenSet = true; m_firewallRuleGroupPolicy = std::move(value); }
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline void SetFirewallRuleGroupPolicy(const char* value) { m_firewallRuleGroupPolicyHasBeenSet = true; m_firewallRuleGroupPolicy.assign(value); }
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline PutFirewallRuleGroupPolicyRequest& WithFirewallRuleGroupPolicy(const Aws::String& value) { SetFirewallRuleGroupPolicy(value); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline PutFirewallRuleGroupPolicyRequest& WithFirewallRuleGroupPolicy(Aws::String&& value) { SetFirewallRuleGroupPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule
-     * group.</p>
+     * <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach
+     * to the rule group.</p>
      */
     inline PutFirewallRuleGroupPolicyRequest& WithFirewallRuleGroupPolicy(const char* value) { SetFirewallRuleGroupPolicy(value); return *this;}
 

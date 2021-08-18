@@ -943,6 +943,42 @@ namespace Model
      */
     inline DescribeNotebookInstanceResult& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline const Aws::String& GetPlatformIdentifier() const{ return m_platformIdentifier; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(const Aws::String& value) { m_platformIdentifier = value; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(Aws::String&& value) { m_platformIdentifier = std::move(value); }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(const char* value) { m_platformIdentifier.assign(value); }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithPlatformIdentifier(const Aws::String& value) { SetPlatformIdentifier(value); return *this;}
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithPlatformIdentifier(Aws::String&& value) { SetPlatformIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline DescribeNotebookInstanceResult& WithPlatformIdentifier(const char* value) { SetPlatformIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceArn;
@@ -984,6 +1020,8 @@ namespace Model
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
 
     RootAccess m_rootAccess;
+
+    Aws::String m_platformIdentifier;
   };
 
 } // namespace Model

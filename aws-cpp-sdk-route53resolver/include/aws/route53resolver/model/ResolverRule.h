@@ -571,50 +571,50 @@ namespace Model
 
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline ResolverRule& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline ResolverRule& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>When a rule is shared with another AWS account, the account ID of the account
-     * that the rule is shared with.</p>
+     * <p>When a rule is shared with another Amazon Web Services account, the account
+     * ID of the account that the rule is shared with.</p>
      */
     inline ResolverRule& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

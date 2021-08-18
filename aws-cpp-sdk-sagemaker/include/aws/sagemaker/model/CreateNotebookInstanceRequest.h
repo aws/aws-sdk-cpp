@@ -1016,6 +1016,47 @@ namespace Model
      */
     inline CreateNotebookInstanceRequest& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline const Aws::String& GetPlatformIdentifier() const{ return m_platformIdentifier; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline bool PlatformIdentifierHasBeenSet() const { return m_platformIdentifierHasBeenSet; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(const Aws::String& value) { m_platformIdentifierHasBeenSet = true; m_platformIdentifier = value; }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(Aws::String&& value) { m_platformIdentifierHasBeenSet = true; m_platformIdentifier = std::move(value); }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline void SetPlatformIdentifier(const char* value) { m_platformIdentifierHasBeenSet = true; m_platformIdentifier.assign(value); }
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithPlatformIdentifier(const Aws::String& value) { SetPlatformIdentifier(value); return *this;}
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithPlatformIdentifier(Aws::String&& value) { SetPlatformIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithPlatformIdentifier(const char* value) { SetPlatformIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -1059,6 +1100,9 @@ namespace Model
 
     RootAccess m_rootAccess;
     bool m_rootAccessHasBeenSet;
+
+    Aws::String m_platformIdentifier;
+    bool m_platformIdentifierHasBeenSet;
   };
 
 } // namespace Model

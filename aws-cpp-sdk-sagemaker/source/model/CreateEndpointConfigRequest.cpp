@@ -17,7 +17,8 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_productionVariantsHasBeenSet(false),
     m_dataCaptureConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_asyncInferenceConfigHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,12 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_asyncInferenceConfigHasBeenSet)
+  {
+   payload.WithObject("AsyncInferenceConfig", m_asyncInferenceConfig.Jsonize());
 
   }
 

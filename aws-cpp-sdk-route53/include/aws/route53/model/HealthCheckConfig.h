@@ -705,10 +705,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -758,10 +758,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -811,10 +811,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -864,10 +864,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -917,10 +917,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -970,10 +970,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -1023,10 +1023,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -1076,10 +1076,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a

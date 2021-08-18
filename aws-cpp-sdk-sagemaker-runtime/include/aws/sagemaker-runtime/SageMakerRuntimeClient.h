@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime/model/InvokeEndpointResult.h>
+#include <aws/sagemaker-runtime/model/InvokeEndpointAsyncResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -52,15 +53,19 @@ namespace SageMakerRuntime
 namespace Model
 {
         class InvokeEndpointRequest;
+        class InvokeEndpointAsyncRequest;
 
         typedef Aws::Utils::Outcome<InvokeEndpointResult, SageMakerRuntimeError> InvokeEndpointOutcome;
+        typedef Aws::Utils::Outcome<InvokeEndpointAsyncResult, SageMakerRuntimeError> InvokeEndpointAsyncOutcome;
 
         typedef std::future<InvokeEndpointOutcome> InvokeEndpointOutcomeCallable;
+        typedef std::future<InvokeEndpointAsyncOutcome> InvokeEndpointAsyncOutcomeCallable;
 } // namespace Model
 
   class SageMakerRuntimeClient;
 
     typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointRequest&, Model::InvokeEndpointOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointResponseReceivedHandler;
+    typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointAsyncRequest&, const Model::InvokeEndpointAsyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointAsyncResponseReceivedHandler;
 
   /**
    * <p> The Amazon SageMaker runtime API. </p>
@@ -174,11 +179,79 @@ namespace Model
          */
         virtual void InvokeEndpointAsync(const Model::InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>After you deploy a model into production using Amazon SageMaker hosting
+         * services, your client applications use this API to get inferences from the model
+         * hosted at the specified endpoint in an asynchronous manner.</p> <p>Inference
+         * requests sent to this API are enqueued for asynchronous processing. The
+         * processing of the inference request may or may not complete before the you
+         * receive a response from this API. The response from this API will not contain
+         * the result of the inference request but contain information about where you can
+         * locate it.</p> <p>Amazon SageMaker strips all <code>POST</code> headers except
+         * those supported by the API. Amazon SageMaker might add additional headers. You
+         * should not rely on the behavior of headers outside those enumerated in the
+         * request syntax.</p> <p>Calls to <code>InvokeEndpointAsync</code> are
+         * authenticated by using AWS Signature Version 4. For information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvokeEndpointAsyncOutcome InvokeEndpointAsync(const Model::InvokeEndpointAsyncRequest& request) const;
+
+        /**
+         * <p>After you deploy a model into production using Amazon SageMaker hosting
+         * services, your client applications use this API to get inferences from the model
+         * hosted at the specified endpoint in an asynchronous manner.</p> <p>Inference
+         * requests sent to this API are enqueued for asynchronous processing. The
+         * processing of the inference request may or may not complete before the you
+         * receive a response from this API. The response from this API will not contain
+         * the result of the inference request but contain information about where you can
+         * locate it.</p> <p>Amazon SageMaker strips all <code>POST</code> headers except
+         * those supported by the API. Amazon SageMaker might add additional headers. You
+         * should not rely on the behavior of headers outside those enumerated in the
+         * request syntax.</p> <p>Calls to <code>InvokeEndpointAsync</code> are
+         * authenticated by using AWS Signature Version 4. For information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::InvokeEndpointAsyncOutcomeCallable InvokeEndpointAsyncCallable(const Model::InvokeEndpointAsyncRequest& request) const;
+
+        /**
+         * <p>After you deploy a model into production using Amazon SageMaker hosting
+         * services, your client applications use this API to get inferences from the model
+         * hosted at the specified endpoint in an asynchronous manner.</p> <p>Inference
+         * requests sent to this API are enqueued for asynchronous processing. The
+         * processing of the inference request may or may not complete before the you
+         * receive a response from this API. The response from this API will not contain
+         * the result of the inference request but contain information about where you can
+         * locate it.</p> <p>Amazon SageMaker strips all <code>POST</code> headers except
+         * those supported by the API. Amazon SageMaker might add additional headers. You
+         * should not rely on the behavior of headers outside those enumerated in the
+         * request syntax.</p> <p>Calls to <code>InvokeEndpointAsync</code> are
+         * authenticated by using AWS Signature Version 4. For information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void InvokeEndpointAsyncAsync(const Model::InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void InvokeEndpointAsyncHelper(const Model::InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void InvokeEndpointAsyncAsyncHelper(const Model::InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

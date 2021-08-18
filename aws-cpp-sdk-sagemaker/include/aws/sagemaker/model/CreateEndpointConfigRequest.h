@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DataCaptureConfig.h>
+#include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -492,6 +493,55 @@ namespace Model
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies configuration for how an endpoint performs asynchronous inference.
+     * This is a required field in order for your Endpoint to be invoked using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+     * <code>InvokeEndpointAsync</code> </a>.</p>
+     */
+    inline const AsyncInferenceConfig& GetAsyncInferenceConfig() const{ return m_asyncInferenceConfig; }
+
+    /**
+     * <p>Specifies configuration for how an endpoint performs asynchronous inference.
+     * This is a required field in order for your Endpoint to be invoked using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+     * <code>InvokeEndpointAsync</code> </a>.</p>
+     */
+    inline bool AsyncInferenceConfigHasBeenSet() const { return m_asyncInferenceConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration for how an endpoint performs asynchronous inference.
+     * This is a required field in order for your Endpoint to be invoked using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+     * <code>InvokeEndpointAsync</code> </a>.</p>
+     */
+    inline void SetAsyncInferenceConfig(const AsyncInferenceConfig& value) { m_asyncInferenceConfigHasBeenSet = true; m_asyncInferenceConfig = value; }
+
+    /**
+     * <p>Specifies configuration for how an endpoint performs asynchronous inference.
+     * This is a required field in order for your Endpoint to be invoked using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+     * <code>InvokeEndpointAsync</code> </a>.</p>
+     */
+    inline void SetAsyncInferenceConfig(AsyncInferenceConfig&& value) { m_asyncInferenceConfigHasBeenSet = true; m_asyncInferenceConfig = std::move(value); }
+
+    /**
+     * <p>Specifies configuration for how an endpoint performs asynchronous inference.
+     * This is a required field in order for your Endpoint to be invoked using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+     * <code>InvokeEndpointAsync</code> </a>.</p>
+     */
+    inline CreateEndpointConfigRequest& WithAsyncInferenceConfig(const AsyncInferenceConfig& value) { SetAsyncInferenceConfig(value); return *this;}
+
+    /**
+     * <p>Specifies configuration for how an endpoint performs asynchronous inference.
+     * This is a required field in order for your Endpoint to be invoked using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+     * <code>InvokeEndpointAsync</code> </a>.</p>
+     */
+    inline CreateEndpointConfigRequest& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -508,6 +558,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    AsyncInferenceConfig m_asyncInferenceConfig;
+    bool m_asyncInferenceConfigHasBeenSet;
   };
 
 } // namespace Model
