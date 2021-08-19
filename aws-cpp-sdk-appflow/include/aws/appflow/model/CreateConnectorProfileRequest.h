@@ -37,49 +37,49 @@ namespace Model
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline CreateConnectorProfileRequest& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline CreateConnectorProfileRequest& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in your AWS account. </p>
+     * <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
      */
     inline CreateConnectorProfileRequest& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
 
@@ -182,43 +182,43 @@ namespace Model
 
     /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
-     * Private flows use AWS PrivateLink to route data over AWS infrastructure without
-     * exposing it to the public internet. </p>
+     * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
+     * Services infrastructure without exposing it to the public internet. </p>
      */
     inline const ConnectionMode& GetConnectionMode() const{ return m_connectionMode; }
 
     /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
-     * Private flows use AWS PrivateLink to route data over AWS infrastructure without
-     * exposing it to the public internet. </p>
+     * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
+     * Services infrastructure without exposing it to the public internet. </p>
      */
     inline bool ConnectionModeHasBeenSet() const { return m_connectionModeHasBeenSet; }
 
     /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
-     * Private flows use AWS PrivateLink to route data over AWS infrastructure without
-     * exposing it to the public internet. </p>
+     * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
+     * Services infrastructure without exposing it to the public internet. </p>
      */
     inline void SetConnectionMode(const ConnectionMode& value) { m_connectionModeHasBeenSet = true; m_connectionMode = value; }
 
     /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
-     * Private flows use AWS PrivateLink to route data over AWS infrastructure without
-     * exposing it to the public internet. </p>
+     * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
+     * Services infrastructure without exposing it to the public internet. </p>
      */
     inline void SetConnectionMode(ConnectionMode&& value) { m_connectionModeHasBeenSet = true; m_connectionMode = std::move(value); }
 
     /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
-     * Private flows use AWS PrivateLink to route data over AWS infrastructure without
-     * exposing it to the public internet. </p>
+     * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
+     * Services infrastructure without exposing it to the public internet. </p>
      */
     inline CreateConnectorProfileRequest& WithConnectionMode(const ConnectionMode& value) { SetConnectionMode(value); return *this;}
 
     /**
      * <p> Indicates the connection mode and specifies whether it is public or private.
-     * Private flows use AWS PrivateLink to route data over AWS infrastructure without
-     * exposing it to the public internet. </p>
+     * Private flows use Amazon Web Services PrivateLink to route data over Amazon Web
+     * Services infrastructure without exposing it to the public internet. </p>
      */
     inline CreateConnectorProfileRequest& WithConnectionMode(ConnectionMode&& value) { SetConnectionMode(std::move(value)); return *this;}
 

@@ -36,7 +36,8 @@ ImportImageTask::ImportImageTask() :
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false)
+    m_licenseSpecificationsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ImportImageTask::ImportImageTask(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false)
+    m_licenseSpecificationsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -175,6 +177,12 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
 
       m_licenseSpecificationsHasBeenSet = true;
     }
+    XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
+    if(!usageOperationNode.IsNull())
+    {
+      m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
+      m_usageOperationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -275,6 +283,11 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+
 }
 
 void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -356,6 +369,10 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
         licenseSpecificationsSs << location <<  ".LicenseSpecifications." << licenseSpecificationsIdx++;
         item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
       }
+  }
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
   }
 }
 

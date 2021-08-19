@@ -39,47 +39,56 @@ namespace Model
 
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedRegions() const{ return m_supportedRegions; }
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline bool SupportedRegionsHasBeenSet() const { return m_supportedRegionsHasBeenSet; }
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline void SetSupportedRegions(const Aws::Vector<Aws::String>& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions = value; }
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline void SetSupportedRegions(Aws::Vector<Aws::String>&& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions = std::move(value); }
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline SnowflakeMetadata& WithSupportedRegions(const Aws::Vector<Aws::String>& value) { SetSupportedRegions(value); return *this;}
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline SnowflakeMetadata& WithSupportedRegions(Aws::Vector<Aws::String>&& value) { SetSupportedRegions(std::move(value)); return *this;}
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline SnowflakeMetadata& AddSupportedRegions(const Aws::String& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(value); return *this; }
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline SnowflakeMetadata& AddSupportedRegions(Aws::String&& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> Specifies the supported AWS Regions when using Snowflake. </p>
+     * <p> Specifies the supported Amazon Web Services Regions when using Snowflake.
+     * </p>
      */
     inline SnowflakeMetadata& AddSupportedRegions(const char* value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(value); return *this; }
 

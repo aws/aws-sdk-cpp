@@ -21,6 +21,7 @@
 #include <aws/appflow/model/TrendmicroConnectorProfileProperties.h>
 #include <aws/appflow/model/VeevaConnectorProfileProperties.h>
 #include <aws/appflow/model/ZendeskConnectorProfileProperties.h>
+#include <aws/appflow/model/SAPODataConnectorProfileProperties.h>
 #include <utility>
 
 namespace Aws
@@ -548,6 +549,25 @@ namespace Model
      */
     inline ConnectorProfileProperties& WithZendesk(ZendeskConnectorProfileProperties&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    
+    inline const SAPODataConnectorProfileProperties& GetSAPOData() const{ return m_sAPOData; }
+
+    
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    
+    inline void SetSAPOData(const SAPODataConnectorProfileProperties& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    
+    inline void SetSAPOData(SAPODataConnectorProfileProperties&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    
+    inline ConnectorProfileProperties& WithSAPOData(const SAPODataConnectorProfileProperties& value) { SetSAPOData(value); return *this;}
+
+    
+    inline ConnectorProfileProperties& WithSAPOData(SAPODataConnectorProfileProperties&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorProfileProperties m_amplitude;
@@ -597,6 +617,9 @@ namespace Model
 
     ZendeskConnectorProfileProperties m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    SAPODataConnectorProfileProperties m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

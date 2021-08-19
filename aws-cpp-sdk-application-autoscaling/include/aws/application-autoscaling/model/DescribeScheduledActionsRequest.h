@@ -84,44 +84,44 @@ namespace Model
 
 
     /**
-     * <p>The namespace of the AWS service that provides the resource. For a resource
-     * provided by your own application or service, use <code>custom-resource</code>
-     * instead.</p>
+     * <p>The namespace of the Amazon Web Services service that provides the resource.
+     * For a resource provided by your own application or service, use
+     * <code>custom-resource</code> instead.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource. For a resource
-     * provided by your own application or service, use <code>custom-resource</code>
-     * instead.</p>
+     * <p>The namespace of the Amazon Web Services service that provides the resource.
+     * For a resource provided by your own application or service, use
+     * <code>custom-resource</code> instead.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource. For a resource
-     * provided by your own application or service, use <code>custom-resource</code>
-     * instead.</p>
+     * <p>The namespace of the Amazon Web Services service that provides the resource.
+     * For a resource provided by your own application or service, use
+     * <code>custom-resource</code> instead.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource. For a resource
-     * provided by your own application or service, use <code>custom-resource</code>
-     * instead.</p>
+     * <p>The namespace of the Amazon Web Services service that provides the resource.
+     * For a resource provided by your own application or service, use
+     * <code>custom-resource</code> instead.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource. For a resource
-     * provided by your own application or service, use <code>custom-resource</code>
-     * instead.</p>
+     * <p>The namespace of the Amazon Web Services service that provides the resource.
+     * For a resource provided by your own application or service, use
+     * <code>custom-resource</code> instead.</p>
      */
     inline DescribeScheduledActionsRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of the AWS service that provides the resource. For a resource
-     * provided by your own application or service, use <code>custom-resource</code>
-     * instead.</p>
+     * <p>The namespace of the Amazon Web Services service that provides the resource.
+     * For a resource provided by your own application or service, use
+     * <code>custom-resource</code> instead.</p>
      */
     inline DescribeScheduledActionsRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
@@ -172,7 +172,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -222,7 +224,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -272,7 +276,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -322,7 +328,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -372,7 +380,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -422,7 +432,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline DescribeScheduledActionsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -472,7 +484,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline DescribeScheduledActionsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -522,7 +536,9 @@ namespace Model
      * <p>Amazon MSK cluster - The resource type and unique identifier are specified
      * using the cluster ARN. Example:
      * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Amazon ElastiCache replication group - The resource type is
+     * <code>replication-group</code> and the unique identifier is the replication
+     * group name. Example: <code>replication-group/mycluster</code>.</p> </li> </ul>
      */
     inline DescribeScheduledActionsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -532,10 +548,11 @@ namespace Model
      * resource type, and scaling property. If you specify a scalable dimension, you
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -565,7 +582,11 @@ namespace Model
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
-     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:NodeGroups</code> - The number of node
+     * groups for an Amazon ElastiCache replication group.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+     * node group for an Amazon ElastiCache replication group.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -574,10 +595,11 @@ namespace Model
      * resource type, and scaling property. If you specify a scalable dimension, you
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -607,7 +629,11 @@ namespace Model
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
-     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:NodeGroups</code> - The number of node
+     * groups for an Amazon ElastiCache replication group.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+     * node group for an Amazon ElastiCache replication group.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -616,10 +642,11 @@ namespace Model
      * resource type, and scaling property. If you specify a scalable dimension, you
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -649,7 +676,11 @@ namespace Model
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
-     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:NodeGroups</code> - The number of node
+     * groups for an Amazon ElastiCache replication group.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+     * node group for an Amazon ElastiCache replication group.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -658,10 +689,11 @@ namespace Model
      * resource type, and scaling property. If you specify a scalable dimension, you
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -691,7 +723,11 @@ namespace Model
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
-     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:NodeGroups</code> - The number of node
+     * groups for an Amazon ElastiCache replication group.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+     * node group for an Amazon ElastiCache replication group.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -700,10 +736,11 @@ namespace Model
      * resource type, and scaling property. If you specify a scalable dimension, you
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -733,7 +770,11 @@ namespace Model
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
-     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:NodeGroups</code> - The number of node
+     * groups for an Amazon ElastiCache replication group.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+     * node group for an Amazon ElastiCache replication group.</p> </li> </ul>
      */
     inline DescribeScheduledActionsRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -742,10 +783,11 @@ namespace Model
      * resource type, and scaling property. If you specify a scalable dimension, you
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
-     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
+     * service.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
@@ -775,7 +817,11 @@ namespace Model
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
      * for an Amazon Keyspaces table.</p> </li> <li> <p>
      * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in
-     * GiB) for brokers in an Amazon MSK cluster.</p> </li> </ul>
+     * GiB) for brokers in an Amazon MSK cluster.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:NodeGroups</code> - The number of node
+     * groups for an Amazon ElastiCache replication group.</p> </li> <li> <p>
+     * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
+     * node group for an Amazon ElastiCache replication group.</p> </li> </ul>
      */
     inline DescribeScheduledActionsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

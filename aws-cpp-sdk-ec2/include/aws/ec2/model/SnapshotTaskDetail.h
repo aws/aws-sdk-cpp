@@ -165,50 +165,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline SnapshotTaskDetail& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline SnapshotTaskDetail& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted snapshot.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * snapshot.</p>
      */
     inline SnapshotTaskDetail& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

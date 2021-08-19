@@ -19,6 +19,7 @@
 #include <aws/appflow/model/TrendmicroConnectorOperator.h>
 #include <aws/appflow/model/VeevaConnectorOperator.h>
 #include <aws/appflow/model/ZendeskConnectorOperator.h>
+#include <aws/appflow/model/SAPODataConnectorOperator.h>
 #include <utility>
 
 namespace Aws
@@ -502,6 +503,37 @@ namespace Model
      */
     inline ConnectorOperator& WithZendesk(ZendeskConnectorOperator&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline const SAPODataConnectorOperator& GetSAPOData() const{ return m_sAPOData; }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline void SetSAPOData(const SAPODataConnectorOperator& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline void SetSAPOData(SAPODataConnectorOperator&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline ConnectorOperator& WithSAPOData(const SAPODataConnectorOperator& value) { SetSAPOData(value); return *this;}
+
+    /**
+     * <p> The operation to be performed on the provided SAPOData source fields. </p>
+     */
+    inline ConnectorOperator& WithSAPOData(SAPODataConnectorOperator&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorOperator m_amplitude;
@@ -545,6 +577,9 @@ namespace Model
 
     ZendeskConnectorOperator m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    SAPODataConnectorOperator m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

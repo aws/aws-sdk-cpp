@@ -234,44 +234,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric KMS key that was used to create the
+     * encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -564,6 +564,42 @@ namespace Model
     inline ImportImageResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const Aws::String& value) { m_usageOperation = value; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(Aws::String&& value) { m_usageOperation = std::move(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const char* value) { m_usageOperation.assign(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageResponse& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageResponse& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageResponse& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -610,6 +646,8 @@ namespace Model
     Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_usageOperation;
 
     ResponseMetadata m_responseMetadata;
   };

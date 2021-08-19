@@ -25,6 +25,7 @@
 #include <aws/appflow/model/UpsolverMetadata.h>
 #include <aws/appflow/model/CustomerProfilesMetadata.h>
 #include <aws/appflow/model/HoneycodeMetadata.h>
+#include <aws/appflow/model/SAPODataMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -677,6 +678,25 @@ namespace Model
      */
     inline ConnectorMetadata& WithHoneycode(HoneycodeMetadata&& value) { SetHoneycode(std::move(value)); return *this;}
 
+
+    
+    inline const SAPODataMetadata& GetSAPOData() const{ return m_sAPOData; }
+
+    
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    
+    inline void SetSAPOData(const SAPODataMetadata& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    
+    inline void SetSAPOData(SAPODataMetadata&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    
+    inline ConnectorMetadata& WithSAPOData(const SAPODataMetadata& value) { SetSAPOData(value); return *this;}
+
+    
+    inline ConnectorMetadata& WithSAPOData(SAPODataMetadata&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     AmplitudeMetadata m_amplitude;
@@ -738,6 +758,9 @@ namespace Model
 
     HoneycodeMetadata m_honeycode;
     bool m_honeycodeHasBeenSet;
+
+    SAPODataMetadata m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

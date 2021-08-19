@@ -27,7 +27,8 @@ namespace Model
     comprehend,
     lambda,
     cassandra,
-    kafka
+    kafka,
+    elasticache
   };
 
 namespace ServiceNamespaceMapper

@@ -34,7 +34,8 @@ ConnectorProfileProperties::ConnectorProfileProperties() :
     m_snowflakeHasBeenSet(false),
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+    m_zendeskHasBeenSet(false),
+    m_sAPODataHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ ConnectorProfileProperties::ConnectorProfileProperties(JsonView jsonValue) :
     m_snowflakeHasBeenSet(false),
     m_trendmicroHasBeenSet(false),
     m_veevaHasBeenSet(false),
-    m_zendeskHasBeenSet(false)
+    m_zendeskHasBeenSet(false),
+    m_sAPODataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -173,6 +175,13 @@ ConnectorProfileProperties& ConnectorProfileProperties::operator =(JsonView json
     m_zendeskHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SAPOData"))
+  {
+    m_sAPOData = jsonValue.GetObject("SAPOData");
+
+    m_sAPODataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -273,6 +282,12 @@ JsonValue ConnectorProfileProperties::Jsonize() const
   if(m_zendeskHasBeenSet)
   {
    payload.WithObject("Zendesk", m_zendesk.Jsonize());
+
+  }
+
+  if(m_sAPODataHasBeenSet)
+  {
+   payload.WithObject("SAPOData", m_sAPOData.Jsonize());
 
   }
 

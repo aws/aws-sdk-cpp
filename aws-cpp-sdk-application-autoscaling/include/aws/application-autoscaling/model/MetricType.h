@@ -32,7 +32,10 @@ namespace Model
     LambdaProvisionedConcurrencyUtilization,
     CassandraReadCapacityUtilization,
     CassandraWriteCapacityUtilization,
-    KafkaBrokerStorageUtilization
+    KafkaBrokerStorageUtilization,
+    ElastiCachePrimaryEngineCPUUtilization,
+    ElastiCacheReplicaEngineCPUUtilization,
+    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage
   };
 
 namespace MetricTypeMapper

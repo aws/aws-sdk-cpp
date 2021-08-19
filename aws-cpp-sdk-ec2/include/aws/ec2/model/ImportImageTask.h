@@ -286,50 +286,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline ImportImageTask& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline ImportImageTask& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted image.</p>
+     * <p>The identifier for the KMS key that was used to create the encrypted
+     * image.</p>
      */
     inline ImportImageTask& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -669,6 +669,47 @@ namespace Model
      */
     inline ImportImageTask& AddLicenseSpecifications(ImportImageLicenseConfigurationResponse&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageTask& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageTask& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
+
+    /**
+     * <p>The usage operation value.</p>
+     */
+    inline ImportImageTask& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+
   private:
 
     Aws::String m_architecture;
@@ -715,6 +756,9 @@ namespace Model
 
     Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
     bool m_licenseSpecificationsHasBeenSet;
+
+    Aws::String m_usageOperation;
+    bool m_usageOperationHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,8 @@ namespace Model
     LookoutMetrics,
     Upsolver,
     Honeycode,
-    CustomerProfiles
+    CustomerProfiles,
+    SAPOData
   };
 
 namespace ConnectorTypeMapper

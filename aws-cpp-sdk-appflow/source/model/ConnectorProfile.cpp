@@ -28,7 +28,8 @@ ConnectorProfile::ConnectorProfile() :
     m_credentialsArnHasBeenSet(false),
     m_connectorProfilePropertiesHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_privateConnectionProvisioningStateHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ConnectorProfile::ConnectorProfile(JsonView jsonValue) :
     m_credentialsArnHasBeenSet(false),
     m_connectorProfilePropertiesHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
+    m_lastUpdatedAtHasBeenSet(false),
+    m_privateConnectionProvisioningStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,13 @@ ConnectorProfile& ConnectorProfile::operator =(JsonView jsonValue)
     m_lastUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("privateConnectionProvisioningState"))
+  {
+    m_privateConnectionProvisioningState = jsonValue.GetObject("privateConnectionProvisioningState");
+
+    m_privateConnectionProvisioningStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue ConnectorProfile::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_privateConnectionProvisioningStateHasBeenSet)
+  {
+   payload.WithObject("privateConnectionProvisioningState", m_privateConnectionProvisioningState.Jsonize());
+
   }
 
   return payload;

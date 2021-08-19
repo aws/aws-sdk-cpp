@@ -36,55 +36,55 @@ namespace Model
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectorProfileNames() const{ return m_connectorProfileNames; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline bool ConnectorProfileNamesHasBeenSet() const { return m_connectorProfileNamesHasBeenSet; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileNames(const Aws::Vector<Aws::String>& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames = value; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileNames(Aws::Vector<Aws::String>&& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames = std::move(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& WithConnectorProfileNames(const Aws::Vector<Aws::String>& value) { SetConnectorProfileNames(value); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& WithConnectorProfileNames(Aws::Vector<Aws::String>&& value) { SetConnectorProfileNames(std::move(value)); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& AddConnectorProfileNames(const Aws::String& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames.push_back(value); return *this; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& AddConnectorProfileNames(Aws::String&& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& AddConnectorProfileNames(const char* value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames.push_back(value); return *this; }
 

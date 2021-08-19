@@ -26,7 +26,8 @@ ImportImageRequest::ImportImageRequest() :
     m_platformHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,11 @@ Aws::String ImportImageRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_usageOperationHasBeenSet)
+  {
+    ss << "UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

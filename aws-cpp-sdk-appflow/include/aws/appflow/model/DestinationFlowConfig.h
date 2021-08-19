@@ -73,49 +73,49 @@ namespace Model
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline DestinationFlowConfig& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline DestinationFlowConfig& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the connector profile. This name must be unique for each
-     * connector profile in the AWS account. </p>
+     * connector profile in the Amazon Web Services account. </p>
      */
     inline DestinationFlowConfig& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
 

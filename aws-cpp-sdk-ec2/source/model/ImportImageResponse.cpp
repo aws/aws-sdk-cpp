@@ -133,6 +133,11 @@ ImportImageResponse& ImportImageResponse::operator =(const Aws::AmazonWebService
       }
 
     }
+    XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
+    if(!usageOperationNode.IsNull())
+    {
+      m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

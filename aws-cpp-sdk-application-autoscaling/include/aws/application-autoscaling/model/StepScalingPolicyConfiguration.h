@@ -224,10 +224,11 @@ namespace Model
      * activity during the cooldown period after a scale-in activity, Application Auto
      * Scaling scales out the target immediately. In this case, the cooldown period for
      * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
-     * Scaling provides a default value of 300 for the following scalable targets:</p>
-     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
-     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
-     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * Scaling provides a default value of 600 for Amazon ElastiCache replication
+     * groups and a default value of 300 for the following scalable targets:</p> <ul>
+     * <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB
+     * clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
@@ -257,10 +258,11 @@ namespace Model
      * activity during the cooldown period after a scale-in activity, Application Auto
      * Scaling scales out the target immediately. In this case, the cooldown period for
      * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
-     * Scaling provides a default value of 300 for the following scalable targets:</p>
-     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
-     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
-     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * Scaling provides a default value of 600 for Amazon ElastiCache replication
+     * groups and a default value of 300 for the following scalable targets:</p> <ul>
+     * <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB
+     * clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
@@ -290,10 +292,11 @@ namespace Model
      * activity during the cooldown period after a scale-in activity, Application Auto
      * Scaling scales out the target immediately. In this case, the cooldown period for
      * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
-     * Scaling provides a default value of 300 for the following scalable targets:</p>
-     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
-     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
-     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * Scaling provides a default value of 600 for Amazon ElastiCache replication
+     * groups and a default value of 300 for the following scalable targets:</p> <ul>
+     * <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB
+     * clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document
@@ -323,10 +326,11 @@ namespace Model
      * activity during the cooldown period after a scale-in activity, Application Auto
      * Scaling scales out the target immediately. In this case, the cooldown period for
      * the scale-in activity stops and doesn't complete.</p> <p>Application Auto
-     * Scaling provides a default value of 300 for the following scalable targets:</p>
-     * <ul> <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li>
-     * <p>EMR clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora
-     * DB clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
+     * Scaling provides a default value of 600 for Amazon ElastiCache replication
+     * groups and a default value of 300 for the following scalable targets:</p> <ul>
+     * <li> <p>ECS services</p> </li> <li> <p>Spot Fleet requests</p> </li> <li> <p>EMR
+     * clusters</p> </li> <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB
+     * clusters</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>DynamoDB tables</p> </li> <li> <p>DynamoDB
      * global secondary indexes</p> </li> <li> <p>Amazon Comprehend document

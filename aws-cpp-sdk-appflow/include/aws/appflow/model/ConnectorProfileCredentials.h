@@ -21,6 +21,7 @@
 #include <aws/appflow/model/TrendmicroConnectorProfileCredentials.h>
 #include <aws/appflow/model/VeevaConnectorProfileCredentials.h>
 #include <aws/appflow/model/ZendeskConnectorProfileCredentials.h>
+#include <aws/appflow/model/SAPODataConnectorProfileCredentials.h>
 #include <utility>
 
 namespace Aws
@@ -560,6 +561,25 @@ namespace Model
      */
     inline ConnectorProfileCredentials& WithZendesk(ZendeskConnectorProfileCredentials&& value) { SetZendesk(std::move(value)); return *this;}
 
+
+    
+    inline const SAPODataConnectorProfileCredentials& GetSAPOData() const{ return m_sAPOData; }
+
+    
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    
+    inline void SetSAPOData(const SAPODataConnectorProfileCredentials& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    
+    inline void SetSAPOData(SAPODataConnectorProfileCredentials&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    
+    inline ConnectorProfileCredentials& WithSAPOData(const SAPODataConnectorProfileCredentials& value) { SetSAPOData(value); return *this;}
+
+    
+    inline ConnectorProfileCredentials& WithSAPOData(SAPODataConnectorProfileCredentials&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     AmplitudeConnectorProfileCredentials m_amplitude;
@@ -609,6 +629,9 @@ namespace Model
 
     ZendeskConnectorProfileCredentials m_zendesk;
     bool m_zendeskHasBeenSet;
+
+    SAPODataConnectorProfileCredentials m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model
