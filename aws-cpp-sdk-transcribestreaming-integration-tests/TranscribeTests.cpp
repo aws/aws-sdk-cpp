@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#ifdef HAVE_H2_CLIENT
+// Temporarily disable the test on Widnows
+#if defined(HAVE_H2_CLIENT) && !defined(_WIN32)
 
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
