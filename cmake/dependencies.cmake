@@ -28,8 +28,19 @@ function(compute_links lib)
     endif()
 
     # For each direct link append it and its links
-    foreach(link ${links})
+    while(links)
+        list(POP_FRONT links link)
         if(TARGET ${link}) # Collect only target links
+              get_target_property(target_type ${link} TYPE)
+              if (target_type STREQUAL "INTERFACE_LIBRARY")
+                # workaround needed for CMake 3.18.4 (Debian sid and bullseye): attempting to get/set property `LINK_LIBRARIES_ALL`
+                # on a `INTERFACE_LIBRARY` target (https://github.com/Kitware/CMake/blob/v3.18.4/Source/cmTargetPropertyComputer.cxx#L102-L103)
+                # fails due to property whitelist: https://github.com/Kitware/CMake/blob/v3.18.4/Source/cmTargetPropertyComputer.cxx#L51-L95
+                get_target_property(interface_links ${link} INTERFACE_LINK_LIBRARIES)
+                list(PREPEND links ${interface_links})
+                continue()
+            endif()
+
             compute_links(${link})
             get_target_property(link_links_all ${link} LINK_LIBRARIES_ALL)
             set_property(TARGET ${lib} APPEND PROPERTY
@@ -39,7 +50,7 @@ function(compute_links lib)
             message(STATUS "Library '${lib}' uses link '${link}'.")
             message(FATAL_ERROR "Algorithm doesn't work with generator expressions.")
         endif()
-    endforeach(link ${links})
+    endwhile()
     # Remove duplicates
     get_target_property(links_all ${lib} LINK_LIBRARIES_ALL)
     list(REMOVE_DUPLICATES links_all)
