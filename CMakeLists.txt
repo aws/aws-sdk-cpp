@@ -61,7 +61,11 @@ option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIE
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
-set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Release build by default.")
+
+get_property(_isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
+if (NOT ${_isMultiConfig})
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Release build by default.")
+endif()
 
 #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
 if(NOT WIN32)
