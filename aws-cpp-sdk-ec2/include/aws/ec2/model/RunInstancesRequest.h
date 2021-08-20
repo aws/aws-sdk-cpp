@@ -59,42 +59,66 @@ namespace Model
   public:
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping, which defines the EBS volumes and instance store
+     * volumes to attach to the instance at launch. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -322,64 +346,64 @@ namespace Model
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
@@ -636,8 +660,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
@@ -648,8 +672,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
@@ -660,8 +684,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
@@ -672,8 +696,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
@@ -684,8 +708,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
@@ -696,8 +720,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
@@ -708,8 +732,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
@@ -720,8 +744,8 @@ namespace Model
      * Resource Center and search for the kernel ID.</p>  <p>We recommend
      * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
+     * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 

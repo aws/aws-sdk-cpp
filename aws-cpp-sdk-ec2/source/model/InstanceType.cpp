@@ -418,6 +418,15 @@ namespace Aws
         static const int m6gd_8xlarge_HASH = HashingUtils::HashString("m6gd.8xlarge");
         static const int m6gd_12xlarge_HASH = HashingUtils::HashString("m6gd.12xlarge");
         static const int m6gd_16xlarge_HASH = HashingUtils::HashString("m6gd.16xlarge");
+        static const int m6i_large_HASH = HashingUtils::HashString("m6i.large");
+        static const int m6i_xlarge_HASH = HashingUtils::HashString("m6i.xlarge");
+        static const int m6i_2xlarge_HASH = HashingUtils::HashString("m6i.2xlarge");
+        static const int m6i_4xlarge_HASH = HashingUtils::HashString("m6i.4xlarge");
+        static const int m6i_8xlarge_HASH = HashingUtils::HashString("m6i.8xlarge");
+        static const int m6i_12xlarge_HASH = HashingUtils::HashString("m6i.12xlarge");
+        static const int m6i_16xlarge_HASH = HashingUtils::HashString("m6i.16xlarge");
+        static const int m6i_24xlarge_HASH = HashingUtils::HashString("m6i.24xlarge");
+        static const int m6i_32xlarge_HASH = HashingUtils::HashString("m6i.32xlarge");
         static const int mac1_metal_HASH = HashingUtils::HashString("mac1.metal");
         static const int x2gd_medium_HASH = HashingUtils::HashString("x2gd.medium");
         static const int x2gd_large_HASH = HashingUtils::HashString("x2gd.large");
@@ -2438,6 +2447,51 @@ namespace Aws
             enumValue = InstanceType::m6gd_16xlarge;
             return true;
           }
+          else if (hashCode == m6i_large_HASH)
+          {
+            enumValue = InstanceType::m6i_large;
+            return true;
+          }
+          else if (hashCode == m6i_xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_2xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_2xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_4xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_4xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_8xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_8xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_12xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_12xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_16xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_16xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_24xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_24xlarge;
+            return true;
+          }
+          else if (hashCode == m6i_32xlarge_HASH)
+          {
+            enumValue = InstanceType::m6i_32xlarge;
+            return true;
+          }
           else if (hashCode == mac1_metal_HASH)
           {
             enumValue = InstanceType::mac1_metal;
@@ -3712,6 +3766,33 @@ namespace Aws
             return true;
           case InstanceType::m6gd_16xlarge:
             value = "m6gd.16xlarge";
+            return true;
+          case InstanceType::m6i_large:
+            value = "m6i.large";
+            return true;
+          case InstanceType::m6i_xlarge:
+            value = "m6i.xlarge";
+            return true;
+          case InstanceType::m6i_2xlarge:
+            value = "m6i.2xlarge";
+            return true;
+          case InstanceType::m6i_4xlarge:
+            value = "m6i.4xlarge";
+            return true;
+          case InstanceType::m6i_8xlarge:
+            value = "m6i.8xlarge";
+            return true;
+          case InstanceType::m6i_12xlarge:
+            value = "m6i.12xlarge";
+            return true;
+          case InstanceType::m6i_16xlarge:
+            value = "m6i.16xlarge";
+            return true;
+          case InstanceType::m6i_24xlarge:
+            value = "m6i.24xlarge";
+            return true;
+          case InstanceType::m6i_32xlarge:
+            value = "m6i.32xlarge";
             return true;
           case InstanceType::mac1_metal:
             value = "mac1.metal";

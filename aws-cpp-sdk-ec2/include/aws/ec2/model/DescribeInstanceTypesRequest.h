@@ -192,10 +192,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -289,10 +292,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -386,10 +392,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -483,10 +492,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -580,10 +592,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -677,10 +692,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -774,10 +792,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of
@@ -871,10 +892,13 @@ namespace Model
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
      * Indicates whether Elastic Network Adapter (ENA) is supported or required
      * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).</p>
-     * </li> <li> <p> <code>network-info.ipv4-addresses-per-interface</code> - The
-     * maximum number of private IPv4 addresses per network interface.</p> </li> <li>
-     * <p> <code>network-info.ipv6-addresses-per-interface</code> - The maximum number
-     * of private IPv6 addresses per network interface.</p> </li> <li> <p>
+     * </li> <li> <p> <code>network-info.encryption-in-transit-supported</code> -
+     * Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p> </li> <li> <p>
+     * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
+     * private IPv4 addresses per network interface.</p> </li> <li> <p>
+     * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
+     * private IPv6 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-supported</code> - Indicates whether the instance type
      * supports IPv6 (<code>true</code> | <code>false</code>).</p> </li> <li> <p>
      * <code>network-info.maximum-network-interfaces</code> - The maximum number of

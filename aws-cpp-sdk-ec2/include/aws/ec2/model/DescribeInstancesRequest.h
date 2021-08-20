@@ -202,7 +202,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -383,7 +383,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -564,7 +564,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -745,7 +745,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -926,7 +926,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -1107,7 +1107,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -1288,7 +1288,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value
@@ -1469,7 +1469,7 @@ namespace Model
      * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
      * <li> <p> <code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet for the
-     * instance.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * instance.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The key/value
      * combination of a tag assigned to the resource. Use the tag key in the filter
      * name and the tag value as the filter value. For example, to find all resources
      * that have a tag with the key <code>Owner</code> and the value

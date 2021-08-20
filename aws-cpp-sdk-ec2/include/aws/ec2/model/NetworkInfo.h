@@ -338,6 +338,31 @@ namespace Model
      */
     inline NetworkInfo& WithEfaInfo(EfaInfo&& value) { SetEfaInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline bool GetEncryptionInTransitSupported() const{ return m_encryptionInTransitSupported; }
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline bool EncryptionInTransitSupportedHasBeenSet() const { return m_encryptionInTransitSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline void SetEncryptionInTransitSupported(bool value) { m_encryptionInTransitSupportedHasBeenSet = true; m_encryptionInTransitSupported = value; }
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline NetworkInfo& WithEncryptionInTransitSupported(bool value) { SetEncryptionInTransitSupported(value); return *this;}
+
   private:
 
     Aws::String m_networkPerformance;
@@ -372,6 +397,9 @@ namespace Model
 
     EfaInfo m_efaInfo;
     bool m_efaInfoHasBeenSet;
+
+    bool m_encryptionInTransitSupported;
+    bool m_encryptionInTransitSupportedHasBeenSet;
   };
 
 } // namespace Model

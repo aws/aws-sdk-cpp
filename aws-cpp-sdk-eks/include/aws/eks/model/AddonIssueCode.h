@@ -22,7 +22,8 @@ namespace Model
     InsufficientNumberOfReplicas,
     ConfigurationConflict,
     AdmissionRequestDenied,
-    UnsupportedAddonModification
+    UnsupportedAddonModification,
+    K8sResourceNotFound
   };
 
 namespace AddonIssueCodeMapper

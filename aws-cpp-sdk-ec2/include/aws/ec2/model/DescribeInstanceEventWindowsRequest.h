@@ -132,7 +132,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -157,7 +157,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -182,7 +182,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -207,7 +207,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -232,7 +232,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -257,7 +257,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -282,7 +282,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify
@@ -307,7 +307,7 @@ namespace Model
      * associated with the specified tag key, regardless of the value.</p> </li> <li>
      * <p> <code>instance-tag-value</code> - The event windows associated with the
      * specified tag value, regardless of the key.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to
      * the event window. Use the tag key in the filter name and the tag value as the
      * filter value. For example, to find all resources that have a tag with the key
      * <code>Owner</code> and the value <code>CMX</code>, specify

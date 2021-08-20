@@ -104,7 +104,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -181,7 +181,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -258,7 +258,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -335,7 +335,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -412,7 +412,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -489,7 +489,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -566,7 +566,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
@@ -643,7 +643,7 @@ namespace Model
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * Instance request.</p> </li> <li> <p> <code>tag:&lt;key&gt;</code> - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
      * filter name and the tag value as the filter value. For example, to find all
      * resources that have a tag with the key <code>Owner</code> and the value
