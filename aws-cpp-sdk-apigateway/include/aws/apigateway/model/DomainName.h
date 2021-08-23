@@ -318,7 +318,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline const Aws::String& GetRegionalHostedZoneId() const{ return m_regionalHostedZoneId; }
 
@@ -328,7 +328,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline bool RegionalHostedZoneIdHasBeenSet() const { return m_regionalHostedZoneIdHasBeenSet; }
 
@@ -338,7 +338,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetRegionalHostedZoneId(const Aws::String& value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId = value; }
 
@@ -348,7 +348,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetRegionalHostedZoneId(Aws::String&& value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId = std::move(value); }
 
@@ -358,7 +358,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetRegionalHostedZoneId(const char* value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId.assign(value); }
 
@@ -368,7 +368,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline DomainName& WithRegionalHostedZoneId(const Aws::String& value) { SetRegionalHostedZoneId(value); return *this;}
 
@@ -378,7 +378,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline DomainName& WithRegionalHostedZoneId(Aws::String&& value) { SetRegionalHostedZoneId(std::move(value)); return *this;}
 
@@ -388,7 +388,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline DomainName& WithRegionalHostedZoneId(const char* value) { SetRegionalHostedZoneId(value); return *this;}
 
@@ -587,7 +587,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline const Aws::String& GetDistributionHostedZoneId() const{ return m_distributionHostedZoneId; }
 
@@ -598,7 +598,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline bool DistributionHostedZoneIdHasBeenSet() const { return m_distributionHostedZoneIdHasBeenSet; }
 
@@ -609,7 +609,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetDistributionHostedZoneId(const Aws::String& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = value; }
 
@@ -620,7 +620,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetDistributionHostedZoneId(Aws::String&& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = std::move(value); }
 
@@ -631,7 +631,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetDistributionHostedZoneId(const char* value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId.assign(value); }
 
@@ -642,7 +642,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline DomainName& WithDistributionHostedZoneId(const Aws::String& value) { SetDistributionHostedZoneId(value); return *this;}
 
@@ -653,7 +653,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline DomainName& WithDistributionHostedZoneId(Aws::String&& value) { SetDistributionHostedZoneId(std::move(value)); return *this;}
 
@@ -664,7 +664,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline DomainName& WithDistributionHostedZoneId(const char* value) { SetDistributionHostedZoneId(value); return *this;}
 

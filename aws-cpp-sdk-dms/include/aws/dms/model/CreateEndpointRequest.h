@@ -26,6 +26,7 @@
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/IBMDb2Settings.h>
 #include <aws/dms/model/DocDbSettings.h>
+#include <aws/dms/model/RedisSettings.h>
 #include <aws/dms/model/Tag.h>
 #include <utility>
 
@@ -542,8 +543,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -551,8 +553,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -560,8 +563,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -569,8 +573,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -578,8 +583,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -587,8 +593,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -596,8 +603,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -605,8 +613,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the connection parameters for
      * the endpoint.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1832,6 +1841,37 @@ namespace Model
     
     inline CreateEndpointRequest& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings in JSON format for the target Redis endpoint.</p>
+     */
+    inline const RedisSettings& GetRedisSettings() const{ return m_redisSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Redis endpoint.</p>
+     */
+    inline bool RedisSettingsHasBeenSet() const { return m_redisSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Redis endpoint.</p>
+     */
+    inline void SetRedisSettings(const RedisSettings& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Redis endpoint.</p>
+     */
+    inline void SetRedisSettings(RedisSettings&& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Redis endpoint.</p>
+     */
+    inline CreateEndpointRequest& WithRedisSettings(const RedisSettings& value) { SetRedisSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Redis endpoint.</p>
+     */
+    inline CreateEndpointRequest& WithRedisSettings(RedisSettings&& value) { SetRedisSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1929,6 +1969,9 @@ namespace Model
 
     DocDbSettings m_docDbSettings;
     bool m_docDbSettingsHasBeenSet;
+
+    RedisSettings m_redisSettings;
+    bool m_redisSettingsHasBeenSet;
   };
 
 } // namespace Model

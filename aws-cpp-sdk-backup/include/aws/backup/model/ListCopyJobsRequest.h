@@ -275,7 +275,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
@@ -286,7 +286,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
@@ -297,7 +297,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
@@ -308,7 +308,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
@@ -319,7 +319,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
@@ -330,7 +330,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
@@ -341,7 +341,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
@@ -352,7 +352,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 

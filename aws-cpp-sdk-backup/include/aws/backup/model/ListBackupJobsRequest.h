@@ -209,64 +209,64 @@ namespace Model
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetByBackupVaultName() const{ return m_byBackupVaultName; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline bool ByBackupVaultNameHasBeenSet() const { return m_byBackupVaultNameHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetByBackupVaultName(const Aws::String& value) { m_byBackupVaultNameHasBeenSet = true; m_byBackupVaultName = value; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetByBackupVaultName(Aws::String&& value) { m_byBackupVaultNameHasBeenSet = true; m_byBackupVaultName = std::move(value); }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetByBackupVaultName(const char* value) { m_byBackupVaultNameHasBeenSet = true; m_byBackupVaultName.assign(value); }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline ListBackupJobsRequest& WithByBackupVaultName(const Aws::String& value) { SetByBackupVaultName(value); return *this;}
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline ListBackupJobsRequest& WithByBackupVaultName(Aws::String&& value) { SetByBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline ListBackupJobsRequest& WithByBackupVaultName(const char* value) { SetByBackupVaultName(value); return *this;}
 
@@ -340,7 +340,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
@@ -351,7 +351,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
@@ -362,7 +362,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
@@ -373,7 +373,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
@@ -384,7 +384,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
@@ -395,7 +395,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
@@ -406,7 +406,7 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
@@ -417,72 +417,64 @@ namespace Model
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
      * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
      * Service</p> </li> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> <li>
-     * <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
+     * <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline const Aws::String& GetByAccountId() const{ return m_byAccountId; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline bool ByAccountIdHasBeenSet() const { return m_byAccountIdHasBeenSet; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline void SetByAccountId(const Aws::String& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = value; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline void SetByAccountId(Aws::String&& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = std::move(value); }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline void SetByAccountId(const char* value) { m_byAccountIdHasBeenSet = true; m_byAccountId.assign(value); }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(const Aws::String& value) { SetByAccountId(value); return *this;}
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(Aws::String&& value) { SetByAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p> <p>If used from an AWS Organizations
-     * management account, passing <code>*</code> returns all jobs across the
-     * organization.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
 

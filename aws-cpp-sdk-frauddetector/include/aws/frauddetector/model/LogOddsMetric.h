@@ -24,16 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>The logit metric details.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/LogitMetric">AWS
+   * <p>The log odds metric details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/LogOddsMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API LogitMetric
+  class AWS_FRAUDDETECTOR_API LogOddsMetric
   {
   public:
-    LogitMetric();
-    LogitMetric(Aws::Utils::Json::JsonView jsonValue);
-    LogitMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    LogOddsMetric();
+    LogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
+    LogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -65,17 +65,17 @@ namespace Model
     /**
      * <p>The name of the variable.</p>
      */
-    inline LogitMetric& WithVariableName(const Aws::String& value) { SetVariableName(value); return *this;}
+    inline LogOddsMetric& WithVariableName(const Aws::String& value) { SetVariableName(value); return *this;}
 
     /**
      * <p>The name of the variable.</p>
      */
-    inline LogitMetric& WithVariableName(Aws::String&& value) { SetVariableName(std::move(value)); return *this;}
+    inline LogOddsMetric& WithVariableName(Aws::String&& value) { SetVariableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the variable.</p>
      */
-    inline LogitMetric& WithVariableName(const char* value) { SetVariableName(value); return *this;}
+    inline LogOddsMetric& WithVariableName(const char* value) { SetVariableName(value); return *this;}
 
 
     /**
@@ -106,38 +106,46 @@ namespace Model
     /**
      * <p>The type of variable.</p>
      */
-    inline LogitMetric& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
+    inline LogOddsMetric& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
 
     /**
      * <p>The type of variable.</p>
      */
-    inline LogitMetric& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
+    inline LogOddsMetric& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
 
     /**
      * <p>The type of variable.</p>
      */
-    inline LogitMetric& WithVariableType(const char* value) { SetVariableType(value); return *this;}
+    inline LogOddsMetric& WithVariableType(const char* value) { SetVariableType(value); return *this;}
 
 
     /**
-     * <p>The relative importance of the variable.</p>
+     * <p>The relative importance of the variable. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model
+     * variable importance</a>.</p>
      */
     inline double GetVariableImportance() const{ return m_variableImportance; }
 
     /**
-     * <p>The relative importance of the variable.</p>
+     * <p>The relative importance of the variable. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model
+     * variable importance</a>.</p>
      */
     inline bool VariableImportanceHasBeenSet() const { return m_variableImportanceHasBeenSet; }
 
     /**
-     * <p>The relative importance of the variable.</p>
+     * <p>The relative importance of the variable. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model
+     * variable importance</a>.</p>
      */
     inline void SetVariableImportance(double value) { m_variableImportanceHasBeenSet = true; m_variableImportance = value; }
 
     /**
-     * <p>The relative importance of the variable.</p>
+     * <p>The relative importance of the variable. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model
+     * variable importance</a>.</p>
      */
-    inline LogitMetric& WithVariableImportance(double value) { SetVariableImportance(value); return *this;}
+    inline LogOddsMetric& WithVariableImportance(double value) { SetVariableImportance(value); return *this;}
 
   private:
 

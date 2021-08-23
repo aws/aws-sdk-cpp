@@ -13,6 +13,7 @@
 #include <aws/dms/model/ParquetVersionValue.h>
 #include <aws/dms/model/DatePartitionSequenceValue.h>
 #include <aws/dms/model/DatePartitionDelimiterValue.h>
+#include <aws/dms/model/CannedAclForObjectsValue.h>
 #include <utility>
 
 namespace Aws
@@ -2031,6 +2032,414 @@ namespace Model
      */
     inline S3Settings& WithCdcPath(const char* value) { SetCdcPath(value); return *this;}
 
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline const CannedAclForObjectsValue& GetCannedAclForObjects() const{ return m_cannedAclForObjects; }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline bool CannedAclForObjectsHasBeenSet() const { return m_cannedAclForObjectsHasBeenSet; }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline void SetCannedAclForObjects(const CannedAclForObjectsValue& value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = value; }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline void SetCannedAclForObjects(CannedAclForObjectsValue&& value) { m_cannedAclForObjectsHasBeenSet = true; m_cannedAclForObjects = std::move(value); }
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline S3Settings& WithCannedAclForObjects(const CannedAclForObjectsValue& value) { SetCannedAclForObjects(value); return *this;}
+
+    /**
+     * <p>A value that enables DMS to specify a predefined (canned) access control list
+     * for objects created in an Amazon S3 bucket as .csv or .parquet files. For more
+     * information about Amazon S3 canned ACLs, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+     * ACL</a> in the <i>Amazon S3 Developer Guide.</i> </p> <p>The default value is
+     * NONE. Valid values include NONE, PRIVATE, PUBLIC_READ, PUBLIC_READ_WRITE,
+     * AUTHENTICATED_READ, AWS_EXEC_READ, BUCKET_OWNER_READ, and
+     * BUCKET_OWNER_FULL_CONTROL.</p>
+     */
+    inline S3Settings& WithCannedAclForObjects(CannedAclForObjectsValue&& value) { SetCannedAclForObjects(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool GetAddColumnName() const{ return m_addColumnName; }
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool AddColumnNameHasBeenSet() const { return m_addColumnNameHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline void SetAddColumnName(bool value) { m_addColumnNameHasBeenSet = true; m_addColumnName = value; }
+
+    /**
+     * <p>An optional parameter that, when set to <code>true</code> or <code>y</code>,
+     * you can use to add column name information to the .csv output file.</p> <p>The
+     * default value is <code>false</code>. Valid values are <code>true</code>,
+     * <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline S3Settings& WithAddColumnName(bool value) { SetAddColumnName(value); return *this;}
+
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline int GetCdcMaxBatchInterval() const{ return m_cdcMaxBatchInterval; }
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline bool CdcMaxBatchIntervalHasBeenSet() const { return m_cdcMaxBatchIntervalHasBeenSet; }
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline void SetCdcMaxBatchInterval(int value) { m_cdcMaxBatchIntervalHasBeenSet = true; m_cdcMaxBatchInterval = value; }
+
+    /**
+     * <p>Maximum length of the interval, defined in seconds, after which to output a
+     * file to Amazon S3.</p> <p>When <code>CdcMaxBatchInterval</code> and
+     * <code>CdcMinFileSize</code> are both specified, the file write is triggered by
+     * whichever parameter condition is met first within an DMS CloudFormation
+     * template.</p> <p>The default value is 60 seconds.</p>
+     */
+    inline S3Settings& WithCdcMaxBatchInterval(int value) { SetCdcMaxBatchInterval(value); return *this;}
+
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline int GetCdcMinFileSize() const{ return m_cdcMinFileSize; }
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline bool CdcMinFileSizeHasBeenSet() const { return m_cdcMinFileSizeHasBeenSet; }
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline void SetCdcMinFileSize(int value) { m_cdcMinFileSizeHasBeenSet = true; m_cdcMinFileSize = value; }
+
+    /**
+     * <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon
+     * S3.</p> <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code>
+     * are both specified, the file write is triggered by whichever parameter condition
+     * is met first within an DMS CloudFormation template.</p> <p>The default value is
+     * 32 MB.</p>
+     */
+    inline S3Settings& WithCdcMinFileSize(int value) { SetCdcMinFileSize(value); return *this;}
+
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline const Aws::String& GetCsvNullValue() const{ return m_csvNullValue; }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline bool CsvNullValueHasBeenSet() const { return m_csvNullValueHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline void SetCsvNullValue(const Aws::String& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = value; }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline void SetCsvNullValue(Aws::String&& value) { m_csvNullValueHasBeenSet = true; m_csvNullValue = std::move(value); }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline void SetCsvNullValue(const char* value) { m_csvNullValueHasBeenSet = true; m_csvNullValue.assign(value); }
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline S3Settings& WithCsvNullValue(const Aws::String& value) { SetCsvNullValue(value); return *this;}
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline S3Settings& WithCsvNullValue(Aws::String&& value) { SetCsvNullValue(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional parameter that specifies how DMS treats null values. While
+     * handling the null value, you can use this parameter to pass a user-defined
+     * string as null when writing to the target. For example, when target columns are
+     * not nullable, you can use this option to differentiate between the empty string
+     * value and the null value. So, if you set this parameter value to the empty
+     * string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.</p> <p>The default value is <code>NULL</code>. Valid values
+     * include any valid string.</p>
+     */
+    inline S3Settings& WithCsvNullValue(const char* value) { SetCsvNullValue(value); return *this;}
+
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline int GetIgnoreHeaderRows() const{ return m_ignoreHeaderRows; }
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline bool IgnoreHeaderRowsHasBeenSet() const { return m_ignoreHeaderRowsHasBeenSet; }
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline void SetIgnoreHeaderRows(int value) { m_ignoreHeaderRowsHasBeenSet = true; m_ignoreHeaderRows = value; }
+
+    /**
+     * <p>When this value is set to 1, DMS ignores the first row header in a .csv file.
+     * A value of 1 turns on the feature; a value of 0 turns off the feature.</p>
+     * <p>The default is 0.</p>
+     */
+    inline S3Settings& WithIgnoreHeaderRows(int value) { SetIgnoreHeaderRows(value); return *this;}
+
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline int GetMaxFileSize() const{ return m_maxFileSize; }
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
+
+    /**
+     * <p>A value that specifies the maximum size (in KB) of any .csv file to be
+     * created while migrating to an S3 target during full load.</p> <p>The default
+     * value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+     */
+    inline S3Settings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
+
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool GetRfc4180() const{ return m_rfc4180; }
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline bool Rfc4180HasBeenSet() const { return m_rfc4180HasBeenSet; }
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline void SetRfc4180(bool value) { m_rfc4180HasBeenSet = true; m_rfc4180 = value; }
+
+    /**
+     * <p>For an S3 source, when this value is set to <code>true</code> or
+     * <code>y</code>, each leading double quotation mark has to be followed by an
+     * ending double quotation mark. This formatting complies with RFC 4180. When this
+     * value is set to <code>false</code> or <code>n</code>, string literals are copied
+     * to the target as is. In this case, a delimiter (row or column) signals the end
+     * of the field. Thus, you can't use a delimiter as part of the string, because it
+     * signals the end of the value.</p> <p>For an S3 target, an optional parameter
+     * used to set behavior to comply with RFC 4180 for data migrated to Amazon S3
+     * using .csv file format only. When this value is set to <code>true</code> or
+     * <code>y</code> using Amazon S3 as a target, if the data has quotation marks or
+     * newline characters in it, DMS encloses the entire column with an additional pair
+     * of double quotation marks ("). Every quotation mark within the data is repeated
+     * twice.</p> <p>The default value is <code>true</code>. Valid values include
+     * <code>true</code>, <code>false</code>, <code>y</code>, and <code>n</code>.</p>
+     */
+    inline S3Settings& WithRfc4180(bool value) { SetRfc4180(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
@@ -2116,6 +2525,30 @@ namespace Model
 
     Aws::String m_cdcPath;
     bool m_cdcPathHasBeenSet;
+
+    CannedAclForObjectsValue m_cannedAclForObjects;
+    bool m_cannedAclForObjectsHasBeenSet;
+
+    bool m_addColumnName;
+    bool m_addColumnNameHasBeenSet;
+
+    int m_cdcMaxBatchInterval;
+    bool m_cdcMaxBatchIntervalHasBeenSet;
+
+    int m_cdcMinFileSize;
+    bool m_cdcMinFileSizeHasBeenSet;
+
+    Aws::String m_csvNullValue;
+    bool m_csvNullValueHasBeenSet;
+
+    int m_ignoreHeaderRows;
+    bool m_ignoreHeaderRowsHasBeenSet;
+
+    int m_maxFileSize;
+    bool m_maxFileSizeHasBeenSet;
+
+    bool m_rfc4180;
+    bool m_rfc4180HasBeenSet;
   };
 
 } // namespace Model

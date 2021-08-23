@@ -86,105 +86,105 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetTargetBackupVaultName() const{ return m_targetBackupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline bool TargetBackupVaultNameHasBeenSet() const { return m_targetBackupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetTargetBackupVaultName(const Aws::String& value) { m_targetBackupVaultNameHasBeenSet = true; m_targetBackupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetTargetBackupVaultName(Aws::String&& value) { m_targetBackupVaultNameHasBeenSet = true; m_targetBackupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetTargetBackupVaultName(const char* value) { m_targetBackupVaultNameHasBeenSet = true; m_targetBackupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline BackupRuleInput& WithTargetBackupVaultName(const Aws::String& value) { SetTargetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline BackupRuleInput& WithTargetBackupVaultName(Aws::String&& value) { SetTargetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline BackupRuleInput& WithTargetBackupVaultName(const char* value) { SetTargetBackupVaultName(value); return *this;}
 
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline BackupRuleInput& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline BackupRuleInput& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     * <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
      */
     inline BackupRuleInput& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
@@ -216,32 +216,32 @@ namespace Model
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by Backup. This value is optional.</p>
      */
     inline long long GetCompletionWindowMinutes() const{ return m_completionWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by Backup. This value is optional.</p>
      */
     inline bool CompletionWindowMinutesHasBeenSet() const { return m_completionWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by Backup. This value is optional.</p>
      */
     inline void SetCompletionWindowMinutes(long long value) { m_completionWindowMinutesHasBeenSet = true; m_completionWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
-     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
+     * be completed or it will be canceled by Backup. This value is optional.</p>
      */
     inline BackupRuleInput& WithCompletionWindowMinutes(long long value) { SetCompletionWindowMinutes(value); return *this;}
 
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -253,7 +253,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -265,7 +265,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -277,7 +277,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -289,7 +289,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -301,7 +301,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -441,30 +441,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
-     * Backup to create continuous backups capable of point-in-time restore (PITR).
-     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     * <p>Specifies whether Backup creates continuous backups. True causes Backup to
+     * create continuous backups capable of point-in-time restore (PITR). False (or not
+     * specified) causes Backup to create snapshot backups.</p>
      */
     inline bool GetEnableContinuousBackup() const{ return m_enableContinuousBackup; }
 
     /**
-     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
-     * Backup to create continuous backups capable of point-in-time restore (PITR).
-     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     * <p>Specifies whether Backup creates continuous backups. True causes Backup to
+     * create continuous backups capable of point-in-time restore (PITR). False (or not
+     * specified) causes Backup to create snapshot backups.</p>
      */
     inline bool EnableContinuousBackupHasBeenSet() const { return m_enableContinuousBackupHasBeenSet; }
 
     /**
-     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
-     * Backup to create continuous backups capable of point-in-time restore (PITR).
-     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     * <p>Specifies whether Backup creates continuous backups. True causes Backup to
+     * create continuous backups capable of point-in-time restore (PITR). False (or not
+     * specified) causes Backup to create snapshot backups.</p>
      */
     inline void SetEnableContinuousBackup(bool value) { m_enableContinuousBackupHasBeenSet = true; m_enableContinuousBackup = value; }
 
     /**
-     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
-     * Backup to create continuous backups capable of point-in-time restore (PITR).
-     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     * <p>Specifies whether Backup creates continuous backups. True causes Backup to
+     * create continuous backups capable of point-in-time restore (PITR). False (or not
+     * specified) causes Backup to create snapshot backups.</p>
      */
     inline BackupRuleInput& WithEnableContinuousBackup(bool value) { SetEnableContinuousBackup(value); return *this;}
 

@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/frauddetector/model/LogitMetric.h>
+#include <aws/frauddetector/model/LogOddsMetric.h>
 #include <utility>
 
 namespace Aws
@@ -41,47 +41,47 @@ namespace Model
     /**
      * <p>List of variable metrics.</p>
      */
-    inline const Aws::Vector<LogitMetric>& GetLogitMetrics() const{ return m_logitMetrics; }
+    inline const Aws::Vector<LogOddsMetric>& GetLogOddsMetrics() const{ return m_logOddsMetrics; }
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline bool LogitMetricsHasBeenSet() const { return m_logitMetricsHasBeenSet; }
+    inline bool LogOddsMetricsHasBeenSet() const { return m_logOddsMetricsHasBeenSet; }
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline void SetLogitMetrics(const Aws::Vector<LogitMetric>& value) { m_logitMetricsHasBeenSet = true; m_logitMetrics = value; }
+    inline void SetLogOddsMetrics(const Aws::Vector<LogOddsMetric>& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = value; }
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline void SetLogitMetrics(Aws::Vector<LogitMetric>&& value) { m_logitMetricsHasBeenSet = true; m_logitMetrics = std::move(value); }
+    inline void SetLogOddsMetrics(Aws::Vector<LogOddsMetric>&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics = std::move(value); }
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline VariableImportanceMetrics& WithLogitMetrics(const Aws::Vector<LogitMetric>& value) { SetLogitMetrics(value); return *this;}
+    inline VariableImportanceMetrics& WithLogOddsMetrics(const Aws::Vector<LogOddsMetric>& value) { SetLogOddsMetrics(value); return *this;}
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline VariableImportanceMetrics& WithLogitMetrics(Aws::Vector<LogitMetric>&& value) { SetLogitMetrics(std::move(value)); return *this;}
+    inline VariableImportanceMetrics& WithLogOddsMetrics(Aws::Vector<LogOddsMetric>&& value) { SetLogOddsMetrics(std::move(value)); return *this;}
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline VariableImportanceMetrics& AddLogitMetrics(const LogitMetric& value) { m_logitMetricsHasBeenSet = true; m_logitMetrics.push_back(value); return *this; }
+    inline VariableImportanceMetrics& AddLogOddsMetrics(const LogOddsMetric& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.push_back(value); return *this; }
 
     /**
      * <p>List of variable metrics.</p>
      */
-    inline VariableImportanceMetrics& AddLogitMetrics(LogitMetric&& value) { m_logitMetricsHasBeenSet = true; m_logitMetrics.push_back(std::move(value)); return *this; }
+    inline VariableImportanceMetrics& AddLogOddsMetrics(LogOddsMetric&& value) { m_logOddsMetricsHasBeenSet = true; m_logOddsMetrics.push_back(std::move(value)); return *this; }
 
   private:
 
-    Aws::Vector<LogitMetric> m_logitMetrics;
-    bool m_logitMetricsHasBeenSet;
+    Aws::Vector<LogOddsMetric> m_logOddsMetrics;
+    bool m_logOddsMetricsHasBeenSet;
   };
 
 } // namespace Model

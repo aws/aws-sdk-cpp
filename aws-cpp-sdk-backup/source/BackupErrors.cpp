@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/backup/BackupErrors.h>
 #include <aws/backup/model/ServiceUnavailableException.h>
+#include <aws/backup/model/ConflictException.h>
 #include <aws/backup/model/DependencyFailureException.h>
 #include <aws/backup/model/ResourceNotFoundException.h>
 #include <aws/backup/model/LimitExceededException.h>
@@ -29,6 +30,12 @@ template<> AWS_BACKUP_API ServiceUnavailableException BackupError::GetModeledErr
 {
   assert(this->GetErrorType() == BackupErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_BACKUP_API ConflictException BackupError::GetModeledError()
+{
+  assert(this->GetErrorType() == BackupErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_BACKUP_API DependencyFailureException BackupError::GetModeledError()
@@ -82,6 +89,7 @@ template<> AWS_BACKUP_API InvalidRequestException BackupError::GetModeledError()
 namespace BackupErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
@@ -94,7 +102,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DEPENDENCY_FAILURE_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::CONFLICT), false);
+  }
+  else if (hashCode == DEPENDENCY_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::DEPENDENCY_FAILURE), false);
   }

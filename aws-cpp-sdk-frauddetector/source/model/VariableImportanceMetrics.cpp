@@ -19,26 +19,26 @@ namespace Model
 {
 
 VariableImportanceMetrics::VariableImportanceMetrics() : 
-    m_logitMetricsHasBeenSet(false)
+    m_logOddsMetricsHasBeenSet(false)
 {
 }
 
 VariableImportanceMetrics::VariableImportanceMetrics(JsonView jsonValue) : 
-    m_logitMetricsHasBeenSet(false)
+    m_logOddsMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 VariableImportanceMetrics& VariableImportanceMetrics::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("LogitMetrics"))
+  if(jsonValue.ValueExists("logOddsMetrics"))
   {
-    Array<JsonView> logitMetricsJsonList = jsonValue.GetArray("LogitMetrics");
-    for(unsigned logitMetricsIndex = 0; logitMetricsIndex < logitMetricsJsonList.GetLength(); ++logitMetricsIndex)
+    Array<JsonView> logOddsMetricsJsonList = jsonValue.GetArray("logOddsMetrics");
+    for(unsigned logOddsMetricsIndex = 0; logOddsMetricsIndex < logOddsMetricsJsonList.GetLength(); ++logOddsMetricsIndex)
     {
-      m_logitMetrics.push_back(logitMetricsJsonList[logitMetricsIndex].AsObject());
+      m_logOddsMetrics.push_back(logOddsMetricsJsonList[logOddsMetricsIndex].AsObject());
     }
-    m_logitMetricsHasBeenSet = true;
+    m_logOddsMetricsHasBeenSet = true;
   }
 
   return *this;
@@ -48,14 +48,14 @@ JsonValue VariableImportanceMetrics::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_logitMetricsHasBeenSet)
+  if(m_logOddsMetricsHasBeenSet)
   {
-   Array<JsonValue> logitMetricsJsonList(m_logitMetrics.size());
-   for(unsigned logitMetricsIndex = 0; logitMetricsIndex < logitMetricsJsonList.GetLength(); ++logitMetricsIndex)
+   Array<JsonValue> logOddsMetricsJsonList(m_logOddsMetrics.size());
+   for(unsigned logOddsMetricsIndex = 0; logOddsMetricsIndex < logOddsMetricsJsonList.GetLength(); ++logOddsMetricsIndex)
    {
-     logitMetricsJsonList[logitMetricsIndex].AsObject(m_logitMetrics[logitMetricsIndex].Jsonize());
+     logOddsMetricsJsonList[logOddsMetricsIndex].AsObject(m_logOddsMetrics[logOddsMetricsIndex].Jsonize());
    }
-   payload.WithArray("LogitMetrics", std::move(logitMetricsJsonList));
+   payload.WithArray("logOddsMetrics", std::move(logOddsMetricsJsonList));
 
   }
 

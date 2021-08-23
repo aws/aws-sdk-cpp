@@ -25,6 +25,7 @@
 #include <aws/glue/model/BatchDeletePartitionRequest.h>
 #include <aws/glue/model/BatchDeleteTableRequest.h>
 #include <aws/glue/model/BatchDeleteTableVersionRequest.h>
+#include <aws/glue/model/BatchGetBlueprintsRequest.h>
 #include <aws/glue/model/BatchGetCrawlersRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
 #include <aws/glue/model/BatchGetJobsRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/glue/model/BatchUpdatePartitionRequest.h>
 #include <aws/glue/model/CancelMLTaskRunRequest.h>
 #include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
+#include <aws/glue/model/CreateBlueprintRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/CreateConnectionRequest.h>
 #include <aws/glue/model/CreateCrawlerRequest.h>
@@ -52,6 +54,7 @@
 #include <aws/glue/model/CreateTriggerRequest.h>
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
 #include <aws/glue/model/CreateWorkflowRequest.h>
+#include <aws/glue/model/DeleteBlueprintRequest.h>
 #include <aws/glue/model/DeleteClassifierRequest.h>
 #include <aws/glue/model/DeleteColumnStatisticsForPartitionRequest.h>
 #include <aws/glue/model/DeleteColumnStatisticsForTableRequest.h>
@@ -73,6 +76,9 @@
 #include <aws/glue/model/DeleteTriggerRequest.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionRequest.h>
 #include <aws/glue/model/DeleteWorkflowRequest.h>
+#include <aws/glue/model/GetBlueprintRequest.h>
+#include <aws/glue/model/GetBlueprintRunRequest.h>
+#include <aws/glue/model/GetBlueprintRunsRequest.h>
 #include <aws/glue/model/GetCatalogImportStatusRequest.h>
 #include <aws/glue/model/GetClassifierRequest.h>
 #include <aws/glue/model/GetClassifiersRequest.h>
@@ -126,6 +132,7 @@
 #include <aws/glue/model/GetWorkflowRunPropertiesRequest.h>
 #include <aws/glue/model/GetWorkflowRunsRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
+#include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
@@ -145,6 +152,7 @@
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
 #include <aws/glue/model/ResumeWorkflowRunRequest.h>
 #include <aws/glue/model/SearchTablesRequest.h>
+#include <aws/glue/model/StartBlueprintRunRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
 #include <aws/glue/model/StartCrawlerScheduleRequest.h>
 #include <aws/glue/model/StartExportLabelsTaskRunRequest.h>
@@ -160,6 +168,7 @@
 #include <aws/glue/model/StopWorkflowRunRequest.h>
 #include <aws/glue/model/TagResourceRequest.h>
 #include <aws/glue/model/UntagResourceRequest.h>
+#include <aws/glue/model/UpdateBlueprintRequest.h>
 #include <aws/glue/model/UpdateClassifierRequest.h>
 #include <aws/glue/model/UpdateColumnStatisticsForPartitionRequest.h>
 #include <aws/glue/model/UpdateColumnStatisticsForTableRequest.h>
@@ -369,6 +378,30 @@ void GlueClient::BatchDeleteTableVersionAsync(const BatchDeleteTableVersionReque
 void GlueClient::BatchDeleteTableVersionAsyncHelper(const BatchDeleteTableVersionRequest& request, const BatchDeleteTableVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDeleteTableVersion(request), context);
+}
+
+BatchGetBlueprintsOutcome GlueClient::BatchGetBlueprints(const BatchGetBlueprintsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetBlueprintsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetBlueprintsOutcomeCallable GlueClient::BatchGetBlueprintsCallable(const BatchGetBlueprintsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetBlueprints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchGetBlueprintsAsync(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetBlueprintsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchGetBlueprintsAsyncHelper(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetBlueprints(request), context);
 }
 
 BatchGetCrawlersOutcome GlueClient::BatchGetCrawlers(const BatchGetCrawlersRequest& request) const
@@ -609,6 +642,30 @@ void GlueClient::CheckSchemaVersionValidityAsync(const CheckSchemaVersionValidit
 void GlueClient::CheckSchemaVersionValidityAsyncHelper(const CheckSchemaVersionValidityRequest& request, const CheckSchemaVersionValidityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CheckSchemaVersionValidity(request), context);
+}
+
+CreateBlueprintOutcome GlueClient::CreateBlueprint(const CreateBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBlueprintOutcomeCallable GlueClient::CreateBlueprintCallable(const CreateBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateBlueprintAsyncHelper(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBlueprint(request), context);
 }
 
 CreateClassifierOutcome GlueClient::CreateClassifier(const CreateClassifierRequest& request) const
@@ -1017,6 +1074,30 @@ void GlueClient::CreateWorkflowAsync(const CreateWorkflowRequest& request, const
 void GlueClient::CreateWorkflowAsyncHelper(const CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateWorkflow(request), context);
+}
+
+DeleteBlueprintOutcome GlueClient::DeleteBlueprint(const DeleteBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBlueprintOutcomeCallable GlueClient::DeleteBlueprintCallable(const DeleteBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteBlueprintAsync(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteBlueprintAsyncHelper(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBlueprint(request), context);
 }
 
 DeleteClassifierOutcome GlueClient::DeleteClassifier(const DeleteClassifierRequest& request) const
@@ -1521,6 +1602,78 @@ void GlueClient::DeleteWorkflowAsync(const DeleteWorkflowRequest& request, const
 void GlueClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteWorkflow(request), context);
+}
+
+GetBlueprintOutcome GlueClient::GetBlueprint(const GetBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBlueprintOutcomeCallable GlueClient::GetBlueprintCallable(const GetBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetBlueprintAsync(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetBlueprintAsyncHelper(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlueprint(request), context);
+}
+
+GetBlueprintRunOutcome GlueClient::GetBlueprintRun(const GetBlueprintRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBlueprintRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBlueprintRunOutcomeCallable GlueClient::GetBlueprintRunCallable(const GetBlueprintRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprintRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetBlueprintRunAsync(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetBlueprintRunAsyncHelper(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlueprintRun(request), context);
+}
+
+GetBlueprintRunsOutcome GlueClient::GetBlueprintRuns(const GetBlueprintRunsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBlueprintRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBlueprintRunsOutcomeCallable GlueClient::GetBlueprintRunsCallable(const GetBlueprintRunsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprintRuns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetBlueprintRunsAsync(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintRunsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetBlueprintRunsAsyncHelper(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlueprintRuns(request), context);
 }
 
 GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalogImportStatusRequest& request) const
@@ -2795,6 +2948,30 @@ void GlueClient::ImportCatalogToGlueAsyncHelper(const ImportCatalogToGlueRequest
   handler(this, request, ImportCatalogToGlue(request), context);
 }
 
+ListBlueprintsOutcome GlueClient::ListBlueprints(const ListBlueprintsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListBlueprintsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBlueprintsOutcomeCallable GlueClient::ListBlueprintsCallable(const ListBlueprintsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBlueprints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListBlueprintsAsync(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBlueprintsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListBlueprintsAsyncHelper(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBlueprints(request), context);
+}
+
 ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3251,6 +3428,30 @@ void GlueClient::SearchTablesAsyncHelper(const SearchTablesRequest& request, con
   handler(this, request, SearchTables(request), context);
 }
 
+StartBlueprintRunOutcome GlueClient::StartBlueprintRun(const StartBlueprintRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartBlueprintRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartBlueprintRunOutcomeCallable GlueClient::StartBlueprintRunCallable(const StartBlueprintRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBlueprintRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBlueprintRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StartBlueprintRunAsync(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBlueprintRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::StartBlueprintRunAsyncHelper(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBlueprintRun(request), context);
+}
+
 StartCrawlerOutcome GlueClient::StartCrawler(const StartCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3609,6 +3810,30 @@ void GlueClient::UntagResourceAsync(const UntagResourceRequest& request, const U
 void GlueClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBlueprintOutcomeCallable GlueClient::UpdateBlueprintCallable(const UpdateBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateBlueprintAsync(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::UpdateBlueprintAsyncHelper(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBlueprint(request), context);
 }
 
 UpdateClassifierOutcome GlueClient::UpdateClassifier(const UpdateClassifierRequest& request) const

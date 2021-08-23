@@ -26,7 +26,8 @@ CrossRegionCopyRule::CrossRegionCopyRule() :
     m_cmkArnHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
-    m_retainRuleHasBeenSet(false)
+    m_retainRuleHasBeenSet(false),
+    m_deprecateRuleHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue) :
     m_cmkArnHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
-    m_retainRuleHasBeenSet(false)
+    m_retainRuleHasBeenSet(false),
+    m_deprecateRuleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ CrossRegionCopyRule& CrossRegionCopyRule::operator =(JsonView jsonValue)
     m_retainRuleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeprecateRule"))
+  {
+    m_deprecateRule = jsonValue.GetObject("DeprecateRule");
+
+    m_deprecateRuleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +136,12 @@ JsonValue CrossRegionCopyRule::Jsonize() const
   if(m_retainRuleHasBeenSet)
   {
    payload.WithObject("RetainRule", m_retainRule.Jsonize());
+
+  }
+
+  if(m_deprecateRuleHasBeenSet)
+  {
+   payload.WithObject("DeprecateRule", m_deprecateRule.Jsonize());
 
   }
 

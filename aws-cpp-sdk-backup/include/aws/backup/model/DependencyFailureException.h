@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A dependent AWS service or resource returned an error to the AWS Backup
-   * service, and the action cannot be completed.</p><p><h3>See Also:</h3>   <a
+   * <p>A dependent Amazon Web Services service or resource returned an error to the
+   * Backup service, and the action cannot be completed.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DependencyFailureException">AWS
    * API Reference</a></p>
    */

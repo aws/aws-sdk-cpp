@@ -385,30 +385,42 @@ namespace Model
 
 
     /**
-     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
-     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
-     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     * <p>Set this optional parameter to <code>true</code> to avoid adding a '0x'
+     * prefix to raw data in hexadecimal format. For example, by default, DMS adds a
+     * '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle
+     * source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint
+     * setting to enable migration of RAW data type columns without adding the '0x'
+     * prefix.</p>
      */
     inline bool GetNoHexPrefix() const{ return m_noHexPrefix; }
 
     /**
-     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
-     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
-     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     * <p>Set this optional parameter to <code>true</code> to avoid adding a '0x'
+     * prefix to raw data in hexadecimal format. For example, by default, DMS adds a
+     * '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle
+     * source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint
+     * setting to enable migration of RAW data type columns without adding the '0x'
+     * prefix.</p>
      */
     inline bool NoHexPrefixHasBeenSet() const { return m_noHexPrefixHasBeenSet; }
 
     /**
-     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
-     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
-     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     * <p>Set this optional parameter to <code>true</code> to avoid adding a '0x'
+     * prefix to raw data in hexadecimal format. For example, by default, DMS adds a
+     * '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle
+     * source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint
+     * setting to enable migration of RAW data type columns without adding the '0x'
+     * prefix.</p>
      */
     inline void SetNoHexPrefix(bool value) { m_noHexPrefixHasBeenSet = true; m_noHexPrefix = value; }
 
     /**
-     * <p>If this attribute is Y, it allows hexadecimal values that don't have the
-     * <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is
-     * N, all hexadecimal values include this prefix when migrated to Kinesis.</p>
+     * <p>Set this optional parameter to <code>true</code> to avoid adding a '0x'
+     * prefix to raw data in hexadecimal format. For example, by default, DMS adds a
+     * '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle
+     * source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint
+     * setting to enable migration of RAW data type columns without adding the '0x'
+     * prefix.</p>
      */
     inline KinesisSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
 

@@ -479,22 +479,40 @@ namespace Model
     inline CreateTriggerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
     inline const EventBatchingCondition& GetEventBatchingCondition() const{ return m_eventBatchingCondition; }
 
-    
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
     inline bool EventBatchingConditionHasBeenSet() const { return m_eventBatchingConditionHasBeenSet; }
 
-    
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
     inline void SetEventBatchingCondition(const EventBatchingCondition& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = value; }
 
-    
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
     inline void SetEventBatchingCondition(EventBatchingCondition&& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = std::move(value); }
 
-    
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
     inline CreateTriggerRequest& WithEventBatchingCondition(const EventBatchingCondition& value) { SetEventBatchingCondition(value); return *this;}
 
-    
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
     inline CreateTriggerRequest& WithEventBatchingCondition(EventBatchingCondition&& value) { SetEventBatchingCondition(std::move(value)); return *this;}
 
   private:

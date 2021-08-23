@@ -10,6 +10,7 @@
 #include <aws/dlm/model/CreateRule.h>
 #include <aws/dlm/model/RetainRule.h>
 #include <aws/dlm/model/FastRestoreRule.h>
+#include <aws/dlm/model/DeprecateRule.h>
 #include <aws/dlm/model/Tag.h>
 #include <aws/dlm/model/CrossRegionCopyRule.h>
 #include <aws/dlm/model/ShareRule.h>
@@ -113,49 +114,49 @@ namespace Model
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsToAdd() const{ return m_tagsToAdd; }
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(const Aws::Vector<Tag>& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = value; }
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline void SetTagsToAdd(Aws::Vector<Tag>&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::move(value); }
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline Schedule& WithTagsToAdd(const Aws::Vector<Tag>& value) { SetTagsToAdd(value); return *this;}
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline Schedule& WithTagsToAdd(Aws::Vector<Tag>&& value) { SetTagsToAdd(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline Schedule& AddTagsToAdd(const Tag& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
-     * addition to the AWS-added lifecycle tags.</p>
+     * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
     inline Schedule& AddTagsToAdd(Tag&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
 
@@ -400,44 +401,75 @@ namespace Model
 
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline const Aws::Vector<ShareRule>& GetShareRules() const{ return m_shareRules; }
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline bool ShareRulesHasBeenSet() const { return m_shareRulesHasBeenSet; }
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline void SetShareRules(const Aws::Vector<ShareRule>& value) { m_shareRulesHasBeenSet = true; m_shareRules = value; }
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline void SetShareRules(Aws::Vector<ShareRule>&& value) { m_shareRulesHasBeenSet = true; m_shareRules = std::move(value); }
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline Schedule& WithShareRules(const Aws::Vector<ShareRule>& value) { SetShareRules(value); return *this;}
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline Schedule& WithShareRules(Aws::Vector<ShareRule>&& value) { SetShareRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline Schedule& AddShareRules(const ShareRule& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(value); return *this; }
 
     /**
-     * <p>The rule for sharing snapshots with other AWS accounts.</p>
+     * <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
      */
     inline Schedule& AddShareRules(ShareRule&& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The AMI deprecation rule for the schedule.</p>
+     */
+    inline const DeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
+
+    /**
+     * <p>The AMI deprecation rule for the schedule.</p>
+     */
+    inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
+
+    /**
+     * <p>The AMI deprecation rule for the schedule.</p>
+     */
+    inline void SetDeprecateRule(const DeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
+
+    /**
+     * <p>The AMI deprecation rule for the schedule.</p>
+     */
+    inline void SetDeprecateRule(DeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
+
+    /**
+     * <p>The AMI deprecation rule for the schedule.</p>
+     */
+    inline Schedule& WithDeprecateRule(const DeprecateRule& value) { SetDeprecateRule(value); return *this;}
+
+    /**
+     * <p>The AMI deprecation rule for the schedule.</p>
+     */
+    inline Schedule& WithDeprecateRule(DeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 
   private:
 
@@ -467,6 +499,9 @@ namespace Model
 
     Aws::Vector<ShareRule> m_shareRules;
     bool m_shareRulesHasBeenSet;
+
+    DeprecateRule m_deprecateRule;
+    bool m_deprecateRuleHasBeenSet;
   };
 
 } // namespace Model

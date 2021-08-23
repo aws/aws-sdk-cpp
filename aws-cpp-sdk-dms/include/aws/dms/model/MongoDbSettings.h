@@ -558,8 +558,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -567,8 +567,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -576,8 +576,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -585,8 +585,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -594,8 +594,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -603,8 +603,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline MongoDbSettings& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -612,8 +612,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline MongoDbSettings& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -621,8 +621,8 @@ namespace Model
      * <p>The KMS key identifier that is used to encrypt the content on the replication
      * instance. If you don't specify a value for the <code>KmsKeyId</code> parameter,
      * then DMS uses your default encryption key. KMS creates the default encryption
-     * key for your account. Your account has a different default encryption key for
-     * each Region.</p>
+     * key for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default encryption key for each Amazon Web Services Region.</p>
      */
     inline MongoDbSettings& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

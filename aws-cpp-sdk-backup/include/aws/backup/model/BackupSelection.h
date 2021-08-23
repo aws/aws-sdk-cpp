@@ -82,57 +82,57 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline BackupSelection& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline BackupSelection& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when backing up
-     * the target resource; for example,
+     * <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+     * target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline BackupSelection& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}

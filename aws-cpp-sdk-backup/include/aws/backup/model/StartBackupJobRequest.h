@@ -37,64 +37,64 @@ namespace Model
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline StartBackupJobRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline StartBackupJobRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
      * identified by names that are unique to the account used to create them and the
-     * AWS Region where they are created. They consist of lowercase letters, numbers,
-     * and hyphens.</p>
+     * Amazon Web Services Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
      */
     inline StartBackupJobRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
 
@@ -198,50 +198,66 @@ namespace Model
 
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline StartBackupJobRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline StartBackupJobRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
-     * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>.</p>
+     * <p>A customer-chosen string that you can use to distinguish between otherwise
+     * identical calls to <code>StartBackupJob</code>. Retrying a successful request
+     * with the same idempotency token results in a success message with no action
+     * taken.</p>
      */
     inline StartBackupJobRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
@@ -314,7 +330,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -326,7 +342,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -338,7 +354,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -350,7 +366,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -362,7 +378,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -374,7 +390,7 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup will transition and expire backups
+     * storage and when it expires. Backup will transition and expire backups
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
@@ -466,118 +482,131 @@ namespace Model
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const{ return m_backupOptions; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline bool BackupOptionsHasBeenSet() const { return m_backupOptionsHasBeenSet; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline void SetBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = value; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline void SetBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::move(value); }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& WithBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetBackupOptions(value); return *this;}
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& WithBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetBackupOptions(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(const Aws::String& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(const Aws::String& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(const char* key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
-     * available for Windows VSS backup jobs.</p> <p>Valid values: Set to
-     * <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and
-     * create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular
-     * backup. The WindowsVSS option is not enabled by default.</p>
+     * available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p> <p>Valid
+     * values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+     * <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+     * <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p>
      */
     inline StartBackupJobRequest& AddBackupOptions(const char* key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
 

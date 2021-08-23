@@ -41,80 +41,80 @@ namespace Model
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline AdvancedBackupSetting& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline AdvancedBackupSetting& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies an object containing resource type and backup options. The only
-     * supported resource type is Amazon EC2 instances with Windows VSS. For an
-     * CloudFormation example, see the <a
+     * supported resource type is Amazon EC2 instances with Windows Volume Shadow Copy
+     * Service (VSS). For a CloudFormation example, see the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
-     * CloudFormation template to enable Windows VSS</a> in the <i>AWS Backup User
+     * CloudFormation template to enable Windows VSS</a> in the <i>Backup User
      * Guide</i>.</p> <p>Valid values: <code>EC2</code>.</p>
      */
     inline AdvancedBackupSetting& WithResourceType(const char* value) { SetResourceType(value); return *this;}
@@ -123,12 +123,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -137,12 +137,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -151,12 +151,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -165,12 +165,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -179,12 +179,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -193,12 +193,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -207,12 +207,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -221,12 +221,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -235,12 +235,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -249,12 +249,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -263,12 +263,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -277,12 +277,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */
@@ -291,12 +291,12 @@ namespace Model
     /**
      * <p>Specifies the backup option for a selected resource. This option is only
      * available for Windows VSS backup jobs.</p> <p>Valid values: </p> <p>Set to
-     * <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option and
-     * create a VSS Windows backup. </p> <p>Set to <code>"WindowsVSS":"disabled"</code>
-     * to create a regular backup. The WindowsVSS option is not enabled by default.</p>
-     * <p>If you specify an invalid option, you get an
-     * <code>InvalidParameterValueException</code> exception.</p> <p>For more
-     * information about Windows VSS backups, see <a
+     * <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+     * option and create a Windows VSS backup. </p> <p>Set to
+     * <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+     * <code>WindowsVSS</code> option is not enabled by default.</p> <p>If you specify
+     * an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.</p> <p>For more information about Windows VSS backups, see <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating
      * a VSS-Enabled Windows Backup</a>.</p>
      */

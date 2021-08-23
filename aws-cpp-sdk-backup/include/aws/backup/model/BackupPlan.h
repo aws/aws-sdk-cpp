@@ -30,7 +30,7 @@ namespace Model
    * <p>Contains an optional backup plan display name and an array of
    * <code>BackupRule</code> objects, each of which specifies a backup rule. Each
    * rule in a backup plan is a separate scheduled task and can back up a different
-   * selection of AWS resources.</p><p><h3>See Also:</h3>   <a
+   * selection of Amazon Web Services resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupPlan">AWS
    * API Reference</a></p>
    */

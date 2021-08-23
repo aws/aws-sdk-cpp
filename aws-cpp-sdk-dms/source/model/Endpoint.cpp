@@ -54,7 +54,8 @@ Endpoint::Endpoint() :
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false)
+    m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false)
 {
 }
 
@@ -94,7 +95,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_sybaseSettingsHasBeenSet(false),
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false)
+    m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -332,6 +334,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_docDbSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedisSettings"))
+  {
+    m_redisSettings = jsonValue.GetObject("RedisSettings");
+
+    m_redisSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -532,6 +541,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_docDbSettingsHasBeenSet)
   {
    payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
+
+  }
+
+  if(m_redisSettingsHasBeenSet)
+  {
+   payload.WithObject("RedisSettings", m_redisSettings.Jsonize());
 
   }
 

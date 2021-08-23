@@ -99,37 +99,37 @@ namespace Model
 
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline const Aws::Vector<RuleResult>& GetRuleResults() const{ return m_ruleResults; }
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline void SetRuleResults(const Aws::Vector<RuleResult>& value) { m_ruleResults = value; }
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline void SetRuleResults(Aws::Vector<RuleResult>&& value) { m_ruleResults = std::move(value); }
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline GetEventPredictionResult& WithRuleResults(const Aws::Vector<RuleResult>& value) { SetRuleResults(value); return *this;}
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline GetEventPredictionResult& WithRuleResults(Aws::Vector<RuleResult>&& value) { SetRuleResults(std::move(value)); return *this;}
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline GetEventPredictionResult& AddRuleResults(const RuleResult& value) { m_ruleResults.push_back(value); return *this; }
 
     /**
-     * <p>The results.</p>
+     * <p>The results from the rules.</p>
      */
     inline GetEventPredictionResult& AddRuleResults(RuleResult&& value) { m_ruleResults.push_back(std::move(value)); return *this; }
 

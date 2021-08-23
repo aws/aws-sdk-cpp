@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/glue/model/WorkflowRun.h>
 #include <aws/glue/model/WorkflowGraph.h>
+#include <aws/glue/model/BlueprintDetails.h>
 #include <utility>
 
 namespace Aws
@@ -379,6 +380,43 @@ namespace Model
      */
     inline Workflow& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
 
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline const BlueprintDetails& GetBlueprintDetails() const{ return m_blueprintDetails; }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline bool BlueprintDetailsHasBeenSet() const { return m_blueprintDetailsHasBeenSet; }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline void SetBlueprintDetails(const BlueprintDetails& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = value; }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline void SetBlueprintDetails(BlueprintDetails&& value) { m_blueprintDetailsHasBeenSet = true; m_blueprintDetails = std::move(value); }
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline Workflow& WithBlueprintDetails(const BlueprintDetails& value) { SetBlueprintDetails(value); return *this;}
+
+    /**
+     * <p>This structure indicates the details of the blueprint that this particular
+     * workflow is created from.</p>
+     */
+    inline Workflow& WithBlueprintDetails(BlueprintDetails&& value) { SetBlueprintDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -404,6 +442,9 @@ namespace Model
 
     int m_maxConcurrentRuns;
     bool m_maxConcurrentRunsHasBeenSet;
+
+    BlueprintDetails m_blueprintDetails;
+    bool m_blueprintDetailsHasBeenSet;
   };
 
 } // namespace Model

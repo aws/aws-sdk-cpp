@@ -48,7 +48,8 @@ enum class FraudDetectorErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  RESOURCE_UNAVAILABLE
 };
 
 class AWS_FRAUDDETECTOR_API FraudDetectorError : public Aws::Client::AWSError<FraudDetectorErrors>

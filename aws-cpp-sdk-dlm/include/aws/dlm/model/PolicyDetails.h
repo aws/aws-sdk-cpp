@@ -52,8 +52,8 @@ namespace Model
      * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
      * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
-     * specific actions when a defined event occurs in your AWS account.</p> <p>The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+     * specific actions when a defined event occurs in your Amazon Web Services
+     * account.</p> <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline const PolicyTypeValues& GetPolicyType() const{ return m_policyType; }
 
@@ -63,8 +63,8 @@ namespace Model
      * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
      * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
-     * specific actions when a defined event occurs in your AWS account.</p> <p>The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+     * specific actions when a defined event occurs in your Amazon Web Services
+     * account.</p> <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
@@ -74,8 +74,8 @@ namespace Model
      * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
      * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
-     * specific actions when a defined event occurs in your AWS account.</p> <p>The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+     * specific actions when a defined event occurs in your Amazon Web Services
+     * account.</p> <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline void SetPolicyType(const PolicyTypeValues& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
@@ -85,8 +85,8 @@ namespace Model
      * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
      * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
-     * specific actions when a defined event occurs in your AWS account.</p> <p>The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+     * specific actions when a defined event occurs in your Amazon Web Services
+     * account.</p> <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline void SetPolicyType(PolicyTypeValues&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
@@ -96,8 +96,8 @@ namespace Model
      * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
      * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
-     * specific actions when a defined event occurs in your AWS account.</p> <p>The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+     * specific actions when a defined event occurs in your Amazon Web Services
+     * account.</p> <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline PolicyDetails& WithPolicyType(const PolicyTypeValues& value) { SetPolicyType(value); return *this;}
 
@@ -107,8 +107,8 @@ namespace Model
      * the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to
      * create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
      * <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs
-     * specific actions when a defined event occurs in your AWS account.</p> <p>The
-     * default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
+     * specific actions when a defined event occurs in your Amazon Web Services
+     * account.</p> <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
     inline PolicyDetails& WithPolicyType(PolicyTypeValues&& value) { SetPolicyType(std::move(value)); return *this;}
 
@@ -188,81 +188,81 @@ namespace Model
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline const Aws::Vector<ResourceLocationValues>& GetResourceLocations() const{ return m_resourceLocations; }
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline bool ResourceLocationsHasBeenSet() const { return m_resourceLocationsHasBeenSet; }
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline void SetResourceLocations(const Aws::Vector<ResourceLocationValues>& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = value; }
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline void SetResourceLocations(Aws::Vector<ResourceLocationValues>&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = std::move(value); }
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline PolicyDetails& WithResourceLocations(const Aws::Vector<ResourceLocationValues>& value) { SetResourceLocations(value); return *this;}
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline PolicyDetails& WithResourceLocations(Aws::Vector<ResourceLocationValues>&& value) { SetResourceLocations(std::move(value)); return *this;}
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline PolicyDetails& AddResourceLocations(const ResourceLocationValues& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(value); return *this; }
 
     /**
      * <p>The location of the resources to backup. If the source resources are located
-     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
-     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
-     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
-     * all resources of the specified type with matching target tags across all of the
-     * Outposts in your account.</p>
+     * in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source
+     * resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. </p> <p>If you specify <code>OUTPOST</code>, Amazon Data
+     * Lifecycle Manager backs up all resources of the specified type with matching
+     * target tags across all of the Outposts in your account.</p>
      */
     inline PolicyDetails& AddResourceLocations(ResourceLocationValues&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(std::move(value)); return *this; }
 

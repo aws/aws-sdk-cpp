@@ -1462,8 +1462,8 @@ namespace Model
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
-         * creates in your account. This action always returns the latest results.</p>
-         * <p>For more information about DMS task assessments, see <a
+         * creates in your Amazon Web Services account. This action always returns the
+         * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
          * a task assessment report</a> in the <a
          * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
@@ -1475,8 +1475,8 @@ namespace Model
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
-         * creates in your account. This action always returns the latest results.</p>
-         * <p>For more information about DMS task assessments, see <a
+         * creates in your Amazon Web Services account. This action always returns the
+         * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
          * a task assessment report</a> in the <a
          * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
@@ -1490,8 +1490,8 @@ namespace Model
 
         /**
          * <p>Returns the task assessment results from the Amazon S3 bucket that DMS
-         * creates in your account. This action always returns the latest results.</p>
-         * <p>For more information about DMS task assessments, see <a
+         * creates in your Amazon Web Services account. This action always returns the
+         * latest results.</p> <p>For more information about DMS task assessments, see <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
          * a task assessment report</a> in the <a
          * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">

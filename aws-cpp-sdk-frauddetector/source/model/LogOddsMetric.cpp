@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/LogitMetric.h>
+#include <aws/frauddetector/model/LogOddsMetric.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,7 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-LogitMetric::LogitMetric() : 
+LogOddsMetric::LogOddsMetric() : 
     m_variableNameHasBeenSet(false),
     m_variableTypeHasBeenSet(false),
     m_variableImportance(0.0),
@@ -26,7 +26,7 @@ LogitMetric::LogitMetric() :
 {
 }
 
-LogitMetric::LogitMetric(JsonView jsonValue) : 
+LogOddsMetric::LogOddsMetric(JsonView jsonValue) : 
     m_variableNameHasBeenSet(false),
     m_variableTypeHasBeenSet(false),
     m_variableImportance(0.0),
@@ -35,7 +35,7 @@ LogitMetric::LogitMetric(JsonView jsonValue) :
   *this = jsonValue;
 }
 
-LogitMetric& LogitMetric::operator =(JsonView jsonValue)
+LogOddsMetric& LogOddsMetric::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("variableName"))
   {
@@ -61,7 +61,7 @@ LogitMetric& LogitMetric::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue LogitMetric::Jsonize() const
+JsonValue LogOddsMetric::Jsonize() const
 {
   JsonValue payload;
 

@@ -35,7 +35,8 @@ namespace Model
     BAD_REQUEST_BODY,
     REQUEST_TOO_LARGE,
     THROTTLED,
-    QUOTA_EXCEEDED
+    QUOTA_EXCEEDED,
+    WAF_FILTERED
   };
 
 namespace GatewayResponseTypeMapper

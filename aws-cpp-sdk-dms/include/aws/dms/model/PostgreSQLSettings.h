@@ -315,38 +315,34 @@ namespace Model
 
 
     /**
-     * <p>If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps
-     * <code>restart_lsn</code> moving and prevents storage full scenarios. The WAL
-     * heartbeat mimics a dummy transaction, so that idle logical replication slots
-     * don't hold onto old WAL logs that result in storage full situations on the
-     * source. </p>
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
      */
     inline bool GetHeartbeatEnable() const{ return m_heartbeatEnable; }
 
     /**
-     * <p>If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps
-     * <code>restart_lsn</code> moving and prevents storage full scenarios. The WAL
-     * heartbeat mimics a dummy transaction, so that idle logical replication slots
-     * don't hold onto old WAL logs that result in storage full situations on the
-     * source. </p>
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
      */
     inline bool HeartbeatEnableHasBeenSet() const { return m_heartbeatEnableHasBeenSet; }
 
     /**
-     * <p>If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps
-     * <code>restart_lsn</code> moving and prevents storage full scenarios. The WAL
-     * heartbeat mimics a dummy transaction, so that idle logical replication slots
-     * don't hold onto old WAL logs that result in storage full situations on the
-     * source. </p>
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
      */
     inline void SetHeartbeatEnable(bool value) { m_heartbeatEnableHasBeenSet = true; m_heartbeatEnable = value; }
 
     /**
-     * <p>If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps
-     * <code>restart_lsn</code> moving and prevents storage full scenarios. The WAL
-     * heartbeat mimics a dummy transaction, so that idle logical replication slots
-     * don't hold onto old WAL logs that result in storage full situations on the
-     * source. </p>
+     * <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By
+     * doing this, it prevents idle logical replication slots from holding onto old WAL
+     * logs, which can result in storage full situations on the source. This heartbeat
+     * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
      */
     inline PostgreSQLSettings& WithHeartbeatEnable(bool value) { SetHeartbeatEnable(value); return *this;}
 
@@ -558,66 +554,186 @@ namespace Model
 
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline const Aws::String& GetSlotName() const{ return m_slotName; }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline PostgreSQLSettings& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline PostgreSQLSettings& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the name of a previously created logical replication slot for a CDC load
-     * of the PostgreSQL source instance.</p> <p>When used with the DMS API
-     * <code>CdcStartPosition</code> request parameter, this attribute also enables
-     * using native CDC start points.</p>
+     * <p>Sets the name of a previously created logical replication slot for a change
+     * data capture (CDC) load of the PostgreSQL source instance. </p> <p>When used
+     * with the <code>CdcStartPosition</code> request parameter for the DMS API , this
+     * attribute also makes it possible to use native CDC start points. DMS verifies
+     * that the specified logical replication slot exists before starting the CDC load
+     * task. It also verifies that the task was created with a valid setting of
+     * <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task
+     * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
+     * error.</p> <p>For more information about setting the
+     * <code>CdcStartPosition</code> request parameter, see <a
+     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * a CDC native start point</a> in the <i>Database Migration Service User
+     * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
      */
     inline PostgreSQLSettings& WithSlotName(const char* value) { SetSlotName(value); return *this;}
 

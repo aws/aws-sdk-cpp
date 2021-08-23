@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Backup is already performing an action on this recovery point. It can't
+   * <p>Backup is already performing an action on this recovery point. It can't
    * perform the action you requested until the first action finishes. Try again
    * later.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/InvalidResourceStateException">AWS

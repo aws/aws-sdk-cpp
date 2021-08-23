@@ -23,19 +23,26 @@
 #include <aws/backup/model/CreateBackupPlanRequest.h>
 #include <aws/backup/model/CreateBackupSelectionRequest.h>
 #include <aws/backup/model/CreateBackupVaultRequest.h>
+#include <aws/backup/model/CreateFrameworkRequest.h>
+#include <aws/backup/model/CreateReportPlanRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
 #include <aws/backup/model/DeleteBackupVaultRequest.h>
 #include <aws/backup/model/DeleteBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/DeleteBackupVaultNotificationsRequest.h>
+#include <aws/backup/model/DeleteFrameworkRequest.h>
 #include <aws/backup/model/DeleteRecoveryPointRequest.h>
+#include <aws/backup/model/DeleteReportPlanRequest.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
 #include <aws/backup/model/DescribeCopyJobRequest.h>
+#include <aws/backup/model/DescribeFrameworkRequest.h>
 #include <aws/backup/model/DescribeGlobalSettingsRequest.h>
 #include <aws/backup/model/DescribeProtectedResourceRequest.h>
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
 #include <aws/backup/model/DescribeRegionSettingsRequest.h>
+#include <aws/backup/model/DescribeReportJobRequest.h>
+#include <aws/backup/model/DescribeReportPlanRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
 #include <aws/backup/model/DisassociateRecoveryPointRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
@@ -53,23 +60,29 @@
 #include <aws/backup/model/ListBackupSelectionsRequest.h>
 #include <aws/backup/model/ListBackupVaultsRequest.h>
 #include <aws/backup/model/ListCopyJobsRequest.h>
+#include <aws/backup/model/ListFrameworksRequest.h>
 #include <aws/backup/model/ListProtectedResourcesRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceRequest.h>
+#include <aws/backup/model/ListReportJobsRequest.h>
+#include <aws/backup/model/ListReportPlansRequest.h>
 #include <aws/backup/model/ListRestoreJobsRequest.h>
 #include <aws/backup/model/ListTagsRequest.h>
 #include <aws/backup/model/PutBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/PutBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
 #include <aws/backup/model/StartCopyJobRequest.h>
+#include <aws/backup/model/StartReportJobRequest.h>
 #include <aws/backup/model/StartRestoreJobRequest.h>
 #include <aws/backup/model/StopBackupJobRequest.h>
 #include <aws/backup/model/TagResourceRequest.h>
 #include <aws/backup/model/UntagResourceRequest.h>
 #include <aws/backup/model/UpdateBackupPlanRequest.h>
+#include <aws/backup/model/UpdateFrameworkRequest.h>
 #include <aws/backup/model/UpdateGlobalSettingsRequest.h>
 #include <aws/backup/model/UpdateRecoveryPointLifecycleRequest.h>
 #include <aws/backup/model/UpdateRegionSettingsRequest.h>
+#include <aws/backup/model/UpdateReportPlanRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -230,6 +243,56 @@ void BackupClient::CreateBackupVaultAsync(const CreateBackupVaultRequest& reques
 void BackupClient::CreateBackupVaultAsyncHelper(const CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateBackupVault(request), context);
+}
+
+CreateFrameworkOutcome BackupClient::CreateFramework(const CreateFrameworkRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/frameworks");
+  return CreateFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFrameworkOutcomeCallable BackupClient::CreateFrameworkCallable(const CreateFrameworkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFrameworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFramework(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::CreateFrameworkAsync(const CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFrameworkAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::CreateFrameworkAsyncHelper(const CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFramework(request), context);
+}
+
+CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-plans");
+  return CreateReportPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateReportPlanOutcomeCallable BackupClient::CreateReportPlanCallable(const CreateReportPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateReportPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateReportPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::CreateReportPlanAsync(const CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReportPlanAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::CreateReportPlanAsyncHelper(const CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateReportPlan(request), context);
 }
 
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const
@@ -396,6 +459,37 @@ void BackupClient::DeleteBackupVaultNotificationsAsyncHelper(const DeleteBackupV
   handler(this, request, DeleteBackupVaultNotifications(request), context);
 }
 
+DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkRequest& request) const
+{
+  if (!request.FrameworkNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFramework", "Required field: FrameworkName, is not set");
+    return DeleteFrameworkOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/frameworks/");
+  uri.AddPathSegment(request.GetFrameworkName());
+  return DeleteFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFrameworkOutcomeCallable BackupClient::DeleteFrameworkCallable(const DeleteFrameworkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFrameworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFramework(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DeleteFrameworkAsync(const DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFrameworkAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DeleteFrameworkAsyncHelper(const DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFramework(request), context);
+}
+
 DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecoveryPointRequest& request) const
 {
   if (!request.BackupVaultNameHasBeenSet())
@@ -432,6 +526,37 @@ void BackupClient::DeleteRecoveryPointAsync(const DeleteRecoveryPointRequest& re
 void BackupClient::DeleteRecoveryPointAsyncHelper(const DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRecoveryPoint(request), context);
+}
+
+DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanRequest& request) const
+{
+  if (!request.ReportPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteReportPlan", "Required field: ReportPlanName, is not set");
+    return DeleteReportPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportPlanName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-plans/");
+  uri.AddPathSegment(request.GetReportPlanName());
+  return DeleteReportPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteReportPlanOutcomeCallable BackupClient::DeleteReportPlanCallable(const DeleteReportPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteReportPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteReportPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DeleteReportPlanAsync(const DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReportPlanAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DeleteReportPlanAsyncHelper(const DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteReportPlan(request), context);
 }
 
 DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJobRequest& request) const
@@ -525,6 +650,37 @@ void BackupClient::DescribeCopyJobAsync(const DescribeCopyJobRequest& request, c
 void BackupClient::DescribeCopyJobAsyncHelper(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCopyJob(request), context);
+}
+
+DescribeFrameworkOutcome BackupClient::DescribeFramework(const DescribeFrameworkRequest& request) const
+{
+  if (!request.FrameworkNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFramework", "Required field: FrameworkName, is not set");
+    return DescribeFrameworkOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/frameworks/");
+  uri.AddPathSegment(request.GetFrameworkName());
+  return DescribeFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFrameworkOutcomeCallable BackupClient::DescribeFrameworkCallable(const DescribeFrameworkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFrameworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFramework(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeFrameworkAsync(const DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFrameworkAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeFrameworkAsyncHelper(const DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFramework(request), context);
 }
 
 DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const
@@ -644,6 +800,68 @@ void BackupClient::DescribeRegionSettingsAsync(const DescribeRegionSettingsReque
 void BackupClient::DescribeRegionSettingsAsyncHelper(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRegionSettings(request), context);
+}
+
+DescribeReportJobOutcome BackupClient::DescribeReportJob(const DescribeReportJobRequest& request) const
+{
+  if (!request.ReportJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeReportJob", "Required field: ReportJobId, is not set");
+    return DescribeReportJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportJobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-jobs/");
+  uri.AddPathSegment(request.GetReportJobId());
+  return DescribeReportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReportJobOutcomeCallable BackupClient::DescribeReportJobCallable(const DescribeReportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeReportJobAsync(const DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReportJobAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeReportJobAsyncHelper(const DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReportJob(request), context);
+}
+
+DescribeReportPlanOutcome BackupClient::DescribeReportPlan(const DescribeReportPlanRequest& request) const
+{
+  if (!request.ReportPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeReportPlan", "Required field: ReportPlanName, is not set");
+    return DescribeReportPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportPlanName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-plans/");
+  uri.AddPathSegment(request.GetReportPlanName());
+  return DescribeReportPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeReportPlanOutcomeCallable BackupClient::DescribeReportPlanCallable(const DescribeReportPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeReportPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeReportPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeReportPlanAsync(const DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReportPlanAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeReportPlanAsyncHelper(const DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeReportPlan(request), context);
 }
 
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const
@@ -1191,6 +1409,31 @@ void BackupClient::ListCopyJobsAsyncHelper(const ListCopyJobsRequest& request, c
   handler(this, request, ListCopyJobs(request), context);
 }
 
+ListFrameworksOutcome BackupClient::ListFrameworks(const ListFrameworksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/frameworks");
+  return ListFrameworksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFrameworksOutcomeCallable BackupClient::ListFrameworksCallable(const ListFrameworksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFrameworksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFrameworks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::ListFrameworksAsync(const ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFrameworksAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::ListFrameworksAsyncHelper(const ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFrameworks(request), context);
+}
+
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1278,6 +1521,56 @@ void BackupClient::ListRecoveryPointsByResourceAsync(const ListRecoveryPointsByR
 void BackupClient::ListRecoveryPointsByResourceAsyncHelper(const ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRecoveryPointsByResource(request), context);
+}
+
+ListReportJobsOutcome BackupClient::ListReportJobs(const ListReportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-jobs");
+  return ListReportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReportJobsOutcomeCallable BackupClient::ListReportJobsCallable(const ListReportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::ListReportJobsAsync(const ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListReportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::ListReportJobsAsyncHelper(const ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReportJobs(request), context);
+}
+
+ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-plans");
+  return ListReportPlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReportPlansOutcomeCallable BackupClient::ListReportPlansCallable(const ListReportPlansRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListReportPlansOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListReportPlans(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::ListReportPlansAsync(const ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListReportPlansAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::ListReportPlansAsyncHelper(const ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListReportPlans(request), context);
 }
 
 ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsRequest& request) const
@@ -1450,6 +1743,37 @@ void BackupClient::StartCopyJobAsyncHelper(const StartCopyJobRequest& request, c
   handler(this, request, StartCopyJob(request), context);
 }
 
+StartReportJobOutcome BackupClient::StartReportJob(const StartReportJobRequest& request) const
+{
+  if (!request.ReportPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartReportJob", "Required field: ReportPlanName, is not set");
+    return StartReportJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportPlanName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-jobs/");
+  uri.AddPathSegment(request.GetReportPlanName());
+  return StartReportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartReportJobOutcomeCallable BackupClient::StartReportJobCallable(const StartReportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartReportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartReportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::StartReportJobAsync(const StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartReportJobAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::StartReportJobAsyncHelper(const StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartReportJob(request), context);
+}
+
 StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1599,6 +1923,37 @@ void BackupClient::UpdateBackupPlanAsyncHelper(const UpdateBackupPlanRequest& re
   handler(this, request, UpdateBackupPlan(request), context);
 }
 
+UpdateFrameworkOutcome BackupClient::UpdateFramework(const UpdateFrameworkRequest& request) const
+{
+  if (!request.FrameworkNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFramework", "Required field: FrameworkName, is not set");
+    return UpdateFrameworkOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/frameworks/");
+  uri.AddPathSegment(request.GetFrameworkName());
+  return UpdateFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFrameworkOutcomeCallable BackupClient::UpdateFrameworkCallable(const UpdateFrameworkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFrameworkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFramework(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::UpdateFrameworkAsync(const UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFrameworkAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::UpdateFrameworkAsyncHelper(const UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFramework(request), context);
+}
+
 UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1685,5 +2040,36 @@ void BackupClient::UpdateRegionSettingsAsync(const UpdateRegionSettingsRequest& 
 void BackupClient::UpdateRegionSettingsAsyncHelper(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRegionSettings(request), context);
+}
+
+UpdateReportPlanOutcome BackupClient::UpdateReportPlan(const UpdateReportPlanRequest& request) const
+{
+  if (!request.ReportPlanNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateReportPlan", "Required field: ReportPlanName, is not set");
+    return UpdateReportPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportPlanName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/audit/report-plans/");
+  uri.AddPathSegment(request.GetReportPlanName());
+  return UpdateReportPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateReportPlanOutcomeCallable BackupClient::UpdateReportPlanCallable(const UpdateReportPlanRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateReportPlanOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReportPlan(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::UpdateReportPlanAsync(const UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateReportPlanAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::UpdateReportPlanAsyncHelper(const UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateReportPlan(request), context);
 }
 

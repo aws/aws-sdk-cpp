@@ -25,6 +25,7 @@ OracleSettings::OracleSettings() :
     m_archivedLogDestIdHasBeenSet(false),
     m_additionalArchivedLogDestId(0),
     m_additionalArchivedLogDestIdHasBeenSet(false),
+    m_extraArchivedLogDestIdsHasBeenSet(false),
     m_allowSelectNestedTables(false),
     m_allowSelectNestedTablesHasBeenSet(false),
     m_parallelAsmReadThreads(0),
@@ -91,6 +92,7 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_archivedLogDestIdHasBeenSet(false),
     m_additionalArchivedLogDestId(0),
     m_additionalArchivedLogDestIdHasBeenSet(false),
+    m_extraArchivedLogDestIdsHasBeenSet(false),
     m_allowSelectNestedTables(false),
     m_allowSelectNestedTablesHasBeenSet(false),
     m_parallelAsmReadThreads(0),
@@ -172,6 +174,16 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_additionalArchivedLogDestId = jsonValue.GetInteger("AdditionalArchivedLogDestId");
 
     m_additionalArchivedLogDestIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExtraArchivedLogDestIds"))
+  {
+    Array<JsonView> extraArchivedLogDestIdsJsonList = jsonValue.GetArray("ExtraArchivedLogDestIds");
+    for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
+    {
+      m_extraArchivedLogDestIds.push_back(extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger());
+    }
+    m_extraArchivedLogDestIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AllowSelectNestedTables"))
@@ -448,6 +460,17 @@ JsonValue OracleSettings::Jsonize() const
   if(m_additionalArchivedLogDestIdHasBeenSet)
   {
    payload.WithInteger("AdditionalArchivedLogDestId", m_additionalArchivedLogDestId);
+
+  }
+
+  if(m_extraArchivedLogDestIdsHasBeenSet)
+  {
+   Array<JsonValue> extraArchivedLogDestIdsJsonList(m_extraArchivedLogDestIds.size());
+   for(unsigned extraArchivedLogDestIdsIndex = 0; extraArchivedLogDestIdsIndex < extraArchivedLogDestIdsJsonList.GetLength(); ++extraArchivedLogDestIdsIndex)
+   {
+     extraArchivedLogDestIdsJsonList[extraArchivedLogDestIdsIndex].AsInteger(m_extraArchivedLogDestIds[extraArchivedLogDestIdsIndex]);
+   }
+   payload.WithArray("ExtraArchivedLogDestIds", std::move(extraArchivedLogDestIdsJsonList));
 
   }
 

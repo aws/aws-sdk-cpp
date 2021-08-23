@@ -293,56 +293,56 @@ namespace Model
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -392,8 +392,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -401,8 +402,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -410,8 +412,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -419,8 +422,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -428,8 +432,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -437,8 +442,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -446,8 +452,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -455,8 +462,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per Region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per Amazon Web Services Region, occurring on a random day of the week.</p>
+     * <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum
+     * 30-minute window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -621,8 +629,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -630,8 +639,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -639,8 +649,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -648,8 +659,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -657,8 +669,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -666,8 +679,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -675,8 +689,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -684,8 +699,9 @@ namespace Model
      * <p>An KMS key identifier that is used to encrypt the data on the replication
      * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
      * parameter, then DMS uses your default encryption key.</p> <p>KMS creates the
-     * default encryption key for your account. Your account has a different default
-     * encryption key for each Region.</p>
+     * default encryption key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default encryption key for each Amazon Web
+     * Services Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

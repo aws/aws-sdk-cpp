@@ -25,6 +25,7 @@
 #include <aws/dms/model/MicrosoftSQLServerSettings.h>
 #include <aws/dms/model/IBMDb2Settings.h>
 #include <aws/dms/model/DocDbSettings.h>
+#include <aws/dms/model/RedisSettings.h>
 #include <utility>
 
 namespace Aws
@@ -1648,6 +1649,37 @@ namespace Model
 
 
     /**
+     * <p>Settings in JSON format for the Redis target endpoint.</p>
+     */
+    inline const RedisSettings& GetRedisSettings() const{ return m_redisSettings; }
+
+    /**
+     * <p>Settings in JSON format for the Redis target endpoint.</p>
+     */
+    inline bool RedisSettingsHasBeenSet() const { return m_redisSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the Redis target endpoint.</p>
+     */
+    inline void SetRedisSettings(const RedisSettings& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the Redis target endpoint.</p>
+     */
+    inline void SetRedisSettings(RedisSettings&& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the Redis target endpoint.</p>
+     */
+    inline ModifyEndpointRequest& WithRedisSettings(const RedisSettings& value) { SetRedisSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the Redis target endpoint.</p>
+     */
+    inline ModifyEndpointRequest& WithRedisSettings(RedisSettings&& value) { SetRedisSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code>
      * replaces all existing endpoint settings with the exact settings that you specify
      * in this call. If this attribute is N, the current call to
@@ -1818,6 +1850,9 @@ namespace Model
 
     DocDbSettings m_docDbSettings;
     bool m_docDbSettingsHasBeenSet;
+
+    RedisSettings m_redisSettings;
+    bool m_redisSettingsHasBeenSet;
 
     bool m_exactSettings;
     bool m_exactSettingsHasBeenSet;

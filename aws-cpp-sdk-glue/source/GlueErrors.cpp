@@ -18,16 +18,17 @@ namespace Glue
 namespace GlueErrorMapper
 {
 
-static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int CRAWLER_NOT_RUNNING_HASH = HashingUtils::HashString("CrawlerNotRunningException");
 static const int SCHEDULER_NOT_RUNNING_HASH = HashingUtils::HashString("SchedulerNotRunningException");
+static const int ILLEGAL_BLUEPRINT_STATE_HASH = HashingUtils::HashString("IllegalBlueprintStateException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int SCHEDULER_RUNNING_HASH = HashingUtils::HashString("SchedulerRunningException");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int CONDITION_CHECK_FAILURE_HASH = HashingUtils::HashString("ConditionCheckFailureException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
@@ -46,13 +47,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == OPERATION_TIMEOUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::OPERATION_TIMEOUT), false);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CONFLICT), false);
+  }
+  else if (hashCode == OPERATION_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::OPERATION_TIMEOUT), false);
   }
   else if (hashCode == VERSION_MISMATCH_HASH)
   {
@@ -66,6 +67,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::SCHEDULER_NOT_RUNNING), false);
   }
+  else if (hashCode == ILLEGAL_BLUEPRINT_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ILLEGAL_BLUEPRINT_STATE), false);
+  }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
@@ -74,10 +79,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::SCHEDULER_RUNNING), false);
   }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ALREADY_EXISTS), false);
-  }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CONCURRENT_MODIFICATION), false);
@@ -85,6 +86,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CRAWLER_RUNNING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CRAWLER_RUNNING), false);
+  }
+  else if (hashCode == ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ALREADY_EXISTS), false);
   }
   else if (hashCode == CONDITION_CHECK_FAILURE_HASH)
   {

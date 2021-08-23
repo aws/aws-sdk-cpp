@@ -46,6 +46,7 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_microsoftSQLServerSettingsHasBeenSet(false),
     m_iBMDb2SettingsHasBeenSet(false),
     m_docDbSettingsHasBeenSet(false),
+    m_redisSettingsHasBeenSet(false),
     m_exactSettings(false),
     m_exactSettingsHasBeenSet(false)
 {
@@ -230,6 +231,12 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_docDbSettingsHasBeenSet)
   {
    payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
+
+  }
+
+  if(m_redisSettingsHasBeenSet)
+  {
+   payload.WithObject("RedisSettings", m_redisSettings.Jsonize());
 
   }
 

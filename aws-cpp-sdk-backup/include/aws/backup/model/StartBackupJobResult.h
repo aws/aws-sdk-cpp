@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const Aws::String& value) { m_backupJobId = value; }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(Aws::String&& value) { m_backupJobId = std::move(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline void SetBackupJobId(const char* value) { m_backupJobId.assign(value); }
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline StartBackupJobResult& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline StartBackupJobResult& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
 
     /**
-     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
     inline StartBackupJobResult& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
 
