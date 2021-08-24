@@ -16,6 +16,8 @@
 #include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
 #include <aws/transcribe/model/Type.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -403,7 +405,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -435,7 +437,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -467,7 +469,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -499,7 +501,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -531,7 +533,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -563,7 +565,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -595,7 +597,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -627,7 +629,7 @@ namespace Model
      * the media format of your media file and make sure the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code>- The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code>-
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -729,49 +731,49 @@ namespace Model
 
     /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * conversation. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline const Specialty& GetSpecialty() const{ return m_specialty; }
 
     /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * conversation. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
 
     /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * conversation. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline void SetSpecialty(const Specialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
 
     /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * conversation. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline void SetSpecialty(Specialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
 
     /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * conversation. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline MedicalTranscriptionJob& WithSpecialty(const Specialty& value) { SetSpecialty(value); return *this;}
 
     /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
-     * conversation. <code>PRIMARYCARE</code> is the only available setting for this
-     * object. This specialty enables you to generate transcriptions for the following
-     * medical fields:</p> <ul> <li> <p>Family Medicine</p> </li> </ul>
+     * conversation. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline MedicalTranscriptionJob& WithSpecialty(Specialty&& value) { SetSpecialty(std::move(value)); return *this;}
 
@@ -836,6 +838,47 @@ namespace Model
      */
     inline MedicalTranscriptionJob& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A key:value pair assigned to a given medical transcription job.</p>
+     */
+    inline MedicalTranscriptionJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_medicalTranscriptionJobName;
@@ -882,6 +925,9 @@ namespace Model
 
     Type m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

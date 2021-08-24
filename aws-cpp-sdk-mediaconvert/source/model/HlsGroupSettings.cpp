@@ -56,6 +56,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_segmentsPerSubdirectory(0),
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
@@ -109,6 +111,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_segmentsPerSubdirectory(0),
     m_segmentsPerSubdirectoryHasBeenSet(false),
     m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
@@ -288,6 +292,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_segmentLength = jsonValue.GetInteger("segmentLength");
 
     m_segmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = HlsSegmentLengthControlMapper::GetHlsSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentsPerSubdirectory"))
@@ -473,6 +484,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", HlsSegmentLengthControlMapper::GetNameForHlsSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_segmentsPerSubdirectoryHasBeenSet)

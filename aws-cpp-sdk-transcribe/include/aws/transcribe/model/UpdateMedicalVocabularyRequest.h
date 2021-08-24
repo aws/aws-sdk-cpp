@@ -136,8 +136,8 @@ namespace Model
 
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -153,8 +153,8 @@ namespace Model
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -170,8 +170,8 @@ namespace Model
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -187,8 +187,8 @@ namespace Model
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -204,8 +204,8 @@ namespace Model
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -221,8 +221,8 @@ namespace Model
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -238,8 +238,8 @@ namespace Model
     inline UpdateMedicalVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
@@ -255,8 +255,8 @@ namespace Model
     inline UpdateMedicalVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
 
     /**
-     * <p>The location in Amazon S3 of the text file that contains the you use for your
-     * custom vocabulary. The URI must be in the same Amazon Web Services Region as the
+     * <p>The location in Amazon S3 of the text file that contains your custom
+     * vocabulary. The URI must be in the same Amazon Web Services Region as the
      * resource that you are calling. The following is the format for a URI:</p> <p>
      * <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;

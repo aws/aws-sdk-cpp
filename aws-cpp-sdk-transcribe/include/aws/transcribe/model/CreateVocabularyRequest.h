@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -103,37 +104,37 @@ namespace Model
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline CreateVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline CreateVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -187,106 +188,155 @@ namespace Model
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
 
     /**
      * <p>The S3 location of the text file that contains the definition of the custom
      * vocabulary. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is </p> <p>For more information about S3 object names,
+     * calling. The general form is:</p> <p>For more information about S3 object names,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
-     * Vocabularies</a>.</p>
+     * vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}
+
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateVocabularyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateVocabularyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateVocabularyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon
+     * Transcribe vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateVocabularyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -301,6 +351,9 @@ namespace Model
 
     Aws::String m_vocabularyFileUri;
     bool m_vocabularyFileUriHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

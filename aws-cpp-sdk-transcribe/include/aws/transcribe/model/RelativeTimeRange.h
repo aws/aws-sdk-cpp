@@ -48,7 +48,7 @@ namespace Model
      * <p>This looks at the time range starting from 10% of the way into the call to
      * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
      * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark. </p>
+     * millisecond mark.</p>
      */
     inline int GetStartPercentage() const{ return m_startPercentage; }
 
@@ -60,7 +60,7 @@ namespace Model
      * <p>This looks at the time range starting from 10% of the way into the call to
      * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
      * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark. </p>
+     * millisecond mark.</p>
      */
     inline bool StartPercentageHasBeenSet() const { return m_startPercentageHasBeenSet; }
 
@@ -72,7 +72,7 @@ namespace Model
      * <p>This looks at the time range starting from 10% of the way into the call to
      * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
      * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark. </p>
+     * millisecond mark.</p>
      */
     inline void SetStartPercentage(int value) { m_startPercentageHasBeenSet = true; m_startPercentage = value; }
 
@@ -84,7 +84,7 @@ namespace Model
      * <p>This looks at the time range starting from 10% of the way into the call to
      * 50% of the way through the call. For a call that lasts 100,000 milliseconds,
      * this example range would apply from the 10,000 millisecond mark to the 50,000
-     * millisecond mark. </p>
+     * millisecond mark.</p>
      */
     inline RelativeTimeRange& WithStartPercentage(int value) { SetStartPercentage(value); return *this;}
 

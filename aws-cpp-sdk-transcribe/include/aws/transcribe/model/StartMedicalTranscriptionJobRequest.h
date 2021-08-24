@@ -14,6 +14,8 @@
 #include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
 #include <aws/transcribe/model/Type.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -806,7 +808,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
@@ -814,7 +816,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -822,7 +824,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -830,7 +832,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -838,7 +840,7 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(const Type& value) { SetType(value); return *this;}
 
@@ -846,9 +848,50 @@ namespace Model
      * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
      * conversations between two or more speakers, e.g., a conversations between
      * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
-     * speech, e.g., for clinical notes.</p>
+     * speech, such as clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -887,6 +930,9 @@ namespace Model
 
     Type m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

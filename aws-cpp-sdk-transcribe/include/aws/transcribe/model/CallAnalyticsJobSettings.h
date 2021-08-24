@@ -268,20 +268,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
 
@@ -292,20 +281,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
 
@@ -316,20 +294,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
 
@@ -340,20 +307,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
 
@@ -364,20 +320,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
 
@@ -388,20 +333,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
 
@@ -412,20 +346,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
 
@@ -436,20 +359,9 @@ namespace Model
      * know the language, you can leave this field blank and Amazon Transcribe will use
      * machine learning to identify the language for you. To improve the ability of
      * Amazon Transcribe to correctly identify the language, you can provide an array
-     * of the languages that can be present in the audio.</p> <p>The following list
-     * shows the supported languages and corresponding language codes for call
-     * analytics jobs:</p> <ul> <li> <p>Gulf Arabic (ar-AE)</p> </li> <li> <p>Mandarin
-     * Chinese, Mainland (zh-CN)</p> </li> <li> <p>Australian English (en-AU)</p> </li>
-     * <li> <p>British English (en-GB)</p> </li> <li> <p>Indian English (en-IN)</p>
-     * </li> <li> <p>Irish English (en-IE)</p> </li> <li> <p>Scottish English
-     * (en-AB)</p> </li> <li> <p>US English (en-US)</p> </li> <li> <p>Welsh English
-     * (en-WL)</p> </li> <li> <p>Spanish (es-ES)</p> </li> <li> <p>US Spanish
-     * (es-US)</p> </li> <li> <p>French (fr-FR)</p> </li> <li> <p>Canadian French
-     * (fr-CA)</p> </li> <li> <p>German (de-DE)</p> </li> <li> <p>Swiss German
-     * (de-CH)</p> </li> <li> <p>Indian Hindi (hi-IN)</p> </li> <li> <p>Italian
-     * (it-IT)</p> </li> <li> <p>Japanese (ja-JP)</p> </li> <li> <p>Korean (ko-KR)</p>
-     * </li> <li> <p>Portuguese (pt-PT)</p> </li> <li> <p>Brazilian Portuguese
-     * (pt-BR)</p> </li> </ul>
+     * of the languages that can be present in the audio. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html">Supported
+     * languages and language-specific features</a> for additional information.</p>
      */
     inline CallAnalyticsJobSettings& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
 

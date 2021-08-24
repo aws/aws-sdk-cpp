@@ -15,6 +15,7 @@
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
 #include <aws/mediaconvert/model/DashIsoPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
+#include <aws/mediaconvert/model/DashIsoSegmentLengthControl.h>
 #include <aws/mediaconvert/model/DashIsoWriteSegmentTimelineInRepresentation.h>
 #include <aws/mediaconvert/model/DashAdditionalManifest.h>
 #include <utility>
@@ -821,40 +822,99 @@ namespace Model
 
 
     /**
-     * Length of mpd segments to create (in seconds). Note that segments will end on
-     * the next keyframe after this number of seconds, so actual segment length may be
-     * longer. When Emit Single File is checked, the segmentation is internal to a
-     * single output file and it does not cause the creation of many output files as in
-     * other output types.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 30. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Length of mpd segments to create (in seconds). Note that segments will end on
-     * the next keyframe after this number of seconds, so actual segment length may be
-     * longer. When Emit Single File is checked, the segmentation is internal to a
-     * single output file and it does not cause the creation of many output files as in
-     * other output types.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 30. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Length of mpd segments to create (in seconds). Note that segments will end on
-     * the next keyframe after this number of seconds, so actual segment length may be
-     * longer. When Emit Single File is checked, the segmentation is internal to a
-     * single output file and it does not cause the creation of many output files as in
-     * other output types.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 30. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Length of mpd segments to create (in seconds). Note that segments will end on
-     * the next keyframe after this number of seconds, so actual segment length may be
-     * longer. When Emit Single File is checked, the segmentation is internal to a
-     * single output file and it does not cause the creation of many output files as in
-     * other output types.
+     * Specify the length, in whole seconds, of each segment. When you don't specify a
+     * value, MediaConvert defaults to 30. Related settings: Use Segment length control
+     * (SegmentLengthControl) to specify whether the encoder enforces this value
+     * strictly. Use Segment control (DashIsoSegmentControl) to specify whether
+     * MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     inline DashIsoGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
+
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline const DashIsoSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(const DashIsoSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline void SetSegmentLengthControl(DashIsoSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline DashIsoGroupSettings& WithSegmentLengthControl(const DashIsoSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
+
+    /**
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact
+     * (EXACT) to have the encoder use the exact length that you specify with the
+     * setting Segment length (SegmentLength). This might result in extra I-frames.
+     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
+     * lengths to match the next GOP boundary.
+     */
+    inline DashIsoGroupSettings& WithSegmentLengthControl(DashIsoSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
@@ -963,6 +1023,9 @@ namespace Model
 
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;
+
+    DashIsoSegmentLengthControl m_segmentLengthControl;
+    bool m_segmentLengthControlHasBeenSet;
 
     DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
     bool m_writeSegmentTimelineInRepresentationHasBeenSet;

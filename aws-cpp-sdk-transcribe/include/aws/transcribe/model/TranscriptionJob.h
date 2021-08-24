@@ -17,6 +17,7 @@
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -267,32 +268,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline TranscriptionJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline TranscriptionJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -372,7 +373,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -403,7 +404,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -434,7 +435,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -465,7 +466,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -496,7 +497,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -527,7 +528,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -558,7 +559,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -589,7 +590,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -858,6 +859,47 @@ namespace Model
      */
     inline TranscriptionJob& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
 
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -913,6 +955,9 @@ namespace Model
 
     double m_identifiedLanguageScore;
     bool m_identifiedLanguageScoreHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

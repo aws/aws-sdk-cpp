@@ -44,6 +44,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
     m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
@@ -75,6 +77,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
     m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
@@ -191,6 +195,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_segmentLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = DashIsoSegmentLengthControlMapper::GetDashIsoSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("writeSegmentTimelineInRepresentation"))
   {
     m_writeSegmentTimelineInRepresentation = DashIsoWriteSegmentTimelineInRepresentationMapper::GetDashIsoWriteSegmentTimelineInRepresentationForName(jsonValue.GetString("writeSegmentTimelineInRepresentation"));
@@ -292,6 +303,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", DashIsoSegmentLengthControlMapper::GetNameForDashIsoSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_writeSegmentTimelineInRepresentationHasBeenSet)

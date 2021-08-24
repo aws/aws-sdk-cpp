@@ -15,6 +15,7 @@
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -118,42 +119,42 @@ namespace Model
     /**
      * <p>The language code for the language used in the input media file.</p> <p>To
      * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16000 Hz or higher.</p>
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language code for the language used in the input media file.</p> <p>To
      * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16000 Hz or higher.</p>
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code for the language used in the input media file.</p> <p>To
      * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16000 Hz or higher.</p>
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language code for the language used in the input media file.</p> <p>To
      * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16000 Hz or higher.</p>
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language code for the language used in the input media file.</p> <p>To
      * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16000 Hz or higher.</p>
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language code for the language used in the input media file.</p> <p>To
      * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
-     * must be encoded at a sample rate of 16000 Hz or higher.</p>
+     * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -604,7 +605,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -623,7 +624,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -642,7 +643,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -661,7 +662,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -680,7 +681,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -699,7 +700,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -718,7 +719,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -737,7 +738,7 @@ namespace Model
      * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the transcription job is
-     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * encrypted with the default Amazon S3 key (SSE-S3).</p> <p>If you specify a KMS
      * key to encrypt your output, you must also specify an output location in the
      * <code>OutputBucketName</code> parameter.</p>
      */
@@ -936,7 +937,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
 
@@ -945,7 +946,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
 
@@ -954,7 +955,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
 
@@ -963,7 +964,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
 
@@ -972,7 +973,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
 
@@ -981,7 +982,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
 
@@ -990,7 +991,7 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
 
@@ -999,9 +1000,50 @@ namespace Model
      * collection of audio files. Automatic language identification chooses a language
      * that best matches the source audio from that list.</p> <p>To transcribe speech
      * in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
-     * sample rate of 16000 Hz or higher.</p>
+     * sample rate of 16,000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Add tags to an Amazon Transcribe transcription job.</p>
+     */
+    inline StartTranscriptionJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1046,6 +1088,9 @@ namespace Model
 
     Aws::Vector<LanguageCode> m_languageOptions;
     bool m_languageOptionsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

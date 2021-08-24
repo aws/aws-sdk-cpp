@@ -343,44 +343,56 @@ namespace Model
 
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline const H264FieldEncoding& GetFieldEncoding() const{ return m_fieldEncoding; }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline bool FieldEncodingHasBeenSet() const { return m_fieldEncodingHasBeenSet; }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline void SetFieldEncoding(const H264FieldEncoding& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = value; }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline void SetFieldEncoding(H264FieldEncoding&& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = std::move(value); }
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline H264Settings& WithFieldEncoding(const H264FieldEncoding& value) { SetFieldEncoding(value); return *this;}
 
     /**
-     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for
-     * interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding
-     * and create separate interlaced fields.
+     * The video encoding method for your MPEG-4 AVC output. Keep the default value,
+     * PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose
+     * Force field (FORCE_FIELD) to disable PAFF encoding and create separate
+     * interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF
+     * encoding for interlaced outputs.
      */
     inline H264Settings& WithFieldEncoding(H264FieldEncoding&& value) { SetFieldEncoding(std::move(value)); return *this;}
 
@@ -1078,22 +1090,30 @@ namespace Model
 
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline H264Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 

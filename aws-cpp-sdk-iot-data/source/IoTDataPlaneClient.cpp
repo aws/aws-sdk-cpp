@@ -21,8 +21,10 @@
 #include <aws/iot-data/IoTDataPlaneEndpoint.h>
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
+#include <aws/iot-data/model/GetRetainedMessageRequest.h>
 #include <aws/iot-data/model/GetThingShadowRequest.h>
 #include <aws/iot-data/model/ListNamedShadowsForThingRequest.h>
+#include <aws/iot-data/model/ListRetainedMessagesRequest.h>
 #include <aws/iot-data/model/PublishRequest.h>
 #include <aws/iot-data/model/UpdateThingShadowRequest.h>
 
@@ -131,6 +133,37 @@ void IoTDataPlaneClient::DeleteThingShadowAsyncHelper(const DeleteThingShadowReq
   handler(this, request, DeleteThingShadow(request), context);
 }
 
+GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetainedMessageRequest& request) const
+{
+  if (!request.TopicHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRetainedMessage", "Required field: Topic, is not set");
+    return GetRetainedMessageOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Topic]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/retainedMessage/");
+  uri.AddPathSegment(request.GetTopic());
+  return GetRetainedMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRetainedMessageOutcomeCallable IoTDataPlaneClient::GetRetainedMessageCallable(const GetRetainedMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRetainedMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRetainedMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDataPlaneClient::GetRetainedMessageAsync(const GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRetainedMessageAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDataPlaneClient::GetRetainedMessageAsyncHelper(const GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRetainedMessage(request), context);
+}
+
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const
 {
   if (!request.ThingNameHasBeenSet())
@@ -192,6 +225,31 @@ void IoTDataPlaneClient::ListNamedShadowsForThingAsync(const ListNamedShadowsFor
 void IoTDataPlaneClient::ListNamedShadowsForThingAsyncHelper(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListNamedShadowsForThing(request), context);
+}
+
+ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListRetainedMessagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/retainedMessage");
+  return ListRetainedMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRetainedMessagesOutcomeCallable IoTDataPlaneClient::ListRetainedMessagesCallable(const ListRetainedMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRetainedMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRetainedMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDataPlaneClient::ListRetainedMessagesAsync(const ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRetainedMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDataPlaneClient::ListRetainedMessagesAsyncHelper(const ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRetainedMessages(request), context);
 }
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const

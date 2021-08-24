@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/M3u8AudioDuration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/M3u8DataPtsControl.h>
 #include <aws/mediaconvert/model/M3u8NielsenId3.h>
 #include <aws/mediaconvert/model/M3u8PcrControl.h>
 #include <aws/mediaconvert/model/M3u8Scte35Source.h>
@@ -215,6 +216,55 @@ namespace Model
      * comma separation.
      */
     inline M3u8Settings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
+
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline const M3u8DataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(const M3u8DataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(M3u8DataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M3u8Settings& WithDataPTSControl(const M3u8DataPtsControl& value) { SetDataPTSControl(value); return *this;}
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M3u8Settings& WithDataPTSControl(M3u8DataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
 
 
     /**
@@ -667,6 +717,9 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet;
+
+    M3u8DataPtsControl m_dataPTSControl;
+    bool m_dataPTSControlHasBeenSet;
 
     int m_maxPcrInterval;
     bool m_maxPcrIntervalHasBeenSet;

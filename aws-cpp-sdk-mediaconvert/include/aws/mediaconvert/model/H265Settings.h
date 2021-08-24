@@ -975,22 +975,30 @@ namespace Model
 
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline H265Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 

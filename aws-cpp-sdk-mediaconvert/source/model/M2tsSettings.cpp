@@ -30,6 +30,8 @@ M2tsSettings::M2tsSettings() :
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
     m_bufferModelHasBeenSet(false),
+    m_dataPTSControl(M2tsDataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
     m_dvbNitSettingsHasBeenSet(false),
     m_dvbSdtSettingsHasBeenSet(false),
     m_dvbSubPidsHasBeenSet(false),
@@ -102,6 +104,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
     m_bufferModelHasBeenSet(false),
+    m_dataPTSControl(M2tsDataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
     m_dvbNitSettingsHasBeenSet(false),
     m_dvbSdtSettingsHasBeenSet(false),
     m_dvbSubPidsHasBeenSet(false),
@@ -208,6 +212,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_bufferModel = M2tsBufferModelMapper::GetM2tsBufferModelForName(jsonValue.GetString("bufferModel"));
 
     m_bufferModelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataPTSControl"))
+  {
+    m_dataPTSControl = M2tsDataPtsControlMapper::GetM2tsDataPtsControlForName(jsonValue.GetString("dataPTSControl"));
+
+    m_dataPTSControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dvbNitSettings"))
@@ -473,6 +484,11 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_bufferModelHasBeenSet)
   {
    payload.WithString("bufferModel", M2tsBufferModelMapper::GetNameForM2tsBufferModel(m_bufferModel));
+  }
+
+  if(m_dataPTSControlHasBeenSet)
+  {
+   payload.WithString("dataPTSControl", M2tsDataPtsControlMapper::GetNameForM2tsDataPtsControl(m_dataPTSControl));
   }
 
   if(m_dvbNitSettingsHasBeenSet)

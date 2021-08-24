@@ -30,7 +30,8 @@ StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() :
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,17 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

@@ -545,59 +545,71 @@ namespace Model
 
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline double GetGopSize() const{ return m_gopSize; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
 
     /**
-     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     * Specify the interval between keyframes, in seconds or frames, for this output.
+     * Default: 12 Related settings: When you specify the GOP size in seconds, set GOP
+     * mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value
+     * for GOP mode control (GopSizeUnits) is Frames (FRAMES).
      */
     inline Mpeg2Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
 
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline const Mpeg2GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline void SetGopSizeUnits(const Mpeg2GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline void SetGopSizeUnits(Mpeg2GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline Mpeg2Settings& WithGopSizeUnits(const Mpeg2GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
 
     /**
-     * Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds
-     * the system will convert the GOP Size into a frame count at run time.
+     * Specify the units for GOP size (GopSize). If you don't specify a value here, by
+     * default the encoder measures GOP size in frames.
      */
     inline Mpeg2Settings& WithGopSizeUnits(Mpeg2GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
 
@@ -859,22 +871,30 @@ namespace Model
 
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Number of B-frames between reference frames.
+     * Specify the number of B-frames that MediaConvert puts between reference frames
+     * in this output. Valid values are whole numbers from 0 through 7. When you don't
+     * specify a value, MediaConvert defaults to 2.
      */
     inline Mpeg2Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 

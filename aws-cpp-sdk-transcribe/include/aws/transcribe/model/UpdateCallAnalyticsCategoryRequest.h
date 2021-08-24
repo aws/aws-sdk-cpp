@@ -39,56 +39,56 @@ namespace Model
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the analytics category to update. The name is case sensitive. If
      * you try to update a call analytics category with the same name as a previous
-     * category you will receive a <code>ConflictException</code> error. </p>
+     * category you will receive a <code>ConflictException</code> error.</p>
      */
     inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}
 

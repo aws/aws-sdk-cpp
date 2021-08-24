@@ -10,6 +10,8 @@
 #include <aws/transcribe/model/BaseModelName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/model/InputDataConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -77,9 +79,9 @@ namespace Model
     /**
      * <p>The Amazon Transcribe standard language model, or base model used to create
      * your custom language model.</p> <p>If you want to use your custom language model
-     * to transcribe audio with a sample rate of 16 kHz or greater, choose
+     * to transcribe audio with a sample rate of 16,000 Hz or greater, choose
      * <code>Wideband</code>.</p> <p>If you want to use your custom language model to
-     * transcribe audio with a sample rate that is less than 16 kHz, choose
+     * transcribe audio with a sample rate that is less than 16,000 Hz, choose
      * <code>Narrowband</code>.</p>
      */
     inline const BaseModelName& GetBaseModelName() const{ return m_baseModelName; }
@@ -87,9 +89,9 @@ namespace Model
     /**
      * <p>The Amazon Transcribe standard language model, or base model used to create
      * your custom language model.</p> <p>If you want to use your custom language model
-     * to transcribe audio with a sample rate of 16 kHz or greater, choose
+     * to transcribe audio with a sample rate of 16,000 Hz or greater, choose
      * <code>Wideband</code>.</p> <p>If you want to use your custom language model to
-     * transcribe audio with a sample rate that is less than 16 kHz, choose
+     * transcribe audio with a sample rate that is less than 16,000 Hz, choose
      * <code>Narrowband</code>.</p>
      */
     inline bool BaseModelNameHasBeenSet() const { return m_baseModelNameHasBeenSet; }
@@ -97,9 +99,9 @@ namespace Model
     /**
      * <p>The Amazon Transcribe standard language model, or base model used to create
      * your custom language model.</p> <p>If you want to use your custom language model
-     * to transcribe audio with a sample rate of 16 kHz or greater, choose
+     * to transcribe audio with a sample rate of 16,000 Hz or greater, choose
      * <code>Wideband</code>.</p> <p>If you want to use your custom language model to
-     * transcribe audio with a sample rate that is less than 16 kHz, choose
+     * transcribe audio with a sample rate that is less than 16,000 Hz, choose
      * <code>Narrowband</code>.</p>
      */
     inline void SetBaseModelName(const BaseModelName& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
@@ -107,9 +109,9 @@ namespace Model
     /**
      * <p>The Amazon Transcribe standard language model, or base model used to create
      * your custom language model.</p> <p>If you want to use your custom language model
-     * to transcribe audio with a sample rate of 16 kHz or greater, choose
+     * to transcribe audio with a sample rate of 16,000 Hz or greater, choose
      * <code>Wideband</code>.</p> <p>If you want to use your custom language model to
-     * transcribe audio with a sample rate that is less than 16 kHz, choose
+     * transcribe audio with a sample rate that is less than 16,000 Hz, choose
      * <code>Narrowband</code>.</p>
      */
     inline void SetBaseModelName(BaseModelName&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::move(value); }
@@ -117,9 +119,9 @@ namespace Model
     /**
      * <p>The Amazon Transcribe standard language model, or base model used to create
      * your custom language model.</p> <p>If you want to use your custom language model
-     * to transcribe audio with a sample rate of 16 kHz or greater, choose
+     * to transcribe audio with a sample rate of 16,000 Hz or greater, choose
      * <code>Wideband</code>.</p> <p>If you want to use your custom language model to
-     * transcribe audio with a sample rate that is less than 16 kHz, choose
+     * transcribe audio with a sample rate that is less than 16,000 Hz, choose
      * <code>Narrowband</code>.</p>
      */
     inline CreateLanguageModelRequest& WithBaseModelName(const BaseModelName& value) { SetBaseModelName(value); return *this;}
@@ -127,9 +129,9 @@ namespace Model
     /**
      * <p>The Amazon Transcribe standard language model, or base model used to create
      * your custom language model.</p> <p>If you want to use your custom language model
-     * to transcribe audio with a sample rate of 16 kHz or greater, choose
+     * to transcribe audio with a sample rate of 16,000 Hz or greater, choose
      * <code>Wideband</code>.</p> <p>If you want to use your custom language model to
-     * transcribe audio with a sample rate that is less than 16 kHz, choose
+     * transcribe audio with a sample rate that is less than 16,000 Hz, choose
      * <code>Narrowband</code>.</p>
      */
     inline CreateLanguageModelRequest& WithBaseModelName(BaseModelName&& value) { SetBaseModelName(std::move(value)); return *this;}
@@ -212,6 +214,55 @@ namespace Model
      */
     inline CreateLanguageModelRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline CreateLanguageModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline CreateLanguageModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline CreateLanguageModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new
+     * language model at the time you create this new model.</p>
+     */
+    inline CreateLanguageModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     CLMLanguageCode m_languageCode;
@@ -225,6 +276,9 @@ namespace Model
 
     InputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

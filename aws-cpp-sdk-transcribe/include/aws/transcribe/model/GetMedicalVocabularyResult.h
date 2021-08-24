@@ -100,35 +100,35 @@ namespace Model
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline GetMedicalVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline GetMedicalVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}
 

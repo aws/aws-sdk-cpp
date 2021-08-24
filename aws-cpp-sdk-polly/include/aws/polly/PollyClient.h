@@ -137,9 +137,9 @@ namespace Model
 
 
         /**
-         * <p>Deletes the specified pronunciation lexicon stored in an AWS Region. A
-         * lexicon which has been deleted is not available for speech synthesis, nor is it
-         * possible to retrieve it using either the <code>GetLexicon</code> or
+         * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
+         * Region. A lexicon which has been deleted is not available for speech synthesis,
+         * nor is it possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
@@ -149,9 +149,9 @@ namespace Model
         virtual Model::DeleteLexiconOutcome DeleteLexicon(const Model::DeleteLexiconRequest& request) const;
 
         /**
-         * <p>Deletes the specified pronunciation lexicon stored in an AWS Region. A
-         * lexicon which has been deleted is not available for speech synthesis, nor is it
-         * possible to retrieve it using either the <code>GetLexicon</code> or
+         * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
+         * Region. A lexicon which has been deleted is not available for speech synthesis,
+         * nor is it possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
@@ -163,9 +163,9 @@ namespace Model
         virtual Model::DeleteLexiconOutcomeCallable DeleteLexiconCallable(const Model::DeleteLexiconRequest& request) const;
 
         /**
-         * <p>Deletes the specified pronunciation lexicon stored in an AWS Region. A
-         * lexicon which has been deleted is not available for speech synthesis, nor is it
-         * possible to retrieve it using either the <code>GetLexicon</code> or
+         * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
+         * Region. A lexicon which has been deleted is not available for speech synthesis,
+         * nor is it possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
@@ -238,8 +238,8 @@ namespace Model
         virtual void DescribeVoicesAsync(const Model::DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
-         * Region. For more information, see <a
+         * <p>Returns the content of the specified pronunciation lexicon stored in an
+         * Amazon Web Services Region. For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
@@ -248,8 +248,8 @@ namespace Model
         virtual Model::GetLexiconOutcome GetLexicon(const Model::GetLexiconRequest& request) const;
 
         /**
-         * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
-         * Region. For more information, see <a
+         * <p>Returns the content of the specified pronunciation lexicon stored in an
+         * Amazon Web Services Region. For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
@@ -260,8 +260,8 @@ namespace Model
         virtual Model::GetLexiconOutcomeCallable GetLexiconCallable(const Model::GetLexiconRequest& request) const;
 
         /**
-         * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
-         * Region. For more information, see <a
+         * <p>Returns the content of the specified pronunciation lexicon stored in an
+         * Amazon Web Services Region. For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
@@ -306,8 +306,8 @@ namespace Model
         virtual void GetSpeechSynthesisTaskAsync(const Model::GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
-         * information, see <a
+         * <p>Returns a list of pronunciation lexicons stored in an Amazon Web Services
+         * Region. For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
@@ -316,8 +316,8 @@ namespace Model
         virtual Model::ListLexiconsOutcome ListLexicons(const Model::ListLexiconsRequest& request) const;
 
         /**
-         * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
-         * information, see <a
+         * <p>Returns a list of pronunciation lexicons stored in an Amazon Web Services
+         * Region. For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
@@ -328,8 +328,8 @@ namespace Model
         virtual Model::ListLexiconsOutcomeCallable ListLexiconsCallable(const Model::ListLexiconsRequest& request) const;
 
         /**
-         * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
-         * information, see <a
+         * <p>Returns a list of pronunciation lexicons stored in an Amazon Web Services
+         * Region. For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
@@ -371,11 +371,11 @@ namespace Model
         virtual void ListSpeechSynthesisTasksAsync(const Model::ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stores a pronunciation lexicon in an AWS Region. If a lexicon with the same
-         * name already exists in the region, it is overwritten by the new lexicon. Lexicon
-         * operations have eventual consistency, therefore, it might take some time before
-         * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
-         * information, see <a
+         * <p>Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon
+         * with the same name already exists in the region, it is overwritten by the new
+         * lexicon. Lexicon operations have eventual consistency, therefore, it might take
+         * some time before the lexicon is available to the SynthesizeSpeech operation.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
@@ -384,11 +384,11 @@ namespace Model
         virtual Model::PutLexiconOutcome PutLexicon(const Model::PutLexiconRequest& request) const;
 
         /**
-         * <p>Stores a pronunciation lexicon in an AWS Region. If a lexicon with the same
-         * name already exists in the region, it is overwritten by the new lexicon. Lexicon
-         * operations have eventual consistency, therefore, it might take some time before
-         * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
-         * information, see <a
+         * <p>Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon
+         * with the same name already exists in the region, it is overwritten by the new
+         * lexicon. Lexicon operations have eventual consistency, therefore, it might take
+         * some time before the lexicon is available to the SynthesizeSpeech operation.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
@@ -399,11 +399,11 @@ namespace Model
         virtual Model::PutLexiconOutcomeCallable PutLexiconCallable(const Model::PutLexiconRequest& request) const;
 
         /**
-         * <p>Stores a pronunciation lexicon in an AWS Region. If a lexicon with the same
-         * name already exists in the region, it is overwritten by the new lexicon. Lexicon
-         * operations have eventual consistency, therefore, it might take some time before
-         * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
-         * information, see <a
+         * <p>Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon
+         * with the same name already exists in the region, it is overwritten by the new
+         * lexicon. Lexicon operations have eventual consistency, therefore, it might take
+         * some time before the lexicon is available to the SynthesizeSpeech operation.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
@@ -418,10 +418,12 @@ namespace Model
          * <code>SpeechSynthesisTask</code>. This operation requires all the standard
          * information needed for speech synthesis, plus the name of an Amazon S3 bucket
          * for the service to store the output of the synthesis task and two optional
-         * parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is
-         * created, this operation will return a SpeechSynthesisTask object, which will
-         * include an identifier of this task as well as the current status.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once
+         * the synthesis task is created, this operation will return a
+         * <code>SpeechSynthesisTask</code> object, which will include an identifier of
+         * this task as well as the current status. The <code>SpeechSynthesisTask</code>
+         * object is available for 72 hours after starting the asynchronous synthesis
+         * task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
          * API Reference</a></p>
          */
@@ -432,10 +434,12 @@ namespace Model
          * <code>SpeechSynthesisTask</code>. This operation requires all the standard
          * information needed for speech synthesis, plus the name of an Amazon S3 bucket
          * for the service to store the output of the synthesis task and two optional
-         * parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is
-         * created, this operation will return a SpeechSynthesisTask object, which will
-         * include an identifier of this task as well as the current status.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once
+         * the synthesis task is created, this operation will return a
+         * <code>SpeechSynthesisTask</code> object, which will include an identifier of
+         * this task as well as the current status. The <code>SpeechSynthesisTask</code>
+         * object is available for 72 hours after starting the asynchronous synthesis
+         * task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
          * API Reference</a></p>
          *
@@ -448,10 +452,12 @@ namespace Model
          * <code>SpeechSynthesisTask</code>. This operation requires all the standard
          * information needed for speech synthesis, plus the name of an Amazon S3 bucket
          * for the service to store the output of the synthesis task and two optional
-         * parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is
-         * created, this operation will return a SpeechSynthesisTask object, which will
-         * include an identifier of this task as well as the current status.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once
+         * the synthesis task is created, this operation will return a
+         * <code>SpeechSynthesisTask</code> object, which will include an identifier of
+         * this task as well as the current status. The <code>SpeechSynthesisTask</code>
+         * object is available for 72 hours after starting the asynchronous synthesis
+         * task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
          * API Reference</a></p>
          *

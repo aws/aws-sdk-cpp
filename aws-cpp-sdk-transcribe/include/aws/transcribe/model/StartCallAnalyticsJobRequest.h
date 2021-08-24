@@ -40,65 +40,73 @@ namespace Model
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline const Aws::String& GetCallAnalyticsJobName() const{ return m_callAnalyticsJobName; }
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline bool CallAnalyticsJobNameHasBeenSet() const { return m_callAnalyticsJobNameHasBeenSet; }
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetCallAnalyticsJobName(const Aws::String& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = value; }
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetCallAnalyticsJobName(Aws::String&& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = std::move(value); }
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetCallAnalyticsJobName(const char* value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName.assign(value); }
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartCallAnalyticsJobRequest& WithCallAnalyticsJobName(const Aws::String& value) { SetCallAnalyticsJobName(value); return *this;}
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartCallAnalyticsJobRequest& WithCallAnalyticsJobName(Aws::String&& value) { SetCallAnalyticsJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the call analytics job. You can't use the string "." or ".." by
-     * themselves as the job name. The name must also be unique within an AWS account.
-     * If you try to create a call analytics job with the same name as a previous call
-     * analytics job, you get a <code>ConflictException</code> error.</p>
+     * themselves as the job name. The name must also be unique within an Amazon Web
+     * Services account. If you try to create a call analytics job with the same name
+     * as a previous call analytics job, you get a <code>ConflictException</code>
+     * error.</p>
      */
     inline StartCallAnalyticsJobRequest& WithCallAnalyticsJobName(const char* value) { SetCallAnalyticsJobName(value); return *this;}
 
@@ -135,11 +143,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
 
@@ -156,11 +164,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
@@ -177,11 +185,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
@@ -198,11 +206,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
@@ -219,11 +227,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
 
@@ -240,11 +248,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline StartCallAnalyticsJobRequest& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
 
@@ -261,11 +269,11 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline StartCallAnalyticsJobRequest& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
 
@@ -282,25 +290,26 @@ namespace Model
      * <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path
      * that has the filename specified, Amazon Transcribe saves the output of the
      * analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li> </ul>
-     * <p>You can specify an AWS Key Management Service key to encrypt the output of
-     * our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key
-     * for server-side encryption of the analytics job output that is placed in your S3
-     * bucket. </p>
+     * <p>You can specify an Amazon Web Services Key Management Service (KMS) key to
+     * encrypt the output of our analytics job using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * the analytics job output that is placed in your S3 bucket.</p>
      */
     inline StartCallAnalyticsJobRequest& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -311,15 +320,16 @@ namespace Model
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -330,15 +340,16 @@ namespace Model
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -349,15 +360,16 @@ namespace Model
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -368,15 +380,16 @@ namespace Model
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -387,15 +400,16 @@ namespace Model
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -406,15 +420,16 @@ namespace Model
     inline StartCallAnalyticsJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is
@@ -425,15 +440,16 @@ namespace Model
     inline StartCallAnalyticsJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
-     * encrypt the output of the call analytics job. The user calling the operation
-     * must have permission to use the specified KMS key.</p> <p>You use either of the
-     * following to identify an AWS KMS key in the current account:</p> <ul> <li>
-     * <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key
-     * Alias: "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the
-     * following to identify a KMS key in the current account or another account:</p>
-     * <ul> <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or
-     * another account: "arn:aws:kms:region:account
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+     * Service key used to encrypt the output of the call analytics job. The user
+     * calling the operation must have permission to use the specified KMS key.</p>
+     * <p>You use either of the following to identify an Amazon Web Services KMS key in
+     * the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p> You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+     * account: "arn:aws:kms:region:account
      * ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
      * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
      * you don't specify an encryption key, the output of the call analytics job is

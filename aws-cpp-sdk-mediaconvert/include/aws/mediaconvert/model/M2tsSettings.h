@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/M2tsAudioDuration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/M2tsBufferModel.h>
+#include <aws/mediaconvert/model/M2tsDataPtsControl.h>
 #include <aws/mediaconvert/model/DvbNitSettings.h>
 #include <aws/mediaconvert/model/DvbSdtSettings.h>
 #include <aws/mediaconvert/model/DvbTdtSettings.h>
@@ -344,6 +345,55 @@ namespace Model
      * interruptions.
      */
     inline M2tsSettings& WithBufferModel(M2tsBufferModel&& value) { SetBufferModel(std::move(value)); return *this;}
+
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline const M2tsDataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(const M2tsDataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(M2tsDataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M2tsSettings& WithDataPTSControl(const M2tsDataPtsControl& value) { SetDataPTSControl(value); return *this;}
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M2tsSettings& WithDataPTSControl(M2tsDataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
 
 
     /**
@@ -1555,6 +1605,9 @@ namespace Model
 
     M2tsBufferModel m_bufferModel;
     bool m_bufferModelHasBeenSet;
+
+    M2tsDataPtsControl m_dataPTSControl;
+    bool m_dataPTSControlHasBeenSet;
 
     DvbNitSettings m_dvbNitSettings;
     bool m_dvbNitSettingsHasBeenSet;

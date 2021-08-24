@@ -48,6 +48,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
     m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
@@ -91,6 +93,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
+    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
+    m_segmentLengthControlHasBeenSet(false),
     m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
     m_streamInfResolutionHasBeenSet(false),
     m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
@@ -227,6 +231,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_segmentLength = jsonValue.GetInteger("segmentLength");
 
     m_segmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentLengthControl"))
+  {
+    m_segmentLengthControl = CmafSegmentLengthControlMapper::GetCmafSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
+
+    m_segmentLengthControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("streamInfResolution"))
@@ -368,6 +379,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   {
    payload.WithInteger("segmentLength", m_segmentLength);
 
+  }
+
+  if(m_segmentLengthControlHasBeenSet)
+  {
+   payload.WithString("segmentLengthControl", CmafSegmentLengthControlMapper::GetNameForCmafSegmentLengthControl(m_segmentLengthControl));
   }
 
   if(m_streamInfResolutionHasBeenSet)

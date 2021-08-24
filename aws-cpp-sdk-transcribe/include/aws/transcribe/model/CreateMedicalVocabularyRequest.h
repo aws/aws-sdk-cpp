@@ -8,6 +8,8 @@
 #include <aws/transcribe/TranscribeServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/model/LanguageCode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +295,55 @@ namespace Model
      */
     inline CreateMedicalVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}
 
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateMedicalVocabularyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateMedicalVocabularyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateMedicalVocabularyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Adds one or more tags, each in the form of a key:value pair, to a new medical
+     * vocabulary at the time you create this new vocabulary.</p>
+     */
+    inline CreateMedicalVocabularyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_vocabularyName;
@@ -303,6 +354,9 @@ namespace Model
 
     Aws::String m_vocabularyFileUri;
     bool m_vocabularyFileUriHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

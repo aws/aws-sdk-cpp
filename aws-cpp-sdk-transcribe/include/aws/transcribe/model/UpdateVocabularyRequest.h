@@ -95,37 +95,37 @@ namespace Model
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline UpdateVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language code of the vocabulary entries. For a list of languages and
-     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
+     * their corresponding language codes, see <a>transcribe-whatis</a>.</p>
      */
     inline UpdateVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

@@ -78,7 +78,8 @@ namespace Model
     Vicki,
     Vitoria,
     Zeina,
-    Zhiyu
+    Zhiyu,
+    Aria
   };
 
 namespace VoiceIdMapper
