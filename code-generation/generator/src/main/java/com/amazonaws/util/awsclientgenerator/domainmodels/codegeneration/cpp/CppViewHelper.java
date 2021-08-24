@@ -199,6 +199,8 @@ public class CppViewHelper {
         // Customization for request content-type
         if (metadata.getServiceId().equals("WellArchitected")) {
             return "Aws::JSON_CONTENT_TYPE";
+        } else if (metadata.getServiceId().equals("savingsplans")) {
+            return "Aws::JSON_CONTENT_TYPE";
         } else {
             return CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.get(protocolAndVersion);
         }
