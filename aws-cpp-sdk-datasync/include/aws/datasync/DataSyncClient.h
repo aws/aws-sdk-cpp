@@ -233,12 +233,12 @@ namespace Model
     typedef std::function<void(const DataSyncClient*, const Model::UpdateTaskExecutionRequest&, const Model::UpdateTaskExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskExecutionResponseReceivedHandler;
 
   /**
-   * <fullname>AWS DataSync</fullname> <p>AWS DataSync is a managed data transfer
-   * service that makes it simpler for you to automate moving data between
-   * on-premises storage and Amazon Simple Storage Service (Amazon S3) or Amazon
-   * Elastic File System (Amazon EFS). </p> <p>This API interface reference for AWS
-   * DataSync contains documentation for a programming interface that you can use to
-   * manage AWS DataSync.</p>
+   * <fullname>DataSync</fullname> <p>DataSync is a managed data transfer service
+   * that makes it simpler for you to automate moving data between on-premises
+   * storage and Amazon Simple Storage Service (Amazon S3) or Amazon Elastic File
+   * System (Amazon EFS). </p> <p>This API interface reference for DataSync contains
+   * documentation for a programming interface that you can use to manage
+   * DataSync.</p>
    */
   class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient
   {
@@ -274,7 +274,7 @@ namespace Model
          * source files. However, if you start a new task execution on the same task and
          * you allow the task execution to complete, file content on the destination is
          * complete and consistent. This applies to other unexpected failures that
-         * interrupt a task execution. In all of these cases, AWS DataSync successfully
+         * interrupt a task execution. In all of these cases, DataSync successfully
          * complete the transfer when you start the next task execution.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">AWS
@@ -289,7 +289,7 @@ namespace Model
          * source files. However, if you start a new task execution on the same task and
          * you allow the task execution to complete, file content on the destination is
          * complete and consistent. This applies to other unexpected failures that
-         * interrupt a task execution. In all of these cases, AWS DataSync successfully
+         * interrupt a task execution. In all of these cases, DataSync successfully
          * complete the transfer when you start the next task execution.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">AWS
@@ -306,7 +306,7 @@ namespace Model
          * source files. However, if you start a new task execution on the same task and
          * you allow the task execution to complete, file content on the destination is
          * complete and consistent. This applies to other unexpected failures that
-         * interrupt a task execution. In all of these cases, AWS DataSync successfully
+         * interrupt a task execution. In all of these cases, DataSync successfully
          * complete the transfer when you start the next task execution.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CancelTaskExecution">AWS
@@ -317,40 +317,40 @@ namespace Model
         virtual void CancelTaskExecutionAsync(const Model::CancelTaskExecutionRequest& request, const CancelTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Activates an AWS DataSync agent that you have deployed on your host. The
+         * <p>Activates an DataSync agent that you have deployed on your host. The
          * activation process associates your agent with your account. In the activation
-         * process, you specify information such as the AWS Region that you want to
-         * activate the agent in. You activate the agent in the AWS Region where your
-         * target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in
-         * this AWS Region.</p> <p>You can activate the agent in a VPC (virtual private
-         * cloud) or provide the agent access to a VPC endpoint so you can run tasks
-         * without going over the public internet.</p> <p>You can use an agent for more
-         * than one location. If a task uses multiple agents, all of them need to have
-         * status AVAILABLE for the task to run. If you use multiple agents for a source
-         * location, the status of all the agents must be AVAILABLE for the task to run.
-         * </p> <p>Agents are automatically updated by AWS on a regular basis, using a
-         * mechanism that ensures minimal interruption to your tasks.</p> <p/><p><h3>See
-         * Also:</h3>   <a
+         * process, you specify information such as the Amazon Web Services Region that you
+         * want to activate the agent in. You activate the agent in the Amazon Web Services
+         * Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
+         * tasks are created in this Amazon Web Services Region.</p> <p>You can activate
+         * the agent in a VPC (virtual private cloud) or provide the agent access to a VPC
+         * endpoint so you can run tasks without going over the public internet.</p> <p>You
+         * can use an agent for more than one location. If a task uses multiple agents, all
+         * of them need to have status AVAILABLE for the task to run. If you use multiple
+         * agents for a source location, the status of all the agents must be AVAILABLE for
+         * the task to run. </p> <p>Agents are automatically updated by Amazon Web Services
+         * on a regular basis, using a mechanism that ensures minimal interruption to your
+         * tasks.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAgentOutcome CreateAgent(const Model::CreateAgentRequest& request) const;
 
         /**
-         * <p>Activates an AWS DataSync agent that you have deployed on your host. The
+         * <p>Activates an DataSync agent that you have deployed on your host. The
          * activation process associates your agent with your account. In the activation
-         * process, you specify information such as the AWS Region that you want to
-         * activate the agent in. You activate the agent in the AWS Region where your
-         * target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in
-         * this AWS Region.</p> <p>You can activate the agent in a VPC (virtual private
-         * cloud) or provide the agent access to a VPC endpoint so you can run tasks
-         * without going over the public internet.</p> <p>You can use an agent for more
-         * than one location. If a task uses multiple agents, all of them need to have
-         * status AVAILABLE for the task to run. If you use multiple agents for a source
-         * location, the status of all the agents must be AVAILABLE for the task to run.
-         * </p> <p>Agents are automatically updated by AWS on a regular basis, using a
-         * mechanism that ensures minimal interruption to your tasks.</p> <p/><p><h3>See
-         * Also:</h3>   <a
+         * process, you specify information such as the Amazon Web Services Region that you
+         * want to activate the agent in. You activate the agent in the Amazon Web Services
+         * Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
+         * tasks are created in this Amazon Web Services Region.</p> <p>You can activate
+         * the agent in a VPC (virtual private cloud) or provide the agent access to a VPC
+         * endpoint so you can run tasks without going over the public internet.</p> <p>You
+         * can use an agent for more than one location. If a task uses multiple agents, all
+         * of them need to have status AVAILABLE for the task to run. If you use multiple
+         * agents for a source location, the status of all the agents must be AVAILABLE for
+         * the task to run. </p> <p>Agents are automatically updated by Amazon Web Services
+         * on a regular basis, using a mechanism that ensures minimal interruption to your
+         * tasks.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
          * API Reference</a></p>
          *
@@ -359,20 +359,20 @@ namespace Model
         virtual Model::CreateAgentOutcomeCallable CreateAgentCallable(const Model::CreateAgentRequest& request) const;
 
         /**
-         * <p>Activates an AWS DataSync agent that you have deployed on your host. The
+         * <p>Activates an DataSync agent that you have deployed on your host. The
          * activation process associates your agent with your account. In the activation
-         * process, you specify information such as the AWS Region that you want to
-         * activate the agent in. You activate the agent in the AWS Region where your
-         * target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in
-         * this AWS Region.</p> <p>You can activate the agent in a VPC (virtual private
-         * cloud) or provide the agent access to a VPC endpoint so you can run tasks
-         * without going over the public internet.</p> <p>You can use an agent for more
-         * than one location. If a task uses multiple agents, all of them need to have
-         * status AVAILABLE for the task to run. If you use multiple agents for a source
-         * location, the status of all the agents must be AVAILABLE for the task to run.
-         * </p> <p>Agents are automatically updated by AWS on a regular basis, using a
-         * mechanism that ensures minimal interruption to your tasks.</p> <p/><p><h3>See
-         * Also:</h3>   <a
+         * process, you specify information such as the Amazon Web Services Region that you
+         * want to activate the agent in. You activate the agent in the Amazon Web Services
+         * Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
+         * tasks are created in this Amazon Web Services Region.</p> <p>You can activate
+         * the agent in a VPC (virtual private cloud) or provide the agent access to a VPC
+         * endpoint so you can run tasks without going over the public internet.</p> <p>You
+         * can use an agent for more than one location. If a task uses multiple agents, all
+         * of them need to have status AVAILABLE for the task to run. If you use multiple
+         * agents for a source location, the status of all the agents must be AVAILABLE for
+         * the task to run. </p> <p>Agents are automatically updated by Amazon Web Services
+         * on a regular basis, using a mechanism that ensures minimal interruption to your
+         * tasks.</p> <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
          * API Reference</a></p>
          *
@@ -500,8 +500,10 @@ namespace Model
 
         /**
          * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For more information, see
-         * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-         * in the <i>AWS DataSync User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+         * an Amazon S3 location</a> in the <i>DataSync User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          */
@@ -509,8 +511,10 @@ namespace Model
 
         /**
          * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For more information, see
-         * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-         * in the <i>AWS DataSync User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+         * an Amazon S3 location</a> in the <i>DataSync User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          *
@@ -520,8 +524,10 @@ namespace Model
 
         /**
          * <p>Creates an endpoint for an Amazon S3 bucket.</p> <p>For more information, see
-         * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
-         * in the <i>AWS DataSync User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create
+         * an Amazon S3 location</a> in the <i>DataSync User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          *
@@ -563,14 +569,15 @@ namespace Model
          * always transfers data from the source location to the destination location. The
          * configuration specifies options such as task scheduling, bandwidth limits, etc.
          * A task is the complete definition of a data transfer.</p> <p>When you create a
-         * task that transfers data between AWS services in different AWS Regions, one of
-         * the two locations that you specify must reside in the Region where DataSync is
-         * being used. The other location must be specified in a different Region.</p>
-         * <p>You can transfer data between commercial AWS Regions except for China, or
-         * between AWS GovCloud (US-East and US-West) Regions.</p>  <p>When you
-         * use DataSync to copy files or objects between AWS Regions, you pay for data
-         * transfer between Regions. This is billed as data transfer OUT from your source
-         * Region to your destination Region. For more information, see <a
+         * task that transfers data between Amazon Web Services services in different
+         * Amazon Web Services Regions, one of the two locations that you specify must
+         * reside in the Region where DataSync is being used. The other location must be
+         * specified in a different Region.</p> <p>You can transfer data between commercial
+         * Amazon Web Services Regions except for China, or between Amazon Web Services
+         * GovCloud (US) Regions.</p>  <p>When you use DataSync to copy files or
+         * objects between Amazon Web Services Regions, you pay for data transfer between
+         * Regions. This is billed as data transfer OUT from your source Region to your
+         * destination Region. For more information, see <a
          * href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer
          * pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
@@ -584,14 +591,15 @@ namespace Model
          * always transfers data from the source location to the destination location. The
          * configuration specifies options such as task scheduling, bandwidth limits, etc.
          * A task is the complete definition of a data transfer.</p> <p>When you create a
-         * task that transfers data between AWS services in different AWS Regions, one of
-         * the two locations that you specify must reside in the Region where DataSync is
-         * being used. The other location must be specified in a different Region.</p>
-         * <p>You can transfer data between commercial AWS Regions except for China, or
-         * between AWS GovCloud (US-East and US-West) Regions.</p>  <p>When you
-         * use DataSync to copy files or objects between AWS Regions, you pay for data
-         * transfer between Regions. This is billed as data transfer OUT from your source
-         * Region to your destination Region. For more information, see <a
+         * task that transfers data between Amazon Web Services services in different
+         * Amazon Web Services Regions, one of the two locations that you specify must
+         * reside in the Region where DataSync is being used. The other location must be
+         * specified in a different Region.</p> <p>You can transfer data between commercial
+         * Amazon Web Services Regions except for China, or between Amazon Web Services
+         * GovCloud (US) Regions.</p>  <p>When you use DataSync to copy files or
+         * objects between Amazon Web Services Regions, you pay for data transfer between
+         * Regions. This is billed as data transfer OUT from your source Region to your
+         * destination Region. For more information, see <a
          * href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer
          * pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
@@ -607,14 +615,15 @@ namespace Model
          * always transfers data from the source location to the destination location. The
          * configuration specifies options such as task scheduling, bandwidth limits, etc.
          * A task is the complete definition of a data transfer.</p> <p>When you create a
-         * task that transfers data between AWS services in different AWS Regions, one of
-         * the two locations that you specify must reside in the Region where DataSync is
-         * being used. The other location must be specified in a different Region.</p>
-         * <p>You can transfer data between commercial AWS Regions except for China, or
-         * between AWS GovCloud (US-East and US-West) Regions.</p>  <p>When you
-         * use DataSync to copy files or objects between AWS Regions, you pay for data
-         * transfer between Regions. This is billed as data transfer OUT from your source
-         * Region to your destination Region. For more information, see <a
+         * task that transfers data between Amazon Web Services services in different
+         * Amazon Web Services Regions, one of the two locations that you specify must
+         * reside in the Region where DataSync is being used. The other location must be
+         * specified in a different Region.</p> <p>You can transfer data between commercial
+         * Amazon Web Services Regions except for China, or between Amazon Web Services
+         * GovCloud (US) Regions.</p>  <p>When you use DataSync to copy files or
+         * objects between Amazon Web Services Regions, you pay for data transfer between
+         * Regions. This is billed as data transfer OUT from your source Region to your
+         * destination Region. For more information, see <a
          * href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer
          * pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateTask">AWS
@@ -627,8 +636,9 @@ namespace Model
         /**
          * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
          * Name (ARN) of the agent in your request. The operation disassociates the agent
-         * from your AWS account. However, it doesn't delete the agent virtual machine (VM)
-         * from your on-premises environment.</p><p><h3>See Also:</h3>   <a
+         * from your Amazon Web Services account. However, it doesn't delete the agent
+         * virtual machine (VM) from your on-premises environment.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          */
@@ -637,8 +647,9 @@ namespace Model
         /**
          * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
          * Name (ARN) of the agent in your request. The operation disassociates the agent
-         * from your AWS account. However, it doesn't delete the agent virtual machine (VM)
-         * from your on-premises environment.</p><p><h3>See Also:</h3>   <a
+         * from your Amazon Web Services account. However, it doesn't delete the agent
+         * virtual machine (VM) from your on-premises environment.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          *
@@ -649,8 +660,9 @@ namespace Model
         /**
          * <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource
          * Name (ARN) of the agent in your request. The operation disassociates the agent
-         * from your AWS account. However, it doesn't delete the agent virtual machine (VM)
-         * from your on-premises environment.</p><p><h3>See Also:</h3>   <a
+         * from your Amazon Web Services account. However, it doesn't delete the agent
+         * virtual machine (VM) from your on-premises environment.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteAgent">AWS
          * API Reference</a></p>
          *
@@ -659,7 +671,7 @@ namespace Model
         virtual void DeleteAgentAsync(const Model::DeleteAgentRequest& request, const DeleteAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the configuration of a location used by AWS DataSync. </p><p><h3>See
+         * <p>Deletes the configuration of a location used by DataSync. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">AWS
          * API Reference</a></p>
@@ -667,7 +679,7 @@ namespace Model
         virtual Model::DeleteLocationOutcome DeleteLocation(const Model::DeleteLocationRequest& request) const;
 
         /**
-         * <p>Deletes the configuration of a location used by AWS DataSync. </p><p><h3>See
+         * <p>Deletes the configuration of a location used by DataSync. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">AWS
          * API Reference</a></p>
@@ -677,7 +689,7 @@ namespace Model
         virtual Model::DeleteLocationOutcomeCallable DeleteLocationCallable(const Model::DeleteLocationRequest& request) const;
 
         /**
-         * <p>Deletes the configuration of a location used by AWS DataSync. </p><p><h3>See
+         * <p>Deletes the configuration of a location used by DataSync. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteLocation">AWS
          * API Reference</a></p>
@@ -973,28 +985,30 @@ namespace Model
         virtual void DescribeTaskExecutionAsync(const Model::DescribeTaskExecutionRequest& request, const DescribeTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of agents owned by an AWS account in the AWS Region specified
-         * in the request. The returned list is ordered by agent Amazon Resource Name
-         * (ARN).</p> <p>By default, this operation returns a maximum of 100 agents. This
-         * operation supports pagination that enables you to optionally reduce the number
-         * of agents returned in a response.</p> <p>If you have more agents than are
-         * returned in a response (that is, the response returns only a truncated list of
-         * your agents), the response contains a marker that you can specify in your next
-         * request to fetch the next page of agents.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of agents owned by an Amazon Web Services account in the
+         * Amazon Web Services Region specified in the request. The returned list is
+         * ordered by agent Amazon Resource Name (ARN).</p> <p>By default, this operation
+         * returns a maximum of 100 agents. This operation supports pagination that enables
+         * you to optionally reduce the number of agents returned in a response.</p> <p>If
+         * you have more agents than are returned in a response (that is, the response
+         * returns only a truncated list of your agents), the response contains a marker
+         * that you can specify in your next request to fetch the next page of
+         * agents.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAgentsOutcome ListAgents(const Model::ListAgentsRequest& request) const;
 
         /**
-         * <p>Returns a list of agents owned by an AWS account in the AWS Region specified
-         * in the request. The returned list is ordered by agent Amazon Resource Name
-         * (ARN).</p> <p>By default, this operation returns a maximum of 100 agents. This
-         * operation supports pagination that enables you to optionally reduce the number
-         * of agents returned in a response.</p> <p>If you have more agents than are
-         * returned in a response (that is, the response returns only a truncated list of
-         * your agents), the response contains a marker that you can specify in your next
-         * request to fetch the next page of agents.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of agents owned by an Amazon Web Services account in the
+         * Amazon Web Services Region specified in the request. The returned list is
+         * ordered by agent Amazon Resource Name (ARN).</p> <p>By default, this operation
+         * returns a maximum of 100 agents. This operation supports pagination that enables
+         * you to optionally reduce the number of agents returned in a response.</p> <p>If
+         * you have more agents than are returned in a response (that is, the response
+         * returns only a truncated list of your agents), the response contains a marker
+         * that you can specify in your next request to fetch the next page of
+         * agents.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">AWS
          * API Reference</a></p>
          *
@@ -1003,14 +1017,15 @@ namespace Model
         virtual Model::ListAgentsOutcomeCallable ListAgentsCallable(const Model::ListAgentsRequest& request) const;
 
         /**
-         * <p>Returns a list of agents owned by an AWS account in the AWS Region specified
-         * in the request. The returned list is ordered by agent Amazon Resource Name
-         * (ARN).</p> <p>By default, this operation returns a maximum of 100 agents. This
-         * operation supports pagination that enables you to optionally reduce the number
-         * of agents returned in a response.</p> <p>If you have more agents than are
-         * returned in a response (that is, the response returns only a truncated list of
-         * your agents), the response contains a marker that you can specify in your next
-         * request to fetch the next page of agents.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of agents owned by an Amazon Web Services account in the
+         * Amazon Web Services Region specified in the request. The returned list is
+         * ordered by agent Amazon Resource Name (ARN).</p> <p>By default, this operation
+         * returns a maximum of 100 agents. This operation supports pagination that enables
+         * you to optionally reduce the number of agents returned in a response.</p> <p>If
+         * you have more agents than are returned in a response (that is, the response
+         * returns only a truncated list of your agents), the response contains a marker
+         * that you can specify in your next request to fetch the next page of
+         * agents.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">AWS
          * API Reference</a></p>
          *
@@ -1139,7 +1154,7 @@ namespace Model
          * <code>TaskExecution</code> at a time.</p> <p> <code>TaskExecution</code> has the
          * following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING
          * | SUCCESS/FAILURE. </p> <p>For detailed information, see the Task Execution
-         * section in the Components and Terminology topic in the <i>AWS DataSync User
+         * section in the Components and Terminology topic in the <i>DataSync User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
@@ -1152,7 +1167,7 @@ namespace Model
          * <code>TaskExecution</code> at a time.</p> <p> <code>TaskExecution</code> has the
          * following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING
          * | SUCCESS/FAILURE. </p> <p>For detailed information, see the Task Execution
-         * section in the Components and Terminology topic in the <i>AWS DataSync User
+         * section in the Components and Terminology topic in the <i>DataSync User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
@@ -1167,7 +1182,7 @@ namespace Model
          * <code>TaskExecution</code> at a time.</p> <p> <code>TaskExecution</code> has the
          * following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING
          * | SUCCESS/FAILURE. </p> <p>For detailed information, see the Task Execution
-         * section in the Components and Terminology topic in the <i>AWS DataSync User
+         * section in the Components and Terminology topic in the <i>DataSync User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/StartTaskExecution">AWS
          * API Reference</a></p>
@@ -1177,14 +1192,16 @@ namespace Model
         virtual void StartTaskExecutionAsync(const Model::StartTaskExecutionRequest& request, const StartTaskExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a key-value pair to an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a key-value pair to an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Applies a key-value pair to an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a key-value pair to an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1193,7 +1210,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Applies a key-value pair to an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Applies a key-value pair to an Amazon Web Services resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1202,14 +1220,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a tag from an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from an Amazon Web Services resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from an Amazon Web Services resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1218,7 +1238,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes a tag from an AWS resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from an Amazon Web Services resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UntagResource">AWS
          * API Reference</a></p>
          *

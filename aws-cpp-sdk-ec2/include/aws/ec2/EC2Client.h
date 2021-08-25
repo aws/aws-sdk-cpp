@@ -2810,9 +2810,9 @@ namespace Model
          * Delegation on the network interface. You must specify either the IPV6 Prefix
          * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+         * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          */
@@ -2832,9 +2832,9 @@ namespace Model
          * Delegation on the network interface. You must specify either the IPV6 Prefix
          * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+         * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2856,9 +2856,9 @@ namespace Model
          * Delegation on the network interface. You must specify either the IPV6 Prefix
          * Delegation prefixes, or the IPv6 Prefix Delegation count. For information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+         * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2888,9 +2888,9 @@ namespace Model
          * Prefix Delegation on the network interface. You must specify either the IPv4
          * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+         * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
@@ -2918,9 +2918,9 @@ namespace Model
          * Prefix Delegation on the network interface. You must specify either the IPv4
          * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+         * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -2950,9 +2950,9 @@ namespace Model
          * Prefix Delegation on the network interface. You must specify either the IPv4
          * Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix
-         * Delegation</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">
+         * Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic
+         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -3466,30 +3466,28 @@ namespace Model
         virtual void AssociateTransitGatewayRouteTableAsync(const Model::AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Associates a branch network interface with a trunk network interface.</p>
          * <p>Before you create the association, run the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
          * command and set <code>--interface-type</code> to <code>trunk</code>. You must
          * also create a network interface for each branch network interface that you want
-         * to associate with the trunk network interface.</p> <p>For more information, see
-         * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-         * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * to associate with the trunk network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateTrunkInterfaceOutcome AssociateTrunkInterface(const Model::AssociateTrunkInterfaceRequest& request) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Associates a branch network interface with a trunk network interface.</p>
          * <p>Before you create the association, run the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
          * command and set <code>--interface-type</code> to <code>trunk</code>. You must
          * also create a network interface for each branch network interface that you want
-         * to associate with the trunk network interface.</p> <p>For more information, see
-         * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-         * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * to associate with the trunk network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">AWS
          * API Reference</a></p>
          *
@@ -3498,15 +3496,14 @@ namespace Model
         virtual Model::AssociateTrunkInterfaceOutcomeCallable AssociateTrunkInterfaceCallable(const Model::AssociateTrunkInterfaceRequest& request) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Associates a branch network interface with a trunk network interface.</p>
          * <p>Before you create the association, run the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
          * command and set <code>--interface-type</code> to <code>trunk</code>. You must
          * also create a network interface for each branch network interface that you want
-         * to associate with the trunk network interface.</p> <p>For more information, see
-         * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
-         * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * to associate with the trunk network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">AWS
          * API Reference</a></p>
          *
@@ -14047,6 +14044,8 @@ namespace Model
         virtual void DescribeTransitGatewaysAsync(const Model::DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Describes one or more network interface trunk associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">AWS
@@ -14055,6 +14054,8 @@ namespace Model
         virtual Model::DescribeTrunkInterfaceAssociationsOutcome DescribeTrunkInterfaceAssociations(const Model::DescribeTrunkInterfaceAssociationsRequest& request) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Describes one or more network interface trunk associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">AWS
@@ -14065,6 +14066,8 @@ namespace Model
         virtual Model::DescribeTrunkInterfaceAssociationsOutcomeCallable DescribeTrunkInterfaceAssociationsCallable(const Model::DescribeTrunkInterfaceAssociationsRequest& request) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Describes one or more network interface trunk associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">AWS
@@ -15560,6 +15563,8 @@ namespace Model
         virtual void DisassociateTransitGatewayRouteTableAsync(const Model::DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Removes an association between a branch network interface with a trunk
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">AWS
@@ -15568,6 +15573,8 @@ namespace Model
         virtual Model::DisassociateTrunkInterfaceOutcome DisassociateTrunkInterface(const Model::DisassociateTrunkInterfaceRequest& request) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Removes an association between a branch network interface with a trunk
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">AWS
@@ -15578,6 +15585,8 @@ namespace Model
         virtual Model::DisassociateTrunkInterfaceOutcomeCallable DisassociateTrunkInterfaceCallable(const Model::DisassociateTrunkInterfaceRequest& request) const;
 
         /**
+         *  <p>This API action is currently in <b>limited preview only</b>. If you
+         * are interested in using this feature, contact your account manager.</p> 
          * <p>Removes an association between a branch network interface with a trunk
          * network interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">AWS

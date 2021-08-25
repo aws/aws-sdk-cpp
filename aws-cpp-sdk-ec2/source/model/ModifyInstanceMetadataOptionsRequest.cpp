@@ -19,7 +19,9 @@ ModifyInstanceMetadataOptionsRequest::ModifyInstanceMetadataOptionsRequest() :
     m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
     m_httpEndpointHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_httpProtocolIpv6(InstanceMetadataProtocolState::NOT_SET),
+    m_httpProtocolIpv6HasBeenSet(false)
 {
 }
 
@@ -50,6 +52,11 @@ Aws::String ModifyInstanceMetadataOptionsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_httpProtocolIpv6HasBeenSet)
+  {
+    ss << "HttpProtocolIpv6=" << InstanceMetadataProtocolStateMapper::GetNameForInstanceMetadataProtocolState(m_httpProtocolIpv6) << "&";
   }
 
   ss << "Version=2016-11-15";

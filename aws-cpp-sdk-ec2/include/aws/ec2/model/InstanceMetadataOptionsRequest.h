@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/HttpTokensState.h>
 #include <aws/ec2/model/InstanceMetadataEndpointState.h>
+#include <aws/ec2/model/InstanceMetadataProtocolState.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +215,37 @@ namespace Model
      */
     inline InstanceMetadataOptionsRequest& WithHttpEndpoint(InstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline const InstanceMetadataProtocolState& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline void SetHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline InstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { SetHttpProtocolIpv6(value); return *this;}
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline InstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+
   private:
 
     HttpTokensState m_httpTokens;
@@ -224,6 +256,9 @@ namespace Model
 
     InstanceMetadataEndpointState m_httpEndpoint;
     bool m_httpEndpointHasBeenSet;
+
+    InstanceMetadataProtocolState m_httpProtocolIpv6;
+    bool m_httpProtocolIpv6HasBeenSet;
   };
 
 } // namespace Model

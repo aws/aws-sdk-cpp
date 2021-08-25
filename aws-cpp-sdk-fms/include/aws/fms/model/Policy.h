@@ -555,6 +555,43 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline bool GetDeleteUnusedFMManagedResources() const{ return m_deleteUnusedFMManagedResources; }
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline bool DeleteUnusedFMManagedResourcesHasBeenSet() const { return m_deleteUnusedFMManagedResourcesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline void SetDeleteUnusedFMManagedResources(bool value) { m_deleteUnusedFMManagedResourcesHasBeenSet = true; m_deleteUnusedFMManagedResources = value; }
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline Policy& WithDeleteUnusedFMManagedResources(bool value) { SetDeleteUnusedFMManagedResources(value); return *this;}
+
+
+    /**
      * <p>Specifies the Amazon Web Services account IDs and Organizations
      * organizational units (OUs) to include in the policy. Specifying an OU is the
      * equivalent of specifying all accounts in the OU and in any of its child OUs,
@@ -1043,6 +1080,9 @@ namespace Model
 
     bool m_remediationEnabled;
     bool m_remediationEnabledHasBeenSet;
+
+    bool m_deleteUnusedFMManagedResources;
+    bool m_deleteUnusedFMManagedResourcesHasBeenSet;
 
     Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_includeMap;
     bool m_includeMapHasBeenSet;

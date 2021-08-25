@@ -109,44 +109,37 @@ namespace Model
 
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline const Aws::Vector<Ipv4PrefixSpecification>& GetAssignedIpv4Prefixes() const{ return m_assignedIpv4Prefixes; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline void SetAssignedIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { m_assignedIpv4Prefixes = value; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline void SetAssignedIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { m_assignedIpv4Prefixes = std::move(value); }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline AssignPrivateIpAddressesResponse& WithAssignedIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { SetAssignedIpv4Prefixes(value); return *this;}
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline AssignPrivateIpAddressesResponse& WithAssignedIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { SetAssignedIpv4Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline AssignPrivateIpAddressesResponse& AddAssignedIpv4Prefixes(const Ipv4PrefixSpecification& value) { m_assignedIpv4Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes that are assigned to the network
-     * interface.</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
      */
     inline AssignPrivateIpAddressesResponse& AddAssignedIpv4Prefixes(Ipv4PrefixSpecification&& value) { m_assignedIpv4Prefixes.push_back(std::move(value)); return *this; }
 

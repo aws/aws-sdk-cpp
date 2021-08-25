@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>These are custom parameters to be used when the target is a Redshift cluster
-   * to invoke the Redshift Data API ExecuteStatement based on EventBridge
-   * events.</p><p><h3>See Also:</h3>   <a
+   * <p>These are custom parameters to be used when the target is a Amazon Redshift
+   * cluster to invoke the Amazon Redshift Data API ExecuteStatement based on
+   * EventBridge events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RedshiftDataParameters">AWS
    * API Reference</a></p>
    */
@@ -41,49 +41,49 @@ namespace Model
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline const Aws::String& GetSecretManagerArn() const{ return m_secretManagerArn; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline bool SecretManagerArnHasBeenSet() const { return m_secretManagerArnHasBeenSet; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline void SetSecretManagerArn(const Aws::String& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = value; }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline void SetSecretManagerArn(Aws::String&& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = std::move(value); }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline void SetSecretManagerArn(const char* value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn.assign(value); }
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline RedshiftDataParameters& WithSecretManagerArn(const Aws::String& value) { SetSecretManagerArn(value); return *this;}
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline RedshiftDataParameters& WithSecretManagerArn(Aws::String&& value) { SetSecretManagerArn(std::move(value)); return *this;}
 
     /**
      * <p>The name or ARN of the secret that enables access to the database. Required
-     * when authenticating using AWS Secrets Manager.</p>
+     * when authenticating using Amazon Web Services Secrets Manager.</p>
      */
     inline RedshiftDataParameters& WithSecretManagerArn(const char* value) { SetSecretManagerArn(value); return *this;}
 

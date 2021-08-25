@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/LaunchType.h>
+#include <aws/ec2/model/InstanceMetadataProtocolState.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,53 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace EventBridge
+  namespace EC2
   {
     namespace Model
     {
-      namespace LaunchTypeMapper
+      namespace InstanceMetadataProtocolStateMapper
       {
 
-        static const int EC2_HASH = HashingUtils::HashString("EC2");
-        static const int FARGATE_HASH = HashingUtils::HashString("FARGATE");
-        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static const int disabled_HASH = HashingUtils::HashString("disabled");
+        static const int enabled_HASH = HashingUtils::HashString("enabled");
 
 
-        LaunchType GetLaunchTypeForName(const Aws::String& name)
+        InstanceMetadataProtocolState GetInstanceMetadataProtocolStateForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == EC2_HASH)
+          if (hashCode == disabled_HASH)
           {
-            return LaunchType::EC2;
+            return InstanceMetadataProtocolState::disabled;
           }
-          else if (hashCode == FARGATE_HASH)
+          else if (hashCode == enabled_HASH)
           {
-            return LaunchType::FARGATE;
-          }
-          else if (hashCode == EXTERNAL_HASH)
-          {
-            return LaunchType::EXTERNAL;
+            return InstanceMetadataProtocolState::enabled;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LaunchType>(hashCode);
+            return static_cast<InstanceMetadataProtocolState>(hashCode);
           }
 
-          return LaunchType::NOT_SET;
+          return InstanceMetadataProtocolState::NOT_SET;
         }
 
-        Aws::String GetNameForLaunchType(LaunchType enumValue)
+        Aws::String GetNameForInstanceMetadataProtocolState(InstanceMetadataProtocolState enumValue)
         {
           switch(enumValue)
           {
-          case LaunchType::EC2:
-            return "EC2";
-          case LaunchType::FARGATE:
-            return "FARGATE";
-          case LaunchType::EXTERNAL:
-            return "EXTERNAL";
+          case InstanceMetadataProtocolState::disabled:
+            return "disabled";
+          case InstanceMetadataProtocolState::enabled:
+            return "enabled";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace LaunchTypeMapper
+      } // namespace InstanceMetadataProtocolStateMapper
     } // namespace Model
-  } // namespace EventBridge
+  } // namespace EC2
 } // namespace Aws

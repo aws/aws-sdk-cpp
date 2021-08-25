@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>A partner event source is created by an SaaS partner. If a customer creates a
-   * partner event bus that matches this event source, that AWS account can receive
-   * events from the partner's applications or services.</p><p><h3>See Also:</h3>  
-   * <a
+   * partner event bus that matches this event source, that Amazon Web Services
+   * account can receive events from the partner's applications or
+   * services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PartnerEventSource">AWS
    * API Reference</a></p>
    */

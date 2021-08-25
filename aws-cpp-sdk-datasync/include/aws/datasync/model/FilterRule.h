@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The type of filter rule to apply. AWS DataSync only supports the
-     * SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
+     * rule type.</p>
      */
     inline const FilterType& GetFilterType() const{ return m_filterType; }
 
     /**
-     * <p>The type of filter rule to apply. AWS DataSync only supports the
-     * SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
+     * rule type.</p>
      */
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
 
     /**
-     * <p>The type of filter rule to apply. AWS DataSync only supports the
-     * SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
+     * rule type.</p>
      */
     inline void SetFilterType(const FilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
 
     /**
-     * <p>The type of filter rule to apply. AWS DataSync only supports the
-     * SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
+     * rule type.</p>
      */
     inline void SetFilterType(FilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
 
     /**
-     * <p>The type of filter rule to apply. AWS DataSync only supports the
-     * SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
+     * rule type.</p>
      */
     inline FilterRule& WithFilterType(const FilterType& value) { SetFilterType(value); return *this;}
 
     /**
-     * <p>The type of filter rule to apply. AWS DataSync only supports the
-     * SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
+     * rule type.</p>
      */
     inline FilterRule& WithFilterType(FilterType&& value) { SetFilterType(std::move(value)); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/HttpTokensState.h>
 #include <aws/ec2/model/InstanceMetadataEndpointState.h>
+#include <aws/ec2/model/InstanceMetadataProtocolState.h>
 #include <utility>
 
 namespace Aws
@@ -284,6 +285,37 @@ namespace Model
      */
     inline ModifyInstanceMetadataOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline const InstanceMetadataProtocolState& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline void SetHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { SetHttpProtocolIpv6(value); return *this;}
+
+    /**
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+     */
+    inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -300,6 +332,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    InstanceMetadataProtocolState m_httpProtocolIpv6;
+    bool m_httpProtocolIpv6HasBeenSet;
   };
 
 } // namespace Model

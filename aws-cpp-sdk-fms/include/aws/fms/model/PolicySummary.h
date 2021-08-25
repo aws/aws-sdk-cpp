@@ -361,6 +361,43 @@ namespace Model
      */
     inline PolicySummary& WithRemediationEnabled(bool value) { SetRemediationEnabled(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline bool GetDeleteUnusedFMManagedResources() const{ return m_deleteUnusedFMManagedResources; }
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline bool DeleteUnusedFMManagedResourcesHasBeenSet() const { return m_deleteUnusedFMManagedResourcesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline void SetDeleteUnusedFMManagedResources(bool value) { m_deleteUnusedFMManagedResourcesHasBeenSet = true; m_deleteUnusedFMManagedResources = value; }
+
+    /**
+     * <p>Indicates whether Firewall Manager should delete Firewall Manager managed
+     * resources, such as web ACLs and security groups, when they are not in use by the
+     * Firewall Manager policy. By default, Firewall Manager doesn't delete unused
+     * Firewall Manager managed resources. This option is not available for Shield
+     * Advanced or WAF Classic policies.</p>
+     */
+    inline PolicySummary& WithDeleteUnusedFMManagedResources(bool value) { SetDeleteUnusedFMManagedResources(value); return *this;}
+
   private:
 
     Aws::String m_policyArn;
@@ -380,6 +417,9 @@ namespace Model
 
     bool m_remediationEnabled;
     bool m_remediationEnabledHasBeenSet;
+
+    bool m_deleteUnusedFMManagedResources;
+    bool m_deleteUnusedFMManagedResourcesHasBeenSet;
   };
 
 } // namespace Model

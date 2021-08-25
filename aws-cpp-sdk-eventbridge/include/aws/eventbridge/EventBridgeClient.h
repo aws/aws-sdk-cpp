@@ -1937,14 +1937,13 @@ namespace Model
          * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
          * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
          * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
-         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
-         * </li> <li> <p>Event bus in a different Amazon Web Services account or
-         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
-         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
-         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
+         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
+         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
+         * ECS tasks</p> </li> <li> <p>Event bus in a different Amazon Web Services account
+         * or Region.</p> <p>You can use an event bus in the US East (N. Virginia)
+         * us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as
+         * a target for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
          * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
          * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
          * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
@@ -2028,14 +2027,13 @@ namespace Model
          * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
          * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
          * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
-         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
-         * </li> <li> <p>Event bus in a different Amazon Web Services account or
-         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
-         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
-         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
+         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
+         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
+         * ECS tasks</p> </li> <li> <p>Event bus in a different Amazon Web Services account
+         * or Region.</p> <p>You can use an event bus in the US East (N. Virginia)
+         * us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as
+         * a target for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
          * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
          * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
          * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
@@ -2121,14 +2119,13 @@ namespace Model
          * </li> <li> <p>API Gateway</p> </li> <li> <p>Batch job queue</p> </li> <li>
          * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
          * <p>CodePipeline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
-         * call</p> </li> <li> <p>EC2 Image Builder</p> </li> <li> <p>Amazon EC2
-         * <code>RebootInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>StopInstances</code> API call</p> </li> <li> <p>Amazon EC2
-         * <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon ECS tasks</p>
-         * </li> <li> <p>Event bus in a different Amazon Web Services account or
-         * Region.</p> <p>You can use an event bus in the US East (N. Virginia) us-east-1,
-         * US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target
-         * for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
+         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
+         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
+         * ECS tasks</p> </li> <li> <p>Event bus in a different Amazon Web Services account
+         * or Region.</p> <p>You can use an event bus in the US East (N. Virginia)
+         * us-east-1, US West (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as
+         * a target for a rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data
          * Firehose)</p> </li> <li> <p>Inspector assessment template (Amazon Inspector)</p>
          * </li> <li> <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>Lambda
          * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>

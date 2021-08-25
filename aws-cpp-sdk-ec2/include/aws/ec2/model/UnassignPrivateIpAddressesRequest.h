@@ -147,56 +147,47 @@ namespace Model
 
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline void SetIpv4Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline void SetIpv4Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline UnassignPrivateIpAddressesRequest& WithIpv4Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv4Prefixes(value); return *this;}
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline UnassignPrivateIpAddressesRequest& WithIpv4Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline UnassignPrivateIpAddressesRequest& AddIpv4Prefixes(const Aws::String& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline UnassignPrivateIpAddressesRequest& AddIpv4Prefixes(Aws::String&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IPv4 Prefix Delegation prefixes to unassign from the network
-     * interface.</p>
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
      */
     inline UnassignPrivateIpAddressesRequest& AddIpv4Prefixes(const char* value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
 

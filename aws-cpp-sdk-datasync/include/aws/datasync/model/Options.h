@@ -171,8 +171,8 @@ namespace Model
      * changes. </p> <p>Some storage classes have specific behaviors that can affect
      * your S3 storage cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p>
      */
     inline const OverwriteMode& GetOverwriteMode() const{ return m_overwriteMode; }
 
@@ -185,8 +185,8 @@ namespace Model
      * changes. </p> <p>Some storage classes have specific behaviors that can affect
      * your S3 storage cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p>
      */
     inline bool OverwriteModeHasBeenSet() const { return m_overwriteModeHasBeenSet; }
 
@@ -199,8 +199,8 @@ namespace Model
      * changes. </p> <p>Some storage classes have specific behaviors that can affect
      * your S3 storage cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p>
      */
     inline void SetOverwriteMode(const OverwriteMode& value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = value; }
 
@@ -213,8 +213,8 @@ namespace Model
      * changes. </p> <p>Some storage classes have specific behaviors that can affect
      * your S3 storage cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p>
      */
     inline void SetOverwriteMode(OverwriteMode&& value) { m_overwriteModeHasBeenSet = true; m_overwriteMode = std::move(value); }
 
@@ -227,8 +227,8 @@ namespace Model
      * changes. </p> <p>Some storage classes have specific behaviors that can affect
      * your S3 storage cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p>
      */
     inline Options& WithOverwriteMode(const OverwriteMode& value) { SetOverwriteMode(value); return *this;}
 
@@ -241,8 +241,8 @@ namespace Model
      * changes. </p> <p>Some storage classes have specific behaviors that can affect
      * your S3 storage cost. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p>
      */
     inline Options& WithOverwriteMode(OverwriteMode&& value) { SetOverwriteMode(std::move(value)); return *this;}
 
@@ -253,7 +253,7 @@ namespace Model
      * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
      * attribute on all source files (that is, the version before the PREPARING phase).
      * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
+     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
      * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
@@ -268,7 +268,7 @@ namespace Model
      * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
      * attribute on all source files (that is, the version before the PREPARING phase).
      * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
+     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
      * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
@@ -283,7 +283,7 @@ namespace Model
      * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
      * attribute on all source files (that is, the version before the PREPARING phase).
      * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
+     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
      * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
@@ -298,7 +298,7 @@ namespace Model
      * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
      * attribute on all source files (that is, the version before the PREPARING phase).
      * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
+     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
      * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
@@ -313,7 +313,7 @@ namespace Model
      * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
      * attribute on all source files (that is, the version before the PREPARING phase).
      * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
+     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
      * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
@@ -328,7 +328,7 @@ namespace Model
      * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
      * attribute on all source files (that is, the version before the PREPARING phase).
      * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
+     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
      * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
@@ -551,10 +551,10 @@ namespace Model
      * cost. If your task deletes objects, you might incur minimum storage duration
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore
-     * such destination files (recommended). </p> <p>REMOVE: Delete destination files
-     * that aren’t present in the source.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
+     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
+     * aren’t present in the source.</p>
      */
     inline const PreserveDeletedFiles& GetPreserveDeletedFiles() const{ return m_preserveDeletedFiles; }
 
@@ -564,10 +564,10 @@ namespace Model
      * cost. If your task deletes objects, you might incur minimum storage duration
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore
-     * such destination files (recommended). </p> <p>REMOVE: Delete destination files
-     * that aren’t present in the source.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
+     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
+     * aren’t present in the source.</p>
      */
     inline bool PreserveDeletedFilesHasBeenSet() const { return m_preserveDeletedFilesHasBeenSet; }
 
@@ -577,10 +577,10 @@ namespace Model
      * cost. If your task deletes objects, you might incur minimum storage duration
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore
-     * such destination files (recommended). </p> <p>REMOVE: Delete destination files
-     * that aren’t present in the source.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
+     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
+     * aren’t present in the source.</p>
      */
     inline void SetPreserveDeletedFiles(const PreserveDeletedFiles& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = value; }
 
@@ -590,10 +590,10 @@ namespace Model
      * cost. If your task deletes objects, you might incur minimum storage duration
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore
-     * such destination files (recommended). </p> <p>REMOVE: Delete destination files
-     * that aren’t present in the source.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
+     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
+     * aren’t present in the source.</p>
      */
     inline void SetPreserveDeletedFiles(PreserveDeletedFiles&& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = std::move(value); }
 
@@ -603,10 +603,10 @@ namespace Model
      * cost. If your task deletes objects, you might incur minimum storage duration
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore
-     * such destination files (recommended). </p> <p>REMOVE: Delete destination files
-     * that aren’t present in the source.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
+     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
+     * aren’t present in the source.</p>
      */
     inline Options& WithPreserveDeletedFiles(const PreserveDeletedFiles& value) { SetPreserveDeletedFiles(value); return *this;}
 
@@ -616,20 +616,20 @@ namespace Model
      * cost. If your task deletes objects, you might incur minimum storage duration
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-     * when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS
-     * DataSync User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore
-     * such destination files (recommended). </p> <p>REMOVE: Delete destination files
-     * that aren’t present in the source.</p>
+     * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
+     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
+     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
+     * aren’t present in the source.</p>
      */
     inline Options& WithPreserveDeletedFiles(PreserveDeletedFiles&& value) { SetPreserveDeletedFiles(std::move(value)); return *this;}
 
 
     /**
-     * <p>A value that determines whether AWS DataSync should preserve the metadata of
+     * <p>A value that determines whether DataSync should preserve the metadata of
      * block and character devices in the source file system, and re-create the files
      * with that device name and metadata on the destination. DataSync does not copy
-     * the contents of such devices, only the name and metadata. </p>  <p>AWS
-     * DataSync can't sync the actual contents of such devices, because they are
+     * the contents of such devices, only the name and metadata. </p> 
+     * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
@@ -638,11 +638,11 @@ namespace Model
     inline const PreserveDevices& GetPreserveDevices() const{ return m_preserveDevices; }
 
     /**
-     * <p>A value that determines whether AWS DataSync should preserve the metadata of
+     * <p>A value that determines whether DataSync should preserve the metadata of
      * block and character devices in the source file system, and re-create the files
      * with that device name and metadata on the destination. DataSync does not copy
-     * the contents of such devices, only the name and metadata. </p>  <p>AWS
-     * DataSync can't sync the actual contents of such devices, because they are
+     * the contents of such devices, only the name and metadata. </p> 
+     * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
@@ -651,11 +651,11 @@ namespace Model
     inline bool PreserveDevicesHasBeenSet() const { return m_preserveDevicesHasBeenSet; }
 
     /**
-     * <p>A value that determines whether AWS DataSync should preserve the metadata of
+     * <p>A value that determines whether DataSync should preserve the metadata of
      * block and character devices in the source file system, and re-create the files
      * with that device name and metadata on the destination. DataSync does not copy
-     * the contents of such devices, only the name and metadata. </p>  <p>AWS
-     * DataSync can't sync the actual contents of such devices, because they are
+     * the contents of such devices, only the name and metadata. </p> 
+     * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
@@ -664,11 +664,11 @@ namespace Model
     inline void SetPreserveDevices(const PreserveDevices& value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = value; }
 
     /**
-     * <p>A value that determines whether AWS DataSync should preserve the metadata of
+     * <p>A value that determines whether DataSync should preserve the metadata of
      * block and character devices in the source file system, and re-create the files
      * with that device name and metadata on the destination. DataSync does not copy
-     * the contents of such devices, only the name and metadata. </p>  <p>AWS
-     * DataSync can't sync the actual contents of such devices, because they are
+     * the contents of such devices, only the name and metadata. </p> 
+     * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
@@ -677,11 +677,11 @@ namespace Model
     inline void SetPreserveDevices(PreserveDevices&& value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = std::move(value); }
 
     /**
-     * <p>A value that determines whether AWS DataSync should preserve the metadata of
+     * <p>A value that determines whether DataSync should preserve the metadata of
      * block and character devices in the source file system, and re-create the files
      * with that device name and metadata on the destination. DataSync does not copy
-     * the contents of such devices, only the name and metadata. </p>  <p>AWS
-     * DataSync can't sync the actual contents of such devices, because they are
+     * the contents of such devices, only the name and metadata. </p> 
+     * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
@@ -690,11 +690,11 @@ namespace Model
     inline Options& WithPreserveDevices(const PreserveDevices& value) { SetPreserveDevices(value); return *this;}
 
     /**
-     * <p>A value that determines whether AWS DataSync should preserve the metadata of
+     * <p>A value that determines whether DataSync should preserve the metadata of
      * block and character devices in the source file system, and re-create the files
      * with that device name and metadata on the destination. DataSync does not copy
-     * the contents of such devices, only the name and metadata. </p>  <p>AWS
-     * DataSync can't sync the actual contents of such devices, because they are
+     * the contents of such devices, only the name and metadata. </p> 
+     * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
@@ -711,7 +711,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
      * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>AWS DataSync can preserve extant permissions of a source
+     * </p>  <p>DataSync can preserve extant permissions of a source
      * location.</p> 
      */
     inline const PosixPermissions& GetPosixPermissions() const{ return m_posixPermissions; }
@@ -724,7 +724,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
      * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>AWS DataSync can preserve extant permissions of a source
+     * </p>  <p>DataSync can preserve extant permissions of a source
      * location.</p> 
      */
     inline bool PosixPermissionsHasBeenSet() const { return m_posixPermissionsHasBeenSet; }
@@ -737,7 +737,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
      * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>AWS DataSync can preserve extant permissions of a source
+     * </p>  <p>DataSync can preserve extant permissions of a source
      * location.</p> 
      */
     inline void SetPosixPermissions(const PosixPermissions& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = value; }
@@ -750,7 +750,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
      * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>AWS DataSync can preserve extant permissions of a source
+     * </p>  <p>DataSync can preserve extant permissions of a source
      * location.</p> 
      */
     inline void SetPosixPermissions(PosixPermissions&& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = std::move(value); }
@@ -763,7 +763,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
      * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>AWS DataSync can preserve extant permissions of a source
+     * </p>  <p>DataSync can preserve extant permissions of a source
      * location.</p> 
      */
     inline Options& WithPosixPermissions(const PosixPermissions& value) { SetPosixPermissions(value); return *this;}
@@ -776,37 +776,37 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
      * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
      * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>AWS DataSync can preserve extant permissions of a source
+     * </p>  <p>DataSync can preserve extant permissions of a source
      * location.</p> 
      */
     inline Options& WithPosixPermissions(PosixPermissions&& value) { SetPosixPermissions(std::move(value)); return *this;}
 
 
     /**
-     * <p>A value that limits the bandwidth used by AWS DataSync. For example, if you
-     * want AWS DataSync to use a maximum of 1 MB, set this value to
-     * <code>1048576</code> (<code>=1024*1024</code>).</p>
+     * <p>A value that limits the bandwidth used by DataSync. For example, if you want
+     * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+     * (<code>=1024*1024</code>).</p>
      */
     inline long long GetBytesPerSecond() const{ return m_bytesPerSecond; }
 
     /**
-     * <p>A value that limits the bandwidth used by AWS DataSync. For example, if you
-     * want AWS DataSync to use a maximum of 1 MB, set this value to
-     * <code>1048576</code> (<code>=1024*1024</code>).</p>
+     * <p>A value that limits the bandwidth used by DataSync. For example, if you want
+     * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+     * (<code>=1024*1024</code>).</p>
      */
     inline bool BytesPerSecondHasBeenSet() const { return m_bytesPerSecondHasBeenSet; }
 
     /**
-     * <p>A value that limits the bandwidth used by AWS DataSync. For example, if you
-     * want AWS DataSync to use a maximum of 1 MB, set this value to
-     * <code>1048576</code> (<code>=1024*1024</code>).</p>
+     * <p>A value that limits the bandwidth used by DataSync. For example, if you want
+     * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+     * (<code>=1024*1024</code>).</p>
      */
     inline void SetBytesPerSecond(long long value) { m_bytesPerSecondHasBeenSet = true; m_bytesPerSecond = value; }
 
     /**
-     * <p>A value that limits the bandwidth used by AWS DataSync. For example, if you
-     * want AWS DataSync to use a maximum of 1 MB, set this value to
-     * <code>1048576</code> (<code>=1024*1024</code>).</p>
+     * <p>A value that limits the bandwidth used by DataSync. For example, if you want
+     * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+     * (<code>=1024*1024</code>).</p>
      */
     inline Options& WithBytesPerSecond(long long value) { SetBytesPerSecond(value); return *this;}
 

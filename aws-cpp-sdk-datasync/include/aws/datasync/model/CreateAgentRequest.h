@@ -42,104 +42,104 @@ namespace Model
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline const Aws::String& GetActivationKey() const{ return m_activationKey; }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::move(value); }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(const char* value) { m_activationKeyHasBeenSet = true; m_activationKey.assign(value); }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(const Aws::String& value) { SetActivationKey(value); return *this;}
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(std::move(value)); return *this;}
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(const char* value) { SetActivationKey(value); return *this;}
 

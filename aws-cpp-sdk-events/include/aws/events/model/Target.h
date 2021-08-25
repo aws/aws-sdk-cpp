@@ -36,15 +36,16 @@ namespace Model
 
   /**
    * <p>Targets are the resources to be invoked when a rule is triggered. For a
-   * complete list of services and resources that can be set as a target, see
-   * <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as
-   * the target, and that account granted permission to your account through an
-   * organization instead of directly by the account ID, then you must specify a
-   * <code>RoleArn</code> with proper permissions in the <code>Target</code>
-   * structure. For more information, see <a
+   * complete list of services and resources that can be set as a target, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p>
+   * <p>If you are setting the event bus of another account as the target, and that
+   * account granted permission to your account through an organization instead of
+   * directly by the account ID, then you must specify a <code>RoleArn</code> with
+   * proper permissions in the <code>Target</code> structure. For more information,
+   * see <a
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
-   * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon
+   * EventBridge User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
    * Reference</a></p>
    */
@@ -58,42 +59,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>The ID of the target. We recommend using a memorable and unique string.</p>
      */
     inline Target& WithId(const char* value) { SetId(value); return *this;}
 
@@ -505,50 +506,50 @@ namespace Model
 
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline const BatchParameters& GetBatchParameters() const{ return m_batchParameters; }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline bool BatchParametersHasBeenSet() const { return m_batchParametersHasBeenSet; }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(const BatchParameters& value) { m_batchParametersHasBeenSet = true; m_batchParameters = value; }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(BatchParameters&& value) { m_batchParametersHasBeenSet = true; m_batchParameters = std::move(value); }
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(const BatchParameters& value) { SetBatchParameters(value); return *this;}
 
     /**
-     * <p>If the event target is an AWS Batch job, this contains the job definition,
-     * job name, and other parameters. For more information, see <a
+     * <p>If the event target is an Batch job, this contains the job definition, job
+     * name, and other parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
-     * the <i>AWS Batch User Guide</i>.</p>
+     * the <i>Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(BatchParameters&& value) { SetBatchParameters(std::move(value)); return *this;}
 
@@ -664,50 +665,50 @@ namespace Model
 
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline const RedshiftDataParameters& GetRedshiftDataParameters() const{ return m_redshiftDataParameters; }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline bool RedshiftDataParametersHasBeenSet() const { return m_redshiftDataParametersHasBeenSet; }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline void SetRedshiftDataParameters(const RedshiftDataParameters& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = value; }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline void SetRedshiftDataParameters(RedshiftDataParameters&& value) { m_redshiftDataParametersHasBeenSet = true; m_redshiftDataParameters = std::move(value); }
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline Target& WithRedshiftDataParameters(const RedshiftDataParameters& value) { SetRedshiftDataParameters(value); return *this;}
 
     /**
-     * <p>Contains the Redshift Data API parameters to use when the target is a
-     * Redshift cluster.</p> <p>If you specify a Redshift Cluster as a Target, you can
-     * use this to specify parameters to invoke the Redshift Data API ExecuteStatement
-     * based on EventBridge events.</p>
+     * <p>Contains the Amazon Redshift Data API parameters to use when the target is a
+     * Amazon Redshift cluster.</p> <p>If you specify a Amazon Redshift Cluster as a
+     * Target, you can use this to specify parameters to invoke the Amazon Redshift
+     * Data API ExecuteStatement based on EventBridge events.</p>
      */
     inline Target& WithRedshiftDataParameters(RedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
 

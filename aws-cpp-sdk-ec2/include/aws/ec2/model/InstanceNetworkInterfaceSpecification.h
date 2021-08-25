@@ -751,28 +751,48 @@ namespace Model
     /**
      * <p>The index of the network card. Some instance types support multiple network
      * cards. The primary network interface must be assigned to network card index 0.
-     * The default is network card index 0.</p>
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
     inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
 
     /**
      * <p>The index of the network card. Some instance types support multiple network
      * cards. The primary network interface must be assigned to network card index 0.
-     * The default is network card index 0.</p>
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
     inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
 
     /**
      * <p>The index of the network card. Some instance types support multiple network
      * cards. The primary network interface must be assigned to network card index 0.
-     * The default is network card index 0.</p>
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
     inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
 
     /**
      * <p>The index of the network card. Some instance types support multiple network
      * cards. The primary network interface must be assigned to network card index 0.
-     * The default is network card index 0.</p>
+     * The default is network card index 0.</p> <p>If you are using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>
+     * to create Spot Instances, omit this parameter because you can’t specify the
+     * network card index when using this API. To specify the network card index, use
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
 

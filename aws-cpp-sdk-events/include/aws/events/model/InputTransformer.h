@@ -46,7 +46,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInputPathsMap() const{ return m_inputPathsMap; }
 
@@ -56,7 +56,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline bool InputPathsMapHasBeenSet() const { return m_inputPathsMapHasBeenSet; }
 
@@ -66,7 +66,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline void SetInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = value; }
 
@@ -76,7 +76,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline void SetInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = std::move(value); }
 
@@ -86,7 +86,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& WithInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetInputPathsMap(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& WithInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetInputPathsMap(std::move(value)); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(const Aws::String& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
@@ -116,7 +116,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
@@ -126,7 +126,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(const Aws::String& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
@@ -136,7 +136,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -146,7 +146,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(const char* key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
@@ -156,7 +156,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
@@ -166,7 +166,7 @@ namespace Model
      * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
      * pairs, where each value is a valid JSON path. You can have as many as 100
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * <p>The keys cannot start with "Amazon Web Services." </p>
      */
     inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 

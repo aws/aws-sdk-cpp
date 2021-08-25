@@ -56,11 +56,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
@@ -79,11 +79,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
@@ -102,11 +102,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
@@ -125,11 +125,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
@@ -148,11 +148,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
@@ -171,11 +171,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
@@ -194,11 +194,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
@@ -217,11 +217,11 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>If
-     * you are copying data to or from your AWS Snowcone device, see <a
+     * you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 
@@ -230,10 +230,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
 
@@ -241,10 +241,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
 
@@ -252,10 +252,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
 
@@ -263,10 +263,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
 
@@ -274,10 +274,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
 
@@ -285,10 +285,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline CreateLocationNfsRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
 
@@ -296,10 +296,10 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline CreateLocationNfsRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
 
@@ -307,65 +307,65 @@ namespace Model
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
      * uses this host name to mount the NFS server in a network. </p> <p>If you are
-     * copying data to or from your AWS Snowcone device, see <a
+     * copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>  <p>This name must
-     * either be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
+     * Server on Snowcone</a> for more information.</p>  <p>This name must either
+     * be DNS-compliant or must be an IP version 4 (IPv4) address.</p> 
      */
     inline CreateLocationNfsRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
 
 
     /**
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your AWS
+     * connect to an NFS server. </p> <p>If you are copying data to or from your
      * Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>
+     * Server on Snowcone</a> for more information.</p>
      */
     inline const OnPremConfig& GetOnPremConfig() const{ return m_onPremConfig; }
 
     /**
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your AWS
+     * connect to an NFS server. </p> <p>If you are copying data to or from your
      * Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>
+     * Server on Snowcone</a> for more information.</p>
      */
     inline bool OnPremConfigHasBeenSet() const { return m_onPremConfigHasBeenSet; }
 
     /**
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your AWS
+     * connect to an NFS server. </p> <p>If you are copying data to or from your
      * Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>
+     * Server on Snowcone</a> for more information.</p>
      */
     inline void SetOnPremConfig(const OnPremConfig& value) { m_onPremConfigHasBeenSet = true; m_onPremConfig = value; }
 
     /**
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your AWS
+     * connect to an NFS server. </p> <p>If you are copying data to or from your
      * Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>
+     * Server on Snowcone</a> for more information.</p>
      */
     inline void SetOnPremConfig(OnPremConfig&& value) { m_onPremConfigHasBeenSet = true; m_onPremConfig = std::move(value); }
 
     /**
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your AWS
+     * connect to an NFS server. </p> <p>If you are copying data to or from your
      * Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>
+     * Server on Snowcone</a> for more information.</p>
      */
     inline CreateLocationNfsRequest& WithOnPremConfig(const OnPremConfig& value) { SetOnPremConfig(value); return *this;}
 
     /**
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
-     * connect to an NFS server. </p> <p>If you are copying data to or from your AWS
+     * connect to an NFS server. </p> <p>If you are copying data to or from your
      * Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p>
+     * Server on Snowcone</a> for more information.</p>
      */
     inline CreateLocationNfsRequest& WithOnPremConfig(OnPremConfig&& value) { SetOnPremConfig(std::move(value)); return *this;}
 

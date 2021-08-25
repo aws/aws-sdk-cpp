@@ -84,42 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline const Aws::String& GetDestinationLocationArn() const{ return m_destinationLocationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline bool DestinationLocationArnHasBeenSet() const { return m_destinationLocationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline void SetDestinationLocationArn(const Aws::String& value) { m_destinationLocationArnHasBeenSet = true; m_destinationLocationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline void SetDestinationLocationArn(Aws::String&& value) { m_destinationLocationArnHasBeenSet = true; m_destinationLocationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline void SetDestinationLocationArn(const char* value) { m_destinationLocationArnHasBeenSet = true; m_destinationLocationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline CreateTaskRequest& WithDestinationLocationArn(const Aws::String& value) { SetDestinationLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline CreateTaskRequest& WithDestinationLocationArn(Aws::String&& value) { SetDestinationLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's
+     * location. </p>
      */
     inline CreateTaskRequest& WithDestinationLocationArn(const char* value) { SetDestinationLocationArn(value); return *this;}
 
@@ -469,6 +477,71 @@ namespace Model
      */
     inline CreateTaskRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline CreateTaskRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline CreateTaskRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline CreateTaskRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2</code>"</p>
+     */
+    inline CreateTaskRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_sourceLocationArn;
@@ -494,6 +567,9 @@ namespace Model
 
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<FilterRule> m_includes;
+    bool m_includesHasBeenSet;
   };
 
 } // namespace Model

@@ -92,12 +92,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
@@ -116,12 +116,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
@@ -140,12 +140,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
@@ -164,12 +164,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
@@ -188,12 +188,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
@@ -212,12 +212,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline UpdateLocationNfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
@@ -236,12 +236,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline UpdateLocationNfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
@@ -260,12 +260,12 @@ namespace Model
      * or ensure that the files you want DataSync to access have permissions that allow
      * read access for all users. Doing either option enables the agent to read the
      * files. For the agent to access directories, you must additionally enable all
-     * execute access.</p> <p>If you are copying data to or from your AWS Snowcone
-     * device, see <a
+     * execute access.</p> <p>If you are copying data to or from your Snowcone device,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     * Server on AWS Snowcone</a> for more information.</p> <p>For information about
-     * NFS export configuration, see 18.7. The /etc/exports Configuration File in the
-     * Red Hat Enterprise Linux documentation.</p>
+     * Server on Snowcone</a> for more information.</p> <p>For information about NFS
+     * export configuration, see 18.7. The /etc/exports Configuration File in the Red
+     * Hat Enterprise Linux documentation.</p>
      */
     inline UpdateLocationNfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 

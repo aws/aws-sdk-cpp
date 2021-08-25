@@ -210,93 +210,84 @@ namespace Model
 
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline void SetIpv4Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline void SetIpv4Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithIpv4Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv4Prefixes(value); return *this;}
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithIpv4Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(const Aws::String& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(Aws::String&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more IPv4 Prefix Delegation prefixes assigned to the network
-     * interface. You cannot use this option if you use the
-     * <code>Ipv4PrefixCount</code> option.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
     inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(const char* value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
 
 
     /**
-     * <p>The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns
-     * to the network interface. You cannot use this option if you use the <code>Ipv4
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
+     * the network interface. You cannot use this option if you use the <code>Ipv4
      * Prefixes</code> option.</p>
      */
     inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
 
     /**
-     * <p>The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns
-     * to the network interface. You cannot use this option if you use the <code>Ipv4
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
+     * the network interface. You cannot use this option if you use the <code>Ipv4
      * Prefixes</code> option.</p>
      */
     inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
 
     /**
-     * <p>The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns
-     * to the network interface. You cannot use this option if you use the <code>Ipv4
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
+     * the network interface. You cannot use this option if you use the <code>Ipv4
      * Prefixes</code> option.</p>
      */
     inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
 
     /**
-     * <p>The number of IPv4 Prefix Delegation prefixes that AWS automatically assigns
-     * to the network interface. You cannot use this option if you use the <code>Ipv4
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
+     * the network interface. You cannot use this option if you use the <code>Ipv4
      * Prefixes</code> option.</p>
      */
     inline AssignPrivateIpAddressesRequest& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
