@@ -827,22 +827,71 @@ TEST_F(AWSMetadataEndpointTestSuite, TestUndeclaredEndpointForEC2MetadataInEnvUs
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataIsReadFromEnvWhenDeclared)
 {
     Aws::Internal::CleanupEC2MetadataClient();
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://fe80:ec2::254", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
     Aws::Internal::InitEC2MetadataClient();
 
     auto client = Aws::Internal::GetEC2MetadataClient();
-    EXPECT_EQ("http://fe80:ec2::254", client->GetEndpoint());
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
 }
 
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataCanBeOverriddenBySet)
 {
     Aws::Internal::CleanupEC2MetadataClient();
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://fe80:ec2::254", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
     Aws::Internal::InitEC2MetadataClient();
 
     auto client = Aws::Internal::GetEC2MetadataClient();
-    EXPECT_EQ("http://fe80:ec2::254", client->GetEndpoint());
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
 
     client->SetEndpoint("http://127.0.0.1");
     EXPECT_EQ("http://127.0.0.1", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsSetWhenNoExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV6", 1/*overwrite*/);
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[fd00:ec2::254]", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsSetWhenNoExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV4", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+
+    EXPECT_EQ("http://169.254.169.254", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsIgnoredSetWhenExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV6", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
+}
+
+TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsIgnoredSetWhenExplicitlyOverridden)
+{
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV4", 1/*overwrite*/);
+
+    Aws::Internal::InitEC2MetadataClient();
+
+    auto client = Aws::Internal::GetEC2MetadataClient();
+    EXPECT_EQ("http://[::1]", client->GetEndpoint());
 }
