@@ -1058,20 +1058,26 @@ namespace Model
          * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
          * label name (<code>Name</code>), the level of confidence that the image contains
          * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
-         * training model calculates a threshold value that determines if a prediction for
-         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
-         * labels whose confidence value is below the model's calculated threshold value.
-         * To filter labels that are returned, specify a value for
-         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
-         * You can get the model's calculated threshold from the model's training results
-         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
-         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
-         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
-         * labels returned. </p> <p>This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:DetectCustomLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
+         * labels that are returned, specify a value for <code>MinConfidence</code>.
+         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
+         * that's higher than the specified value. The value of <code>MinConfidence</code>
+         * maps to the assumed threshold values created during training. For more
+         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
+         * assumed threshold as a floating point value between 0-1. The range of
+         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
+         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
+         * returned as a percentage. You can use <code>MinConfidence</code> to change the
+         * precision and recall or your model. For more information, see <i>Analyzing an
+         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
+         * you don't specify a value for <code>MinConfidence</code>,
+         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
+         * each label.</p> <p>This is a stateless API operation. That is, the operation
+         * does not persist any data.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
          * API Reference</a></p>
          */
@@ -1089,20 +1095,26 @@ namespace Model
          * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
          * label name (<code>Name</code>), the level of confidence that the image contains
          * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
-         * training model calculates a threshold value that determines if a prediction for
-         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
-         * labels whose confidence value is below the model's calculated threshold value.
-         * To filter labels that are returned, specify a value for
-         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
-         * You can get the model's calculated threshold from the model's training results
-         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
-         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
-         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
-         * labels returned. </p> <p>This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:DetectCustomLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
+         * labels that are returned, specify a value for <code>MinConfidence</code>.
+         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
+         * that's higher than the specified value. The value of <code>MinConfidence</code>
+         * maps to the assumed threshold values created during training. For more
+         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
+         * assumed threshold as a floating point value between 0-1. The range of
+         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
+         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
+         * returned as a percentage. You can use <code>MinConfidence</code> to change the
+         * precision and recall or your model. For more information, see <i>Analyzing an
+         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
+         * you don't specify a value for <code>MinConfidence</code>,
+         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
+         * each label.</p> <p>This is a stateless API operation. That is, the operation
+         * does not persist any data.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
          * API Reference</a></p>
          *
@@ -1122,20 +1134,26 @@ namespace Model
          * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
          * label name (<code>Name</code>), the level of confidence that the image contains
          * the object (<code>Confidence</code>), and object location information, if it
-         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
-         * training model calculates a threshold value that determines if a prediction for
-         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
-         * labels whose confidence value is below the model's calculated threshold value.
-         * To filter labels that are returned, specify a value for
-         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
-         * You can get the model's calculated threshold from the model's training results
-         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
-         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
-         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
-         * labels returned. </p> <p>This is a stateless API operation. That is, the
-         * operation does not persist any data.</p> <p>This operation requires permissions
-         * to perform the <code>rekognition:DetectCustomLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>To filter
+         * labels that are returned, specify a value for <code>MinConfidence</code>.
+         * <code>DetectCustomLabelsLabels</code> only returns labels with a confidence
+         * that's higher than the specified value. The value of <code>MinConfidence</code>
+         * maps to the assumed threshold values created during training. For more
+         * information, see <i>Assumed threshold</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses an
+         * assumed threshold as a floating point value between 0-1. The range of
+         * <code>MinConfidence</code> normalizes the threshold value to a percentage value
+         * (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
+         * returned as a percentage. You can use <code>MinConfidence</code> to change the
+         * precision and recall or your model. For more information, see <i>Analyzing an
+         * image</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> <p>If
+         * you don't specify a value for <code>MinConfidence</code>,
+         * <code>DetectCustomLabels</code> returns labels based on the assumed threshold of
+         * each label.</p> <p>This is a stateless API operation. That is, the operation
+         * does not persist any data.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DetectCustomLabels</code> action. </p> <p>For more
+         * information, see <i>Analyzing an image</i> in the Amazon Rekognition Custom
+         * Labels Developer Guide. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
          * API Reference</a></p>
          *
@@ -1617,8 +1635,8 @@ namespace Model
         virtual void DetectTextAsync(const Model::DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the name and additional information about a celebrity based on his or
-         * her Amazon Rekognition ID. The additional information is returned as an array of
+         * <p>Gets the name and additional information about a celebrity based on their
+         * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
          * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
@@ -1630,8 +1648,8 @@ namespace Model
         virtual Model::GetCelebrityInfoOutcome GetCelebrityInfo(const Model::GetCelebrityInfoRequest& request) const;
 
         /**
-         * <p>Gets the name and additional information about a celebrity based on his or
-         * her Amazon Rekognition ID. The additional information is returned as an array of
+         * <p>Gets the name and additional information about a celebrity based on their
+         * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
          * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires
@@ -1645,8 +1663,8 @@ namespace Model
         virtual Model::GetCelebrityInfoOutcomeCallable GetCelebrityInfoCallable(const Model::GetCelebrityInfoRequest& request) const;
 
         /**
-         * <p>Gets the name and additional information about a celebrity based on his or
-         * her Amazon Rekognition ID. The additional information is returned as an array of
+         * <p>Gets the name and additional information about a celebrity based on their
+         * Amazon Rekognition ID. The additional information is returned as an array of
          * URLs. If there is no additional information about the celebrity, this list is
          * empty.</p> <p>For more information, see Recognizing Celebrities in an Image in
          * the Amazon Rekognition Developer Guide.</p> <p>This operation requires

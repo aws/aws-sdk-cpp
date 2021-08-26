@@ -26,15 +26,13 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter that returns a more specific list of AWS Lambda function
+   * <p>Describes a filter that returns a more specific list of Lambda function
    * recommendations. Use this filter with the
-   * <code>GetLambdaFunctionRecommendations</code> action.</p> <p>You can use
-   * <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action,
-   * <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code>
-   * action, and <code>Filter</code> with the
-   * <code>GetAutoScalingGroupRecommendations</code> and
-   * <code>GetEC2InstanceRecommendations</code> actions.</p><p><h3>See Also:</h3>  
-   * <a
+   * <a>GetLambdaFunctionRecommendations</a> action.</p> <p>You can use
+   * <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
+   * <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action,
+   * and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and
+   * <a>GetEC2InstanceRecommendations</a> actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionRecommendationFilter">AWS
    * API Reference</a></p>
    */
@@ -49,54 +47,54 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
-     * return recommendations with a specific finding reason code (e.g.,
+     * return recommendations with a specific finding reason code (for example,
      * <code>MemoryUnderprovisioned</code>).</p>
      */
     inline const LambdaFunctionRecommendationFilterName& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
-     * return recommendations with a specific finding reason code (e.g.,
+     * return recommendations with a specific finding reason code (for example,
      * <code>MemoryUnderprovisioned</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
-     * return recommendations with a specific finding reason code (e.g.,
+     * return recommendations with a specific finding reason code (for example,
      * <code>MemoryUnderprovisioned</code>).</p>
      */
     inline void SetName(const LambdaFunctionRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
-     * return recommendations with a specific finding reason code (e.g.,
+     * return recommendations with a specific finding reason code (for example,
      * <code>MemoryUnderprovisioned</code>).</p>
      */
     inline void SetName(LambdaFunctionRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
-     * return recommendations with a specific finding reason code (e.g.,
+     * return recommendations with a specific finding reason code (for example,
      * <code>MemoryUnderprovisioned</code>).</p>
      */
     inline LambdaFunctionRecommendationFilter& WithName(const LambdaFunctionRecommendationFilterName& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to
-     * return recommendations with a specific finding reason code (e.g.,
+     * return recommendations with a specific finding reason code (for example,
      * <code>MemoryUnderprovisioned</code>).</p>
      */
     inline LambdaFunctionRecommendationFilter& WithName(LambdaFunctionRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}

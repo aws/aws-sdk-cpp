@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/S3DestinationConfig.h>
 #include <aws/compute-optimizer/model/FileFormat.h>
+#include <aws/compute-optimizer/model/RecommendationPreferences.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/compute-optimizer/model/Filter.h>
 #include <aws/compute-optimizer/model/ExportableAutoScalingGroupField.h>
@@ -40,8 +41,8 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -52,8 +53,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -64,8 +65,8 @@ namespace Model
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -76,8 +77,8 @@ namespace Model
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -88,8 +89,8 @@ namespace Model
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -100,8 +101,8 @@ namespace Model
     inline ExportAutoScalingGroupRecommendationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -112,8 +113,8 @@ namespace Model
     inline ExportAutoScalingGroupRecommendationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -124,8 +125,8 @@ namespace Model
     inline ExportAutoScalingGroupRecommendationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -136,8 +137,8 @@ namespace Model
     inline ExportAutoScalingGroupRecommendationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the AWS accounts for which to export Auto Scaling group
-     * recommendations.</p> <p>If your account is the management account of an
+     * <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling
+     * group recommendations.</p> <p>If your account is the management account of an
      * organization, use this parameter to specify the member account for which you
      * want to export recommendations.</p> <p>This parameter cannot be specified
      * together with the include member accounts parameter. The parameters are mutually
@@ -149,49 +150,49 @@ namespace Model
 
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that describe a filter to export a more specific set of
+     * <p>An array of objects to specify a filter that exports a more specific set of
      * Auto Scaling group recommendations.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
@@ -267,13 +268,13 @@ namespace Model
      * S3) bucket name and key prefix for the export job.</p> <p>You must create the
      * destination Amazon S3 bucket for your recommendations export before you create
      * the export job. Compute Optimizer does not create the S3 bucket for you. After
-     * you create the S3 bucket, ensure that it has the required permission policy to
+     * you create the S3 bucket, ensure that it has the required permissions policy to
      * allow Compute Optimizer to write the export file to it. If you plan to specify
      * an object prefix when you create the export job, you must include the object
      * prefix in the policy that you add to the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user
-     * guide</i>.</p>
+     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User
+     * Guide</i>.</p>
      */
     inline const S3DestinationConfig& GetS3DestinationConfig() const{ return m_s3DestinationConfig; }
 
@@ -282,13 +283,13 @@ namespace Model
      * S3) bucket name and key prefix for the export job.</p> <p>You must create the
      * destination Amazon S3 bucket for your recommendations export before you create
      * the export job. Compute Optimizer does not create the S3 bucket for you. After
-     * you create the S3 bucket, ensure that it has the required permission policy to
+     * you create the S3 bucket, ensure that it has the required permissions policy to
      * allow Compute Optimizer to write the export file to it. If you plan to specify
      * an object prefix when you create the export job, you must include the object
      * prefix in the policy that you add to the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user
-     * guide</i>.</p>
+     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User
+     * Guide</i>.</p>
      */
     inline bool S3DestinationConfigHasBeenSet() const { return m_s3DestinationConfigHasBeenSet; }
 
@@ -297,13 +298,13 @@ namespace Model
      * S3) bucket name and key prefix for the export job.</p> <p>You must create the
      * destination Amazon S3 bucket for your recommendations export before you create
      * the export job. Compute Optimizer does not create the S3 bucket for you. After
-     * you create the S3 bucket, ensure that it has the required permission policy to
+     * you create the S3 bucket, ensure that it has the required permissions policy to
      * allow Compute Optimizer to write the export file to it. If you plan to specify
      * an object prefix when you create the export job, you must include the object
      * prefix in the policy that you add to the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user
-     * guide</i>.</p>
+     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User
+     * Guide</i>.</p>
      */
     inline void SetS3DestinationConfig(const S3DestinationConfig& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = value; }
 
@@ -312,13 +313,13 @@ namespace Model
      * S3) bucket name and key prefix for the export job.</p> <p>You must create the
      * destination Amazon S3 bucket for your recommendations export before you create
      * the export job. Compute Optimizer does not create the S3 bucket for you. After
-     * you create the S3 bucket, ensure that it has the required permission policy to
+     * you create the S3 bucket, ensure that it has the required permissions policy to
      * allow Compute Optimizer to write the export file to it. If you plan to specify
      * an object prefix when you create the export job, you must include the object
      * prefix in the policy that you add to the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user
-     * guide</i>.</p>
+     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User
+     * Guide</i>.</p>
      */
     inline void SetS3DestinationConfig(S3DestinationConfig&& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = std::move(value); }
 
@@ -327,13 +328,13 @@ namespace Model
      * S3) bucket name and key prefix for the export job.</p> <p>You must create the
      * destination Amazon S3 bucket for your recommendations export before you create
      * the export job. Compute Optimizer does not create the S3 bucket for you. After
-     * you create the S3 bucket, ensure that it has the required permission policy to
+     * you create the S3 bucket, ensure that it has the required permissions policy to
      * allow Compute Optimizer to write the export file to it. If you plan to specify
      * an object prefix when you create the export job, you must include the object
      * prefix in the policy that you add to the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user
-     * guide</i>.</p>
+     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User
+     * Guide</i>.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithS3DestinationConfig(const S3DestinationConfig& value) { SetS3DestinationConfig(value); return *this;}
 
@@ -342,13 +343,13 @@ namespace Model
      * S3) bucket name and key prefix for the export job.</p> <p>You must create the
      * destination Amazon S3 bucket for your recommendations export before you create
      * the export job. Compute Optimizer does not create the S3 bucket for you. After
-     * you create the S3 bucket, ensure that it has the required permission policy to
+     * you create the S3 bucket, ensure that it has the required permissions policy to
      * allow Compute Optimizer to write the export file to it. If you plan to specify
      * an object prefix when you create the export job, you must include the object
      * prefix in the policy that you add to the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon
-     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer user
-     * guide</i>.</p>
+     * S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User
+     * Guide</i>.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithS3DestinationConfig(S3DestinationConfig&& value) { SetS3DestinationConfig(std::move(value)); return *this;}
 
@@ -397,9 +398,9 @@ namespace Model
      * Optimizer, and trusted access for Compute Optimizer must be enabled in the
      * organization account. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
-     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
-     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
-     * organization are not included in the export file if this parameter is
+     * Optimizer and Amazon Web Services Organizations trusted access</a> in the
+     * <i>Compute Optimizer User Guide</i>.</p> <p>Recommendations for member accounts
+     * of the organization are not included in the export file if this parameter is
      * omitted.</p> <p>This parameter cannot be specified together with the account IDs
      * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
      * member accounts are not included in the export if this parameter, or the account
@@ -414,9 +415,9 @@ namespace Model
      * Optimizer, and trusted access for Compute Optimizer must be enabled in the
      * organization account. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
-     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
-     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
-     * organization are not included in the export file if this parameter is
+     * Optimizer and Amazon Web Services Organizations trusted access</a> in the
+     * <i>Compute Optimizer User Guide</i>.</p> <p>Recommendations for member accounts
+     * of the organization are not included in the export file if this parameter is
      * omitted.</p> <p>This parameter cannot be specified together with the account IDs
      * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
      * member accounts are not included in the export if this parameter, or the account
@@ -431,9 +432,9 @@ namespace Model
      * Optimizer, and trusted access for Compute Optimizer must be enabled in the
      * organization account. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
-     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
-     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
-     * organization are not included in the export file if this parameter is
+     * Optimizer and Amazon Web Services Organizations trusted access</a> in the
+     * <i>Compute Optimizer User Guide</i>.</p> <p>Recommendations for member accounts
+     * of the organization are not included in the export file if this parameter is
      * omitted.</p> <p>This parameter cannot be specified together with the account IDs
      * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
      * member accounts are not included in the export if this parameter, or the account
@@ -448,15 +449,52 @@ namespace Model
      * Optimizer, and trusted access for Compute Optimizer must be enabled in the
      * organization account. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
-     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
-     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
-     * organization are not included in the export file if this parameter is
+     * Optimizer and Amazon Web Services Organizations trusted access</a> in the
+     * <i>Compute Optimizer User Guide</i>.</p> <p>Recommendations for member accounts
+     * of the organization are not included in the export file if this parameter is
      * omitted.</p> <p>This parameter cannot be specified together with the account IDs
      * parameter. The parameters are mutually exclusive.</p> <p>Recommendations for
      * member accounts are not included in the export if this parameter, or the account
      * IDs parameter, is omitted.</p>
      */
     inline ExportAutoScalingGroupRecommendationsRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
+
+
+    /**
+     * <p>An object to specify the preferences for the Auto Scaling group
+     * recommendations to export.</p>
+     */
+    inline const RecommendationPreferences& GetRecommendationPreferences() const{ return m_recommendationPreferences; }
+
+    /**
+     * <p>An object to specify the preferences for the Auto Scaling group
+     * recommendations to export.</p>
+     */
+    inline bool RecommendationPreferencesHasBeenSet() const { return m_recommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p>An object to specify the preferences for the Auto Scaling group
+     * recommendations to export.</p>
+     */
+    inline void SetRecommendationPreferences(const RecommendationPreferences& value) { m_recommendationPreferencesHasBeenSet = true; m_recommendationPreferences = value; }
+
+    /**
+     * <p>An object to specify the preferences for the Auto Scaling group
+     * recommendations to export.</p>
+     */
+    inline void SetRecommendationPreferences(RecommendationPreferences&& value) { m_recommendationPreferencesHasBeenSet = true; m_recommendationPreferences = std::move(value); }
+
+    /**
+     * <p>An object to specify the preferences for the Auto Scaling group
+     * recommendations to export.</p>
+     */
+    inline ExportAutoScalingGroupRecommendationsRequest& WithRecommendationPreferences(const RecommendationPreferences& value) { SetRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p>An object to specify the preferences for the Auto Scaling group
+     * recommendations to export.</p>
+     */
+    inline ExportAutoScalingGroupRecommendationsRequest& WithRecommendationPreferences(RecommendationPreferences&& value) { SetRecommendationPreferences(std::move(value)); return *this;}
 
   private:
 
@@ -477,6 +515,9 @@ namespace Model
 
     bool m_includeMemberAccounts;
     bool m_includeMemberAccountsHasBeenSet;
+
+    RecommendationPreferences m_recommendationPreferences;
+    bool m_recommendationPreferencesHasBeenSet;
   };
 
 } // namespace Model

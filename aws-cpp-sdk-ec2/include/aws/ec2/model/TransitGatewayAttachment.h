@@ -129,83 +129,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayOwnerId() const{ return m_transitGatewayOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline bool TransitGatewayOwnerIdHasBeenSet() const { return m_transitGatewayOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline void SetTransitGatewayOwnerId(const Aws::String& value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline void SetTransitGatewayOwnerId(Aws::String&& value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline void SetTransitGatewayOwnerId(const char* value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline TransitGatewayAttachment& WithTransitGatewayOwnerId(const Aws::String& value) { SetTransitGatewayOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline TransitGatewayAttachment& WithTransitGatewayOwnerId(Aws::String&& value) { SetTransitGatewayOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline TransitGatewayAttachment& WithTransitGatewayOwnerId(const char* value) { SetTransitGatewayOwnerId(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline TransitGatewayAttachment& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline TransitGatewayAttachment& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the resource.</p>
+     * <p>The ID of the Amazon Web Services account that owns the resource.</p>
      */
     inline TransitGatewayAttachment& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
 

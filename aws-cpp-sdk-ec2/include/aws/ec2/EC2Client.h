@@ -7055,8 +7055,8 @@ namespace Model
          * <p>Creates a Connect attachment from a specified transit gateway attachment. A
          * Connect attachment is a GRE-based tunnel attachment that you can use to
          * establish a connection between a transit gateway and an appliance.</p> <p>A
-         * Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
-         * underlying transport mechanism. </p><p><h3>See Also:</h3>   <a
+         * Connect attachment uses an existing VPC or Amazon Web Services Direct Connect
+         * attachment as the underlying transport mechanism.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">AWS
          * API Reference</a></p>
          */
@@ -7066,8 +7066,8 @@ namespace Model
          * <p>Creates a Connect attachment from a specified transit gateway attachment. A
          * Connect attachment is a GRE-based tunnel attachment that you can use to
          * establish a connection between a transit gateway and an appliance.</p> <p>A
-         * Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
-         * underlying transport mechanism. </p><p><h3>See Also:</h3>   <a
+         * Connect attachment uses an existing VPC or Amazon Web Services Direct Connect
+         * attachment as the underlying transport mechanism.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">AWS
          * API Reference</a></p>
          *
@@ -7079,8 +7079,8 @@ namespace Model
          * <p>Creates a Connect attachment from a specified transit gateway attachment. A
          * Connect attachment is a GRE-based tunnel attachment that you can use to
          * establish a connection between a transit gateway and an appliance.</p> <p>A
-         * Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
-         * underlying transport mechanism. </p><p><h3>See Also:</h3>   <a
+         * Connect attachment uses an existing VPC or Amazon Web Services Direct Connect
+         * attachment as the underlying transport mechanism.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">AWS
          * API Reference</a></p>
          *
@@ -7169,8 +7169,8 @@ namespace Model
          * <p>Requests a transit gateway peering attachment between the specified transit
          * gateway (requester) and a peer transit gateway (accepter). The transit gateways
          * must be in different Regions. The peer transit gateway can be in your account or
-         * a different AWS account. </p> <p>After you create the peering attachment, the
-         * owner of the accepter transit gateway must accept the attachment
+         * a different Amazon Web Services account.</p> <p>After you create the peering
+         * attachment, the owner of the accepter transit gateway must accept the attachment
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
          * API Reference</a></p>
@@ -7181,8 +7181,8 @@ namespace Model
          * <p>Requests a transit gateway peering attachment between the specified transit
          * gateway (requester) and a peer transit gateway (accepter). The transit gateways
          * must be in different Regions. The peer transit gateway can be in your account or
-         * a different AWS account. </p> <p>After you create the peering attachment, the
-         * owner of the accepter transit gateway must accept the attachment
+         * a different Amazon Web Services account.</p> <p>After you create the peering
+         * attachment, the owner of the accepter transit gateway must accept the attachment
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
          * API Reference</a></p>
@@ -7195,8 +7195,8 @@ namespace Model
          * <p>Requests a transit gateway peering attachment between the specified transit
          * gateway (requester) and a peer transit gateway (accepter). The transit gateways
          * must be in different Regions. The peer transit gateway can be in your account or
-         * a different AWS account. </p> <p>After you create the peering attachment, the
-         * owner of the accepter transit gateway must accept the attachment
+         * a different Amazon Web Services account.</p> <p>After you create the peering
+         * attachment, the owner of the accepter transit gateway must accept the attachment
          * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
          * API Reference</a></p>

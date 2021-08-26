@@ -30,8 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an AWS Lambda function recommendation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes an Lambda function recommendation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionRecommendation">AWS
    * API Reference</a></p>
    */
@@ -127,42 +126,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline LambdaFunctionRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline LambdaFunctionRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline LambdaFunctionRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -189,25 +188,25 @@ namespace Model
 
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline long long GetNumberOfInvocations() const{ return m_numberOfInvocations; }
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline bool NumberOfInvocationsHasBeenSet() const { return m_numberOfInvocationsHasBeenSet; }
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline void SetNumberOfInvocations(long long value) { m_numberOfInvocationsHasBeenSet = true; m_numberOfInvocations = value; }
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline LambdaFunctionRecommendation& WithNumberOfInvocations(long long value) { SetNumberOfInvocations(value); return *this;}
@@ -288,32 +287,32 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last refreshed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last refreshed.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last refreshed.</p>
      */
     inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last refreshed.</p>
      */
     inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
 
@@ -481,8 +480,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -509,8 +508,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -537,8 +536,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -565,8 +564,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -593,8 +592,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -621,8 +620,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -649,8 +648,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason
@@ -677,8 +676,8 @@ namespace Model
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
      * function does not qualify for a recommendation because Compute Optimizer cannot
      * generate a recommendation with a high degree of confidence. This finding reason

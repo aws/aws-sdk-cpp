@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/ComparedFace.h>
+#include <aws/rekognition/model/KnownGender.h>
 #include <utility>
 
 namespace Aws
@@ -238,6 +239,25 @@ namespace Model
      */
     inline Celebrity& WithMatchConfidence(double value) { SetMatchConfidence(value); return *this;}
 
+
+    
+    inline const KnownGender& GetKnownGender() const{ return m_knownGender; }
+
+    
+    inline bool KnownGenderHasBeenSet() const { return m_knownGenderHasBeenSet; }
+
+    
+    inline void SetKnownGender(const KnownGender& value) { m_knownGenderHasBeenSet = true; m_knownGender = value; }
+
+    
+    inline void SetKnownGender(KnownGender&& value) { m_knownGenderHasBeenSet = true; m_knownGender = std::move(value); }
+
+    
+    inline Celebrity& WithKnownGender(const KnownGender& value) { SetKnownGender(value); return *this;}
+
+    
+    inline Celebrity& WithKnownGender(KnownGender&& value) { SetKnownGender(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_urls;
@@ -254,6 +274,9 @@ namespace Model
 
     double m_matchConfidence;
     bool m_matchConfidenceHasBeenSet;
+
+    KnownGender m_knownGender;
+    bool m_knownGenderHasBeenSet;
   };
 
 } // namespace Model

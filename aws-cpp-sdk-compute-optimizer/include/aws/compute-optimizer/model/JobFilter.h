@@ -27,14 +27,13 @@ namespace Model
 
   /**
    * <p>Describes a filter that returns a more specific list of recommendation export
-   * jobs. Use this filter with the <code>DescribeRecommendationExportJobs</code>
+   * jobs. Use this filter with the <a>DescribeRecommendationExportJobs</a>
    * action.</p> <p>You can use <code>EBSFilter</code> with the
-   * <code>GetEBSVolumeRecommendations</code> action,
+   * <a>GetEBSVolumeRecommendations</a> action,
    * <code>LambdaFunctionRecommendationFilter</code> with the
-   * <code>GetLambdaFunctionRecommendations</code> action, and <code>Filter</code>
-   * with the <code>GetAutoScalingGroupRecommendations</code> and
-   * <code>GetEC2InstanceRecommendations</code> actions.</p><p><h3>See Also:</h3>  
-   * <a
+   * <a>GetLambdaFunctionRecommendations</a> action, and <code>Filter</code> with the
+   * <a>GetAutoScalingGroupRecommendations</a> and
+   * <a>GetEC2InstanceRecommendations</a> actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/JobFilter">AWS
    * API Reference</a></p>
    */
@@ -49,49 +48,49 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (e.g., <code>Ec2Instance</code>).</p>
-     * <p>Specify <code>JobStatus</code> to return export jobs with a specific status
-     * (e.g, <code>Complete</code>).</p>
+     * export jobs of a specific resource type (for example,
+     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
+     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline const JobFilterName& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (e.g., <code>Ec2Instance</code>).</p>
-     * <p>Specify <code>JobStatus</code> to return export jobs with a specific status
-     * (e.g, <code>Complete</code>).</p>
+     * export jobs of a specific resource type (for example,
+     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
+     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (e.g., <code>Ec2Instance</code>).</p>
-     * <p>Specify <code>JobStatus</code> to return export jobs with a specific status
-     * (e.g, <code>Complete</code>).</p>
+     * export jobs of a specific resource type (for example,
+     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
+     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline void SetName(const JobFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (e.g., <code>Ec2Instance</code>).</p>
-     * <p>Specify <code>JobStatus</code> to return export jobs with a specific status
-     * (e.g, <code>Complete</code>).</p>
+     * export jobs of a specific resource type (for example,
+     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
+     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline void SetName(JobFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (e.g., <code>Ec2Instance</code>).</p>
-     * <p>Specify <code>JobStatus</code> to return export jobs with a specific status
-     * (e.g, <code>Complete</code>).</p>
+     * export jobs of a specific resource type (for example,
+     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
+     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline JobFilter& WithName(const JobFilterName& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>ResourceType</code> to return
-     * export jobs of a specific resource type (e.g., <code>Ec2Instance</code>).</p>
-     * <p>Specify <code>JobStatus</code> to return export jobs with a specific status
-     * (e.g, <code>Complete</code>).</p>
+     * export jobs of a specific resource type (for example,
+     * <code>Ec2Instance</code>).</p> <p>Specify <code>JobStatus</code> to return
+     * export jobs with a specific status (e.g, <code>Complete</code>).</p>
      */
     inline JobFilter& WithName(JobFilterName&& value) { SetName(std::move(value)); return *this;}
 

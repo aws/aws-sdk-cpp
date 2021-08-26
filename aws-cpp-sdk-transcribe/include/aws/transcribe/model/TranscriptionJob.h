@@ -330,32 +330,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline TranscriptionJob& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline TranscriptionJob& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 

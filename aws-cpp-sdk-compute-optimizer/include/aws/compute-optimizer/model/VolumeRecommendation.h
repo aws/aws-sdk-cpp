@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline VolumeRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline VolumeRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the volume.</p>
+     * <p>The Amazon Web Services account ID of the volume.</p>
      */
     inline VolumeRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -166,8 +166,8 @@ namespace Model
     /**
      * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -178,8 +178,8 @@ namespace Model
     /**
      * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -190,8 +190,8 @@ namespace Model
     /**
      * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -202,8 +202,8 @@ namespace Model
     /**
      * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -214,8 +214,8 @@ namespace Model
     /**
      * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -226,8 +226,8 @@ namespace Model
     /**
      * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
-     * considered not optimized when AWS Compute Optimizer identifies a recommendation
-     * that can provide better performance for your workload.</p> </li> <li> <p> <b>
+     * considered not optimized when Compute Optimizer identifies a recommendation that
+     * can provide better performance for your workload.</p> </li> <li> <p> <b>
      * <code>Optimized</code> </b>—An volume is considered optimized when Compute
      * Optimizer determines that the volume is correctly provisioned to run your
      * workload based on the chosen volume type. For optimized resources, Compute
@@ -352,32 +352,32 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
      */
     inline VolumeRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the volume recommendation was last refreshed.</p>
+     * <p>The timestamp of when the volume recommendation was last refreshed.</p>
      */
     inline VolumeRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
 

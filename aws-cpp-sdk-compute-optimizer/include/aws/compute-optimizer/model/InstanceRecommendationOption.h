@@ -206,9 +206,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -239,8 +239,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -258,7 +258,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline const Aws::Vector<PlatformDifference>& GetPlatformDifferences() const{ return m_platformDifferences; }
 
@@ -289,9 +298,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -322,8 +331,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -341,7 +350,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline bool PlatformDifferencesHasBeenSet() const { return m_platformDifferencesHasBeenSet; }
 
@@ -372,9 +390,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -405,8 +423,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -424,7 +442,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline void SetPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = value; }
 
@@ -455,9 +482,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -488,8 +515,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -507,7 +534,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline void SetPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = std::move(value); }
 
@@ -538,9 +574,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -571,8 +607,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -590,7 +626,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline InstanceRecommendationOption& WithPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { SetPlatformDifferences(value); return *this;}
 
@@ -621,9 +666,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -654,8 +699,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -673,7 +718,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline InstanceRecommendationOption& WithPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { SetPlatformDifferences(std::move(value)); return *this;}
 
@@ -704,9 +758,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -737,8 +791,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -756,7 +810,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline InstanceRecommendationOption& AddPlatformDifferences(const PlatformDifference& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(value); return *this; }
 
@@ -787,9 +850,9 @@ namespace Model
      * network interface of the recommended instance type is different than that of the
      * current instance. For example, the recommended instance type supports enhanced
      * networking and the current instance might not. To enable enhanced networking for
-     * the recommended instance type, you will need to install the Elastic Network
-     * Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For more
-     * information, see <a
+     * the recommended instance type, you must install the Elastic Network Adapter
+     * (ENA) driver or the Intel 82599 Virtual Function driver. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html">Enhanced
@@ -820,8 +883,8 @@ namespace Model
      * see <a
      * href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
      * do I back up an instance store volume on my Amazon EC2 instance to Amazon
-     * EBS?</a> in the <i>AWS Premium Support Knowledge Base</i>. For more information,
-     * see <a
+     * EBS?</a> in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
      * and storage features</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
@@ -839,7 +902,16 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
      * AMI virtualization types</a> in the <i>Amazon EC2 User Guide for
-     * Windows</i>.</p> </li> </ul>
+     * Windows</i>.</p> </li> <li> <p> <b> <code>Architecture</code> </b> — The CPU
+     * architecture between the recommended instance type and the current instance is
+     * different. For example, the recommended instance type might use an x86 CPU
+     * architecture and the current instance type might use a different one, such as
+     * ARM. Before migrating, you should consider recompiling the software on your
+     * instance for the new architecture. Alternatively, you might switch to an Amazon
+     * Machine Image (AMI) that supports the new architecture. For more information
+     * about the CPU architecture for each instance type, see <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a>.</p> </li> </ul>
      */
     inline InstanceRecommendationOption& AddPlatformDifferences(PlatformDifference&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(std::move(value)); return *this; }
 

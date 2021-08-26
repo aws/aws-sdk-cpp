@@ -25,6 +25,7 @@ namespace Aws
         static const int StorageInterface_HASH = HashingUtils::HashString("StorageInterface");
         static const int InstanceStoreAvailability_HASH = HashingUtils::HashString("InstanceStoreAvailability");
         static const int VirtualizationType_HASH = HashingUtils::HashString("VirtualizationType");
+        static const int Architecture_HASH = HashingUtils::HashString("Architecture");
 
 
         PlatformDifference GetPlatformDifferenceForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return PlatformDifference::VirtualizationType;
           }
+          else if (hashCode == Architecture_HASH)
+          {
+            return PlatformDifference::Architecture;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "InstanceStoreAvailability";
           case PlatformDifference::VirtualizationType:
             return "VirtualizationType";
+          case PlatformDifference::Architecture:
+            return "Architecture";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

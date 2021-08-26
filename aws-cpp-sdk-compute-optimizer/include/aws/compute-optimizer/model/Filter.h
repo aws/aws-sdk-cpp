@@ -27,13 +27,13 @@ namespace Model
 
   /**
    * <p>Describes a filter that returns a more specific list of recommendations. Use
-   * this filter with the <code>GetAutoScalingGroupRecommendations</code> and
-   * <code>GetEC2InstanceRecommendations</code> actions.</p> <p>You can use
-   * <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action,
+   * this filter with the <a>GetAutoScalingGroupRecommendations</a> and
+   * <a>GetEC2InstanceRecommendations</a> actions.</p> <p>You can use
+   * <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
    * <code>LambdaFunctionRecommendationFilter</code> with the
-   * <code>GetLambdaFunctionRecommendations</code> action, and <code>JobFilter</code>
-   * with the <code>DescribeRecommendationExportJobs</code> action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <a>GetLambdaFunctionRecommendations</a> action, and <code>JobFilter</code> with
+   * the <a>DescribeRecommendationExportJobs</a> action.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/Filter">AWS
    * API Reference</a></p>
    */
@@ -48,67 +48,67 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>Underprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (e.g., <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (e.g., <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
      */
     inline const FilterName& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>Underprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (e.g., <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (e.g., <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>Underprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (e.g., <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (e.g., <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
      */
     inline void SetName(const FilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>Underprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (e.g., <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (e.g., <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
      */
     inline void SetName(FilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>Underprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (e.g., <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (e.g., <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
      */
     inline Filter& WithName(const FilterName& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (e.g.,
+     * recommendations with a specific finding classification (for example,
      * <code>Underprovisioned</code>).</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (e.g., <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (e.g., <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
      */
     inline Filter& WithName(FilterName&& value) { SetName(std::move(value)); return *this;}
 

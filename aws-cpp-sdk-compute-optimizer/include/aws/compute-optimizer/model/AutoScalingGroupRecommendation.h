@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline AutoScalingGroupRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline AutoScalingGroupRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline AutoScalingGroupRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -169,78 +169,78 @@ namespace Model
     /**
      * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline const Finding& GetFinding() const{ return m_finding; }
 
     /**
      * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
      * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
      * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
      * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
 
     /**
      * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
 
@@ -406,37 +406,37 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
      * refreshed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
      * refreshed.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
      * refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
      * refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
      * refreshed.</p>
      */
     inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
      * refreshed.</p>
      */
     inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}

@@ -45,7 +45,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFunctionArns() const{ return m_functionArns; }
 
@@ -58,7 +58,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline bool FunctionArnsHasBeenSet() const { return m_functionArnsHasBeenSet; }
 
@@ -71,7 +71,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionArns(const Aws::Vector<Aws::String>& value) { m_functionArnsHasBeenSet = true; m_functionArns = value; }
 
@@ -84,7 +84,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline void SetFunctionArns(Aws::Vector<Aws::String>&& value) { m_functionArnsHasBeenSet = true; m_functionArns = std::move(value); }
 
@@ -97,7 +97,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithFunctionArns(const Aws::Vector<Aws::String>& value) { SetFunctionArns(value); return *this;}
 
@@ -110,7 +110,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithFunctionArns(Aws::Vector<Aws::String>&& value) { SetFunctionArns(std::move(value)); return *this;}
 
@@ -123,7 +123,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddFunctionArns(const Aws::String& value) { m_functionArnsHasBeenSet = true; m_functionArns.push_back(value); return *this; }
 
@@ -136,7 +136,7 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddFunctionArns(Aws::String&& value) { m_functionArnsHasBeenSet = true; m_functionArns.push_back(std::move(value)); return *this; }
 
@@ -149,129 +149,138 @@ namespace Model
      * Optimizer will return recommendations for the specified function version. For
      * more information about using function versions, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
-     * versions</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+     * versions</a> in the <i>Lambda Developer Guide</i>.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddFunctionArns(const char* value) { m_functionArnsHasBeenSet = true; m_functionArns.push_back(value); return *this; }
 
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of the AWS account for which to return function recommendations.</p>
-     * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member account for which you want to return function
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The ID of the Amazon Web Services account for which to return function
+     * recommendations.</p> <p>If your account is the management account of an
+     * organization, use this parameter to specify the member account for which you
+     * want to return function recommendations.</p> <p>Only one account ID can be
+     * specified per request.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline const Aws::Vector<LambdaFunctionRecommendationFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline void SetFilters(const Aws::Vector<LambdaFunctionRecommendationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline void SetFilters(Aws::Vector<LambdaFunctionRecommendationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithFilters(const Aws::Vector<LambdaFunctionRecommendationFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithFilters(Aws::Vector<LambdaFunctionRecommendationFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddFilters(const LambdaFunctionRecommendationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that describe a filter that returns a more specific list
-     * of function recommendations.</p>
+     * <p>An array of objects to specify a filter that returns a more specific list of
+     * function recommendations.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& AddFilters(LambdaFunctionRecommendationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -320,28 +329,28 @@ namespace Model
     /**
      * <p>The maximum number of function recommendations to return with a single
      * request.</p> <p>To retrieve the remaining results, make another request with the
-     * returned <code>NextToken</code> value.</p>
+     * returned <code>nextToken</code> value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of function recommendations to return with a single
      * request.</p> <p>To retrieve the remaining results, make another request with the
-     * returned <code>NextToken</code> value.</p>
+     * returned <code>nextToken</code> value.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of function recommendations to return with a single
      * request.</p> <p>To retrieve the remaining results, make another request with the
-     * returned <code>NextToken</code> value.</p>
+     * returned <code>nextToken</code> value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of function recommendations to return with a single
      * request.</p> <p>To retrieve the remaining results, make another request with the
-     * returned <code>NextToken</code> value.</p>
+     * returned <code>nextToken</code> value.</p>
      */
     inline GetLambdaFunctionRecommendationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

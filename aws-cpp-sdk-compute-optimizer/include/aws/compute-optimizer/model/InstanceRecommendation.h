@@ -87,42 +87,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline InstanceRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline InstanceRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance.</p>
      */
     inline InstanceRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -223,8 +223,8 @@ namespace Model
      * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
-     * and is not over provisioned. For optimized resources, AWS Compute Optimizer
-     * might recommend a new generation instance type.</p> </li> </ul>
+     * and is not over provisioned. For optimized resources, Compute Optimizer might
+     * recommend a new generation instance type.</p> </li> </ul>
      */
     inline const Finding& GetFinding() const{ return m_finding; }
 
@@ -242,8 +242,8 @@ namespace Model
      * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
-     * and is not over provisioned. For optimized resources, AWS Compute Optimizer
-     * might recommend a new generation instance type.</p> </li> </ul>
+     * and is not over provisioned. For optimized resources, Compute Optimizer might
+     * recommend a new generation instance type.</p> </li> </ul>
      */
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
@@ -261,8 +261,8 @@ namespace Model
      * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
-     * and is not over provisioned. For optimized resources, AWS Compute Optimizer
-     * might recommend a new generation instance type.</p> </li> </ul>
+     * and is not over provisioned. For optimized resources, Compute Optimizer might
+     * recommend a new generation instance type.</p> </li> </ul>
      */
     inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
@@ -280,8 +280,8 @@ namespace Model
      * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
-     * and is not over provisioned. For optimized resources, AWS Compute Optimizer
-     * might recommend a new generation instance type.</p> </li> </ul>
+     * and is not over provisioned. For optimized resources, Compute Optimizer might
+     * recommend a new generation instance type.</p> </li> </ul>
      */
     inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
@@ -299,8 +299,8 @@ namespace Model
      * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
-     * and is not over provisioned. For optimized resources, AWS Compute Optimizer
-     * might recommend a new generation instance type.</p> </li> </ul>
+     * and is not over provisioned. For optimized resources, Compute Optimizer might
+     * recommend a new generation instance type.</p> </li> </ul>
      */
     inline InstanceRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
 
@@ -318,8 +318,8 @@ namespace Model
      * infrastructure cost.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An
      * instance is considered optimized when all specifications of your instance, such
      * as CPU, memory, and network, meet the performance requirements of your workload
-     * and is not over provisioned. For optimized resources, AWS Compute Optimizer
-     * might recommend a new generation instance type.</p> </li> </ul>
+     * and is not over provisioned. For optimized resources, Compute Optimizer might
+     * recommend a new generation instance type.</p> </li> </ul>
      */
     inline InstanceRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
 
@@ -347,7 +347,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -454,7 +454,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -561,7 +561,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -668,7 +668,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -775,7 +775,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -882,7 +882,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -989,7 +989,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -1096,7 +1096,7 @@ namespace Model
      * utilization is analyzed only for resources that have the unified CloudWatch
      * agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>AWS Compute
+     * memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute
      * Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the
      * <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or
      * the legacy <code>MemoryUtilization</code> metric in the
@@ -1354,32 +1354,32 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the instance recommendation was last refreshed.</p>
+     * <p>The timestamp of when the instance recommendation was last refreshed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the instance recommendation was last refreshed.</p>
+     * <p>The timestamp of when the instance recommendation was last refreshed.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the instance recommendation was last refreshed.</p>
+     * <p>The timestamp of when the instance recommendation was last refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the instance recommendation was last refreshed.</p>
+     * <p>The timestamp of when the instance recommendation was last refreshed.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the instance recommendation was last refreshed.</p>
+     * <p>The timestamp of when the instance recommendation was last refreshed.</p>
      */
     inline InstanceRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the instance recommendation was last refreshed.</p>
+     * <p>The timestamp of when the instance recommendation was last refreshed.</p>
      */
     inline InstanceRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
 

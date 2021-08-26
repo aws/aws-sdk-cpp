@@ -256,6 +256,35 @@ namespace Model
      */
     inline ModifyManagedPrefixListRequest& AddRemoveEntries(RemovePrefixListEntry&& value) { m_removeEntriesHasBeenSet = true; m_removeEntries.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The maximum number of entries for the prefix list. You cannot modify the
+     * entries of a prefix list and modify the size of a prefix list at the same
+     * time.</p>
+     */
+    inline int GetMaxEntries() const{ return m_maxEntries; }
+
+    /**
+     * <p>The maximum number of entries for the prefix list. You cannot modify the
+     * entries of a prefix list and modify the size of a prefix list at the same
+     * time.</p>
+     */
+    inline bool MaxEntriesHasBeenSet() const { return m_maxEntriesHasBeenSet; }
+
+    /**
+     * <p>The maximum number of entries for the prefix list. You cannot modify the
+     * entries of a prefix list and modify the size of a prefix list at the same
+     * time.</p>
+     */
+    inline void SetMaxEntries(int value) { m_maxEntriesHasBeenSet = true; m_maxEntries = value; }
+
+    /**
+     * <p>The maximum number of entries for the prefix list. You cannot modify the
+     * entries of a prefix list and modify the size of a prefix list at the same
+     * time.</p>
+     */
+    inline ModifyManagedPrefixListRequest& WithMaxEntries(int value) { SetMaxEntries(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -275,6 +304,9 @@ namespace Model
 
     Aws::Vector<RemovePrefixListEntry> m_removeEntries;
     bool m_removeEntriesHasBeenSet;
+
+    int m_maxEntries;
+    bool m_maxEntriesHasBeenSet;
   };
 
 } // namespace Model

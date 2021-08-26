@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a recommendation option for an AWS Lambda function.</p><p><h3>See
+   * <p>Describes a recommendation option for an Lambda function.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionMemoryRecommendationOption">AWS
    * API Reference</a></p>

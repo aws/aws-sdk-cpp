@@ -30,6 +30,7 @@
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
+#include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesRequest.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusRequest.h>
@@ -345,6 +346,30 @@ void ComputeOptimizerClient::GetEnrollmentStatusAsync(const GetEnrollmentStatusR
 void ComputeOptimizerClient::GetEnrollmentStatusAsyncHelper(const GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetEnrollmentStatus(request), context);
+}
+
+GetEnrollmentStatusesForOrganizationOutcome ComputeOptimizerClient::GetEnrollmentStatusesForOrganization(const GetEnrollmentStatusesForOrganizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetEnrollmentStatusesForOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEnrollmentStatusesForOrganizationOutcomeCallable ComputeOptimizerClient::GetEnrollmentStatusesForOrganizationCallable(const GetEnrollmentStatusesForOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEnrollmentStatusesForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEnrollmentStatusesForOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::GetEnrollmentStatusesForOrganizationAsync(const GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEnrollmentStatusesForOrganizationAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::GetEnrollmentStatusesForOrganizationAsyncHelper(const GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEnrollmentStatusesForOrganization(request), context);
 }
 
 GetLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::GetLambdaFunctionRecommendations(const GetLambdaFunctionRecommendationsRequest& request) const

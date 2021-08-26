@@ -21,6 +21,7 @@
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
+#include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationResult.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesResult.h>
 #include <aws/compute-optimizer/model/UpdateEnrollmentStatusResult.h>
@@ -73,6 +74,7 @@ namespace Model
         class GetEC2InstanceRecommendationsRequest;
         class GetEC2RecommendationProjectedMetricsRequest;
         class GetEnrollmentStatusRequest;
+        class GetEnrollmentStatusesForOrganizationRequest;
         class GetLambdaFunctionRecommendationsRequest;
         class GetRecommendationSummariesRequest;
         class UpdateEnrollmentStatusRequest;
@@ -87,6 +89,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, ComputeOptimizerError> GetEC2RecommendationProjectedMetricsOutcome;
         typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
+        typedef Aws::Utils::Outcome<GetEnrollmentStatusesForOrganizationResult, ComputeOptimizerError> GetEnrollmentStatusesForOrganizationOutcome;
         typedef Aws::Utils::Outcome<GetLambdaFunctionRecommendationsResult, ComputeOptimizerError> GetLambdaFunctionRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetRecommendationSummariesResult, ComputeOptimizerError> GetRecommendationSummariesOutcome;
         typedef Aws::Utils::Outcome<UpdateEnrollmentStatusResult, ComputeOptimizerError> UpdateEnrollmentStatusOutcome;
@@ -101,6 +104,7 @@ namespace Model
         typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;
         typedef std::future<GetEC2RecommendationProjectedMetricsOutcome> GetEC2RecommendationProjectedMetricsOutcomeCallable;
         typedef std::future<GetEnrollmentStatusOutcome> GetEnrollmentStatusOutcomeCallable;
+        typedef std::future<GetEnrollmentStatusesForOrganizationOutcome> GetEnrollmentStatusesForOrganizationOutcomeCallable;
         typedef std::future<GetLambdaFunctionRecommendationsOutcome> GetLambdaFunctionRecommendationsOutcomeCallable;
         typedef std::future<GetRecommendationSummariesOutcome> GetRecommendationSummariesOutcomeCallable;
         typedef std::future<UpdateEnrollmentStatusOutcome> UpdateEnrollmentStatusOutcomeCallable;
@@ -118,24 +122,26 @@ namespace Model
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2InstanceRecommendationsRequest&, const Model::GetEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2RecommendationProjectedMetricsRequest&, const Model::GetEC2RecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2RecommendationProjectedMetricsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusRequest&, const Model::GetEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusesForOrganizationRequest&, const Model::GetEnrollmentStatusesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusesForOrganizationResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetLambdaFunctionRecommendationsRequest&, const Model::GetLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLambdaFunctionRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetRecommendationSummariesRequest&, const Model::GetRecommendationSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationSummariesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::UpdateEnrollmentStatusRequest&, const Model::UpdateEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnrollmentStatusResponseReceivedHandler;
 
   /**
-   * <p>AWS Compute Optimizer is a service that analyzes the configuration and
-   * utilization metrics of your AWS compute resources, such as EC2 instances, Auto
-   * Scaling groups, AWS Lambda functions, and Amazon EBS volumes. It reports whether
-   * your resources are optimal, and generates optimization recommendations to reduce
-   * the cost and improve the performance of your workloads. Compute Optimizer also
-   * provides recent utilization metric data, as well as projected utilization metric
-   * data for the recommendations, which you can use to evaluate which recommendation
-   * provides the best price-performance trade-off. The analysis of your usage
-   * patterns can help you decide when to move or resize your running resources, and
-   * still meet your performance and capacity requirements. For more information
-   * about Compute Optimizer, including the required permissions to use the service,
-   * see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
-   * Compute Optimizer User Guide</a>.</p>
+   * <p>Compute Optimizer is a service that analyzes the configuration and
+   * utilization metrics of your Amazon Web Services compute resources, such as
+   * Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, and
+   * Amazon EBS volumes. It reports whether your resources are optimal, and generates
+   * optimization recommendations to reduce the cost and improve the performance of
+   * your workloads. Compute Optimizer also provides recent utilization metric data,
+   * in addition to projected utilization metric data for the recommendations, which
+   * you can use to evaluate which recommendation provides the best price-performance
+   * trade-off. The analysis of your usage patterns can help you decide when to move
+   * or resize your running resources, and still meet your performance and capacity
+   * requirements. For more information about Compute Optimizer, including the
+   * required permissions to use the service, see the <a
+   * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
+   * Optimizer User Guide</a>.</p>
    */
   class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient
   {
@@ -166,10 +172,10 @@ namespace Model
 
         /**
          * <p>Describes recommendation export jobs created in the last seven days.</p>
-         * <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or
-         * <code>ExportEC2InstanceRecommendations</code> actions to request an export of
-         * your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
-         * action to view your export jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or
+         * <a>ExportEC2InstanceRecommendations</a> actions to request an export of your
+         * recommendations. Then use the <a>DescribeRecommendationExportJobs</a> action to
+         * view your export jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">AWS
          * API Reference</a></p>
          */
@@ -177,10 +183,10 @@ namespace Model
 
         /**
          * <p>Describes recommendation export jobs created in the last seven days.</p>
-         * <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or
-         * <code>ExportEC2InstanceRecommendations</code> actions to request an export of
-         * your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
-         * action to view your export jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or
+         * <a>ExportEC2InstanceRecommendations</a> actions to request an export of your
+         * recommendations. Then use the <a>DescribeRecommendationExportJobs</a> action to
+         * view your export jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">AWS
          * API Reference</a></p>
          *
@@ -190,10 +196,10 @@ namespace Model
 
         /**
          * <p>Describes recommendation export jobs created in the last seven days.</p>
-         * <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or
-         * <code>ExportEC2InstanceRecommendations</code> actions to request an export of
-         * your recommendations. Then use the <code>DescribeRecommendationExportJobs</code>
-         * action to view your export jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Use the <a>ExportAutoScalingGroupRecommendations</a> or
+         * <a>ExportEC2InstanceRecommendations</a> actions to request an export of your
+         * recommendations. Then use the <a>DescribeRecommendationExportJobs</a> action to
+         * view your export jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">AWS
          * API Reference</a></p>
          *
@@ -204,12 +210,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Auto Scaling groups.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Auto Scaling group export job in progress per AWS
+         * have only one Auto Scaling group export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
@@ -219,12 +225,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Auto Scaling groups.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Auto Scaling group export job in progress per AWS
+         * have only one Auto Scaling group export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
@@ -236,12 +242,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Auto Scaling groups.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Auto Scaling group export job in progress per AWS
+         * have only one Auto Scaling group export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
@@ -253,12 +259,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon EBS volume export job in progress per AWS
+         * have only one Amazon EBS volume export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">AWS
          * API Reference</a></p>
@@ -268,12 +274,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon EBS volume export job in progress per AWS
+         * have only one Amazon EBS volume export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">AWS
          * API Reference</a></p>
@@ -285,12 +291,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon EBS volume export job in progress per AWS
+         * have only one Amazon EBS volume export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">AWS
          * API Reference</a></p>
@@ -302,12 +308,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Amazon EC2 instances.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon EC2 instance export job in progress per AWS
+         * have only one Amazon EC2 instance export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">AWS
          * API Reference</a></p>
@@ -317,12 +323,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Amazon EC2 instances.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon EC2 instance export job in progress per AWS
+         * have only one Amazon EC2 instance export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">AWS
          * API Reference</a></p>
@@ -334,12 +340,12 @@ namespace Model
         /**
          * <p>Exports optimization recommendations for Amazon EC2 instances.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Amazon EC2 instance export job in progress per AWS
+         * have only one Amazon EC2 instance export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">AWS
          * API Reference</a></p>
@@ -349,14 +355,14 @@ namespace Model
         virtual void ExportEC2InstanceRecommendationsAsync(const Model::ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Exports optimization recommendations for AWS Lambda functions.</p>
+         * <p>Exports optimization recommendations for Lambda functions.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Lambda function export job in progress per AWS
+         * have only one Lambda function export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
@@ -364,14 +370,14 @@ namespace Model
         virtual Model::ExportLambdaFunctionRecommendationsOutcome ExportLambdaFunctionRecommendations(const Model::ExportLambdaFunctionRecommendationsRequest& request) const;
 
         /**
-         * <p>Exports optimization recommendations for AWS Lambda functions.</p>
+         * <p>Exports optimization recommendations for Lambda functions.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Lambda function export job in progress per AWS
+         * have only one Lambda function export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
@@ -381,14 +387,14 @@ namespace Model
         virtual Model::ExportLambdaFunctionRecommendationsOutcomeCallable ExportLambdaFunctionRecommendationsCallable(const Model::ExportLambdaFunctionRecommendationsRequest& request) const;
 
         /**
-         * <p>Exports optimization recommendations for AWS Lambda functions.</p>
+         * <p>Exports optimization recommendations for Lambda functions.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
-         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
-         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
+         * Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
          * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
-         * have only one Lambda function export job in progress per AWS
+         * have only one Lambda function export job in progress per Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
@@ -398,11 +404,11 @@ namespace Model
         virtual void ExportLambdaFunctionRecommendationsAsync(const Model::ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns Auto Scaling group recommendations.</p> <p>AWS Compute Optimizer
+         * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
          * specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
@@ -410,11 +416,11 @@ namespace Model
         virtual Model::GetAutoScalingGroupRecommendationsOutcome GetAutoScalingGroupRecommendations(const Model::GetAutoScalingGroupRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns Auto Scaling group recommendations.</p> <p>AWS Compute Optimizer
+         * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
          * specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
@@ -424,11 +430,11 @@ namespace Model
         virtual Model::GetAutoScalingGroupRecommendationsOutcomeCallable GetAutoScalingGroupRecommendationsCallable(const Model::GetAutoScalingGroupRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns Auto Scaling group recommendations.</p> <p>AWS Compute Optimizer
+         * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
          * specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">AWS
          * API Reference</a></p>
@@ -439,10 +445,10 @@ namespace Model
 
         /**
          * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
-         * <p>AWS Compute Optimizer generates recommendations for Amazon EBS volumes that
-         * meet a specific set of requirements. For more information, see the <a
+         * <p>Compute Optimizer generates recommendations for Amazon EBS volumes that meet
+         * a specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
          * API Reference</a></p>
@@ -451,10 +457,10 @@ namespace Model
 
         /**
          * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
-         * <p>AWS Compute Optimizer generates recommendations for Amazon EBS volumes that
-         * meet a specific set of requirements. For more information, see the <a
+         * <p>Compute Optimizer generates recommendations for Amazon EBS volumes that meet
+         * a specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
          * API Reference</a></p>
@@ -465,10 +471,10 @@ namespace Model
 
         /**
          * <p>Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.</p>
-         * <p>AWS Compute Optimizer generates recommendations for Amazon EBS volumes that
-         * meet a specific set of requirements. For more information, see the <a
+         * <p>Compute Optimizer generates recommendations for Amazon EBS volumes that meet
+         * a specific set of requirements. For more information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">AWS
          * API Reference</a></p>
@@ -478,12 +484,12 @@ namespace Model
         virtual void GetEBSVolumeRecommendationsAsync(const Model::GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns Amazon EC2 instance recommendations.</p> <p>AWS Compute Optimizer
+         * <p>Returns Amazon EC2 instance recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2)
          * instances that meet a specific set of requirements. For more information, see
          * the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">AWS
          * API Reference</a></p>
@@ -491,12 +497,12 @@ namespace Model
         virtual Model::GetEC2InstanceRecommendationsOutcome GetEC2InstanceRecommendations(const Model::GetEC2InstanceRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns Amazon EC2 instance recommendations.</p> <p>AWS Compute Optimizer
+         * <p>Returns Amazon EC2 instance recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2)
          * instances that meet a specific set of requirements. For more information, see
          * the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">AWS
          * API Reference</a></p>
@@ -506,12 +512,12 @@ namespace Model
         virtual Model::GetEC2InstanceRecommendationsOutcomeCallable GetEC2InstanceRecommendationsCallable(const Model::GetEC2InstanceRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns Amazon EC2 instance recommendations.</p> <p>AWS Compute Optimizer
+         * <p>Returns Amazon EC2 instance recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2)
          * instances that meet a specific set of requirements. For more information, see
          * the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">AWS
          * API Reference</a></p>
@@ -570,20 +576,24 @@ namespace Model
         virtual void GetEC2RecommendationProjectedMetricsAsync(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is the management account of an
-         * organization, this action also confirms the enrollment status of member accounts
-         * within the organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the enrollment (opt in) status of an account to the Compute Optimizer
+         * service.</p> <p>If the account is the management account of an organization,
+         * this action also confirms the enrollment status of member accounts of the
+         * organization. Use the <a>GetEnrollmentStatusesForOrganization</a> action to get
+         * detailed information about the enrollment status of member accounts of an
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEnrollmentStatusOutcome GetEnrollmentStatus(const Model::GetEnrollmentStatusRequest& request) const;
 
         /**
-         * <p>Returns the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is the management account of an
-         * organization, this action also confirms the enrollment status of member accounts
-         * within the organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the enrollment (opt in) status of an account to the Compute Optimizer
+         * service.</p> <p>If the account is the management account of an organization,
+         * this action also confirms the enrollment status of member accounts of the
+         * organization. Use the <a>GetEnrollmentStatusesForOrganization</a> action to get
+         * detailed information about the enrollment status of member accounts of an
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
          * API Reference</a></p>
          *
@@ -592,10 +602,12 @@ namespace Model
         virtual Model::GetEnrollmentStatusOutcomeCallable GetEnrollmentStatusCallable(const Model::GetEnrollmentStatusRequest& request) const;
 
         /**
-         * <p>Returns the enrollment (opt in) status of an account to the AWS Compute
-         * Optimizer service.</p> <p>If the account is the management account of an
-         * organization, this action also confirms the enrollment status of member accounts
-         * within the organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the enrollment (opt in) status of an account to the Compute Optimizer
+         * service.</p> <p>If the account is the management account of an organization,
+         * this action also confirms the enrollment status of member accounts of the
+         * organization. Use the <a>GetEnrollmentStatusesForOrganization</a> action to get
+         * detailed information about the enrollment status of member accounts of an
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">AWS
          * API Reference</a></p>
          *
@@ -604,11 +616,45 @@ namespace Model
         virtual void GetEnrollmentStatusAsync(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns AWS Lambda function recommendations.</p> <p>AWS Compute Optimizer
-         * generates recommendations for functions that meet a specific set of
-         * requirements. For more information, see the <a
+         * <p>Returns the Compute Optimizer enrollment (opt-in) status of organization
+         * member accounts, if your account is an organization management account.</p>
+         * <p>To get the enrollment status of standalone accounts, use the
+         * <a>GetEnrollmentStatus</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEnrollmentStatusesForOrganizationOutcome GetEnrollmentStatusesForOrganization(const Model::GetEnrollmentStatusesForOrganizationRequest& request) const;
+
+        /**
+         * <p>Returns the Compute Optimizer enrollment (opt-in) status of organization
+         * member accounts, if your account is an organization management account.</p>
+         * <p>To get the enrollment status of standalone accounts, use the
+         * <a>GetEnrollmentStatus</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetEnrollmentStatusesForOrganizationOutcomeCallable GetEnrollmentStatusesForOrganizationCallable(const Model::GetEnrollmentStatusesForOrganizationRequest& request) const;
+
+        /**
+         * <p>Returns the Compute Optimizer enrollment (opt-in) status of organization
+         * member accounts, if your account is an organization management account.</p>
+         * <p>To get the enrollment status of standalone accounts, use the
+         * <a>GetEnrollmentStatus</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetEnrollmentStatusesForOrganizationAsync(const Model::GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns Lambda function recommendations.</p> <p>Compute Optimizer generates
+         * recommendations for functions that meet a specific set of requirements. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
@@ -616,11 +662,11 @@ namespace Model
         virtual Model::GetLambdaFunctionRecommendationsOutcome GetLambdaFunctionRecommendations(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns AWS Lambda function recommendations.</p> <p>AWS Compute Optimizer
-         * generates recommendations for functions that meet a specific set of
-         * requirements. For more information, see the <a
+         * <p>Returns Lambda function recommendations.</p> <p>Compute Optimizer generates
+         * recommendations for functions that meet a specific set of requirements. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
@@ -630,11 +676,11 @@ namespace Model
         virtual Model::GetLambdaFunctionRecommendationsOutcomeCallable GetLambdaFunctionRecommendationsCallable(const Model::GetLambdaFunctionRecommendationsRequest& request) const;
 
         /**
-         * <p>Returns AWS Lambda function recommendations.</p> <p>AWS Compute Optimizer
-         * generates recommendations for functions that meet a specific set of
-         * requirements. For more information, see the <a
+         * <p>Returns Lambda function recommendations.</p> <p>Compute Optimizer generates
+         * recommendations for functions that meet a specific set of requirements. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-         * resources and requirements</a> in the <i>AWS Compute Optimizer User
+         * resources and requirements</a> in the <i>Compute Optimizer User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">AWS
          * API Reference</a></p>
@@ -693,40 +739,40 @@ namespace Model
         virtual void GetRecommendationSummariesAsync(const Model::GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the enrollment (opt in and opt out) status of an account to the AWS
+         * <p>Updates the enrollment (opt in and opt out) status of an account to the
          * Compute Optimizer service.</p> <p>If the account is a management account of an
-         * organization, this action can also be used to enroll member accounts within the
+         * organization, this action can also be used to enroll member accounts of the
          * organization.</p> <p>You must have the appropriate permissions to opt in to
          * Compute Optimizer, to view its recommendations, and to opt out. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
-         * access with AWS Identity and Access Management</a> in the <i>AWS Compute
-         * Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
-         * automatically creates a Service-Linked Role in your account to access its data.
+         * access with Amazon Web Services Identity and Access Management</a> in the
+         * <i>Compute Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
+         * automatically creates a service-linked role in your account to access its data.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
-         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute
-         * Optimizer User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEnrollmentStatusOutcome UpdateEnrollmentStatus(const Model::UpdateEnrollmentStatusRequest& request) const;
 
         /**
-         * <p>Updates the enrollment (opt in and opt out) status of an account to the AWS
+         * <p>Updates the enrollment (opt in and opt out) status of an account to the
          * Compute Optimizer service.</p> <p>If the account is a management account of an
-         * organization, this action can also be used to enroll member accounts within the
+         * organization, this action can also be used to enroll member accounts of the
          * organization.</p> <p>You must have the appropriate permissions to opt in to
          * Compute Optimizer, to view its recommendations, and to opt out. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
-         * access with AWS Identity and Access Management</a> in the <i>AWS Compute
-         * Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
-         * automatically creates a Service-Linked Role in your account to access its data.
+         * access with Amazon Web Services Identity and Access Management</a> in the
+         * <i>Compute Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
+         * automatically creates a service-linked role in your account to access its data.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
-         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute
-         * Optimizer User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
          *
@@ -735,20 +781,20 @@ namespace Model
         virtual Model::UpdateEnrollmentStatusOutcomeCallable UpdateEnrollmentStatusCallable(const Model::UpdateEnrollmentStatusRequest& request) const;
 
         /**
-         * <p>Updates the enrollment (opt in and opt out) status of an account to the AWS
+         * <p>Updates the enrollment (opt in and opt out) status of an account to the
          * Compute Optimizer service.</p> <p>If the account is a management account of an
-         * organization, this action can also be used to enroll member accounts within the
+         * organization, this action can also be used to enroll member accounts of the
          * organization.</p> <p>You must have the appropriate permissions to opt in to
          * Compute Optimizer, to view its recommendations, and to opt out. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
-         * access with AWS Identity and Access Management</a> in the <i>AWS Compute
-         * Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
-         * automatically creates a Service-Linked Role in your account to access its data.
+         * access with Amazon Web Services Identity and Access Management</a> in the
+         * <i>Compute Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
+         * automatically creates a service-linked role in your account to access its data.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
-         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute
-         * Optimizer User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
          *
@@ -770,6 +816,7 @@ namespace Model
         void GetEC2InstanceRecommendationsAsyncHelper(const Model::GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2RecommendationProjectedMetricsAsyncHelper(const Model::GetEC2RecommendationProjectedMetricsRequest& request, const GetEC2RecommendationProjectedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnrollmentStatusAsyncHelper(const Model::GetEnrollmentStatusRequest& request, const GetEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetEnrollmentStatusesForOrganizationAsyncHelper(const Model::GetEnrollmentStatusesForOrganizationRequest& request, const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLambdaFunctionRecommendationsAsyncHelper(const Model::GetLambdaFunctionRecommendationsRequest& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRecommendationSummariesAsyncHelper(const Model::GetRecommendationSummariesRequest& request, const GetRecommendationSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnrollmentStatusAsyncHelper(const Model::UpdateEnrollmentStatusRequest& request, const UpdateEnrollmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -38,10 +38,10 @@ namespace Model
      * <p>The new enrollment status of the account.</p> <p>The following status options
      * are available:</p> <ul> <li> <p> <code>Active</code> - Opts in your account to
      * the Compute Optimizer service. Compute Optimizer begins analyzing the
-     * configuration and utilization metrics of your AWS resources after you opt in.
-     * For more information, see <a
+     * configuration and utilization metrics of your Amazon Web Services resources
+     * after you opt in. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
-     * analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User
+     * analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User
      * Guide</i>.</p> </li> <li> <p> <code>Inactive</code> - Opts out your account from
      * the Compute Optimizer service. Your account's recommendations and related
      * metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
@@ -55,10 +55,10 @@ namespace Model
      * <p>The new enrollment status of the account.</p> <p>The following status options
      * are available:</p> <ul> <li> <p> <code>Active</code> - Opts in your account to
      * the Compute Optimizer service. Compute Optimizer begins analyzing the
-     * configuration and utilization metrics of your AWS resources after you opt in.
-     * For more information, see <a
+     * configuration and utilization metrics of your Amazon Web Services resources
+     * after you opt in. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
-     * analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User
+     * analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User
      * Guide</i>.</p> </li> <li> <p> <code>Inactive</code> - Opts out your account from
      * the Compute Optimizer service. Your account's recommendations and related
      * metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
@@ -72,10 +72,10 @@ namespace Model
      * <p>The new enrollment status of the account.</p> <p>The following status options
      * are available:</p> <ul> <li> <p> <code>Active</code> - Opts in your account to
      * the Compute Optimizer service. Compute Optimizer begins analyzing the
-     * configuration and utilization metrics of your AWS resources after you opt in.
-     * For more information, see <a
+     * configuration and utilization metrics of your Amazon Web Services resources
+     * after you opt in. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
-     * analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User
+     * analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User
      * Guide</i>.</p> </li> <li> <p> <code>Inactive</code> - Opts out your account from
      * the Compute Optimizer service. Your account's recommendations and related
      * metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
@@ -89,10 +89,10 @@ namespace Model
      * <p>The new enrollment status of the account.</p> <p>The following status options
      * are available:</p> <ul> <li> <p> <code>Active</code> - Opts in your account to
      * the Compute Optimizer service. Compute Optimizer begins analyzing the
-     * configuration and utilization metrics of your AWS resources after you opt in.
-     * For more information, see <a
+     * configuration and utilization metrics of your Amazon Web Services resources
+     * after you opt in. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
-     * analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User
+     * analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User
      * Guide</i>.</p> </li> <li> <p> <code>Inactive</code> - Opts out your account from
      * the Compute Optimizer service. Your account's recommendations and related
      * metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
@@ -106,10 +106,10 @@ namespace Model
      * <p>The new enrollment status of the account.</p> <p>The following status options
      * are available:</p> <ul> <li> <p> <code>Active</code> - Opts in your account to
      * the Compute Optimizer service. Compute Optimizer begins analyzing the
-     * configuration and utilization metrics of your AWS resources after you opt in.
-     * For more information, see <a
+     * configuration and utilization metrics of your Amazon Web Services resources
+     * after you opt in. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
-     * analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User
+     * analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User
      * Guide</i>.</p> </li> <li> <p> <code>Inactive</code> - Opts out your account from
      * the Compute Optimizer service. Your account's recommendations and related
      * metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>
@@ -123,10 +123,10 @@ namespace Model
      * <p>The new enrollment status of the account.</p> <p>The following status options
      * are available:</p> <ul> <li> <p> <code>Active</code> - Opts in your account to
      * the Compute Optimizer service. Compute Optimizer begins analyzing the
-     * configuration and utilization metrics of your AWS resources after you opt in.
-     * For more information, see <a
+     * configuration and utilization metrics of your Amazon Web Services resources
+     * after you opt in. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
-     * analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User
+     * analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User
      * Guide</i>.</p> </li> <li> <p> <code>Inactive</code> - Opts out your account from
      * the Compute Optimizer service. Your account's recommendations and related
      * metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>

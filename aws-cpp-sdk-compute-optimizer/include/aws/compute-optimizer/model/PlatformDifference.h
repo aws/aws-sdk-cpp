@@ -20,7 +20,8 @@ namespace Model
     NetworkInterface,
     StorageInterface,
     InstanceStoreAvailability,
-    VirtualizationType
+    VirtualizationType,
+    Architecture
   };
 
 namespace PlatformDifferenceMapper
