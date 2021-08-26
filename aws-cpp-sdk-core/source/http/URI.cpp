@@ -6,6 +6,7 @@
 #include <aws/core/http/URI.h>
 
 #include <aws/core/utils/memory/stl/AWSSet.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <cstdlib>
 #include <cctype>
@@ -460,10 +461,26 @@ void URI::ExtractAndSetAuthority(const Aws::String& uri)
         authorityStart += 3;
     }
 
-    size_t posOfEndOfAuthorityPort = uri.find(':', authorityStart);
-    size_t posOfEndOfAuthoritySlash = uri.find('/', authorityStart);
-    size_t posOfEndOfAuthorityQuery = uri.find('?', authorityStart);
-    size_t posEndOfAuthority = (std::min)({posOfEndOfAuthorityPort, posOfEndOfAuthoritySlash, posOfEndOfAuthorityQuery});
+    size_t posEndOfAuthority=0;
+    // are we extracting an ipv6 address?
+    if (uri.at(authorityStart) == '[')
+    {
+        posEndOfAuthority = uri.find(']', authorityStart);
+        if (posEndOfAuthority == Aws::String::npos) {
+            AWS_LOGSTREAM_ERROR("Uri", "Malformed uri: " << uri.c_str());
+        }
+        else
+        {
+            ++posEndOfAuthority;
+        }
+    }
+    else
+    {
+        size_t posOfEndOfAuthorityPort = uri.find(':', authorityStart);
+        size_t posOfEndOfAuthoritySlash = uri.find('/', authorityStart);
+        size_t posOfEndOfAuthorityQuery = uri.find('?', authorityStart);
+        posEndOfAuthority = (std::min)({posOfEndOfAuthorityPort, posOfEndOfAuthoritySlash, posOfEndOfAuthorityQuery});
+    }
     if (posEndOfAuthority == Aws::String::npos)
     {
         posEndOfAuthority = uri.length();
@@ -485,11 +502,25 @@ void URI::ExtractAndSetPort(const Aws::String& uri)
         authorityStart += 3;
     }
 
-    size_t positionOfPortDelimiter = uri.find(':', authorityStart);
+    size_t portSearchStart = authorityStart;
+    // are we extracting an ipv6 address?
+    if (uri.at(portSearchStart) == '[')
+    {
+        size_t posEndOfAuthority = uri.find(']', portSearchStart);
+        if (posEndOfAuthority == Aws::String::npos) {
+            AWS_LOGSTREAM_ERROR("Uri", "Malformed uri: " << uri.c_str());
+        }
+        else
+        {
+            portSearchStart = posEndOfAuthority;
+        }
+    }
+
+    size_t positionOfPortDelimiter = uri.find(':', portSearchStart);
 
     bool hasPort = positionOfPortDelimiter != Aws::String::npos;
 
-    if ((uri.find('/', authorityStart) < positionOfPortDelimiter) || (uri.find('?', authorityStart) < positionOfPortDelimiter))
+    if ((uri.find('/', portSearchStart) < positionOfPortDelimiter) || (uri.find('?', portSearchStart) < positionOfPortDelimiter))
     {
         hasPort = false;
     }

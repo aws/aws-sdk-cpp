@@ -141,6 +141,37 @@ protected:
     }
 };
 
+TEST_F(AWSClientTestSuite, TestCreateHttpRequestWithIpV6KeepsEndpointWhenNoPortInURI)
+{
+    mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+    mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+    mockHttpClientFactory->SetClient(mockHttpClient);
+    SetHttpClientFactory(mockHttpClientFactory);
+    // Region provider is initiated during Aws::Init(), after setting mock http client, we need to re-initiate it.
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Internal::InitEC2MetadataClient();
+    URI requestUri = "http://[fd00:ec2::254]/latest/meta-data/placement/availability-zone";
+    std::shared_ptr<HttpRequest> azRequest = CreateHttpRequest(requestUri, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    Aws::String parsedUri = azRequest->GetURIString();
+    ASSERT_STREQ("http://[fd00:ec2::254]/latest/meta-data/placement/availability-zone", parsedUri.c_str());
+}
+
+TEST_F(AWSClientTestSuite, TestCreateHttpRequestWithIpV6KeepsEndpointWhenPortInURI)
+{
+    mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+    mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+    mockHttpClientFactory->SetClient(mockHttpClient);
+    SetHttpClientFactory(mockHttpClientFactory);
+    // Region provider is initiated during Aws::Init(), after setting mock http client, we need to re-initiate it.
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Internal::InitEC2MetadataClient();
+    URI requestUri = "http://[fd00:ec2::254]:8080/latest/meta-data/placement/availability-zone";
+    std::shared_ptr<HttpRequest> azRequest = CreateHttpRequest(requestUri, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    Aws::String parsedUri = azRequest->GetURIString();
+    ASSERT_STREQ("http://[fd00:ec2::254]:8080/latest/meta-data/placement/availability-zone", parsedUri.c_str());
+}
+
+
 class AWSConfigTestSuite : public ::testing::Test
 {
 protected:
@@ -818,6 +849,10 @@ public:
 TEST_F(AWSMetadataEndpointTestSuite, TestUndeclaredEndpointForEC2MetadataInEnvUsesDefaultURI)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
+
     Aws::Internal::InitEC2MetadataClient();
 
     auto client = Aws::Internal::GetEC2MetadataClient();
@@ -827,8 +862,10 @@ TEST_F(AWSMetadataEndpointTestSuite, TestUndeclaredEndpointForEC2MetadataInEnvUs
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataIsReadFromEnvWhenDeclared)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
+
     Aws::Internal::InitEC2MetadataClient();
 
     auto client = Aws::Internal::GetEC2MetadataClient();
@@ -838,7 +875,10 @@ TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataIsReadFromEnvWhen
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataCanBeOverriddenBySet)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE");
+
     Aws::Internal::InitEC2MetadataClient();
 
     auto client = Aws::Internal::GetEC2MetadataClient();
@@ -851,8 +891,10 @@ TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForEC2MetadataCanBeOverriddenBy
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsSetWhenNoExplicitlyOverridden)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV6", 1/*overwrite*/);
+
     Aws::Internal::InitEC2MetadataClient();
 
     auto client = Aws::Internal::GetEC2MetadataClient();
@@ -862,6 +904,7 @@ TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsSetWhenNoExplicitl
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsSetWhenNoExplicitlyOverridden)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV4", 1/*overwrite*/);
 
@@ -875,6 +918,7 @@ TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsSetWhenNoExplicitl
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsIgnoredSetWhenExplicitlyOverridden)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV6", 1/*overwrite*/);
 
@@ -887,6 +931,7 @@ TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV6ModeIsIgnoredSetWhenExpl
 TEST_F(AWSMetadataEndpointTestSuite, TestEndpointForIpV4ModeIsIgnoredSetWhenExplicitlyOverridden)
 {
     Aws::Internal::CleanupEC2MetadataClient();
+
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT", "http://[::1]", 1/*overwrite*/);
     Aws::Environment::SetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE", "ipV4", 1/*overwrite*/);
 
